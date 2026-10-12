@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=d73b2b083228e87b8270695fd43a3794">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Decisions Under Uncertainty &mdash; ECON 2316 Ch 15</title>
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' },
+      startup: { ready: () => { MathJax.startup.defaultReady(); } }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    .timer-badge { display: inline-block; background: #f0f5f8; color: var(--secondary-color); padding: 6px 14px; border-radius: 16px; font-size: 12pt; font-weight: 600; }
+    .timer-badge i { margin-right: 6px; }
+    .stat-card { background: #f8f6f3; border-radius: 10px; padding: 16px 14px; text-align: center; border-left: 4px solid var(--secondary-color); }
+    .stat-card .num { font-size: 28pt; font-weight: 800; color: var(--secondary-color); margin: 0; line-height: 1; }
+    .stat-card .lbl { font-size: 11.5pt; color: var(--muted-color); margin-top: 6px; }
+    .stat-card.accent { border-left-color: var(--accent-color); }
+    .stat-card.accent .num { color: var(--accent-color); }
+    .stat-card.sage { border-left-color: var(--success-color); }
+    .stat-card.sage .num { color: var(--success-color); }
+    .stat-card.rose { border-left-color: var(--danger-color); }
+    .stat-card.rose .num { color: var(--danger-color); }
+    .reveal table.table-standard { font-size: 14pt; }
+    .reveal table.table-standard th { padding: 9px 11px; font-size: 12.5pt; }
+    .reveal table.table-standard td { padding: 8px 11px; font-size: 12pt; vertical-align: middle; }
+    .conj-card { background: #f8f6f3; border-radius: 8px; padding: 11px 16px; }
+    .conj-card .nm { font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 3px; }
+    /* Lottery / payoff mini grid */
+    .pm { border-collapse: collapse; margin: 0 auto; font-size: 13pt; }
+    .pm td, .pm th { border: 1.5px solid var(--line-color); padding: 9px 16px; text-align: center; }
+    .pm th { background: #f0f5f8; font-weight: 700; font-size: 11.5pt; color: var(--secondary-color); }
+    .pm td.ce { background: #d9f2e6; font-weight: 700; }
+    .pm td.hi { background: #fbeec8; }
+    /* RiskAttitudeExplorer preset toggles */
+    .rap-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 2px 0 4px; }
+    .rap-preset { font-family: var(--body-font); font-size: 11.5pt; font-weight: 600; padding: 5px 15px; border-radius: 16px; border: 1.5px solid var(--line-color); background: #f8f6f3; color: var(--text-color); cursor: pointer; transition: all .15s; }
+    .rap-preset:hover { border-color: var(--secondary-color); }
+    .rap-preset.active { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="section-divider" data-state="is-section-divider" id="title" style="padding: 0;">
+  <div style="display: grid; grid-template-columns: 55% 45%; height: 720px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; padding: 50px 50px 50px 60px;">
+      <p style="font-size: 12pt; color: var(--secondary-color); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;">
+        ECON 2316 &bull; Microeconomic Theory &bull; Chapter 15
+      </p>
+      <h1 style="font-size: 38pt; line-height: 1.18; color: var(--primary-color); margin-bottom: 22px;">
+        Decisions Under Uncertainty
+      </h1>
+      <p style="font-size: 14pt; color: var(--muted-color); font-style: italic; max-width: 520px; margin-top: 4px;">
+        Chapter 14 modeled choice <em>between players</em>. Now a single decision-maker faces something no rival controls &mdash; <strong style="color: var(--text-color);">risk itself</strong>. Expected utility is the machinery: lotteries, concave utility, certainty equivalents, and the insurance a risk-averse agent buys.
+      </p>
+      <div style="margin-top: auto; padding-bottom: 15px;">
+        <p style="font-size: 16pt; color: var(--primary-color); font-weight: 700; margin-bottom: 8px;">
+          Dr. Richeng Piao
+        </p>
+        <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; line-height: 1.8;">
+          Department of Economics<br>
+          Northeastern University
+        </p>
+      </div>
+    </div>
+    <div style="overflow: hidden;">
+      <img alt="A freelancer at a kitchen table studies the ACA marketplace on her laptop, a prescription bottle and an insurance letter beside her coffee mug — the everyday face of choice under uncertainty" src="figures/ch15-cover.webp" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+<section id="learning-objectives" style="padding: 40px 50px;">
+  <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Learning Objectives</h2>
+  <p style="font-size: 13pt; color: var(--muted-color); margin-bottom: 14px;">
+    By the end of class today, you will be able to&hellip;
+  </p>
+  <div style="display: flex; flex-direction: column; gap: 9px;">
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">1</p>
+      <p style="font-size: 14pt;"><strong>Construct</strong> a lottery and compute its expected value &mdash; and explain why expected value alone cannot rank risky prospects. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L3)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">2</p>
+      <p style="font-size: 14pt;"><strong>Define</strong> expected utility and the von Neumann&ndash;Morgenstern axioms; read risk attitude off the curvature of the Bernoulli utility. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">3</p>
+      <p style="font-size: 14pt;"><strong>Compute</strong> the certainty equivalent and risk premium of a lottery via Jensen's inequality. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">4</p>
+      <p style="font-size: 14pt;"><strong>Derive</strong> the Arrow&ndash;Pratt coefficient and the small-risk approximation \(\rho \approx \tfrac{1}{2}\sigma^2 A(W)\). <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L5 &mdash; central result)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">5</p>
+      <p style="font-size: 14pt;"><strong>Solve</strong> the optimal-insurance problem and state the Mossin full-coverage-at-fair-premium theorem. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L3)</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="bridge">
+  <h2><i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--secondary-color);"></i> From Strategy Between Players to Risk Within One</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Part IV &mdash; what we closed</p>
+      <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        <li>Markets and games &mdash; competition, monopoly, oligopoly, strategy</li>
+        <li>The uncertainty was about <em>rivals</em>: what will the other firm do?</li>
+        <li>Payoffs were certain once choices were fixed</li>
+      </ul>
+    </div>
+    <div style="background: #fef9f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Part V &mdash; market failures open here</p>
+      <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        <li>Now: a <em>single</em> decision-maker, no rival &mdash; but the outcome is a draw from nature</li>
+        <li>Health shock, accident, crop failure: <strong>which state realizes is random</strong></li>
+        <li>We need a model of choice over <strong>lotteries</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p style="margin: 0;"><strong>Part V is where Chapter 10's welfare theorem fails.</strong> Uncertainty (Ch 15), asymmetric information (Ch 16), and externalities and public goods (Ch 17) each break the result that competitive equilibrium maximizes surplus. Ch 15 starts by building the toolkit &mdash; expected utility &mdash; that the rest of Part V relies on.</p>
+  </div>
+</section>
+
+<section id="opener">
+  <h2><i class="fa-solid fa-laptop-medical" style="color: var(--accent-color);"></i> Maya and the 2026 ACA Marketplace</h2>
+  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">A 32-year-old freelance designer &mdash; the same Maya from Chapter 1 &mdash; earns about \$60,000, has no employer plan, and is in good health. The marketplace offers a Silver plan at a net premium of <strong>\$498/month</strong> after her tax credit: \$5,976 per year.</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">Her expected medical loss is small &mdash; roughly a <strong>5% chance of a \$50,000 event</strong>, an expected loss near \$2,500/year. The premium is more than <em>twice</em> the expected loss.</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">A risk-neutral agent who compares dollar averages would <strong>refuse</strong>. Yet buying coverage is, for most people, the rational choice. <em>Why?</em></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start;">
+      <div class="stat-card"><p class="num">\$60K</p><p class="lbl">income &mdash; ~383% of FPL</p></div>
+      <div class="stat-card rose"><p class="num">5%</p><p class="lbl">chance of a \$50K event</p></div>
+      <div class="stat-card sage"><p class="num">\$2,500</p><p class="lbl">expected loss / year</p></div>
+      <div class="stat-card accent"><p class="num">\$5,976</p><p class="lbl">annual net premium</p></div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;">The earlier chapters cannot answer Maya. Ch 4's deterministic preferences say nothing about uncertainty over wealth; Ch 14's games are about rivals, not lotteries. We need new machinery: value a risky prospect by the <strong>expected utility</strong> of a concave function on wealth. By the end of class, Mossin's theorem will tell us <em>exactly</em> when full coverage is rational.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-lotteries">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;15.1</p>
+  <h1>Lotteries &amp; Expected Value</h1>
+  <p class="subtitle">The right way to describe a risky prospect &mdash; and why its average payoff is only half the story</p>
+</section>
+
+<section id="lottery-def">
+  <h2><i class="fa-solid fa-dice" style="color: var(--accent-color);"></i> A Lottery Is States, Payoffs, and Probabilities</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">A <strong>lottery</strong> lists state-contingent payoffs and their probabilities:</p>
+      <p style="font-size: 12pt; text-align: center; margin: 6px 0;">\(L = (x_1, \pi_1;\ x_2, \pi_2;\ \ldots;\ x_n, \pi_n)\)</p>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 0 0 7px;">with \(\pi_i \geq 0\) and \(\sum_i \pi_i = 1\). The <strong>expected value</strong> is the probability-weighted average payoff:</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0; font-size: 13pt; text-align: center;">\(E[L] = \sum_{i=1}^n \pi_i\, x_i\)</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">A fair coin paying \$50 or \$150 has \(E = \$100\). A 1-in-100 hospitalization costing \$50,000 has \(E[\text{loss}] = \$500\).</p>
+    </div>
+    <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 6px; padding: 13px 18px;">
+      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 15.1 &mdash; \(\pi_i\) is a probability, not a profit</p>
+      <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;">In Chapters 9&ndash;14, \(\pi\) meant <em>profit</em>. From here on, \(\pi_i\) is the <strong>probability</strong> of state \(i\). The letter \(p\) is reserved for prices and per-unit premiums. Read \(\pi_2 = 0.05\) as &ldquo;state two realizes 5% of the time.&rdquo;</p>
+      <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.45;">This lets us write expected utility cleanly as \(\sum_i \pi_i\, u(x_i)\) without overloading any symbol.</p>
+    </div>
+  </div>
+  <div style="background: rgba(107,139,164,0.10); border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 9px 16px; margin-top: 12px;">
+    <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>What EV misses.</strong> A sure \$1 has \(E = 1\). So does &ldquo;win \$1,000,000 with prob \(\tfrac12\), lose \$999,998 with prob \(\tfrac12\).&rdquo; Same expected value &mdash; but almost no one is indifferent between them. Expected utility (&sect;15.2) exists to formalize that difference.</p>
+  </div>
+</section>
+
+<section id="walkthrough-15-1">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.1 &mdash; A Three-State Health-Shock Lottery</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Maya faces three states: no event (\(\pi_1 = 0.92\), loss \$0); moderate event (\(\pi_2 = 0.06\), loss \$8,000); major event (\(\pi_3 = 0.02\), loss \$50,000). Compute the expected loss.</p>
+      </div>
+      <table class="pm" style="font-size: 11.5pt;">
+        <tr><th>State</th><th>\(\pi_i\)</th><th>Loss</th><th>\(\pi_i \times\) Loss</th></tr>
+        <tr><td>No event</td><td>0.92</td><td>\$0</td><td>\$0</td></tr>
+        <tr><td>Moderate</td><td>0.06</td><td>\$8,000</td><td>\$480</td></tr>
+        <tr><td>Major</td><td>0.02</td><td>\$50,000</td><td class="hi">\$1,000</td></tr>
+      </table>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.45; margin: 9px 0 0;">Check \(\sum \pi_i = 1\). Then \(E[\text{loss}] = 0 + 480 + 1{,}000 = \) <strong>\$1,480 / year</strong>.</p>
+    </div>
+    <div>
+      <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 13px 18px; margin: 0 0 10px;">
+        <p style="margin: 0 0 5px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-rotate-left"></i> Recall from Principles &mdash; 1116 &sect;18.3</p>
+        <p style="margin: 0; font-size: 12pt; line-height: 1.5;">Principles computed expected value for simple gambles &mdash; a fair coin, a Take-5 ticket, a \$1,200 premium against an \$800 expected loss &mdash; and called the willingness to overpay <strong>risk aversion</strong>. This chapter makes it a property of the <em>utility function</em>.</p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="2" style="margin: 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> \$1,480 is the <em>actuarially fair</em> price of full coverage &mdash; the rare-but-large state drives it (\$1,000 of \$1,480 from a 2% event). A risk-averse Maya will happily pay <em>more</em> than \$1,480; &sect;15.6 says exactly how much.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <section id="poll-1-question">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #1 &mdash; Is Maya Irrational to Insure?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.7;">
+        Maya faces a 5% chance of a \$50,000 loss &mdash; an expected loss of about \$2,500. The ACA plan costs <strong>\$5,976/year</strong>, more than <strong>twice</strong> the expected loss. Is buying it irrational?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch15-econ2316-poll-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Yes &mdash; she pays 2&times; the expected loss</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) No &mdash; risk aversion makes paying above expected loss rational</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Only if she is unhealthy</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Impossible to say without more data</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch15-econ2316-poll-1" id="poll-1-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Risk Aversion Makes It Rational</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch15-econ2316-poll-1" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 15pt; line-height: 1.7;">A dollar lost when wealth is <em>already</em> reduced by a medical event hurts more than the same dollar saved in a good year. Equalizing wealth across states is worth paying for &mdash; up to the <strong>risk premium</strong>.</p>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
+          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> comparing dollar averages is <em>risk neutrality</em>. The whole point of expected utility is that the <em>shape</em> of \(u(W)\), not the average payoff, governs the choice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-eu">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;15.2</p>
+  <h1>Expected Utility &amp; the vNM Axioms</h1>
+  <p class="subtitle">Rank lotteries by the average <em>utility</em> of wealth &mdash; and risk attitude lives in the curvature of \(u\)</p>
+</section>
+
+<section id="eu-def">
+  <h2><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> Expected Utility and Four Axioms</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">For an agent with <strong>Bernoulli utility</strong> \(u\) on wealth, the expected utility of a lottery is</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0; font-size: 13pt; text-align: center;">\(EU[L] = \sum_{i=1}^n \pi_i\, u(x_i)\)</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">The agent ranks lotteries by \(EU\). Named for Daniel <strong>Bernoulli</strong> (1738), who used \(\ln W\) to resolve the St. Petersburg paradox &mdash; the fair price reflects expected <em>utility</em>, not expected payoff.</p>
+      <div style="background: rgba(107,139,164,0.10); border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 8px 14px; margin-top: 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.4;">\(u\) is unique up to a positive affine transform \(\tilde u = a + bu\) (\(b&gt;0\)): the <em>level</em> of utility is meaningless &mdash; only its <strong>shape</strong> matters.</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 0 0 6px;">Von Neumann&ndash;Morgenstern (1944): four axioms are jointly equivalent to the existence of such a \(u\).</p>
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <div style="background: #f8f6f3; border-radius: 8px; padding: 7px 14px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 12pt; margin: 0;"><strong>Completeness</strong> &mdash; any two lotteries are comparable</p></div>
+        <div style="background: #f8f6f3; border-radius: 8px; padding: 7px 14px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 12pt; margin: 0;"><strong>Transitivity</strong> &mdash; rankings don't cycle</p></div>
+        <div style="background: #f8f6f3; border-radius: 8px; padding: 7px 14px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 12pt; margin: 0;"><strong>Continuity</strong> &mdash; no &ldquo;lexicographic&rdquo; jumps</p></div>
+        <div style="background: #fef9f3; border-radius: 8px; padding: 7px 14px; border-left: 4px solid var(--accent-color);"><p style="font-size: 12pt; margin: 0;"><strong>Independence</strong> &mdash; mixing with a common third lottery \(C\) preserves the ranking</p></div>
+      </div>
+      <p style="font-size: 11pt; line-height: 1.4; margin: 8px 0 0; color: var(--muted-color);"><strong>Independence</strong> is the substantive new axiom &mdash; and the one most often violated in the lab (Allais 1953, Ellsberg 1961). More on that at the close.</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-15-2">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.2 &mdash; Three Agents, One Lottery</h2>
+  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
+    <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Problem.</strong> A lottery pays \$0 or \$100, each with probability \(\tfrac12\), so \(E[L] = \$50\). Compare each agent's \(EU[L]\) to the sure \(u(50)\).</p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Risk-neutral &mdash; \(u=W\)</p>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">\(EU = \tfrac12(0)+\tfrac12(100) = 50\); \(u(50)=50\). <strong>Indifferent.</strong></p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 11pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Risk-averse &mdash; \(u=\sqrt{W}\)</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">\(EU = \tfrac12(0)+\tfrac12(10) = 5\); \(u(50)=\sqrt{50}\approx 7.07\). \(5 &lt; 7.07\) &rarr; <strong>takes the sure \$50.</strong></p>
+    </div>
+    <div style="background: #fef2f2; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Risk-loving &mdash; \(u=W^2\)</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">\(EU = \tfrac12(0)+\tfrac12(10{,}000) = 5{,}000\); \(u(50)=2{,}500\). \(5{,}000 &gt; 2{,}500\) &rarr; <strong>takes the lottery.</strong></p>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 12px; padding: 9px 16px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>Takeaway.</strong> Same \$50 expected payoff for all three. They differ only in <em>how utility scales with wealth</em>. <strong>Concave \(u\) = risk-averse</strong> (averaging utilities falls below the utility of average wealth); <strong>convex = risk-loving</strong>; <strong>linear = risk-neutral</strong>. Risk attitude is encoded entirely in the shape of \(u\).</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-jensen">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;15.3</p>
+  <h1>Risk Aversion, Concavity &amp; Jensen</h1>
+  <p class="subtitle">Why the <em>shape</em> of \(u\) is risk attitude &mdash; a theorem, not a pattern</p>
+</section>
+
+<section id="cc-15-1">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 15.1 &mdash; Jensen's Inequality</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 0 0 5px;"><strong>Result.</strong> For concave \(u\) and any random wealth \(W\),</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0; font-size: 13pt; text-align: center;">\(E[u(W)] \leq u(E[W])\)</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 5px 0 0;">strict for strictly concave \(u\) on any non-degenerate \(W\).</p>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 8px 0 4px;"><strong>Proof sketch.</strong> Concavity &rArr; \(u\) lies below its tangent at \(\bar W = E[W]\):</p>
+      <p style="font-size: 11.5pt; text-align: center; margin: 4px 0;">\(u(W) \leq u(\bar W) + u'(\bar W)(W - \bar W)\)</p>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 4px 0 0;">Take expectations; the linear term has mean \(0\), leaving \(E[u(W)] \leq u(\bar W)\).</p>
+      <p style="font-size: 11pt; line-height: 1.4; margin: 8px 0 0; color: var(--muted-color);"><strong>Equivalence:</strong> \(u\) is concave \(\Longleftrightarrow\) the agent is risk-averse. Concavity is <em>necessary and sufficient</em>.</p>
+    </div>
+    <div style="text-align: center;">
+      <img class="figure" alt="Concave log-utility curve with a chord through the endpoints W=50 and W=150; the expected utility EU sits on the chord at W=100 (below the curve), the utility of expected wealth u(EW) sits on the curve above it, and the vertical gap is the risk premium in utils" src="figures/figure-15-2-concave-utility-eu-vs-uev.png" style="max-height: 300px;">
+      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">Chord below curve: \(EU \approx 4.461 &lt; u(E[W]) \approx 4.605\). The gap <em>is</em> risk aversion.</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-15-3">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.3 &mdash; Log-Utility Certainty Equivalent</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> \(u(W)=\ln W\); a 50/50 lottery lands wealth at \$50 or \$150. Find \(EU\), the certainty equivalent \(CE\), and the risk premium \(\rho\).</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> \(E[W] = \tfrac12(50)+\tfrac12(150) = 100\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2.</strong> \(EU = \tfrac12\ln 50 + \tfrac12\ln 150 = \tfrac12\ln 7{,}500 \approx 4.460\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3.</strong> \(CE = e^{EU} = \sqrt{7{,}500} = 50\sqrt{3} \approx \$86.60\).</p>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 6px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4.</strong> \(\rho = E[W] - CE = 100 - 86.60 \approx \$13.40\).</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="5" style="font-size: 11.5pt; line-height: 1.4; margin: 8px 0 0; color: var(--muted-color);">Under log utility, the \(CE\) is the <strong>geometric mean</strong> \(\sqrt{W_L W_H}\), always below the arithmetic mean &mdash; the gap is \(\rho\).</p>
+    </div>
+    <div style="text-align: center;">
+      <img class="figure" alt="Jensen's inequality with u(W)=sqrt(W): four lottery outcomes on the concave curve, their utility average (red centroid) sits strictly below the utility of average wealth (green dot) at W=7.5" src="figures/figure-15-7-jensen-inequality.png" style="max-height: 270px;">
+      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">Jensen again: \(E[u(W)] = 2.5 &lt; u(E[W]) = 2.739\).</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-15-4">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.4 &mdash; Quadratic-Utility CE</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Problem &amp; solve</p>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 6px 0 0;"><strong>Problem.</strong> \(u(W) = 2W - W^2/100\) on \([0,100]\), with \(u'&gt;0\). A 50/50 lottery between \$40 and \$60.</p>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">\(u(40) = 80 - 16 = 64\); \(u(60) = 120 - 36 = 84\). \(EU = \tfrac12(64)+\tfrac12(84) = 74\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">Solve \(2\,CE - CE^2/100 = 74\) &rArr; \(CE^2 - 200\,CE + 7{,}400 = 0\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">\(CE = 100 - \sqrt{2{,}600} \approx 49.01\) (lower root, since \(CE \leq E[W]\)).</p>
+    </div>
+    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Check &amp; compare</p>
+      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">\(\rho = 50 - 49.01 \approx \$0.99\). Check: \(u(49.01) \approx 98.02 - 24.02 = 74.00\) ✓.</p>
+      <p class="fragment fade-up" data-fragment-index="5" style="font-size: 11.5pt; line-height: 1.5; margin: 7px 0 0;">Tiny premium (\$0.99) vs log utility's \$13.40 &mdash; because both the <em>curvature</em> and the <em>spread</em> (\(\pm10\) vs \(\pm50\)) are smaller here.</p>
+      <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 6px; padding: 8px 13px; margin-top: 9px;">
+        <p style="margin: 0; font-size: 11pt; line-height: 1.4;"><strong>Caveat.</strong> Quadratic utility has a known defect &mdash; <em>increasing</em> absolute risk aversion in wealth (backwards) &mdash; but it gives a clean closed-form, which is why mean-variance analysis uses it.</p>
+      </div>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="6" style="margin-top: 11px; padding: 9px 16px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Any concave Bernoulli utility gives a \(CE\) via \(u(CE) = EU\); the risk premium scales with both <em>local curvature</em> and <em>lottery spread</em>. Differences across functional forms reduce to differences in <strong>Arrow&ndash;Pratt curvature</strong> &mdash; the subject of &sect;15.5.</p>
+  </div>
+</section>
+
+<section id="rap-explorer">
+  <h2><i class="fa-solid fa-sliders" style="color: var(--accent-color);"></i> Drive It: Concavity, the Chord, and the Risk Premium</h2>
+  <div class="iv-card" style="padding: 8px 18px 10px;">
+    <div class="rap-row">
+      <button class="rap-preset" data-pre="averse"><i class="fa-solid fa-shield-halved"></i> Risk-averse \(u=\ln W\)</button>
+      <button class="rap-preset" data-pre="neutral"><i class="fa-solid fa-equals"></i> Risk-neutral \(u=W\)</button>
+      <button class="rap-preset" data-pre="loving"><i class="fa-solid fa-dice"></i> Risk-loving \(u=W^2\)</button>
+    </div>
+    <div style="text-align:center; margin-bottom:4px;"><span id="rap-banner" style="display:inline-block; font-size:11.5pt; font-weight:700; padding:3px 16px; border-radius:6px;"></span></div>
+    <div id="rap-score" style="text-align:center; font-size:12.5pt; font-weight:700; display:flex; flex-wrap:wrap; justify-content:center; gap:3px 16px; margin:0 0 4px; min-height:18px;"></div>
+    <svg id="rap-svg" viewBox="0 0 700 330" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:280px; display:block;"></svg>
+    <div style="max-width:560px; margin:8px auto 0;"><label class="iv-label">Lottery spread \(\Delta\) around \(W_0=100\) <span class="iv-readout" id="rap-spreadRead">50</span></label><input type="range" class="iv-slider" id="rap-spread" min="0" max="80" step="1" value="50"></div>
+    <p style="text-align:center; font-size:11pt; color:var(--muted-color); margin:7px 0 0;">50/50 lottery between \(\$(100-\Delta)\) and \(\$(100+\Delta)\). <span style="color:#2563eb;font-weight:700;">Blue = utility curve</span>, <span style="color:#ef4444;font-weight:700;">red = chord / EU</span>, <span style="color:#10b981;font-weight:700;">green = CE on the wealth axis</span>. The horizontal gap \(E[W]-CE\) is the risk premium \(\rho\).</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-ce-rho">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;15.4</p>
+  <h1>Certainty Equivalent &amp; Risk Premium</h1>
+  <p class="subtitle">The dollar value of eliminating a gamble &mdash; and what an insurer can extract</p>
+</section>
+
+<section id="ce-rho-def">
+  <h2><i class="fa-solid fa-equals" style="color: var(--accent-color);"></i> CE, Risk Premium, and the Insurance Reading</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">The <strong>certainty equivalent</strong> of a lottery is the sure payoff with the same utility:</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0; font-size: 12.5pt; text-align: center;">\(CE = u^{-1}\!\big(E[u(L)]\big), \qquad \rho = E[L] - CE\)</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">Risk-averse &rArr; \(\rho &gt; 0\); risk-neutral &rArr; \(\rho = 0\); risk-loving &rArr; \(\rho &lt; 0\).</p>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 9px 0 0;"><strong>Insurance reading.</strong> \(\rho\) is exactly how much <em>extra</em>, above the actuarially fair premium, a risk-averse agent will pay for full coverage. An insurer can load premia up to \(\rho\) before she walks away.</p>
+    </div>
+    <div style="text-align: center;">
+      <img class="figure" alt="Log-utility curve with a horizontal dashed line at EU; the certainty equivalent (green) at W≈86.60 sits left of expected wealth E[W]=100 (red), and the red horizontal arrow between them is the risk premium ρ≈13.40" src="figures/figure-15-3-certainty-equivalent-risk-premium.png" style="max-height: 300px;">
+      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">\(\rho = E[W] - CE \approx \$13.40\) &mdash; the horizontal red segment.</p>
+    </div>
+  </div>
+  <div style="background: rgba(107,139,164,0.10); border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 9px 16px; margin-top: 11px;">
+    <p style="margin: 0; font-size: 12pt; line-height: 1.45;">The size of \(\rho\) depends on three things: the <strong>curvature</strong> of \(u\), <strong>where</strong> the lottery sits on the wealth axis, and the <strong>spread</strong> of the lottery. The next Walkthrough varies the spread.</p>
+  </div>
+</section>
+
+<section id="walkthrough-15-5">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.5 &mdash; Risk Premium as the Spread Grows</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> \(u(W)=\ln W\), \(W_0=100\), fair 50/50 lottery \(\pm\Delta\). Express \(CE(\Delta)\) and \(\rho(\Delta)\), then evaluate.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;">\(EU = \tfrac12\ln\!\big[(100-\Delta)(100+\Delta)\big] = \tfrac12\ln(10{,}000-\Delta^2)\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;">\(CE = \sqrt{10{,}000 - \Delta^2}, \qquad \rho(\Delta) = 100 - \sqrt{10{,}000-\Delta^2}\).</p>
+      <table class="pm fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; margin: 8px 0 0;">
+        <tr><th>\(\Delta\)</th><th>\(CE\)</th><th>\(\rho\)</th></tr>
+        <tr><td>10</td><td>\(\approx 99.50\)</td><td>\(\approx \$0.50\)</td></tr>
+        <tr><td>50</td><td>\(\approx 86.60\)</td><td>\(\approx \$13.40\)</td></tr>
+        <tr><td>99</td><td>\(\approx 14.11\)</td><td class="hi">\(\approx \$85.89\)</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 0 0 10px;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Small risks, small premia.</strong> A \(\pm\$10\) gamble (10% of wealth) costs only \(\approx\$0.50\) &mdash; half a percent of wealth.</p>
+      </div>
+      <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 6px; padding: 11px 16px; margin: 0 0 10px;">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Catastrophic tails, huge premia.</strong> Pushing the bad state from \$50 to \$1 (\(\Delta: 50 \to 99\)) raises \(\rho\) from \$13 to \$86 &mdash; <em>far</em> more than linear. Log utility cannot tolerate a positive chance of ruin.</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0; color: var(--muted-color);">This second regularity is <strong>why insurance markets exist</strong>: people pay premia against catastrophic loss that far exceed expected loss &mdash; so insurers can load above the fair price and still sell.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-arrow-pratt">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;15.5</p>
+  <h1>The Arrow&ndash;Pratt Coefficient</h1>
+  <p class="subtitle">A local measure of curvature &mdash; CARA, CRRA, log &mdash; and \(\rho \approx \tfrac12\sigma^2 A(W)\)</p>
+</section>
+
+<section id="cc-15-2">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 15.2 &mdash; The Small-Risk Approximation</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 0 0 5px;"><strong>Absolute</strong> and <strong>relative</strong> risk aversion:</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0; font-size: 12.5pt; text-align: center;">\(A(W) = -\dfrac{u''(W)}{u'(W)}, \qquad R(W) = W\,A(W)\)</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 5px 0 0;">\(A&gt;0\) for concave \(u\); zero for linear; <em>invariant</em> to affine transforms (the \(b\)'s cancel). \(R\) is dimensionless &mdash; comparable across wealth levels.</p>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 9px 0 4px;"><strong>Result.</strong> For a small zero-mean risk \(\tilde\varepsilon\) with variance \(\sigma^2\):</p>
+      <div class="key-result" style="margin: 4px 0;">
+        <p style="margin: 0; font-size: 13pt; text-align: center;">\(\rho \approx \tfrac{1}{2}\,\sigma^2\, A(W)\)</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 0 0 5px;"><strong>Derivation.</strong> Taylor-expand to second order:</p>
+      <p style="font-size: 11pt; text-align: center; margin: 4px 0;">\(E[u(W+\tilde\varepsilon)] \approx u(W) + \tfrac12 u''(W)\sigma^2\)</p>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 5px 0;">Expand the CE side \(u(W-\rho) \approx u(W) - u'(W)\rho\), equate, and solve:</p>
+      <p style="font-size: 11pt; text-align: center; margin: 4px 0;">\(\rho = -\tfrac12\dfrac{u''(W)}{u'(W)}\sigma^2 = \tfrac12\sigma^2 A(W)\)</p>
+      <div style="background: rgba(107,139,164,0.10); border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 8px 14px; margin-top: 9px;">
+        <p style="margin: 0; font-size: 11pt; line-height: 1.4;">The risk premium is <strong>half the variance times local risk aversion</strong> &mdash; the bedrock of insurance pricing and portfolio choice. Excellent for small risks; degrades quadratically for large ones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="functional-forms">
+  <h2><i class="fa-solid fa-shapes" style="color: var(--accent-color);"></i> CARA, CRRA, and Log &mdash; Three Workhorses</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <table class="pm" style="font-size: 11pt;">
+        <tr><th>Form</th><th>\(u(W)\)</th><th>\(A(W)\)</th><th>\(R(W)\)</th></tr>
+        <tr><td><strong>CARA</strong></td><td>\(-e^{-\alpha W}\)</td><td class="hi">\(\alpha\) (const)</td><td>\(\alpha W\)</td></tr>
+        <tr><td><strong>CRRA</strong></td><td>\(\frac{W^{1-\gamma}}{1-\gamma}\)</td><td>\(\gamma/W\)</td><td class="ce">\(\gamma\) (const)</td></tr>
+        <tr><td><strong>Log</strong></td><td>\(\ln W\)</td><td>\(1/W\)</td><td>\(1\)</td></tr>
+      </table>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 9px 0 0;"><strong>CARA</strong>: coverage independent of wealth &mdash; convenient, but real agents show <em>decreasing</em> ARA. <strong>CRRA</strong>: constant \(R\), the macro-finance workhorse. <strong>Log</strong> is CRRA at \(\gamma=1\) &mdash; the canonical knife-edge. Quadratic has the IARA defect (W15.4).</p>
+    </div>
+    <div style="text-align: center;">
+      <img class="figure" alt="Three risk-averse utility families normalized to u(1)=0: log (CRRA γ=1) in blue, CRRA γ=2 in red (more curved, more risk-averse), and CARA α=2 in green (flattest), all increasing and concave but with different curvature as wealth rises" src="figures/figure-15-4-arrow-pratt-utility-families.png" style="max-height: 290px;">
+      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">CRRA \(\gamma=2\) is more risk-averse than log; CARA's risk aversion is constant in \(W\).</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-15-6">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.6 &mdash; Approximation vs Exact, Log Utility</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> \(u=\ln W\), \(W_0=10{,}000\), fair 50/50 \(\pm\Delta\). Exact \(\rho = W_0 - \sqrt{W_0^2-\Delta^2}\) vs AP \(\rho \approx \Delta^2/(2W_0)\).</p>
+      </div>
+      <table class="pm" style="font-size: 11pt;">
+        <tr><th>\(\Delta\)</th><th>exact \(\rho\)</th><th>AP approx</th><th>error</th></tr>
+        <tr><td>10</td><td>0.00500</td><td>0.00500</td><td>&lt;0.001%</td></tr>
+        <tr><td>100</td><td>0.50001</td><td>0.50000</td><td>0.003%</td></tr>
+        <tr><td>1000</td><td>50.126</td><td>50.000</td><td class="hi">0.25%</td></tr>
+      </table>
+      <p style="font-size: 11pt; line-height: 1.4; margin: 8px 0 0; color: var(--muted-color);">Under log, \(A(W_0)=1/W_0\) and \(\sigma^2=\Delta^2\), so AP gives \(\rho \approx \Delta^2/(2W_0)\).</p>
+    </div>
+    <div>
+      <div class="key-result" style="margin: 0 0 10px;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Excellent for small risks.</strong> Even a \$1,000 deductible on \$10,000 wealth (a 10%-of-wealth gamble) introduces only \(\sim\!0.25\%\) error. Error \(\propto (\Delta/W_0)^2\).</p>
+      </div>
+      <div class="misconception" style="margin: 0;">
+        <p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 15.4 &mdash; one \(\gamma\) does not fit all</p>
+        <p style="margin: 6px 0 0; font-size: 11.5pt; line-height: 1.45;">Lab lotteries: \(\gamma \in [0.15, 0.68]\). Labor supply: \(\gamma \approx 1\). Portfolios: \(\gamma \approx 2\). Deductible choice: \(\gamma\) in the <em>hundreds</em>. Equity premium: \(\gamma \approx 30\). <strong>No single global \(\gamma\) reconciles these</strong> &mdash; a systematic puzzle, not noise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="td-heterogeneity">
+  <h2><i class="fa-solid fa-database" style="color: var(--secondary-color);"></i> What the Data Say: Heterogeneity &amp; Probability Weighting</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 13px 18px;">
+      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-database"></i> Theory and Data 15.1 &mdash; Cohen &amp; Einav (2007, <em>AER</em>)</p>
+      <p style="margin: 0; font-size: 12pt; line-height: 1.5;">105,000+ Israeli auto-insurance deductible choices. The headline is <strong>enormous heterogeneity</strong>: the <em>median</em> household's \(A(W) \approx 2.6\times10^{-5}\) (RRA \(\approx 0.37\), like the lab) &mdash; but the <em>mean</em> runs two orders of magnitude higher (RRA near 97) thanks to a long right tail.</p>
+      <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.5;">A single representative \(\gamma\) is empirically inadequate &mdash; markets price against a <strong>distribution</strong> of risk preferences.</p>
+    </div>
+    <div style="background: #eef2f0; border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 13px 18px;">
+      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-database"></i> Theory and Data 15.2 &mdash; Barseghyan et al. (2013, <em>AER</em>)</p>
+      <p style="margin: 0; font-size: 12pt; line-height: 1.5;">4,170 households across home, auto-collision, and auto-comprehensive deductibles. A 5% claim probability is acted on as if it were <strong>11%</strong> &mdash; \(\Omega(0.05)=0.11\), a 2.2&times; overweighting.</p>
+      <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.5;"><strong>Probability weighting, not utility curvature</strong>, drives most of the deductible-choice puzzle. EU+CRRA cannot fit; EU with the empirical \(\Omega(p)\) can.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 11px;">
+    <p style="margin: 0; font-size: 12pt;">Two readings of the same anomaly: people behave as if <em>very</em> risk-averse over small stakes. Either curvature is heterogeneous and fat-tailed (Cohen&ndash;Einav), or small probabilities are <em>overweighted</em> (Barseghyan) &mdash; the behavioral resolution previewed at the close and developed in Ch 18 <span style="font-size:0.82em;color:var(--muted-color);font-style:italic;">(reading only)</span>.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-insurance">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;15.6</p>
+  <h1>Insurance Demand: Fair &amp; Loaded</h1>
+  <p class="subtitle">The chapter's payoff &mdash; Mossin's theorem answers Maya's question</p>
+</section>
+
+<section id="insurance-setup">
+  <h2><i class="fa-solid fa-umbrella" style="color: var(--accent-color);"></i> The Insurance Problem</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">Buy coverage \(q \in [0, L]\) at per-dollar premium \(p\), paying \(pq\) up front:</p>
+      <div style="display: flex; flex-direction: column; gap: 6px; margin: 6px 0;">
+        <div style="background: #f8f6f3; border-radius: 8px; padding: 7px 14px; border-left: 4px solid var(--success-color);"><p style="font-size: 12pt; margin: 0;">No loss (prob \(1-\pi\)): \(W_g = W_0 - pq\)</p></div>
+        <div style="background: #f8f6f3; border-radius: 8px; padding: 7px 14px; border-left: 4px solid var(--danger-color);"><p style="font-size: 12pt; margin: 0;">Loss (prob \(\pi\)): \(W_b = W_0 - pq - L + q\)</p></div>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">The wealth gap \(W_g - W_b = L - q\): full coverage \(q=L\) <strong>closes it</strong>. She maximizes \(EU(q) = (1-\pi)u(W_g) + \pi\,u(W_b)\).</p>
+    </div>
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 7px;">The premium structure is everything:</p>
+      <div style="background: #d9f2e6; border-radius: 8px; padding: 9px 15px; margin-bottom: 7px;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Actuarially fair:</strong> \(p = \pi\) &mdash; insurer breaks even on expectation.</p>
+      </div>
+      <div style="background: #fbeec8; border-radius: 8px; padding: 9px 15px;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Loaded:</strong> \(p &gt; \pi\) &mdash; the wedge \((p-\pi)/\pi\) covers admin, capital, and profit. Real markets <em>always</em> load.</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 8px 0 0; color: var(--muted-color);">At the optimum she equalizes <em>marginal utility per premium dollar</em> across states. Concavity makes \(u'\) larger when wealth is smaller &mdash; pushing toward equal wealth across states.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <section id="poll-2-question">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #2 &mdash; How Much to Insure at a Fair Price?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.7;">
+        A risk-averse agent is offered insurance at an <strong>actuarially fair</strong> premium (\(p = \pi\)). How much coverage should she buy?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch15-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Partial &mdash; depends on how risk-averse she is</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Full coverage \(q = L\) &mdash; regardless of how risk-averse</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) None &mdash; the premium equals the expected loss</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) It depends on her initial wealth</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch15-econ2316-poll-2" id="poll-2-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Full Coverage, Always</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch15-econ2316-poll-2" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 15pt; line-height: 1.7;">At a fair premium the first-order condition forces \(u'(W_b) = u'(W_g)\); strict concavity (so \(u'\) is one-to-one) gives \(W_b = W_g\), which means \(q = L\). This is <strong>Mossin's theorem</strong>.</p>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
+          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> curvature sets how much she pays <em>above</em> fair (the risk premium), <em>not</em> how much she buys at fair. At \(p=\pi\), even a barely-risk-averse agent insures fully.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="cc-15-3">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 15.3 &mdash; The Mossin Theorem</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 0 0 5px;">Differentiate \(EU(q)\): good-state wealth falls at rate \(-p\), bad-state at rate \(1-p\). The FOC is</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0; font-size: 12.5pt; text-align: center;">\(\dfrac{u'(W_b)}{u'(W_g)} = \dfrac{p(1-\pi)}{(1-p)\pi}\)</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;"><strong>Fair (\(p=\pi\)):</strong> RHS \(= 1\), so \(u'(W_b)=u'(W_g)\). Strict concavity &rArr; \(W_b = W_g\) &rArr; \(q = L\): <span style="color:var(--success-color);font-weight:700;">full coverage.</span></p>
+    </div>
+    <div>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 0 0 5px;"><strong>Loaded (\(p&gt;\pi\)):</strong> RHS \(&gt; 1\), so \(u'(W_b) &gt; u'(W_g)\). Concavity &rArr; \(W_b &lt; W_g\) &rArr; <span style="color:var(--accent-color);font-weight:700;">\(q &lt; L\): partial coverage.</span></p>
+      <p style="font-size: 11.5pt; line-height: 1.4; margin: 9px 0 0;">Paying an extra premium dollar when the loaded price exceeds the actuarial price costs more than it returns in expected indemnity &mdash; so she stops short of full coverage. <strong>Coverage is monotonically decreasing in the loading.</strong></p>
+      <p style="font-size: 11pt; line-height: 1.4; margin: 8px 0 0; color: var(--muted-color);">Mossin (1968, <em>J. Political Economy</em> 76(4), DOI 10.1086/259427).</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 11px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>The central applied prediction.</strong> Full coverage is optimal <em>only</em> at fair premiums; any positive loading makes <strong>partial</strong> coverage rational. Real-world partial coverage is not irrationality &mdash; it's the optimal response to loaded premia.</p>
+  </div>
+</section>
+
+<section id="walkthrough-15-7">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 15.7 &mdash; Maya's Optimal Coverage</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> \(W_0=\$60{,}000\), \(u=\ln W\), \(\pi=0.05\), \(L=\$50{,}000\). Find \(q^{\ast}\) at the fair \(p=0.05\) and at a 30%-loaded \(p=0.065\).</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>Fair \(p=0.05\):</strong> RHS \(=1\) &rArr; \(W_g=W_b\) &rArr; \(q^{\ast}=L=\$50{,}000\). <span style="color:var(--success-color);font-weight:700;">Full coverage.</span> Both states: \$57,500.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>Loaded \(p=0.065\):</strong> RHS \(\approx 1.321\). Solve \(\tfrac{W_g}{W_b}=1.321\) &rArr; \(q^{\ast}\approx\$35{,}993\).</p>
+      <div class="key-result fragment fade-up" data-fragment-index="3" style="margin: 6px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Coverage \(\approx 72\%\) of \(L\).</strong> She absorbs \(\sim\$14{,}007\) of uncovered loss; welfare loss vs the fair benchmark \(\approx \$663\)/yr.</p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <img class="figure" alt="State-contingent wealth diagram: the fair budget line (green) reaches the 45-degree equal-wealth line at full coverage W=$57,500; the steeper loaded budget line (red) has its optimum off the diagonal at about 72% coverage, with bad-state wealth well below good-state" src="figures/figure-15-5-insurance-fair-and-loaded.png" style="max-height: 290px;">
+      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">Fair optimum on the 45&deg; line (full); loaded optimum off it (\(q\approx0.72L\)).</p>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 10px; padding: 9px 16px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway &amp; forward-pointer.</strong> With a 30% loading, Maya rationally covers \(\sim\!72\%\) &mdash; exactly the high-deductible Silver-plan pattern. But the model assumes <em>one</em> premium independent of risk type. If insurers can't observe risk type, they face <strong>adverse selection</strong> &mdash; the failure of Ch 16.</p>
+  </div>
+</section>
+
+<section id="applications">
+  <h2><i class="fa-solid fa-globe" style="color: var(--secondary-color);"></i> Insurance Markets in the Wild</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 7px;">
+      <div style="background: #f8f6f3; border-radius: 8px; padding: 8px 14px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 11.5pt; margin: 0;"><strong>ACA marketplace 2026.</strong> Maya's exact Mossin problem &mdash; 23.1M plan selections, ARP credits expired (OBBBA), 9.96% income cap. High-deductible Silver = rational partial coverage under MLR-capped loading.</p></div>
+      <div style="background: #f8f6f3; border-radius: 8px; padding: 8px 14px; border-left: 4px solid var(--accent-color);"><p style="font-size: 11.5pt; margin: 0;"><strong>Holt&ndash;Laury (2002).</strong> Ten paired lotteries elicit CRRA; most subjects imply modest \(\gamma \in [0.15, 0.68]\) &mdash; far below what field insurance choices need.</p></div>
+      <div style="background: #f8f6f3; border-radius: 8px; padding: 8px 14px; border-left: 4px solid var(--success-color);"><p style="font-size: 11.5pt; margin: 0;"><strong>Parametric insurance.</strong> USDA RMA (\$192B liabilities); African Risk Capacity paid \$59.6M on drought triggers in 2024 &mdash; fast, no moral hazard, but <em>basis risk</em>.</p></div>
+      <div style="background: #f8f6f3; border-radius: 8px; padding: 8px 14px; border-left: 4px solid var(--danger-color);"><p style="font-size: 11.5pt; margin: 0;"><strong>Cyber insurance.</strong> ~\$16B GWP (2025), but <strong>correlated</strong> risk (one Exchange bug fires claims at once) breaks the textbook independence assumption.</p></div>
+    </div>
+    <div style="text-align: center;">
+      <img class="figure" alt="US health-insurance coverage rate 2008–2025: roughly flat near 85% until 2013, rising sharply to ~91.5% when ACA exchanges open in 2014, then drifting up to ~92% after the 2021 ARP subsidy expansion" src="figures/figure-15-6-insurance-penetration-fred.png" style="max-height: 240px;">
+      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">US coverage rose \(\sim\!85\%\to\sim\!92\%\) with the ACA (2014) and ARP (2021).</p>
+    </div>
+  </div>
+</section>
+
+<section id="headsups-close">
+  <h2><i class="fa-solid fa-circle-exclamation" style="color: var(--danger-color);"></i> Two Puzzles the EU Benchmark Leaves Open</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div class="misconception" style="margin: 0;">
+      <p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 15.3 &mdash; the deductible puzzle (Sydnor, Rabin)</p>
+      <p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">Sydnor (2010) studied 50,000 home policies: people pay heavy loadings to cut a deductible from \$1,000 to \$500, saving \(&lt;\$100\)/yr in expectation. Rationalizing this under EU+CRRA needs \(\gamma\) in the <em>hundreds</em>.</p>
+      <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.5;"><strong>Rabin (2000) calibration theorem:</strong> turning down a 50/50 lose-\$100 / win-\$110 gamble at every wealth implies turning down absurd large gambles. EU curvature cannot be both small-stakes-averse and large-stakes-sane.</p>
+    </div>
+    <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 13px 18px;">
+      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-arrow-trend-up"></i> Heads Up 15.5 &mdash; a behavioral preview (&rarr; Ch 18 <span style="font-size:0.82em;color:var(--muted-color);font-style:italic;">(reading only)</span>)</p>
+      <p style="margin: 0; font-size: 12pt; line-height: 1.5;">Three departures from EU resolve the puzzles:</p>
+      <p style="margin: 6px 0 0; font-size: 11.5pt; line-height: 1.45;"><strong>Loss aversion</strong> (Kahneman&ndash;Tversky 1979): losses weigh \(\lambda \approx 2.25\times\) gains, relative to a reference point.</p>
+      <p style="margin: 6px 0 0; font-size: 11.5pt; line-height: 1.45;"><strong>Probability weighting</strong> (Tversky&ndash;Kahneman 1992): small probabilities overweighted, large ones underweighted.</p>
+      <p style="margin: 6px 0 0; font-size: 11.5pt; line-height: 1.45;"><strong>Ambiguity aversion</strong> (Ellsberg 1961): known beats unknown probabilities.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 11px;">
+    <p style="margin: 0; font-size: 12pt;">EU is the <strong>benchmark</strong>, not the last word. It nails the structure &mdash; concavity, certainty equivalent, Mossin &mdash; but real small-stakes behavior needs reference dependence and probability weighting. That's Chapter 18.</p>
+  </div>
+</section>
+
+<section id="summary">
+  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Chapter 15 &mdash; The Uncertainty Apparatus</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="margin: 0; font-size: 12pt;"><strong>Lotteries &amp; expected value (&sect;15.1).</strong> Risky prospects are distributions over wealth; \(E[L]=\sum\pi_i x_i\) is necessary but not sufficient to rank them.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="margin: 0; font-size: 12pt;"><strong>Expected utility (&sect;15.2).</strong> Rank by \(\sum\pi_i u(x_i)\); the vNM axioms justify it; only the shape of \(u\) matters.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="margin: 0; font-size: 12pt;"><strong>Risk aversion = concavity (&sect;15.3).</strong> Jensen: \(E[u(W)]\leq u(E[W])\). The chord-below-curve gap is the premium.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="margin: 0; font-size: 12pt;"><strong>CE &amp; risk premium (&sect;15.4).</strong> \(CE=u^{-1}(EU)\), \(\rho=E[L]-CE\); grows with curvature and spread.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="margin: 0; font-size: 12pt;"><strong>Arrow&ndash;Pratt (&sect;15.5).</strong> \(A=-u''/u'\); \(\rho\approx\tfrac12\sigma^2 A(W)\). CARA / CRRA / log organize the forms.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="margin: 0; font-size: 12pt;"><strong>Insurance &amp; Mossin (&sect;15.6).</strong> Full coverage at fair premia; partial at loaded. Maya's high-deductible plan is rational.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>One apparatus.</strong> Value lotteries by expected utility on wealth; risk aversion equals concavity (Jensen); local curvature equals Arrow&ndash;Pratt; the dollar premium for small risks equals \(\tfrac12\sigma^2 A(W)\); risk-averse agents fully insure at fair premia (Mossin), partially at loaded. <strong>Ch 16</strong> explains why real markets fail to deliver Mossin's prescription even for agents who would gladly pay fair premia.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="qa">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Part V &mdash; underway</p>
+  <h1>Questions?</h1>
+  <p class="subtitle">Next: Chapter 16 &mdash; Asymmetric Information. Mossin assumed one premium for all risk types. When the insurer can't see who's shopping, the market for lemons can unravel &mdash; adverse selection, signaling, and screening.</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
+    hash: true,
+    controls: true,
+  controlsLayout: 'edges',
+    progress: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0
+  });
+  // Mark section-divider slides so the CSS hook in styles.css can swap the bg
+  Reveal.on('slidechanged', e => {
+    const v = document.querySelector('.reveal-viewport') || document.body;
+    if (e.currentSlide.classList.contains('section-divider')) v.classList.add('is-section-divider');
+    else v.classList.remove('is-section-divider');
+  });
+</script>
+
+<style>
+ .cd-wrap{position:fixed;top:0;left:50%;transform:translateX(-50%) translateY(-100%);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+ .cd-wrap.visible{transform:translateX(-50%) translateY(0)}
+ .cd-wrap.hiding{transform:translateX(-50%) translateY(-100%)}
+ .cd-pill{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1e3a5f,#2a5a8a);color:#fff;padding:10px 24px;border-radius:0 0 16px 16px;box-shadow:0 4px 20px rgba(0,0,0,.3);font-family:'SF Mono',Menlo,monospace;pointer-events:auto}
+ .cd-pill .cd-time{font-size:32px;font-weight:700;letter-spacing:2px;min-width:80px;text-align:center}
+ .cd-pill .cd-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+ .cd-pill .cd-bar{width:120px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
+ .cd-pill .cd-fill{height:100%;background:#4ade80;border-radius:2px;transition:width 1s linear,background-color .5s}
+ .cd-pill.cd-warn{background:linear-gradient(135deg,#854d0e,#a16207)}.cd-pill.cd-warn .cd-fill{background:#fbbf24}
+ .cd-pill.cd-danger{background:linear-gradient(135deg,#991b1b,#dc2626)}.cd-pill.cd-danger .cd-fill{background:#ef4444}
+ .cd-pill.cd-done{animation:cdF .5s ease 3;background:linear-gradient(135deg,#166534,#22c55e)}
+ @keyframes cdF{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
+<div class="cd-wrap" id="cd-wrap">
+ <div class="cd-pill" id="cd-pill">
+  <div>
+   <div class="cd-label">Activity Timer</div>
+   <div class="cd-time" id="cd-time">0:00</div>
+  </div>
+  <div class="cd-bar"><div class="cd-fill" id="cd-fill"></div></div>
+ </div>
+</div>
+<script>
+ (function(){
+  var w=document.getElementById('cd-wrap'),p=document.getElementById('cd-pill'),t=document.getElementById('cd-time'),f=document.getElementById('cd-fill');
+  var iv=null,rem=0,total=0;
+  function upd(){var m=Math.floor(rem/60),s=rem%60;t.textContent=m+':'+(s<10?'0':'')+s;f.style.width=((rem/total)*100)+'%';}
+  function hide(){w.classList.remove('visible');w.classList.add('hiding');setTimeout(function(){w.classList.remove('hiding');p.classList.remove('cd-done','cd-warn','cd-danger');},500);}
+  function done(){p.classList.remove('cd-warn','cd-danger');p.classList.add('cd-done');t.textContent='0:00';f.style.width='100%';setTimeout(hide,4000);}
+  function start(min){if(iv){clearInterval(iv);iv=null;}total=min*60;rem=total;p.classList.remove('cd-done','cd-warn','cd-danger');w.classList.remove('hiding');w.classList.add('visible');upd();
+    iv=setInterval(function(){rem--;if(rem<=0){rem=0;clearInterval(iv);iv=null;upd();done();return;}upd();
+      var pct=rem/total;if(pct<=.15){p.classList.add('cd-danger');p.classList.remove('cd-warn');}else if(pct<=.33){p.classList.add('cd-warn');p.classList.remove('cd-danger');}},1000);}
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+    if(e.key>='1'&&e.key<='9'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){start(parseInt(e.key));}
+  });
+ })();
+</script>
+<style>
+ .poll-option:hover{background:#dbeafe!important;border-color:#3b82f6!important}
+ .poll-option.voted{background:#dbeafe!important;border-color:#2563eb!important;font-weight:600}
+ .poll-option.voted::after{content:" \2713";color:#2563eb}
+ .poll-option.disabled{pointer-events:none;opacity:.6}
+ .poll-bar-wrap{display:flex;flex-direction:column;align-items:center;flex:1}
+ .poll-bar{width:60px;border-radius:6px 6px 0 0;transition:height .5s ease;min-height:4px}
+ .poll-bar-label{font-size:13px;font-weight:700;margin-top:6px}
+ .poll-bar-count{font-size:20px;font-weight:700;margin-bottom:4px}
+ .poll-vote-count{text-align:center;font-size:13px;color:#888;margin-top:10px}
+ .reset-btn{display:none}body.instructor-mode .reset-btn{display:inline-block}
+</style>
+<script src="../poll.js" data-checkin></script>
+<script>
+ (function(){
+  var SU="https://dpntbrsorgbivmntwmod.supabase.co",SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI";
+  var VID="v_"+Math.random().toString(36).slice(2,10),voted={},CL={A:"#3b82f6",B:"#22c55e",C:"#f97316",D:"#a855f7"};
+  var localCounts={};
+  var isLocal=window.location.protocol==="file:";
+  if(window.location.search.indexOf("instructor")!==-1)document.body.classList.add("instructor-mode");
+  function sf(m,p,b){var o={method:m,headers:{"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store","Pragma":"no-cache"}};if(b)o.body=JSON.stringify(b);return fetch(SU+"/rest/v1/"+p,o);}
+  function vote(pid,ch){if(voted[pid])return;voted[pid]=ch;var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.add("disabled");if(o.dataset.choice===ch)o.classList.add("voted");});
+    if(!localCounts[pid])localCounts[pid]={};localCounts[pid][ch]=(localCounts[pid][ch]||0)+1;render(pid,localCounts[pid]);
+    if(!isLocal){sf("POST","poll_votes",(window.Poll?Poll.stamp(pid,ch):{poll_id:pid,choice:ch,voter_id:VID})).then(function(){fetchR(pid);}).catch(function(){});}}
+  function render(pid,ct){var t=0,ch=["A","B","C","D"];ch.forEach(function(k){t+=(ct[k]||0);});var c=document.querySelector('.poll-results-chart[data-poll-id="'+pid+'"]');if(c){var mx=Math.max.apply(null,ch.map(function(k){return ct[k]||0;}));if(mx===0)mx=1;var avail=Math.max(28,(c.clientHeight||parseFloat(getComputedStyle(c).height)||110)-46);var h="";ch.forEach(function(k){var n=ct[k]||0,ht=Math.max(4,(n/mx)*avail);h+='<div class="poll-bar-wrap"><div class="poll-bar-count">'+n+'</div><div class="poll-bar" style="height:'+ht+'px;background:'+CL[k]+';"></div><div class="poll-bar-label">'+k+'</div></div>';});if(t>0)h+='<div style="position:absolute;bottom:-25px;width:100%;text-align:center;font-size:12px;color:#888;">'+t+' vote'+(t!==1?"s":"")+'</div>';c.style.position="relative";if((parseFloat(getComputedStyle(c).marginBottom)||0)<28)c.style.marginBottom="28px";c.innerHTML=h;}var ce=document.querySelector('.poll-vote-count[data-poll-id="'+pid+'"]');if(ce)ce.textContent=t>0?t+" vote"+(t!==1?"s":"")+" so far":"";}
+  function fetchR(pid){if(!pid)return;if(isLocal){if(localCounts[pid])render(pid,localCounts[pid]);return;}sf("GET","poll_votes?poll_id=eq."+pid+"&select=choice"+(window.Poll?Poll.q():"")).then(function(r){return r.json();}).then(function(rows){var ct={};rows.forEach(function(r){ct[r.choice]=(ct[r.choice]||0)+1;});localCounts[pid]=ct;render(pid,ct);}).catch(function(){if(localCounts[pid])render(pid,localCounts[pid]);});}
+  window.clearPoll=function(pid){if(!confirm("Clear TODAY's votes for this poll? Earlier meetings are not touched."))return;localCounts[pid]={};render(pid,{});delete voted[pid];var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.remove("disabled","voted");});if(!isLocal)sf("DELETE","poll_votes?poll_id=eq."+pid+(window.Poll?Poll.q():"")+(function(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());})());};
+  document.querySelectorAll(".poll-grid").forEach(function(g){var pid=g.dataset.pollId;if(!pid)return;g.querySelectorAll(".poll-option").forEach(function(o){o.addEventListener("click",function(){var go=function(){vote(pid,o.dataset.choice);};if(window.Poll){Poll.ready(pid,go);}else{go();}});});if(!g.parentNode.querySelector(".poll-vote-count")){var ce=document.createElement("div");ce.className="poll-vote-count";ce.dataset.pollId=pid;g.parentNode.insertBefore(ce,g.nextSibling);}fetchR(pid);if(!isLocal)setInterval(function(){if(document.hidden)return;var s=g.closest("section");if(s&&!s.classList.contains("present"))return;fetchR(pid);},5000);});
+ })();
+</script>
+
+<script>
+(function(){
+  var svg=document.getElementById('rap-svg'); if(!svg) return;
+  var dS=document.getElementById('rap-spread'), dR=document.getElementById('rap-spreadRead');
+  var bn=document.getElementById('rap-banner'), sc=document.getElementById('rap-score');
+  var btns=document.querySelectorAll('.rap-preset');
+  var W0=100, WMIN=20, WMAX=180;
+  var PRE={
+    averse:  {lbl:'Risk-averse', tag:'u = ln W (concave)',  u:function(W){return Math.log(W);},  ce:function(d){return Math.sqrt(W0*W0-d*d);}},
+    neutral: {lbl:'Risk-neutral',tag:'u = W (linear)',       u:function(W){return W;},           ce:function(d){return W0;}},
+    loving:  {lbl:'Risk-loving', tag:'u = W^2 (convex)',     u:function(W){return W*W;},          ce:function(d){return Math.sqrt(W0*W0+d*d);}}
+  };
+  var key='averse';
+  var L=66, Rr=672, T=20, Bm=292;     // plot box
+  function xW(W){return L + ((W-WMIN)/(WMAX-WMIN))*(Rr-L);}
+  function draw(){
+    var p=PRE[key], d=parseFloat(dS.value);
+    var WL=W0-d, WH=W0+d;
+    var umin=p.u(WMIN), umax=p.u(WMAX);
+    if(umax===umin){umax=umin+1;}
+    function yU(u){return Bm - ((u-umin)/(umax-umin))*(Bm-T);}
+    var s='';
+    // gridlines (wealth ticks) + x labels
+    var i,gx,gw;
+    for(i=0;i<=8;i++){ gw=WMIN+(WMAX-WMIN)*i/8; gx=xW(gw); s+='<line x1="'+gx+'" y1="'+T+'" x2="'+gx+'" y2="'+Bm+'" stroke="rgba(156,163,175,0.13)" stroke-width="1"/><text x="'+gx+'" y="'+(Bm+16)+'" text-anchor="middle" font-size="10" fill="#6b7280">'+Math.round(gw)+'</text>'; }
+    // axes
+    s+='<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+Bm+'" stroke="#374151" stroke-width="1.5"/><line x1="'+L+'" y1="'+Bm+'" x2="'+Rr+'" y2="'+Bm+'" stroke="#374151" stroke-width="1.5"/>';
+    s+='<text x="20" y="156" text-anchor="middle" font-size="10.5" fill="#374151" transform="rotate(-90 20 156)">Utility u(W)</text>';
+    s+='<text x="365" y="'+(Bm+33)+'" text-anchor="middle" font-size="11.5" fill="#374151">Wealth W</text>';
+    // utility curve
+    var curve='', n=140, ww;
+    for(i=0;i<=n;i++){ ww=WMIN+(WMAX-WMIN)*i/n; curve+=(i?' ':'')+xW(ww)+','+yU(p.u(ww)); }
+    s+='<polyline points="'+curve+'" fill="none" stroke="#2563eb" stroke-width="2.5"/>';
+    // chord between the two lottery endpoints
+    var xL=xW(WL), yL=yU(p.u(WL)), xH=xW(WH), yH=yU(p.u(WH));
+    s+='<line x1="'+xL+'" y1="'+yL+'" x2="'+xH+'" y2="'+yH+'" stroke="#ef4444" stroke-width="2" stroke-dasharray="6 4"/>';
+    s+='<circle cx="'+xL+'" cy="'+yL+'" r="3.5" fill="#2563eb"/><circle cx="'+xH+'" cy="'+yH+'" r="3.5" fill="#2563eb"/>';
+    // EU = chord midpoint at W0; u(E[W]) = curve at W0
+    var euUtil=0.5*p.u(WL)+0.5*p.u(WH), uEW=p.u(W0);
+    var xEW=xW(W0), yEU=yU(euUtil), yUEW=yU(uEW);
+    // CE on the wealth axis
+    var ce=p.ce(d), rho=W0-ce, xCE=xW(ce), yCE=yU(p.u(ce));
+    // horizontal EU level line from chord-midpoint to the curve point at CE
+    s+='<line x1="'+xCE+'" y1="'+yEU+'" x2="'+xEW+'" y2="'+yEU+'" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 3"/>';
+    // verticals down to axis from E[W] and CE
+    s+='<line x1="'+xEW+'" y1="'+yEU+'" x2="'+xEW+'" y2="'+Bm+'" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"/>';
+    s+='<line x1="'+xCE+'" y1="'+yCE+'" x2="'+xCE+'" y2="'+Bm+'" stroke="#10b981" stroke-width="1.2" stroke-dasharray="3 3"/>';
+    // points: EU on chord (red), u(E[W]) on curve (orange), CE on curve (green)
+    s+='<circle cx="'+xEW+'" cy="'+yUEW+'" r="4.5" fill="#f59e0b"/>';
+    s+='<circle cx="'+xEW+'" cy="'+yEU+'" r="4.5" fill="#ef4444"/>';
+    s+='<circle cx="'+xCE+'" cy="'+yCE+'" r="5" fill="#10b981"/>';
+    // risk-premium bracket on the axis between CE and E[W]
+    if(Math.abs(rho)>0.01){
+      var x1=Math.min(xCE,xEW), x2=Math.max(xCE,xEW), yb=Bm+30;
+      s+='<line x1="'+x1+'" y1="'+yb+'" x2="'+x2+'" y2="'+yb+'" stroke="#10b981" stroke-width="2"/>';
+      s+='<line x1="'+x1+'" y1="'+(yb-4)+'" x2="'+x1+'" y2="'+(yb+4)+'" stroke="#10b981" stroke-width="2"/>';
+      s+='<line x1="'+x2+'" y1="'+(yb-4)+'" x2="'+x2+'" y2="'+(yb+4)+'" stroke="#10b981" stroke-width="2"/>';
+      s+='<text x="'+((x1+x2)/2)+'" y="'+(yb-5)+'" text-anchor="middle" font-size="10" font-weight="700" fill="#10b981">rho</text>';
+    }
+    // axis annotations
+    s+='<text x="'+xEW+'" y="'+(Bm+16)+'" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ef4444">E[W]</text>';
+    s+='<text x="'+xCE+'" y="'+(Bm+27)+'" text-anchor="middle" font-size="9.5" font-weight="700" fill="#10b981">CE</text>';
+    svg.innerHTML=s;
+    // banner + score
+    var verdict, col, bg;
+    if(key==='averse'){ verdict='Risk-averse: chord below curve, CE &lt; E[W], rho &gt; 0 (pays to avoid risk)'; col='#10b981'; bg='rgba(16,185,129,0.12)'; }
+    else if(key==='neutral'){ verdict='Risk-neutral: chord on the curve, CE = E[W], rho = 0 (indifferent)'; col='#6b7280'; bg='rgba(107,114,128,0.12)'; }
+    else { verdict='Risk-loving: chord above curve, CE &gt; E[W], rho &lt; 0 (pays to take risk)'; col='#ef4444'; bg='rgba(239,68,68,0.12)'; }
+    bn.innerHTML=verdict; bn.style.color=col; bn.style.background=bg;
+    sc.innerHTML='<span style="color:#ef4444;">E[W] = $'+W0.toFixed(0)+'</span><span style="color:#10b981;">CE = $'+ce.toFixed(2)+'</span><span style="color:#374151;">risk premium rho = $'+rho.toFixed(2)+'</span><span style="color:#6b7280;">'+p.tag+'</span>';
+  }
+  function setPre(k){key=k; btns.forEach(function(b){b.classList.toggle('active', b.dataset.pre===k);}); draw();}
+  btns.forEach(function(b){b.addEventListener('click',function(){setPre(b.dataset.pre);});});
+  dS.addEventListener('input',function(){dR.textContent=parseFloat(dS.value).toFixed(0); draw();});
+  dR.textContent=parseFloat(dS.value).toFixed(0);
+  setPre('averse');
+})();
+</script>
+
+<script>
+(function(){
+  document.addEventListener('keydown', function(e){
+    if(typeof Reveal==='undefined') return;
+    if(!e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag=((e.target&&e.target.tagName)||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select') return;
+    if(e.code==='KeyH' || e.keyCode===72){ Reveal.prev();  e.preventDefault(); }
+    else if(e.code==='KeyL' || e.keyCode===76){ Reveal.next(); e.preventDefault(); }
+  }, true);
+})();
+</script>
+
+<style>
+ #lb-ov{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:2vh 2vw;}
+ #lb-ov.open{display:flex;}
+ #lb-ov img{max-width:96vw;max-height:92vh;background:#fff;border-radius:6px;box-shadow:0 10px 50px rgba(0,0,0,0.6);}
+ #lb-hint{position:fixed;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.65);font-size:13px;letter-spacing:0.04em;}
+ #lb-btn{position:fixed;z-index:9999;display:none;padding:5px 11px;border:0;border-radius:6px;background:rgba(31,41,55,0.85);color:#fff;font:600 13px/1.2 "Source Sans 3",system-ui,sans-serif;cursor:zoom-in;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+ #lb-btn:hover{background:rgba(37,99,235,0.95);}
+ #lb-btn.on{display:block;}
+</style>
+<div id="lb-ov"><img id="lb-img" alt="Enlarged image"><div id="lb-hint">Click anywhere (or press Esc) to close</div></div>
+<button id="lb-btn" type="button" aria-label="Enlarge image">&#128269; Enlarge</button>
+<script>
+(function(){
+  if(/[?&](receiver|print-pdf|export)/.test(location.search)) return;   // speaker-view previews, PDF export
+  var ov=document.getElementById('lb-ov'), im=document.getElementById('lb-img'), btn=document.getElementById('lb-btn');
+  if(!ov||!btn) return;
+  var cur=null, hideT=null, idleT=null;
+  function skip(z){ return z.closest('#title,.yt-facade,.poll-option,a,button,[data-no-zoom]'); }
+  function hide(){ clearTimeout(hideT); clearTimeout(idleT); btn.classList.remove('on'); cur=null; }
+  function open(z){ im.src=z.currentSrc||z.src; im.alt=z.alt||'Enlarged image'; ov.classList.add('open'); hide(); }
+  function close(){ ov.classList.remove('open'); }
+  function shown(z){                           // the visible picture, not the box: object-fit:contain letterboxes it
+    var b=z.getBoundingClientRect(), fit=getComputedStyle(z).objectFit, nw=z.naturalWidth, nh=z.naturalHeight;
+    if(!(fit==='contain'||fit==='scale-down')||!nw||!nh||!b.width||!b.height) return b;
+    var s=Math.min(b.width/nw,b.height/nh); if(fit==='scale-down') s=Math.min(s,1);
+    var w=nw*s, hh=nh*s;
+    return {left:b.left+(b.width-w)/2, top:b.top+(b.height-hh)/2, right:b.left+(b.width+w)/2, width:w, height:hh};
+  }
+  function show(z){
+    if(ov.classList.contains('open')) return;
+    var r=shown(z);
+    if(r.width<120||r.height<80) return;       // icons and emoji are not worth enlarging
+    clearTimeout(hideT); clearTimeout(idleT); cur=z;
+    btn.classList.add('on');
+    btn.style.top=Math.max(4,r.top+6)+'px';
+    btn.style.left=Math.max(4,r.right-btn.offsetWidth-6)+'px';
+    idleT=setTimeout(hide,2500);               // a resting pointer does not leave a button on the projector
+  }
+  document.querySelectorAll('.reveal .slides section img').forEach(function(z){
+    if(skip(z)) return;
+    z.addEventListener('mouseenter',function(){ show(z); });
+    z.addEventListener('mousemove',function(){ if(cur!==z||!btn.classList.contains('on')) show(z); else { clearTimeout(idleT); idleT=setTimeout(hide,2500); } });
+    z.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+    z.addEventListener('dblclick',function(e){ e.preventDefault(); e.stopPropagation(); open(z); });
+  });
+  btn.addEventListener('mouseenter',function(){ clearTimeout(hideT); clearTimeout(idleT); });
+  btn.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+  btn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur) open(cur); });
+  ov.addEventListener('click', close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')){ close(); e.stopPropagation(); } },true);
+  if(window.Reveal&&Reveal.on){ Reveal.on('slidechanged',function(){ hide(); close(); }); Reveal.on('fragmentshown',hide); Reveal.on('fragmenthidden',hide); }
+  window.addEventListener('resize',hide);
+})();
+</script>
+
+<script>
+(function () {
+  // 29 Sep 2026, Ryan: reveal's "?" panel only knew reveal's own keys. Every
+  // key the decks add (pen, timers, poll, speaker-view relays) is registered
+  // here so the panel is the one place to look. Rows depend on the window: the
+  // projector and speaker view get the instructor keys; a student's copy gets
+  // only what works for a student. Rows for features a deck lacks are skipped.
+  var q = location.search;
+  var receiver = /[?&]receiver(&|$)/.test(q), current = receiver && /postMessageEvents=true/.test(q);
+  var projector = /[?&]presenter(&|=|$)/.test(q) && !receiver;
+  if (receiver && !current) return;                         // the Upcoming pane is view-only
+  var inst = projector || current || /[?&]instructor(&|=|$)/.test(q);
+  // twice as many rows as reveal's own list: wider and tighter so it fits one screen
+  var css = document.createElement('style');
+  var H = '.reveal .overlay.overlay-help .viewport .viewport-inner';
+  css.textContent = H + '{width:min(1000px,94vw)!important;max-width:none!important;}' +
+    H + ' table{width:100%!important;}' +
+    H + ' table th,' + H + ' table td{padding:4px 12px!important;font-size:13px!important;line-height:1.3!important;}' +
+    H + ' table td:last-child{text-align:left!important;}' +
+    H + ' table th:first-child,' + H + ' table td:first-child{width:24%!important;}' +
+    H + ' .title{margin:0!important;}' + H + ' br{display:none;}' +
+    '.reveal .overlay.overlay-help .viewport{padding-top:0!important;}' + H + '{padding-top:18px!important;}';
+  document.head.appendChild(css);
+  function go() {
+    if (!Reveal.registerKeyboardShortcut) return;
+    var K = function (k, d) { Reveal.registerKeyboardShortcut(k, d); };
+    var hasTimer = !!document.getElementById('cd-wrap');
+    var hasPoll = !!document.querySelector('.poll-grid, [data-poll-voting]');
+    if (inst) {
+      K('F', 'Fullscreen &mdash; pressed in speaker view, it full-screens the <b>projector</b>');
+      K('ESC, O', 'Slide overview &mdash; from speaker view, on <b>both</b> screens (Enter or a click picks a slide)');
+      K('M', 'Move keyboard focus between the projector and speaker view (Cmd-` brings a window forward)');
+      if (hasTimer) K('1 &ndash; 9', 'Countdown timer for that many minutes (same number again hides it); starts on both screens');
+      if (hasPoll) K('T', 'Poll slide: open / close voting. In speaker view, clicking an option votes on the projector');
+    }
+    K('D', 'Pen on / off (Esc also leaves it)');
+    K('Pen: F L A R S Y', 'Free draw &middot; line &middot; arrow &middot; box &middot; shade &middot; triangle');
+    K('Pen: G N H E', 'Axis guides &middot; curve label &middot; shifted copy &middot; eraser');
+    K('Pen: [ ] Z X C P', 'Thinner &middot; thicker &middot; undo &middot; redo &middot; clear slide &middot; save as PNG');
+    K('?', 'This list');
+    // S is registered by reveal's notes plugin as a key BINDING ("Speaker notes
+    // view"), which the panel lists after these rows; a second S row would be a
+    // duplicate. Its description is not reachable through the API, so the row is
+    // amended when the panel is drawn.
+    if (inst) {
+      var wrap = document.querySelector('.reveal');
+      if (wrap && window.MutationObserver) new MutationObserver(function () {
+        var o = wrap.querySelector('.overlay-help');
+        if (!o || o.__tiS) return; o.__tiS = 1;
+        [].forEach.call(o.querySelectorAll('td'), function (td) {
+          if (td.textContent === 'Speaker notes view' && td.parentNode) td.parentNode.remove();   // v3: Ryan does not want the S row
+        });
+      }).observe(wrap, { childList: true });
+    }
+  }
+  if (window.Reveal && Reveal.isReady && Reveal.isReady()) go();
+  else if (window.Reveal && Reveal.on) Reveal.on('ready', go);
+})();
+</script>
+<script>
+(function () {
+  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
+  var current = false;
+  // ---- annotation: temporary marks on the slide -------------------------
+  // A whiteboard, not a document. Strokes live in memory only, keyed by
+  // slide, and are gone when the deck is closed -- asked for explicitly, so
+  // there is no storage anywhere in here.
+  //
+  // Points are kept in SLIDE units, the same 1280x720 space the laser dot
+  // uses. Canvas pixels would be wrong the moment the window is resized or
+  // the deck is thrown at a projector with a different aspect: the marks
+  // have to sit on the WORDS they were drawn on.
+  //
+  // The shape set is chosen for an economics board, not for drawing in
+  // general: a straight LINE for a budget line or a tangent, an ARROW for
+  // "demand shifts right", a RECT and a translucent SHADE for tax revenue and
+  // surplus boxes, a right TRIANGLE for deadweight loss, and GUIDES -- the
+  // dashed pair dropped from a point to the two axes, which is the single
+  // most-drawn mark in a micro lecture.
+  var Ink = (function () {
+    var PENS = [
+      { n: 'Red',    c: '#e11d48' },
+      { n: 'Blue',   c: '#2563eb' },
+      { n: 'Green',  c: '#059669' },
+      { n: 'Orange', c: '#ea580c' },
+      { n: 'Black',  c: '#111827' },
+      { n: 'Highlighter', c: 'rgba(250,204,21,.45)', hi: true }
+    ];
+    var SIZES = [2, 4, 8];            // thin / medium / thick, in slide units
+    var TOOLS = [
+      { k: 'free',  i: 'fa-pencil',           t: 'Freehand (f)' },
+      { k: 'line',  i: 'fa-slash',            t: 'Straight line (l)' },
+      { k: 'arrow', i: 'fa-arrow-right-long', t: 'Arrow — a shift (a)' },
+      { k: 'rect',  i: 'fa-square',           t: 'Rectangle (r)' },
+      { k: 'shade', i: 'fa-fill-drip',        t: 'Shaded area — revenue, surplus (s)' },
+      { k: 'tri',   i: 'fa-play',             t: 'Right triangle — deadweight loss (y)' },
+      { k: 'guide', i: 'fa-crosshairs',       t: 'Dashed guides to the axes (g)' },
+      { k: 'label', i: 'fa-font',             t: 'Curve label \u2014 D, S, MC, D\u2032 (n)' },
+      { k: 'ghost', i: 'fa-clone',            t: 'Shifted ghost of a curve \u2014 drag it across (h)' }
+    ];
+    var cv, ctx, active = false, erasing = false, pi = 0, si = 1, tool = 'free';
+    var ops = {}, undone = {}, cur = null, rcur = null, relay = null, bar = null, btn = null;
+
+    function skey() { var i = Reveal.getIndices(); return i.h + '.' + (i.v || 0); }
+    function box() { var s = document.querySelector('.reveal .slides'); return s ? s.getBoundingClientRect() : null; }
+    function width() { return PENS[pi].hi ? 24 : SIZES[si]; }
+
+    function ensure() {
+      if (cv) return;
+      cv = document.createElement('canvas');
+      cv.id = 'ti-ink';
+      cv.style.cssText = 'position:fixed;z-index:9990;pointer-events:none;touch-action:none';
+      document.body.appendChild(cv);
+      cv.addEventListener('pointerdown', down);
+      cv.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+      window.addEventListener('pointercancel', up);
+      fit();
+    }
+    function fit() {
+      var r = box(); if (!r || !cv) return;
+      var dpr = window.devicePixelRatio || 1;
+      cv.style.left = r.left + 'px'; cv.style.top = r.top + 'px';
+      cv.style.width = r.width + 'px'; cv.style.height = r.height + 'px';
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx = cv.getContext('2d');
+      render();
+    }
+    // Live strokes are DERIVED by replaying this slide's op log, so undo and
+    // redo are a cursor into that log and never have to reverse a partially
+    // erased stroke by hand.
+    function live() {
+      var list = [], o = ops[skey()] || [];
+      o.forEach(function (op) {
+        if (op.t === 'add') list.push(op.s);
+        else if (op.t === 'del' && op.ids) list = list.filter(function (s) { return op.ids.indexOf(s.id) < 0; });
+        else if (op.t === 'del') op.ss.forEach(function (s) {
+          var i = list.indexOf(s); if (i >= 0) list.splice(i, 1);
+        });
+      });
+      return list;
+    }
+    // One description of every shape, used for BOTH drawing and erasing, so
+    // the two can never disagree about where a mark is.
+    function paths(s) {
+      var p = s.pts, a = p[0], b = p[p.length - 1];
+      if (s.k === 'free' || !s.k) return [p];
+      if (s.k === 'line' || s.k === 'arrow') return [[a, b]];
+      if (s.k === 'rect' || s.k === 'shade')
+        return [[a, { x: b.x, y: a.y }, b, { x: a.x, y: b.y }, a]];
+      if (s.k === 'tri') return [[a, b, { x: b.x, y: a.y }, a]];
+      if (s.k === 'guide') return [[a, { x: b.x, y: a.y }], [a, { x: a.x, y: b.y }]];
+      if (s.k === 'text') return [];
+      return [p];
+    }
+    function render() {
+      if (!cv || !ctx) return;
+      var r = box(); if (!r) return;
+      var dpr = window.devicePixelRatio || 1, k = Reveal.getScale() * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var all = live(); if (rcur) all = all.concat([rcur]); if (cur) all = all.concat([cur]);
+      all.forEach(function (s) {
+        if (!s.pts.length) return;
+        ctx.save();
+        if (s.k === 'text') {
+          ctx.globalAlpha = s.ghost ? 0.6 : 1;
+          ctx.fillStyle = s.c;
+          // italic serif, because that is how a curve is labelled on a board
+          ctx.font = 'italic 700 ' + (s.size || 22) + 'px Georgia,"Times New Roman",serif';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(s.txt || '', s.pts[0].x, s.pts[0].y);
+          ctx.restore(); return;
+        }
+        ctx.strokeStyle = s.c; ctx.lineWidth = s.w;
+        if (s.ghost) { ctx.globalAlpha = 0.6; ctx.setLineDash([9, 7]); }
+        else ctx.setLineDash(s.k === 'guide' ? [7, 6] : []);
+        if (s.k === 'shade') {
+          ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = s.c;
+          var q = s.pts[0], z = s.pts[s.pts.length - 1];
+          ctx.fillRect(Math.min(q.x, z.x), Math.min(q.y, z.y), Math.abs(z.x - q.x), Math.abs(z.y - q.y));
+          ctx.restore();
+        }
+        paths(s).forEach(function (seg) {
+          if (seg.length < 1) return;
+          ctx.beginPath(); ctx.moveTo(seg[0].x, seg[0].y);
+          for (var i = 1; i < seg.length; i++) ctx.lineTo(seg[i].x, seg[i].y);
+          if (seg.length === 1) ctx.lineTo(seg[0].x + 0.01, seg[0].y + 0.01);
+          ctx.stroke();
+        });
+        if (s.k === 'arrow') {
+          var a = s.pts[0], b = s.pts[s.pts.length - 1];
+          var ang = Math.atan2(b.y - a.y, b.x - a.x), L = 9 + s.w * 2.2;
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang - 0.42), b.y - L * Math.sin(ang - 0.42));
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang + 0.42), b.y - L * Math.sin(ang + 0.42));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.restore();
+      });
+    }
+    function at(ev) {
+      var r = box(), k = Reveal.getScale() || 1;
+      return { x: (ev.clientX - r.left) / k, y: (ev.clientY - r.top) / k };
+    }
+    function push(op) {
+      if (op.t === 'add' && op.s && !op.s.id) op.s.id = Math.random().toString(36).slice(2, 10);
+      var k = skey(); (ops[k] = ops[k] || []).push(op); undone[k] = [];
+    }
+    // v25: the WHOLE log of one slide, so the other window can replace its own -- the two
+    // can then never disagree about which stroke an undo or an erase meant
+    function snap() {
+      var k = skey();
+      send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+    }
+    function snapAll() {
+      Object.keys(ops).forEach(function (k) {
+        if ((ops[k] || []).length || (undone[k] || []).length)
+          send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+      });
+    }
+    function send(m) { if (relay) relay(m); }
+
+    // erase whole strokes, not pixels: one op to undo, and it never leaves
+    // half a rubbed-out line behind
+    function eraseAt(p) {
+      var hit = [], R = 14;
+      live().forEach(function (s) {
+        if (s.k === 'text') {
+          var half = (s.size || 22) * 0.6, wide = (s.txt || '').length * (s.size || 22) * 0.34;
+          if (p.x > s.pts[0].x - 8 && p.x < s.pts[0].x + wide + 8 &&
+              p.y > s.pts[0].y - half && p.y < s.pts[0].y + half) hit.push(s);
+          return;
+        }
+        var segs = paths(s), i, j, pts;
+        for (i = 0; i < segs.length; i++) {
+          pts = segs[i];
+          for (j = 0; j < pts.length; j++) {
+            var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+            if (dx * dx + dy * dy < (R + s.w) * (R + s.w)) { hit.push(s); return; }
+          }
+          // a long straight edge has few vertices: walk it
+          for (j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            if (L < 1) continue;
+            var t = ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L);
+            if (t < 0 || t > 1) continue;
+            var cx = A.x + t * (B.x - A.x), cy = A.y + t * (B.y - A.y);
+            if (Math.hypot(p.x - cx, p.y - cy) < R + s.w) { hit.push(s); return; }
+          }
+        }
+      });
+      if (hit.length) { push({ t: 'del', ids: hit.map(function (s) { return s.id; }) }); render(); paintBar(); return true; }
+    }
+    // nearest live stroke to a point, by the same segment walk the eraser uses
+    function nearest(p) {
+      var best = null, bd = 1e9;
+      live().forEach(function (s) {
+        paths(s).forEach(function (pts) {
+          for (var j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            var cx, cy, tt;
+            if (L < 1) { cx = A.x; cy = A.y; }
+            else {
+              tt = Math.max(0, Math.min(1, ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L)));
+              cx = A.x + tt * (B.x - A.x); cy = A.y + tt * (B.y - A.y);
+            }
+            var d = Math.hypot(p.x - cx, p.y - cy);
+            if (d < bd) { bd = d; best = s; }
+          }
+        });
+      });
+      return bd < 40 ? best : null;
+    }
+    // A label is typed, not drawn, so it gets a real input at the click point
+    // rather than a prompt() -- a modal dialog in front of a projected slide is
+    // worse than the thing it is trying to collect.
+    function labelAt(p, ev) {
+      var r = box(), k = Reveal.getScale() || 1, size = 16 + si * 6;
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'D\u2032';
+      inp.style.cssText = 'position:fixed;z-index:10004;left:' + (r.left + p.x * k - 6) + 'px;top:' +
+        (r.top + p.y * k - size * k * 0.75) + 'px;width:130px;font:italic 700 ' + Math.round(size * k) +
+        'px Georgia,serif;color:' + PENS[pi].c + ';background:rgba(255,255,255,.92);border:2px solid ' +
+        PENS[pi].c + ';border-radius:6px;padding:1px 5px;outline:none';
+      document.body.appendChild(inp);
+      // v27: the box grows with the text. At 130px fixed, a large italic label scrolled its
+      // start out of sight after four characters and Ryan could not see what he typed.
+      var meas = document.createElement('canvas').getContext('2d');
+      meas.font = 'italic 700 ' + Math.round(size * k) + 'px Georgia,serif';
+      var grow = function () {
+        var w = meas.measureText(inp.value || inp.placeholder).width;
+        inp.style.width = Math.max(60, Math.ceil(w + size * k * 0.9 + 14)) + 'px';
+      };
+      inp.addEventListener('input', grow); grow();
+      inp.focus();
+      var done = function (commit) {
+        var txt = inp.value.trim();
+        inp.remove();
+        if (!commit || !txt) return;
+        var s = { k: 'text', c: PENS[pi].c, w: SIZES[si], size: size, txt: txt, pts: [p] };
+        push({ t: 'add', s: s }); snap();
+        render(); paintBar();
+      };
+      inp.addEventListener('keydown', function (e) {
+        e.stopPropagation();                       // Reveal and Ink both listen on document
+        if (e.key === 'Enter') { e.preventDefault(); done(true); }
+        if (e.key === 'Escape') { e.preventDefault(); done(false); }
+      });
+      inp.addEventListener('blur', function () { done(true); });
+    }
+
+    function down(ev) {
+      if (!active) return;
+      ev.preventDefault(); ev.stopPropagation();
+      var p = at(ev);
+      if (erasing) { if (eraseAt(p)) snap(); return; }
+      if (tool === 'label') { labelAt(p, ev); return; }
+      if (tool === 'ghost') {
+        // copy the curve you pressed on, then drag the copy to where it shifted
+        var src = nearest(p);
+        if (!src) return;
+        var base = src.pts.map(function (q) { return { x: q.x, y: q.y }; });
+        cur = { k: src.k, c: src.c, w: src.w, size: src.size, txt: src.txt,
+                ghost: true, base: base, from: p, pts: base };
+        render(); return;
+      }
+      cur = { c: PENS[pi].c, w: width(), k: tool, pts: [p, p] };
+      send({ k: 'down', x: p.x, y: p.y, c: cur.c, w: cur.w, tool: tool });
+      render();
+    }
+    function move(ev) {
+      if (!active) return;
+      var p = at(ev);
+      if (erasing) {
+        if (ev.buttons && eraseAt(p)) snap();
+        return;
+      }
+      if (!cur) return;
+      ev.preventDefault();
+      if (cur.ghost) {
+        var dx = p.x - cur.from.x, dy = p.y - cur.from.y;
+        cur.pts = cur.base.map(function (q) { return { x: q.x + dx, y: q.y + dy }; });
+        render(); return;                          // relayed whole, on release
+      }
+      if (cur.k === 'free') cur.pts.push(p); else cur.pts[1] = p;
+      send({ k: 'move', x: p.x, y: p.y }); render();
+    }
+    function up() {
+      if (!cur) return;
+      // a shape needs two distinct corners; a tap is not a rectangle
+      var a = cur.pts[0], b = cur.pts[cur.pts.length - 1];
+      var ok = cur.ghost ? Math.hypot(b.x - a.x, b.y - a.y) >= 0
+             : cur.k === 'free' ? cur.pts.length > 1
+             : Math.hypot(b.x - a.x, b.y - a.y) > 4;
+      if (cur.ghost) {
+        var moved = cur.pts.length && cur.base.length &&
+                    Math.hypot(cur.pts[0].x - cur.base[0].x, cur.pts[0].y - cur.base[0].y) > 4;
+        if (moved) {
+          var g = { k: cur.k, c: cur.c, w: cur.w, size: cur.size, txt: cur.txt, ghost: true, pts: cur.pts };
+          push({ t: 'add', s: g }); snap();
+        }
+        cur = null; render(); paintBar(); return;
+      }
+      if (ok) { push({ t: 'add', s: cur }); cur = null; snap(); }
+      else { cur = null; send({ k: 'cancel' }); }
+      render(); paintBar();
+    }
+    // the projected window rebuilds the same stroke from the relayed points
+    function apply(m) {
+      if (!m) return;
+      ensure();
+      // v25: the other window's stroke in progress lives in rcur, never in cur, so a stroke
+      // drawn on each screen at once cannot merge into one
+      if (m.k === 'down') { rcur = { c: m.c, w: m.w, k: m.tool || 'free', pts: [{ x: m.x, y: m.y }, { x: m.x, y: m.y }] }; render(); return; }
+      if (m.k === 'move') { if (rcur) { if (rcur.k === 'free') rcur.pts.push({ x: m.x, y: m.y }); else rcur.pts[1] = { x: m.x, y: m.y }; render(); } return; }
+      if (m.k === 'cancel') { rcur = null; render(); return; }
+      if (m.k === 'snap') {
+        ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
+        render(); paintBar(); return;
+      }
+      if (m.k === 'req')  { snapAll(); return; }
+      // a window still on v24 or older sends these; keep them working during a mixed reload
+      if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
+      if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
+      if (m.k === 'erase'){ eraseAt({ x: m.x, y: m.y }); return; }
+      if (m.k === 'undo') { undo(true); return; }
+      if (m.k === 'redo') { redo(true); return; }
+      if (m.k === 'clear'){ clear(true); return; }
+      if (m.k === 'mode') { setActive(m.on, true); return; }
+    }
+    function undo(q) {
+      var k = skey(), o = ops[k] || [];
+      if (!o.length) return;
+      (undone[k] = undone[k] || []).push(o.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function redo(q) {
+      var k = skey(), u = undone[k] || [];
+      if (!u.length) return;
+      (ops[k] = ops[k] || []).push(u.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function clear(q) {
+      var k = skey();
+      if (!(ops[k] || []).length) return;
+      undone[k] = (undone[k] || []).concat(ops[k]); ops[k] = [];
+      render(); paintBar(); if (!q) snap();
+    }
+    function setActive(v, q) {
+      active = !!v; ensure();
+      cv.style.pointerEvents = active ? 'auto' : 'none';
+      cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
+      if (bar) bar.style.display = active ? 'flex' : 'none';
+      if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
+      paintBar(); if (!q) send({ k: 'mode', on: active });
+    }
+
+    /* ---------- save a picture of the board ---------- */
+    // The slide is DOM, not a canvas, so the page cannot screenshot itself
+    // without help. html2canvas is fetched only when this is first pressed --
+    // no cost to a lecture that never uses it -- and if the CDN is unreachable
+    // the ink alone is still saved rather than nothing.
+    function stamp() {
+      var m = location.pathname.match(/\/([^\/]+)\/[^\/]*$/);
+      var n = document.querySelector('.reveal .slide-number');
+      return (m ? m[1] : 'slide') + '-' + (n ? n.textContent.replace(/\s+/g, '') : skey());
+    }
+    function download(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = stamp() + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    function inkOnly() {
+      var out = document.createElement('canvas');
+      out.width = cv.width; out.height = cv.height;
+      var c = out.getContext('2d');
+      c.fillStyle = '#fff'; c.fillRect(0, 0, out.width, out.height);
+      c.drawImage(cv, 0, 0);
+      out.toBlob(download);
+    }
+    function savePng() {
+      var reveal = document.querySelector('.reveal');
+      var go = function () {
+        window.html2canvas(reveal, { backgroundColor: '#ffffff', scale: 2, logging: false })
+          .then(function (base) {
+            var out = document.createElement('canvas');
+            out.width = base.width; out.height = base.height;
+            var c = out.getContext('2d');
+            c.drawImage(base, 0, 0);
+            var rr = reveal.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+            var k = base.width / rr.width;
+            c.drawImage(cv, (cr.left - rr.left) * k, (cr.top - rr.top) * k, cr.width * k, cr.height * k);
+            out.toBlob(download);
+          })
+          .catch(inkOnly);
+      };
+      if (window.html2canvas) { go(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = go; s.onerror = inkOnly;
+      document.head.appendChild(s);
+    }
+
+    /* ---------- toolbar ---------- */
+    function paintBar() {
+      if (!bar) return;
+      [].forEach.call(bar.querySelectorAll('[data-pen]'), function (b) {
+        b.style.outline = (!erasing && +b.getAttribute('data-pen') === pi) ? '2px solid #111827' : '2px solid transparent';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-size]'), function (b) {
+        var on = +b.getAttribute('data-size') === si;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.firstChild.style.background = on ? '#fff' : '#374151';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-tool]'), function (b) {
+        var on = !erasing && b.getAttribute('data-tool') === tool;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.style.color = on ? '#fff' : '#374151';
+      });
+      var er = bar.querySelector('[data-a="erase"]');
+      if (er) { er.style.background = erasing ? '#111827' : '#e5e7eb'; er.style.color = erasing ? '#fff' : '#374151'; }
+      var k = skey();
+      var u = bar.querySelector('[data-a="undo"]'), rd = bar.querySelector('[data-a="redo"]'),
+          cl = bar.querySelector('[data-a="clear"]'), sv = bar.querySelector('[data-a="save"]');
+      if (u)  u.disabled  = !(ops[k] || []).length;
+      if (rd) rd.disabled = !(undone[k] || []).length;
+      if (cl) cl.disabled = !(ops[k] || []).length;
+      if (sv) sv.disabled = false;
+    }
+    function mount() {
+      if (bar) return;
+      btn = document.createElement('button');
+      btn.id = 'ti-pen'; btn.type = 'button'; btn.title = 'Draw on the slide (d)';
+      btn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      var rest = current ? '.55' : '.18';
+      btn.style.cssText = 'position:fixed;left:' + (current ? 14 : 94) + 'px;bottom:12px;' +
+        'z-index:10001;width:34px;height:34px;' +
+        'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+        'font-size:14px;padding:0;opacity:' + rest + ';transition:opacity .2s';
+      btn.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function () { if (!active) btn.style.opacity = rest; });
+      btn.addEventListener('click', function (e) { e.preventDefault(); setActive(!active); });
+      document.body.appendChild(btn);
+
+      bar = document.createElement('div');
+      bar.id = 'ti-ink-bar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:10px;z-index:10003;' +
+        'display:none;gap:6px;align-items:center;padding:7px 10px;border-radius:11px;' +
+        'background:rgba(255,255,255,.97);box-shadow:0 2px 12px rgba(0,0,0,.22);' +
+        'font:600 12px system-ui,sans-serif;max-width:96vw;flex-wrap:wrap;justify-content:center';
+      var sep = '<span style="width:1px;height:20px;background:#e5e7eb"></span>';
+      var btnCss = 'border:0;border-radius:6px;padding:5px 8px;cursor:pointer;background:#e5e7eb;color:#374151;font:inherit';
+      var html = '';
+      PENS.forEach(function (p, i) {
+        html += '<button data-pen="' + i + '" type="button" title="' + p.n + '" style="width:22px;height:22px;' +
+                'border-radius:50%;border:0;cursor:pointer;padding:0;background:' + p.c + ';' +
+                'outline:2px solid transparent;outline-offset:2px"></button>';
+      });
+      html += sep;
+      SIZES.forEach(function (w, i) {
+        var d = 4 + i * 4;
+        html += '<button data-size="' + i + '" type="button" title="Tip ' + w + '" style="width:26px;height:22px;' +
+                'border:0;border-radius:6px;cursor:pointer;background:#e5e7eb;display:inline-flex;' +
+                'align-items:center;justify-content:center;padding:0">' +
+                '<span style="display:block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:#374151"></span></button>';
+      });
+      html += sep;
+      TOOLS.forEach(function (t) {
+        html += '<button data-tool="' + t.k + '" type="button" title="' + t.t + '" style="' + btnCss + '">' +
+                '<i class="fa-solid ' + t.i + '"></i></button>';
+      });
+      html += sep +
+        '<button data-a="erase" type="button" title="Eraser (e)" style="' + btnCss + '">Erase</button>' +
+        '<button data-a="undo" type="button" title="Undo (z)" style="' + btnCss + '">Undo</button>' +
+        '<button data-a="redo" type="button" title="Redo (x)" style="' + btnCss + '">Redo</button>' +
+        '<button data-a="clear" type="button" title="Clear this slide (c)" style="' + btnCss + '">Clear</button>' +
+        '<button data-a="save" type="button" title="Save this slide as a PNG (p)" style="' + btnCss + '">' +
+        '<i class="fa-solid fa-camera"></i></button>' + sep +
+        '<button data-a="done" type="button" title="Stop drawing (d or Esc)" style="' + btnCss +
+        ';background:#111827;color:#fff">Done</button>';
+      bar.innerHTML = html;
+      bar.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+      bar.addEventListener('click', function (e) {
+        var t = e.target.closest('button'); if (!t) return;
+        e.preventDefault(); e.stopPropagation();
+        if (t.hasAttribute('data-pen'))  { pi = +t.getAttribute('data-pen'); erasing = false; setActive(true); return; }
+        if (t.hasAttribute('data-size')) { si = +t.getAttribute('data-size'); setActive(true); return; }
+        if (t.hasAttribute('data-tool')) { tool = t.getAttribute('data-tool'); erasing = false; setActive(true); return; }
+        var a = t.getAttribute('data-a');
+        if (a === 'erase') { erasing = !erasing; setActive(true); }
+        else if (a === 'undo') undo();
+        else if (a === 'redo') redo();
+        else if (a === 'clear') clear();
+        else if (a === 'save') savePng();
+        else if (a === 'done') setActive(false);
+      });
+      document.body.appendChild(bar);
+      ensure();
+      Reveal.on('resize', fit);
+      window.addEventListener('resize', fit);
+      Reveal.on('slidechanged', function () { cur = null; rcur = null; fit(); paintBar(); });
+      paintBar();
+    }
+
+    function keys(e) {
+      // v26: the system shortcuts too, while the pen is on -- Cmd/Ctrl-Z undo,
+      // Cmd/Ctrl-Shift-Z or Ctrl-Y redo. With the pen off they pass through untouched.
+      if (active && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        var kk = (e.key || '').toLowerCase();
+        if (kk === 'z' || kk === 'y') {
+          e.preventDefault(); e.stopPropagation();
+          if (kk === 'y' || e.shiftKey) redo(); else undo();
+          return;
+        }
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var k = e.key;
+      if (k === 'd' || k === 'D') { e.preventDefault(); e.stopPropagation(); setActive(!active); return; }
+      if (!active) return;                    // every other key is scoped to draw mode
+      var stop = function () { e.preventDefault(); e.stopPropagation(); };
+      if (k === 'Escape') { stop(); setActive(false); return; }
+      if (k === 'e' || k === 'E') { stop(); erasing = !erasing; setActive(true); return; }
+      if (k === 'z' || k === 'Z') { stop(); undo(); return; }
+      if (k === 'x' || k === 'X') { stop(); redo(); return; }
+      if (k === 'c' || k === 'C') { stop(); clear(); return; }
+      if (k === 'p' || k === 'P') { stop(); savePng(); return; }
+      if (k === '[') { stop(); si = Math.max(0, si - 1); setActive(true); return; }
+      if (k === ']') { stop(); si = Math.min(SIZES.length - 1, si + 1); setActive(true); return; }
+      // NOT "t": that is the poll open/close key, and it has to keep working
+      // while the pen is armed so a poll slide can be annotated and still
+      // opened for voting. Triangle takes "y" instead.
+      var map = { f: 'free', l: 'line', a: 'arrow', r: 'rect', s: 'shade', y: 'tri', g: 'guide',
+                  n: 'label', h: 'ghost' };
+      var want = map[k.toLowerCase && k.toLowerCase()];
+      if (want) { stop(); tool = want; erasing = false; setActive(true); }
+    }
+
+    return {
+      mount: mount, apply: apply, fit: fit, keys: keys, ask: function () { send({ k: 'req' }); },
+      on: function () { return active; },
+      relayTo: function (fn) { relay = fn; }
+    };
+  })();
+
+  // ---- full screen ----------------------------------------------------
+  // requestFullscreen needs TRANSIENT user activation IN THE WINDOW THAT GOES
+  // FULL SCREEN, so only a click (or "f") inside the projected window can do
+  // it. The speaker-view button and the click-anywhere target that used to work
+  // around that are GONE: they worked, but two windows and two clicks to reach
+  // full screen was never worth it. "m" then "f" does the same job from the
+  // keyboard -- see swapFocus below.
+  function goFull() {
+    var el = document.documentElement;
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    try {
+      var p = el.requestFullscreen();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function fsButton() {                 // projector window: the one-click path
+    if (document.getElementById('ti-fs')) return;
+    var b = document.createElement('button');
+    b.id = 'ti-fs'; b.type = 'button'; b.title = 'Full screen (f)';
+    b.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    b.style.cssText = 'position:fixed;left:54px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+      'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+      'font-size:14px;padding:0;opacity:.18;transition:opacity .2s';
+    b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+    b.addEventListener('mouseleave', function () { b.style.opacity = '.18'; });
+    b.addEventListener('click', function (e) { e.preventDefault(); goFull(); });
+    document.addEventListener('fullscreenchange', function () {
+      b.innerHTML = document.fullscreenElement ? '<i class="fa-solid fa-compress"></i>'
+                                               : '<i class="fa-solid fa-expand"></i>';
+    });
+    document.body.appendChild(b);
+  }
+
+  function homeLink() {            // presenter only: a faint way back to the chapter list
+    if (document.getElementById('ti-home')) return;
+    var a = document.createElement('a');
+    a.id = 'ti-home'; a.href = '../index.html'; a.title = 'Chapter list';
+    a.innerHTML = '<i class="fa-solid fa-house"></i>';
+    a.style.cssText = 'position:fixed;left:14px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);' +
+      'color:#6b8ba4;border:1px solid #e5e7eb;text-decoration:none;font-size:15px;opacity:.18;transition:opacity .2s';
+    a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+    a.addEventListener('mouseleave', function () { a.style.opacity = '.18'; });
+    document.body.appendChild(a);
+  }
+  function start() {
+    homeLink(); fsButton(); Ink.mount();
+    document.addEventListener('keydown', Ink.keys, true);
+  }
+  if (Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>
+</body>
+</html>

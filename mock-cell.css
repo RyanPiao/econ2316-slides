@@ -1,0 +1,129 @@
+/* mock-cell.css -- the look of the deck's mocked tool interfaces (mock-cell.js).
+   Shared by every deck: <link rel="stylesheet" href="../../mock-cell.css">
+   Skins: .mock.colab (a Colab code cell), .mock.excel (grid + formula bar, optional cropped
+   ribbon), .mock.sql (a DuckDB console). Sizes are in pt so they track the deck's type. */
+
+.reveal .mock, .mock { position: relative; margin: 8px 0; text-align: left; font-size: var(--mk-size, 15pt);
+  line-height: 1.38; color: #1f1f1f; }
+.mock .mk-step { position: absolute !important; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+.mock pre, .reveal .mock pre { margin: 0; padding: 0; background: none; box-shadow: none; width: auto;
+  font-size: 1em; line-height: inherit; white-space: pre; overflow: hidden; max-height: none; word-wrap: normal; }
+.mock code, .mk-mono { font-family: 'Roboto Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+.mock .mk-ghost { color: transparent !important; }
+.mock .mk-caret { display: inline-block; width: 2px; height: 1.15em; margin: 0 -1px -0.22em; background: #1a73e8;
+  animation: mk-blink 1s steps(1) infinite; }
+.mock.mk-done .mk-caret, .mock .mk-caret.off { display: none; }
+@keyframes mk-blink { 50% { opacity: 0; } }
+
+/* syntax colours: Colab's light editor */
+.mock .t-kw { color: #af00db; } .mock .t-const { color: #0000ff; } .mock .t-str { color: #a31515; }
+.mock .t-com { color: #008000; } .mock .t-num { color: #098658; }
+.mock .t-omit { color: #80868b; font-style: italic; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: .88em; }
+
+/* ---------------------------------------------------------------- colab */
+.mock.colab .mk-cell { display: flex; background: #fff; border: 1px solid #dadce0; border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, .12); overflow: hidden; }
+.mock.colab .mk-gut { width: 3.1em; flex: none; position: relative; }
+.mock.colab .mk-run { position: absolute; top: .42em; left: .7em; width: 1.6em; height: 1.6em; border-radius: 50%;
+  background: #3c4043; }
+.mock.colab .mk-run::after { content: ""; position: absolute; left: .58em; top: .38em; border-style: solid;
+  border-width: .42em 0 .42em .66em; border-color: transparent transparent transparent #fff; }
+.mock.colab .mk-count { position: absolute; top: .55em; left: 0; width: 100%; text-align: center; font-size: .72em;
+  color: #80868b; display: none; }
+.mock.colab.mk-ran .mk-run { display: none; }
+.mock.colab.mk-ran .mk-count { display: block; }
+.mock.colab.mk-running .mk-run { background: #fff; border: .16em solid #dadce0; border-top-color: #1a73e8;
+  box-sizing: border-box; animation: mk-spin .8s linear infinite; }
+.mock.colab.mk-running .mk-run::after { display: none; }
+@keyframes mk-spin { to { transform: rotate(360deg); } }
+.mock.colab .mk-body { flex: 1; min-width: 0; }
+.mock.colab .mk-code { background: #f7f7f7; padding: .5em .9em .5em .7em; border-left: 1px solid #eee; }
+.mock.colab.mk-focused .mk-cell { border-color: #c4c7c5; box-shadow: 0 1px 3px rgba(60, 64, 67, .25); }
+.mock.colab .mk-out { border-top: 1px solid #ececec; padding: .45em .9em .5em .7em; display: none; }
+.mock.colab.mk-ran .mk-out { display: block; }
+.mock.colab .mk-out pre { color: #212121; }
+.mock.colab .mk-out pre.mk-stderr { background: #fdecea; margin: 2px -0.9em 2px -0.7em; padding: 2px .9em 2px .7em;
+  white-space: pre-wrap; }
+.mock.colab .mk-out pre.mk-err { white-space: pre-wrap; word-break: break-word; }
+.mock.colab .mk-out .mk-ename { color: #d32f2f; font-weight: 600; }
+.mock.colab .mk-out img { display: block; max-width: 100%; height: auto; margin: 2px 0; }
+.mock.colab .mk-out .mk-omit { color: #80868b; font-size: .8em; font-style: italic; }
+.mock .mk-df table { border-collapse: collapse; font-size: .82em; margin: 2px 0; }
+.mock .mk-df th, .mock .mk-df td { padding: .18em .6em; text-align: right; border: none; }
+.mock .mk-df thead th { border-bottom: 1px solid #bdbdbd; font-weight: 600; }
+.mock .mk-df tbody tr:nth-child(odd) { background: #f5f5f5; }
+.mock .mk-df style { display: none; }
+
+/* the Live control: switches to the open Colab tab, selects this cell and runs it */
+.mock .mk-live { position: absolute; top: -0.85em; right: .6em; z-index: 3; font: 600 .62em/1 'Google Sans', Roboto, Arial, sans-serif;
+  letter-spacing: .02em; color: #3c4043; background: #fff; border: 1px solid #dadce0; border-radius: 1em;
+  padding: .32em .8em .32em .65em; cursor: pointer; box-shadow: 0 1px 2px rgba(0, 0, 0, .12); }
+.mock .mk-live::before { content: ""; display: inline-block; width: .55em; height: .55em; border-radius: 50%;
+  background: #bdc1c6; margin-right: .45em; vertical-align: .02em; }
+.mock .mk-live.on::before { background: #f9ab00; }
+.mock .mk-live:hover { border-color: #f9ab00; }
+.mock .mk-live .mk-live-msg { font-weight: 400; color: #5f6368; margin-left: .5em; }
+.reveal[data-receiver] .mock .mk-live, .print-pdf .mock .mk-live { display: none; }
+
+/* ---------------------------------------------------------------- excel */
+.mock.excel { font-family: Aptos, Calibri, 'Segoe UI', Arial, sans-serif; border: 1px solid #c8c8c8; border-radius: 6px;
+  overflow: hidden; background: #fff; }
+.mock.excel .xl-ribbon { background: #f3f3f3; border-bottom: 1px solid #d6d6d6; font-size: .72em;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%); }
+.mock.excel .xl-tabs { display: flex; justify-content: center; gap: 1.6em; padding: .35em 0 0; color: #424242; }
+.mock.excel .xl-tab { padding: 0 .1em .3em; border-bottom: 3px solid transparent; }
+.mock.excel .xl-tab.on { color: #0e5c2f; font-weight: 600; border-bottom-color: #107c41; }
+.mock.excel .xl-btns { display: flex; justify-content: center; gap: .5em; padding: .35em 0 .4em; background: #fff;
+  border-top: 1px solid #e1e1e1; }
+.mock.excel .xl-btn { display: flex; flex-direction: column; align-items: center; min-width: 4.6em; padding: .3em .45em .25em;
+  border: 1px solid transparent; border-radius: 4px; color: #616161; opacity: .55; }
+.mock.excel .xl-btn i, .mock.excel .xl-btn .xl-glyph { font-size: 1.5em; line-height: 1.2; color: #107c41; font-style: normal; }
+.mock.excel .xl-btn.on { opacity: 1; color: #242424; }
+.mock.excel.mk-press .xl-btn.on { background: #d8eadf; border-color: #107c41; animation: mk-press 1.2s ease-out 1; }
+@keyframes mk-press { 0% { box-shadow: 0 0 0 0 rgba(16, 124, 65, .55); } 100% { box-shadow: 0 0 0 .9em rgba(16, 124, 65, 0); } }
+.mock.excel .xl-fbar { display: flex; align-items: stretch; border-bottom: 1px solid #d6d6d6; font-size: .86em; min-height: 1.9em; }
+.mock.excel .xl-name { width: 5.2em; flex: none; padding: .25em .5em; border-right: 1px solid #d6d6d6; color: #242424; }
+.mock.excel .xl-fx { width: 2.4em; flex: none; text-align: center; padding: .25em 0; color: #8a8a8a; font-style: italic;
+  border-right: 1px solid #d6d6d6; font-family: Georgia, serif; }
+.mock.excel .xl-formula { flex: 1; padding: .25em .6em; white-space: pre; overflow: hidden; }
+.mock.excel table.xl-grid { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .82em; margin: 0; }
+.mock.excel .xl-grid th, .mock.excel .xl-grid td { border: 1px solid #e1e1e1; height: 1.55em; padding: 0 .4em;
+  white-space: nowrap; overflow: hidden; position: relative; }
+.mock.excel .xl-grid th { background: #f5f5f5; color: #616161; font-weight: 400; text-align: center; border-color: #d6d6d6; }
+.mock.excel .xl-grid th.xl-corner { width: 2.6em; }
+.mock.excel .xl-grid th.on { background: #d3f0e0; color: #0e5c2f; font-weight: 600; box-shadow: inset 0 -2px 0 #107c41; }
+.mock.excel .xl-grid tbody th.on { box-shadow: inset -2px 0 0 #107c41; }
+.mock.excel .xl-grid td { text-align: left; color: #242424; background: #fff; }
+.mock.excel .xl-grid td.num { text-align: right; }
+.mock.excel .xl-grid td.xl-hdr { font-weight: 600; }
+.mock.excel .xl-grid td.xl-act { outline: 2px solid #107c41; outline-offset: -2px; z-index: 2; overflow: visible; }
+.mock.excel .xl-grid td.xl-act::after { content: ""; position: absolute; right: -4px; bottom: -4px; width: 6px; height: 6px;
+  background: #107c41; border: 1px solid #fff; z-index: 3; }
+.mock.excel .xl-grid td.xl-edit { text-align: left; }
+.mock.excel .xl-grid td.xl-rng { background: #e9f4ee; }
+.mock.excel .xl-grid td.xl-new { animation: mk-fill .5s ease-out 1; }
+@keyframes mk-fill { from { background: #bfe3cd; } }
+.mock.excel .t-ref { color: #1e5bd6; } .mock.excel .t-fn { color: #242424; }
+.mock.excel .t-ref2 { color: #c4314b; } .mock.excel .t-ref3 { color: #7a3fb8; } .mock.excel .t-ref4 { color: #0b7a3f; }
+.mock.excel .xl-result { border-top: 1px solid #d6d6d6; padding: .4em .6em; display: none; }
+.mock.excel.mk-applied .xl-result { display: block; }
+
+/* ---------------------------------------------------------------- sql (DuckDB console) */
+.mock.sql { background: #1e1e1e; color: #e6e6e6; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
+.mock.sql .sq-bar { background: #2d2d2d; padding: .3em .8em; font-size: .62em; color: #9e9e9e;
+  font-family: -apple-system, 'Segoe UI', sans-serif; }
+.mock.sql .sq-bar b { display: inline-block; width: .8em; height: .8em; border-radius: 50%; margin-right: .4em; vertical-align: -.05em; }
+.mock.sql .sq-body { padding: .5em .9em .6em; }
+.mock.sql .sq-prompt { color: #f5c518; user-select: none; }
+.mock.sql .mk-caret { background: #e6e6e6; }
+.mock.sql .t-kw { color: #569cd6; } .mock.sql .t-str { color: #ce9178; } .mock.sql .t-num { color: #b5cea8; }
+.mock.sql .t-com { color: #6a9955; }
+.mock.sql .sq-out { display: none; color: #e6e6e6; margin-top: .3em; }
+.mock.sql.mk-ran .sq-out { display: block; }
+
+/* the instant-typing toast */
+.mk-toast { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 10000; background: rgba(32, 33, 36, .92);
+  color: #fff; font: 13px/1 -apple-system, 'Segoe UI', sans-serif; padding: 8px 14px; border-radius: 16px; pointer-events: none;
+  opacity: 0; transition: opacity .25s; }
+.mk-toast.on { opacity: 1; }

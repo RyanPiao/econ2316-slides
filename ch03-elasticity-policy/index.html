@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=75561341b1ac978dc824a05b60713f04">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Elasticity and Government Intervention &mdash; Micro Theory Ch 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' },
+      startup: { ready: () => { MathJax.startup.defaultReady(); } }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    .timer-badge { display: inline-block; background: #f0f5f8; color: var(--secondary-color); padding: 6px 14px; border-radius: 16px; font-size: 12pt; font-weight: 600; }
+    .timer-badge i { margin-right: 6px; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides"><section class="section-divider" data-state="is-section-divider" id="title" style="padding: 0;">
+  <div style="display: grid; grid-template-columns: 55% 45%; height: 720px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; padding: 50px 50px 50px 60px;">
+      <p style="font-size: 12pt; color: var(--secondary-color); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;">
+        Micro Theory &bull; Microeconomic Theory &bull; Chapter 3
+      </p>
+      <h1 style="font-size: 32pt; line-height: 1.25; color: var(--primary-color); margin-bottom: 25px;">
+        Elasticity and Government Intervention
+      </h1>
+      <p style="font-size: 14pt; color: var(--muted-color); font-style: italic; max-width: 460px; margin-top: 20px;">
+        From midpoint to derivative &mdash; tax incidence, deadweight loss, and price controls in dollars.
+      </p>
+      <div style="margin-top: auto; padding-bottom: 15px;">
+        <p style="font-size: 16pt; color: var(--primary-color); font-weight: 700; margin-bottom: 8px;">
+          Dr. Richeng Piao
+        </p>
+        <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; line-height: 1.8;">
+          Department of Economics<br>
+          Northeastern University
+        </p>
+      </div>
+    </div>
+    <div style="overflow: hidden;">
+      <img alt="Cover illustration for Elasticity and Government Intervention" src="figures/ch03-cover.webp" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+<section id="learning-objectives">
+  <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Learning Objectives</h2>
+  <p style="font-size: 12.5pt; color: var(--muted-color); margin-bottom: 13px;">By the end of class today, you will be able to&hellip;</p>
+  <div style="display:flex;flex-direction:column;gap:9px;">
+    <div style="display:grid;grid-template-columns:52px 1fr;align-items:center;background:#f8f6f3;border-radius:8px;padding:11px 17px;border-left:4px solid var(--secondary-color);">
+      <p style="font-size:17pt;font-weight:700;color:var(--secondary-color);margin:0;">1</p>
+      <p style="font-size:13.5pt;margin:0;"><strong>Compute</strong> point elasticity \(\varepsilon=(dQ/dp)(p/Q)\).</p></div>
+    <div style="display:grid;grid-template-columns:52px 1fr;align-items:center;background:#f8f6f3;border-radius:8px;padding:11px 17px;border-left:4px solid var(--accent-color);">
+      <p style="font-size:17pt;font-weight:700;color:var(--accent-color);margin:0;">2</p>
+      <p style="font-size:13.5pt;margin:0;"><strong>Locate</strong> the elastic, inelastic and unit-elastic zones &mdash; and the <strong>revenue</strong>-maximising price (not the profit-maximising one).</p></div>
+    <div style="display:grid;grid-template-columns:52px 1fr;align-items:center;background:#f8f6f3;border-radius:8px;padding:11px 17px;border-left:4px solid var(--secondary-color);">
+      <p style="font-size:17pt;font-weight:700;color:var(--secondary-color);margin:0;">3</p>
+      <p style="font-size:13.5pt;margin:0;"><strong>Predict</strong> who bears a tax, from the two elasticities alone.</p></div>
+    <div style="display:grid;grid-template-columns:52px 1fr;align-items:center;background:#f8f6f3;border-radius:8px;padding:11px 17px;border-left:4px solid var(--accent-color);">
+      <p style="font-size:17pt;font-weight:700;color:var(--accent-color);margin:0;">4</p>
+      <p style="font-size:13.5pt;margin:0;"><strong>Measure</strong> deadweight loss, and say why it grows with \(t^{2}\).</p></div>
+  </div>
+  <p style="font-size:11pt;color:var(--muted-color);margin:12px 2px 0;text-align:center;"><i class="fa-solid fa-square-root-variable" style="color:var(--secondary-color);"></i> <a href="https://ryanpiao.github.io/econ2316-slides/math-refresher/#/math-ratio" target="_blank" rel="noopener" style="color:var(--secondary-color);font-weight:700;">Math Refresher</a> &mdash; percentage change, elasticity and first-order conditions, before today.</p>
+</section><section id="opening-hook">
+  <h2><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> The Tariff Question on the Front Page</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; margin-bottom: 12px;">
+    <div>
+      <p style="font-size: 13.5pt; line-height: 1.55; margin: 0 0 10px;">
+        Spring 2025 &mdash; the WSJ asks: <em>who actually paid the new tariffs?</em> Principles told us prices would rise. The front page wants a <em>number</em>.
+      </p>
+      <div style="background: #f0fdf4; padding: 11px 16px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+        <p style="font-size: 12.5pt; margin: 0;">
+          <i class="fa-solid fa-arrow-right" style="color: var(--success-color);"></i>
+          <strong>Today's machine:</strong> point elasticity &rarr; incidence formula &rarr; deadweight integral.
+        </p>
+      </div>
+    </div>
+    <div style="background: #f8f6f3; padding: 12px 18px; border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">
+        <strong>Trump &ldquo;Liberation Day&rdquo; tariffs &mdash; April 2025</strong><br>
+        &bull; Largest U.S. import-duty hike in ~80 years<br>
+        &bull; Gopinath-Neiman NBER (Jan 2026): pass-through to U.S. import prices &asymp; <strong>complete</strong><br>
+        &bull; NY Fed retail note (Mar 2026): consumer pass-through <em>incomplete</em> short-run, rising
+      </p>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <img alt="Three panels: the same upward supply shift (a tariff) meets demand curves of decreasing slope — steep/inelastic (buyers bear most, price +4.80), medium (split), and flat/elastic (sellers bear most, price +2.25)" class="figure" src="figures/figure_op_demand_slopes.png" style="width: 100%; max-height: 300px; object-fit: contain; box-shadow: 0 4px 14px rgba(0,0,0,0.12); border-radius: 6px;">
+  </div>
+</section>
+
+<section id="review-elasticity-substitutes">
+  <h2 style="font-size: 27pt;"><i class="fa-solid fa-rotate-left" style="color: var(--secondary-color);"></i> What Elasticity Measures &mdash; and What Drives It</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; margin-top: 6px;">
+    <div>
+      <p style="font-size: 13.5pt; line-height: 1.5; margin: 0;">The <strong>law of demand</strong> says quantity reacts to price. <strong>Elasticity is how big that reaction is.</strong></p>
+      <div style="background: #f0f5f8; border-radius: 8px; padding: 4px 16px; margin-top: 8px; border-left: 4px solid var(--secondary-color);">
+        <p style="font-size: 13pt; margin: 0;">\[ \varepsilon_D = \frac{\text{quantity reaction}}{\text{price reaction}} = \frac{\%\Delta Q}{\%\Delta p} \]</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: center; margin-top: 10px;">
+        <div style="background: #faf8f5; border-radius: 8px; padding: 8px 6px;">
+          <div style="font-size: 30pt; color: var(--accent-color); line-height: 1;"><i class="fa-solid fa-egg"></i></div>
+          <p style="font-size: 12.5pt; font-weight: 700; margin: 4px 0 0;">Necessity &middot; Inelastic</p>
+          <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 2px 0 0;">Price <strong>+96%</strong> &rarr; quantity <strong>&minus;2%</strong><br>reacts <em>less</em> than price</p>
+        </div>
+        <div style="background: #faf8f5; border-radius: 8px; padding: 8px 6px;">
+          <div style="font-size: 30pt; color: var(--secondary-color); line-height: 1;"><i class="fa-solid fa-utensils"></i></div>
+          <p style="font-size: 12.5pt; font-weight: 700; margin: 4px 0 0;">Luxury &middot; Elastic</p>
+          <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 2px 0 0;">Price <strong>+25%</strong> &rarr; quantity <strong>&minus;30%</strong><br>reacts <em>more</em> than price</p>
+        </div>
+      </div>
+      <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 8px 14px; margin-top: 10px;">
+        <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;"><strong>Amazon + Whole Foods (2017).</strong> Amazon cut prices because it &ldquo;believed demand for many products sold at Whole Foods was <strong>more elastic</strong> than previous management did.&rdquo;</p>
+      </div>
+    </div>
+    <div>
+      <table style="width: 100%; font-size: 11pt; border-collapse: collapse;">
+        <thead><tr><th style="text-align: left; padding: 5px 10px; background: var(--primary-color); color: #fff;">Product</th><th style="text-align: right; padding: 5px 10px; background: var(--primary-color); color: #fff;">Own-price \(\varepsilon_D\)</th></tr></thead>
+        <tbody><tr style="background: #f8f6f3;"><td colspan="2" style="padding: 3px 10px; font-weight: 700; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.5px;">Broad food groups</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Eggs</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;0.06</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Beef</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;0.35</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Juice</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;1.05</td></tr><tr style="background: #f8f6f3;"><td colspan="2" style="padding: 3px 10px; font-weight: 700; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.5px;">Specific cereals</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Cap'n Crunch</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;2.28</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Cheerios</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;3.66</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Shredded Wheat</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;4.25</td></tr><tr style="background: #f8f6f3;"><td colspan="2" style="padding: 3px 10px; font-weight: 700; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.5px;">Specific cars</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Jeep Grand Cherokee</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;3.06</td></tr><tr><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color);">Toyota Corolla</td><td style="padding: 3px 10px; border-bottom: 1px solid var(--line-color); text-align: right;">&minus;3.92</td></tr></tbody>
+      </table>
+      <div class="key-result" style="margin-top: 10px;">
+        <p style="font-size: 12.5pt; margin: 0 0 3px;"><strong>What drives it: substitutes.</strong> More substitutes &rarr; more elastic.</p>
+        <p style="font-size: 12pt; margin: 0;">Broad groups (eggs, beef) &rarr; <em>inelastic</em>. Narrow goods (Shredded Wheat, Corolla) &rarr; <em>elastic</em>.</p>
+      </div>
+    </div>
+  </div>
+  <p class="footnote" style="text-align: right; font-style: italic; margin-top: 4px;">
+    <i class="fa-solid fa-rotate-left" style="color: var(--secondary-color); margin-right: 4px;"></i>
+    Review &middot; Principles of Microeconomics
+  </p>
+</section>
+
+<section id="review-elasticity-definition">
+  <h2><i class="fa-solid fa-rotate-left" style="color: var(--secondary-color);"></i> Two elasticities, two signs</h2>
+  <p style="font-size: 15pt; line-height: 1.6; margin: 8px 0 16px;">Same ratio as the last slide &mdash; but there are <strong>two</strong> of them, and their signs are not the same. Both are <strong>unit-free</strong>, which is the whole reason the measure exists: you can compare eggs and petrol without dozens and litres getting in the way.</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px;">
+    <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 10px; padding: 20px 24px;">
+      <p style="font-size: 16pt; margin: 0 0 6px;">
+        <strong>Price elasticity of demand:</strong>
+        <span style="color: var(--muted-color); font-size: 12pt;">PED: \(\%\Delta Q^D\) for 1% \(\Delta P\)</span>
+      </p>
+      <p style="font-size: 14pt; color: var(--text-color); line-height: 1.55; margin: 9px 0;">
+        Percentage change in quantity demanded divided by percent change in price.
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; margin-top: 8px;">
+        <p style="font-size: 20pt; text-align: center; margin: 0;">\(\displaystyle E^D = \frac{\%\Delta Q^D}{\%\Delta P}\)</p>
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--danger-color); color: var(--danger-color); font-weight: 800; font-size: 26pt;">&minus;</span>
+      </div>
+    </div>
+    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 20px 24px;">
+      <p style="font-size: 16pt; margin: 0 0 6px;">
+        <strong>Price elasticity of supply:</strong>
+        <span style="color: var(--muted-color); font-size: 12pt;">PES: \(\%\Delta Q^S\) for 1% \(\Delta P\)</span>
+      </p>
+      <p style="font-size: 14pt; color: var(--text-color); line-height: 1.55; margin: 9px 0;">
+        Percentage change in quantity supplied divided by percent change in price.
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 10px; margin-top: 8px;">
+        <p style="font-size: 20pt; text-align: center; margin: 0;">\(\displaystyle E^S = \frac{\%\Delta Q^S}{\%\Delta P}\)</p>
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 50%; border: 2.5px solid var(--success-color); color: var(--success-color); font-weight: 800; font-size: 26pt;">+</span>
+      </div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top:18px;">
+    <p style="margin:0;font-size:14pt;line-height:1.5;"><em>Principles</em> reported \(|\text{PED}|\) as a positive number and talked about magnitude only. <strong>From &sect;3.1 on we keep the sign</strong> &mdash; it is doing real work, and dropping it is the single most common error on this chapter. That is Heads Up 3.1.</p>
+  </div>
+</section><section class="section-divider" data-state="is-section-divider" id="divider-section-1">
+  <h1>&sect;3.1 &nbsp;From Midpoint to Point Elasticity</h1>
+  <p style="font-size: 16pt; color: var(--muted-color); margin-top: 16px; text-align: center;">Promoting elasticity from a percent-change to a derivative</p>
+</section><section id="s1-formula">
+  <h2>The point-elasticity formula</h2>
+  <div class="key-result" style="margin: 8px 0 14px;">
+    <p style="text-align: center; font-size: 18pt;">
+      \[\varepsilon_D = \frac{dQ}{dp} \cdot \frac{p}{Q}.\]
+    </p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+    <div style="background: #f8f6f3; padding: 14px 20px; border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Two pieces</p>
+      <p style="font-size: 14pt; line-height: 1.55; margin-top: 6px;">
+        \(dQ/dp\) is the <strong>quantity response</strong> &mdash; units per \$1. We draw \(p\) up the vertical axis, so this is the <strong>reciprocal</strong> of the slope you see, not the slope itself. \(p/Q\) <strong>rescales</strong> it into percentage units.
+      </p>
+    </div>
+    <div style="background: #fef9f3; padding: 14px 20px; border-radius: 10px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Sign matters</p>
+      <p style="font-size: 14pt; line-height: 1.55; margin-top: 6px;">
+        Law of demand: \(dQ/dp &lt; 0\), so \(\varepsilon_D &lt; 0\). <strong>Micro Theory keeps the sign.</strong> No absolute-value hiding.
+      </p>
+    </div>
+  </div>
+  <p style="font-size: 13pt; color: var(--muted-color); margin-top: 12px; text-align: center;">
+    Same vocabulary: \(|\varepsilon|&gt;1\) elastic &middot; \(|\varepsilon|&lt;1\) inelastic &middot; \(|\varepsilon|=1\) unit elastic &middot; \(0\) perfectly inelastic &middot; \(\infty\) perfectly elastic.
+  </p>
+  <div style="background:#fdf0f0;border-left:4px solid var(--danger-color);border-radius:8px;padding:9px 16px;margin-top:11px;">
+    <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Units discipline.</strong> \(\varepsilon_D\) is unit-free &mdash; but \(dQ/dp\) and \(Q\) are <em>not</em>. Every demand function in this chapter is printed <strong>with its units</strong>, and you should read the numbers out in full: <em>&ldquo;two hundred forty thousand entries a day,&rdquo;</em> never <em>&ldquo;240.&rdquo;</em> Write \(240\) where the curve means \(240{,}000\) and \(\varepsilon=-0.25\) becomes \(-250\) &mdash; off by a factor of a thousand, with nothing in the algebra to catch it.</p>
+  </div>
+</section>
+<section id="s1-midpoint-farewell">
+  <h2><i class="fa-solid fa-hand-peace" style="color: var(--accent-color);"></i> Farewell to the Midpoint Method</h2>
+  <p style="font-size:13.5pt;color:var(--muted-color);margin:0 0 13px;">You spent a chapter of <em>Principles</em> on this. Two minutes to retire it &mdash; and to say exactly what replaces it.</p>
+  <div style="display:grid;grid-template-columns:1fr 1.06fr;gap:22px;align-items:start;">
+    <div>
+      <p style="font-size:11.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted-color);font-weight:700;margin:0 0 7px;">What Principles did</p>
+      <div style="background:#f8f6f3;border-left:4px solid var(--muted-color);border-radius:8px;padding:12px 18px;margin:0 0 10px;">
+        <p style="margin:0;font-size:13.5pt;">\[\varepsilon^{\text{arc}}_D=\frac{(Q_2-Q_1)\big/\overline{Q}}{(p_2-p_1)\big/\overline{p}}, \quad \overline{Q}=\frac{Q_1+Q_2}{2}\]</p>
+      </div>
+      <p style="font-size:13pt;line-height:1.55;margin:0 0 9px;">Its formal name is <strong>arc elasticity</strong>. Dividing by the <em>midpoint</em> rather than the starting value is what makes the answer come out the same going up as coming down &mdash; the one real reason to teach it.</p>
+      <div style="background:#f0f5f8;border-left:4px solid var(--secondary-color);border-radius:8px;padding:10px 16px;">
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;">It is a <strong>finite-difference approximation</strong> to the point elasticity somewhere between the two observations. Shrink the interval and it becomes the derivative.</p>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:11.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--success-color);font-weight:700;margin:0 0 7px;">Why one derivative replaces it</p>
+      <div style="background:#ecfdf5;border-left:4px solid var(--success-color);border-radius:8px;padding:12px 18px;margin:0 0 10px;">
+        <p style="font-size:13.5pt;line-height:1.55;margin:0;">Hand us a calibrated curve \(Q^d(p)\) and there is <strong>nothing to average</strong>. Differentiate once, evaluate anywhere: \(\varepsilon_D=\dfrac{dQ}{dp}\dfrac{p}{Q}\). One line, exact, and it works when demand is not a straight line &mdash; which arc cannot do at all.</p>
+      </div>
+      <div style="background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:10px 16px;margin:0 0 10px;">
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Where arc still earns its keep:</strong> two raw scanner observations and no model. No function, nothing to differentiate &mdash; average the endpoints. That is the <em>only</em> case.</p>
+      </div>
+      <p style="font-size:11.5pt;line-height:1.5;margin:0;color:var(--muted-color);">For the record, on the toll demand below: arc across \(\$9\to\$12\) is \(-0.212\), point at \(\$12\) is \(-0.250\). Same slope \(-5{,}000\) both times &mdash; the <em>only</em> difference is which \((p,Q)\) you rescale by. That is the whole story, and it is why we stop computing the first one.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top:12px;">
+    <p style="font-size:13.5pt;margin:0;"><strong>From here on: point elasticity only.</strong> If you have a function, differentiate it. That sentence is most of the reason this course is taught with calculus.</p>
+  </div>
+  <p style="text-align:center;margin-top:9px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 2 min &mdash; then we never do this again</span></p>
+</section><section id="s1-w31">
+  <h2><i class="fa-solid fa-flask" style="color: var(--accent-color);"></i> Walkthrough 3.1 &mdash; Point Elasticity at the \$12 Toll</h2>
+  <div style="background:#f0f5f8;padding:8px 15px;border-radius:8px;border-left:4px solid var(--secondary-color);margin-bottom:9px;">
+    <p style="font-size:12pt;margin:0;"><strong style="color:var(--secondary-color);">Problem.</strong> NYC congestion pricing: \(Q^d(P)=300{,}000-5{,}000P\) &nbsp;&mdash;&nbsp; <strong>\(Q\) in entries per day, \(P\) in dollars per entry.</strong> Find \(\varepsilon_D\) at \(P=\$12\).</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;">
+    <div>
+      <p style="font-size:11pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--success-color);font-weight:700;margin:0 0 7px;">Three steps &mdash; every elasticity in this course</p>
+      <div class="fragment fade-in" data-fragment-index="1" style="background:#ecfdf5;padding:9px 14px;border-radius:8px;border-left:4px solid var(--success-color);margin:0 0 7px;">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--success-color);font-weight:700;margin:0 0 3px;">1. Differentiate</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">\(\dfrac{dQ^d}{dP}=\mathbf{-5{,}000}\) entries per day, per \(\$1\) of toll &mdash; constant, because demand is linear.</p></div>
+      <div class="fragment fade-in" data-fragment-index="2" style="background:#ecfdf5;padding:9px 14px;border-radius:8px;border-left:4px solid var(--success-color);margin:0 0 7px;">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--success-color);font-weight:700;margin:0 0 3px;">2. Quantity at that price</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">\(Q^d(12)=300{,}000-5{,}000(12)=\mathbf{240{,}000}\) entries per day &mdash; <em>two hundred forty thousand</em>, not \(240\).</p></div>
+      <div class="fragment fade-in" data-fragment-index="3" style="background:#ecfdf5;padding:9px 14px;border-radius:8px;border-left:4px solid var(--success-color);">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--success-color);font-weight:700;margin:0 0 3px;">3. Rescale by \(P/Q\)</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">\(\varepsilon_D=-5{,}000\cdot\dfrac{12}{240{,}000}=\mathbf{-0.250}\)</p></div>
+    </div>
+    <div>
+      <div style="background:#fef9f3;border-left:4px solid var(--accent-color);border-radius:8px;padding:10px 16px;margin:0 0 9px;">
+        <p style="font-size:12pt;line-height:1.5;margin:0;"><strong>Work it first.</strong> Three minutes on your own, then we take the answer from the room &mdash; <em>before</em> the reveal.</p>
+      </div>
+      <p style="text-align:center;margin:0 0 11px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 3 min, then poll the room</span></p>
+      <div class="fragment fade-in key-result" data-fragment-index="4" style="margin:0 0 9px;">
+        <p style="font-size:12pt;margin:0;"><strong>\(|\varepsilon_D|=0.25&lt;1\): inelastic.</strong> Commuters cannot easily stop driving into Manhattan, which is why the toll raises steady revenue and why traffic fell only modestly.</p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="5" style="background:#fdf0f0;border-left:4px solid var(--danger-color);border-radius:8px;padding:10px 16px;">
+        <p style="font-size:11.5pt;line-height:1.5;margin:0;"><strong>Two traps.</strong> <em>Units:</em> \(240\) instead of \(240{,}000\) gives \(\varepsilon=-250\) &mdash; if your answer is not between \(0\) and a few, you dropped a thousand. <em>Pairing:</em> the elasticity at \(\$12\) must use \(Q(12)\). Pairing \(\$12\) with \(Q(9)=255{,}000\) mixes two different points on the curve.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="section-divider" data-state="is-section-divider" id="divider-section-2">
+  <h1>&sect;3.2&ndash;3.3 &nbsp;Linear Demand Zones &amp; Revenue</h1>
+  <p style="font-size: 16pt; color: var(--muted-color); margin-top: 16px; text-align: center;">14 min &middot; Where on the curve are you?</p>
+</section><section id="s2-limits">
+  <h2>Elasticity varies along a linear demand curve</h2>
+  <p style="font-size:12.5pt;color:var(--muted-color);margin:0 0 10px;">Nothing new needed &mdash; just the point-elasticity formula, read carefully.</p>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 22px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin:0 0 9px;">
+        <p style="margin:0;font-size:13.5pt;">\(\varepsilon_D=\underbrace{\dfrac{dQ^d}{dp}}_{\text{fixed}}\cdot\underbrace{\dfrac{p}{Q^d}}_{\text{moves}}\)</p>
+      </div>
+      <div style="background:#f0f5f8;border-left:4px solid var(--secondary-color);border-radius:8px;padding:11px 16px;margin:0 0 9px;">
+        <p style="font-size:13pt;line-height:1.55;margin:0;">For \(Q^d=a-bp\), \(dQ^d/dp=-b\). That is a <strong>constant</strong> &mdash; it is the same at every price on the curve.</p>
+      </div>
+      <div style="background:#fef9f3;border-left:4px solid var(--accent-color);border-radius:8px;padding:11px 16px;margin:0 0 9px;">
+        <p style="font-size:13pt;line-height:1.55;margin:0;">So the <strong>only</strong> thing that changes as you walk along the line is the \((p,Q)\) pair:</p>
+        <p style="font-size:14pt;text-align:center;margin:6px 0 0;">\(\varepsilon_D=\dfrac{-bp}{a-bp}\)</p>
+      </div>
+      <div style="background: #f8f6f3; padding: 10px 16px; border-radius: 8px;">
+        <p style="font-size: 12.5pt; margin: 0 0 5px;"><strong>\(p \to 0\):</strong> \(p/Q\to0\), so \(\varepsilon_D \to 0\) &mdash; perfectly inelastic at the \(Q\)-intercept</p>
+        <p style="font-size: 12.5pt; margin: 0 0 5px;"><strong>\(p \to a/b\):</strong> \(Q\to0\), so \(\varepsilon_D \to -\infty\) &mdash; perfectly elastic at the \(p\)-intercept</p>
+        <p style="font-size: 12.5pt; margin: 0;"><strong>\(p = a/(2b)\):</strong> \(\varepsilon_D = -1\) <span style="color: var(--accent-color); font-weight: 700;">(unit elastic, midpoint)</span> &mdash; the <strong>revenue</strong>-maximising price, derived in &sect;3.3. <em>Not</em> the profit-maximising one.</p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+    <div class="iv-card" data-iv="elasticity-explorer">
+      <p class="iv-cap"><span class="iv-num">Figure 3.2</span> &mdash; Walk down the curve: \(dQ/dp\) never moves, \(\varepsilon_D\) does</p>
+      <svg class="iv-svg" data-target="elasticity-explorer" preserveaspectratio="xMidYMid meet" viewbox="0 0 480 280"></svg>
+      <div class="iv-controls">
+        <label class="iv-label">Price <span class="iv-readout" data-readout="ee-price">$10</span></label>
+        <input class="iv-slider" data-control="ee-price" max="38" min="2" step="1" type="range" value="10">
+      </div>
+    </div>
+      <p style="font-size:11.5pt;color:var(--muted-color);margin:9px 4px 0;line-height:1.45;">Drag the price: the curve never bends, yet \(\varepsilon_D\) runs from \(0\) to \(-\infty\).</p>
+    </div>
+  </div>
+</section><section>
+  <section id="poll-1">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #1: Where on the demand curve?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.75;">
+        Linear demand \(Q^d = 100 - 2p\) &mdash; \(Q\) in units per day, \(p\) in dollars per unit. At which price is demand <strong>unit elastic</strong>?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch03-econ2316-poll-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) \(p = 10\)</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) \(p = 25\)</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) \(p = 50\)</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Cannot tell &mdash; need more info</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 60 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch03-econ2316-poll-1" id="poll-1-reveal" style="display: flex; flex-direction: column;">
+      <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; \(p = 25\)</h2>
+      <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin: 0 0 12px;">No shortcut needed &mdash; the definition does it in three steps.</p>
+      <div style="flex: 1; display: grid; grid-template-columns: 1.08fr 1fr; gap: 20px; align-items: center;">
+       <div>
+        <div class="fragment fade-up" data-fragment-index="1" style="background:#f6f8fa;border-left:3px solid var(--secondary-color);border-radius:6px;padding:9px 15px;margin:0 0 8px;">
+         <p style="margin:0;font-size:12.5pt;line-height:1.5;"><strong>1.</strong> Read \(dQ/dp\) straight off the demand function: &nbsp;\(\dfrac{dQ^d}{dp} = -2\)</p>
+        </div>
+        <div class="fragment fade-up" data-fragment-index="2" style="background:#f6f8fa;border-left:3px solid var(--secondary-color);border-radius:6px;padding:9px 15px;margin:0 0 8px;">
+         <p style="margin:0;font-size:12.5pt;line-height:1.5;"><strong>2.</strong> Put \(p=25\) into the curve: &nbsp;\(Q^d = 100 - 2(25) = 50\)</p>
+        </div>
+        <div class="fragment fade-up" data-fragment-index="3" style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:6px;padding:9px 15px;margin:0;">
+         <p style="margin:0;font-size:12.5pt;line-height:1.5;"><strong>3.</strong> Apply the definition: &nbsp;\(\varepsilon_D = \dfrac{dQ^d}{dp}\cdot\dfrac{p}{Q^d} = -2\cdot\dfrac{25}{50} = \mathbf{-1}\) &check;</p>
+        </div>
+       </div>
+       <div>
+        <div class="poll-results-chart" data-poll-id="ch03-econ2316-poll-1" style="display: flex; gap: 12px; align-items: flex-end; justify-content: center; height: 64px; margin: 0 0 12px;"></div>
+        <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:0 0 10px;">
+         <p style="margin:0;font-size:12pt;">\(dQ/dp\) was \(-2\) the whole way along. What made \(\varepsilon_D=-1\) <em>here</em> is the \(p/Q\) factor &mdash; which is the entire content of Heads Up 3.2.</p>
+        </div>
+        <p style="font-size:11.5pt;line-height:1.5;margin:0;color:var(--muted-color);"><strong>Trap (D).</strong> &ldquo;Need more info&rdquo; is wrong: the curve alone fixes both \(dQ/dp\) and \(p/Q\) at every price.</p>
+       </div>
+      </div>
+     </section>
+</section><section id="s3-revenue">
+      <h2><i class="fa-solid fa-sack-dollar" style="color: var(--accent-color);"></i> Revenue and the unit-elasticity rule</h2>
+      <p style="font-size: 12.5pt; color: var(--muted-color); font-style: italic; margin: 0 0 13px;">Revenue is price times quantity &mdash; a product, so differentiate it as one. Everything on this slide is about a <strong>revenue</strong>-maximiser.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1.04fr; gap: 22px; align-items: start;">
+       <div>
+        <div class="fragment fade-up" data-fragment-index="1" style="background:#f6f8fa;border-left:3px solid var(--secondary-color);border-radius:7px;padding:15px 20px;margin:0 0 13px;">
+         <p style="margin:0;font-size:15pt;line-height:1.65;"><strong>1.</strong> Product rule on \(R(p)=p\cdot Q^d(p)\):<br>\(\dfrac{dR}{dp} = Q^d(p) + p\,\dfrac{dQ^d}{dp}\)</p>
+        </div>
+        <div class="fragment fade-up" data-fragment-index="2" style="background:#f6f8fa;border-left:3px solid var(--secondary-color);border-radius:7px;padding:15px 20px;margin:0 0 13px;">
+         <p style="margin:0;font-size:15pt;line-height:1.65;"><strong>2.</strong> Factor out \(Q^d\):<br>\(= Q^d(p)\left[\,1 + \dfrac{dQ^d}{dp}\dfrac{p}{Q^d}\,\right]\)</p>
+        </div>
+        <div class="fragment fade-up" data-fragment-index="3" style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:7px;padding:15px 20px;margin:0 0 14px;">
+         <p style="margin:0;font-size:15pt;line-height:1.65;"><strong>3.</strong> That bracket is \(\varepsilon_D\):</p>
+         <p style="margin:9px 0 0;font-size:17pt;text-align:center;">\(\dfrac{dR}{dp} = Q^d(p)\,[\,1+\varepsilon_D\,]\)</p>
+        </div>
+        <p class="fragment fade-up" data-fragment-index="4" style="font-size:14pt;line-height:1.5;margin:6px 2px 0;color:var(--muted-color);">\(Q^d>0\) always &mdash; so the <strong>bracket alone</strong> decides the sign.</p>
+       </div>
+       <div>
+        <p class="fragment fade-up" data-fragment-index="5" style="font-size:12pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--secondary-color);font-weight:700;margin:0 0 12px;">So where you sit decides what to do</p>
+        <div class="fragment fade-up" data-fragment-index="5" style="display:grid;grid-template-columns:auto 1fr;gap:0 14px;align-items:baseline;background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:14px 19px;margin:0 0 12px;">
+         <p style="margin:0;font-size:14.5pt;"><strong>Inelastic</strong></p>
+         <p style="margin:0;font-size:14.5pt;">\(\varepsilon_D>-1\) &rArr; \(dR/dp>0\) &mdash; <span style="color:var(--accent-color);font-weight:700;">raise the price</span></p>
+        </div><div class="fragment fade-up" data-fragment-index="6" style="display:grid;grid-template-columns:auto 1fr;gap:0 14px;align-items:baseline;background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:8px;padding:14px 19px;margin:0 0 12px;">
+         <p style="margin:0;font-size:14.5pt;"><strong>Unit elastic</strong></p>
+         <p style="margin:0;font-size:14.5pt;">\(\varepsilon_D=-1\) &rArr; \(dR/dp=0\) &mdash; <span style="color:var(--success-color);font-weight:700;">revenue peaks</span></p>
+        </div><div class="fragment fade-up" data-fragment-index="7" style="display:grid;grid-template-columns:auto 1fr;gap:0 14px;align-items:baseline;background:#f1f5f8;border-left:4px solid var(--secondary-color);border-radius:8px;padding:14px 19px;margin:0 0 12px;">
+         <p style="margin:0;font-size:14.5pt;"><strong>Elastic</strong></p>
+         <p style="margin:0;font-size:14.5pt;">\(\varepsilon_D&lt;-1\) &rArr; \(dR/dp&lt;0\) &mdash; <span style="color:var(--secondary-color);font-weight:700;">lower the price</span></p>
+        </div>
+        <div class="key-result fragment fade-up" data-fragment-index="8" style="margin:14px 0 0;">
+         <p style="margin:0;font-size:13.5pt;">Laffer logic for an excise tax: revenue climbs with the rate only until the market turns elastic &mdash; past that, a higher rate collects <em>less</em>.</p>
+        </div>
+        <div class="fragment fade-up" data-fragment-index="9" style="background:#fdf0f0;border-left:4px solid var(--danger-color);border-radius:8px;padding:11px 17px;margin:9px 0 0;">
+         <p style="font-size:11.5pt;color:var(--danger-color);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:0;">Say it precisely</p>
+         <p style="margin:4px 0 0;font-size:12.5pt;line-height:1.5;">A <strong>revenue</strong>-maximiser stops at \(\varepsilon_D=-1\). A <strong>profit</strong>-maximiser with positive marginal cost stops <em>earlier</em>, in the <strong>elastic</strong> region \(|\varepsilon_D|&gt;1\), where marginal revenue is still positive and can equal \(MC\). Unit elasticity is the profit rule only in the special case \(MC=0\). Chs 9 and 11 do the profit version properly.</p>
+        </div></div>
+      </div>
+     </section><section id="s3-w32">
+  <h2><i class="fa-solid fa-flask" style="color: var(--accent-color);"></i> Walkthrough 3.2 &mdash; The revenue-max NYC toll</h2>
+  <div style="background:#f0f5f8;padding:7px 15px;border-radius:8px;border-left:4px solid var(--secondary-color);margin-bottom:10px;">
+    <p style="font-size:12pt;margin:0;"><strong style="color:var(--secondary-color);">Problem.</strong> \(Q^d(P)=300{,}000-5{,}000P\) &nbsp;&mdash;&nbsp; <strong>\(Q\) in entries per day, \(P\) in dollars per entry.</strong> Find the <strong>revenue</strong>-maximising toll.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1.16fr;gap:20px;align-items:start;">
+    <div>
+      <div class="fragment fade-in" data-fragment-index="1" style="background:#f6f8fa;padding:9px 15px;border-radius:8px;border-left:4px solid var(--secondary-color);margin-bottom:8px;">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--secondary-color);font-weight:700;margin:0 0 3px;">Set up &mdash; revenue is one variable</p>
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;">\(R(P)=P\,Q^d(P)=300{,}000P-5{,}000P^{2}\)</p></div>
+      <div class="fragment fade-in" data-fragment-index="2" style="background:#ecfdf5;padding:9px 15px;border-radius:8px;border-left:4px solid var(--success-color);margin-bottom:8px;">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--success-color);font-weight:700;margin:0 0 3px;">FOC &mdash; first-order condition</p>
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;">\(R'(P)=300{,}000-10{,}000P=0\)<br>\(\Rightarrow \mathbf{P^{*}=\$30}\)</p></div>
+      <div class="fragment fade-in" data-fragment-index="3" style="background:#f6f8fa;padding:9px 15px;border-radius:8px;border-left:4px solid var(--secondary-color);margin-bottom:8px;">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--secondary-color);font-weight:700;margin:0 0 3px;">SOC &mdash; is it a max?</p>
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;">\(R''=-10{,}000&lt;0\) &check; a maximum, not a minimum.</p></div>
+      <div class="fragment fade-in" data-fragment-index="4" style="background:#fef9f3;padding:9px 15px;border-radius:8px;border-left:4px solid var(--accent-color);">
+        <p style="font-size:9.5pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--accent-color);font-weight:700;margin:0 0 3px;">Check</p>
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;">\(\varepsilon_D = -5{,}000\cdot\dfrac{30}{150{,}000}=\mathbf{-1}\) &check;</p></div>
+      <div class="key-result fragment fade-in" data-fragment-index="5" style="margin:10px 0 0;">
+        <p style="font-size:11.5pt;margin:0;">The peak sits exactly where \(\varepsilon_D=-1\) &mdash; that is what a <strong>revenue</strong>-maximiser would charge, and the MTA is not one. A private firm with \(MC&gt;0\) would stop earlier, still elastic. The real \$9 toll is deep in the <strong>inelastic</strong> zone.</p></div>
+      <p style="font-size:10pt;color:var(--muted-color);margin:9px 3px 0;line-height:1.4;"><i class="fa-solid fa-square-root-variable" style="color:var(--secondary-color);"></i> Our <strong>first</strong> first-order condition. <a href="https://ryanpiao.github.io/econ2316-slides/math-refresher/#/cc-1-1" target="_blank" rel="noopener" style="color:var(--secondary-color);font-weight:700;">Math Refresher &rarr;</a></p>
+    </div>
+    <div>
+      <img alt="Revenue plotted against the toll: a hump peaking at thirty dollars, with the nine-dollar toll far to the left on the rising, inelastic side." src="figures/figure_003_revenue_elasticity.png" style="width:100%;border-radius:8px;">
+    </div>
+  </div>
+</section>
+
+<section id="review-terminology">
+  <h2>Elasticities &mdash; Terminology</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: #f8f6f3; padding: 6px 14px; border-radius: 6px; text-align: center; margin: 0 0 10px;">
+        <p style="font-size: 16pt; margin: 0;">\(\displaystyle E^D = \frac{\%\Delta Q^D}{\%\Delta P}\)</p>
+      </div>
+      <ul style="font-size: 13.5pt; line-height: 1.75; margin: 0;">
+        <li><u>Inelastic</u>: \(0 &lt; |E^D| &lt; 1\)</li>
+        <li><u>Unit elastic</u>: \(|E^D| = 1\)</li>
+        <li><u>Elastic</u>: \(|E^D| &gt; 1\)</li>
+        <li><u>Perfectly elastic</u>: \(|E^D| = \infty\)</li>
+        <li><u>Perfectly inelastic</u>: \(|E^D| = 0\)</li>
+      </ul>
+      <div style="border-top: 1px solid var(--line-color); margin: 12px 0 8px;"></div>
+      <p style="font-size: 13pt; margin: 0;"><strong><u>Important:</u></strong> Elasticities do <u>not</u> have units attached.</p>
+      <ul style="font-size: 12.5pt; line-height: 1.5; margin-top: 4px;">
+        <li>Allows comparison across goods and markets.</li>
+        <li>Same classifications apply to supply (\(E^S\)).</li>
+      </ul>
+    </div>
+    <div class="iv-card" data-iv="demand-slope">
+      <p class="iv-cap"><span class="iv-num">Figure 6.2</span> &mdash; Demand slope: inelastic \(\leftrightarrow\) elastic</p>
+      <svg class="iv-svg" data-target="demand-slope" preserveaspectratio="xMidYMid meet" viewbox="0 0 480 280"></svg>
+      <div class="iv-controls">
+        <label class="iv-label">Slope \(b\) <span class="iv-readout" data-readout="ds-slope">5 &middot; inelastic</span></label>
+        <input class="iv-slider" data-control="ds-slope" max="5" min="0" step="1" type="range" value="2">
+      </div>
+    </div>
+  </div>
+  <p class="footnote" style="text-align: right; font-style: italic;">
+    <i class="fa-solid fa-rotate-left" style="color: var(--secondary-color); margin-right: 4px;"></i>
+    Review &middot; Principles of Microeconomics
+  </p>
+</section>
+
+<section id="s1-app-innovation">
+  <h2><i class="fa-solid fa-lightbulb" style="color: var(--accent-color);"></i> Application &mdash; Innovation, Substitutes and Market Power</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 13pt; line-height: 1.5; margin: 0 0 8px;">
+        Consumer and producer surplus are how we measure the <strong>value a new product</strong> creates &mdash; e.g., a solar-powered car. The CS triangle <em>is</em> the welfare gain to buyers.
+      </p>
+      <div style="background: #f8f6f3; padding: 8px 14px; border-radius: 8px; border-left: 4px solid var(--secondary-color);">
+        <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">
+          <strong>Thought experiment.</strong> Hold \(P^*\) and \(Q^*\) fixed. Draw two demand curves with <em>different slopes</em>, both through E. Which generates more CS?
+        </p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="1" style="background: #f0f5f8; padding: 8px 14px; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-top: 8px;">
+        <p style="font-size: 12pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">1. Steep demand &mdash; <em>inelastic</em></p>
+        <p style="font-size: 12.5pt; line-height: 1.5; margin: 4px 0 0;">
+          \(|\varepsilon_D| &lt; 1\). Some inframarginal buyers will pay <em>far above</em> \(P^*\) &rArr; <strong>tall CS triangle</strong>. <em>The profile of a brand-new product with few substitutes.</em>
+        </p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="2" style="background: #fef9f3; padding: 8px 14px; border-radius: 8px; border-left: 4px solid var(--accent-color); margin-top: 8px;">
+        <p style="font-size: 12pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">2. Shallow demand &mdash; <em>elastic</em></p>
+        <p style="font-size: 12.5pt; line-height: 1.5; margin: 4px 0 0;">
+          \(|\varepsilon_D| &gt; 1\). Substitutes are easy; buyers' WTP clusters near \(P^*\) &rArr; <strong>short CS triangle</strong>. <em>The profile of a mature market.</em>
+        </p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin: 0 0 4px;"><strong>Figure 3.3</strong> &mdash; Consumer Surplus &amp; Elasticity of Demand</p>
+      <svg viewbox="0 0 360 290" style="width: 100%; height: 240px;" xmlns="http://www.w3.org/2000/svg">
+        <text x="20" y="22" font-size="11" font-weight="700" fill="#2D2D2D">Price</text>
+        <text x="305" y="278" font-size="11" font-weight="700" fill="#2D2D2D">Quantity</text>
+        <line x1="50" y1="30" x2="50" y2="245" stroke="#2D2D2D" stroke-width="1.5"/>
+        <line x1="50" y1="240" x2="340" y2="240" stroke="#2D2D2D" stroke-width="1.5"/>
+        <text x="42" y="252" font-size="11" fill="#8C8580">0</text>
+
+        <line x1="50" y1="160" x2="210" y2="160" stroke="#8C8580" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="20" y="164" font-size="11" font-weight="700" fill="#2D2D2D">P*</text>
+        <line x1="210" y1="160" x2="210" y2="240" stroke="#8C8580" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="200" y="256" font-size="11" font-weight="700" fill="#2D2D2D">Q*</text>
+        <circle cx="210" cy="160" r="5" fill="#6A8E6B" stroke="#fff" stroke-width="1.5"/>
+        <text x="218" y="156" font-size="11" font-weight="700" fill="#6A8E6B">E</text>
+
+        <polygon class="fragment fade-in" data-fragment-index="1" points="50,40 50,160 210,160" fill="#6B8BA4" fill-opacity="0.25"/>
+        <line class="fragment fade-in" data-fragment-index="1" x1="50" y1="40" x2="317" y2="240" stroke="#6B8BA4" stroke-width="2.5"/>
+        <text class="fragment fade-in" data-fragment-index="1" x="105" y="92" font-size="13" font-weight="700" fill="#6B8BA4">CS</text>
+        <text class="fragment fade-in" data-fragment-index="1" x="305" y="215" font-size="11" font-weight="700" fill="#6B8BA4" text-anchor="middle">D<tspan font-size="8" baseline-shift="sub">steep</tspan> (inelastic)</text>
+
+        <polygon class="fragment fade-in" data-fragment-index="2" points="50,120 50,160 210,160" fill="#C47B5A" fill-opacity="0.45"/>
+        <line class="fragment fade-in" data-fragment-index="2" x1="50" y1="120" x2="340" y2="193" stroke="#C47B5A" stroke-width="2.5"/>
+        <text class="fragment fade-in" data-fragment-index="2" x="105" y="150" font-size="11" font-weight="700" fill="#C47B5A">CS</text>
+        <text class="fragment fade-in" data-fragment-index="2" x="310" y="150" font-size="11" font-weight="700" fill="#C47B5A" text-anchor="middle">D<tspan font-size="8" baseline-shift="sub">shallow</tspan> (elastic)</text>
+      </svg>
+      <p style="font-size: 11pt; color: var(--muted-color); margin: 5px 6px 0; line-height: 1.4; text-align: left;">
+        <strong style="color: #6B8BA4;">Blue = a new innovative product</strong> (few substitutes &rArr; steep). <strong style="color: #C47B5A;">Red = a mature market</strong> (many substitutes &rArr; flat). As rivals arrive, demand flattens blue&rarr;red and CS shrinks.
+      </p>
+    </div>
+  </div>
+
+  <div class="fragment fade-in key-result" data-fragment-index="3" style="margin-top: 10px; padding: 10px 18px;">
+    <p style="font-size: 12.5pt; margin: 0;">
+      <strong>Role of elasticity.</strong> At the same \((P^*, Q^*)\), more <em>inelastic</em> demand &rArr; more CS. Elasticity is the geometric translator between &ldquo;steepness&rdquo; and &ldquo;welfare.&rdquo;
+    </p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1.24fr; gap: 10px; margin-top: 6px;">
+    <div class="fragment fade-in" data-fragment-index="4" style="background: #ecfdf5; padding: 8px 15px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 11.5pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Role of innovation</p>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 3px 0 0;">
+        New products whose buyers have <em>highly varied WTP</em> (insulin pumps, iPhones, EVs) face steep demand &rArr; a large CS triangle &rArr; <strong>big welfare gains</strong>.
+      </p>
+    </div>
+    <div class="fragment fade-in" data-fragment-index="5" style="background: #fdf0f0; padding: 8px 15px; border-radius: 8px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 11.5pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Heads up &mdash; the word runs the other way</p>
+      <p style="font-size: 12pt; line-height: 1.45; margin: 3px 0 0;">
+        A dozen firms make <strong>eyeglasses</strong>, so the demand any one faces is <em>elastic</em> &mdash; nudge price up and buyers walk. Patent the <strong>contact lens</strong> and the substitutes are gone, so the demand <em>you</em> face becomes <strong style="color: var(--danger-color);">LESS elastic</strong>, not more. <strong>That is what market power is</strong> (Chs 9, 11&ndash;12).
+      </p>
+    </div>
+  </div>
+
+</section><section class="section-divider" data-state="is-section-divider" id="divider-section-3">
+  <h1>&sect;3.4 &nbsp;Income &amp; Cross-Price Elasticities</h1>
+  <p style="font-size: 16pt; color: var(--accent-color); margin-top: 16px; text-align: center;">Two more elasticities, same template</p>
+  <p style="font-size: 13.5pt; color: var(--muted-color); margin-top: 10px; text-align: center;">The sign classifies the good &middot; the size ranks it</p>
+</section>
+<section id="s4-income">
+  <h2>Income elasticity</h2>
+  <div class="key-result" style="margin: 4px 0 10px;">
+    <p style="text-align: center; font-size: 16pt; margin:0;">\(\varepsilon_{I,i} = \dfrac{\partial Q^d_i}{\partial I} \cdot \dfrac{I}{Q^d_i}\) &nbsp;&mdash;&nbsp; the <strong>sign</strong> classifies the good, the <strong>size</strong> ranks it</p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    <div style="background: #f0fdf4; padding: 12px 18px; border-radius: 10px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 13.5pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin:0 0 5px;">\(\varepsilon_{I,i} &gt; 0\) &mdash; Normal</p>
+      <p style="font-size: 14pt; line-height: 1.55; margin:0 0 10px;">&bull; <strong>Necessity</strong>: \(0 &lt; \varepsilon &lt; 1\) (food)<br>&bull; <strong>Luxury</strong>: \(\varepsilon &gt; 1\) (restaurant meals)</p>
+      <img alt="A fine-dining restaurant table setting, standing in for a luxury good" src="figures/fine_dining.jpeg" style="width:100%;max-height:158px;object-fit:cover;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.12);">
+      <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin: 7px 0 0;">Restaurant meals, \(\varepsilon_I \approx 1.0\) &mdash; right on the luxury edge.</p>
+    </div>
+    <div style="background: #fef2f2; padding: 12px 18px; border-radius: 10px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 13.5pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin:0 0 5px;">\(\varepsilon_{I,i} &lt; 0\) &mdash; Inferior</p>
+      <p style="font-size: 14pt; line-height: 1.55; margin:0 0 10px;">Quantity <em>falls</em> as income rises &mdash; buyers substitute toward something better.</p>
+      <img alt="An MBTA Orange Line train in Boston, standing in for an inferior good" src="figures/boston_orange_line.jpg" style="width:100%;max-height:158px;object-fit:cover;border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,0.12);">
+      <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin: 7px 0 0;">MBTA Orange Line &mdash; as income rises, riders switch to cars.</p>
+    </div>
+  </div>
+  <p style="font-size: 12pt; color: var(--muted-color); margin-top: 10px; font-style: italic; text-align: center;">U.S. food: \(\varepsilon_I \approx 0.1\)&ndash;\(0.3\). Bus travel can flip from inferior to normal at different income levels.</p>
+</section><section id="s4-crossprice">
+  <h2>Cross-price elasticity</h2>
+  <div class="key-result" style="margin: 4px 0 9px;">
+    <p style="text-align: center; font-size: 16pt; margin:0;">\(\varepsilon_{i,j} = \dfrac{\partial Q^d_i}{\partial p_j} \cdot \dfrac{p_j}{Q^d_i}\) &nbsp;&mdash;&nbsp; does \(i\) sell <em>more</em> or <em>less</em> when \(j\) gets pricier?</p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    <div style="background: #f0fdf4; padding: 12px 18px; border-radius: 10px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 13.5pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin:0 0 5px;">\(\varepsilon_{i,j} &gt; 0\) &mdash; Substitutes</p>
+      <p style="font-size: 14pt; line-height: 1.55; margin:0 0 10px;">\(j\) gets pricier, buyers move <em>to</em> \(i\). Tea/coffee, iPhone/Galaxy, ride-hail/rental.</p>
+      <img alt="A Nintendo Switch console beside an Xbox console, two substitute goods" src="figures/switch_xbox.png" style="width:100%;max-height:152px;object-fit:contain;border-radius:6px;">
+      <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin: 7px 0 0;">Raise the price of one console, buyers shift to the other.</p>
+    </div>
+    <div style="background: #fef2f2; padding: 12px 18px; border-radius: 10px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 13.5pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin:0 0 5px;">\(\varepsilon_{i,j} &lt; 0\) &mdash; Complements</p>
+      <p style="font-size: 14pt; line-height: 1.55; margin:0 0 10px;">\(j\) gets pricier, demand for \(i\) <em>falls</em> too. Printer/ink, console/games.</p>
+      <img alt="A Nintendo Switch console with a game cartridge, two complementary goods" src="figures/switch_game.png" style="width:100%;max-height:152px;object-fit:contain;border-radius:6px;">
+      <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin: 7px 0 0;">Console and cartridge &mdash; price up on one, demand down on both.</p>
+    </div>
+  </div>
+  <p style="font-size:12pt;color:var(--muted-color);margin:9px 2px 0;text-align:center;"><strong>\(\varepsilon_{i,j}=0\)</strong> &mdash; unrelated goods, no cross-relationship at all. &nbsp;&bull;&nbsp; <strong>Antitrust use:</strong> a large positive \(\varepsilon_{i,j}\) puts two products in the same <em>relevant market</em> for merger analysis.</p>
+</section><section class="section-divider" data-state="is-section-divider" id="divider-section-4">
+  <h1>&sect;3.5 &nbsp;Tax Incidence &mdash; Who Actually Pays?</h1>
+  <p style="font-size: 16pt; color: var(--muted-color); margin-top: 16px; text-align: center;">14 min &middot; The wedge equation</p>
+</section><section id="incentives-tax-apply">
+  <h2><i class="fa-solid fa-scale-unbalanced" style="color: var(--accent-color);"></i> A tax is an incentive &mdash; and elasticity is the response</h2>
+  <p style="font-size:12pt;color:var(--muted-color);margin:0 0 12px;">A per-unit tax \(t\) raises what buyers pay to \(p_c\) and cuts what sellers keep to \(p_s\). Who moves?</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
+    <div style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:8px;padding:12px 16px;">
+      <p style="font-size:11pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--success-color);font-weight:700;margin:0 0 6px;">Inelastic &mdash; weak response</p>
+      <p style="font-size:12.5pt;line-height:1.6;margin:0;">Eggs \(-0.23\), cigarettes \(-0.4\), insulin \(\approx 0\).<br>Buyers cannot walk away &rarr; \(p_c\) rises by nearly all of \(t\).<br><strong>Fat revenue, thin DWL.</strong></p>
+    </div>
+    <div style="background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:12px 16px;">
+      <p style="font-size:11pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--accent-color);font-weight:700;margin:0 0 6px;">Elastic &mdash; strong response</p>
+      <p style="font-size:12.5pt;line-height:1.6;margin:0;">Luxury yachts \(-2\), one cereal brand, soda with substitutes.<br>Buyers leave &rarr; the tax lands on sellers.<br><strong>Thin revenue, fat DWL.</strong></p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top:12px;">
+    <p style="font-size:12.5pt;margin:0;">Two halves of one story &mdash; and &sect;3.5 turns it into a formula.</p>
+  </div>
+</section><section id="s5-setup">
+  <h2>The tax wedge</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+    <div style="background: #f8f6f3; padding: 18px 22px; border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">The wedge</p>
+      <p style="font-size: 14pt; line-height: 1.65; margin-top: 8px;">
+        \(p_c\) = price buyer pays<br>
+        \(p_s\) = price seller receives<br>
+        <strong>\(p_c - p_s = t\)</strong>
+      </p>
+      <p style="font-size: 13pt; color: var(--muted-color); margin-top: 10px;">
+        Statutory incidence (whose paycheck the deduction shows up on) is <em>economically irrelevant</em>.
+      </p>
+    </div>
+    <div style="background: #f0f5f8; padding: 18px 22px; border-radius: 10px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Equilibrium with tax</p>
+      <p style="font-size: 14pt; line-height: 1.65; margin-top: 8px;">
+        Statute on sellers:<br>
+        \(Q^d(p_c) = Q^s(p_c - t)\)
+      </p>
+      <p style="font-size: 13pt; color: var(--muted-color); margin-top: 10px;">
+        One equation in one unknown \(p_c\) for each \(t\). At \(t = 0\): \(p_c = p_s = p^*\).
+      </p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p>The comparative-statics question: how do \(p_c\) and \(p_s\) move as \(t\) rises? <strong>Total differentiate.</strong></p>
+  </div>
+</section>
+
+<section id="s5-driver-tax">
+  <h2><i class="fa-solid fa-car-side" style="color: var(--accent-color);"></i> Try It &mdash; A \$5 tax on rideshare drivers</h2>
+  <div style="background:#f0f5f8;padding:7px 15px;border-radius:8px;border-left:4px solid var(--secondary-color);margin:4px 0 4px;">
+    <p style="font-size:12pt;line-height:1.5;margin:0;"><strong style="color:var(--secondary-color);">Problem.</strong> Rides: \(Q^d = 120 - 2p\), \(Q^s = 3p\) (\(Q\) in thousands/week, \(p\) in \$/ride). The city charges <strong>drivers</strong> \(t=\$5\) per ride. Find \(p_c\), \(p_s\), \(Q\), then CS, PS, tax revenue and DWL.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:16px;align-items:start;">
+    <div>
+      <div class="fragment fade-in" data-fragment-index="1" style="background:#f8f6f3;padding:8px 14px;border-radius:8px;border-left:4px solid var(--muted-color);margin-top:7px;">
+        <p style="font-size:10pt;color:var(--muted-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">1 &middot; No tax</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">\(120-2p = 3p \Rightarrow p^*=\$24,\ Q^*=72\)<br>CS \(=\tfrac12(60-24)(72)=1{,}296\) &nbsp; PS \(=\tfrac12(24)(72)=864\)</p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="2" style="background:#f0f5f8;padding:8px 14px;border-radius:8px;border-left:4px solid var(--secondary-color);margin-top:7px;">
+        <p style="font-size:10pt;color:var(--secondary-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">2 &middot; With the tax: \(p_s = p_c - 5\)</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">\(120-2p_c = 3(p_c-5) \Rightarrow \mathbf{{p_c=\$27}}\)<br>\(\mathbf{{p_s=\$22}}\), \(\mathbf{{Q=120-2(27)=66}}\) &nbsp;<span style="color:var(--muted-color);">riders +\$3, drivers &minus;\$2</span></p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="3" style="background:#f0f5f0;padding:8px 14px;border-radius:8px;border-left:4px solid var(--success-color);margin-top:7px;">
+        <p style="font-size:10pt;color:var(--success-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">3 &middot; Surplus after the tax</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">CS \(=\tfrac12(60-27)(66)=\mathbf{{1{,}089}}\)<br>PS \(=\tfrac12(22-0)(66)=\mathbf{{726}}\)</p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="4" style="background:#fbf3ee;padding:8px 14px;border-radius:8px;border-left:4px solid var(--accent-color);margin-top:7px;">
+        <p style="font-size:10pt;color:var(--accent-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">4 &middot; Revenue and DWL</p>
+        <p style="font-size:12pt;line-height:1.55;margin:0;">Revenue \(=t\cdot Q = 5(66)=\mathbf{{330}}\)<br>DWL \(=\tfrac12\cdot t\cdot\Delta Q=\tfrac12(5)(72-66)=\mathbf{{15}}\)</p>
+      </div>
+      <div class="key-result fragment fade-in" data-fragment-index="5" style="margin-top:7px;">
+        <p style="font-size:11.5pt;margin:0;"><strong>Check:</strong> \(2{,}160 = 1{,}089 + 726 + 330 + 15\) (\$K/week). The tax moves \$330K to the city and destroys \$15K.</p>
+      </div>
+    </div>
+    <div>
+      <svg viewBox="0 0 470 400" style="width:100%;height:auto;background:#fafaf7;border-radius:8px;border:1px solid #e5e7eb;" font-family="inherit">
+        <g class="fragment fade-in" data-fragment-index="3">
+          <polygon points="56.0,40.0 56.0,211.6 254.0,211.6" fill="rgba(107,139,164,0.35)"/>
+          <text x="98.0" y="175.2" font-size="14" font-weight="700" fill="#3f5f78">CS</text>
+          <polygon points="56.0,237.6 56.0,352.0 254.0,237.6" fill="rgba(106,142,107,0.35)"/>
+          <text x="98.0" y="284.4" font-size="14" font-weight="700" fill="#3f6b40">PS</text>
+        </g>
+        <g class="fragment fade-in" data-fragment-index="4">
+          <rect x="56.0" y="211.6" width="198.0" height="26.0" fill="rgba(217,119,6,0.45)"/>
+          <text x="155.0" y="228.6" text-anchor="middle" font-size="12" font-weight="700" fill="#92400e">Tax revenue</text>
+          <polygon points="254.0,211.6 254.0,237.6 272.0,227.2" fill="rgba(220,38,38,0.75)"/>
+          <line x1="266.0" y1="235.0" x2="308.0" y2="294.8" stroke="#b91c1c" stroke-width="1"/>
+          <text x="311.0" y="310.4" font-size="13" font-weight="700" fill="#b91c1c">DWL</text>
+        </g>
+        <line x1="56.0" y1="352.0" x2="446.0" y2="352.0" stroke="#374151" stroke-width="1.4"/>
+        <line x1="56.0" y1="352.0" x2="56.0" y2="14.0" stroke="#374151" stroke-width="1.4"/>
+        <text x="446.0" y="382.0" text-anchor="end" font-size="11" fill="#374151">Q (thousand rides/week)</text>
+        <text x="61.0" y="24.0" font-size="11" fill="#374151">p (&#36;/ride)</text>
+        <line x1="56.0" y1="40.0" x2="416.0" y2="352.0" stroke="#2563eb" stroke-width="2.6"/>
+        <text x="368.0" y="289.6" font-size="13" font-weight="700" fill="#2563eb">D</text>
+        <line x1="56.0" y1="352.0" x2="431.0" y2="135.33333333333334" stroke="#15803d" stroke-width="2.6"/>
+        <text x="434.0" y="149.33333333333334" font-size="13" font-weight="700" fill="#15803d">S</text>
+        <g class="fragment fade-in" data-fragment-index="2">
+          <line x1="56.0" y1="326.0" x2="416.0" y2="118.0" stroke="#15803d" stroke-width="2" stroke-dasharray="7 5"/>
+          <text x="350.0" y="114.0" font-size="12" font-weight="700" fill="#15803d">S + t</text>
+          <line x1="56.0" y1="211.6" x2="254.0" y2="211.6" stroke="#374151" stroke-dasharray="3 3"/>
+          <line x1="56.0" y1="237.6" x2="254.0" y2="237.6" stroke="#374151" stroke-dasharray="3 3"/>
+          <line x1="254.0" y1="211.6" x2="254.0" y2="352.0" stroke="#374151" stroke-dasharray="3 3"/>
+          <circle cx="254.0" cy="211.6" r="4" fill="#374151"/><circle cx="254.0" cy="237.6" r="4" fill="#374151"/>
+          <text x="51.0" y="215.6" text-anchor="end" font-size="11" font-weight="700" fill="#374151">27</text>
+          <text x="51.0" y="245.6" text-anchor="end" font-size="11" font-weight="700" fill="#374151">22</text>
+          <text x="254.0" y="366.0" text-anchor="middle" font-size="11" font-weight="700" fill="#374151">66</text>
+        </g>
+        <g class="fragment fade-in" data-fragment-index="1">
+          <circle cx="272.0" cy="227.2" r="4.5" fill="#7c3aed"/>
+          <text x="290.0" y="232.4" font-size="11" font-weight="700" fill="#7c3aed">(72, &#36;24)</text>
+        </g>
+        <text x="51.0" y="44.0" text-anchor="end" font-size="11" fill="#6b7280">60</text>
+        <text x="51.0" y="356.0" text-anchor="end" font-size="11" fill="#6b7280">0</text>
+        <text x="416.0" y="366.0" text-anchor="middle" font-size="11" fill="#6b7280">120</text>
+      </svg>
+    </div>
+  </div>
+</section>
+<section>
+<section id="s5-cc32">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 3.2 &mdash; Deriving the incidence formula</h2>
+  <p style="font-size: 13pt; color: var(--muted-color); margin: 0 0 8px;">Differentiate \(Q^d(p_c) = Q^s(p_c - t)\) w.r.t. \(t\). Both sides need the <strong>chain rule</strong> &mdash; \(p_c\) is itself a function of \(t\):</p>
+  <div style="background: #f8f6f3; padding: 14px 22px; border-radius: 10px;">
+    <p style="font-size: 14pt; text-align: center; margin: 0;">\[\frac{dQ^d}{dp_c}\cdot\frac{dp_c}{dt} = \frac{dQ^s}{dp_s}\left(\frac{dp_c}{dt} - 1\right)\]</p>
+  </div>
+  <p style="font-size: 13pt; color: var(--muted-color); margin: 8px 0;">Solve for \(dp_c/dt\), then multiply num/denom by \(p^*/Q^*\) to turn the derivatives into elasticities:</p>
+  <div class="key-result">
+    <p style="text-align: center; font-size: 18pt;">\[\boxed{\dfrac{dp_c}{dt} = \dfrac{\varepsilon_S}{\varepsilon_S - \varepsilon_D}, \qquad \dfrac{dp_s}{dt} = \dfrac{\varepsilon_D}{\varepsilon_S - \varepsilon_D}}\]</p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px;">
+    <div style="background: #f0fdf4; padding: 12px 18px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 13pt; margin: 0;">\(\varepsilon_S &gt; 0\) &rArr; \(dp_c/dt &gt; 0\) (consumer price rises)</p>
+    </div>
+    <div style="background: #fef2f2; padding: 12px 18px; border-radius: 8px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 13pt; margin: 0;">\(\varepsilon_D &lt; 0\) &rArr; \(dp_s/dt &lt; 0\) (seller price falls)</p>
+    </div>
+  </div>
+  <p style="font-size: 13pt; color: var(--muted-color); margin-top: 10px; text-align: center; font-style: italic;">
+    For finite nonzero elasticities: \(0 &lt; dp_c/dt &lt; 1\). Pass-through is strictly between 0% and 100% in the competitive linear model.
+  </p>
+  <p style="font-size:10.5pt;color:var(--muted-color);margin:8px 2px 0;text-align:center;"><i class="fa-solid fa-square-root-variable" style="color:var(--secondary-color);"></i> First chain rule of the course. <a href="https://ryanpiao.github.io/econ2316-slides/math-refresher/#/deriv-chain" target="_blank" rel="noopener" style="color:var(--secondary-color);font-weight:700;">Math Refresher &rarr;</a></p>
+</section>
+<section id="s5-interpret">
+  <h2><i class="fa-solid fa-scale-balanced" style="color: var(--accent-color);"></i> Reading the formula</h2>
+  <p style="font-size:12.5pt;margin:0 0 12px;">\(\dfrac{dp_c}{dt}=\dfrac{\varepsilon_S}{\varepsilon_S-\varepsilon_D}\) &mdash; a ratio of one side's responsiveness to the total.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;">
+    <div style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:8px;padding:12px 16px;">
+      <p style="font-size:11pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--success-color);font-weight:700;margin:0 0 5px;">Demand inelastic</p>
+      <p style="font-size:12.5pt;line-height:1.55;margin:0;">\(\varepsilon_D\to 0 \Rightarrow dp_c/dt\to 1\)<br>Buyers pay it all. <em>Cigarettes, eggs, insulin.</em></p></div>
+    <div style="background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:12px 16px;">
+      <p style="font-size:11pt;text-transform:uppercase;letter-spacing:1.1px;color:var(--accent-color);font-weight:700;margin:0 0 5px;">Supply inelastic</p>
+      <p style="font-size:12.5pt;line-height:1.55;margin:0;">\(\varepsilon_S\to 0 \Rightarrow dp_c/dt\to 0\)<br>Sellers eat it. <em>Land, port slots, sports stars.</em></p></div>
+  </div>
+  <div class="key-result" style="margin-top:12px;">
+    <p style="font-size:13pt;margin:0;">The side that <strong>cannot walk away</strong> bears the tax.</p>
+  </div>
+</section>
+</section><section id="s4-w33">
+  <h2><i class="fa-solid fa-flask" style="color: var(--accent-color);"></i> Walkthrough 3.3 &mdash; the rule works without a tax</h2>
+  <div style="background: #f0f5f8; padding: 7px 15px; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-bottom: 10px;">
+    <p style="font-size: 12.5pt; line-height: 1.45; margin: 0;"><strong style="color: var(--secondary-color);">Same eggs, no tax.</strong> \(Q^d = 200-5p\), \(Q^s = 50+10p\) &nbsp;(\(Q\) in M dozens/wk, \(p\) in \$/dozen); \(p^*=\$10\), \(Q^*=150\). Bird flu takes <strong>30</strong> million dozen off supply. Where does that 30 go?</p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 16px; align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 7px;">
+      <div class="fragment fade-in" style="background: #ecfdf5; padding: 7px 14px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+        <p style="font-size: 10.5pt; color: var(--success-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin: 0 0 3px;">Step 1 &mdash; the two elasticities at \(p^*\)</p>
+        <p style="font-size: 12.5pt; line-height: 1.45; margin: 0;">\(\varepsilon_D = -5\cdot\tfrac{10}{150} = \mathbf{-\tfrac{1}{3}}\) &nbsp;&middot;&nbsp; \(\varepsilon_S = 10\cdot\tfrac{10}{150} = \mathbf{+\tfrac{2}{3}}\)<br><span style="color: var(--muted-color); font-size: 11.5pt;">Supply is twice as elastic as demand.</span></p>
+      </div>
+      <div class="fragment fade-in" style="background: #fef9f3; padding: 7px 14px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+        <p style="font-size: 10.5pt; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin: 0 0 3px;">Step 2 &mdash; where does the 30 go?</p>
+        <p style="font-size: 12pt; line-height: 1.4; margin: 0;">At the old \(\$10\) the shock leaves a <strong>30-unit shortage</strong>. Price rises \(\$2\) until it closes:<br>&bull; buyers cut back \(5\times 2 = \mathbf{10}\) &mdash; this <em>is</em> the fall in quantity, \(150\to 140\)<br>&bull; sellers bring back \(10\times 2 = \mathbf{20}\)<br><span style="color: var(--muted-color);">10 + 20 = 30. The quantity piece is the buyers' piece.</span></p>
+      </div>
+      <div class="fragment fade-in" style="background: #f8f6f3; padding: 7px 14px; border-radius: 8px; border-left: 4px solid var(--muted-color);">
+        <p style="font-size: 10.5pt; color: var(--muted-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin: 0 0 3px;">Step 3 &mdash; the two shares, and Ch 2</p>
+        <p style="font-size: 12pt; line-height: 1.4; margin: 0;">Each piece is its own elasticity's share:<br>quantity \(= \dfrac{|\varepsilon_D|}{|\varepsilon_D|+\varepsilon_S} = \dfrac{1/3}{1} = \mathbf{\tfrac13}\) of 30 \(= 10\) &nbsp;&middot;&nbsp; price-recovered \(= \mathbf{\tfrac23}\) of 30 \(= 20\).<br><span style="color: var(--muted-color);">Ch 2 re-solved the system and got the same \(\Delta p=+\$2\), \(\Delta Q=-10\).</span></p>
+      </div>
+    </div>
+    <div>
+      <img alt="Egg market with the bird-flu supply shift, the equilibrium sliding up the demand curve so two thirds of the shock lands on price and one third on quantity." src="figures/figure_010_hpai_tax_cross.png" style="width:100%;max-height:330px;object-fit:contain;border-radius:8px;">
+      <div class="key-result fragment fade-in" style="margin-top:10px;">
+        <p style="font-size: 12pt; margin: 0 0 4px;"><strong>Careful &mdash; this split is not the tax split.</strong> Here it is <strong>price vs quantity</strong>. On the next slide it is <strong>buyer vs seller</strong>.</p>
+        <p style="font-size: 11.5pt; margin: 0; color: var(--muted-color);">Same ratio, same reason: the more elastic side moves, the less elastic side absorbs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="s5-w34">
+  <h2><i class="fa-solid fa-flask" style="color: var(--accent-color);"></i> Walkthrough 3.4 &mdash; back to the \$5 tax: who actually pays?</h2>
+  <div style="background:#f0f5f8;padding:8px 15px;border-radius:8px;border-left:4px solid var(--secondary-color);margin:6px 0 10px;">
+    <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong style="color:var(--secondary-color);">Same market as the Try It.</strong> \(Q^d = 120-2p\), \(Q^s = 3p\), \(t=\$5\) on drivers. We already solved it the long way: \(p_c=\$27\), \(p_s=\$22\). Now get the same answer from the two elasticities alone.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1.06fr 1fr;gap:18px;align-items:start;">
+    <div>
+      <div class="fragment fade-in" data-fragment-index="1" style="background:#ecfdf5;padding:9px 14px;border-radius:8px;border-left:4px solid var(--success-color);">
+        <p style="font-size:10pt;color:var(--success-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">Step 1 &mdash; elasticities at \((72,\ \$24)\)</p>
+        <p style="font-size:12.5pt;line-height:1.55;margin:0;">\(\varepsilon_D = -2\cdot\tfrac{24}{72} = \mathbf{-\tfrac{2}{3}}\) &nbsp;&middot;&nbsp; \(\varepsilon_S = 3\cdot\tfrac{24}{72} = \mathbf{+1}\)</p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="1" style="background:#fef9f3;padding:9px 14px;border-radius:8px;border-left:4px solid var(--accent-color);margin-top:8px;">
+        <p style="font-size:10pt;color:var(--accent-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">Step 2 &mdash; riders' share</p>
+        <p style="font-size:12.5pt;line-height:1.55;margin:0;">\(\dfrac{\varepsilon_S}{\varepsilon_S+|\varepsilon_D|}=\dfrac{1}{1+2/3}=\mathbf{0.6}\) &rarr; riders \(\mathbf{\$3}\), drivers \(\mathbf{\$2}\).<br><span style="color:var(--muted-color);font-size:11.5pt;">Which is exactly \(\$27-\$24\) and \(\$24-\$22\). ✓</span></p>
+      </div>
+      <div class="fragment fade-in" data-fragment-index="2" style="background:#f8f6f3;padding:9px 14px;border-radius:8px;border-left:4px solid var(--muted-color);margin-top:8px;">
+        <p style="font-size:10pt;color:var(--muted-color);text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 3px;">Step 3 &mdash; swap the two numbers</p>
+        <p style="font-size:12.5pt;line-height:1.55;margin:0;">\(\varepsilon_D=-1\), \(\varepsilon_S=+\tfrac{2}{3}\) &rarr; \(\dfrac{2/3}{5/3}=\mathbf{0.4}\): riders \(\mathbf{\$2}\), drivers \(\mathbf{\$3}\). The shares <strong>flip</strong>, and nobody changed who writes the check.</p>
+      </div>
+      <div class="key-result fragment fade-in" data-fragment-index="3" style="margin-top:9px;">
+        <p style="font-size:12pt;margin:0;"><strong>Your homework is the tie.</strong> Problem 4's market has \(\varepsilon_D=-\tfrac12\) and \(\varepsilon_S=+\tfrac12\) at \(p^*=\$20\) &mdash; equal, so the split is exactly half, which is why \(p_c = 20 + t/2\).</p>
+      </div>
+    </div>
+    <div style="grid-column: 2 / span 2; position: relative;">
+      <img class="fragment fade-in-then-out" data-fragment-index="1" alt="Supply and demand for the rideshare market with a five-dollar tax on drivers. Demand is the steeper curve. The old equilibrium price of twenty-four dollars splits the wedge: riders pay three dollars of it, drivers two." src="figures/rideshare-sd-a.png" style="width:100%;border-radius:8px;">
+      <img class="fragment fade-in" data-fragment-index="2" alt="The same market with the elasticities swapped, so supply is now the steeper curve. The same five-dollar wedge splits the other way: riders two dollars, drivers three." src="figures/rideshare-sd-c.png" style="width:100%;border-radius:8px;position:absolute;top:0;left:0;">
+    </div>
+  </div>
+</section>
+<section id="s5-incidence-lab">
+  <h2><i class="fa-solid fa-sliders" style="color: var(--secondary-color);"></i> Who pays? Move the elasticities</h2>
+  <p style="font-size:12pt;color:var(--muted-color);margin:0 0 8px;">Same market, same \(\$5\) tax on drivers. Only the <strong>steepness</strong> of the two curves changes. Buyers' share \(=\varepsilon_S/(\varepsilon_S+|\varepsilon_D|)\).</p>
+  <div style="display:grid;grid-template-columns:0.78fr 1.22fr;gap:20px;align-items:start;">
+    <div>
+      <label class="iv-label">\(|\varepsilon_D|\) &mdash; riders <span class="iv-readout" data-readout="inc-ed">0.67</span></label>
+      <input class="iv-slider" data-control="inc-ed" type="range" min="2" max="36" step="1" value="8">
+      <label class="iv-label" style="margin-top:9px;">\(\varepsilon_S\) &mdash; drivers <span class="iv-readout" data-readout="inc-es">1.00</span></label>
+      <input class="iv-slider" data-control="inc-es" type="range" min="2" max="36" step="1" value="12">
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;">
+        <button class="inc-preset" data-ed="8" data-es="12">our \$5 tax</button>
+        <button class="inc-preset" data-ed="6" data-es="6">homework</button>
+        <button class="inc-preset" data-ed="24" data-es="6">yachts</button>
+      </div>
+      <div id="inc-readout" style="margin-top:12px;font-size:12pt;line-height:1.5;"></div>
+      <div class="key-result" style="margin-top:10px;">
+        <p id="inc-verdict" style="font-size:12.5pt;margin:0;font-weight:700;"></p>
+      </div>
+    </div>
+    <div>
+      <svg id="inc-svg" viewBox="0 0 660 400" style="width:100%;height:auto;" role="img"
+           aria-label="Supply and demand with a five dollar tax. The steeper curve belongs to the side that pays more of the tax."></svg>
+    </div>
+  </div>
+</section>
+<section id="s5-headsup">
+  <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Heads Up 3.3 &mdash; Statutory incidence is irrelevant</h2>
+  <div class="misconception" style="margin-top: 14px;">
+    <p>
+      Whether the statute puts the tax on the buyer or the seller, the same \(dp_c/dt = \varepsilon_S/(\varepsilon_S - \varepsilon_D)\) emerges from total differentiation. <strong>Mathematical identity, not coincidence.</strong>
+    </p>
+  </div>
+  <div style="background: #fef9f3; padding: 16px 22px; border-radius: 10px; border-left: 4px solid var(--accent-color); margin-top: 14px;">
+    <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">What <em>is</em> conventional</p>
+    <p style="font-size: 14pt; line-height: 1.65; margin-top: 8px;">
+      The sign on \(\varepsilon_D\). If you let the absolute value slip and write \(\varepsilon_S + |\varepsilon_D|\) in the denominator, the formula still gives the right answer. <em>Mix the two conventions</em> and you'll compute negative shares.
+    </p>
+  </div>
+</section><section>
+  <section id="poll-2">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #2: Burden split</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.75;">
+        Luxury yacht market: \(\varepsilon_D = -2.0\) (rich folks have substitutes), \(\varepsilon_S = 0.5\). 10% excise tax. <strong>Whose burden is bigger?</strong>
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch03-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Buyers (rich folks pay)</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Sellers (yacht builders eat it)</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Equal split</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Depends on the statute</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 60 sec to vote</span></p>
+</section>
+  <section data-poll-results="ch03-econ2316-poll-2" id="poll-2-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Sellers eat it</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch03-econ2316-poll-2" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 14.5pt; line-height: 1.6; margin: 0;">
+          Consumer share \(= 0.5 / (0.5 + 2.0) = 0.20\). <strong>Sellers bear 80%</strong> &mdash; and this one was run as a real experiment.
+        </p>
+        <div style="background:#f8f6f3;border-left:4px solid var(--muted-color);padding:11px 20px;border-radius:8px;margin:12px 0 0;">
+          <p style="font-size:13pt;line-height:1.55;margin:0 0 6px;"><strong>The law.</strong> The 1990 federal luxury excise took <strong>10%</strong> of the amount above \$100,000 for boats, \$250,000 for aircraft, \$10,000 for jewellery and furs, \$30,000 for cars.</p>
+          <p style="font-size:13pt;line-height:1.55;margin:0;"><strong>Why it died.</strong> Buyers had substitutes &mdash; an older boat, a foreign yard, no boat at all. Boatyards and their workers did not. Congress repealed everything except the car tax in <strong>1993</strong>, retroactive to 1 January; the campaign was run by the builders, not the buyers. The car tax survived to 2002.</p>
+        </div>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 16px 0;">
+          <p style="font-size: 14pt; margin: 0;">
+            <strong>Trap (D):</strong> Statutory irrelevance &mdash; the formula doesn't see whose paycheck the deduction shows up on. It sees behavior.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+</section><section class="section-divider" data-state="is-section-divider" id="divider-section-5">
+  <h1>&sect;3.6 &nbsp;Deadweight Loss as a Welfare Integral</h1>
+  <p style="font-size: 16pt; color: var(--muted-color); margin-top: 16px; text-align: center;">10 min &middot; The triangle in dollars</p>
+</section><section id="s6-cc33">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--accent-color);"></i> Why the integral collapses to a triangle</h2>
+  <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:center;">
+    <div>
+      <p style="font-size:12.5pt;line-height:1.55;margin:0 0 11px;">Both curves are straight lines, so the gap between them is a straight line too &mdash; and the area under a straight line is a triangle.</p>
+      <div class="key-result" style="margin:0;">
+        <p style="margin:0;font-size:12pt;">\[\int_{Q_t}^{Q^*}\!\big[p^d-p^s\big]dq=\tfrac12\,t\,\Delta Q\]</p>
+      </div>
+    </div>
+    <div>
+      <div style="background:#f0f5f8;border-left:4px solid var(--secondary-color);border-radius:8px;padding:11px 15px;margin:0 0 9px;">
+        <p style="font-size:12.5pt;line-height:1.55;margin:0;">The gap is \(\mathbf{t}\) at \(Q_t\) and \(\mathbf{0}\) at \(Q^*\) &mdash; height \(t\), base \(\Delta Q\).</p></div>
+      <div style="background:#f8f6f3;border-left:4px solid var(--muted-color);border-radius:8px;padding:11px 15px;">
+        <p style="font-size:12pt;line-height:1.5;margin:0;">Curved demand? The triangle is still a good approximation &mdash; Harberger, 1964.</p></div>
+    </div>
+  </div>
+</section><section id="s6-w35">
+  <h2><i class="fa-solid fa-flask" style="color: var(--accent-color);"></i> Walkthrough 3.5 &mdash; A \$3 egg tax: DWL two ways</h2>
+  <div style="background: #f0f5f8; padding: 7px 15px; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-bottom: 9px;">
+    <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong style="color: var(--secondary-color);">Problem.</strong> US eggs &mdash; \(Q^d = 200-5p\), \(Q^s = 50+10p\) &nbsp;(<strong>\(Q\) in M dozens/wk, \(p\) in \$/dozen</strong>). Seller-side tax \(t=\$3\) a dozen.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start;">
+    <div>
+      <div class="fragment fade-in" style="background: #ecfdf5; padding: 9px 14px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+        <p style="font-size: 11pt; color: var(--success-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin: 0 0 4px;">(a) Post-tax equilibrium</p>
+        <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">\(200-5p_c = 50+10(p_c-3)\)<br>\(\mathbf{p_c=\$12}\), \(\mathbf{p_s=\$9}\), \(\mathbf{Q=140}\)</p>
+      </div>
+      <div class="fragment fade-in" style="background: #fef9f3; padding: 9px 14px; border-radius: 8px; border-left: 4px solid var(--accent-color); margin-top: 7px;">
+        <p style="font-size: 11pt; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin: 0 0 4px;">(b) Triangle</p>
+        <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">\(\tfrac12 \cdot t \cdot \Delta Q = \tfrac12(3)(10) = \mathbf{\$15}\)M/wk</p>
+      </div>
+      <div class="fragment fade-in" style="background: #f8f6f3; padding: 9px 14px; border-radius: 8px; border-left: 4px solid var(--muted-color); margin-top: 7px;">
+        <p style="font-size: 11pt; color: var(--muted-color); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin: 0 0 4px;">(c) Integrate the wedge</p>
+        <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">\(\displaystyle\int_{140}^{150}\!\left(45-\tfrac{3q}{10}\right)dq = \mathbf{\$15}\)M/wk</p>
+      </div>
+    </div>
+    <div>
+      <img alt="Supply and demand for eggs with a three-dollar tax wedge driving a gap between the buyer price of twelve dollars and the seller price of nine, with the deadweight-loss triangle shaded between quantities 140 and 150." src="figures/figure_004_dwl_from_tax.png" style="width:100%;border-radius:8px;">
+      <div class="key-result fragment fade-in" style="margin-top:10px;">
+        <p style="font-size: 12pt; margin: 0;">Both routes give <strong>\$15M</strong>. For a straight-line market the triangle <em>is</em> the integral &mdash; so use the triangle.</p>
+      </div>
+    </div>
+  </div>
+</section><section id="incentives-cobra-payt">
+  <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> The Cobra Effect &mdash; then and now</h2>
+  <div style="display:grid;grid-template-columns:0.82fr 1.18fr;gap:22px;align-items:start;">
+    <div style="text-align:center;">
+      <img alt="Illustration of the Cobra Effect: a bounty on dead cobras leads to cobra breeding, and the population ends up higher than before." src="figures/ch01-cobra-effect.webp" style="max-width:100%;max-height:270px;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,0.15);">
+      <p style="font-size:13pt;line-height:1.65;margin:12px 0 0;text-align:left;">A bounty per dead cobra.<br>
+        <strong>1.</strong> People hunt cobras &mdash; it works.<br>
+        <strong>2.</strong> People start <strong>breeding</strong> them.<br>
+        <strong>3.</strong> Bounty ends &rarr; snakes released.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="fragment fade-in" style="background:#fef9f3;border-radius:10px;padding:10px 16px;border-left:4px solid var(--accent-color);">
+        <p style="font-size:10.5pt;color:var(--accent-color);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:0 0 5px;">Charlottesville, VA &middot; 1992</p>
+        <p style="font-size:12.5pt;line-height:1.55;margin:0;">
+          <strong>1. Policy</strong> &mdash; pay per bag of trash.<br>
+          <strong>2. Response</strong> &mdash; bags get heavier, and some trash never reaches the curb.<br>
+          <strong>3. Result</strong> &mdash; official trash <strong>&minus;37%</strong>, real waste only <strong>&minus;14%</strong>. <span style="color:var(--muted-color);">The gap went roadside, into dumpsters and into neighbours' bins (Fullerton &amp; Kinnaman, <em>AER</em> 1996).</span></p>
+      </div>
+      <div class="fragment fade-in" style="background:#f0f5f8;border-radius:10px;padding:10px 16px;border-left:4px solid var(--secondary-color);">
+        <p style="font-size:10.5pt;color:var(--secondary-color);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:0 0 5px;">Seattle, WA &middot; the &ldquo;Seattle stomp&rdquo;</p>
+        <p style="font-size:12.5pt;line-height:1.55;margin:0;">
+          <strong>1. Policy</strong> &mdash; pay by the <em>volume</em> of the can.<br>
+          <strong>2. Response</strong> &mdash; residents stomp the trash flat to cram more in; some bags go out of car windows.<br>
+          <strong>3. Result</strong> &mdash; the fee moved the <strong>cost</strong>, not the trash.</p>
+      </div>
+    </div>
+  </div>
+  <div class="key-result fragment fade-in" style="margin-top:12px;">
+    <p style="font-size:13.5pt;margin:0;"><strong>Tax the margin you can measure, and people move to the one you cannot.</strong> Both programmes still work &mdash; but only when the cheap avoidance margin is closed (kerbside recycling, monitored drop-off, real fines).</p>
+  </div>
+</section>
+<section id="discussion-1">
+  <h2><i class="fa-solid fa-comments" style="color: var(--secondary-color);"></i> Brainstorm 1 &mdash; a levy on AI</h2>
+  <div style="background:#f0f5f8;border-radius:10px;padding:11px 20px;border-left:4px solid var(--secondary-color);margin:4px 0 12px;">
+    <p style="font-size:14.5pt;line-height:1.5;margin:0;">A state puts a levy on the <strong>electricity an AI data centre buys</strong>. Work it in three steps.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+    <div style="background:#ecfdf5;border-radius:10px;padding:11px 16px;border-left:4px solid var(--success-color);">
+      <p style="font-size:10.5pt;color:var(--success-color);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:0 0 5px;">1 &middot; Who pays?</p>
+      <p style="font-size:13.5pt;line-height:1.5;margin:0;">Which two numbers do you need before you can answer?</p>
+    </div>
+    <div style="background:#fef9f3;border-radius:10px;padding:11px 16px;border-left:4px solid var(--accent-color);">
+      <p style="font-size:10.5pt;color:var(--accent-color);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:0 0 5px;">2 &middot; Where do they go?</p>
+      <p style="font-size:13.5pt;line-height:1.5;margin:0;">Name one way a firm avoids the levy without using less AI.</p>
+    </div>
+    <div style="background:#f0f5f8;border-radius:10px;padding:11px 16px;border-left:4px solid var(--secondary-color);">
+      <p style="font-size:10.5pt;color:var(--secondary-color);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:0 0 5px;">3 &middot; Make it stick</p>
+      <p style="font-size:13.5pt;line-height:1.5;margin:0;">Change one thing about the levy so that margin closes.</p>
+    </div>
+  </div>
+  <div class="fragment fade-in" style="background:#f8f6f3;border-radius:10px;padding:10px 18px;border-left:4px solid var(--muted-color);margin-top:12px;">
+    <p style="font-size:12.5pt;line-height:1.55;margin:0;"><strong>Stuck? Three nudges.</strong> (1) You already have the formula &mdash; what does it take as inputs? (2) A data centre is a building; a workload is not. (3) Ask what the levy is actually charging for, and whether it could charge for something harder to move.</p>
+  </div>
+  <div class="fragment fade-in" style="background:#fef2f2;border-radius:10px;padding:10px 18px;border-left:4px solid var(--danger-color);margin-top:10px;">
+    <p style="font-size:12.5pt;line-height:1.55;margin:0;"><strong>A country has run this experiment.</strong> Uganda taxed social media at 200 shillings a day from July 2018. Internet users fell about <strong>30%</strong> &mdash; and millions of people simply moved to <strong>VPNs</strong>, which the tax could not see. It was replaced in 2021.</p>
+  </div>
+  <p style="text-align:center;margin-top:12px;font-size:12.5pt;color:var(--muted-color);">Bring back <strong>one sentence</strong>: who pays, and the margin you would close.</p>
+  <p style="text-align:center;margin-top:8px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 2 min with a neighbour &middot; 2 min to share</span></p>
+</section>
+<section class="section-divider" data-state="is-section-divider" id="divider-section-6">
+  <h1>&sect;3.7 &nbsp;Pass-Through Regimes</h1>
+  <p style="font-size: 16pt; color: var(--muted-color); margin-top: 16px; text-align: center;">8 min &middot; The 0&ndash;100% benchmark and what breaks it</p>
+</section><section id="s7-regimes">
+  <h2>Three pass-through regimes</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;">
+    <div style="background: #f0fdf4; padding: 14px 18px; border-radius: 10px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 13pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">\(0 &lt; dp_c/dt &lt; 1\)</p>
+      <p style="font-size: 14pt; margin-top: 6px;"><strong>Sub-100%</strong></p>
+      <p style="font-size: 12pt; color: var(--muted-color); margin-top: 4px;">Linear competitive baseline. Both finite elasticities.</p>
+    </div>
+    <div style="background: #fef9f3; padding: 14px 18px; border-radius: 10px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">\(dp_c/dt = 1\)</p>
+      <p style="font-size: 14pt; margin-top: 6px;"><strong>Full 100%</strong></p>
+      <p style="font-size: 12pt; color: var(--muted-color); margin-top: 4px;">Perfectly elastic supply (\(\varepsilon_S \to \infty\)). Small open economy on world market.</p>
+    </div>
+    <div style="background: #fef2f2; padding: 14px 18px; border-radius: 10px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 13pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">\(dp_c/dt &gt; 1\)</p>
+      <p style="font-size: 14pt; margin-top: 6px;"><strong>Over-shifting</strong></p>
+      <p style="font-size: 12pt; color: var(--muted-color); margin-top: 4px;">Cannot arise in competitive linear model. Fingerprint of market power.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p>
+      Pass-through is a <strong>testable</strong> empirical quantity. When the data show \(&gt; 100\%\), Ch 11 (monopoly) gives the formula that explains why.
+    </p>
+  </div>
+</section><section id="s7-td32">
+  <h2><i class="fa-solid fa-chart-column" style="color: var(--secondary-color);"></i> Theory &amp; Data 3.2 &mdash; why two soda taxes gave two answers</h2>
+  <p style="font-size:12.5pt;color:var(--muted-color);margin:0 0 10px;">Both cities taxed distributors in 2017. Theory says pass-through sits between 0 and 100%. It did &mdash; but not at the same place, and the gap is the lesson.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:12.5pt;">
+    <thead><tr>
+      <th style="text-align:left;padding:5px 12px;background:var(--primary-color);color:#fff;font-size:11pt;">City</th>
+      <th style="text-align:left;padding:5px 12px;background:var(--primary-color);color:#fff;font-size:11pt;">Tax</th>
+      <th style="text-align:left;padding:5px 12px;background:var(--primary-color);color:#fff;font-size:11pt;">Pass-through</th>
+      <th style="text-align:left;padding:5px 12px;background:var(--primary-color);color:#fff;font-size:11pt;">What explains it</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);font-weight:700;">Philadelphia</td>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);">1.5&cent;/oz</td>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);font-weight:700;color:var(--accent-color);">≈ 97%</td>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);">Chain groceries that price a whole city at once. Almost the entire tax reached the shelf.</td>
+      </tr>
+      <tr style="background:#f8f6f3;">
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);font-weight:700;">Boulder</td>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);">2&cent;/oz</td>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);font-weight:700;color:var(--accent-color);">≈ 50% to 75%</td>
+        <td style="padding:8px 12px;border-bottom:1px solid var(--line-color);">Smaller market, easy to shop outside it &mdash; and the two numbers come from two <em>different data sources</em>.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="key-result fragment fade-in" style="margin-top:12px;">
+    <p style="font-size:13pt;margin:0 0 5px;"><strong>The number is not the theory.</strong> Pass-through is \(\varepsilon_S/(\varepsilon_S-\varepsilon_D)\) in both cities. What differs is the market &mdash; and what you measured it with.</p>
+    <p style="font-size:11.5pt;margin:0;color:var(--muted-color);">Boulder's 50% is scanner data; 75% is a store audit. Same tax, same year, different instrument. When you read an estimate, ask what produced it.</p>
+  </div>
+  <p style="font-size:10pt;color:var(--muted-color);margin:9px 2px 0;">Philadelphia: Seiler, Tuchman &amp; Yao (2021). Boulder: Cawley et al. (2021).</p>
+</section>
+<section>
+    <section id="poll-3">
+    <h2><i class="fa-solid fa-square-poll-vertical" style="color: var(--secondary-color);"></i> Poll #3: a tax of \$1, a price rise of \$1.20</h2>
+    <div style="background:#f0f5f8;padding:12px 20px;border-radius:10px;border-left:4px solid var(--secondary-color);margin:10px 0 14px;">
+      <p style="font-size:14pt;line-height:1.5;margin:0;">A city puts a <strong>\$1</strong> per-unit tax on sellers. Retail prices rise by <strong>\$1.20</strong>. Which single explanation fits?</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13.5pt;">
+      <div style="background:#fff;border:1.5px solid var(--line-color);border-radius:8px;padding:9px 15px;"><strong>A)</strong> Demand is perfectly inelastic</div>
+      <div style="background:#fff;border:1.5px solid var(--line-color);border-radius:8px;padding:9px 15px;"><strong>B)</strong> Sellers have market power</div>
+      <div style="background:#fff;border:1.5px solid var(--line-color);border-radius:8px;padding:9px 15px;"><strong>C)</strong> The tax was really collected from buyers</div>
+      <div style="background:#fff;border:1.5px solid var(--line-color);border-radius:8px;padding:9px 15px;"><strong>D)</strong> Supply is perfectly elastic</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> Vote 60s</span></p>
+  </section>
+  <section data-poll-results="ch03-econ2316-poll-3" id="poll-3-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-circle-check" style="color: var(--success-color);"></i> Answer: B &mdash; over-shifting needs market power</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;">
+      <div style="background:#ecfdf5;border-radius:8px;padding:10px 16px;border-left:4px solid var(--success-color);">
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Why B.</strong> A firm with market power charges a <em>markup over cost</em>. Raise its cost by \$1 and the markup is applied to the higher cost too &mdash; so the price can move by more than the tax.</p>
+      </div>
+      <div style="background:#fef2f2;border-radius:8px;padding:10px 16px;border-left:4px solid var(--danger-color);">
+        <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Why not A or D.</strong> Both are the limiting cases of our formula: \(\varepsilon_D\to 0\) or \(\varepsilon_S\to\infty\) gives \(dp_c/dt = 1\) &mdash; <strong>exactly</strong> \$1, never \$1.20. In competition the wedge splits, so pass-through is capped at 100%.</p>
+      </div>
+    </div>
+    <div class="fragment fade-in" style="background:#f8f6f3;border-radius:8px;padding:9px 16px;margin-top:10px;border-left:4px solid var(--muted-color);">
+      <p style="font-size:12pt;line-height:1.5;margin:0 0 5px;"><strong>It happens.</strong> The 2018 washing-machine tariff: pass-through estimated at <strong>108&ndash;225%</strong>. Washers rose about \$86 &mdash; and <em>dryers</em>, which were never tariffed, rose about \$92, because the pair is priced together (Flaaen, Hortaçsu &amp; Tintelnot, <em>AER</em> 2020).</p>
+      <p style="font-size:12pt;line-height:1.5;margin:0;">European wine, 25% tariff of 2019&ndash;21: retail rose only <strong>6.9%</strong>, yet consumers paid about <strong>\$1.59</strong> a bottle against <strong>\$1.19</strong> of tariff &mdash; each link in the chain marks up the higher cost (Flaaen, Hortaçsu, Tintelnot, Urdaneta &amp; Xu).</p>
+    </div>
+    <div class="key-result" style="margin-top:12px;">
+      <p style="font-size:13pt;margin:0 0 5px;"><strong>Trap C.</strong> Statutory incidence again: who hands over the money cannot change the price by a cent. Heads Up 3.3.</p>
+      <p style="font-size:12.5pt;margin:0;">Over-shifting is a <strong>fingerprint of market power</strong>, not a puzzle about taxes. It is the first time this term the competitive assumption visibly fails &mdash; Ch 11 derives the monopolist's pass-through properly.</p>
+    </div>
+  </section>
+</section>
+<section id="key-takeaways">
+  <h2><i class="fa-solid fa-list-check" style="color: var(--success-color);"></i> Key Takeaways</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+    <div style="background:#f8f6f3;border-left:4px solid var(--secondary-color);border-radius:8px;padding:11px 15px;">
+      <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Elasticity is a point, not a slope.</strong> \(\varepsilon=(dQ/dp)(p/Q)\) &mdash; it varies along a straight line.</p></div>
+    <div style="background:#f8f6f3;border-left:4px solid var(--accent-color);border-radius:8px;padding:11px 15px;">
+      <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Revenue peaks at \(\varepsilon_D=-1\).</strong> Inelastic &rarr; raise price. Elastic &rarr; cut it. A <em>profit</em>-maximiser with \(MC&gt;0\) stops earlier, still elastic.</p></div>
+    <div style="background:#f8f6f3;border-left:4px solid var(--secondary-color);border-radius:8px;padding:11px 15px;">
+      <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>Whoever can walk away, walks away.</strong> Who writes the cheque is irrelevant.</p></div>
+    <div style="background:#f8f6f3;border-left:4px solid var(--accent-color);border-radius:8px;padding:11px 15px;">
+      <p style="font-size:12.5pt;line-height:1.5;margin:0;"><strong>DWL grows with \(t^{2}\).</strong> Double the tax, quadruple the damage.</p></div>
+  </div>
+  <div class="key-result" style="margin-top:13px;">
+    <p style="font-size:12.5pt;margin:0;">Ch 2's grocery manager could say <em>which way</em> price would move. You can now say <strong>by how much</strong>, and who pays for it.</p>
+  </div>
+</section>
+
+
+
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chart/plugin.js"></script>
+<script>window.RevealNotes = { id: 'notes', init: function () {} };  /* public build: no speaker view */</script>
+<script>
+  Reveal.initialize({
+    keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
+    width: 1280,
+    height: 720,
+    margin: 0,
+    controls: true,
+  controlsLayout: 'edges',
+    progress: true,
+    slideNumber: 'all',
+    showSlideNumber: 'all',
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'default',
+    center: false,
+    autoAnimateDuration: 0.6,
+    autoAnimateEasing: 'ease-out',
+    pdfSeparateFragments: false,
+    pdfMaxPagesPerSlide: 1,
+    plugins: window.location.search.indexOf("presenter") !== -1
+      ? [ RevealChart, RevealNotes ]   // ?presenter -> S opens speaker view
+      : [ RevealChart ],
+    chart: {
+      defaults: Object.assign({
+        color: 'rgba(0, 0, 0, 0.8)',
+        borderColor: 'rgba(0, 0, 0, 0.8)',
+        devicePixelRatio: 2
+      }, window.location.search.includes('export') ? { animation: false } : {})
+    }
+  });
+</script>
+
+<style>
+  .cd-wrap{position:fixed;top:0;left:50%;transform:translateX(-50%) translateY(-100%);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+  .cd-wrap.visible{transform:translateX(-50%) translateY(0)}
+  .cd-wrap.hiding{transform:translateX(-50%) translateY(-100%)}
+  .cd-pill{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1e3a5f,#2a5a8a);color:#fff;padding:10px 24px;border-radius:0 0 16px 16px;box-shadow:0 4px 20px rgba(0,0,0,.3);font-family:'SF Mono',Menlo,monospace;pointer-events:auto}
+  .cd-pill .cd-time{font-size:32px;font-weight:700;letter-spacing:2px;min-width:80px;text-align:center}
+  .cd-pill .cd-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+  .cd-pill .cd-bar{width:120px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
+  .cd-pill .cd-fill{height:100%;background:#4ade80;border-radius:2px;transition:width 1s linear,background-color .5s}
+  .cd-pill.cd-warn{background:linear-gradient(135deg,#854d0e,#a16207)}.cd-pill.cd-warn .cd-fill{background:#fbbf24}
+  .cd-pill.cd-danger{background:linear-gradient(135deg,#991b1b,#dc2626)}.cd-pill.cd-danger .cd-fill{background:#ef4444}
+  .cd-pill.cd-done{animation:cdF .5s ease 3;background:linear-gradient(135deg,#166534,#22c55e)}
+  @keyframes cdF{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.05)}}
+</style>
+<div class="cd-wrap" id="cd-wrap">
+  <div class="cd-pill" id="cd-pill">
+    <div>
+      <div class="cd-label">Activity Timer</div>
+      <div class="cd-time" id="cd-time">0:00</div>
+    </div>
+    <div class="cd-bar"><div class="cd-fill" id="cd-fill"></div></div>
+  </div>
+</div>
+<script>
+  (function(){
+    var w=document.getElementById('cd-wrap'),p=document.getElementById('cd-pill'),t=document.getElementById('cd-time'),f=document.getElementById('cd-fill');
+    var iv=null,total=0,rem=0,vis=false;
+    function upd(){var m=Math.floor(rem/60),s=rem%60;t.textContent=m+':'+(s<10?'0':'')+s;f.style.width=(total>0?((total-rem)/total)*100:0)+'%';}
+    function show(){vis=true;w.classList.add('visible');w.classList.remove('hiding');}
+    function hide(){vis=false;w.classList.remove('visible');w.classList.add('hiding');}
+    function done(){p.classList.remove('cd-warn','cd-danger');p.classList.add('cd-done');t.textContent='0:00';f.style.width='100%';
+      try{var c=new(window.AudioContext||window.webkitAudioContext);[0,.25,.5].forEach(function(d){var o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=880;o.type='sine';g.gain.value=.3;o.start(c.currentTime+d);o.stop(c.currentTime+d+.15);});}catch(e){}
+      setTimeout(function(){if(p.classList.contains('cd-done')){hide();setTimeout(function(){p.classList.remove('cd-done');},500);}},5000);}
+    function start(min){
+      if(iv&&vis&&total===min*60){if(vis)hide();else show();return;}
+      clearInterval(iv);total=min*60;rem=total;p.classList.remove('cd-warn','cd-danger','cd-done');upd();show();
+      iv=setInterval(function(){rem--;if(rem<=0){rem=0;clearInterval(iv);iv=null;upd();done();return;}upd();
+        var pct=rem/total;if(pct<=.15){p.classList.add('cd-danger');p.classList.remove('cd-warn');}else if(pct<=.33){p.classList.add('cd-warn');p.classList.remove('cd-danger');}},1000);}
+    document.addEventListener('keydown',function(e){
+      if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+      if(e.key>='1'&&e.key<='9'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){start(parseInt(e.key));}
+    });
+  })();
+</script>
+
+<style>
+  .poll-option:hover{background:#dbeafe!important;border-color:#3b82f6!important}
+  .poll-option.voted{background:#dbeafe!important;border-color:#2563eb!important;font-weight:600}
+  .poll-option.voted::after{content:" \2713";color:#2563eb}
+  .poll-option.disabled{pointer-events:none;opacity:.6}
+  .poll-bar-wrap{display:flex;flex-direction:column;align-items:center;flex:1}
+  .poll-bar{width:60px;border-radius:6px 6px 0 0;transition:height .5s ease;min-height:4px}
+  .poll-bar-label{font-size:13px;font-weight:700;margin-top:6px}
+  .poll-bar-count{font-size:20px;font-weight:700;margin-bottom:4px}
+  .poll-vote-count{text-align:center;font-size:13px;color:#888;margin-top:10px}
+  .reset-btn{display:none}body.instructor-mode .reset-btn{display:inline-block}
+</style>
+<script src="../poll.js" data-checkin></script>
+<script>
+  (function(){
+    var SU="https://dpntbrsorgbivmntwmod.supabase.co",SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI";
+    var VID="v_"+Math.random().toString(36).slice(2,10),voted={},CL={A:"#3b82f6",B:"#22c55e",C:"#f97316",D:"#a855f7"};
+    var IS_FILE = (window.location.protocol === "file:");
+    var localTallies = {};
+    if(window.location.search.indexOf("instructor")!==-1)document.body.classList.add("instructor-mode");
+    function sf(m,p,b){var o={method:m,headers:{"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store","Pragma":"no-cache"}};if(b)o.body=JSON.stringify(b);return fetch(SU+"/rest/v1/"+p,o);}
+    function vote(pid,ch){if(voted[pid])return;voted[pid]=ch;var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.add("disabled");if(o.dataset.choice===ch)o.classList.add("voted");});if(IS_FILE){if(!localTallies[pid])localTallies[pid]={};localTallies[pid][ch]=(localTallies[pid][ch]||0)+1;render(pid,localTallies[pid]);return;}sf("POST","poll_votes",(window.Poll?Poll.stamp(pid,ch):{poll_id:pid,choice:ch,voter_id:VID})).then(function(){fetchR(pid);});}
+    function render(pid,ct){var t=0,ch=["A","B","C","D"];ch.forEach(function(k){t+=(ct[k]||0);});var c=document.querySelector('.poll-results-chart[data-poll-id="'+pid+'"]');if(c){var mx=Math.max.apply(null,ch.map(function(k){return ct[k]||0;}));if(mx===0)mx=1;var avail=Math.max(28,(c.clientHeight||parseFloat(getComputedStyle(c).height)||110)-46);var h="";ch.forEach(function(k){var n=ct[k]||0,ht=Math.max(4,(n/mx)*avail);h+='<div class="poll-bar-wrap"><div class="poll-bar-count">'+n+'</div><div class="poll-bar" style="height:'+ht+'px;background:'+CL[k]+';"></div><div class="poll-bar-label">'+k+'</div></div>';});if(t>0)h+='<div style="position:absolute;bottom:-25px;width:100%;text-align:center;font-size:12px;color:#888;">'+t+' votes</div>';c.style.position="relative";if((parseFloat(getComputedStyle(c).marginBottom)||0)<28)c.style.marginBottom="28px";c.innerHTML=h;}var ce=document.querySelector('.poll-vote-count[data-poll-id="'+pid+'"]');if(ce)ce.textContent=t>0?t+" vote"+(t!==1?"s":"")+" so far":"";}
+    function fetchR(pid){if(IS_FILE){render(pid,localTallies[pid]||{});return;}sf("GET","poll_votes?poll_id=eq."+pid+"&select=choice"+(window.Poll?Poll.q():"")).then(function(r){return r.json();}).then(function(rows){var ct={};rows.forEach(function(r){ct[r.choice]=(ct[r.choice]||0)+1;});render(pid,ct);}).catch(function(){render(pid,localTallies[pid]||{});});}
+    window.clearPoll=function(pid){if(!confirm("Clear TODAY's votes for this poll? Earlier meetings are not touched."))return;if(IS_FILE){localTallies[pid]={};render(pid,{});delete voted[pid];var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.remove("disabled","voted");});return;}sf("DELETE","poll_votes?poll_id=eq."+pid+(window.Poll?Poll.q():"")+(function(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());})()).then(function(){render(pid,{});delete voted[pid];var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.remove("disabled","voted");});});};
+    document.querySelectorAll(".poll-grid").forEach(function(g){var pid=g.dataset.pollId;g.querySelectorAll(".poll-option").forEach(function(o){o.addEventListener("click",function(){var go=function(){vote(pid,o.dataset.choice);};if(window.Poll){Poll.ready(pid,go);}else{go();}});});if(!g.parentNode.querySelector(".poll-vote-count")){var ce=document.createElement("div");ce.className="poll-vote-count";ce.dataset.pollId=pid;g.parentNode.insertBefore(ce,g.nextSibling);}fetchR(pid);if(!IS_FILE){setInterval(function(){if(document.hidden)return;var s=g.closest("section");if(s&&!s.classList.contains("present"))return;fetchR(pid);},5000);}});
+  })();
+</script>
+
+<script>
+(function(){
+  // Demand baseline: Q^d = 200 - 5p (eggs from Ch 2/3 manuscript), max p around 40
+  var D_INT_Q = 200, D_SLOPE = 5;
+  var MAX_P = 42, MAX_Q = 220;
+  var BLUE = "#2563eb", BLUE_LIGHT = "#93c5fd";
+  var RED = "#dc2626", RED_LIGHT = "#fca5a5";
+  var GREEN = "#16a34a", AMBER = "#d97706", VIOLET = "#7c3aed";
+  var GRID = "#e5e7eb", AXIS = "#6b7280";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent){var e=document.createElementNS(SVG_NS, tag);if(attrs)for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+  function clear(node){while(node.firstChild)node.removeChild(node.firstChild);}
+  function plotFrame(svg){
+    var vb = svg.getAttribute("viewBox").split(/\s+/).map(Number);
+    var W = vb[2], H = vb[3];
+    var M = { top: 14, right: 24, bottom: 38, left: 50 };
+    var pw = W - M.left - M.right, ph = H - M.top - M.bottom;
+    function x(q){ return M.left + (q / MAX_Q) * pw; }
+    function y(p){ return M.top + ph - (p / MAX_P) * ph; }
+    return { W: W, H: H, M: M, pw: pw, ph: ph, x: x, y: y };
+  }
+  function drawAxes(svg, f){
+    el("rect", { x: f.M.left, y: f.M.top, width: f.pw, height: f.ph, fill: "none", stroke: "#d1d5db", "stroke-width": 1 }, svg);
+    var nx = 5, ny = 6;
+    for (var i = 1; i < nx; i++){var gx = f.M.left + (i/nx) * f.pw; el("line", { x1: gx, y1: f.M.top, x2: gx, y2: f.M.top + f.ph, stroke: GRID, "stroke-dasharray": "3,3" }, svg);}
+    for (var j = 1; j < ny; j++){var gy = f.M.top + (j/ny) * f.ph; el("line", { x1: f.M.left, y1: gy, x2: f.M.left + f.pw, y2: gy, stroke: GRID, "stroke-dasharray": "3,3" }, svg);}
+    for (var ix = 0; ix <= nx; ix++){var qv = (ix/nx) * MAX_Q; var xx = f.x(qv); el("line", { x1: xx, y1: f.M.top + f.ph, x2: xx, y2: f.M.top + f.ph + 4, stroke: AXIS }, svg); var t = el("text", { x: xx, y: f.M.top + f.ph + 14, "text-anchor": "middle", "font-size": 10, fill: AXIS }, svg); t.textContent = qv.toFixed(0);}
+    for (var iy = 0; iy <= ny; iy++){var pv = (iy/ny) * MAX_P; var yy = f.y(pv); el("line", { x1: f.M.left - 4, y1: yy, x2: f.M.left, y2: yy, stroke: AXIS }, svg); var ty = el("text", { x: f.M.left - 7, y: yy + 3, "text-anchor": "end", "font-size": 10, fill: AXIS }, svg); ty.textContent = "$" + pv.toFixed(0);}
+    var ax = el("text", { x: f.M.left + f.pw/2, y: f.H - 4, "text-anchor": "middle", "font-size": 11, fill: AXIS, "font-weight": 600 }, svg);
+    ax.textContent = "Quantity (M doz/wk)";
+    var ay = el("text", { x: 12, y: f.M.top + f.ph/2, "text-anchor": "middle", "font-size": 11, fill: AXIS, "font-weight": 600, transform: "rotate(-90 12 " + (f.M.top + f.ph/2) + ")" }, svg);
+    ay.textContent = "Price ($/doz)";
+  }
+  // ── Elasticity Explorer ────────────────────────────────────────────
+  function renderElasticityExplorer(svg, price){
+    clear(svg);
+    var f = plotFrame(svg);
+    drawAxes(svg, f);
+    // Demand curve Q = 200 - 5p, drawn from p=0 to p=40
+    var pts = [];
+    for (var p = 0; p <= MAX_P; p += 1){
+      var q = D_INT_Q - D_SLOPE * p;
+      if (q < 0) continue;
+      pts.push([q, p]);
+    }
+    var pathStr = pts.map(function(d){return f.x(d[0]) + "," + f.y(d[1]);}).join(" ");
+    el("polyline", { points: pathStr, fill: "none", stroke: BLUE, "stroke-width": 2.5, "stroke-linecap": "round" }, svg);
+    var dl = el("text", { x: f.x(40), y: f.y(30) + 4, fill: BLUE, "font-size": 13, "font-weight": 700 }, svg);
+    dl.textContent = "D";
+    // Selected point on the curve
+    var qSel = D_INT_Q - D_SLOPE * price;
+    if (qSel < 0) qSel = 0;
+    var px = f.x(qSel), py = f.y(price);
+    // Drop lines
+    el("line", { x1: px, y1: py, x2: px, y2: f.M.top + f.ph, stroke: GREEN, "stroke-width": 1.2, "stroke-dasharray": "4,3" }, svg);
+    el("line", { x1: f.M.left, y1: py, x2: px, y2: py, stroke: GREEN, "stroke-width": 1.2, "stroke-dasharray": "4,3" }, svg);
+    el("circle", { cx: px, cy: py, r: 6, fill: GREEN, stroke: "#fff", "stroke-width": 2 }, svg);
+    var co = el("text", { x: px + 8, y: py - 6, fill: GREEN, "font-size": 11, "font-weight": 700 }, svg);
+    co.textContent = "(" + qSel.toFixed(0) + ", $" + price.toFixed(0) + ")";
+    // Elasticity readout
+    var eps = qSel > 0 ? (-D_SLOPE) * (price / qSel) : -Infinity;
+    var zone = "elastic", zoneFill = RED;
+    if (Math.abs(eps) < 0.999) { zone = "inelastic"; zoneFill = GREEN; }
+    else if (Math.abs(eps) < 1.001) { zone = "unit elastic"; zoneFill = AMBER; }
+    var eLab = el("text", { x: f.x(MAX_Q*0.55), y: f.M.top + 18, fill: zoneFill, "font-size": 13, "font-weight": 700 }, svg);
+    eLab.textContent = "ε_D = " + (isFinite(eps) ? eps.toFixed(2) : "−∞") + "  (" + zone + ")";
+  }
+  // ── Demand Slope: from perfectly inelastic to perfectly elastic ───
+  // Demand Q = a - b*p is pivoted around a fixed anchor (Q*, p*) = (100, 10).
+  // Slider index 0..5 maps to b ∈ {0.05, 1, 5, 10, 50, 500} → ε at anchor ∈ {−0.005, −0.1, −0.5, −1, −5, −50}.
+  function renderDemandSlope(svg, slopeIdx){
+    clear(svg);
+    var f = plotFrame(svg);
+    drawAxes(svg, f);
+    var bValues = [0.05, 1, 5, 10, 50, 500];
+    var labels = ["perfectly inelastic", "very inelastic", "inelastic", "unit elastic", "elastic", "perfectly elastic"];
+    var b = bValues[slopeIdx];
+    var zoneLabel = labels[slopeIdx];
+    var Qstar = 100, pstar = 10;
+    var aInt = Qstar + b * pstar; // demand: Q = aInt - b*p, line passes through (Qstar, pstar)
+    // Sample the demand line in (Q, p) space; clip to plot frame
+    var pts = [];
+    var N = 200;
+    for (var i = 0; i <= N; i++){
+      var pSample = (i / N) * MAX_P;
+      var qSample = aInt - b * pSample;
+      if (qSample >= 0 && qSample <= MAX_Q) pts.push([qSample, pSample]);
+    }
+    // For very steep (low-b) lines, the pSample sweep may miss; fall back to sweeping Q
+    if (pts.length < 2){
+      pts = [];
+      for (var j = 0; j <= N; j++){
+        var qS2 = (j / N) * MAX_Q;
+        var pS2 = (aInt - qS2) / b;
+        if (pS2 >= 0 && pS2 <= MAX_P) pts.push([qS2, pS2]);
+      }
+    }
+    // Draw the demand line
+    if (pts.length >= 2){
+      el("polyline", {
+        points: pts.map(function(d){return f.x(d[0]) + "," + f.y(d[1]);}).join(" "),
+        fill: "none", stroke: BLUE, "stroke-width": 3, "stroke-linecap": "round"
+      }, svg);
+    }
+    // D label — pick a midpoint that's visible
+    var midIdx = Math.floor(pts.length / 2);
+    if (pts.length > 0){
+      var midPt = pts[midIdx];
+      var dl = el("text", { x: f.x(midPt[0]) + 10, y: f.y(midPt[1]) - 8, fill: BLUE, "font-size": 13, "font-weight": 700 }, svg);
+      dl.textContent = "D";
+    }
+    // Anchor (Qstar, pstar) with drop lines + green dot
+    var ax = f.x(Qstar), ay = f.y(pstar);
+    el("line", { x1: ax, y1: ay, x2: ax, y2: f.M.top + f.ph, stroke: GREEN, "stroke-width": 1.2, "stroke-dasharray": "4,3" }, svg);
+    el("line", { x1: f.M.left, y1: ay, x2: ax, y2: ay, stroke: GREEN, "stroke-width": 1.2, "stroke-dasharray": "4,3" }, svg);
+    el("circle", { cx: ax, cy: ay, r: 6, fill: GREEN, stroke: "#fff", "stroke-width": 2 }, svg);
+    var co = el("text", { x: ax + 8, y: ay - 6, fill: GREEN, "font-size": 11, "font-weight": 700 }, svg);
+    co.textContent = "(100, $10)";
+    // Elasticity readout
+    var eps = -b * pstar / Qstar;
+    var zoneFill = GREEN;
+    if (Math.abs(eps) >= 0.99 && Math.abs(eps) <= 1.01) zoneFill = AMBER;
+    else if (Math.abs(eps) > 1.01) zoneFill = RED;
+    var eLab = el("text", { x: f.x(MAX_Q*0.55), y: f.M.top + 18, fill: zoneFill, "font-size": 12, "font-weight": 700 }, svg);
+    eLab.textContent = "b = " + (b < 0.1 ? b.toFixed(2) : b) + ",  ε_D = " + eps.toFixed(2);
+    var zLab = el("text", { x: f.x(MAX_Q*0.55), y: f.M.top + 36, fill: zoneFill, "font-size": 12, "font-weight": 700, "font-style": "italic" }, svg);
+    zLab.textContent = zoneLabel;
+  }
+  function setReadout(name, text){
+    document.querySelectorAll('[data-readout="' + name + '"]').forEach(function(n){ n.textContent = text; });
+  }
+  function init(){
+    var eeSvg = document.querySelector('svg[data-target="elasticity-explorer"]');
+    var eeCtl = document.querySelector('input[data-control="ee-price"]');
+    if (eeSvg && eeCtl){
+      var renderEE = function(){
+        var p = parseFloat(eeCtl.value);
+        renderElasticityExplorer(eeSvg, p);
+        setReadout("ee-price", "$" + p.toFixed(0));
+      };
+      eeCtl.addEventListener("input", renderEE);
+      renderEE();
+    }
+    var dsSvg = document.querySelector('svg[data-target="demand-slope"]');
+    var dsCtl = document.querySelector('input[data-control="ds-slope"]');
+    if (dsSvg && dsCtl){
+      var dsBValues = [0.05, 1, 5, 10, 50, 500];
+      var dsLabels = ["perfectly inelastic", "very inelastic", "inelastic", "unit elastic", "elastic", "perfectly elastic"];
+      var renderDS = function(){
+        var idx = parseInt(dsCtl.value, 10);
+        renderDemandSlope(dsSvg, idx);
+        var b = dsBValues[idx];
+        setReadout("ds-slope", (b < 0.1 ? b.toFixed(2) : b) + " · " + dsLabels[idx]);
+      };
+      dsCtl.addEventListener("input", renderDS);
+      renderDS();
+    }
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+
+<script>
+(function(){
+  document.addEventListener('keydown', function(e){
+    if(typeof Reveal==='undefined') return;
+    if(!e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag=((e.target&&e.target.tagName)||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select') return;
+    if(e.code==='KeyH' || e.keyCode===72){ Reveal.prev();  e.preventDefault(); }
+    else if(e.code==='KeyL' || e.keyCode===76){ Reveal.next(); e.preventDefault(); }
+  }, true);
+})();
+</script>
+
+<script>
+(function(){
+  // Incidence lab: supply and demand pivoting around (72, $24) with a $5 tax on sellers.
+  // Sliders carry TWELFTHS so 2/3, 1/2 and 2 are exact and "our $5 tax" lands on 60% / $3.00.
+  var T = 5, P0 = 24, Q0 = 72, NS = "http://www.w3.org/2000/svg";
+  var QMIN = 40, QMAX = 100, PMIN = 15, PMAX = 33;
+  var L = 62, R = 640, TOP = 14, BOT = 340;          // plot box inside the viewBox
+  var BLUE = "#2E6DB4", RED = "#C0392B", GREEN = "#16a34a", VIOLET = "#7c3aed", INK = "#2D2D2D", MUTE = "#6B645E";
+  var svg, out, verdict;
+  function x(q){ return L + (q - QMIN) / (QMAX - QMIN) * (R - L); }
+  function y(p){ return BOT - (p - PMIN) / (PMAX - PMIN) * (BOT - TOP); }
+  function el(tag, attrs){ var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function line(x1, y1, x2, y2, stroke, w, dash){
+    var e = el("line", {x1: x1, y1: y1, x2: x2, y2: y2, stroke: stroke, "stroke-width": w});
+    if (dash) e.setAttribute("stroke-dasharray", dash);
+    return e;
+  }
+  function text(tx, ty, str, fill, size, anchor, weight){
+    var e = el("text", {x: tx, y: ty, fill: fill, "font-size": size, "text-anchor": anchor || "start",
+                        "font-weight": weight || "400", "font-family": "inherit"});
+    e.textContent = str; return e;
+  }
+  function curve(slope, shift){         // Q = Q0 + slope * (p - P0 - shift); clipped to the box
+    var p1 = PMIN, p2 = PMAX;
+    var q1 = Q0 + slope * (p1 - P0 - shift), q2 = Q0 + slope * (p2 - P0 - shift);
+    if (q1 < QMIN || q1 > QMAX){ q1 = q1 < QMIN ? QMIN : QMAX; p1 = P0 + shift + (q1 - Q0) / slope; }
+    if (q2 < QMIN || q2 > QMAX){ q2 = q2 < QMIN ? QMIN : QMAX; p2 = P0 + shift + (q2 - Q0) / slope; }
+    return [x(q1), y(p1), x(q2), y(p2)];
+  }
+  function draw(){
+    var ed12 = parseInt(document.querySelector('input[data-control="inc-ed"]').value, 10);
+    var es12 = parseInt(document.querySelector('input[data-control="inc-es"]').value, 10);
+    var ed = ed12 / 12, es = es12 / 12;
+    var share = es12 / (es12 + ed12);                      // riders' share, exact
+    var pc = P0 + T * share, ps = pc - T;
+    var slopeD = -ed * Q0 / P0, slopeS = es * Q0 / P0;     // dQ/dp at the old equilibrium
+    var qt = Q0 + slopeD * (pc - P0);
+    document.querySelector('[data-readout="inc-ed"]').textContent = ed.toFixed(2);
+    document.querySelector('[data-readout="inc-es"]').textContent = es.toFixed(2);
+
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.appendChild(line(L, BOT, R, BOT, INK, 1.4));
+    svg.appendChild(line(L, TOP, L, BOT, INK, 1.4));
+    svg.appendChild(text(L - 8, y(P0) + 5, "$" + P0, GREEN, 15, "end", "700"));
+    svg.appendChild(text(L - 8, y(pc) + 5, "$" + pc.toFixed(2), VIOLET, 15, "end", "700"));
+    svg.appendChild(text(L - 8, y(ps) + 5, "$" + ps.toFixed(2), VIOLET, 15, "end", "700"));
+    svg.appendChild(text(R, BOT + 30, "Q (thousand rides / week)", MUTE, 13, "end"));
+    svg.appendChild(text(L - 8, TOP + 10, "p", MUTE, 13, "end"));
+
+    var d = curve(slopeD, 0), s = curve(slopeS, 0), st = curve(slopeS, T);
+    svg.appendChild(line(st[0], st[1], st[2], st[3], RED, 2, "7,5"));
+    svg.appendChild(line(s[0], s[1], s[2], s[3], RED, 3));
+    svg.appendChild(line(d[0], d[1], d[2], d[3], BLUE, 3));
+    svg.appendChild(text(d[2] + 6, d[3], "D", BLUE, 16, "start", "700"));
+    svg.appendChild(text(s[2] + 6, s[3] + 4, "S", RED, 16, "start", "700"));
+
+    [[P0, GREEN, Q0], [pc, VIOLET, qt], [ps, VIOLET, qt]].forEach(function(row){
+      svg.appendChild(line(L, y(row[0]), x(row[2]), y(row[0]), row[1], 1, "3,4"));
+    });
+    svg.appendChild(line(x(qt), y(pc), x(qt), BOT, MUTE, 1, "3,4"));
+    [[qt, pc, VIOLET], [qt, ps, VIOLET], [Q0, P0, GREEN]].forEach(function(row){
+      svg.appendChild(el("circle", {cx: x(row[0]), cy: y(row[1]), r: 6, fill: row[2]}));
+    });
+    svg.appendChild(text(x(Q0), BOT + 20, "72", GREEN, 13, "middle", "700"));
+    svg.appendChild(text(x(qt), BOT + 20, qt.toFixed(0), MUTE, 13, "middle", "700"));
+
+    // the burden bar: p* splits the wedge into the riders' piece and the drivers' piece
+    var bx = x(52);
+    svg.appendChild(line(bx, y(P0), bx, y(pc), BLUE, 15));
+    svg.appendChild(line(bx, y(ps), bx, y(P0), RED, 15));
+    svg.appendChild(text(bx - 13, (y(P0) + y(pc)) / 2 + 5, "riders $" + (pc - P0).toFixed(2), BLUE, 14, "end", "700"));
+    svg.appendChild(text(bx - 13, (y(ps) + y(P0)) / 2 + 5, "drivers $" + (P0 - ps).toFixed(2), RED, 14, "end", "700"));
+
+    out.innerHTML = "riders' share = " + es.toFixed(2) + " &divide; (" + es.toFixed(2) + " + " + ed.toFixed(2) +
+                    ") = <strong>" + Math.round(share * 100) + "%</strong> of the $5";
+    verdict.textContent = ed12 === es12 ? "Equal elasticities \u2014 same steepness, 50/50."
+      : (ed12 < es12 ? "Demand is steeper \u2014 riders cannot walk away, so riders pay more."
+                     : "Supply is steeper \u2014 drivers cannot walk away, so drivers pay more.");
+  }
+  function init(){
+    svg = document.getElementById("inc-svg");
+    if (!svg) return;
+    out = document.getElementById("inc-readout");
+    verdict = document.getElementById("inc-verdict");
+    ["inc-ed", "inc-es"].forEach(function(k){
+      document.querySelector('input[data-control="' + k + '"]').addEventListener("input", draw);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".inc-preset"), function(b){
+      b.addEventListener("click", function(){
+        document.querySelector('input[data-control="inc-ed"]').value = b.getAttribute("data-ed");
+        document.querySelector('input[data-control="inc-es"]').value = b.getAttribute("data-es");
+        draw();
+      });
+    });
+    draw();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+<style>
+  .inc-preset { font-family: inherit; font-size: 11.5pt; font-weight: 700; cursor: pointer;
+    border: 1.5px solid var(--secondary-color); background: #fff; color: var(--secondary-color);
+    border-radius: 7px; padding: 5px 13px; }
+  .inc-preset:hover { background: var(--secondary-color); color: #fff; }
+</style>
+<style>
+ #lb-ov{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:2vh 2vw;}
+ #lb-ov.open{display:flex;}
+ #lb-ov img{max-width:96vw;max-height:92vh;background:#fff;border-radius:6px;box-shadow:0 10px 50px rgba(0,0,0,0.6);}
+ #lb-hint{position:fixed;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.65);font-size:13px;letter-spacing:0.04em;}
+ #lb-btn{position:fixed;z-index:9999;display:none;padding:5px 11px;border:0;border-radius:6px;background:rgba(31,41,55,0.85);color:#fff;font:600 13px/1.2 "Source Sans 3",system-ui,sans-serif;cursor:zoom-in;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+ #lb-btn:hover{background:rgba(37,99,235,0.95);}
+ #lb-btn.on{display:block;}
+</style>
+<div id="lb-ov"><img id="lb-img" alt="Enlarged image"><div id="lb-hint">Click anywhere (or press Esc) to close</div></div>
+<button id="lb-btn" type="button" aria-label="Enlarge image">&#128269; Enlarge</button>
+<script>
+(function(){
+  if(/[?&](receiver|print-pdf|export)/.test(location.search)) return;   // speaker-view previews, PDF export
+  var ov=document.getElementById('lb-ov'), im=document.getElementById('lb-img'), btn=document.getElementById('lb-btn');
+  if(!ov||!btn) return;
+  var cur=null, hideT=null, idleT=null;
+  function skip(z){ return z.closest('#title,.yt-facade,.poll-option,a,button,[data-no-zoom]'); }
+  function hide(){ clearTimeout(hideT); clearTimeout(idleT); btn.classList.remove('on'); cur=null; }
+  function open(z){ im.src=z.currentSrc||z.src; im.alt=z.alt||'Enlarged image'; ov.classList.add('open'); hide(); }
+  function close(){ ov.classList.remove('open'); }
+  function shown(z){                           // the visible picture, not the box: object-fit:contain letterboxes it
+    var b=z.getBoundingClientRect(), fit=getComputedStyle(z).objectFit, nw=z.naturalWidth, nh=z.naturalHeight;
+    if(!(fit==='contain'||fit==='scale-down')||!nw||!nh||!b.width||!b.height) return b;
+    var s=Math.min(b.width/nw,b.height/nh); if(fit==='scale-down') s=Math.min(s,1);
+    var w=nw*s, hh=nh*s;
+    return {left:b.left+(b.width-w)/2, top:b.top+(b.height-hh)/2, right:b.left+(b.width+w)/2, width:w, height:hh};
+  }
+  function show(z){
+    if(ov.classList.contains('open')) return;
+    var r=shown(z);
+    if(r.width<120||r.height<80) return;       // icons and emoji are not worth enlarging
+    clearTimeout(hideT); clearTimeout(idleT); cur=z;
+    btn.classList.add('on');
+    btn.style.top=Math.max(4,r.top+6)+'px';
+    btn.style.left=Math.max(4,r.right-btn.offsetWidth-6)+'px';
+    idleT=setTimeout(hide,2500);               // a resting pointer does not leave a button on the projector
+  }
+  document.querySelectorAll('.reveal .slides section img').forEach(function(z){
+    if(skip(z)) return;
+    z.addEventListener('mouseenter',function(){ show(z); });
+    z.addEventListener('mousemove',function(){ if(cur!==z||!btn.classList.contains('on')) show(z); else { clearTimeout(idleT); idleT=setTimeout(hide,2500); } });
+    z.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+    z.addEventListener('dblclick',function(e){ e.preventDefault(); e.stopPropagation(); open(z); });
+  });
+  btn.addEventListener('mouseenter',function(){ clearTimeout(hideT); clearTimeout(idleT); });
+  btn.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+  btn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur) open(cur); });
+  ov.addEventListener('click', close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')){ close(); e.stopPropagation(); } },true);
+  if(window.Reveal&&Reveal.on){ Reveal.on('slidechanged',function(){ hide(); close(); }); Reveal.on('fragmentshown',hide); Reveal.on('fragmenthidden',hide); }
+  window.addEventListener('resize',hide);
+})();
+</script>
+
+<script>
+(function () {
+  // 29 Sep 2026, Ryan: reveal's "?" panel only knew reveal's own keys. Every
+  // key the decks add (pen, timers, poll, speaker-view relays) is registered
+  // here so the panel is the one place to look. Rows depend on the window: the
+  // projector and speaker view get the instructor keys; a student's copy gets
+  // only what works for a student. Rows for features a deck lacks are skipped.
+  var q = location.search;
+  var receiver = /[?&]receiver(&|$)/.test(q), current = receiver && /postMessageEvents=true/.test(q);
+  var projector = /[?&]presenter(&|=|$)/.test(q) && !receiver;
+  if (receiver && !current) return;                         // the Upcoming pane is view-only
+  var inst = projector || current || /[?&]instructor(&|=|$)/.test(q);
+  // twice as many rows as reveal's own list: wider and tighter so it fits one screen
+  var css = document.createElement('style');
+  var H = '.reveal .overlay.overlay-help .viewport .viewport-inner';
+  css.textContent = H + '{width:min(1000px,94vw)!important;max-width:none!important;}' +
+    H + ' table{width:100%!important;}' +
+    H + ' table th,' + H + ' table td{padding:4px 12px!important;font-size:13px!important;line-height:1.3!important;}' +
+    H + ' table td:last-child{text-align:left!important;}' +
+    H + ' table th:first-child,' + H + ' table td:first-child{width:24%!important;}' +
+    H + ' .title{margin:0!important;}' + H + ' br{display:none;}' +
+    '.reveal .overlay.overlay-help .viewport{padding-top:0!important;}' + H + '{padding-top:18px!important;}';
+  document.head.appendChild(css);
+  function go() {
+    if (!Reveal.registerKeyboardShortcut) return;
+    var K = function (k, d) { Reveal.registerKeyboardShortcut(k, d); };
+    var hasTimer = !!document.getElementById('cd-wrap');
+    var hasPoll = !!document.querySelector('.poll-grid, [data-poll-voting]');
+    if (inst) {
+      K('F', 'Fullscreen &mdash; pressed in speaker view, it full-screens the <b>projector</b>');
+      K('ESC, O', 'Slide overview &mdash; from speaker view, on <b>both</b> screens (Enter or a click picks a slide)');
+      K('M', 'Move keyboard focus between the projector and speaker view (Cmd-` brings a window forward)');
+      if (hasTimer) K('1 &ndash; 9', 'Countdown timer for that many minutes (same number again hides it); starts on both screens');
+      if (hasPoll) K('T', 'Poll slide: open / close voting. In speaker view, clicking an option votes on the projector');
+    }
+    K('D', 'Pen on / off (Esc also leaves it)');
+    K('Pen: F L A R S Y', 'Free draw &middot; line &middot; arrow &middot; box &middot; shade &middot; triangle');
+    K('Pen: G N H E', 'Axis guides &middot; curve label &middot; shifted copy &middot; eraser');
+    K('Pen: [ ] Z X C P', 'Thinner &middot; thicker &middot; undo &middot; redo &middot; clear slide &middot; save as PNG');
+    K('?', 'This list');
+    // S is registered by reveal's notes plugin as a key BINDING ("Speaker notes
+    // view"), which the panel lists after these rows; a second S row would be a
+    // duplicate. Its description is not reachable through the API, so the row is
+    // amended when the panel is drawn.
+    if (inst) {
+      var wrap = document.querySelector('.reveal');
+      if (wrap && window.MutationObserver) new MutationObserver(function () {
+        var o = wrap.querySelector('.overlay-help');
+        if (!o || o.__tiS) return; o.__tiS = 1;
+        [].forEach.call(o.querySelectorAll('td'), function (td) {
+          if (td.textContent === 'Speaker notes view' && td.parentNode) td.parentNode.remove();   // v3: Ryan does not want the S row
+        });
+      }).observe(wrap, { childList: true });
+    }
+  }
+  if (window.Reveal && Reveal.isReady && Reveal.isReady()) go();
+  else if (window.Reveal && Reveal.on) Reveal.on('ready', go);
+})();
+</script>
+<script>
+(function () {
+  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
+  var current = false;
+  // ---- annotation: temporary marks on the slide -------------------------
+  // A whiteboard, not a document. Strokes live in memory only, keyed by
+  // slide, and are gone when the deck is closed -- asked for explicitly, so
+  // there is no storage anywhere in here.
+  //
+  // Points are kept in SLIDE units, the same 1280x720 space the laser dot
+  // uses. Canvas pixels would be wrong the moment the window is resized or
+  // the deck is thrown at a projector with a different aspect: the marks
+  // have to sit on the WORDS they were drawn on.
+  //
+  // The shape set is chosen for an economics board, not for drawing in
+  // general: a straight LINE for a budget line or a tangent, an ARROW for
+  // "demand shifts right", a RECT and a translucent SHADE for tax revenue and
+  // surplus boxes, a right TRIANGLE for deadweight loss, and GUIDES -- the
+  // dashed pair dropped from a point to the two axes, which is the single
+  // most-drawn mark in a micro lecture.
+  var Ink = (function () {
+    var PENS = [
+      { n: 'Red',    c: '#e11d48' },
+      { n: 'Blue',   c: '#2563eb' },
+      { n: 'Green',  c: '#059669' },
+      { n: 'Orange', c: '#ea580c' },
+      { n: 'Black',  c: '#111827' },
+      { n: 'Highlighter', c: 'rgba(250,204,21,.45)', hi: true }
+    ];
+    var SIZES = [2, 4, 8];            // thin / medium / thick, in slide units
+    var TOOLS = [
+      { k: 'free',  i: 'fa-pencil',           t: 'Freehand (f)' },
+      { k: 'line',  i: 'fa-slash',            t: 'Straight line (l)' },
+      { k: 'arrow', i: 'fa-arrow-right-long', t: 'Arrow — a shift (a)' },
+      { k: 'rect',  i: 'fa-square',           t: 'Rectangle (r)' },
+      { k: 'shade', i: 'fa-fill-drip',        t: 'Shaded area — revenue, surplus (s)' },
+      { k: 'tri',   i: 'fa-play',             t: 'Right triangle — deadweight loss (y)' },
+      { k: 'guide', i: 'fa-crosshairs',       t: 'Dashed guides to the axes (g)' },
+      { k: 'label', i: 'fa-font',             t: 'Curve label \u2014 D, S, MC, D\u2032 (n)' },
+      { k: 'ghost', i: 'fa-clone',            t: 'Shifted ghost of a curve \u2014 drag it across (h)' }
+    ];
+    var cv, ctx, active = false, erasing = false, pi = 0, si = 1, tool = 'free';
+    var ops = {}, undone = {}, cur = null, rcur = null, relay = null, bar = null, btn = null;
+
+    function skey() { var i = Reveal.getIndices(); return i.h + '.' + (i.v || 0); }
+    function box() { var s = document.querySelector('.reveal .slides'); return s ? s.getBoundingClientRect() : null; }
+    function width() { return PENS[pi].hi ? 24 : SIZES[si]; }
+
+    function ensure() {
+      if (cv) return;
+      cv = document.createElement('canvas');
+      cv.id = 'ti-ink';
+      cv.style.cssText = 'position:fixed;z-index:9990;pointer-events:none;touch-action:none';
+      document.body.appendChild(cv);
+      cv.addEventListener('pointerdown', down);
+      cv.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+      window.addEventListener('pointercancel', up);
+      fit();
+    }
+    function fit() {
+      var r = box(); if (!r || !cv) return;
+      var dpr = window.devicePixelRatio || 1;
+      cv.style.left = r.left + 'px'; cv.style.top = r.top + 'px';
+      cv.style.width = r.width + 'px'; cv.style.height = r.height + 'px';
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx = cv.getContext('2d');
+      render();
+    }
+    // Live strokes are DERIVED by replaying this slide's op log, so undo and
+    // redo are a cursor into that log and never have to reverse a partially
+    // erased stroke by hand.
+    function live() {
+      var list = [], o = ops[skey()] || [];
+      o.forEach(function (op) {
+        if (op.t === 'add') list.push(op.s);
+        else if (op.t === 'del' && op.ids) list = list.filter(function (s) { return op.ids.indexOf(s.id) < 0; });
+        else if (op.t === 'del') op.ss.forEach(function (s) {
+          var i = list.indexOf(s); if (i >= 0) list.splice(i, 1);
+        });
+      });
+      return list;
+    }
+    // One description of every shape, used for BOTH drawing and erasing, so
+    // the two can never disagree about where a mark is.
+    function paths(s) {
+      var p = s.pts, a = p[0], b = p[p.length - 1];
+      if (s.k === 'free' || !s.k) return [p];
+      if (s.k === 'line' || s.k === 'arrow') return [[a, b]];
+      if (s.k === 'rect' || s.k === 'shade')
+        return [[a, { x: b.x, y: a.y }, b, { x: a.x, y: b.y }, a]];
+      if (s.k === 'tri') return [[a, b, { x: b.x, y: a.y }, a]];
+      if (s.k === 'guide') return [[a, { x: b.x, y: a.y }], [a, { x: a.x, y: b.y }]];
+      if (s.k === 'text') return [];
+      return [p];
+    }
+    function render() {
+      if (!cv || !ctx) return;
+      var r = box(); if (!r) return;
+      var dpr = window.devicePixelRatio || 1, k = Reveal.getScale() * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var all = live(); if (rcur) all = all.concat([rcur]); if (cur) all = all.concat([cur]);
+      all.forEach(function (s) {
+        if (!s.pts.length) return;
+        ctx.save();
+        if (s.k === 'text') {
+          ctx.globalAlpha = s.ghost ? 0.6 : 1;
+          ctx.fillStyle = s.c;
+          // italic serif, because that is how a curve is labelled on a board
+          ctx.font = 'italic 700 ' + (s.size || 22) + 'px Georgia,"Times New Roman",serif';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(s.txt || '', s.pts[0].x, s.pts[0].y);
+          ctx.restore(); return;
+        }
+        ctx.strokeStyle = s.c; ctx.lineWidth = s.w;
+        if (s.ghost) { ctx.globalAlpha = 0.6; ctx.setLineDash([9, 7]); }
+        else ctx.setLineDash(s.k === 'guide' ? [7, 6] : []);
+        if (s.k === 'shade') {
+          ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = s.c;
+          var q = s.pts[0], z = s.pts[s.pts.length - 1];
+          ctx.fillRect(Math.min(q.x, z.x), Math.min(q.y, z.y), Math.abs(z.x - q.x), Math.abs(z.y - q.y));
+          ctx.restore();
+        }
+        paths(s).forEach(function (seg) {
+          if (seg.length < 1) return;
+          ctx.beginPath(); ctx.moveTo(seg[0].x, seg[0].y);
+          for (var i = 1; i < seg.length; i++) ctx.lineTo(seg[i].x, seg[i].y);
+          if (seg.length === 1) ctx.lineTo(seg[0].x + 0.01, seg[0].y + 0.01);
+          ctx.stroke();
+        });
+        if (s.k === 'arrow') {
+          var a = s.pts[0], b = s.pts[s.pts.length - 1];
+          var ang = Math.atan2(b.y - a.y, b.x - a.x), L = 9 + s.w * 2.2;
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang - 0.42), b.y - L * Math.sin(ang - 0.42));
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang + 0.42), b.y - L * Math.sin(ang + 0.42));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.restore();
+      });
+    }
+    function at(ev) {
+      var r = box(), k = Reveal.getScale() || 1;
+      return { x: (ev.clientX - r.left) / k, y: (ev.clientY - r.top) / k };
+    }
+    function push(op) {
+      if (op.t === 'add' && op.s && !op.s.id) op.s.id = Math.random().toString(36).slice(2, 10);
+      var k = skey(); (ops[k] = ops[k] || []).push(op); undone[k] = [];
+    }
+    // v25: the WHOLE log of one slide, so the other window can replace its own -- the two
+    // can then never disagree about which stroke an undo or an erase meant
+    function snap() {
+      var k = skey();
+      send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+    }
+    function snapAll() {
+      Object.keys(ops).forEach(function (k) {
+        if ((ops[k] || []).length || (undone[k] || []).length)
+          send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+      });
+    }
+    function send(m) { if (relay) relay(m); }
+
+    // erase whole strokes, not pixels: one op to undo, and it never leaves
+    // half a rubbed-out line behind
+    function eraseAt(p) {
+      var hit = [], R = 14;
+      live().forEach(function (s) {
+        if (s.k === 'text') {
+          var half = (s.size || 22) * 0.6, wide = (s.txt || '').length * (s.size || 22) * 0.34;
+          if (p.x > s.pts[0].x - 8 && p.x < s.pts[0].x + wide + 8 &&
+              p.y > s.pts[0].y - half && p.y < s.pts[0].y + half) hit.push(s);
+          return;
+        }
+        var segs = paths(s), i, j, pts;
+        for (i = 0; i < segs.length; i++) {
+          pts = segs[i];
+          for (j = 0; j < pts.length; j++) {
+            var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+            if (dx * dx + dy * dy < (R + s.w) * (R + s.w)) { hit.push(s); return; }
+          }
+          // a long straight edge has few vertices: walk it
+          for (j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            if (L < 1) continue;
+            var t = ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L);
+            if (t < 0 || t > 1) continue;
+            var cx = A.x + t * (B.x - A.x), cy = A.y + t * (B.y - A.y);
+            if (Math.hypot(p.x - cx, p.y - cy) < R + s.w) { hit.push(s); return; }
+          }
+        }
+      });
+      if (hit.length) { push({ t: 'del', ids: hit.map(function (s) { return s.id; }) }); render(); paintBar(); return true; }
+    }
+    // nearest live stroke to a point, by the same segment walk the eraser uses
+    function nearest(p) {
+      var best = null, bd = 1e9;
+      live().forEach(function (s) {
+        paths(s).forEach(function (pts) {
+          for (var j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            var cx, cy, tt;
+            if (L < 1) { cx = A.x; cy = A.y; }
+            else {
+              tt = Math.max(0, Math.min(1, ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L)));
+              cx = A.x + tt * (B.x - A.x); cy = A.y + tt * (B.y - A.y);
+            }
+            var d = Math.hypot(p.x - cx, p.y - cy);
+            if (d < bd) { bd = d; best = s; }
+          }
+        });
+      });
+      return bd < 40 ? best : null;
+    }
+    // A label is typed, not drawn, so it gets a real input at the click point
+    // rather than a prompt() -- a modal dialog in front of a projected slide is
+    // worse than the thing it is trying to collect.
+    function labelAt(p, ev) {
+      var r = box(), k = Reveal.getScale() || 1, size = 16 + si * 6;
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'D\u2032';
+      inp.style.cssText = 'position:fixed;z-index:10004;left:' + (r.left + p.x * k - 6) + 'px;top:' +
+        (r.top + p.y * k - size * k * 0.75) + 'px;width:130px;font:italic 700 ' + Math.round(size * k) +
+        'px Georgia,serif;color:' + PENS[pi].c + ';background:rgba(255,255,255,.92);border:2px solid ' +
+        PENS[pi].c + ';border-radius:6px;padding:1px 5px;outline:none';
+      document.body.appendChild(inp);
+      // v27: the box grows with the text. At 130px fixed, a large italic label scrolled its
+      // start out of sight after four characters and Ryan could not see what he typed.
+      var meas = document.createElement('canvas').getContext('2d');
+      meas.font = 'italic 700 ' + Math.round(size * k) + 'px Georgia,serif';
+      var grow = function () {
+        var w = meas.measureText(inp.value || inp.placeholder).width;
+        inp.style.width = Math.max(60, Math.ceil(w + size * k * 0.9 + 14)) + 'px';
+      };
+      inp.addEventListener('input', grow); grow();
+      inp.focus();
+      var done = function (commit) {
+        var txt = inp.value.trim();
+        inp.remove();
+        if (!commit || !txt) return;
+        var s = { k: 'text', c: PENS[pi].c, w: SIZES[si], size: size, txt: txt, pts: [p] };
+        push({ t: 'add', s: s }); snap();
+        render(); paintBar();
+      };
+      inp.addEventListener('keydown', function (e) {
+        e.stopPropagation();                       // Reveal and Ink both listen on document
+        if (e.key === 'Enter') { e.preventDefault(); done(true); }
+        if (e.key === 'Escape') { e.preventDefault(); done(false); }
+      });
+      inp.addEventListener('blur', function () { done(true); });
+    }
+
+    function down(ev) {
+      if (!active) return;
+      ev.preventDefault(); ev.stopPropagation();
+      var p = at(ev);
+      if (erasing) { if (eraseAt(p)) snap(); return; }
+      if (tool === 'label') { labelAt(p, ev); return; }
+      if (tool === 'ghost') {
+        // copy the curve you pressed on, then drag the copy to where it shifted
+        var src = nearest(p);
+        if (!src) return;
+        var base = src.pts.map(function (q) { return { x: q.x, y: q.y }; });
+        cur = { k: src.k, c: src.c, w: src.w, size: src.size, txt: src.txt,
+                ghost: true, base: base, from: p, pts: base };
+        render(); return;
+      }
+      cur = { c: PENS[pi].c, w: width(), k: tool, pts: [p, p] };
+      send({ k: 'down', x: p.x, y: p.y, c: cur.c, w: cur.w, tool: tool });
+      render();
+    }
+    function move(ev) {
+      if (!active) return;
+      var p = at(ev);
+      if (erasing) {
+        if (ev.buttons && eraseAt(p)) snap();
+        return;
+      }
+      if (!cur) return;
+      ev.preventDefault();
+      if (cur.ghost) {
+        var dx = p.x - cur.from.x, dy = p.y - cur.from.y;
+        cur.pts = cur.base.map(function (q) { return { x: q.x + dx, y: q.y + dy }; });
+        render(); return;                          // relayed whole, on release
+      }
+      if (cur.k === 'free') cur.pts.push(p); else cur.pts[1] = p;
+      send({ k: 'move', x: p.x, y: p.y }); render();
+    }
+    function up() {
+      if (!cur) return;
+      // a shape needs two distinct corners; a tap is not a rectangle
+      var a = cur.pts[0], b = cur.pts[cur.pts.length - 1];
+      var ok = cur.ghost ? Math.hypot(b.x - a.x, b.y - a.y) >= 0
+             : cur.k === 'free' ? cur.pts.length > 1
+             : Math.hypot(b.x - a.x, b.y - a.y) > 4;
+      if (cur.ghost) {
+        var moved = cur.pts.length && cur.base.length &&
+                    Math.hypot(cur.pts[0].x - cur.base[0].x, cur.pts[0].y - cur.base[0].y) > 4;
+        if (moved) {
+          var g = { k: cur.k, c: cur.c, w: cur.w, size: cur.size, txt: cur.txt, ghost: true, pts: cur.pts };
+          push({ t: 'add', s: g }); snap();
+        }
+        cur = null; render(); paintBar(); return;
+      }
+      if (ok) { push({ t: 'add', s: cur }); cur = null; snap(); }
+      else { cur = null; send({ k: 'cancel' }); }
+      render(); paintBar();
+    }
+    // the projected window rebuilds the same stroke from the relayed points
+    function apply(m) {
+      if (!m) return;
+      ensure();
+      // v25: the other window's stroke in progress lives in rcur, never in cur, so a stroke
+      // drawn on each screen at once cannot merge into one
+      if (m.k === 'down') { rcur = { c: m.c, w: m.w, k: m.tool || 'free', pts: [{ x: m.x, y: m.y }, { x: m.x, y: m.y }] }; render(); return; }
+      if (m.k === 'move') { if (rcur) { if (rcur.k === 'free') rcur.pts.push({ x: m.x, y: m.y }); else rcur.pts[1] = { x: m.x, y: m.y }; render(); } return; }
+      if (m.k === 'cancel') { rcur = null; render(); return; }
+      if (m.k === 'snap') {
+        ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
+        render(); paintBar(); return;
+      }
+      if (m.k === 'req')  { snapAll(); return; }
+      // a window still on v24 or older sends these; keep them working during a mixed reload
+      if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
+      if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
+      if (m.k === 'erase'){ eraseAt({ x: m.x, y: m.y }); return; }
+      if (m.k === 'undo') { undo(true); return; }
+      if (m.k === 'redo') { redo(true); return; }
+      if (m.k === 'clear'){ clear(true); return; }
+      if (m.k === 'mode') { setActive(m.on, true); return; }
+    }
+    function undo(q) {
+      var k = skey(), o = ops[k] || [];
+      if (!o.length) return;
+      (undone[k] = undone[k] || []).push(o.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function redo(q) {
+      var k = skey(), u = undone[k] || [];
+      if (!u.length) return;
+      (ops[k] = ops[k] || []).push(u.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function clear(q) {
+      var k = skey();
+      if (!(ops[k] || []).length) return;
+      undone[k] = (undone[k] || []).concat(ops[k]); ops[k] = [];
+      render(); paintBar(); if (!q) snap();
+    }
+    function setActive(v, q) {
+      active = !!v; ensure();
+      cv.style.pointerEvents = active ? 'auto' : 'none';
+      cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
+      if (bar) bar.style.display = active ? 'flex' : 'none';
+      if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
+      paintBar(); if (!q) send({ k: 'mode', on: active });
+    }
+
+    /* ---------- save a picture of the board ---------- */
+    // The slide is DOM, not a canvas, so the page cannot screenshot itself
+    // without help. html2canvas is fetched only when this is first pressed --
+    // no cost to a lecture that never uses it -- and if the CDN is unreachable
+    // the ink alone is still saved rather than nothing.
+    function stamp() {
+      var m = location.pathname.match(/\/([^\/]+)\/[^\/]*$/);
+      var n = document.querySelector('.reveal .slide-number');
+      return (m ? m[1] : 'slide') + '-' + (n ? n.textContent.replace(/\s+/g, '') : skey());
+    }
+    function download(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = stamp() + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    function inkOnly() {
+      var out = document.createElement('canvas');
+      out.width = cv.width; out.height = cv.height;
+      var c = out.getContext('2d');
+      c.fillStyle = '#fff'; c.fillRect(0, 0, out.width, out.height);
+      c.drawImage(cv, 0, 0);
+      out.toBlob(download);
+    }
+    function savePng() {
+      var reveal = document.querySelector('.reveal');
+      var go = function () {
+        window.html2canvas(reveal, { backgroundColor: '#ffffff', scale: 2, logging: false })
+          .then(function (base) {
+            var out = document.createElement('canvas');
+            out.width = base.width; out.height = base.height;
+            var c = out.getContext('2d');
+            c.drawImage(base, 0, 0);
+            var rr = reveal.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+            var k = base.width / rr.width;
+            c.drawImage(cv, (cr.left - rr.left) * k, (cr.top - rr.top) * k, cr.width * k, cr.height * k);
+            out.toBlob(download);
+          })
+          .catch(inkOnly);
+      };
+      if (window.html2canvas) { go(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = go; s.onerror = inkOnly;
+      document.head.appendChild(s);
+    }
+
+    /* ---------- toolbar ---------- */
+    function paintBar() {
+      if (!bar) return;
+      [].forEach.call(bar.querySelectorAll('[data-pen]'), function (b) {
+        b.style.outline = (!erasing && +b.getAttribute('data-pen') === pi) ? '2px solid #111827' : '2px solid transparent';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-size]'), function (b) {
+        var on = +b.getAttribute('data-size') === si;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.firstChild.style.background = on ? '#fff' : '#374151';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-tool]'), function (b) {
+        var on = !erasing && b.getAttribute('data-tool') === tool;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.style.color = on ? '#fff' : '#374151';
+      });
+      var er = bar.querySelector('[data-a="erase"]');
+      if (er) { er.style.background = erasing ? '#111827' : '#e5e7eb'; er.style.color = erasing ? '#fff' : '#374151'; }
+      var k = skey();
+      var u = bar.querySelector('[data-a="undo"]'), rd = bar.querySelector('[data-a="redo"]'),
+          cl = bar.querySelector('[data-a="clear"]'), sv = bar.querySelector('[data-a="save"]');
+      if (u)  u.disabled  = !(ops[k] || []).length;
+      if (rd) rd.disabled = !(undone[k] || []).length;
+      if (cl) cl.disabled = !(ops[k] || []).length;
+      if (sv) sv.disabled = false;
+    }
+    function mount() {
+      if (bar) return;
+      btn = document.createElement('button');
+      btn.id = 'ti-pen'; btn.type = 'button'; btn.title = 'Draw on the slide (d)';
+      btn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      var rest = current ? '.55' : '.18';
+      btn.style.cssText = 'position:fixed;left:' + (current ? 14 : 94) + 'px;bottom:12px;' +
+        'z-index:10001;width:34px;height:34px;' +
+        'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+        'font-size:14px;padding:0;opacity:' + rest + ';transition:opacity .2s';
+      btn.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function () { if (!active) btn.style.opacity = rest; });
+      btn.addEventListener('click', function (e) { e.preventDefault(); setActive(!active); });
+      document.body.appendChild(btn);
+
+      bar = document.createElement('div');
+      bar.id = 'ti-ink-bar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:10px;z-index:10003;' +
+        'display:none;gap:6px;align-items:center;padding:7px 10px;border-radius:11px;' +
+        'background:rgba(255,255,255,.97);box-shadow:0 2px 12px rgba(0,0,0,.22);' +
+        'font:600 12px system-ui,sans-serif;max-width:96vw;flex-wrap:wrap;justify-content:center';
+      var sep = '<span style="width:1px;height:20px;background:#e5e7eb"></span>';
+      var btnCss = 'border:0;border-radius:6px;padding:5px 8px;cursor:pointer;background:#e5e7eb;color:#374151;font:inherit';
+      var html = '';
+      PENS.forEach(function (p, i) {
+        html += '<button data-pen="' + i + '" type="button" title="' + p.n + '" style="width:22px;height:22px;' +
+                'border-radius:50%;border:0;cursor:pointer;padding:0;background:' + p.c + ';' +
+                'outline:2px solid transparent;outline-offset:2px"></button>';
+      });
+      html += sep;
+      SIZES.forEach(function (w, i) {
+        var d = 4 + i * 4;
+        html += '<button data-size="' + i + '" type="button" title="Tip ' + w + '" style="width:26px;height:22px;' +
+                'border:0;border-radius:6px;cursor:pointer;background:#e5e7eb;display:inline-flex;' +
+                'align-items:center;justify-content:center;padding:0">' +
+                '<span style="display:block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:#374151"></span></button>';
+      });
+      html += sep;
+      TOOLS.forEach(function (t) {
+        html += '<button data-tool="' + t.k + '" type="button" title="' + t.t + '" style="' + btnCss + '">' +
+                '<i class="fa-solid ' + t.i + '"></i></button>';
+      });
+      html += sep +
+        '<button data-a="erase" type="button" title="Eraser (e)" style="' + btnCss + '">Erase</button>' +
+        '<button data-a="undo" type="button" title="Undo (z)" style="' + btnCss + '">Undo</button>' +
+        '<button data-a="redo" type="button" title="Redo (x)" style="' + btnCss + '">Redo</button>' +
+        '<button data-a="clear" type="button" title="Clear this slide (c)" style="' + btnCss + '">Clear</button>' +
+        '<button data-a="save" type="button" title="Save this slide as a PNG (p)" style="' + btnCss + '">' +
+        '<i class="fa-solid fa-camera"></i></button>' + sep +
+        '<button data-a="done" type="button" title="Stop drawing (d or Esc)" style="' + btnCss +
+        ';background:#111827;color:#fff">Done</button>';
+      bar.innerHTML = html;
+      bar.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+      bar.addEventListener('click', function (e) {
+        var t = e.target.closest('button'); if (!t) return;
+        e.preventDefault(); e.stopPropagation();
+        if (t.hasAttribute('data-pen'))  { pi = +t.getAttribute('data-pen'); erasing = false; setActive(true); return; }
+        if (t.hasAttribute('data-size')) { si = +t.getAttribute('data-size'); setActive(true); return; }
+        if (t.hasAttribute('data-tool')) { tool = t.getAttribute('data-tool'); erasing = false; setActive(true); return; }
+        var a = t.getAttribute('data-a');
+        if (a === 'erase') { erasing = !erasing; setActive(true); }
+        else if (a === 'undo') undo();
+        else if (a === 'redo') redo();
+        else if (a === 'clear') clear();
+        else if (a === 'save') savePng();
+        else if (a === 'done') setActive(false);
+      });
+      document.body.appendChild(bar);
+      ensure();
+      Reveal.on('resize', fit);
+      window.addEventListener('resize', fit);
+      Reveal.on('slidechanged', function () { cur = null; rcur = null; fit(); paintBar(); });
+      paintBar();
+    }
+
+    function keys(e) {
+      // v26: the system shortcuts too, while the pen is on -- Cmd/Ctrl-Z undo,
+      // Cmd/Ctrl-Shift-Z or Ctrl-Y redo. With the pen off they pass through untouched.
+      if (active && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        var kk = (e.key || '').toLowerCase();
+        if (kk === 'z' || kk === 'y') {
+          e.preventDefault(); e.stopPropagation();
+          if (kk === 'y' || e.shiftKey) redo(); else undo();
+          return;
+        }
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var k = e.key;
+      if (k === 'd' || k === 'D') { e.preventDefault(); e.stopPropagation(); setActive(!active); return; }
+      if (!active) return;                    // every other key is scoped to draw mode
+      var stop = function () { e.preventDefault(); e.stopPropagation(); };
+      if (k === 'Escape') { stop(); setActive(false); return; }
+      if (k === 'e' || k === 'E') { stop(); erasing = !erasing; setActive(true); return; }
+      if (k === 'z' || k === 'Z') { stop(); undo(); return; }
+      if (k === 'x' || k === 'X') { stop(); redo(); return; }
+      if (k === 'c' || k === 'C') { stop(); clear(); return; }
+      if (k === 'p' || k === 'P') { stop(); savePng(); return; }
+      if (k === '[') { stop(); si = Math.max(0, si - 1); setActive(true); return; }
+      if (k === ']') { stop(); si = Math.min(SIZES.length - 1, si + 1); setActive(true); return; }
+      // NOT "t": that is the poll open/close key, and it has to keep working
+      // while the pen is armed so a poll slide can be annotated and still
+      // opened for voting. Triangle takes "y" instead.
+      var map = { f: 'free', l: 'line', a: 'arrow', r: 'rect', s: 'shade', y: 'tri', g: 'guide',
+                  n: 'label', h: 'ghost' };
+      var want = map[k.toLowerCase && k.toLowerCase()];
+      if (want) { stop(); tool = want; erasing = false; setActive(true); }
+    }
+
+    return {
+      mount: mount, apply: apply, fit: fit, keys: keys, ask: function () { send({ k: 'req' }); },
+      on: function () { return active; },
+      relayTo: function (fn) { relay = fn; }
+    };
+  })();
+
+  // ---- full screen ----------------------------------------------------
+  // requestFullscreen needs TRANSIENT user activation IN THE WINDOW THAT GOES
+  // FULL SCREEN, so only a click (or "f") inside the projected window can do
+  // it. The speaker-view button and the click-anywhere target that used to work
+  // around that are GONE: they worked, but two windows and two clicks to reach
+  // full screen was never worth it. "m" then "f" does the same job from the
+  // keyboard -- see swapFocus below.
+  function goFull() {
+    var el = document.documentElement;
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    try {
+      var p = el.requestFullscreen();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function fsButton() {                 // projector window: the one-click path
+    if (document.getElementById('ti-fs')) return;
+    var b = document.createElement('button');
+    b.id = 'ti-fs'; b.type = 'button'; b.title = 'Full screen (f)';
+    b.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    b.style.cssText = 'position:fixed;left:54px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+      'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+      'font-size:14px;padding:0;opacity:.18;transition:opacity .2s';
+    b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+    b.addEventListener('mouseleave', function () { b.style.opacity = '.18'; });
+    b.addEventListener('click', function (e) { e.preventDefault(); goFull(); });
+    document.addEventListener('fullscreenchange', function () {
+      b.innerHTML = document.fullscreenElement ? '<i class="fa-solid fa-compress"></i>'
+                                               : '<i class="fa-solid fa-expand"></i>';
+    });
+    document.body.appendChild(b);
+  }
+
+  function homeLink() {            // presenter only: a faint way back to the chapter list
+    if (document.getElementById('ti-home')) return;
+    var a = document.createElement('a');
+    a.id = 'ti-home'; a.href = '../index.html'; a.title = 'Chapter list';
+    a.innerHTML = '<i class="fa-solid fa-house"></i>';
+    a.style.cssText = 'position:fixed;left:14px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);' +
+      'color:#6b8ba4;border:1px solid #e5e7eb;text-decoration:none;font-size:15px;opacity:.18;transition:opacity .2s';
+    a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+    a.addEventListener('mouseleave', function () { a.style.opacity = '.18'; });
+    document.body.appendChild(a);
+  }
+  function start() {
+    homeLink(); fsButton(); Ink.mount();
+    document.addEventListener('keydown', Ink.keys, true);
+  }
+  if (Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>
+</body>
+</html>

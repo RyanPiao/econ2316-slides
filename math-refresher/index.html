@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=10766de3fbd83736b2799680bea1ddd8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Refresher — ECON 2316</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .idx-card{display:block;text-decoration:none;background:#f8f6f3;border-radius:12px;
+      padding:20px 24px;border-left:6px solid var(--secondary-color);transition:transform .15s,box-shadow .15s;}
+    .idx-card:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.10);}
+    .idx-card .n{font-size:11pt;text-transform:uppercase;letter-spacing:1.6px;
+      color:var(--secondary-color);font-weight:700;margin:0 0 6px;}
+    .idx-card .t{font-size:17pt;font-weight:700;color:var(--primary-color);margin:0 0 8px;line-height:1.2;}
+    .idx-card .d{font-size:12pt;color:var(--muted-color);margin:0;line-height:1.45;}
+    .mr-nav{margin-top:auto;align-self:flex-start;display:flex;align-items:stretch;
+      gap:0;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.10);}
+    .mr-nav a{display:flex;align-items:center;gap:7px;background:var(--secondary-color);color:#fff;
+      text-decoration:none;font-size:12pt;font-weight:700;padding:8px 16px;letter-spacing:.3px;
+      transition:background .15s;}
+    .mr-nav a:hover{background:var(--primary-color);}
+    .mr-nav .ch{display:flex;align-items:center;background:#f1f5f8;color:var(--secondary-color);
+      font-size:12pt;font-weight:700;padding:8px 16px;letter-spacing:.3px;}
+    .mr-nav.ch3 a{background:var(--success-color);}
+    .mr-nav.ch4 a{background:#8C5A2B;}
+    .mr-nav.ch4 .ch{background:#f8f2ea;color:#8C5A2B;}
+    .mr-nav.ch5 a{background:#3F6C8F;}
+    .mr-nav.ch5 .ch{background:#eef3f7;color:#3F6C8F;}
+    .mr-nav.ch3 .ch{background:#f0f5f0;color:var(--success-color);}
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides"><section class="section-divider" data-state="is-section-divider" id="title" style="padding:0;">
+  <div style="display:grid;grid-template-columns:56% 44%;height:720px;">
+    <div style="display:flex;flex-direction:column;justify-content:center;padding:50px 50px 50px 60px;">
+      <p style="font-size:12pt;color:var(--secondary-color);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;">ECON 2316 &bull; Microeconomic Theory</p>
+      <h1 style="font-size:40pt;line-height:1.16;color:var(--primary-color);margin-bottom:20px;">Math Refresher</h1>
+      <p style="font-size:15pt;color:var(--muted-color);font-style:italic;max-width:520px;">Read the short section for a chapter <strong style="color:var(--text-color);">before</strong> that lecture. Nothing here is new economics &mdash; it is the notation the lecture will assume you can read.</p>
+      <div style="margin-top:auto;padding-bottom:15px;">
+        <p style="font-size:16pt;color:var(--primary-color);font-weight:700;margin-bottom:6px;">Dr. Richeng Piao</p>
+        <p style="font-size:12pt;color:var(--muted-color);font-style:italic;">Department of Economics &bull; Northeastern University</p>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;background:#f1f5f8;">
+      <p style="font-size:52pt;color:var(--secondary-color);opacity:.30;line-height:1.5;text-align:center;margin:0;">\(\dfrac{dy}{dx}\)<br>\(\dfrac{\partial Q}{\partial p}\)<br>\(\varepsilon\)</p>
+    </div>
+  </div>
+</section><section id="index">
+  <h2><i class="fa-solid fa-list" style="color:var(--secondary-color);"></i> What do I need, and when?</h2>
+  <p style="font-size:12.5pt;color:var(--muted-color);margin:0 0 15px;">Three short sections. Each covers only the notation its chapter actually asks you to <em>use</em> &mdash; click a card to jump.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+    <a class="idx-card" href="#/ch2-marginal" style="border-left-color:var(--accent-color);">
+      <p class="n" style="color:var(--accent-color);">Before Chapter 2</p>
+      <p class="t">Marginal Thinking, Rules &amp; Partials</p>
+      <p class="d">What a derivative <em>means</em>, three rules for taking one, and solving for \(p^*\).</p>
+    </a>
+    <a class="idx-card" href="#/math-ratio" style="border-left-color:var(--success-color);">
+      <p class="n" style="color:var(--success-color);">Before Chapter 3</p>
+      <p class="t">Ratios, % Change, Elasticity, the Chain Rule &amp; First-Order Conditions</p>
+      <p class="d">Percentage change, a slope rescaled, the chain rule, and setting a derivative to zero to find the best price.</p>
+    </a>
+    <a class="idx-card" href="#/ch4-powers" style="border-left-color:#8C5A2B;">
+      <p class="n" style="color:#8C5A2B;">Before Chapter 4</p>
+      <p class="t">Fractional Powers &amp; Logs</p>
+      <p class="d">Exponents like \(x^{1/3}\), and logs that leave preferences unchanged.</p>
+    </a>
+  </div>
+  <div class="key-result" style="margin-top:16px;">
+    <p style="margin:0 0 7px;font-size:12pt;"><strong>Chapter 1 needs nothing from here.</strong> It uses the <em>idea</em> of a derivative but never asks you to compute one.</p>
+    <p style="margin:0;font-size:12pt;color:var(--muted-color);">No integral section &mdash; you are never asked to <em>compute</em> one. Lecture does consumer surplus and deadweight loss as <strong>triangles</strong>. You will still meet the integral <em>notation</em> in the book (&sect;2.5, &sect;3.6) and on the problem sets, where the task is to <strong>set the integral up</strong> and then evaluate it as an area &mdash; for the straight-line curves we use, the two agree exactly.</p>
+  </div>
+</section><section id="ch2-marginal">
+  <h2><i class="fa-solid fa-divide" style="color: var(--accent-color);"></i> A derivative is marginal thinking</h2>
+  <p style="font-size:12pt;color:var(--muted-color);margin:0 0 13px;">Before the rules, the idea. Three steps, and each is the last one sharpened.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;">
+    <div style="background:#f8f6f3;border-left:4px solid var(--muted-color);border-radius:8px;padding:13px 16px;">
+      <p style="font-size:10.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted-color);font-weight:700;margin:0 0 6px;">1 &middot; A ratio compares</p>
+      <p style="margin:0 0 6px;font-size:14pt;">\(\dfrac{\text{this}}{\text{that}}\)</p>
+      <p style="margin:0;font-size:11.5pt;line-height:1.45;">Two numbers, divided, so you can say which is bigger and by how much.</p>
+    </div>
+    <div style="background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:13px 16px;">
+      <p style="font-size:10.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent-color);font-weight:700;margin:0 0 6px;">2 &middot; Marginal = one more</p>
+      <p style="margin:0 0 6px;font-size:14pt;">\(\dfrac{\Delta Q}{\Delta p}\)</p>
+      <p style="margin:0;font-size:11.5pt;line-height:1.45;">A ratio of <em>changes</em>. How much quantity moves when the price moves &mdash; never the totals.</p>
+    </div>
+    <div style="background:#f0f5f8;border-left:4px solid var(--secondary-color);border-radius:8px;padding:13px 16px;">
+      <p style="font-size:10.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--secondary-color);font-weight:700;margin:0 0 6px;">3 &middot; Derivative = the limit</p>
+      <p style="margin:0 0 6px;font-size:14pt;">\(\dfrac{dQ}{dp}\)</p>
+      <p style="margin:0;font-size:11.5pt;line-height:1.45;">The same ratio with the step shrunk to nothing. Exact, not approximate.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top:14px;">
+    <p style="margin:0 0 7px;font-size:12.5pt;"><strong>So every &ldquo;marginal&rdquo; in this course is a derivative</strong> &mdash; and the slope of a demand curve is one. Later chapters relabel it marginal cost, marginal revenue, marginal utility. One idea.</p>
+    <p style="margin:0;font-size:12.5pt;">A <strong>partial</strong> derivative \(\left(\dfrac{\partial Q}{\partial p}\right)\) is the same thing with a promise attached: <strong>everything else is held still.</strong></p>
+  </div>
+  <div class="mr-nav"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 2</span></div>
+</section><section id="derivative-linear">
+  <h2><i class="fa-solid fa-ruler" style="color: var(--accent-color);"></i> On a straight line, the slope never changes</h2>
+  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: center;">
+    <div>
+      <img alt="Quantity supplied against price for the linear supply curve Qs equals 150 plus 10p, with a rise-over-run triangle between three and five dollars showing a slope of ten." src="figures/linear-supply.png" style="width: 100%; border-radius: 8px; display:block;">
+    </div>
+    <div>
+      <p style="font-size:12.5pt;line-height:1.5;margin:0 0 11px;">Take the supply curve from Chapter 2. Between \$3 and \$5, quantity rises by 20. Rise over run is \(20/2 = 10\).</p>
+      <div style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:9px;padding:12px 16px;margin:0 0 10px;">
+        <p style="margin:0;font-size:12.5pt;line-height:1.5;">Pick <em>any</em> other pair of prices and you get 10 again. That is what &ldquo;linear&rdquo; means &mdash; one number describes the whole curve.</p>
+      </div>
+      <div class="key-result" style="margin:0;">
+        <p style="margin:0;font-size:12.5pt;">So \(\dfrac{dQ^{s}}{dp}=10\), and the three rules on the next slides are just a way of reading that 10 straight off \(150+10p\) without drawing a triangle.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mr-nav"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 2</span></div>
+</section><section id="deriv-constant">
+          <h2><i class="fa-solid fa-equals" style="color: var(--secondary-color);"></i> The Constant Rule &mdash; a flat line has no slope</h2>
+          <div style="background: #f1f5f8; border-left: 4px solid var(--secondary-color); border-radius: 10px; padding: 14px 22px; max-width: 760px; margin: 0 auto 12px;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); font-weight: 700; margin: 0 0 4px;">In general, if we have</p><p style="margin: 0; font-size: 14pt; text-align: center;">\(f(x)=c \quad\Rightarrow\quad \dfrac{df(x)}{dx}=f'(x)=0\)</p></div>
+          <div style="background: #fbf3ee; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 14px 22px; max-width: 760px; margin: 0 auto;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: 700; margin: 0 0 4px;">Example</p><p style="margin: 0; font-size: 14pt; text-align: center;">\(Q^{s}=150\;\) (supply fixed at 150) so \(\;\dfrac{dQ^{s}}{dp}=0\)</p></div>
+          <p style="text-align: center; font-size: 11pt; color: var(--muted-color); margin-top: 16px;"><i class="fa-solid fa-circle-chevron-down" style="color: var(--accent-color);"></i> the next rule</p>
+  <div class="mr-nav"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 2</span></div>
+        </section><section id="deriv-power">
+          <h2><i class="fa-solid fa-superscript" style="color: var(--secondary-color);"></i> The Power Rule &mdash; bring the exponent down</h2>
+          <div style="background: #f1f5f8; border-left: 4px solid var(--secondary-color); border-radius: 10px; padding: 14px 22px; max-width: 760px; margin: 0 auto 12px;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); font-weight: 700; margin: 0 0 4px;">In general, if we have</p><p style="margin: 0; font-size: 14pt; text-align: center;">\(f(x)=c\,x^{\alpha} \quad\Rightarrow\quad f'(x)=c\,\alpha\,x^{\alpha-1}\)</p></div>
+          <div style="background: #fbf3ee; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 14px 22px; max-width: 760px; margin: 0 auto;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: 700; margin: 0 0 4px;">Example</p><p style="margin: 0; font-size: 14pt; text-align: center;">\(Q^{s}=10p\;\) so \(\;c=10,\ \alpha=1\), and \(\;\dfrac{dQ^{s}}{dp}=10\)</p></div>
+          <p style="text-align: center; font-size: 11pt; color: var(--muted-color); margin-top: 16px;"><i class="fa-solid fa-circle-chevron-down" style="color: var(--accent-color);"></i> the next rule</p>
+  <div class="mr-nav"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 2</span></div>
+        </section><section id="deriv-sum">
+          <h2><i class="fa-solid fa-plus" style="color: var(--secondary-color);"></i> The Sum Rule &mdash; one term at a time</h2>
+          <div style="background: #f1f5f8; border-left: 4px solid var(--secondary-color); border-radius: 10px; padding: 14px 22px; max-width: 760px; margin: 0 auto 12px;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); font-weight: 700; margin: 0 0 4px;">In general, if we have</p><p style="margin: 0; font-size: 14pt; text-align: center;">\(f(x)=g(x)\pm h(x) \quad\Rightarrow\quad f'(x)=g'(x)\pm h'(x)\)</p></div>
+          <div style="background: #fbf3ee; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 14px 22px; max-width: 760px; margin: 0 auto;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: 700; margin: 0 0 4px;">Example</p><p style="margin: 0; font-size: 14pt; text-align: center;">\(Q^{s}=150+10p\;\Rightarrow\;\dfrac{dQ^{s}}{dp}=0+10=10\)</p></div>
+          <p style="text-align: center; font-size: 11pt; color: var(--muted-color); margin-top: 16px;"><i class="fa-solid fa-circle-chevron-down" style="color: var(--accent-color);"></i> the next rule</p>
+  <div class="mr-nav"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 2</span></div>
+        </section><section id="ch2-partial">
+  <h2><i class="fa-solid fa-sliders" style="color:var(--accent-color);"></i> Partial derivatives: change one thing, freeze the rest</h2>
+  <div style="display:grid;grid-template-columns:1fr 1.05fr;gap:22px;align-items:center;">
+    <div>
+      <p style="font-size:13pt;line-height:1.55;margin:0 0 12px;">Quantity demanded depends on the price <em>and</em> on income, tastes, the price of substitutes&hellip; A <strong>partial derivative</strong> asks: what if <em>only</em> the price moves?</p>
+      <div class="key-result" style="margin:0;">
+        <p style="margin:0;font-size:13pt;">\[\frac{\partial Q^{d}}{\partial p}\ =\ \text{slide along the curve}\]</p>
+      </div>
+    </div>
+    <div>
+      <div style="background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:12px 16px;margin:0 0 9px;">
+        <p style="margin:0;font-size:12.5pt;">The curly \(\partial\) is the only difference from \(d\). It signals &ldquo;other things held still.&rdquo;</p>
+      </div>
+      <div style="background:#fbf3ee;border-left:4px solid var(--accent-color);border-radius:8px;padding:12px 16px;">
+        <p style="margin:0;font-size:12.5pt;">This is exactly the <strong>movement along vs. shift</strong> distinction, written as maths: \(\partial Q^{d}/\partial p\) moves you <em>along</em>; a change in anything else <em>shifts</em> the curve.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mr-nav"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 2</span></div>
+</section><section id="math-ratio">
+  <h2><i class="fa-solid fa-divide" style="color: var(--secondary-color);"></i> Math Refresher &mdash; What does a ratio mean?</h2>
+  <p style="font-size: 13pt; color: var(--muted-color); margin: 0 0 10px;">
+    A <strong>ratio</strong> is just a comparison of two numbers: how big is \(A\) <em>relative to</em> \(B\)? Write it \(A/B\) (read &ldquo;\(A\) to \(B\)&rdquo; or &ldquo;\(A\) per \(B\)&rdquo;).
+  </p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+    <div style="background: #f0f5f8; padding: 14px 20px; border-radius: 10px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">The idea</p>
+      <div style="display: grid; grid-template-columns: 110px 1fr; row-gap: 16px; column-gap: 10px; align-items: center; margin-top: 10px;">
+        <p style="font-size: 14pt; text-align: center; margin: 0;">\(\dfrac{A}{B} = 2\)</p>
+        <p style="font-size: 13pt; margin: 0;">&ldquo;\(A\) is <strong>twice</strong> \(B\).&rdquo;</p>
+        <p style="font-size: 14pt; text-align: center; margin: 0;">\(\dfrac{A}{B} = 0.5\)</p>
+        <p style="font-size: 13pt; margin: 0;">&ldquo;\(A\) is <strong>half</strong> of \(B\).&rdquo;</p>
+        <p style="font-size: 14pt; text-align: center; margin: 0;">\(\dfrac{A}{B} = 1\)</p>
+        <p style="font-size: 13pt; margin: 0;">&ldquo;\(A\) and \(B\) are <strong>equal</strong>.&rdquo;</p>
+      </div>
+      <p style="font-size: 13pt; color: var(--muted-color); margin-top: 10px; font-style: italic;">
+        Apple \$1, water bottle \$2: ratio \(= 2/1 = 2\) &mdash; water is 2&times; the apple.
+      </p>
+    </div>
+    <div style="background: #fef9f3; padding: 14px 20px; border-radius: 10px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">MBTA fare hike (July 2025)</p>
+      <p style="font-size: 14pt; line-height: 1.65; margin-top: 8px;">
+        New subway fare \(p_{\text{new}} = \$2.90\)<br>
+        Old subway fare \(p_{\text{old}} = \$2.40\)<br>
+        <br>
+        Ratio \(\dfrac{p_{\text{new}}}{p_{\text{old}}} = \dfrac{2.90}{2.40} \approx \mathbf{1.208}\)
+      </p>
+      <p style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        &ldquo;The new fare is <strong>120.8% of</strong> the old fare&rdquo; &mdash; or equivalently, &ldquo;\$1.21 of new per \$1.00 of old.&rdquo;
+      </p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p style="font-size: 13pt;">
+      <strong>Order matters.</strong> \(2.90/2.40 = 1.208\) is &ldquo;new per old.&rdquo; Flipping it &mdash; \(2.40/2.90 \approx 0.828\) &mdash; says the <em>old</em> fare was 82.8% of the new. Same data, different ratio, different statement.
+    </p>
+  </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+</section><section id="math-pct-change">
+  <h2><i class="fa-solid fa-percent" style="color: var(--secondary-color);"></i> Math Refresher &mdash; Percentage change</h2>
+  <div style="background: #f8f6f3; border-radius: 8px; padding: 4px 14px; margin: 4px 0 10px; text-align: center;">
+    <p style="font-size: 15pt; margin: 0;">
+      \(\displaystyle \%\Delta = \frac{\text{new} - \text{old}}{\text{old}} \times 100\%\)
+    </p>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div style="background: #fef9f3; padding: 10px 16px; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">MBTA &mdash; continued</p>
+      <p style="font-size: 13pt; line-height: 1.55; margin-top: 6px;">
+        Numerator: \(p_{\text{new}} - p_{\text{old}} = 2.90 - 2.40 = \mathbf{\$0.50}\)<br>
+        Denominator: \(p_{\text{old}} = \mathbf{\$2.40}\)
+      </p>
+      <p style="font-size: 14pt; line-height: 1.5; margin-top: 6px;">
+        \(\%\Delta p = \dfrac{0.50}{2.40} \approx 0.2083 = \mathbf{+20.83\%}\)<br>
+        <span style="color: var(--muted-color); font-size: 11pt;">(a price increase)</span>
+      </p>
+    </div>
+    <div>
+      <div style="background: #f0f5f8; padding: 10px 16px; border-radius: 8px; border-left: 4px solid var(--secondary-color);">
+        <p style="font-size: 12pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Why &ldquo;old&rdquo; in the denominator?</p>
+        <p style="font-size: 12.5pt; line-height: 1.5; margin: 4px 0 0;">
+          We want the change <em>relative</em> to the starting point &mdash; \$0.50 from \$2.40 is meaningfully different from \$0.50 from \$50.
+        </p>
+      </div>
+      <div style="background: #fef2f2; padding: 10px 16px; border-radius: 8px; border-left: 4px solid var(--danger-color); margin-top: 8px;">
+        <p style="font-size: 12pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Sign convention</p>
+        <p style="font-size: 12.5pt; line-height: 1.5; margin: 4px 0 0;">
+          \(\%\Delta &gt; 0\) rise &middot; \(\%\Delta &lt; 0\) fall &middot; \(\%\Delta = 0\) no change
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px; padding: 10px 18px;">
+    <p style="font-size: 12.5pt; margin: 0;">
+      <strong>Building block of elasticity:</strong> \(\;\varepsilon_D = \dfrac{\%\Delta Q}{\%\Delta p}\) &mdash; two percentage changes divided by each other.
+    </p>
+  </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+</section><section id="pct-change-example">
+  <h2 style="text-align: center; font-size: 23pt; line-height: 1.2;">
+    <i class="fa-solid fa-calculator" style="color: var(--accent-color);"></i>
+    First, the Two Numbers: \(\%\Delta p\) and \(\%\Delta Q\)
+  </h2>
+  <p style="text-align: center; font-size: 13pt; color: var(--muted-color); margin: 6px 0 0;">
+    Each percentage change is \(\dfrac{\text{new} - \text{old}}{\text{old}}\). Same law of demand &mdash; watch the magnitudes.
+  </p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 14px;">
+    <div style="background: linear-gradient(135deg, #fff8f2, #fef2f2); border-radius: 12px; padding: 18px 24px; border: 2px solid #C47B5A33;">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px;">
+        <i class="fa-solid fa-egg"></i>&nbsp;Eggs &mdash; a necessity
+      </p>
+      <table style="width:100%; font-size: 13.5pt; border-collapse: collapse; line-height: 1.85;">
+        <tr><td>Price</td><td style="text-align:right;">\(\$2.50 \to \$4.90\)</td></tr>
+        <tr><td>Quantity</td><td style="text-align:right;">\(100 \to 98\) M dozen/wk</td></tr>
+      </table>
+      <div style="background:#fff; border-radius:8px; padding:10px 14px; margin-top:8px; border-left:4px solid var(--accent-color);">
+        <p style="font-size:13pt; margin:0 0 5px;">\(\%\Delta p = \dfrac{4.90-2.50}{2.50} = \mathbf{+96\%}\)</p>
+        <p style="font-size:13pt; margin:0;">\(\%\Delta Q = \dfrac{98-100}{100} = \mathbf{-2\%}\)</p>
+      </div>
+    </div>
+    <div style="background: linear-gradient(135deg, #f2f7fb, #eff6ff); border-radius: 12px; padding: 18px 24px; border: 2px solid #6b8ba433;">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--secondary-color); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 8px;">
+        <i class="fa-solid fa-utensils"></i>&nbsp;Dining out &mdash; a luxury
+      </p>
+      <table style="width:100%; font-size: 13.5pt; border-collapse: collapse; line-height: 1.85;">
+        <tr><td>Price</td><td style="text-align:right;">\(\$40 \to \$50\)</td></tr>
+        <tr><td>Quantity</td><td style="text-align:right;">\(200 \to 140\) meals/wk</td></tr>
+      </table>
+      <div style="background:#fff; border-radius:8px; padding:10px 14px; margin-top:8px; border-left:4px solid var(--secondary-color);">
+        <p style="font-size:13pt; margin:0 0 5px;">\(\%\Delta p = \dfrac{50-40}{40} = \mathbf{+25\%}\)</p>
+        <p style="font-size:13pt; margin:0;">\(\%\Delta Q = \dfrac{140-200}{200} = \mathbf{-30\%}\)</p>
+      </div>
+    </div>
+  </div>
+  <div style="background: #f8f6f3; border-radius: 10px; padding: 12px 22px; margin-top: 13px; border-left: 4px solid var(--primary-color); text-align: center;">
+    <p style="font-size: 14pt; margin: 0;">
+      Both obey the <strong>law of demand</strong> (\(p\uparrow \Rightarrow Q\downarrow\)). What differs is the <strong>magnitude</strong> of the quantity reaction &mdash; eggs barely budge (\(-2\%\)), dinners drop hard (\(-30\%\)).
+    </p>
+  </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+</section><section id="ch3-elasticity">
+  <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color:var(--success-color);"></i> Elasticity = a rate of change, rescaled</h2>
+  <div style="display:grid;grid-template-columns:1.08fr 1fr;gap:22px;align-items:center;">
+    <div>
+      <p style="font-size:13pt;line-height:1.55;margin:0 0 10px;">A derivative answers &ldquo;how many units?&rdquo; An <strong>elasticity</strong> answers &ldquo;what percent?&rdquo; &mdash; the same information, made unit-free.</p>
+      <div class="key-result" style="margin:0 0 10px;">
+        <p style="margin:0;font-size:13.5pt;">\[\varepsilon \;=\; \underbrace{\frac{dQ}{dp}}_{\text{quantity response}}\times\underbrace{\frac{p}{Q}}_{\text{the rescaling}}\]</p>
+      </div>
+      <p style="font-size:12pt;color:var(--muted-color);line-height:1.5;margin:0;">Mind the word <em>slope</em>: we plot \(p\) up the vertical axis, so \(dQ/dp\) is the <strong>reciprocal</strong> of the slope you see drawn. Elasticity multiplies that response by where you are sitting on the curve &mdash; which is why it changes as you move along a straight line.</p>
+    </div>
+    <div>
+      <div style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:8px;padding:12px 16px;margin:0 0 9px;">
+        <p style="margin:0;font-size:12.5pt;">\(|\varepsilon|>1\) <strong>elastic</strong> &mdash; quantity reacts more than price<br>\(|\varepsilon|<1\) <strong>inelastic</strong> &mdash; quantity barely budges</p>
+      </div>
+      <div style="background:#f8f6f3;border-left:4px solid var(--muted-color);border-radius:8px;padding:12px 16px;">
+        <p style="margin:0;font-size:12pt;">Demand elasticity comes out <strong>negative</strong> &mdash; price up, quantity down. Ch 3 keeps the sign and takes the absolute value only when comparing sizes.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+</section><section id="ch3-totaldiff">
+  <h2><i class="fa-solid fa-code-branch" style="color:var(--success-color);"></i> When two things move at once</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;">
+    <div>
+      <p style="font-size:13pt;line-height:1.55;margin:0 0 11px;">A tax moves the buyer&rsquo;s price and the seller&rsquo;s price at the same time. To track a total change built from several partial ones, you add the pieces up:</p>
+      <div class="key-result" style="margin:0;">
+        <p style="margin:0;font-size:12.5pt;">\[dQ = \frac{\partial Q}{\partial p}\,dp \;+\; \frac{\partial Q}{\partial \alpha}\,d\alpha\]</p>
+      </div>
+      <p style="font-size:12pt;color:var(--muted-color);line-height:1.5;margin:11px 0 0;">&ldquo;The total change equals each partial effect times how much that thing moved.&rdquo;</p>
+    </div>
+    <div>
+      <div style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:8px;padding:13px 17px;">
+        <p style="font-size:11pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--success-color);font-weight:700;margin:0 0 6px;">Why Ch 3 needs it</p>
+        <p style="margin:0;font-size:12.5pt;line-height:1.5;">It is what produces the <strong>tax-incidence formula</strong> &mdash; the split of a tax between buyer and seller, decided entirely by the two elasticities.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+</section><section id="deriv-chain">
+          <h2><i class="fa-solid fa-link" style="color: var(--secondary-color);"></i> The Chain Rule &mdash; a function inside a function</h2>
+          <div style="background: #f1f5f8; border-left: 4px solid var(--secondary-color); border-radius: 10px; padding: 9px 20px; max-width: 900px; margin: 0 auto 10px;"><p style="margin: 0 0 2px; font-size: 13.5pt; text-align: center;">\(f(x)=g\big(h(x)\big) \;\Rightarrow\; f'(x)=g'\big(h(x)\big)\cdot h'(x)\)</p><p style="margin: 0; font-size: 11pt; text-align: center; color: var(--muted-color);">Leibniz: \(y=g(u),\ u=h(x)\;\Rightarrow\;\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dx}\) &mdash; <em>outside derivative &times; inside derivative.</em></p></div>
+          <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 14px; max-width: 960px; margin: 0 auto;">
+            <div style="background: #fbf3ee; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 10px 16px;"><p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: 700; margin: 0 0 5px;">Plain example</p><p style="margin: 0; font-size: 13pt; line-height: 1.85;">\(f(x)=(2x+5)^{3}\)<br>\(u=2x+5,\;\;y=u^{3}\)<br>\(f'(x)=3(2x+5)^{2}\cdot 2 = 6(2x+5)^{2}\)</p></div>
+            <div style="background:#f0f5f0;border-left:4px solid var(--success-color);border-radius:9px;padding:12px 16px;">
+        <p style="font-size:10.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--success-color);font-weight:700;margin:0 0 6px;">In Chapter 3 &mdash; the incidence formula</p>
+        <p style="margin:0 0 6px;font-size:12pt;line-height:1.5;">With a tax the market clears at \(Q^d(p_c)=Q^s(p_c-t)\). Both sides move with \(t\) only through \(p_c(t)\), so both need the rule:</p>
+        <p style="margin:0 0 6px;font-size:12pt;line-height:1.75;">\(\dfrac{d}{dt}Q^d\big(p_c(t)\big)=\dfrac{dQ^d}{dp_c}\cdot\dfrac{dp_c}{dt}\)<br>\(\dfrac{d}{dt}Q^s\big(p_c(t)-t\big)=\dfrac{dQ^s}{dp_s}\cdot\left(\dfrac{dp_c}{dt}-1\right)\)</p>
+        <p style="margin:0;font-size:11.5pt;line-height:1.45;color:var(--muted-color);">Watch the second one: the inside function is \(p_c(t)-t\), so its derivative is \(\frac{dp_c}{dt}-\mathbf{1}\). Drop that \(-1\) and the whole formula collapses. Solving gives \(\frac{dp_c}{dt}=\frac{\varepsilon_S}{\varepsilon_S-\varepsilon_D}\).</p>
+      </div>
+          </div>
+          <p style="text-align: center; font-size: 11pt; color: var(--muted-color); margin-top: 12px;"><strong>Ch 2</strong> never needs it &mdash; Walkthrough 2.5 solves in \(p\) for \(dp^*/d\alpha\) and in \(Q\) for \(dQ^*/d\alpha\), so nothing composite ever appears. This is the first place the course actually requires the rule. &nbsp;<strong>Ch 4</strong> reuses it for log relabelling, where the extra factor cancels out of the MRS.</p>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+        </section><section id="derivative-intro">
+        <h2><i class="fa-solid fa-chart-line" style="color: var(--accent-color);"></i> The Realistic Case: Slope That Changes</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 22px; align-items: center;">
+          <div>
+            <div class="key-result" style="margin: 0 0 9px;">
+              <p style="margin: 0; font-size: 12.5pt;">A real curve <strong>bends</strong>, so its slope differs at every point. A <strong>derivative</strong> is that slope at a single point &mdash; the rate of change <em>right there</em>.</p>
+            </div>
+            <div style="background: #fbf3ee; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 10px 16px; margin-bottom: 9px;">
+              <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>Diminishing returns:</strong> steep early (slope &asymp; 1), nearly flat later (slope &asymp; 0) &mdash; no single number works.</p>
+            </div>
+            <div style="background: #f1f5f8; border-left: 4px solid var(--secondary-color); border-radius: 10px; padding: 10px 16px;">
+              <p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--secondary-color); font-weight: 700; margin: 0 0 4px;">Notation</p>
+              <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><em>Weight lost</em> \(= f(\text{hours})\), i.e. \(y = f(x)\). Its derivative &mdash; how a change in \(x\) affects \(y\) &mdash; is written \(\dfrac{df(x)}{dx}\) or \(f'(x)\).</p>
+            </div>
+          </div>
+          <div>
+            <img alt="A concave weight-loss curve: weight lost rises quickly with the first hours of working out then flattens. A tangent line early in the curve is steep (slope about 1); a tangent line later is nearly flat (slope about 0), showing the slope changes along the curve." src="figures/derivative-intro.png" style="width: 100%; border-radius: 8px;">
+          </div>
+        </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+      </section><section id="cc-1-1">
+        <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 1.1 &mdash; First-Order Conditions</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 22px; align-items: center;">
+          <div>
+            <div class="key-result" style="margin: 0 0 9px;">
+              <p style="margin: 0; font-size: 12.5pt;">At any interior optimum of a smooth \(f\): \[ f'(x^{*}) = 0 \]</p>
+            </div>
+            <div style="background: #fbf3ee; border-left: 4px solid var(--accent-color); border-radius: 10px; padding: 10px 16px; margin-bottom: 9px;">
+              <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>At the top of a smooth hill the tangent is flat.</strong> If \(f'(x^{*})&gt;0\), move right and \(f\) rises; if \(f'(x^{*})&lt;0\), move left &mdash; so the slope must be zero. The <strong>SOC</strong> sorts max from min: \(f''(x^{*})\le 0\) for a maximum.</p>
+            </div>
+            <div style="background: #f0f5f0; border-left: 4px solid var(--success-color); border-radius: 10px; padding: 10px 16px;">
+              <p style="font-size: 10pt; text-transform: uppercase; letter-spacing: 1px; color: var(--success-color); font-weight: 700; margin: 0 0 4px;">In Chapter 3 &mdash; the revenue-maximising toll</p>
+              <p style="margin: 0 0 4px; font-size: 12pt; line-height: 1.5;">A toll of \(P\) draws \(Q^d(P)=300{,}000-5{,}000P\) drivers, so revenue is one variable:</p>
+              <p style="margin: 0 0 4px; font-size: 12pt; text-align: center;">\(R(P)=300{,}000P-5{,}000P^{2}\)</p>
+              <p style="margin: 0 0 4px; font-size: 12pt; line-height: 1.55;">FOC &nbsp;\(300{,}000-10{,}000P=0\Rightarrow P^{*}=\$30\)<br>SOC &nbsp;\(R''=-10{,}000&lt;0\) &check; a maximum.</p>
+              <p style="margin: 0; font-size: 11pt; line-height: 1.4; color: var(--muted-color);">Then \(Q=150{,}000\), \(R^{*}=\$4.5\)M/day, \(\varepsilon_D=-1\). <a href="#/deriv-constant" style="color:var(--secondary-color);font-weight:700;">Toolkit &rarr;</a></p>
+            </div>
+          </div>
+          <div>
+            <img alt="Daily toll revenue plotted against the toll: a downward parabola peaking at a thirty-dollar toll where revenue is 4.5 million dollars and the tangent is flat. To the left the tangent slopes up (raise the toll); to the right it slopes down (lower the toll)." src="figures/foc-worked-example.png" style="width: 100%; border-radius: 8px;">
+          </div>
+        </div>
+  <div class="mr-nav ch3"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 3</span></div>
+      </section><section id="ch4-powers">
+  <h2><i class="fa-solid fa-superscript" style="color:#8C5A2B;"></i> Fractional exponents, and logs that change nothing</h2>
+  <p style="font-size:12pt;color:var(--muted-color);margin:0 0 12px;">Chapter 4's utility functions look like \(U = x_1^{1/3}x_2^{2/3}\). Two moves make them readable.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;">
+    <div style="background:#f8f2ea;border-left:4px solid #8C5A2B;border-radius:9px;padding:13px 17px;">
+      <p style="font-size:10.5pt;text-transform:uppercase;letter-spacing:1.2px;color:#8C5A2B;font-weight:700;margin:0 0 7px;">The power rule does not care</p>
+      <p style="margin:0 0 8px;font-size:13pt;">\[\frac{d}{dx}\left(x^{1/3}\right)=\tfrac13 x^{-2/3}\]</p>
+      <p style="margin:0;font-size:12pt;line-height:1.5;">Bring the exponent down, subtract one &mdash; the same rule you used on \(10p\) and on \(t^{2}\). A third is just an awkward-looking number.</p>
+    </div>
+    <div style="background:#f8f6f3;border-left:4px solid var(--muted-color);border-radius:9px;padding:13px 17px;">
+      <p style="font-size:10.5pt;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted-color);font-weight:700;margin:0 0 7px;">Logs turn products into sums</p>
+      <p style="margin:0 0 8px;font-size:12.5pt;">\[\ln\!\left(x_1^{1/3}x_2^{2/3}\right)=\tfrac13\ln x_1+\tfrac23\ln x_2\]</p>
+      <p style="margin:0;font-size:12pt;line-height:1.5;">Much easier to differentiate &mdash; and because \(\ln\) only ever <em>relabels</em> utility, the choice it implies is unchanged.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top:13px;">
+    <p style="margin:0;font-size:12.5pt;">That second point is the one to hold on to: a <strong>monotonic transformation</strong> rewrites the numbers without reordering the bundles. Same preferences, friendlier algebra.</p>
+  </div>
+  <div class="mr-nav ch4"><a href="#/index"><i class="fa-solid fa-arrow-left"></i> Index</a><span class="ch">Chapter 4</span></div>
+</section>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
+      width: 1280, height: 720, margin: 0,
+      controls: true,
+  controlsLayout: 'edges', progress: true, slideNumber: true, hash: true,
+      transition: 'fade', transitionSpeed: 'default', center: false,
+      pdfSeparateFragments: false
+    });
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: '\\[', right: '\\]', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ],
+      throwOnError: false
+    });
+  </script>
+<script>
+(function () {
+  // 29 Sep 2026, Ryan: reveal's "?" panel only knew reveal's own keys. Every
+  // key the decks add (pen, timers, poll, speaker-view relays) is registered
+  // here so the panel is the one place to look. Rows depend on the window: the
+  // projector and speaker view get the instructor keys; a student's copy gets
+  // only what works for a student. Rows for features a deck lacks are skipped.
+  var q = location.search;
+  var receiver = /[?&]receiver(&|$)/.test(q), current = receiver && /postMessageEvents=true/.test(q);
+  var projector = /[?&]presenter(&|=|$)/.test(q) && !receiver;
+  if (receiver && !current) return;                         // the Upcoming pane is view-only
+  var inst = projector || current || /[?&]instructor(&|=|$)/.test(q);
+  // twice as many rows as reveal's own list: wider and tighter so it fits one screen
+  var css = document.createElement('style');
+  var H = '.reveal .overlay.overlay-help .viewport .viewport-inner';
+  css.textContent = H + '{width:min(1000px,94vw)!important;max-width:none!important;}' +
+    H + ' table{width:100%!important;}' +
+    H + ' table th,' + H + ' table td{padding:4px 12px!important;font-size:13px!important;line-height:1.3!important;}' +
+    H + ' table td:last-child{text-align:left!important;}' +
+    H + ' table th:first-child,' + H + ' table td:first-child{width:24%!important;}' +
+    H + ' .title{margin:0!important;}' + H + ' br{display:none;}' +
+    '.reveal .overlay.overlay-help .viewport{padding-top:0!important;}' + H + '{padding-top:18px!important;}';
+  document.head.appendChild(css);
+  function go() {
+    if (!Reveal.registerKeyboardShortcut) return;
+    var K = function (k, d) { Reveal.registerKeyboardShortcut(k, d); };
+    var hasTimer = !!document.getElementById('cd-wrap');
+    var hasPoll = !!document.querySelector('.poll-grid, [data-poll-voting]');
+    if (inst) {
+      K('F', 'Fullscreen &mdash; pressed in speaker view, it full-screens the <b>projector</b>');
+      K('ESC, O', 'Slide overview &mdash; from speaker view, on <b>both</b> screens (Enter or a click picks a slide)');
+      K('M', 'Move keyboard focus between the projector and speaker view (Cmd-` brings a window forward)');
+      if (hasTimer) K('1 &ndash; 9', 'Countdown timer for that many minutes (same number again hides it); starts on both screens');
+      if (hasPoll) K('T', 'Poll slide: open / close voting. In speaker view, clicking an option votes on the projector');
+    }
+    K('D', 'Pen on / off (Esc also leaves it)');
+    K('Pen: F L A R S Y', 'Free draw &middot; line &middot; arrow &middot; box &middot; shade &middot; triangle');
+    K('Pen: G N H E', 'Axis guides &middot; curve label &middot; shifted copy &middot; eraser');
+    K('Pen: [ ] Z X C P', 'Thinner &middot; thicker &middot; undo &middot; redo &middot; clear slide &middot; save as PNG');
+    K('?', 'This list');
+    // S is registered by reveal's notes plugin as a key BINDING ("Speaker notes
+    // view"), which the panel lists after these rows; a second S row would be a
+    // duplicate. Its description is not reachable through the API, so the row is
+    // amended when the panel is drawn.
+    if (inst) {
+      var wrap = document.querySelector('.reveal');
+      if (wrap && window.MutationObserver) new MutationObserver(function () {
+        var o = wrap.querySelector('.overlay-help');
+        if (!o || o.__tiS) return; o.__tiS = 1;
+        [].forEach.call(o.querySelectorAll('td'), function (td) {
+          if (td.textContent === 'Speaker notes view' && td.parentNode) td.parentNode.remove();   // v3: Ryan does not want the S row
+        });
+      }).observe(wrap, { childList: true });
+    }
+  }
+  if (window.Reveal && Reveal.isReady && Reveal.isReady()) go();
+  else if (window.Reveal && Reveal.on) Reveal.on('ready', go);
+})();
+</script>
+<script>
+(function () {
+  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
+  var current = false;
+  // ---- annotation: temporary marks on the slide -------------------------
+  // A whiteboard, not a document. Strokes live in memory only, keyed by
+  // slide, and are gone when the deck is closed -- asked for explicitly, so
+  // there is no storage anywhere in here.
+  //
+  // Points are kept in SLIDE units, the same 1280x720 space the laser dot
+  // uses. Canvas pixels would be wrong the moment the window is resized or
+  // the deck is thrown at a projector with a different aspect: the marks
+  // have to sit on the WORDS they were drawn on.
+  //
+  // The shape set is chosen for an economics board, not for drawing in
+  // general: a straight LINE for a budget line or a tangent, an ARROW for
+  // "demand shifts right", a RECT and a translucent SHADE for tax revenue and
+  // surplus boxes, a right TRIANGLE for deadweight loss, and GUIDES -- the
+  // dashed pair dropped from a point to the two axes, which is the single
+  // most-drawn mark in a micro lecture.
+  var Ink = (function () {
+    var PENS = [
+      { n: 'Red',    c: '#e11d48' },
+      { n: 'Blue',   c: '#2563eb' },
+      { n: 'Green',  c: '#059669' },
+      { n: 'Orange', c: '#ea580c' },
+      { n: 'Black',  c: '#111827' },
+      { n: 'Highlighter', c: 'rgba(250,204,21,.45)', hi: true }
+    ];
+    var SIZES = [2, 4, 8];            // thin / medium / thick, in slide units
+    var TOOLS = [
+      { k: 'free',  i: 'fa-pencil',           t: 'Freehand (f)' },
+      { k: 'line',  i: 'fa-slash',            t: 'Straight line (l)' },
+      { k: 'arrow', i: 'fa-arrow-right-long', t: 'Arrow — a shift (a)' },
+      { k: 'rect',  i: 'fa-square',           t: 'Rectangle (r)' },
+      { k: 'shade', i: 'fa-fill-drip',        t: 'Shaded area — revenue, surplus (s)' },
+      { k: 'tri',   i: 'fa-play',             t: 'Right triangle — deadweight loss (y)' },
+      { k: 'guide', i: 'fa-crosshairs',       t: 'Dashed guides to the axes (g)' },
+      { k: 'label', i: 'fa-font',             t: 'Curve label \u2014 D, S, MC, D\u2032 (n)' },
+      { k: 'ghost', i: 'fa-clone',            t: 'Shifted ghost of a curve \u2014 drag it across (h)' }
+    ];
+    var cv, ctx, active = false, erasing = false, pi = 0, si = 1, tool = 'free';
+    var ops = {}, undone = {}, cur = null, rcur = null, relay = null, bar = null, btn = null;
+
+    function skey() { var i = Reveal.getIndices(); return i.h + '.' + (i.v || 0); }
+    function box() { var s = document.querySelector('.reveal .slides'); return s ? s.getBoundingClientRect() : null; }
+    function width() { return PENS[pi].hi ? 24 : SIZES[si]; }
+
+    function ensure() {
+      if (cv) return;
+      cv = document.createElement('canvas');
+      cv.id = 'ti-ink';
+      cv.style.cssText = 'position:fixed;z-index:9990;pointer-events:none;touch-action:none';
+      document.body.appendChild(cv);
+      cv.addEventListener('pointerdown', down);
+      cv.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+      window.addEventListener('pointercancel', up);
+      fit();
+    }
+    function fit() {
+      var r = box(); if (!r || !cv) return;
+      var dpr = window.devicePixelRatio || 1;
+      cv.style.left = r.left + 'px'; cv.style.top = r.top + 'px';
+      cv.style.width = r.width + 'px'; cv.style.height = r.height + 'px';
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx = cv.getContext('2d');
+      render();
+    }
+    // Live strokes are DERIVED by replaying this slide's op log, so undo and
+    // redo are a cursor into that log and never have to reverse a partially
+    // erased stroke by hand.
+    function live() {
+      var list = [], o = ops[skey()] || [];
+      o.forEach(function (op) {
+        if (op.t === 'add') list.push(op.s);
+        else if (op.t === 'del' && op.ids) list = list.filter(function (s) { return op.ids.indexOf(s.id) < 0; });
+        else if (op.t === 'del') op.ss.forEach(function (s) {
+          var i = list.indexOf(s); if (i >= 0) list.splice(i, 1);
+        });
+      });
+      return list;
+    }
+    // One description of every shape, used for BOTH drawing and erasing, so
+    // the two can never disagree about where a mark is.
+    function paths(s) {
+      var p = s.pts, a = p[0], b = p[p.length - 1];
+      if (s.k === 'free' || !s.k) return [p];
+      if (s.k === 'line' || s.k === 'arrow') return [[a, b]];
+      if (s.k === 'rect' || s.k === 'shade')
+        return [[a, { x: b.x, y: a.y }, b, { x: a.x, y: b.y }, a]];
+      if (s.k === 'tri') return [[a, b, { x: b.x, y: a.y }, a]];
+      if (s.k === 'guide') return [[a, { x: b.x, y: a.y }], [a, { x: a.x, y: b.y }]];
+      if (s.k === 'text') return [];
+      return [p];
+    }
+    function render() {
+      if (!cv || !ctx) return;
+      var r = box(); if (!r) return;
+      var dpr = window.devicePixelRatio || 1, k = Reveal.getScale() * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var all = live(); if (rcur) all = all.concat([rcur]); if (cur) all = all.concat([cur]);
+      all.forEach(function (s) {
+        if (!s.pts.length) return;
+        ctx.save();
+        if (s.k === 'text') {
+          ctx.globalAlpha = s.ghost ? 0.6 : 1;
+          ctx.fillStyle = s.c;
+          // italic serif, because that is how a curve is labelled on a board
+          ctx.font = 'italic 700 ' + (s.size || 22) + 'px Georgia,"Times New Roman",serif';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(s.txt || '', s.pts[0].x, s.pts[0].y);
+          ctx.restore(); return;
+        }
+        ctx.strokeStyle = s.c; ctx.lineWidth = s.w;
+        if (s.ghost) { ctx.globalAlpha = 0.6; ctx.setLineDash([9, 7]); }
+        else ctx.setLineDash(s.k === 'guide' ? [7, 6] : []);
+        if (s.k === 'shade') {
+          ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = s.c;
+          var q = s.pts[0], z = s.pts[s.pts.length - 1];
+          ctx.fillRect(Math.min(q.x, z.x), Math.min(q.y, z.y), Math.abs(z.x - q.x), Math.abs(z.y - q.y));
+          ctx.restore();
+        }
+        paths(s).forEach(function (seg) {
+          if (seg.length < 1) return;
+          ctx.beginPath(); ctx.moveTo(seg[0].x, seg[0].y);
+          for (var i = 1; i < seg.length; i++) ctx.lineTo(seg[i].x, seg[i].y);
+          if (seg.length === 1) ctx.lineTo(seg[0].x + 0.01, seg[0].y + 0.01);
+          ctx.stroke();
+        });
+        if (s.k === 'arrow') {
+          var a = s.pts[0], b = s.pts[s.pts.length - 1];
+          var ang = Math.atan2(b.y - a.y, b.x - a.x), L = 9 + s.w * 2.2;
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang - 0.42), b.y - L * Math.sin(ang - 0.42));
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang + 0.42), b.y - L * Math.sin(ang + 0.42));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.restore();
+      });
+    }
+    function at(ev) {
+      var r = box(), k = Reveal.getScale() || 1;
+      return { x: (ev.clientX - r.left) / k, y: (ev.clientY - r.top) / k };
+    }
+    function push(op) {
+      if (op.t === 'add' && op.s && !op.s.id) op.s.id = Math.random().toString(36).slice(2, 10);
+      var k = skey(); (ops[k] = ops[k] || []).push(op); undone[k] = [];
+    }
+    // v25: the WHOLE log of one slide, so the other window can replace its own -- the two
+    // can then never disagree about which stroke an undo or an erase meant
+    function snap() {
+      var k = skey();
+      send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+    }
+    function snapAll() {
+      Object.keys(ops).forEach(function (k) {
+        if ((ops[k] || []).length || (undone[k] || []).length)
+          send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+      });
+    }
+    function send(m) { if (relay) relay(m); }
+
+    // erase whole strokes, not pixels: one op to undo, and it never leaves
+    // half a rubbed-out line behind
+    function eraseAt(p) {
+      var hit = [], R = 14;
+      live().forEach(function (s) {
+        if (s.k === 'text') {
+          var half = (s.size || 22) * 0.6, wide = (s.txt || '').length * (s.size || 22) * 0.34;
+          if (p.x > s.pts[0].x - 8 && p.x < s.pts[0].x + wide + 8 &&
+              p.y > s.pts[0].y - half && p.y < s.pts[0].y + half) hit.push(s);
+          return;
+        }
+        var segs = paths(s), i, j, pts;
+        for (i = 0; i < segs.length; i++) {
+          pts = segs[i];
+          for (j = 0; j < pts.length; j++) {
+            var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+            if (dx * dx + dy * dy < (R + s.w) * (R + s.w)) { hit.push(s); return; }
+          }
+          // a long straight edge has few vertices: walk it
+          for (j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            if (L < 1) continue;
+            var t = ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L);
+            if (t < 0 || t > 1) continue;
+            var cx = A.x + t * (B.x - A.x), cy = A.y + t * (B.y - A.y);
+            if (Math.hypot(p.x - cx, p.y - cy) < R + s.w) { hit.push(s); return; }
+          }
+        }
+      });
+      if (hit.length) { push({ t: 'del', ids: hit.map(function (s) { return s.id; }) }); render(); paintBar(); return true; }
+    }
+    // nearest live stroke to a point, by the same segment walk the eraser uses
+    function nearest(p) {
+      var best = null, bd = 1e9;
+      live().forEach(function (s) {
+        paths(s).forEach(function (pts) {
+          for (var j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            var cx, cy, tt;
+            if (L < 1) { cx = A.x; cy = A.y; }
+            else {
+              tt = Math.max(0, Math.min(1, ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L)));
+              cx = A.x + tt * (B.x - A.x); cy = A.y + tt * (B.y - A.y);
+            }
+            var d = Math.hypot(p.x - cx, p.y - cy);
+            if (d < bd) { bd = d; best = s; }
+          }
+        });
+      });
+      return bd < 40 ? best : null;
+    }
+    // A label is typed, not drawn, so it gets a real input at the click point
+    // rather than a prompt() -- a modal dialog in front of a projected slide is
+    // worse than the thing it is trying to collect.
+    function labelAt(p, ev) {
+      var r = box(), k = Reveal.getScale() || 1, size = 16 + si * 6;
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'D\u2032';
+      inp.style.cssText = 'position:fixed;z-index:10004;left:' + (r.left + p.x * k - 6) + 'px;top:' +
+        (r.top + p.y * k - size * k * 0.75) + 'px;width:130px;font:italic 700 ' + Math.round(size * k) +
+        'px Georgia,serif;color:' + PENS[pi].c + ';background:rgba(255,255,255,.92);border:2px solid ' +
+        PENS[pi].c + ';border-radius:6px;padding:1px 5px;outline:none';
+      document.body.appendChild(inp);
+      // v27: the box grows with the text. At 130px fixed, a large italic label scrolled its
+      // start out of sight after four characters and Ryan could not see what he typed.
+      var meas = document.createElement('canvas').getContext('2d');
+      meas.font = 'italic 700 ' + Math.round(size * k) + 'px Georgia,serif';
+      var grow = function () {
+        var w = meas.measureText(inp.value || inp.placeholder).width;
+        inp.style.width = Math.max(60, Math.ceil(w + size * k * 0.9 + 14)) + 'px';
+      };
+      inp.addEventListener('input', grow); grow();
+      inp.focus();
+      var done = function (commit) {
+        var txt = inp.value.trim();
+        inp.remove();
+        if (!commit || !txt) return;
+        var s = { k: 'text', c: PENS[pi].c, w: SIZES[si], size: size, txt: txt, pts: [p] };
+        push({ t: 'add', s: s }); snap();
+        render(); paintBar();
+      };
+      inp.addEventListener('keydown', function (e) {
+        e.stopPropagation();                       // Reveal and Ink both listen on document
+        if (e.key === 'Enter') { e.preventDefault(); done(true); }
+        if (e.key === 'Escape') { e.preventDefault(); done(false); }
+      });
+      inp.addEventListener('blur', function () { done(true); });
+    }
+
+    function down(ev) {
+      if (!active) return;
+      ev.preventDefault(); ev.stopPropagation();
+      var p = at(ev);
+      if (erasing) { if (eraseAt(p)) snap(); return; }
+      if (tool === 'label') { labelAt(p, ev); return; }
+      if (tool === 'ghost') {
+        // copy the curve you pressed on, then drag the copy to where it shifted
+        var src = nearest(p);
+        if (!src) return;
+        var base = src.pts.map(function (q) { return { x: q.x, y: q.y }; });
+        cur = { k: src.k, c: src.c, w: src.w, size: src.size, txt: src.txt,
+                ghost: true, base: base, from: p, pts: base };
+        render(); return;
+      }
+      cur = { c: PENS[pi].c, w: width(), k: tool, pts: [p, p] };
+      send({ k: 'down', x: p.x, y: p.y, c: cur.c, w: cur.w, tool: tool });
+      render();
+    }
+    function move(ev) {
+      if (!active) return;
+      var p = at(ev);
+      if (erasing) {
+        if (ev.buttons && eraseAt(p)) snap();
+        return;
+      }
+      if (!cur) return;
+      ev.preventDefault();
+      if (cur.ghost) {
+        var dx = p.x - cur.from.x, dy = p.y - cur.from.y;
+        cur.pts = cur.base.map(function (q) { return { x: q.x + dx, y: q.y + dy }; });
+        render(); return;                          // relayed whole, on release
+      }
+      if (cur.k === 'free') cur.pts.push(p); else cur.pts[1] = p;
+      send({ k: 'move', x: p.x, y: p.y }); render();
+    }
+    function up() {
+      if (!cur) return;
+      // a shape needs two distinct corners; a tap is not a rectangle
+      var a = cur.pts[0], b = cur.pts[cur.pts.length - 1];
+      var ok = cur.ghost ? Math.hypot(b.x - a.x, b.y - a.y) >= 0
+             : cur.k === 'free' ? cur.pts.length > 1
+             : Math.hypot(b.x - a.x, b.y - a.y) > 4;
+      if (cur.ghost) {
+        var moved = cur.pts.length && cur.base.length &&
+                    Math.hypot(cur.pts[0].x - cur.base[0].x, cur.pts[0].y - cur.base[0].y) > 4;
+        if (moved) {
+          var g = { k: cur.k, c: cur.c, w: cur.w, size: cur.size, txt: cur.txt, ghost: true, pts: cur.pts };
+          push({ t: 'add', s: g }); snap();
+        }
+        cur = null; render(); paintBar(); return;
+      }
+      if (ok) { push({ t: 'add', s: cur }); cur = null; snap(); }
+      else { cur = null; send({ k: 'cancel' }); }
+      render(); paintBar();
+    }
+    // the projected window rebuilds the same stroke from the relayed points
+    function apply(m) {
+      if (!m) return;
+      ensure();
+      // v25: the other window's stroke in progress lives in rcur, never in cur, so a stroke
+      // drawn on each screen at once cannot merge into one
+      if (m.k === 'down') { rcur = { c: m.c, w: m.w, k: m.tool || 'free', pts: [{ x: m.x, y: m.y }, { x: m.x, y: m.y }] }; render(); return; }
+      if (m.k === 'move') { if (rcur) { if (rcur.k === 'free') rcur.pts.push({ x: m.x, y: m.y }); else rcur.pts[1] = { x: m.x, y: m.y }; render(); } return; }
+      if (m.k === 'cancel') { rcur = null; render(); return; }
+      if (m.k === 'snap') {
+        ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
+        render(); paintBar(); return;
+      }
+      if (m.k === 'req')  { snapAll(); return; }
+      // a window still on v24 or older sends these; keep them working during a mixed reload
+      if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
+      if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
+      if (m.k === 'erase'){ eraseAt({ x: m.x, y: m.y }); return; }
+      if (m.k === 'undo') { undo(true); return; }
+      if (m.k === 'redo') { redo(true); return; }
+      if (m.k === 'clear'){ clear(true); return; }
+      if (m.k === 'mode') { setActive(m.on, true); return; }
+    }
+    function undo(q) {
+      var k = skey(), o = ops[k] || [];
+      if (!o.length) return;
+      (undone[k] = undone[k] || []).push(o.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function redo(q) {
+      var k = skey(), u = undone[k] || [];
+      if (!u.length) return;
+      (ops[k] = ops[k] || []).push(u.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function clear(q) {
+      var k = skey();
+      if (!(ops[k] || []).length) return;
+      undone[k] = (undone[k] || []).concat(ops[k]); ops[k] = [];
+      render(); paintBar(); if (!q) snap();
+    }
+    function setActive(v, q) {
+      active = !!v; ensure();
+      cv.style.pointerEvents = active ? 'auto' : 'none';
+      cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
+      if (bar) bar.style.display = active ? 'flex' : 'none';
+      if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
+      paintBar(); if (!q) send({ k: 'mode', on: active });
+    }
+
+    /* ---------- save a picture of the board ---------- */
+    // The slide is DOM, not a canvas, so the page cannot screenshot itself
+    // without help. html2canvas is fetched only when this is first pressed --
+    // no cost to a lecture that never uses it -- and if the CDN is unreachable
+    // the ink alone is still saved rather than nothing.
+    function stamp() {
+      var m = location.pathname.match(/\/([^\/]+)\/[^\/]*$/);
+      var n = document.querySelector('.reveal .slide-number');
+      return (m ? m[1] : 'slide') + '-' + (n ? n.textContent.replace(/\s+/g, '') : skey());
+    }
+    function download(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = stamp() + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    function inkOnly() {
+      var out = document.createElement('canvas');
+      out.width = cv.width; out.height = cv.height;
+      var c = out.getContext('2d');
+      c.fillStyle = '#fff'; c.fillRect(0, 0, out.width, out.height);
+      c.drawImage(cv, 0, 0);
+      out.toBlob(download);
+    }
+    function savePng() {
+      var reveal = document.querySelector('.reveal');
+      var go = function () {
+        window.html2canvas(reveal, { backgroundColor: '#ffffff', scale: 2, logging: false })
+          .then(function (base) {
+            var out = document.createElement('canvas');
+            out.width = base.width; out.height = base.height;
+            var c = out.getContext('2d');
+            c.drawImage(base, 0, 0);
+            var rr = reveal.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+            var k = base.width / rr.width;
+            c.drawImage(cv, (cr.left - rr.left) * k, (cr.top - rr.top) * k, cr.width * k, cr.height * k);
+            out.toBlob(download);
+          })
+          .catch(inkOnly);
+      };
+      if (window.html2canvas) { go(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = go; s.onerror = inkOnly;
+      document.head.appendChild(s);
+    }
+
+    /* ---------- toolbar ---------- */
+    function paintBar() {
+      if (!bar) return;
+      [].forEach.call(bar.querySelectorAll('[data-pen]'), function (b) {
+        b.style.outline = (!erasing && +b.getAttribute('data-pen') === pi) ? '2px solid #111827' : '2px solid transparent';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-size]'), function (b) {
+        var on = +b.getAttribute('data-size') === si;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.firstChild.style.background = on ? '#fff' : '#374151';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-tool]'), function (b) {
+        var on = !erasing && b.getAttribute('data-tool') === tool;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.style.color = on ? '#fff' : '#374151';
+      });
+      var er = bar.querySelector('[data-a="erase"]');
+      if (er) { er.style.background = erasing ? '#111827' : '#e5e7eb'; er.style.color = erasing ? '#fff' : '#374151'; }
+      var k = skey();
+      var u = bar.querySelector('[data-a="undo"]'), rd = bar.querySelector('[data-a="redo"]'),
+          cl = bar.querySelector('[data-a="clear"]'), sv = bar.querySelector('[data-a="save"]');
+      if (u)  u.disabled  = !(ops[k] || []).length;
+      if (rd) rd.disabled = !(undone[k] || []).length;
+      if (cl) cl.disabled = !(ops[k] || []).length;
+      if (sv) sv.disabled = false;
+    }
+    function mount() {
+      if (bar) return;
+      btn = document.createElement('button');
+      btn.id = 'ti-pen'; btn.type = 'button'; btn.title = 'Draw on the slide (d)';
+      btn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      var rest = current ? '.55' : '.18';
+      btn.style.cssText = 'position:fixed;left:' + (current ? 14 : 94) + 'px;bottom:12px;' +
+        'z-index:10001;width:34px;height:34px;' +
+        'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+        'font-size:14px;padding:0;opacity:' + rest + ';transition:opacity .2s';
+      btn.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function () { if (!active) btn.style.opacity = rest; });
+      btn.addEventListener('click', function (e) { e.preventDefault(); setActive(!active); });
+      document.body.appendChild(btn);
+
+      bar = document.createElement('div');
+      bar.id = 'ti-ink-bar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:10px;z-index:10003;' +
+        'display:none;gap:6px;align-items:center;padding:7px 10px;border-radius:11px;' +
+        'background:rgba(255,255,255,.97);box-shadow:0 2px 12px rgba(0,0,0,.22);' +
+        'font:600 12px system-ui,sans-serif;max-width:96vw;flex-wrap:wrap;justify-content:center';
+      var sep = '<span style="width:1px;height:20px;background:#e5e7eb"></span>';
+      var btnCss = 'border:0;border-radius:6px;padding:5px 8px;cursor:pointer;background:#e5e7eb;color:#374151;font:inherit';
+      var html = '';
+      PENS.forEach(function (p, i) {
+        html += '<button data-pen="' + i + '" type="button" title="' + p.n + '" style="width:22px;height:22px;' +
+                'border-radius:50%;border:0;cursor:pointer;padding:0;background:' + p.c + ';' +
+                'outline:2px solid transparent;outline-offset:2px"></button>';
+      });
+      html += sep;
+      SIZES.forEach(function (w, i) {
+        var d = 4 + i * 4;
+        html += '<button data-size="' + i + '" type="button" title="Tip ' + w + '" style="width:26px;height:22px;' +
+                'border:0;border-radius:6px;cursor:pointer;background:#e5e7eb;display:inline-flex;' +
+                'align-items:center;justify-content:center;padding:0">' +
+                '<span style="display:block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:#374151"></span></button>';
+      });
+      html += sep;
+      TOOLS.forEach(function (t) {
+        html += '<button data-tool="' + t.k + '" type="button" title="' + t.t + '" style="' + btnCss + '">' +
+                '<i class="fa-solid ' + t.i + '"></i></button>';
+      });
+      html += sep +
+        '<button data-a="erase" type="button" title="Eraser (e)" style="' + btnCss + '">Erase</button>' +
+        '<button data-a="undo" type="button" title="Undo (z)" style="' + btnCss + '">Undo</button>' +
+        '<button data-a="redo" type="button" title="Redo (x)" style="' + btnCss + '">Redo</button>' +
+        '<button data-a="clear" type="button" title="Clear this slide (c)" style="' + btnCss + '">Clear</button>' +
+        '<button data-a="save" type="button" title="Save this slide as a PNG (p)" style="' + btnCss + '">' +
+        '<i class="fa-solid fa-camera"></i></button>' + sep +
+        '<button data-a="done" type="button" title="Stop drawing (d or Esc)" style="' + btnCss +
+        ';background:#111827;color:#fff">Done</button>';
+      bar.innerHTML = html;
+      bar.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+      bar.addEventListener('click', function (e) {
+        var t = e.target.closest('button'); if (!t) return;
+        e.preventDefault(); e.stopPropagation();
+        if (t.hasAttribute('data-pen'))  { pi = +t.getAttribute('data-pen'); erasing = false; setActive(true); return; }
+        if (t.hasAttribute('data-size')) { si = +t.getAttribute('data-size'); setActive(true); return; }
+        if (t.hasAttribute('data-tool')) { tool = t.getAttribute('data-tool'); erasing = false; setActive(true); return; }
+        var a = t.getAttribute('data-a');
+        if (a === 'erase') { erasing = !erasing; setActive(true); }
+        else if (a === 'undo') undo();
+        else if (a === 'redo') redo();
+        else if (a === 'clear') clear();
+        else if (a === 'save') savePng();
+        else if (a === 'done') setActive(false);
+      });
+      document.body.appendChild(bar);
+      ensure();
+      Reveal.on('resize', fit);
+      window.addEventListener('resize', fit);
+      Reveal.on('slidechanged', function () { cur = null; rcur = null; fit(); paintBar(); });
+      paintBar();
+    }
+
+    function keys(e) {
+      // v26: the system shortcuts too, while the pen is on -- Cmd/Ctrl-Z undo,
+      // Cmd/Ctrl-Shift-Z or Ctrl-Y redo. With the pen off they pass through untouched.
+      if (active && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        var kk = (e.key || '').toLowerCase();
+        if (kk === 'z' || kk === 'y') {
+          e.preventDefault(); e.stopPropagation();
+          if (kk === 'y' || e.shiftKey) redo(); else undo();
+          return;
+        }
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var k = e.key;
+      if (k === 'd' || k === 'D') { e.preventDefault(); e.stopPropagation(); setActive(!active); return; }
+      if (!active) return;                    // every other key is scoped to draw mode
+      var stop = function () { e.preventDefault(); e.stopPropagation(); };
+      if (k === 'Escape') { stop(); setActive(false); return; }
+      if (k === 'e' || k === 'E') { stop(); erasing = !erasing; setActive(true); return; }
+      if (k === 'z' || k === 'Z') { stop(); undo(); return; }
+      if (k === 'x' || k === 'X') { stop(); redo(); return; }
+      if (k === 'c' || k === 'C') { stop(); clear(); return; }
+      if (k === 'p' || k === 'P') { stop(); savePng(); return; }
+      if (k === '[') { stop(); si = Math.max(0, si - 1); setActive(true); return; }
+      if (k === ']') { stop(); si = Math.min(SIZES.length - 1, si + 1); setActive(true); return; }
+      // NOT "t": that is the poll open/close key, and it has to keep working
+      // while the pen is armed so a poll slide can be annotated and still
+      // opened for voting. Triangle takes "y" instead.
+      var map = { f: 'free', l: 'line', a: 'arrow', r: 'rect', s: 'shade', y: 'tri', g: 'guide',
+                  n: 'label', h: 'ghost' };
+      var want = map[k.toLowerCase && k.toLowerCase()];
+      if (want) { stop(); tool = want; erasing = false; setActive(true); }
+    }
+
+    return {
+      mount: mount, apply: apply, fit: fit, keys: keys, ask: function () { send({ k: 'req' }); },
+      on: function () { return active; },
+      relayTo: function (fn) { relay = fn; }
+    };
+  })();
+
+  // ---- full screen ----------------------------------------------------
+  // requestFullscreen needs TRANSIENT user activation IN THE WINDOW THAT GOES
+  // FULL SCREEN, so only a click (or "f") inside the projected window can do
+  // it. The speaker-view button and the click-anywhere target that used to work
+  // around that are GONE: they worked, but two windows and two clicks to reach
+  // full screen was never worth it. "m" then "f" does the same job from the
+  // keyboard -- see swapFocus below.
+  function goFull() {
+    var el = document.documentElement;
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    try {
+      var p = el.requestFullscreen();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function fsButton() {                 // projector window: the one-click path
+    if (document.getElementById('ti-fs')) return;
+    var b = document.createElement('button');
+    b.id = 'ti-fs'; b.type = 'button'; b.title = 'Full screen (f)';
+    b.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    b.style.cssText = 'position:fixed;left:54px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+      'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+      'font-size:14px;padding:0;opacity:.18;transition:opacity .2s';
+    b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+    b.addEventListener('mouseleave', function () { b.style.opacity = '.18'; });
+    b.addEventListener('click', function (e) { e.preventDefault(); goFull(); });
+    document.addEventListener('fullscreenchange', function () {
+      b.innerHTML = document.fullscreenElement ? '<i class="fa-solid fa-compress"></i>'
+                                               : '<i class="fa-solid fa-expand"></i>';
+    });
+    document.body.appendChild(b);
+  }
+
+  function homeLink() {            // presenter only: a faint way back to the chapter list
+    if (document.getElementById('ti-home')) return;
+    var a = document.createElement('a');
+    a.id = 'ti-home'; a.href = '../index.html'; a.title = 'Chapter list';
+    a.innerHTML = '<i class="fa-solid fa-house"></i>';
+    a.style.cssText = 'position:fixed;left:14px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);' +
+      'color:#6b8ba4;border:1px solid #e5e7eb;text-decoration:none;font-size:15px;opacity:.18;transition:opacity .2s';
+    a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+    a.addEventListener('mouseleave', function () { a.style.opacity = '.18'; });
+    document.body.appendChild(a);
+  }
+  function start() {
+    homeLink(); fsButton(); Ink.mount();
+    document.addEventListener('keydown', Ink.keys, true);
+  }
+  if (Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>
+</body>
+</html>

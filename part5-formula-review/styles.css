@@ -1,0 +1,715 @@
+/* White Academia — Clean academic presentation theme
+ *
+ * Copy this file as styles.css for each new presentation.
+ * Customize the CSS variables (especially colors) for your theme.
+ *
+ * IMPORTANT: All font sizes use pt (points) for predictable sizing.
+ * Base text is intentionally small (16pt) to fit content-heavy slides.
+ * Use .text-lg, .text-xl, etc. classes when slides have less content.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+/* ===========================================
+   CSS VARIABLES - Customize these for each presentation
+   =========================================== */
+:root {
+  /* Background — soft warm off-white, echoing the ECON 2316 ebook */
+  --background-color: #FBFAF7;
+  --section-divider-bg: #FBFAF7;
+
+  /* Typography - ALWAYS use pt for font sizes */
+  --heading-font: "Merriweather", Georgia, serif;
+  --body-font: "Source Sans 3", "Source Sans Pro", Helvetica, sans-serif;
+  --base-font-size: 32px;   /* Only px value - sets reveal.js base */
+  --text-size: 16pt;        /* Base body text - intentionally small */
+  --h1-size: 44pt;
+  --h2-size: 28pt;
+  --h3-size: 20pt;
+  --footnote-size: 11pt;
+
+  /* Colors — White Academia palette */
+  --primary-color: #2D2D2D;     /* Charcoal — headings, key elements */
+  --secondary-color: #6B8BA4;   /* Dusty blue — accents, underlines */
+  --accent-color: #C47B5A;      /* Warm terracotta — h3, callouts */
+  --text-color: #3A3632;        /* Warm dark gray — body text */
+  --muted-color: #8C8580;       /* Warm medium gray — footnotes, secondary */
+  --line-color: #D5CEC7;        /* Warm light gray — decorative lines */
+  --danger-color: #A85C5C;      /* Soft rosewood — warnings, misconceptions */
+  --success-color: #6A8E6B;     /* Sage green — correct answers */
+
+  /* Layout */
+  --slide-padding: 60px;
+  --slide-padding-top: 48px;
+  --content-gap: 24px;
+  --box-radius: 4px;
+}
+
+/* ===========================================
+   ANIMATIONS
+   =========================================== */
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleReveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Smooth fragment transitions */
+.reveal .fragment {
+  transition: all 0.4s ease-out;
+}
+
+.reveal .fragment.fade-up {
+  transform: translateY(12px);
+  opacity: 0;
+}
+
+.reveal .fragment.fade-up.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Component fragments — gentle entrance */
+.reveal .fragment.key-result.visible,
+.reveal .fragment.misconception.visible,
+.reveal .fragment.discussion-prompt.visible {
+  animation: gentleReveal 0.5s ease-out;
+}
+
+/* ===========================================
+   BASE STYLES - Override reveal.js defaults
+   =========================================== */
+
+.reveal {
+  font-family: var(--body-font);
+  font-size: var(--base-font-size);
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 600;
+}
+
+.reveal-viewport {
+  background-color: var(--background-color);
+}
+
+/* Section divider background via data-state */
+.reveal-viewport.is-section-divider .slide-background.present {
+  background-color: var(--section-divider-bg) !important;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--heading-font);
+  text-transform: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.reveal h1 {
+  font-size: var(--h1-size);
+  letter-spacing: -0.02em;
+}
+
+.reveal h2 {
+  font-size: var(--h2-size);
+  margin-bottom: 0;
+}
+
+.reveal h3 {
+  font-size: var(--h3-size);
+  color: var(--accent-color);
+  font-weight: 400;
+}
+
+.reveal p,
+.reveal li,
+.reveal td,
+.reveal th,
+.reveal blockquote {
+  font-size: var(--text-size);
+  color: var(--text-color);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* ===========================================
+   LISTS
+   =========================================== */
+
+.reveal ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.reveal ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.reveal ul li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  background: var(--muted-color);
+  border-radius: 50%;
+}
+
+.reveal ul ul li::before {
+  background: var(--line-color);
+  width: 4px;
+  height: 4px;
+}
+
+.reveal blockquote p { font-size: inherit; }
+
+/* ===========================================
+   SLIDE LAYOUT
+   =========================================== */
+
+.reveal .slides section {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: var(--slide-padding-top) var(--slide-padding) var(--slide-padding) var(--slide-padding) !important;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.reveal .slides section.stack { padding: 0 !important; }
+
+/* CRITICAL: !important overrides any inline justify-content: center on .content
+   that would create a huge gap between the slide title and its body content.
+   Likewise, padding-top is intentionally tight so the h2 hugs the content. */
+.reveal .slides section > .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start !important;
+  padding-top: 6px !important;
+  text-align: left;
+}
+
+.reveal .slides section > .footnote {
+  position: absolute;
+  bottom: 12px;
+  left: var(--slide-padding);
+  right: var(--slide-padding);
+  font-size: var(--footnote-size);
+  color: var(--muted-color);
+}
+
+/* ===========================================
+   SECTION DIVIDERS — Typography-focused, white bg
+   =========================================== */
+
+.reveal .slides section.section-divider {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center;
+}
+
+.reveal .slides section.section-divider h1 {
+  font-size: 44pt;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  animation: fadeInDown 0.7s ease-out;
+}
+
+/* Decorative rule below section divider title */
+.reveal .slides section.section-divider h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--secondary-color);
+  margin: 16px auto 0;
+}
+
+.reveal .slides section.section-divider h2 {
+  color: var(--primary-color);
+  font-size: 28pt;
+}
+
+.reveal .slides section.section-divider p {
+  font-size: 14pt;
+  color: var(--muted-color);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 12px;
+}
+
+.reveal .slides section.section-divider .subtitle {
+  font-size: 14pt;
+  color: var(--muted-color);
+  font-family: var(--body-font);
+  font-weight: 300;
+  margin-top: 8px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* ===========================================
+   TEXT UTILITIES
+   =========================================== */
+
+.text-lg { font-size: 18pt !important; }
+.text-xl { font-size: 20pt !important; }
+.text-2xl { font-size: 24pt !important; }
+.text-3xl { font-size: 28pt !important; }
+.text-4xl { font-size: 32pt !important; }
+.text-muted { color: var(--muted-color) !important; }
+.text-center { text-align: center !important; }
+.text-uppercase { text-transform: uppercase; letter-spacing: 0.1em; }
+.font-light { font-weight: 300; }
+.font-bold { font-weight: 600; }
+
+/* ===========================================
+   TITLE UNDERLINE
+   =========================================== */
+
+.reveal .slides section:not(.section-divider) > h2 {
+  flex-shrink: 0;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--line-color);
+}
+
+/* ===========================================
+   OPTIONAL: TOP DECORATIVE LINE (subtle inset)
+   Uncomment if you want a thin top rule.
+   =========================================== */
+
+/*
+.reveal .slides section:not(.section-divider)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--slide-padding);
+  right: var(--slide-padding);
+  height: 1px;
+  background: var(--line-color);
+}
+*/
+
+/* ===========================================
+   BLOCKQUOTES
+   =========================================== */
+
+.reveal blockquote {
+  border-left: 3px solid var(--line-color);
+  padding-left: 22px;
+  margin: 18px 0;
+  font-style: italic;
+  font-weight: 300;
+  background: none;
+  box-shadow: none;
+  width: 100%;
+  max-width: none;
+  color: var(--muted-color);
+}
+
+.reveal blockquote cite {
+  display: block;
+  margin-top: 10px;
+  font-style: normal;
+  color: var(--muted-color);
+  font-size: 13pt;
+}
+
+/* ===========================================
+   CUSTOM COMPONENTS
+   =========================================== */
+
+/* Poll option cards */
+.poll-option {
+  padding: 10px 18px;
+  border-radius: var(--box-radius);
+  border: 1.5px solid var(--line-color);
+  margin-bottom: 8px;
+  font-size: 15pt;
+  color: var(--text-color);
+  font-family: var(--body-font);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.poll-option.correct {
+  border-color: var(--success-color);
+  background: rgba(106, 142, 107, 0.08);
+}
+
+.poll-option.wrong {
+  border-color: var(--line-color);
+}
+
+/* Key result box */
+.key-result {
+  background: #F4F1ED;
+  border-left: 3px solid var(--secondary-color);
+  padding: 16px 22px;
+  border-radius: var(--box-radius);
+  margin: 14px 0;
+}
+
+.key-result p {
+  margin: 0;
+  font-size: 15pt;
+}
+
+/* Misconception box */
+.misconception {
+  background: #F9F0EE;
+  border-left: 3px solid var(--danger-color);
+  padding: 16px 22px;
+  border-radius: var(--box-radius);
+  margin: 14px 0;
+}
+
+.misconception p {
+  margin: 4px 0;
+  font-size: 15pt;
+}
+
+/* Discussion prompt */
+.discussion-prompt {
+  background: #EEF2F0;
+  border-left: 3px solid var(--accent-color);
+  padding: 16px 22px;
+  border-radius: var(--box-radius);
+  margin: 12px 0;
+}
+
+.discussion-prompt p {
+  margin: 4px 0;
+  font-size: 15pt;
+  font-style: italic;
+}
+
+.discussion-prompt .bloom-level {
+  font-style: normal;
+  font-weight: 500;
+  color: var(--accent-color);
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Stat highlight */
+.stat-highlight {
+  text-align: center;
+  padding: 15px;
+}
+
+.stat-highlight .number {
+  font-size: 40pt;
+  font-weight: 700;
+  color: var(--secondary-color);
+  font-family: var(--heading-font);
+  line-height: 1.1;
+}
+
+.stat-highlight .label {
+  font-size: 12pt;
+  color: var(--muted-color);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* Tables */
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 13pt;
+}
+
+.reveal table th {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  padding: 9px 14px;
+  font-weight: 600;
+  font-size: 13pt;
+  text-align: left;
+  letter-spacing: 0.02em;
+}
+
+.reveal table td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line-color);
+  font-size: 13pt;
+}
+
+.reveal table tr:nth-child(even) {
+  background: rgba(213, 206, 199, 0.15);
+}
+
+/* Figure images */
+.reveal img.figure {
+  max-height: 380px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.reveal img.figure-sm {
+  max-height: 280px;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+/* MathJax overrides */
+.reveal .MathJax { font-size: 100% !important; }
+
+/* Speaker notes styling */
+.reveal aside.notes {
+  font-size: 14pt;
+  line-height: 1.4;
+}
+
+/* ===========================================
+   FULL-BLEED VIDEO SLIDE (R2-hosted MP4 — preferred)
+   ===========================================
+   Pattern: drop an MP4 in /video/, run upload-r2-video.sh, paste the
+   public r2.dev URL into a <video data-src="..." autoplay loop muted
+   playsinline> tag inside <section class="bg-video">.
+   See chapter-to-lecture-essentials.md "Embedded Videos" section. */
+
+.reveal .slides section.bg-video {
+  padding: 0 !important;
+  display: block !important;
+  background: #000;
+  overflow: hidden;
+}
+
+.reveal .slides section.bg-video > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+
+/* In-card video: wrap <video> in <div class="video-frame"> alongside text. */
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #000;
+}
+
+.video-frame > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+
+/* Legacy: Instructure / Canvas Studio iframe with chrome-crop hack.
+   Only kept for DRM'd content that can't be downloaded + re-hosted on R2.
+   See git history pre-2026-05-08 for the full transform: scale() approach. */
+
+/* ===========================================
+   HELP OVERLAY — high-contrast (?h shows reveal's keyboard help)
+   =========================================== */
+
+.reveal .overlay.overlay-help {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+}
+
+.reveal .overlay.overlay-help table th,
+.reveal .overlay.overlay-help table td {
+  color: #eee;
+}
+
+/* ===========================================
+   PART I FORMULA REVIEW — custom components
+   =========================================== */
+
+:root {
+  --formula-bg: #EDF1F4;       /* soft blue-gray for the formula boxes */
+  --formula-border: #6B8BA4;
+}
+
+/* KaTeX baseline */
+.reveal .katex { line-height: 1.2; }
+.reveal .katex-display { margin: 0; }
+
+/* Compact context row: calculus tool (left) + chapter source (right) */
+.slide-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+.slide-meta .tool-kicker {
+  font-size: 11pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin: 0;
+}
+.chapter-tag {
+  font-size: 11pt;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--secondary-color);
+  background: rgba(107, 139, 164, 0.14);
+  padding: 3px 13px;
+  border-radius: 12px;
+}
+
+/* The formula box — visual anchor of every content slide */
+.formula-box {
+  background: var(--formula-bg);
+  border: 1.5px solid var(--formula-border);
+  border-radius: 8px;
+  padding: 24px 28px;
+  text-align: center;
+  margin: 0 0 22px 0;
+}
+.formula-box .katex { font-size: 1.6em; }
+
+/* Paired formula boxes (two-up in a grid) — smaller math, no bottom margin */
+.formula-box.fb-pair { padding: 18px 16px; margin-bottom: 0; }
+.formula-box.fb-pair .katex { font-size: 1.28em; }
+
+/* Caption-style label inside / under a formula box */
+.formula-name {
+  font-family: var(--body-font);
+  font-size: 12.5pt;
+  font-weight: 600;
+  color: var(--muted-color);
+  margin: 0;
+}
+.katex-display + .formula-name { margin-top: 14px; }
+
+.formula-sub {
+  font-size: 14pt;
+  color: var(--text-color);
+  margin: 12px 0 0 0;
+}
+
+/* Plain-English translation block — the payload of every slide */
+.plain-english {
+  background: #FFFFFF;
+  border: 1px solid var(--line-color);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 16px 22px;
+  margin: 0;
+}
+.plain-english p { font-size: 16.5pt; line-height: 1.5; margin: 0; }
+.plain-english .pe-label {
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin: 0 0 6px 0;
+}
+
+/* "you already know this" reassurance line */
+.reassure {
+  font-size: 13.5pt;
+  font-style: italic;
+  color: var(--muted-color);
+  margin-top: 14px;
+}
+
+/* Notation primer ("Rosetta Stone") rows */
+.notation-row {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  align-items: center;
+  gap: 24px;
+  background: #FFFFFF;
+  border: 1px solid var(--line-color);
+  border-radius: 6px;
+  padding: 7px 22px;
+  margin-bottom: 7px;
+}
+.notation-row .sym { text-align: center; }
+.notation-row .sym .katex { font-size: 1.1em; }
+.notation-row .gloss p { font-size: 14.5pt; margin: 0; line-height: 1.4; }
+
+/* Synthesis: the five-tool summary */
+.tool-summary-row {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 9px 20px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: #FFFFFF;
+  border: 1px solid var(--line-color);
+  border-left: 4px solid var(--secondary-color);
+}
+.tool-summary-row .t-name {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 14.5pt;
+  color: var(--primary-color);
+  margin: 0;
+}
+.tool-summary-row .t-desc { font-size: 13.5pt; margin: 0; line-height: 1.4; }
+
+/* Elasticity interpretation strips — "what the number means" (slides 14 & 15) */
+.interp-strip { margin-top: 16px; }
+.interp-strip .interp-label {
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin: 0 0 8px 0;
+}
+.interp-cells { display: grid; gap: 12px; }
+.interp-cells.cells-3 { grid-template-columns: repeat(3, 1fr); }
+.interp-cells.cells-2 { grid-template-columns: repeat(2, 1fr); }
+.interp-cell {
+  background: var(--formula-bg);
+  border: 1px solid var(--formula-border);
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.interp-cell p { font-size: 13pt; margin: 0; line-height: 1.4; }
+.interp-cell p + p { margin-top: 5px; }
+.interp-cell .interp-sublabel {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 6px;
+}
+.interp-foot {
+  font-size: 12.5pt;
+  color: var(--muted-color);
+  margin: 9px 0 0 0;
+}

@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=37de959036b5507d615984dcfe9176d5">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Behavioral Economics &mdash; ECON 2316 Ch 18</title>
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' },
+      startup: { ready: () => { MathJax.startup.defaultReady(); } }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    .timer-badge { display: inline-block; background: #f0f5f8; color: var(--secondary-color); padding: 6px 14px; border-radius: 16px; font-size: 12pt; font-weight: 600; }
+    .timer-badge i { margin-right: 6px; }
+    .stat-card { background: #f8f6f3; border-radius: 10px; padding: 16px 14px; text-align: center; border-left: 4px solid var(--secondary-color); }
+    .stat-card .num { font-size: 28pt; font-weight: 800; color: var(--secondary-color); margin: 0; line-height: 1; }
+    .stat-card .lbl { font-size: 11.5pt; color: var(--muted-color); margin-top: 6px; }
+    .stat-card.accent { border-left-color: var(--accent-color); }
+    .stat-card.accent .num { color: var(--accent-color); }
+    .stat-card.sage { border-left-color: var(--success-color); }
+    .stat-card.sage .num { color: var(--success-color); }
+    .stat-card.rose { border-left-color: var(--danger-color); }
+    .stat-card.rose .num { color: var(--danger-color); }
+    .reveal table.table-standard { font-size: 14pt; }
+    .reveal table.table-standard th { padding: 9px 11px; font-size: 12.5pt; }
+    .reveal table.table-standard td { padding: 8px 11px; font-size: 12pt; vertical-align: middle; }
+    .conj-card { background: #f8f6f3; border-radius: 8px; padding: 11px 16px; }
+    .conj-card .nm { font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 3px; }
+    /* mini grid */
+    .pm { border-collapse: collapse; margin: 0 auto; font-size: 13pt; }
+    .pm td, .pm th { border: 1.5px solid var(--line-color); padding: 9px 16px; text-align: center; }
+    .pm th { background: #f0f5f8; font-weight: 700; font-size: 11.5pt; color: var(--secondary-color); }
+    .pm td.ce { background: #d9f2e6; font-weight: 700; }
+    .pm td.hi { background: #fbeec8; }
+    /* HeadsUp callout */
+    .heads-up { background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 6px; padding: 11px 18px; margin-top: 12px; }
+    .heads-up .hu-tag { margin: 0 0 4px; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .heads-up p.body { margin: 0; font-size: 12.5pt; line-height: 1.5; }
+    /* ProspectTheoryExplorer preset toggles */
+    .pt-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 2px 0 4px; }
+    .pt-preset { font-family: var(--body-font); font-size: 11.5pt; font-weight: 600; padding: 5px 15px; border-radius: 16px; border: 1.5px solid var(--line-color); background: #f8f6f3; color: var(--text-color); cursor: pointer; transition: all .15s; }
+    .pt-preset:hover { border-color: var(--secondary-color); }
+    .pt-preset.active { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="section-divider" data-state="is-section-divider" id="title" style="padding: 0;">
+  <div style="display: grid; grid-template-columns: 55% 45%; height: 720px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; padding: 50px 50px 50px 60px;">
+      <p style="font-size: 12pt; color: var(--secondary-color); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;">
+        ECON 2316 &bull; Microeconomic Theory &bull; Chapter 18
+      </p>
+      <h1 style="font-size: 38pt; line-height: 1.18; color: var(--primary-color); margin-bottom: 22px;">
+        Behavioral Economics
+      </h1>
+      <p style="font-size: 14pt; color: var(--muted-color); font-style: italic; max-width: 520px; margin-top: 4px;">
+        For 14 chapters the agent was a flawless optimizer. Today the failure moves <strong style="color: var(--text-color);">inside the agent</strong> &mdash; loss aversion, present bias, mental accounting, and the default that moved half a workforce.
+      </p>
+      <div style="margin-top: auto; padding-bottom: 15px;">
+        <p style="font-size: 16pt; color: var(--primary-color); font-weight: 700; margin-bottom: 8px;">
+          Dr. Richeng Piao
+        </p>
+        <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; line-height: 1.8;">
+          Department of Economics<br>
+          Northeastern University &mdash; Closes Part V
+        </p>
+      </div>
+    </div>
+    <div style="overflow: hidden;">
+      <img alt="A retirement-enrollment form on a desk beside a coffee mug and a lottery ticket — the everyday objects behind reference dependence, defaults, and probability weighting" src="figures/ch18-cover.webp" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+<section id="learning-objectives" style="padding: 40px 50px;">
+  <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Learning Objectives</h2>
+  <p style="font-size: 13pt; color: var(--muted-color); margin-bottom: 14px;">
+    By the end of class today, you will be able to&hellip;
+  </p>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">1</p>
+      <p style="font-size: 13.5pt;"><strong>Distinguish</strong> prospect theory's reference-dependent value function from expected utility's absolute-wealth Bernoulli utility. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">2</p>
+      <p style="font-size: 13.5pt;"><strong>Use</strong> the loss-aversion coefficient \(\lambda\), curvature \(\alpha,\beta\), and probability-weighting \(\gamma\) to evaluate gambles. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">3</p>
+      <p style="font-size: 13.5pt;"><strong>Compute</strong> \(\beta\)-\(\delta\) quasi-hyperbolic present values and identify dynamic inconsistency. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">4</p>
+      <p style="font-size: 13.5pt;"><strong>Distinguish</strong> naive vs sophisticated present bias, and explain why only the sophisticated demand commitment devices. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L5)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">5</p>
+      <p style="font-size: 13.5pt;"><strong>Apply</strong> the default-effect decomposition \(\theta\) to retirement-savings (Madrian&ndash;Shea) and organ-donation data. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">6</p>
+      <p style="font-size: 13.5pt;"><strong>Evaluate</strong> behavioral interventions critically using the DellaVigna&ndash;Linos publication-bias framework. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L5)</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="bridge">
+  <h2><i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--secondary-color);"></i> Cashing Out the Promise from Chapter 15</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Chapter 15 &mdash; the benchmark</p>
+      <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        <li>Expected utility over a Bernoulli \(u(W)\) of <em>absolute</em> wealth</li>
+        <li>Risk aversion = concavity; the Rabin paradox flagged trouble</li>
+        <li>HeadsUp 15.5 named Kahneman&ndash;Tversky and promised: <strong>we'll come back</strong></li>
+      </ul>
+    </div>
+    <div style="background: #fef9f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Chapter 18 &mdash; the delivery</p>
+      <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        <li>Value carried by <strong>changes</strong> \(z=x-r\) from a reference point, not wealth</li>
+        <li>Three formal models: prospect theory, \(\beta\)-\(\delta\) discounting, mental accounting</li>
+        <li>The rational benchmark fails <em>inside</em> the agent &mdash; predictably</li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p style="margin: 0;"><strong>Part V is four ways the welfare theorem breaks.</strong> Risk (Ch 15), information asymmetry (Ch 16), externalities and public goods (Ch 17) &mdash; and now the cognitive limits of the agents who populate every model in the book. Behavioral economics gives us a vocabulary for the deviations the rational-choice model cannot rationalize.</p>
+  </div>
+</section>
+
+<section id="opener">
+  <h2><i class="fa-solid fa-file-signature" style="color: var(--accent-color);"></i> A Default That Moved Half a Workforce</h2>
+  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">1998: a Fortune 500 firm flips its 401(k) from <em>opt-in</em> (fill a form to enroll) to <em>opt-out</em> (auto-enrolled at 3%, fill a form to leave). Same dollars, same friction, <strong>same complete freedom to choose either path.</strong></p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">Madrian&ndash;Shea (2001 <em>QJE</em>) report the result at 3&ndash;15 months tenure: participation jumped from <strong>37.4%</strong> to <strong>85.9%</strong> &mdash; nearly fifty points, on a costless change in which form comes first.</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">Rational-choice theory says the default should not matter. It mattered massively &mdash; and a quarter-century later it became <strong>law</strong> (SECURE Act 2.0, auto-enrollment mandatory for new plans Jan 1, 2025).</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start;">
+      <div class="stat-card"><p class="num">37.4%</p><p class="lbl">opt-in participation</p></div>
+      <div class="stat-card sage"><p class="num">85.9%</p><p class="lbl">opt-out participation</p></div>
+      <div class="stat-card accent"><p class="num">+48.5</p><p class="lbl">points, costless flip</p></div>
+      <div class="stat-card rose"><p class="num">$0</p><p class="lbl">fiscal cost of the change</p></div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;">The default is one of <em>many</em> predictable departures from the rational benchmark. Today's three models &mdash; <strong>prospect theory</strong> (&sect;&sect;18.2&ndash;18.3), <strong>present bias</strong> (&sect;18.4), and <strong>mental accounting</strong> (&sect;18.5) &mdash; rationalize the default effect, the equity-premium puzzle, the gym-membership trap, and the lottery ticket. &sect;18.6 returns to SECURE 2.0.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-bounded">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;18.1</p>
+  <h1>From Rational Choice to Bounded Rationality</h1>
+  <p class="subtitle">Three families of systematic, predictable, modelable departure</p>
+</section>
+
+<section id="three-families">
+  <h2><i class="fa-solid fa-code-branch" style="color: var(--accent-color);"></i> Where the Rational Agent Breaks</h2>
+  <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 10px;">The agent of Chs 4&ndash;15 optimizes instantly, costlessly, without bias. Descriptively false &mdash; but the failures <strong>cluster into three modelable families</strong> (Simon's <em>bounded rationality</em>, 1955).</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: start;">
+    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">1 &mdash; Reference dependence</p>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 7px 0 0;">Value depends on <strong>changes</strong> from a reference point, not absolute wealth. Losses hurt ~2&times; gains. &rarr; endowment effect, status-quo bias. <span style="color: var(--muted-color);">&sect;&sect;18.2&ndash;18.3</span></p>
+    </div>
+    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">2 &mdash; Present bias</p>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 7px 0 0;">The near future is discounted far more steeply than distant gaps. \(t{=}0\) vs \(t{=}1\) commands a premium \(t{=}30\) vs \(t{=}31\) does not. &rarr; procrastination. <span style="color: var(--muted-color);">&sect;18.4</span></p>
+    </div>
+    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">3 &mdash; Mental accounting</p>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 7px 0 0;">Money is not fungible; framing flips preferences over identical options; defaults dominate. &rarr; narrow bracketing. <span style="color: var(--muted-color);">&sect;&sect;18.5&ndash;18.6</span></p>
+    </div>
+  </div>
+  <div class="heads-up">
+    <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 18.1 &mdash; descriptive, not normative</p>
+    <p class="body">Showing humans <em>do</em> something does not show they <em>should</em>. The same prospect-theory machinery that raises retirement participation also makes dark-pattern subscription traps work; the same probability weighting that explains lottery tickets explains overpriced toaster warranties. Read every Application with the question: <strong>who benefits from this behavioral fact, and who pays?</strong></p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-loss">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;18.2</p>
+  <h1>Reference Dependence and Loss Aversion</h1>
+  <p class="subtitle">A value function with a kink &mdash; and why losses loom larger than gains</p>
+</section>
+
+<section id="value-function">
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--accent-color);"></i> Kahneman&ndash;Tversky's Value Function (1979)</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ v(z) = \begin{cases} z^{\alpha} &amp; z \geq 0 \\ -\lambda\,(-z)^{\beta} &amp; z &lt; 0 \end{cases} \qquad z = x - r \]</p>
+      </div>
+      <ul style="font-size: 12pt; line-height: 1.5; margin: 0;">
+        <li>Value carried by <strong>changes</strong> \(z\) from reference point \(r\) &mdash; <em>not</em> the Ch 15 \(u(W)\)</li>
+        <li><strong>Concave on gains</strong> (\(\alpha&lt;1\)), <strong>convex on losses</strong> (\(\beta&lt;1\))</li>
+        <li><strong>Kinked</strong> at \(r\): the loss side is steeper by \(\lambda\) &mdash; T-K 1992: \(\lambda=2.25,\ \alpha=\beta=0.88\)</li>
+      </ul>
+    </div>
+    <div>
+      <img alt="Prospect-theory value function: S-shaped, concave above the reference point and convex below, with a sharp kink at the origin where the loss branch is roughly twice as steep" src="figures/figure-18-1-prospect-theory-value.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="heads-up">
+    <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 18.2 &mdash; loss aversion is a kink, not "risk-averse twice"</p>
+    <p class="body">A concave-\(u\) EU agent rejects a 50/50 \(\pm\$1\) gamble only <em>gradually</em>, via the second derivative. A PT agent rejects it on a <strong>literal slope discontinuity</strong> at \(r\): PT value \(=0.5(1)-0.5(2.25)=-0.625\) with no curvature at all. Different mechanism, different empirical signature.</p>
+  </div>
+</section>
+
+<section id="cc-18-1">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 18.1 &mdash; The PT Value Function</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin: 0 0 10px;">
+        <p style="margin: 0; font-size: 12.5pt;">Three parameters do three jobs:</p>
+        <ul style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
+          <li>\(\lambda&gt;1\) &mdash; the <strong>kink</strong> at \(z=0\)</li>
+          <li>\(\alpha&lt;1\) &mdash; <strong>concavity</strong> on gains</li>
+          <li>\(\beta&lt;1\) &mdash; <strong>convexity</strong> on losses</li>
+        </ul>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0;">As \(z\to 0^{+}\) the slope \(\to 0\) (for \(\alpha&lt;1\)); as \(z\to 0^{-}\) the slope \(\to\infty\). The kink is sharp.</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--accent-color);">
+        <p class="nm" style="color: var(--accent-color);">The fourfold pattern</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">Risk <strong>averse</strong> on high-prob gains and low-prob losses; risk <strong>seeking</strong> on low-prob gains and high-prob losses. The kink + curvature reverse EU's prediction of universal risk aversion.</p>
+      </div>
+      <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 10px 0 0;">T-K 1992's \(\lambda=2.25,\ \alpha=\beta=0.88\) are medians from a 25-subject study; the modern Brown et&nbsp;al. 2024 meta-analysis places pooled \(\lambda\) near 1.96. Treat 2.25 as the canonical calibration, not a constant of nature.</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-18-1">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 18.1 &mdash; The Endowment Effect on a Coffee Mug</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> KKT 1990: random mug owners state WTA \(=\$5.78\); non-owners state WTP \(=\$2.21\). Find the WTA/WTP ratio; show EU predicts \(1\); apply PT with \(r=\) endowment; find the PT-predicted ratio.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> WTA/WTP \(=5.78/2.21 = 2.6154 \approx 2.61\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. EU:</strong> both sides value the mug at the same \(v_m\), so WTA \(=\) WTP, ratio \(=1\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. PT:</strong> seller codes giving up as a loss (\(\times\lambda\)); buyer codes gaining as an unweighted gain. With \(\alpha=\beta\), WTA/WTP \(=\lambda^{2/\alpha}\).</p>
+    </div>
+    <div>
+      <img alt="Bar chart of the KKT 1990 mug experiment: median seller WTA near six dollars versus median buyer WTP near two dollars, a ratio close to the loss-aversion coefficient" src="figures/figure-18-8-endowment-effect-mug.png" style="width: 100%; border-radius: 8px;">
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 10px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4.</strong> \(2.25^{2/0.88}=2.25^{2.273}\approx 6.32\). The observed \(2.61\) sits between EU's \(1\) and PT's strong \(6.32\) &mdash; closer to \(\lambda\) itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-18-2">
+  <h2><i class="fa-solid fa-taxi" style="color: var(--accent-color);"></i> Walkthrough 18.2 &mdash; Reference-Dependent Labor Supply</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> A NYC cab driver has daily income target \(r=\$200\): a dollar below target valued at \(\lambda=2\), above at \(1\). Income \(= w\cdot h\). Derive the stopping rule and hours at \(\$15\) vs \(\$25\)/hour. Sign the wage&ndash;hours correlation.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> The driver works until income hits the target, then stops: \(h = r/w\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. Low wage \(\$15\):</strong> \(h = 200/15 = 13.33\) hours.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. High wage \(\$25\):</strong> \(h = 200/25 = 8.00\) hours.</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 12pt;">
+        <tr><th>Wage</th><th>Hours \(h=r/w\)</th><th>vs standard</th></tr>
+        <tr><td>\$15</td><td>13.33</td><td class="hi">works more</td></tr>
+        <tr><td>\$25</td><td class="ce">8.00</td><td>works less</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Sign flip.</strong> \(w\uparrow\Rightarrow h\downarrow\): a <strong>negative</strong> wage&ndash;hours correlation. Standard intertemporal substitution predicts the <em>opposite</em> &mdash; work more when the wage is temporarily high.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brown-meta">
+  <h2><i class="fa-solid fa-database" style="color: var(--secondary-color);"></i> Theory &amp; Data &mdash; How Big Is Loss Aversion, Really?</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 8px;"><strong>Brown, Imai, Vieider &amp; Camerer (2024 <em>JEL</em>)</strong> aggregate <strong>607 estimates</strong> of \(\lambda\) from <strong>150 articles</strong> (1992&ndash;2017), controlling for publication bias.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat-card accent"><p class="num">1.96</p><p class="lbl">pooled \(\lambda\)</p></div>
+        <div class="stat-card"><p class="num">[1.82, 2.10]</p><p class="lbl">95% interval</p></div>
+      </div>
+      <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 8px 0 0;">Study design (real vs hypothetical; lab vs field) barely moves the aggregate. Walasek&ndash;Mullett&ndash;Stewart 2024 find \(\lambda=1.31\) in risky mixed gambles; Bruhin&ndash;Fehr&ndash;Schunk 2010 find ~80% PT types, ~20% EU types.</p>
+    </div>
+    <div>
+      <div class="key-result" style="margin: 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>The discipline.</strong> Loss aversion is real, large, and pervasive &mdash; but it is not a single number. Use \(\lambda\in[1.8,2.5]\) as the working textbook range; reserve "\(\lambda=2.25\)" for the canonical T-K 1992 calibration.</p>
+      </div>
+      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 11px 16px; margin-top: 12px;">
+        <p style="margin: 0 0 4px; font-size: 10.5pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-rotate-left"></i> Recall from 1116 &mdash; &sect;18.4</p>
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">Principles met loss aversion as a thought experiment (a coin-flip for \$110 vs a sure \$50) and <em>catalogued</em> the biases. This chapter <strong>models</strong> them &mdash; a parametric value function that yields numerical predictions and is then tested against data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-pt">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;18.3</p>
+  <h1>Prospect Theory: The Second Nonlinearity</h1>
+  <p class="subtitle">Probability weighting &mdash; why small chances loom large</p>
+</section>
+
+<section id="cc-18-2">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 18.2 &mdash; The Probability Weighting Function</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 18px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ w(p) = \dfrac{p^{\gamma}}{\big(p^{\gamma} + (1-p)^{\gamma}\big)^{1/\gamma}} \]</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">At \(\gamma=1\), no distortion. At \(\gamma&lt;1\) (T-K: \(\gamma_+=0.61\)), an <strong>inverse-S</strong>: small \(p\) overweighted, large \(p\) underweighted, crossing identity near \(p\approx 0.32\).</p>
+      <table class="pm" style="font-size: 12pt;">
+        <tr><th>\(p\)</th><th>\(w(p)\)</th></tr>
+        <tr><td>0.05</td><td class="hi">0.132</td></tr>
+        <tr><td>0.50</td><td>0.421</td></tr>
+        <tr><td>0.95</td><td class="ce">0.793</td></tr>
+      </table>
+    </div>
+    <div>
+      <img alt="Probability weighting function: an inverse-S curve that lies above the 45-degree line for small probabilities and below it for large probabilities, crossing near p equals 0.32" src="figures/figure-18-2-probability-weighting.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-18-3">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 18.3 &mdash; Prospect Theory vs Expected Utility</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> A 50/50 gamble: win \$110 vs lose \$100, \(r=\) current wealth. Compute EV; PT value at \(\lambda=2.25,\ \alpha=\beta=0.88,\ \gamma=0.61\); compare to log-utility EU at \(W=\$50{,}000\).</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1. EV</strong> \(=0.5(110)+0.5(-100)=+5\). Risk-neutral EU <em>accepts</em>.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. PT:</strong> \(v(110)=110^{0.88}\approx 62.59\); \(v(-100)=-2.25\cdot100^{0.88}\approx -129.46\); \(w(0.5)=0.421\).<br>PT \(=0.421(62.59)+0.421(-129.46)=26.35-54.50=\) <strong>\(-28.15\)</strong>. PT <em>rejects</em>.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. Log-utility EU</strong> at \$50,000: \(0.5\ln(50110)+0.5\ln(49900)=10.81988\) vs \(\ln(50000)=10.81978\) &mdash; tiny positive, essentially <em>accepts</em>.</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--success-color);">
+        <p class="nm" style="color: var(--success-color);">The Rabin paradox, resolved</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">Most subjects <strong>reject</strong> this \(+5\)-EV gamble. EU cannot rationalize that without absurd curvature (Ch 15's Rabin paradox). PT does it directly &mdash; through the kink.</p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Robust.</strong> Even doubling the win to \$220 (EV \(=+60\)) gives \(v(220)\approx 115\), PT value \(\approx -6\) &mdash; still rejects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <section id="poll-1-question">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #1 &mdash; Why Reject a +EV Gamble?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.7;">
+        Most people decline a 50/50 bet to win \$110 or lose \$100, even though the expected value is \(+\$5\). In the prospect-theory framework, what is the <strong>core mechanism</strong>?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch18-econ2316-poll-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Diminishing marginal utility of wealth (EU concavity)</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) The loss-aversion kink &mdash; the \$100 loss is weighted by \(\lambda\)</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) They miscalculate the expected value</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Probability weighting underweights the 50% win</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch18-econ2316-poll-1" id="poll-1-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; The Kink, Not Curvature</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch18-econ2316-poll-1" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 15pt; line-height: 1.7;">The slope jumps from \(1\) to \(\lambda\approx 2.25\) at the reference point. The \$100 loss is felt as \(-2.25\times 100^{0.88}\), swamping the \$110 gain &mdash; the sign flips on the discontinuity, not the curvature.</p>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
+          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> EU concavity would predict <em>acceptance</em> here &mdash; log utility at \$50k is near-risk-neutral over \$100. That gap is the Rabin paradox, and the kink is the fix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="walkthrough-18-4">
+  <h2><i class="fa-solid fa-ticket" style="color: var(--accent-color);"></i> Walkthrough 18.4 &mdash; Low-Probability Overweighting and the Lottery</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> A scratch-off: \$1 ticket, \(1\)-in-\(1000\) chance of \$1000. Compute EV; PT value at \(\lambda=2.25,\ \alpha=0.88,\ \gamma=0.61\); the implied overweighting; does PT predict purchase?</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1. EV</strong> \(=0.001(1000)-0.999(1)=+0.001\) &mdash; essentially break-even.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2.</strong> \(w(0.001)\approx 0.01443\); \(v(1000)=1000^{0.88}=437.27\); \(v(-1)=-2.25\).<br>PT \(=0.01443(437.27)+0.98557(-2.25)=6.31-2.22=\) <strong>\(+4.09\)</strong>.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3.</strong> Objective \(0.001\) acted on as \(0.01443\) &mdash; a <strong>14.4&times;</strong> overweight. 1-in-1000 feels like 1.4-in-100.</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--accent-color);">
+        <p class="nm" style="color: var(--accent-color);">Symmetric phenomena</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">The <em>same</em> overweighting of small-probability <strong>losses</strong> explains over-purchase of low-deductible insurance and extended warranties (the Sydnor 2010 paradox from Ch 15). Lottery and insurance markets are PT in reverse.</p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4. Yes &mdash; PT predicts purchase</strong> (\(+4.09&gt;0\)). EU is indifferent at risk neutrality and rejects under any concavity. U.S. lotteries grossed ~\$115B in 2023 at ~\(-50\%\) returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pt-explorer">
+  <h2><i class="fa-solid fa-sliders" style="color: var(--accent-color);"></i> Drive It: The Kink and the Gamble Verdict</h2>
+  <div class="iv-card" style="padding: 8px 18px 10px;">
+    <div class="pt-row">
+      <button class="pt-preset" data-pre="tk"><i class="fa-solid fa-star"></i> T-K 1992 \((\lambda=2.25)\)</button>
+      <button class="pt-preset" data-pre="pooled"><i class="fa-solid fa-chart-column"></i> Pooled meta \((\lambda=1.96)\)</button>
+      <button class="pt-preset" data-pre="eu"><i class="fa-solid fa-equals"></i> Symmetric / EU-like \((\lambda=1)\)</button>
+    </div>
+    <div style="text-align:center; margin-bottom:4px;"><span id="pt-banner" style="display:inline-block; font-size:11.5pt; font-weight:700; padding:3px 16px; border-radius:6px;"></span></div>
+    <div id="pt-score" style="text-align:center; font-size:12.5pt; font-weight:700; display:flex; flex-wrap:wrap; justify-content:center; gap:3px 16px; margin:0 0 4px; min-height:18px;"></div>
+    <svg id="pt-svg" viewBox="0 0 700 330" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:280px; display:block;"></svg>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 26px; max-width:600px; margin:8px auto 0;">
+      <div><label class="iv-label">Loss aversion \(\lambda\) <span class="iv-readout" id="pt-lamRead">2.25</span></label><input type="range" class="iv-slider" id="pt-lam" min="1" max="3.5" step="0.05" value="2.25"></div>
+      <div><label class="iv-label">Curvature \(\alpha=\beta\) <span class="iv-readout" id="pt-aRead">0.88</span></label><input type="range" class="iv-slider" id="pt-a" min="0.5" max="1" step="0.01" value="0.88"></div>
+    </div>
+    <p style="text-align:center; font-size:11pt; color:var(--muted-color); margin:7px 0 0;">Value function \(v(z)\) over \(z\in[-150,150]\). <span style="color:#2563eb;font-weight:700;">Blue dot = gain \(v(110)\)</span>, <span style="color:#ef4444;font-weight:700;">red dot = loss \(v(-100)\)</span>. The 50/50 verdict uses \(w(0.5)=0.421\).</p>
+  </div>
+</section>
+
+<section id="app-insurance-lottery">
+  <h2><i class="fa-solid fa-scale-balanced" style="color: var(--secondary-color);"></i> Application &amp; Evidence &mdash; Lotteries and Insurance, Same Model</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div style="background: #fef9f3; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 11.5pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">Lottery markets &mdash; overweight a small win</p>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">U.S. state lotteries grossed ~<strong>\$115 billion</strong> in 2023 at ~\(-50\%\) expected returns. EU with concave \(u\) cannot rationalize a single ticket. PT can &mdash; \(w(p)\) overweights the tiny win probability.</p>
+    </div>
+    <div style="background: #f0f5f8; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11.5pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">Insurance markets &mdash; overweight a small loss</p>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">Barseghyan, Molinari, O'Donoghue &amp; Teitelbaum (2013 <em>AER</em>) estimate from deductible choices: \(\Omega(0.02)=0.08\), \(\Omega(0.05)=0.11\), \(\Omega(0.10)=0.16\) &mdash; a 5% claim chance acted on as 11%, a 2.2&times; overweight. The Sydnor 2010 deductible puzzle dissolves.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>Symmetric PT in action.</strong> People simultaneously buy lottery tickets <em>and</em> over-insure against tail losses &mdash; both are the inverse-S weighting of small probabilities, one for gains and one for losses. Add even modest loss aversion to the loss side and the deductible-choice paradox of Ch 15 closes completely.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-time">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;18.4</p>
+  <h1>Time Inconsistency and Present Bias</h1>
+  <p class="subtitle">The \(\beta\)-\(\delta\) model &mdash; and why naive \(\neq\) sophisticated</p>
+</section>
+
+<section id="beta-delta-setup">
+  <h2><i class="fa-solid fa-hourglass-half" style="color: var(--accent-color);"></i> Quasi-Hyperbolic Discounting (Laibson 1997)</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ U_t = u_t + \beta_{\text{PB}}\sum_{s=1}^{\infty}\delta^{s}\,u_{t+s} \]</p>
+      </div>
+      <ul style="font-size: 12pt; line-height: 1.5; margin: 0;">
+        <li>Today \(u_t\) at <strong>full</strong> intensity; every future period discounted by \(\delta^{s}\) <em>and</em> by \(\beta_{\text{PB}}\)</li>
+        <li>\(\beta_{\text{PB}}=1\) &rArr; standard exponential, <strong>time-consistent</strong></li>
+        <li>\(\beta_{\text{PB}}&lt;1\) &rArr; extra weight on <em>now</em> vs any future &mdash; teaching range \([0.6,0.8]\), \(\delta\in[0.95,1]\)</li>
+      </ul>
+      <p style="font-size: 10.5pt; color: var(--muted-color); line-height: 1.4; margin: 8px 0 0;">Andreoni&ndash;Sprenger 2012 find \(\beta_{\text{PB}}\approx 1\) over <em>money</em> (fungible, smoothable); Augenblick&ndash;Niederle&ndash;Sprenger 2015 find \(\beta_{\text{PB}}\approx 0.9\) over <em>effort</em> (can't be reallocated). Present bias shows up cleanest in non-monetary domains.</p>
+    </div>
+    <div>
+      <img alt="Beta-delta versus exponential discounting: the quasi-hyperbolic curve drops sharply between today and the next period, then declines at the same gentle exponential rate, lying below the exponential curve at every future date" src="figures/figure-18-3-beta-delta-vs-exponential.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="heads-up">
+    <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 18.3 &mdash; naive \(\neq\) sophisticated, and \(\beta_{\text{PB}}\neq\beta\)</p>
+    <p class="body">The present-bias \(\beta_{\text{PB}}\) is <em>not</em> the loss-side curvature \(\beta\) of the value function. And two types share the same \(\beta_{\text{PB}}\): the <strong>naive</strong> agent thinks future selves will be patient; the <strong>sophisticated</strong> agent knows they won't. Same parameters, opposite behavior, opposite policy.</p>
+  </div>
+</section>
+
+<section id="cc-18-3">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 18.3 &mdash; Dynamic Inconsistency</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">A 3-period choice decided at \(t=0\): \$10 at \(t=1\) or \$15 at \(t=2\). Use \(\beta_{\text{PB}}=0.7,\ \delta=0.95\).</p>
+      <div style="background: #f0f5f8; border-radius: 8px; padding: 10px 16px; margin: 0 0 8px;">
+        <p style="margin: 0 0 4px; font-size: 11.5pt;"><strong>At \(t=0\):</strong></p>
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.5;">PV(\$10@1) \(=\beta_{\text{PB}}\delta(10)=6.65\)<br>PV(\$15@2) \(=\beta_{\text{PB}}\delta^{2}(15)=9.48\) &rarr; <strong>choose \$15</strong></p>
+      </div>
+      <div style="background: #fef9f3; border-radius: 8px; padding: 10px 16px;">
+        <p style="margin: 0 0 4px; font-size: 11.5pt;"><strong>At \(t=1\) (now vs delayed):</strong></p>
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.5;">PV(\$10 now) \(=10\) (no \(\beta_{\text{PB}}\) on immediate)<br>PV(\$15@2) \(=\beta_{\text{PB}}\delta(15)=9.98\) &rarr; <strong>choose \$10</strong></p>
+      </div>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--danger-color);">
+        <p class="nm" style="color: var(--danger-color);">The plan flips</p>
+        <p style="font-size: 12pt; line-height: 1.5; margin: 4px 0 0;">Same agent, same parameters, <strong>conflicting choices</strong> &mdash; this is dynamic inconsistency. The patient \(t=0\) plan is reversed by the impatient \(t=1\) self the moment the reward becomes immediate.</p>
+      </div>
+      <div class="key-result" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Commitment WTP.</strong> The loss from deviation is \(9.48-6.65=2.83\) in \(t=0\) utiles. A <em>sophisticated</em> agent would pay up to \(2.83\) to lock in the plan; a <em>naive</em> agent pays \(0\) &mdash; she doesn't foresee the deviation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-18-5">
+  <h2><i class="fa-solid fa-bed" style="color: var(--accent-color);"></i> Walkthrough 18.5 &mdash; Naive Procrastination on a Thesis</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Thesis due \(t=5\). Each week: start (cost \(5\) now, payoff \(50\) at deadline) or postpone. <em>Naive</em>: \(\beta_{\text{PB}}=0.7,\ \delta=0.95\), but believes future selves act with \(\hat\beta_{\text{PB}}=1\). Find the \(t=0\) choice and the actual start week.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Start at \(\tau=0\):</strong> \(-5+0.7(0.7738)(50)=-5+27.08=+22.08\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Start at \(\tau=1\) (naive belief):</strong> \(\beta_{\text{PB}}\delta[-5+\delta^{4}(50)]=0.665(35.73)=23.76\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>She prefers delay</strong> (\(23.76&gt;22.08\)) by \(1.68\) utiles. At \(t=1\) the same logic recurs &mdash; postpone again.</p>
+    </div>
+    <div>
+      <img alt="Naive versus sophisticated start timing: the naive agent's perceived value of delaying stays just above starting every week so she postpones to the last possible week, while the sophisticated agent starts immediately" src="figures/figure-18-4-naive-vs-sophisticated.png" style="width: 100%; border-radius: 8px;">
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 10px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Actual start: \(t=4\)</strong> &mdash; the last week before the deadline forces action. The bias she cannot see in herself drives the delay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-18-6">
+  <h2><i class="fa-solid fa-lock" style="color: var(--accent-color);"></i> Walkthrough 18.6 &mdash; Sophisticated Procrastination and Commitment</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Same setup, but the agent is <em>sophisticated</em>: she anticipates future selves are also present-biased (\(\hat\beta_{\text{PB}}=\beta_{\text{PB}}=0.7\)). Solve her start time by backward induction; compare to naive; evaluate a commitment device.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Backward induction:</strong> at \(t=0\), start now \(=+22.08\); waiting (her \(t=1\) self also uses \(\beta_{\text{PB}}\)) is worth only \(\beta_{\text{PB}}\delta(23.51)=15.63\). <strong>Start now.</strong></p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Compare:</strong> naive starts \(t=4\); sophisticated starts \(t=0\) &mdash; sophistication brings the start forward <strong>four weeks</strong>.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Commitment:</strong> she already starts at \(t=0\), so the device is redundant here &mdash; WTP \(=0\) for <em>this</em> calibration.</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--secondary-color);">
+        <p class="nm" style="color: var(--secondary-color);">When commitment pays</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">For more severe bias (\(\beta_{\text{PB}}=0.5\)), the no-commitment start drifts later and the device becomes valuable. Akerlof 1991 ("Procrastination and Obedience") gives the general conditions.</p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Defaults work for <em>both</em> types. Commitment markets &mdash; StickK, Beeminder, Christmas savings clubs &mdash; serve only the <em>sophisticated</em>. A behavioral intervention must know which type it is targeting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app-gym">
+  <h2><i class="fa-solid fa-dumbbell" style="color: var(--secondary-color);"></i> Application &mdash; Paying Not to Go to the Gym</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0 0 8px;">DellaVigna &amp; Malmendier (2006 <em>AER</em>): members choose a <strong>\$70/month</strong> plan over <strong>\$10/visit</strong> pay-as-you-go, then average about <strong>four visits/month</strong> &mdash; an effective <strong>\$17/visit</strong>, far more than pay-per-visit.</p>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">At sign-up they forecast more visits than they achieve; once enrolled they fail to switch even when usage says they should. <em>Sincere belief, sincere intention, continual failure</em> &mdash; the signature of <strong>naive</strong> present bias.</p>
+    </div>
+    <div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat-card"><p class="num">$70</p><p class="lbl">monthly fee chosen</p></div>
+        <div class="stat-card accent"><p class="num">$17</p><p class="lbl">effective cost / visit</p></div>
+      </div>
+      <div class="key-result" style="margin-top: 12px;">
+        <p style="margin: 0; font-size: 12pt;">The modern commitment-device market &mdash; StickK (2007), Beeminder, deposit-contract weight-loss and smoking-cessation programs, blockers like Freedom and Cold Turkey &mdash; serves <strong>sophisticated</strong> present-biased agents. Rational choice has no slot for "paying to constrain your own future choices," yet the market is real and growing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <section id="poll-2-question">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #2 &mdash; Who Pays for a Commitment Device?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.7;">
+        A gym-goer signs up for StickK and stakes \$200 they lose if they skip workouts. Which present-biased type does this market serve?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch18-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Naive agents &mdash; they need the most help</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Sophisticated agents &mdash; they foresee their own defection</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Time-consistent agents (\(\beta_{\text{PB}}=1\))</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Everyone equally</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch18-econ2316-poll-2" id="poll-2-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Only the Sophisticated Self-Bind</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch18-econ2316-poll-2" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 15pt; line-height: 1.7;">Buying commitment requires <em>anticipating</em> the deviation. The sophisticated agent solves the multi-self game and pays to bind a future self she distrusts; W18.6's commitment WTP is exactly that anticipated loss.</p>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
+          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> naive agents need help most but never seek it &mdash; they don't see the bias. That is why <em>defaults</em>, not commitment markets, are the policy tool for them (the bridge to &sect;18.6).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-mental">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;18.5</p>
+  <h1>Mental Accounting and Framing</h1>
+  <p class="subtitle">Money isn't fungible &mdash; and what counts as "one gamble" changes the answer</p>
+</section>
+
+<section id="mental-accounting">
+  <h2><i class="fa-solid fa-wallet" style="color: var(--accent-color);"></i> Two Violations of the Fungibility Assumption</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div>
+      <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+        <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">Mental accounting</p>
+        <p style="font-size: 11.5pt; line-height: 1.45; margin: 6px 0 0;">Dollars are sorted into categories &mdash; paycheck, bonus, gift, refund, "fun money" &mdash; with budgets that bind even when lifetime resources don't change. A windfall is spent more readily than payroll (Thaler 1985).</p>
+      </div>
+      <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color); margin-top: 10px;">
+        <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0;">Framing</p>
+        <p style="font-size: 11.5pt; line-height: 1.45; margin: 6px 0 0;">"90% survival" vs "10% mortality"; "30 mpg" vs "3.33 gal/100 mi." Identical content, different choices. The frame changes the answer.</p>
+      </div>
+    </div>
+    <div>
+      <img alt="Mental accounting frame: the same surgical outcome described as ninety percent survival versus ten percent mortality elicits opposite choices, illustrating that framing flips preferences over identical options" src="figures/figure-18-6-mental-accounting-frame.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;">The most consequential frame for prospect theory is <strong>bracketing</strong>. A <em>narrowly</em>-bracketed agent applies loss aversion to each gamble separately; a <em>broadly</em>-bracketed agent applies it to the portfolio's aggregate net loss. Same agent, same gambles &mdash; reject all under narrow, accept all under broad.</p>
+  </div>
+</section>
+
+<section id="walkthrough-18-7">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 18.7 &mdash; Narrow vs Broad Bracketing</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> 50 independent 50/50 gambles, each \(+\$110\) vs \(-\$100\). Find PT value of one in isolation; the aggregate mean and SD; the probability the aggregate is negative; compare narrow vs broad decisions.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Narrow:</strong> one gamble \(=-28.15\) (W18.3). Reject each; total \(-1407.50\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Aggregate:</strong> mean \(=50(5)=250\). Per-gamble var \(=0.5(110^2)+0.5(100^2)-5^2=11025\); total var \(=551250\), SD \(=742.46\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>Loss probability:</strong> \(P(\text{sum}&lt;0)=P(Z&lt;-250/742.46)=P(Z&lt;-0.337)=0.368\) &mdash; ~37%.</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 12pt;">
+        <tr><th>Frame</th><th>PT verdict</th></tr>
+        <tr><td>Narrow (each alone)</td><td class="hi">reject all</td></tr>
+        <tr><td>Broad (portfolio)</td><td class="ce">accept</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Equity premium.</strong> Benartzi&ndash;Thaler 1995: investors who check portfolios <em>annually</em> demand a large premium. PT loss aversion + a one-year evaluation reproduce the 6% equity premium that needs CRRA \(\approx 30\) under EU. Stretch the horizon to 20 years and it shrinks toward zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app-rebates">
+  <h2><i class="fa-solid fa-money-check-dollar" style="color: var(--secondary-color);"></i> Application &mdash; Tax Rebates and the Non-Fungible Dollar</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0 0 8px;">Sahm, Shapiro &amp; Slemrod (2012 <em>NTJ</em>) studied the 2009 stimulus, delivered partly as <strong>lump-sum rebate checks</strong> and partly as <strong>withholding adjustments</strong>. Same dollars, different label.</p>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">Households spent the lump-sum check at <strong>substantially higher rates</strong> than the equivalent withholding change &mdash; incompatible with permanent-income theory, natural under mental accounting: the check is a "windfall," the withholding change is "routine paycheck."</p>
+    </div>
+    <div>
+      <div class="key-result" style="margin: 0;">
+        <p style="margin: 0; font-size: 12pt;">The same framework explains why households simultaneously carry high-interest credit-card debt <em>and</em> hold low-yield savings: the savings sit in a mental compartment that "shouldn't be touched." Thaler's 1990 anomalies survey documents the fungibility violations broadly.</p>
+      </div>
+      <p style="font-size: 10.5pt; color: var(--muted-color); line-height: 1.45; margin: 10px 0 0;">Bordalo&ndash;Gennaioli&ndash;Shleifer 2020 generalize mental accounting to memory-driven salience &mdash; flagged as a forward-pointer for graduate behavioral economics.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-nudge">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;18.6</p>
+  <h1>Choice Architecture and Nudges</h1>
+  <p class="subtitle">There is no neutral default &mdash; so choose deliberately</p>
+</section>
+
+<section id="choice-architecture">
+  <h2><i class="fa-solid fa-compass-drafting" style="color: var(--accent-color);"></i> Libertarian Paternalism (Thaler&ndash;Sunstein 2008)</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 18px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12pt;"><strong>There is no neutral choice architecture.</strong> Some default must be chosen; some ordering, some framing must be picked. The architect's job is to choose <em>deliberately</em> &mdash; toward what the agent would endorse on reflection &mdash; while preserving freedom to opt out.</p>
+      </div>
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 4px;">Where defaults work</p>
+      <ul style="font-size: 11.5pt; line-height: 1.5; margin: 0;">
+        <li><strong>Retirement:</strong> Madrian&ndash;Shea + SECURE 2.0</li>
+        <li><strong>Organ donation:</strong> opt-out ~99% vs opt-in 12&ndash;50%</li>
+        <li><strong>FAFSA simplification:</strong> +8 pp college enrollment (low-income)</li>
+        <li><strong>Energy:</strong> Opower reports &mdash; ~2% consumption cut</li>
+      </ul>
+    </div>
+    <div>
+      <img alt="Madrian-Shea default effect: a bar chart contrasting 37.4 percent 401(k) participation under opt-in with 85.9 percent under opt-out, a near fifty-point jump from flipping the default" src="figures/figure-18-5-madrian-shea-default.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-18-8">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 18.8 &mdash; The Default Effect in 401(k) Auto-Enrollment</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Madrian&ndash;Shea: participation \(37.4\%\to 85.9\%\). Let \(\theta\) be the share following the default regardless of preference. Decompose, solve for \(\theta\), interpret, connect to SECURE 2.0.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1. Decomposition:</strong> \(\text{post}=\text{pre}+\theta(1-\text{pre})\) &mdash; the default adds a fraction \(\theta\) of the would-have-opted-out group.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. Solve:</strong> \(\theta=\dfrac{0.859-0.374}{1-0.374}=\dfrac{0.485}{0.626}=\) <strong>\(0.7748\)</strong> &mdash; about 78%.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. Interpret:</strong> ~78% of those who would have actively opted out stick with auto-enrollment &mdash; cognitive cost of opting out, implicit endorsement, status-quo framing.</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--secondary-color);">
+        <p class="nm" style="color: var(--secondary-color);">SECURE 2.0 &mdash; the codification</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">Effective Jan 1, 2025 for new plans: auto-enroll at <strong>3&ndash;10%</strong>, \(+1\) pp annual escalation to a <strong>10&ndash;15%</strong> cap; small-employer carve-out. Vanguard 2024: 61% of plans already adopted (78% for plans \(\geq\)1,000).</p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> \(\theta\approx 0.78\) is the load-bearing default-effect statistic. A no-cost change in the legal default captures three-quarters of the participation gap &mdash; tens of millions of new savers at near-zero fiscal cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dellavigna-linos">
+  <h2><i class="fa-solid fa-database" style="color: var(--secondary-color);"></i> Theory &amp; Data &mdash; Nudges Are Not Free Lunches</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 8px;"><strong>DellaVigna &amp; Linos (2022 <em>Econometrica</em>)</strong> compared published nudge effects to 126 large-scale government-unit RCTs.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat-card accent"><p class="num">8.7 pp</p><p class="lbl">avg published effect</p></div>
+        <div class="stat-card rose"><p class="num">1.4 pp</p><p class="lbl">avg government RCT</p></div>
+      </div>
+      <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 8px 0 0;">A roughly <strong>five-fold</strong> gap &mdash; about <strong>70%</strong> from publication bias. The Mertens et&nbsp;al. 2022 \(d\approx 0.45\) vs Maier et&nbsp;al. 2022 RoBMA \(d\approx 0\) exchange shows the same with sharper teeth.</p>
+    </div>
+    <div>
+      <img alt="Nudge meta-analysis: published academic effect sizes cluster far above the much smaller effects measured in large-scale government randomized trials, the gap attributed mostly to publication bias" src="figures/figure-18-7-nudge-meta-analysis.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>The discipline.</strong> Specific high-friction defaults (auto-enrollment) work; many low-effort interventions (reminders, tweaks) shrink dramatically at scale. Evaluate at scale before deploying &mdash; do not extrapolate from one published trial.</p>
+  </div>
+</section>
+
+<section id="organ-donation">
+  <h2><i class="fa-solid fa-heart-pulse" style="color: var(--secondary-color);"></i> Organ Donation &mdash; Defaults and Their Limits</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">Johnson&ndash;Goldstein (2003 <em>Science</em>): <strong>opt-out</strong> countries cluster near <strong>99%</strong> effective consent (Austria 99.98%, France 99.91%); <strong>opt-in</strong> countries between <strong>12&ndash;50%</strong> (Germany 12%, UK 17%, Netherlands 28%). Underlying preferences are similar &mdash; the gap is the default.</p>
+      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 9px 14px; margin-top: 8px;">
+        <p style="margin: 0 0 3px; font-size: 10pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-rotate-left"></i> Recall from 1116 &mdash; &sect;18.5</p>
+        <p style="margin: 0; font-size: 11pt; line-height: 1.4;">Principles introduced choice architecture, when nudges fail, and how they get weaponized. This chapter formalizes the mechanisms &mdash; status-quo bias, present bias, salience.</p>
+      </div>
+    </div>
+    <div>
+      <div class="heads-up" style="margin-top: 0;">
+        <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 18.4 &mdash; nudges are not free policy lunches</p>
+        <p class="body">Three caveats: (1) every architecture is <em>some</em> architecture &mdash; no neutral default; (2) real effects run far below published ones (DellaVigna&ndash;Linos); (3) the same mechanisms power <strong>dark patterns</strong> &mdash; subscription traps (FTC vs Epic, \$245M, 2022), deceptive design (EU DSA Art. 25), AI personalized pricing.</p>
+      </div>
+      <p style="font-size: 10.5pt; color: var(--muted-color); line-height: 1.4; margin: 8px 0 0;">The Wales 5-year retrospective: the legal switch raised registry consent but <em>not</em> transplant rates &mdash; family veto and procurement infrastructure are downstream bottlenecks. Defaults capture the choice point they target; substantive outcomes need complementary institutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="summary">
+  <h2><i class="fa-solid fa-list-check" style="color: var(--secondary-color);"></i> Chapter 18 in a Nutshell</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>1. Bounded rationality.</strong> The rational benchmark is useful, not descriptive; the deviations are systematic and modelable.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>2. Prospect theory.</strong> Reference-dependent \(v(z)\) kinked at \(r\) (\(\lambda\)) plus inverse-S \(w(p)\) &mdash; endowment effect, Rabin paradox, lotteries, insurance.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>3. Present bias.</strong> \(\beta\)-\(\delta\) discounting yields dynamic inconsistency; naive vs sophisticated split drives commitment-device demand.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>4. Mental accounting.</strong> Money isn't fungible; narrow vs broad bracketing flips the PT verdict &mdash; the equity-premium puzzle.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>5. Choice architecture.</strong> No neutral default; SECURE 2.0 codifies \(\theta\approx 0.78\); libertarian paternalism preserves opt-out.</p>
+    </div>
+    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>6. The discipline.</strong> DellaVigna&ndash;Linos: real effects \(\ll\) published; nudges are dual-use &mdash; descriptive, never normative.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="closer">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">End of Chapter 18 &bull; End of Part V</p>
+  <h1>Questions?</h1>
+  <p class="subtitle">Next &mdash; Ch 19: Factor Markets, where Maya returns after 14 chapters and the consumer side of the book closes on the wage that sets her lifetime income</p>
+  <div style="margin-top: 22px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+    <span class="timer-badge"><i class="fa-solid fa-rotate-left"></i> Prospect Theory &middot; Present Bias &middot; Mental Accounting &middot; Nudges</span>
+    <span class="timer-badge"><i class="fa-solid fa-pen"></i> Problems P18.1&ndash;P18.16</span>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
+    hash: true,
+    controls: true,
+  controlsLayout: 'edges',
+    progress: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0
+  });
+  Reveal.on('slidechanged', e => {
+    const v = document.querySelector('.reveal-viewport') || document.body;
+    if (e.currentSlide.classList.contains('section-divider')) v.classList.add('is-section-divider');
+    else v.classList.remove('is-section-divider');
+  });
+</script>
+
+<style>
+ .cd-wrap{position:fixed;top:0;left:50%;transform:translateX(-50%) translateY(-100%);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+ .cd-wrap.visible{transform:translateX(-50%) translateY(0)}
+ .cd-wrap.hiding{transform:translateX(-50%) translateY(-100%)}
+ .cd-pill{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1e3a5f,#2a5a8a);color:#fff;padding:10px 24px;border-radius:0 0 16px 16px;box-shadow:0 4px 20px rgba(0,0,0,.3);font-family:'SF Mono',Menlo,monospace;pointer-events:auto}
+ .cd-pill .cd-time{font-size:32px;font-weight:700;letter-spacing:2px;min-width:80px;text-align:center}
+ .cd-pill .cd-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+ .cd-pill .cd-bar{width:120px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
+ .cd-pill .cd-fill{height:100%;background:#4ade80;border-radius:2px;transition:width 1s linear,background-color .5s}
+ .cd-pill.cd-warn{background:linear-gradient(135deg,#854d0e,#a16207)}.cd-pill.cd-warn .cd-fill{background:#fbbf24}
+ .cd-pill.cd-danger{background:linear-gradient(135deg,#991b1b,#dc2626)}.cd-pill.cd-danger .cd-fill{background:#ef4444}
+ .cd-pill.cd-done{animation:cdF .5s ease 3;background:linear-gradient(135deg,#166534,#22c55e)}
+ @keyframes cdF{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
+<div class="cd-wrap" id="cd-wrap">
+ <div class="cd-pill" id="cd-pill">
+  <div>
+   <div class="cd-label">Activity Timer</div>
+   <div class="cd-time" id="cd-time">0:00</div>
+  </div>
+  <div class="cd-bar"><div class="cd-fill" id="cd-fill"></div></div>
+ </div>
+</div>
+<script>
+ (function(){
+  var w=document.getElementById('cd-wrap'),p=document.getElementById('cd-pill'),t=document.getElementById('cd-time'),f=document.getElementById('cd-fill');
+  var iv=null,rem=0,total=0;
+  function upd(){var m=Math.floor(rem/60),s=rem%60;t.textContent=m+':'+(s<10?'0':'')+s;f.style.width=((rem/total)*100)+'%';}
+  function hide(){w.classList.remove('visible');w.classList.add('hiding');setTimeout(function(){w.classList.remove('hiding');p.classList.remove('cd-done','cd-warn','cd-danger');},500);}
+  function done(){p.classList.remove('cd-warn','cd-danger');p.classList.add('cd-done');t.textContent='0:00';f.style.width='100%';setTimeout(hide,4000);}
+  function start(min){if(iv){clearInterval(iv);iv=null;}total=min*60;rem=total;p.classList.remove('cd-done','cd-warn','cd-danger');w.classList.remove('hiding');w.classList.add('visible');upd();
+    iv=setInterval(function(){rem--;if(rem<=0){rem=0;clearInterval(iv);iv=null;upd();done();return;}upd();
+      var pct=rem/total;if(pct<=.15){p.classList.add('cd-danger');p.classList.remove('cd-warn');}else if(pct<=.33){p.classList.add('cd-warn');p.classList.remove('cd-danger');}},1000);}
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+    if(e.key>='1'&&e.key<='9'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){start(parseInt(e.key));}
+  });
+ })();
+</script>
+<style>
+ .poll-option:hover{background:#dbeafe!important;border-color:#3b82f6!important}
+ .poll-option.voted{background:#dbeafe!important;border-color:#2563eb!important;font-weight:600}
+ .poll-option.voted::after{content:" \2713";color:#2563eb}
+ .poll-option.disabled{pointer-events:none;opacity:.6}
+ .poll-bar-wrap{display:flex;flex-direction:column;align-items:center;flex:1}
+ .poll-bar{width:60px;border-radius:6px 6px 0 0;transition:height .5s ease;min-height:4px}
+ .poll-bar-label{font-size:13px;font-weight:700;margin-top:6px}
+ .poll-bar-count{font-size:20px;font-weight:700;margin-bottom:4px}
+ .poll-vote-count{text-align:center;font-size:13px;color:#888;margin-top:10px}
+ .reset-btn{display:none}body.instructor-mode .reset-btn{display:inline-block}
+</style>
+<script src="../poll.js" data-checkin></script>
+<script>
+ (function(){
+  var SU="https://dpntbrsorgbivmntwmod.supabase.co",SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI";
+  var VID="v_"+Math.random().toString(36).slice(2,10),voted={},CL={A:"#3b82f6",B:"#22c55e",C:"#f97316",D:"#a855f7"};
+  var localCounts={};
+  var isLocal=window.location.protocol==="file:";
+  if(window.location.search.indexOf("instructor")!==-1)document.body.classList.add("instructor-mode");
+  function sf(m,p,b){var o={method:m,headers:{"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store","Pragma":"no-cache"}};if(b)o.body=JSON.stringify(b);return fetch(SU+"/rest/v1/"+p,o);}
+  function vote(pid,ch){if(voted[pid])return;voted[pid]=ch;var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.add("disabled");if(o.dataset.choice===ch)o.classList.add("voted");});
+    if(!localCounts[pid])localCounts[pid]={};localCounts[pid][ch]=(localCounts[pid][ch]||0)+1;render(pid,localCounts[pid]);
+    if(!isLocal){sf("POST","poll_votes",(window.Poll?Poll.stamp(pid,ch):{poll_id:pid,choice:ch,voter_id:VID})).then(function(){fetchR(pid);}).catch(function(){});}}
+  function render(pid,ct){var t=0,ch=["A","B","C","D"];ch.forEach(function(k){t+=(ct[k]||0);});var c=document.querySelector('.poll-results-chart[data-poll-id="'+pid+'"]');if(c){var mx=Math.max.apply(null,ch.map(function(k){return ct[k]||0;}));if(mx===0)mx=1;var avail=Math.max(28,(c.clientHeight||parseFloat(getComputedStyle(c).height)||110)-46);var h="";ch.forEach(function(k){var n=ct[k]||0,ht=Math.max(4,(n/mx)*avail);h+='<div class="poll-bar-wrap"><div class="poll-bar-count">'+n+'</div><div class="poll-bar" style="height:'+ht+'px;background:'+CL[k]+';"></div><div class="poll-bar-label">'+k+'</div></div>';});if(t>0)h+='<div style="position:absolute;bottom:-25px;width:100%;text-align:center;font-size:12px;color:#888;">'+t+' vote'+(t!==1?"s":"")+'</div>';c.style.position="relative";if((parseFloat(getComputedStyle(c).marginBottom)||0)<28)c.style.marginBottom="28px";c.innerHTML=h;}var ce=document.querySelector('.poll-vote-count[data-poll-id="'+pid+'"]');if(ce)ce.textContent=t>0?t+" vote"+(t!==1?"s":"")+" so far":"";}
+  function fetchR(pid){if(!pid)return;if(isLocal){if(localCounts[pid])render(pid,localCounts[pid]);return;}sf("GET","poll_votes?poll_id=eq."+pid+"&select=choice"+(window.Poll?Poll.q():"")).then(function(r){return r.json();}).then(function(rows){var ct={};rows.forEach(function(r){ct[r.choice]=(ct[r.choice]||0)+1;});localCounts[pid]=ct;render(pid,ct);}).catch(function(){if(localCounts[pid])render(pid,localCounts[pid]);});}
+  window.clearPoll=function(pid){if(!confirm("Clear TODAY's votes for this poll? Earlier meetings are not touched."))return;localCounts[pid]={};render(pid,{});delete voted[pid];var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.remove("disabled","voted");});if(!isLocal)sf("DELETE","poll_votes?poll_id=eq."+pid+(window.Poll?Poll.q():"")+(function(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());})());};
+  document.querySelectorAll(".poll-grid").forEach(function(g){var pid=g.dataset.pollId;if(!pid)return;g.querySelectorAll(".poll-option").forEach(function(o){o.addEventListener("click",function(){var go=function(){vote(pid,o.dataset.choice);};if(window.Poll){Poll.ready(pid,go);}else{go();}});});if(!g.parentNode.querySelector(".poll-vote-count")){var ce=document.createElement("div");ce.className="poll-vote-count";ce.dataset.pollId=pid;g.parentNode.insertBefore(ce,g.nextSibling);}fetchR(pid);if(!isLocal)setInterval(function(){if(document.hidden)return;var s=g.closest("section");if(s&&!s.classList.contains("present"))return;fetchR(pid);},5000);});
+ })();
+</script>
+
+<script>
+(function(){
+  var svg=document.getElementById('pt-svg'); if(!svg) return;
+  var dL=document.getElementById('pt-lam'), rL=document.getElementById('pt-lamRead');
+  var dA=document.getElementById('pt-a'), rA=document.getElementById('pt-aRead');
+  var bn=document.getElementById('pt-banner'), sc=document.getElementById('pt-score');
+  var btns=document.querySelectorAll('.pt-preset');
+  var W05=0.421;                       // w(0.5) at gamma=0.61
+  var GAIN=110, LOSS=100;              // the 50/50 gamble
+  var PRE={ 'tk':{lam:2.25,a:0.88}, 'pooled':{lam:1.96,a:0.88}, 'eu':{lam:1.00,a:1.00} };
+  var L=70, Rr=672, T=18, B=292, ZMAX=150;
+  var cx=(L+Rr)/2, cy=(T+B)/2;
+  function vval(z,lam,a){ return z>=0 ? Math.pow(z,a) : -lam*Math.pow(-z,a); }
+  function draw(){
+    var lam=parseFloat(dL.value), a=parseFloat(dA.value);
+    var denom=lam*Math.pow(ZMAX,a);   // scale to the loss extreme (always the larger magnitude since lambda>=1)
+    function xZ(z){ return cx + (z/ZMAX)*((Rr-L)/2); }
+    function yV(v){ return cy - (v/denom)*((B-T)/2*0.95); }   // both branches fit; gain side compresses as lambda rises
+    var s='', i;
+    // axes
+    s+='<line x1="'+L+'" y1="'+cy+'" x2="'+Rr+'" y2="'+cy+'" stroke="#374151" stroke-width="1.5"/>';
+    s+='<line x1="'+cx+'" y1="'+T+'" x2="'+cx+'" y2="'+B+'" stroke="#374151" stroke-width="1.5"/>';
+    s+='<text x="'+(Rr-2)+'" y="'+(cy+16)+'" text-anchor="end" font-size="10.5" fill="#374151">outcome z = x &#8722; r</text>';
+    s+='<text x="'+(cx+8)+'" y="'+(T+12)+'" font-size="10.5" fill="#374151">value v(z)</text>';
+    s+='<text x="'+(cx-6)+'" y="'+(cy+16)+'" text-anchor="end" font-size="10" fill="#6b7280">r</text>';
+    // gridlines at +/-100
+    [ -100,-50,50,100 ].forEach(function(z){ var gx=xZ(z); s+='<line x1="'+gx+'" y1="'+T+'" x2="'+gx+'" y2="'+B+'" stroke="rgba(156,163,175,0.12)" stroke-width="1"/><text x="'+gx+'" y="'+(B+13)+'" text-anchor="middle" font-size="9" fill="#6b7280">'+z+'</text>'; });
+    // value curve
+    var d='';
+    for(i=-ZMAX;i<=ZMAX;i+=2){ var px=xZ(i), py=yV(vval(i,lam,a)); d+=(i===-ZMAX?'M':'L')+px.toFixed(1)+' '+py.toFixed(1)+' '; }
+    s+='<path d="'+d+'" fill="none" stroke="#6b8ba4" stroke-width="2.6"/>';
+    // gain & loss dots for the 50/50 gamble
+    var vg=vval(GAIN,lam,a), vl=vval(-LOSS,lam,a);
+    var gx=xZ(GAIN), gy=yV(vg), lx=xZ(-LOSS), ly=yV(vl);
+    s+='<line x1="'+gx+'" y1="'+cy+'" x2="'+gx+'" y2="'+gy+'" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>';
+    s+='<line x1="'+lx+'" y1="'+cy+'" x2="'+lx+'" y2="'+ly+'" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 3"/>';
+    s+='<circle cx="'+gx+'" cy="'+gy+'" r="5" fill="#2563eb"/><text x="'+(gx+7)+'" y="'+(gy+4)+'" font-size="10" font-weight="700" fill="#2563eb">v(+110)='+vg.toFixed(1)+'</text>';
+    s+='<circle cx="'+lx+'" cy="'+ly+'" r="5" fill="#ef4444"/><text x="'+(lx-7)+'" y="'+(ly+4)+'" text-anchor="end" font-size="10" font-weight="700" fill="#ef4444">v(&#8722;100)='+vl.toFixed(1)+'</text>';
+    svg.innerHTML=s;
+    // verdict: PT value of the 50/50 gamble
+    var ptv=W05*vg + W05*vl;
+    var accept=(ptv>0);
+    var verdict, col, bg;
+    if(accept){ verdict='PT value = '+ptv.toFixed(2)+' &gt; 0 &mdash; accept the gamble'; col='#10b981'; bg='rgba(16,185,129,0.12)'; }
+    else { verdict='PT value = '+ptv.toFixed(2)+' &lt; 0 &mdash; reject the +$5-EV gamble'; col='#f97316'; bg='rgba(249,115,22,0.14)'; }
+    bn.innerHTML=verdict; bn.style.color=col; bn.style.background=bg;
+    sc.innerHTML='<span style="color:#6b8ba4;">&#955; = '+lam.toFixed(2)+'</span><span style="color:#6b8ba4;">&#945;=&#946; = '+a.toFixed(2)+'</span><span style="color:#2563eb;">w(0.5)&#183;v(+110) = '+(W05*vg).toFixed(2)+'</span><span style="color:#ef4444;">w(0.5)&#183;v(&#8722;100) = '+(W05*vl).toFixed(2)+'</span>';
+  }
+  function setPre(k){ var p=PRE[k]; dL.value=p.lam; dA.value=p.a; rL.textContent=p.lam.toFixed(2); rA.textContent=p.a.toFixed(2); btns.forEach(function(b){b.classList.toggle('active', b.dataset.pre===k);}); draw(); }
+  btns.forEach(function(b){b.addEventListener('click',function(){setPre(b.dataset.pre);});});
+  dL.addEventListener('input',function(){rL.textContent=parseFloat(dL.value).toFixed(2); btns.forEach(function(b){b.classList.remove('active');}); draw();});
+  dA.addEventListener('input',function(){rA.textContent=parseFloat(dA.value).toFixed(2); btns.forEach(function(b){b.classList.remove('active');}); draw();});
+  setPre('tk');
+})();
+</script>
+
+<script>
+(function(){
+  document.addEventListener('keydown', function(e){
+    if(typeof Reveal==='undefined') return;
+    if(!e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag=((e.target&&e.target.tagName)||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select') return;
+    if(e.code==='KeyH' || e.keyCode===72){ Reveal.prev();  e.preventDefault(); }
+    else if(e.code==='KeyL' || e.keyCode===76){ Reveal.next(); e.preventDefault(); }
+  }, true);
+})();
+</script>
+
+<style>
+ #lb-ov{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:2vh 2vw;}
+ #lb-ov.open{display:flex;}
+ #lb-ov img{max-width:96vw;max-height:92vh;background:#fff;border-radius:6px;box-shadow:0 10px 50px rgba(0,0,0,0.6);}
+ #lb-hint{position:fixed;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.65);font-size:13px;letter-spacing:0.04em;}
+ #lb-btn{position:fixed;z-index:9999;display:none;padding:5px 11px;border:0;border-radius:6px;background:rgba(31,41,55,0.85);color:#fff;font:600 13px/1.2 "Source Sans 3",system-ui,sans-serif;cursor:zoom-in;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+ #lb-btn:hover{background:rgba(37,99,235,0.95);}
+ #lb-btn.on{display:block;}
+</style>
+<div id="lb-ov"><img id="lb-img" alt="Enlarged image"><div id="lb-hint">Click anywhere (or press Esc) to close</div></div>
+<button id="lb-btn" type="button" aria-label="Enlarge image">&#128269; Enlarge</button>
+<script>
+(function(){
+  if(/[?&](receiver|print-pdf|export)/.test(location.search)) return;   // speaker-view previews, PDF export
+  var ov=document.getElementById('lb-ov'), im=document.getElementById('lb-img'), btn=document.getElementById('lb-btn');
+  if(!ov||!btn) return;
+  var cur=null, hideT=null, idleT=null;
+  function skip(z){ return z.closest('#title,.yt-facade,.poll-option,a,button,[data-no-zoom]'); }
+  function hide(){ clearTimeout(hideT); clearTimeout(idleT); btn.classList.remove('on'); cur=null; }
+  function open(z){ im.src=z.currentSrc||z.src; im.alt=z.alt||'Enlarged image'; ov.classList.add('open'); hide(); }
+  function close(){ ov.classList.remove('open'); }
+  function shown(z){                           // the visible picture, not the box: object-fit:contain letterboxes it
+    var b=z.getBoundingClientRect(), fit=getComputedStyle(z).objectFit, nw=z.naturalWidth, nh=z.naturalHeight;
+    if(!(fit==='contain'||fit==='scale-down')||!nw||!nh||!b.width||!b.height) return b;
+    var s=Math.min(b.width/nw,b.height/nh); if(fit==='scale-down') s=Math.min(s,1);
+    var w=nw*s, hh=nh*s;
+    return {left:b.left+(b.width-w)/2, top:b.top+(b.height-hh)/2, right:b.left+(b.width+w)/2, width:w, height:hh};
+  }
+  function show(z){
+    if(ov.classList.contains('open')) return;
+    var r=shown(z);
+    if(r.width<120||r.height<80) return;       // icons and emoji are not worth enlarging
+    clearTimeout(hideT); clearTimeout(idleT); cur=z;
+    btn.classList.add('on');
+    btn.style.top=Math.max(4,r.top+6)+'px';
+    btn.style.left=Math.max(4,r.right-btn.offsetWidth-6)+'px';
+    idleT=setTimeout(hide,2500);               // a resting pointer does not leave a button on the projector
+  }
+  document.querySelectorAll('.reveal .slides section img').forEach(function(z){
+    if(skip(z)) return;
+    z.addEventListener('mouseenter',function(){ show(z); });
+    z.addEventListener('mousemove',function(){ if(cur!==z||!btn.classList.contains('on')) show(z); else { clearTimeout(idleT); idleT=setTimeout(hide,2500); } });
+    z.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+    z.addEventListener('dblclick',function(e){ e.preventDefault(); e.stopPropagation(); open(z); });
+  });
+  btn.addEventListener('mouseenter',function(){ clearTimeout(hideT); clearTimeout(idleT); });
+  btn.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+  btn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur) open(cur); });
+  ov.addEventListener('click', close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')){ close(); e.stopPropagation(); } },true);
+  if(window.Reveal&&Reveal.on){ Reveal.on('slidechanged',function(){ hide(); close(); }); Reveal.on('fragmentshown',hide); Reveal.on('fragmenthidden',hide); }
+  window.addEventListener('resize',hide);
+})();
+</script>
+
+<script>
+(function () {
+  // 29 Sep 2026, Ryan: reveal's "?" panel only knew reveal's own keys. Every
+  // key the decks add (pen, timers, poll, speaker-view relays) is registered
+  // here so the panel is the one place to look. Rows depend on the window: the
+  // projector and speaker view get the instructor keys; a student's copy gets
+  // only what works for a student. Rows for features a deck lacks are skipped.
+  var q = location.search;
+  var receiver = /[?&]receiver(&|$)/.test(q), current = receiver && /postMessageEvents=true/.test(q);
+  var projector = /[?&]presenter(&|=|$)/.test(q) && !receiver;
+  if (receiver && !current) return;                         // the Upcoming pane is view-only
+  var inst = projector || current || /[?&]instructor(&|=|$)/.test(q);
+  // twice as many rows as reveal's own list: wider and tighter so it fits one screen
+  var css = document.createElement('style');
+  var H = '.reveal .overlay.overlay-help .viewport .viewport-inner';
+  css.textContent = H + '{width:min(1000px,94vw)!important;max-width:none!important;}' +
+    H + ' table{width:100%!important;}' +
+    H + ' table th,' + H + ' table td{padding:4px 12px!important;font-size:13px!important;line-height:1.3!important;}' +
+    H + ' table td:last-child{text-align:left!important;}' +
+    H + ' table th:first-child,' + H + ' table td:first-child{width:24%!important;}' +
+    H + ' .title{margin:0!important;}' + H + ' br{display:none;}' +
+    '.reveal .overlay.overlay-help .viewport{padding-top:0!important;}' + H + '{padding-top:18px!important;}';
+  document.head.appendChild(css);
+  function go() {
+    if (!Reveal.registerKeyboardShortcut) return;
+    var K = function (k, d) { Reveal.registerKeyboardShortcut(k, d); };
+    var hasTimer = !!document.getElementById('cd-wrap');
+    var hasPoll = !!document.querySelector('.poll-grid, [data-poll-voting]');
+    if (inst) {
+      K('F', 'Fullscreen &mdash; pressed in speaker view, it full-screens the <b>projector</b>');
+      K('ESC, O', 'Slide overview &mdash; from speaker view, on <b>both</b> screens (Enter or a click picks a slide)');
+      K('M', 'Move keyboard focus between the projector and speaker view (Cmd-` brings a window forward)');
+      if (hasTimer) K('1 &ndash; 9', 'Countdown timer for that many minutes (same number again hides it); starts on both screens');
+      if (hasPoll) K('T', 'Poll slide: open / close voting. In speaker view, clicking an option votes on the projector');
+    }
+    K('D', 'Pen on / off (Esc also leaves it)');
+    K('Pen: F L A R S Y', 'Free draw &middot; line &middot; arrow &middot; box &middot; shade &middot; triangle');
+    K('Pen: G N H E', 'Axis guides &middot; curve label &middot; shifted copy &middot; eraser');
+    K('Pen: [ ] Z X C P', 'Thinner &middot; thicker &middot; undo &middot; redo &middot; clear slide &middot; save as PNG');
+    K('?', 'This list');
+    // S is registered by reveal's notes plugin as a key BINDING ("Speaker notes
+    // view"), which the panel lists after these rows; a second S row would be a
+    // duplicate. Its description is not reachable through the API, so the row is
+    // amended when the panel is drawn.
+    if (inst) {
+      var wrap = document.querySelector('.reveal');
+      if (wrap && window.MutationObserver) new MutationObserver(function () {
+        var o = wrap.querySelector('.overlay-help');
+        if (!o || o.__tiS) return; o.__tiS = 1;
+        [].forEach.call(o.querySelectorAll('td'), function (td) {
+          if (td.textContent === 'Speaker notes view' && td.parentNode) td.parentNode.remove();   // v3: Ryan does not want the S row
+        });
+      }).observe(wrap, { childList: true });
+    }
+  }
+  if (window.Reveal && Reveal.isReady && Reveal.isReady()) go();
+  else if (window.Reveal && Reveal.on) Reveal.on('ready', go);
+})();
+</script>
+<script>
+(function () {
+  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
+  var current = false;
+  // ---- annotation: temporary marks on the slide -------------------------
+  // A whiteboard, not a document. Strokes live in memory only, keyed by
+  // slide, and are gone when the deck is closed -- asked for explicitly, so
+  // there is no storage anywhere in here.
+  //
+  // Points are kept in SLIDE units, the same 1280x720 space the laser dot
+  // uses. Canvas pixels would be wrong the moment the window is resized or
+  // the deck is thrown at a projector with a different aspect: the marks
+  // have to sit on the WORDS they were drawn on.
+  //
+  // The shape set is chosen for an economics board, not for drawing in
+  // general: a straight LINE for a budget line or a tangent, an ARROW for
+  // "demand shifts right", a RECT and a translucent SHADE for tax revenue and
+  // surplus boxes, a right TRIANGLE for deadweight loss, and GUIDES -- the
+  // dashed pair dropped from a point to the two axes, which is the single
+  // most-drawn mark in a micro lecture.
+  var Ink = (function () {
+    var PENS = [
+      { n: 'Red',    c: '#e11d48' },
+      { n: 'Blue',   c: '#2563eb' },
+      { n: 'Green',  c: '#059669' },
+      { n: 'Orange', c: '#ea580c' },
+      { n: 'Black',  c: '#111827' },
+      { n: 'Highlighter', c: 'rgba(250,204,21,.45)', hi: true }
+    ];
+    var SIZES = [2, 4, 8];            // thin / medium / thick, in slide units
+    var TOOLS = [
+      { k: 'free',  i: 'fa-pencil',           t: 'Freehand (f)' },
+      { k: 'line',  i: 'fa-slash',            t: 'Straight line (l)' },
+      { k: 'arrow', i: 'fa-arrow-right-long', t: 'Arrow — a shift (a)' },
+      { k: 'rect',  i: 'fa-square',           t: 'Rectangle (r)' },
+      { k: 'shade', i: 'fa-fill-drip',        t: 'Shaded area — revenue, surplus (s)' },
+      { k: 'tri',   i: 'fa-play',             t: 'Right triangle — deadweight loss (y)' },
+      { k: 'guide', i: 'fa-crosshairs',       t: 'Dashed guides to the axes (g)' },
+      { k: 'label', i: 'fa-font',             t: 'Curve label \u2014 D, S, MC, D\u2032 (n)' },
+      { k: 'ghost', i: 'fa-clone',            t: 'Shifted ghost of a curve \u2014 drag it across (h)' }
+    ];
+    var cv, ctx, active = false, erasing = false, pi = 0, si = 1, tool = 'free';
+    var ops = {}, undone = {}, cur = null, rcur = null, relay = null, bar = null, btn = null;
+
+    function skey() { var i = Reveal.getIndices(); return i.h + '.' + (i.v || 0); }
+    function box() { var s = document.querySelector('.reveal .slides'); return s ? s.getBoundingClientRect() : null; }
+    function width() { return PENS[pi].hi ? 24 : SIZES[si]; }
+
+    function ensure() {
+      if (cv) return;
+      cv = document.createElement('canvas');
+      cv.id = 'ti-ink';
+      cv.style.cssText = 'position:fixed;z-index:9990;pointer-events:none;touch-action:none';
+      document.body.appendChild(cv);
+      cv.addEventListener('pointerdown', down);
+      cv.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+      window.addEventListener('pointercancel', up);
+      fit();
+    }
+    function fit() {
+      var r = box(); if (!r || !cv) return;
+      var dpr = window.devicePixelRatio || 1;
+      cv.style.left = r.left + 'px'; cv.style.top = r.top + 'px';
+      cv.style.width = r.width + 'px'; cv.style.height = r.height + 'px';
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx = cv.getContext('2d');
+      render();
+    }
+    // Live strokes are DERIVED by replaying this slide's op log, so undo and
+    // redo are a cursor into that log and never have to reverse a partially
+    // erased stroke by hand.
+    function live() {
+      var list = [], o = ops[skey()] || [];
+      o.forEach(function (op) {
+        if (op.t === 'add') list.push(op.s);
+        else if (op.t === 'del' && op.ids) list = list.filter(function (s) { return op.ids.indexOf(s.id) < 0; });
+        else if (op.t === 'del') op.ss.forEach(function (s) {
+          var i = list.indexOf(s); if (i >= 0) list.splice(i, 1);
+        });
+      });
+      return list;
+    }
+    // One description of every shape, used for BOTH drawing and erasing, so
+    // the two can never disagree about where a mark is.
+    function paths(s) {
+      var p = s.pts, a = p[0], b = p[p.length - 1];
+      if (s.k === 'free' || !s.k) return [p];
+      if (s.k === 'line' || s.k === 'arrow') return [[a, b]];
+      if (s.k === 'rect' || s.k === 'shade')
+        return [[a, { x: b.x, y: a.y }, b, { x: a.x, y: b.y }, a]];
+      if (s.k === 'tri') return [[a, b, { x: b.x, y: a.y }, a]];
+      if (s.k === 'guide') return [[a, { x: b.x, y: a.y }], [a, { x: a.x, y: b.y }]];
+      if (s.k === 'text') return [];
+      return [p];
+    }
+    function render() {
+      if (!cv || !ctx) return;
+      var r = box(); if (!r) return;
+      var dpr = window.devicePixelRatio || 1, k = Reveal.getScale() * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var all = live(); if (rcur) all = all.concat([rcur]); if (cur) all = all.concat([cur]);
+      all.forEach(function (s) {
+        if (!s.pts.length) return;
+        ctx.save();
+        if (s.k === 'text') {
+          ctx.globalAlpha = s.ghost ? 0.6 : 1;
+          ctx.fillStyle = s.c;
+          // italic serif, because that is how a curve is labelled on a board
+          ctx.font = 'italic 700 ' + (s.size || 22) + 'px Georgia,"Times New Roman",serif';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(s.txt || '', s.pts[0].x, s.pts[0].y);
+          ctx.restore(); return;
+        }
+        ctx.strokeStyle = s.c; ctx.lineWidth = s.w;
+        if (s.ghost) { ctx.globalAlpha = 0.6; ctx.setLineDash([9, 7]); }
+        else ctx.setLineDash(s.k === 'guide' ? [7, 6] : []);
+        if (s.k === 'shade') {
+          ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = s.c;
+          var q = s.pts[0], z = s.pts[s.pts.length - 1];
+          ctx.fillRect(Math.min(q.x, z.x), Math.min(q.y, z.y), Math.abs(z.x - q.x), Math.abs(z.y - q.y));
+          ctx.restore();
+        }
+        paths(s).forEach(function (seg) {
+          if (seg.length < 1) return;
+          ctx.beginPath(); ctx.moveTo(seg[0].x, seg[0].y);
+          for (var i = 1; i < seg.length; i++) ctx.lineTo(seg[i].x, seg[i].y);
+          if (seg.length === 1) ctx.lineTo(seg[0].x + 0.01, seg[0].y + 0.01);
+          ctx.stroke();
+        });
+        if (s.k === 'arrow') {
+          var a = s.pts[0], b = s.pts[s.pts.length - 1];
+          var ang = Math.atan2(b.y - a.y, b.x - a.x), L = 9 + s.w * 2.2;
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang - 0.42), b.y - L * Math.sin(ang - 0.42));
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang + 0.42), b.y - L * Math.sin(ang + 0.42));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.restore();
+      });
+    }
+    function at(ev) {
+      var r = box(), k = Reveal.getScale() || 1;
+      return { x: (ev.clientX - r.left) / k, y: (ev.clientY - r.top) / k };
+    }
+    function push(op) {
+      if (op.t === 'add' && op.s && !op.s.id) op.s.id = Math.random().toString(36).slice(2, 10);
+      var k = skey(); (ops[k] = ops[k] || []).push(op); undone[k] = [];
+    }
+    // v25: the WHOLE log of one slide, so the other window can replace its own -- the two
+    // can then never disagree about which stroke an undo or an erase meant
+    function snap() {
+      var k = skey();
+      send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+    }
+    function snapAll() {
+      Object.keys(ops).forEach(function (k) {
+        if ((ops[k] || []).length || (undone[k] || []).length)
+          send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+      });
+    }
+    function send(m) { if (relay) relay(m); }
+
+    // erase whole strokes, not pixels: one op to undo, and it never leaves
+    // half a rubbed-out line behind
+    function eraseAt(p) {
+      var hit = [], R = 14;
+      live().forEach(function (s) {
+        if (s.k === 'text') {
+          var half = (s.size || 22) * 0.6, wide = (s.txt || '').length * (s.size || 22) * 0.34;
+          if (p.x > s.pts[0].x - 8 && p.x < s.pts[0].x + wide + 8 &&
+              p.y > s.pts[0].y - half && p.y < s.pts[0].y + half) hit.push(s);
+          return;
+        }
+        var segs = paths(s), i, j, pts;
+        for (i = 0; i < segs.length; i++) {
+          pts = segs[i];
+          for (j = 0; j < pts.length; j++) {
+            var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+            if (dx * dx + dy * dy < (R + s.w) * (R + s.w)) { hit.push(s); return; }
+          }
+          // a long straight edge has few vertices: walk it
+          for (j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            if (L < 1) continue;
+            var t = ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L);
+            if (t < 0 || t > 1) continue;
+            var cx = A.x + t * (B.x - A.x), cy = A.y + t * (B.y - A.y);
+            if (Math.hypot(p.x - cx, p.y - cy) < R + s.w) { hit.push(s); return; }
+          }
+        }
+      });
+      if (hit.length) { push({ t: 'del', ids: hit.map(function (s) { return s.id; }) }); render(); paintBar(); return true; }
+    }
+    // nearest live stroke to a point, by the same segment walk the eraser uses
+    function nearest(p) {
+      var best = null, bd = 1e9;
+      live().forEach(function (s) {
+        paths(s).forEach(function (pts) {
+          for (var j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            var cx, cy, tt;
+            if (L < 1) { cx = A.x; cy = A.y; }
+            else {
+              tt = Math.max(0, Math.min(1, ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L)));
+              cx = A.x + tt * (B.x - A.x); cy = A.y + tt * (B.y - A.y);
+            }
+            var d = Math.hypot(p.x - cx, p.y - cy);
+            if (d < bd) { bd = d; best = s; }
+          }
+        });
+      });
+      return bd < 40 ? best : null;
+    }
+    // A label is typed, not drawn, so it gets a real input at the click point
+    // rather than a prompt() -- a modal dialog in front of a projected slide is
+    // worse than the thing it is trying to collect.
+    function labelAt(p, ev) {
+      var r = box(), k = Reveal.getScale() || 1, size = 16 + si * 6;
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'D\u2032';
+      inp.style.cssText = 'position:fixed;z-index:10004;left:' + (r.left + p.x * k - 6) + 'px;top:' +
+        (r.top + p.y * k - size * k * 0.75) + 'px;width:130px;font:italic 700 ' + Math.round(size * k) +
+        'px Georgia,serif;color:' + PENS[pi].c + ';background:rgba(255,255,255,.92);border:2px solid ' +
+        PENS[pi].c + ';border-radius:6px;padding:1px 5px;outline:none';
+      document.body.appendChild(inp);
+      // v27: the box grows with the text. At 130px fixed, a large italic label scrolled its
+      // start out of sight after four characters and Ryan could not see what he typed.
+      var meas = document.createElement('canvas').getContext('2d');
+      meas.font = 'italic 700 ' + Math.round(size * k) + 'px Georgia,serif';
+      var grow = function () {
+        var w = meas.measureText(inp.value || inp.placeholder).width;
+        inp.style.width = Math.max(60, Math.ceil(w + size * k * 0.9 + 14)) + 'px';
+      };
+      inp.addEventListener('input', grow); grow();
+      inp.focus();
+      var done = function (commit) {
+        var txt = inp.value.trim();
+        inp.remove();
+        if (!commit || !txt) return;
+        var s = { k: 'text', c: PENS[pi].c, w: SIZES[si], size: size, txt: txt, pts: [p] };
+        push({ t: 'add', s: s }); snap();
+        render(); paintBar();
+      };
+      inp.addEventListener('keydown', function (e) {
+        e.stopPropagation();                       // Reveal and Ink both listen on document
+        if (e.key === 'Enter') { e.preventDefault(); done(true); }
+        if (e.key === 'Escape') { e.preventDefault(); done(false); }
+      });
+      inp.addEventListener('blur', function () { done(true); });
+    }
+
+    function down(ev) {
+      if (!active) return;
+      ev.preventDefault(); ev.stopPropagation();
+      var p = at(ev);
+      if (erasing) { if (eraseAt(p)) snap(); return; }
+      if (tool === 'label') { labelAt(p, ev); return; }
+      if (tool === 'ghost') {
+        // copy the curve you pressed on, then drag the copy to where it shifted
+        var src = nearest(p);
+        if (!src) return;
+        var base = src.pts.map(function (q) { return { x: q.x, y: q.y }; });
+        cur = { k: src.k, c: src.c, w: src.w, size: src.size, txt: src.txt,
+                ghost: true, base: base, from: p, pts: base };
+        render(); return;
+      }
+      cur = { c: PENS[pi].c, w: width(), k: tool, pts: [p, p] };
+      send({ k: 'down', x: p.x, y: p.y, c: cur.c, w: cur.w, tool: tool });
+      render();
+    }
+    function move(ev) {
+      if (!active) return;
+      var p = at(ev);
+      if (erasing) {
+        if (ev.buttons && eraseAt(p)) snap();
+        return;
+      }
+      if (!cur) return;
+      ev.preventDefault();
+      if (cur.ghost) {
+        var dx = p.x - cur.from.x, dy = p.y - cur.from.y;
+        cur.pts = cur.base.map(function (q) { return { x: q.x + dx, y: q.y + dy }; });
+        render(); return;                          // relayed whole, on release
+      }
+      if (cur.k === 'free') cur.pts.push(p); else cur.pts[1] = p;
+      send({ k: 'move', x: p.x, y: p.y }); render();
+    }
+    function up() {
+      if (!cur) return;
+      // a shape needs two distinct corners; a tap is not a rectangle
+      var a = cur.pts[0], b = cur.pts[cur.pts.length - 1];
+      var ok = cur.ghost ? Math.hypot(b.x - a.x, b.y - a.y) >= 0
+             : cur.k === 'free' ? cur.pts.length > 1
+             : Math.hypot(b.x - a.x, b.y - a.y) > 4;
+      if (cur.ghost) {
+        var moved = cur.pts.length && cur.base.length &&
+                    Math.hypot(cur.pts[0].x - cur.base[0].x, cur.pts[0].y - cur.base[0].y) > 4;
+        if (moved) {
+          var g = { k: cur.k, c: cur.c, w: cur.w, size: cur.size, txt: cur.txt, ghost: true, pts: cur.pts };
+          push({ t: 'add', s: g }); snap();
+        }
+        cur = null; render(); paintBar(); return;
+      }
+      if (ok) { push({ t: 'add', s: cur }); cur = null; snap(); }
+      else { cur = null; send({ k: 'cancel' }); }
+      render(); paintBar();
+    }
+    // the projected window rebuilds the same stroke from the relayed points
+    function apply(m) {
+      if (!m) return;
+      ensure();
+      // v25: the other window's stroke in progress lives in rcur, never in cur, so a stroke
+      // drawn on each screen at once cannot merge into one
+      if (m.k === 'down') { rcur = { c: m.c, w: m.w, k: m.tool || 'free', pts: [{ x: m.x, y: m.y }, { x: m.x, y: m.y }] }; render(); return; }
+      if (m.k === 'move') { if (rcur) { if (rcur.k === 'free') rcur.pts.push({ x: m.x, y: m.y }); else rcur.pts[1] = { x: m.x, y: m.y }; render(); } return; }
+      if (m.k === 'cancel') { rcur = null; render(); return; }
+      if (m.k === 'snap') {
+        ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
+        render(); paintBar(); return;
+      }
+      if (m.k === 'req')  { snapAll(); return; }
+      // a window still on v24 or older sends these; keep them working during a mixed reload
+      if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
+      if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
+      if (m.k === 'erase'){ eraseAt({ x: m.x, y: m.y }); return; }
+      if (m.k === 'undo') { undo(true); return; }
+      if (m.k === 'redo') { redo(true); return; }
+      if (m.k === 'clear'){ clear(true); return; }
+      if (m.k === 'mode') { setActive(m.on, true); return; }
+    }
+    function undo(q) {
+      var k = skey(), o = ops[k] || [];
+      if (!o.length) return;
+      (undone[k] = undone[k] || []).push(o.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function redo(q) {
+      var k = skey(), u = undone[k] || [];
+      if (!u.length) return;
+      (ops[k] = ops[k] || []).push(u.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function clear(q) {
+      var k = skey();
+      if (!(ops[k] || []).length) return;
+      undone[k] = (undone[k] || []).concat(ops[k]); ops[k] = [];
+      render(); paintBar(); if (!q) snap();
+    }
+    function setActive(v, q) {
+      active = !!v; ensure();
+      cv.style.pointerEvents = active ? 'auto' : 'none';
+      cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
+      if (bar) bar.style.display = active ? 'flex' : 'none';
+      if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
+      paintBar(); if (!q) send({ k: 'mode', on: active });
+    }
+
+    /* ---------- save a picture of the board ---------- */
+    // The slide is DOM, not a canvas, so the page cannot screenshot itself
+    // without help. html2canvas is fetched only when this is first pressed --
+    // no cost to a lecture that never uses it -- and if the CDN is unreachable
+    // the ink alone is still saved rather than nothing.
+    function stamp() {
+      var m = location.pathname.match(/\/([^\/]+)\/[^\/]*$/);
+      var n = document.querySelector('.reveal .slide-number');
+      return (m ? m[1] : 'slide') + '-' + (n ? n.textContent.replace(/\s+/g, '') : skey());
+    }
+    function download(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = stamp() + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    function inkOnly() {
+      var out = document.createElement('canvas');
+      out.width = cv.width; out.height = cv.height;
+      var c = out.getContext('2d');
+      c.fillStyle = '#fff'; c.fillRect(0, 0, out.width, out.height);
+      c.drawImage(cv, 0, 0);
+      out.toBlob(download);
+    }
+    function savePng() {
+      var reveal = document.querySelector('.reveal');
+      var go = function () {
+        window.html2canvas(reveal, { backgroundColor: '#ffffff', scale: 2, logging: false })
+          .then(function (base) {
+            var out = document.createElement('canvas');
+            out.width = base.width; out.height = base.height;
+            var c = out.getContext('2d');
+            c.drawImage(base, 0, 0);
+            var rr = reveal.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+            var k = base.width / rr.width;
+            c.drawImage(cv, (cr.left - rr.left) * k, (cr.top - rr.top) * k, cr.width * k, cr.height * k);
+            out.toBlob(download);
+          })
+          .catch(inkOnly);
+      };
+      if (window.html2canvas) { go(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = go; s.onerror = inkOnly;
+      document.head.appendChild(s);
+    }
+
+    /* ---------- toolbar ---------- */
+    function paintBar() {
+      if (!bar) return;
+      [].forEach.call(bar.querySelectorAll('[data-pen]'), function (b) {
+        b.style.outline = (!erasing && +b.getAttribute('data-pen') === pi) ? '2px solid #111827' : '2px solid transparent';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-size]'), function (b) {
+        var on = +b.getAttribute('data-size') === si;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.firstChild.style.background = on ? '#fff' : '#374151';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-tool]'), function (b) {
+        var on = !erasing && b.getAttribute('data-tool') === tool;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.style.color = on ? '#fff' : '#374151';
+      });
+      var er = bar.querySelector('[data-a="erase"]');
+      if (er) { er.style.background = erasing ? '#111827' : '#e5e7eb'; er.style.color = erasing ? '#fff' : '#374151'; }
+      var k = skey();
+      var u = bar.querySelector('[data-a="undo"]'), rd = bar.querySelector('[data-a="redo"]'),
+          cl = bar.querySelector('[data-a="clear"]'), sv = bar.querySelector('[data-a="save"]');
+      if (u)  u.disabled  = !(ops[k] || []).length;
+      if (rd) rd.disabled = !(undone[k] || []).length;
+      if (cl) cl.disabled = !(ops[k] || []).length;
+      if (sv) sv.disabled = false;
+    }
+    function mount() {
+      if (bar) return;
+      btn = document.createElement('button');
+      btn.id = 'ti-pen'; btn.type = 'button'; btn.title = 'Draw on the slide (d)';
+      btn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      var rest = current ? '.55' : '.18';
+      btn.style.cssText = 'position:fixed;left:' + (current ? 14 : 94) + 'px;bottom:12px;' +
+        'z-index:10001;width:34px;height:34px;' +
+        'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+        'font-size:14px;padding:0;opacity:' + rest + ';transition:opacity .2s';
+      btn.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function () { if (!active) btn.style.opacity = rest; });
+      btn.addEventListener('click', function (e) { e.preventDefault(); setActive(!active); });
+      document.body.appendChild(btn);
+
+      bar = document.createElement('div');
+      bar.id = 'ti-ink-bar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:10px;z-index:10003;' +
+        'display:none;gap:6px;align-items:center;padding:7px 10px;border-radius:11px;' +
+        'background:rgba(255,255,255,.97);box-shadow:0 2px 12px rgba(0,0,0,.22);' +
+        'font:600 12px system-ui,sans-serif;max-width:96vw;flex-wrap:wrap;justify-content:center';
+      var sep = '<span style="width:1px;height:20px;background:#e5e7eb"></span>';
+      var btnCss = 'border:0;border-radius:6px;padding:5px 8px;cursor:pointer;background:#e5e7eb;color:#374151;font:inherit';
+      var html = '';
+      PENS.forEach(function (p, i) {
+        html += '<button data-pen="' + i + '" type="button" title="' + p.n + '" style="width:22px;height:22px;' +
+                'border-radius:50%;border:0;cursor:pointer;padding:0;background:' + p.c + ';' +
+                'outline:2px solid transparent;outline-offset:2px"></button>';
+      });
+      html += sep;
+      SIZES.forEach(function (w, i) {
+        var d = 4 + i * 4;
+        html += '<button data-size="' + i + '" type="button" title="Tip ' + w + '" style="width:26px;height:22px;' +
+                'border:0;border-radius:6px;cursor:pointer;background:#e5e7eb;display:inline-flex;' +
+                'align-items:center;justify-content:center;padding:0">' +
+                '<span style="display:block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:#374151"></span></button>';
+      });
+      html += sep;
+      TOOLS.forEach(function (t) {
+        html += '<button data-tool="' + t.k + '" type="button" title="' + t.t + '" style="' + btnCss + '">' +
+                '<i class="fa-solid ' + t.i + '"></i></button>';
+      });
+      html += sep +
+        '<button data-a="erase" type="button" title="Eraser (e)" style="' + btnCss + '">Erase</button>' +
+        '<button data-a="undo" type="button" title="Undo (z)" style="' + btnCss + '">Undo</button>' +
+        '<button data-a="redo" type="button" title="Redo (x)" style="' + btnCss + '">Redo</button>' +
+        '<button data-a="clear" type="button" title="Clear this slide (c)" style="' + btnCss + '">Clear</button>' +
+        '<button data-a="save" type="button" title="Save this slide as a PNG (p)" style="' + btnCss + '">' +
+        '<i class="fa-solid fa-camera"></i></button>' + sep +
+        '<button data-a="done" type="button" title="Stop drawing (d or Esc)" style="' + btnCss +
+        ';background:#111827;color:#fff">Done</button>';
+      bar.innerHTML = html;
+      bar.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+      bar.addEventListener('click', function (e) {
+        var t = e.target.closest('button'); if (!t) return;
+        e.preventDefault(); e.stopPropagation();
+        if (t.hasAttribute('data-pen'))  { pi = +t.getAttribute('data-pen'); erasing = false; setActive(true); return; }
+        if (t.hasAttribute('data-size')) { si = +t.getAttribute('data-size'); setActive(true); return; }
+        if (t.hasAttribute('data-tool')) { tool = t.getAttribute('data-tool'); erasing = false; setActive(true); return; }
+        var a = t.getAttribute('data-a');
+        if (a === 'erase') { erasing = !erasing; setActive(true); }
+        else if (a === 'undo') undo();
+        else if (a === 'redo') redo();
+        else if (a === 'clear') clear();
+        else if (a === 'save') savePng();
+        else if (a === 'done') setActive(false);
+      });
+      document.body.appendChild(bar);
+      ensure();
+      Reveal.on('resize', fit);
+      window.addEventListener('resize', fit);
+      Reveal.on('slidechanged', function () { cur = null; rcur = null; fit(); paintBar(); });
+      paintBar();
+    }
+
+    function keys(e) {
+      // v26: the system shortcuts too, while the pen is on -- Cmd/Ctrl-Z undo,
+      // Cmd/Ctrl-Shift-Z or Ctrl-Y redo. With the pen off they pass through untouched.
+      if (active && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        var kk = (e.key || '').toLowerCase();
+        if (kk === 'z' || kk === 'y') {
+          e.preventDefault(); e.stopPropagation();
+          if (kk === 'y' || e.shiftKey) redo(); else undo();
+          return;
+        }
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var k = e.key;
+      if (k === 'd' || k === 'D') { e.preventDefault(); e.stopPropagation(); setActive(!active); return; }
+      if (!active) return;                    // every other key is scoped to draw mode
+      var stop = function () { e.preventDefault(); e.stopPropagation(); };
+      if (k === 'Escape') { stop(); setActive(false); return; }
+      if (k === 'e' || k === 'E') { stop(); erasing = !erasing; setActive(true); return; }
+      if (k === 'z' || k === 'Z') { stop(); undo(); return; }
+      if (k === 'x' || k === 'X') { stop(); redo(); return; }
+      if (k === 'c' || k === 'C') { stop(); clear(); return; }
+      if (k === 'p' || k === 'P') { stop(); savePng(); return; }
+      if (k === '[') { stop(); si = Math.max(0, si - 1); setActive(true); return; }
+      if (k === ']') { stop(); si = Math.min(SIZES.length - 1, si + 1); setActive(true); return; }
+      // NOT "t": that is the poll open/close key, and it has to keep working
+      // while the pen is armed so a poll slide can be annotated and still
+      // opened for voting. Triangle takes "y" instead.
+      var map = { f: 'free', l: 'line', a: 'arrow', r: 'rect', s: 'shade', y: 'tri', g: 'guide',
+                  n: 'label', h: 'ghost' };
+      var want = map[k.toLowerCase && k.toLowerCase()];
+      if (want) { stop(); tool = want; erasing = false; setActive(true); }
+    }
+
+    return {
+      mount: mount, apply: apply, fit: fit, keys: keys, ask: function () { send({ k: 'req' }); },
+      on: function () { return active; },
+      relayTo: function (fn) { relay = fn; }
+    };
+  })();
+
+  // ---- full screen ----------------------------------------------------
+  // requestFullscreen needs TRANSIENT user activation IN THE WINDOW THAT GOES
+  // FULL SCREEN, so only a click (or "f") inside the projected window can do
+  // it. The speaker-view button and the click-anywhere target that used to work
+  // around that are GONE: they worked, but two windows and two clicks to reach
+  // full screen was never worth it. "m" then "f" does the same job from the
+  // keyboard -- see swapFocus below.
+  function goFull() {
+    var el = document.documentElement;
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    try {
+      var p = el.requestFullscreen();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function fsButton() {                 // projector window: the one-click path
+    if (document.getElementById('ti-fs')) return;
+    var b = document.createElement('button');
+    b.id = 'ti-fs'; b.type = 'button'; b.title = 'Full screen (f)';
+    b.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    b.style.cssText = 'position:fixed;left:54px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+      'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+      'font-size:14px;padding:0;opacity:.18;transition:opacity .2s';
+    b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+    b.addEventListener('mouseleave', function () { b.style.opacity = '.18'; });
+    b.addEventListener('click', function (e) { e.preventDefault(); goFull(); });
+    document.addEventListener('fullscreenchange', function () {
+      b.innerHTML = document.fullscreenElement ? '<i class="fa-solid fa-compress"></i>'
+                                               : '<i class="fa-solid fa-expand"></i>';
+    });
+    document.body.appendChild(b);
+  }
+
+  function homeLink() {            // presenter only: a faint way back to the chapter list
+    if (document.getElementById('ti-home')) return;
+    var a = document.createElement('a');
+    a.id = 'ti-home'; a.href = '../index.html'; a.title = 'Chapter list';
+    a.innerHTML = '<i class="fa-solid fa-house"></i>';
+    a.style.cssText = 'position:fixed;left:14px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);' +
+      'color:#6b8ba4;border:1px solid #e5e7eb;text-decoration:none;font-size:15px;opacity:.18;transition:opacity .2s';
+    a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+    a.addEventListener('mouseleave', function () { a.style.opacity = '.18'; });
+    document.body.appendChild(a);
+  }
+  function start() {
+    homeLink(); fsButton(); Ink.mount();
+    document.addEventListener('keydown', Ink.keys, true);
+  }
+  if (Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>
+</body>
+</html>

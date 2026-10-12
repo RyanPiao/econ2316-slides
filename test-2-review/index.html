@@ -1,0 +1,3023 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=5628d5db92bd305cf9640a3d764a722b">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Test 2 Review — Chapters 10-17 — ECON 2316</title>
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="styles.css?v=20260526a" rel="stylesheet">
+  <style>
+   /* 2316-specific tweaks — slightly tighter detail cards because math takes space */
+   .reveal .formula-card .math { font-family: "Latin Modern Math", "STIX Two Math", serif; }
+   .reveal .detail-card li { font-size: 14.5pt; }
+   .reveal .detail-card .math, .reveal .formula-card .math { font-size: 1.02em; }
+   .reveal mjx-container { font-size: 1em !important; }
+
+   /* 3-section formula sheet — override 1116's 2-column grid (which has 6 sections) */
+   .reveal .formula-sheet { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+   .reveal .formula-section td:first-child { width: 38%; font-size: 10pt; }
+   .reveal .formula-section .fml { font-size: 9.5pt; }
+   .reveal .formula-section h3 { font-size: 12pt; }
+
+   /* Shrink math inside narrow detail cards so long Lagrangians/MRTS expressions
+      don't overflow into neighboring cards. The 5-column layout gives ~256px per
+      card; some math (𝓛 = wL + rK + μ(q-f), MRTS_LK = MP_L/MP_K) is just over that
+      threshold at full size. */
+   .reveal .detail-card mjx-container { font-size: 0.92em !important; }
+   .reveal .detail-card { overflow-wrap: break-word; }
+
+   /* Mistakes slide has 12 items — 2 cols × 6 rows overflowed off the bottom.
+      3 cols × 4 rows fits all 12 with breathing room. Shrink font + tighten
+      padding so each cell stays compact. */
+   .reveal .mistakes-slide h2 { margin-bottom: 8px; font-size: 20pt; }
+   .reveal .mistakes-slide .mistakes-list { grid-template-columns: 1fr 1fr 1fr; gap: 10px 12px; margin-top: 8px; align-items: stretch; }
+   .reveal .mistakes-slide .mistake-item { font-size: 10pt; padding: 9px 12px; line-height: 1.3; gap: 8px; }
+   .reveal .mistakes-slide .mistake-item p { margin: 0; }
+   .reveal .mistakes-slide .mistake-item .num-badge { width: 20px; height: 20px; font-size: 9pt; flex-shrink: 0; }
+   .reveal .mistakes-slide .mistake-item mjx-container { font-size: 0.9em !important; }
+  </style>
+ 
+    <style>
+      /* Fall 2026: the formula sheet carries four columns (Ch 10 / 11-12 / 13-14 / 15-17)
+         rather than the three it had when Test 2 covered Ch 9-14. Tighten the rows so the
+         2x2 grid still fits one slide. */
+      #formulas .formula-section { padding: 9px 12px; }
+      #formulas .formula-section h3 { font-size: 12pt; margin-bottom: 6px; padding-bottom: 4px; }
+      #formulas .formula-section table { font-size: 9.5pt; }
+      #formulas .formula-section td { padding: 2.5px 4px; }
+      #formulas .formula-section .fml { font-size: 9pt; }
+      #formulas .formula-sheet { gap: 10px; }
+    </style>
+</head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+
+    <section id="title" data-state="is-section-divider">
+     <div class="title-cover">
+      <p class="label">ECON 2316 &bull; Microeconomic Theory</p>
+      <h1>Test 2 Review</h1>
+      <p class="subtitle">Chapters 10&ndash;17 &mdash; market structure, strategic competition, and market failure.</p>
+      <p class="meta">
+       Market structure &bull; strategic competition &bull; market failure<br>
+       Take-home over LockDown Browser &bull; finals week &bull; <strong>your own two-sided formula sheet</strong>
+      </p>
+      <div style="margin-top: 18px;">
+       <p class="author">Dr. Richeng Piao</p>
+       <p style="font-size: 12pt; color: var(--muted-color); margin-top: 4px;">
+        Department of Economics &bull; Northeastern University
+       </p>
+      </div>
+     </div>
+    </section>
+
+    <section id="logistics">
+     <h2><i class="fa-solid fa-clipboard-list" style="color: var(--accent-color);"></i> What to Expect on Test 2</h2>
+     <table class="info-table">
+      <tr>
+       <td>Coverage</td>
+       <td>Chapters 10&ndash;17 (Market Structure &rarr; Strategic Competition &rarr; Market Failure)<br><span style="font-size: 10.5pt; color: var(--muted-color);">All of Ch 10&ndash;17 is in scope. Not examined: Arrow&ndash;Pratt (&sect;15.5), principal&ndash;agent algebra (&sect;16.5).</span></td>
+      </tr>
+      <tr>
+       <td>Format</td>
+       <td><span class="chip brown">TAKE-HOME ONLINE</span> Entire exam administered online &mdash; Respondus LockDown Browser + webcam</td>
+      </tr>
+      <tr>
+       <td>Multiple Choice</td>
+       <td><strong>30 questions, 60 points</strong> on Canvas &mdash; concept, computation, reading payoff matrices. Eight chapters, so breadth matters.</td>
+      </tr>
+      <tr>
+       <td>Written portion</td>
+       <td><span class="chip brown">TYPE IT IN</span> <strong>3 problems, 40 points.</strong> Answered directly in Canvas <strong>text-entry boxes &mdash; no file to upload</strong>. Expect one problem per block: <strong>(1)</strong> monopoly pricing, Ch 11&ndash;12 &bull; <strong>(2)</strong> strategic competition, Ch 13&ndash;14 &bull; <strong>(3)</strong> market failure, Ch 15&ndash;17. Questions are broken into small parts; you type each answer (formulas included). Practice typing formulas first with the ungraded demo/practice test in the Test 2 module.</td>
+      </tr>
+      <tr>
+       <td>Notes permitted</td>
+       <td><span class="chip brown">BRING YOUR OWN</span> One full-size sheet (8.5&Prime; &times; 11&Prime;), <strong>both sides</strong>, printed or handwritten</td>
+      </tr>
+      <tr>
+       <td>What to bring</td>
+       <td>Pen/pencil &bull; basic scientific calculator (no phones)</td>
+      </tr>
+      <tr>
+       <td>What to focus on</td>
+       <td>The <strong>decision rules</strong>: \(p = MC\) (price-taker) vs. \(MR = MC\) (price-maker); the Lerner/elasticity link; Cournot vs. cartel; finding Nash equilibria; mixed strategies; the repeated-game discount-factor threshold</td>
+      </tr>
+     </table>
+     <div class="tip-box">
+      <span class="label">Big idea</span>
+      <p>Test 1 was about <strong>individual optimization</strong> (one consumer, one firm). Test 2 is about <strong>market structure and strategic interaction</strong>. The single most important distinction is <strong>price-taker (\(MR = p\), so \(p = MC\)) vs. price-maker (\(MR < p\), so \(MR = MC\))</strong>.</p>
+     </div>
+    </section>
+
+    <section id="written-map">
+     <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> The Written Section &mdash; Exactly 3 Problems (40 pts)</h2>
+     <p style="font-size: 11.5pt; color: var(--muted-color); margin-bottom: 12px;">Typed into Canvas text boxes &mdash; nothing to upload. Each problem is split into small parts; a correct final answer earns full credit for that part, but showing your set-up earns partial credit if a number is off. <strong>One problem per block</strong>, so no chapter range can be skipped.</p>
+     <div class="detail-row cols-3">
+      <div class="detail-card" style="border-left-color: var(--gold-color);">
+       <p><strong style="color: var(--primary-color);">1 &middot; Market Structure</strong> <span class="chip amber" style="font-size: 9.5pt;">Ch 10&ndash;12</span></p>
+       <ul style="margin-top: 6px;">
+        <li>LR price \(= \min ATC\), firm output</li>
+        <li>LR market \(Q\) and \(N^*\)</li>
+        <li>\(MR = a - 2bQ\); solve \(Q_m, P_m\)</li>
+        <li>Lerner \(L = -1/\varepsilon_D\)</li>
+        <li>Competitive benchmark + DWL</li>
+       </ul>
+      </div>
+      <div class="detail-card" style="border-left-color: var(--danger-color);">
+       <p><strong style="color: var(--primary-color);">2 &middot; Strategic Competition</strong> <span class="chip" style="font-size: 9.5pt; background: var(--danger-color); color: white; border-color: var(--danger-color);">Ch 13&ndash;14</span></p>
+       <ul style="margin-top: 6px;">
+        <li>Cournot best responses &rarr; Nash</li>
+        <li>Cartel, and why it breaks</li>
+        <li><strong>Stackelberg</strong> by backward induction</li>
+        <li>Chamberlin tangency (&sect;13.2)</li>
+        <li>Dominance, Nash, mixed strategies</li>
+       </ul>
+      </div>
+      <div class="detail-card" style="border-left-color: var(--success-color);">
+       <p><strong style="color: var(--primary-color);">3 &middot; Market Failure</strong> <span class="chip" style="font-size: 9.5pt;">Ch 15&ndash;17</span></p>
+       <ul style="margin-top: 6px;">
+        <li>\(CE\) and risk premium \(\rho\)</li>
+        <li>Mossin: fair vs loaded premium</li>
+        <li>Lemons threshold \(\lambda^*\)</li>
+        <li>Spence IC bounds, \(s_H^*\)</li>
+        <li>Pigouvian \(t^*\); Coase invariance</li>
+       </ul>
+      </div>
+     </div>
+     <div class="tip-box" style="margin-top: 14px;">
+      <span class="label">Read this</span>
+      <p style="font-size: 11pt;">The block structure above is the <strong>expected shape</strong> and is what this review is built around. The exact point split within the 40 will be confirmed on Canvas before the test opens.</p>
+     </div>
+    </section>
+
+    <section id="points-map">
+     <h2><i class="fa-solid fa-scale-balanced" style="color: var(--accent-color);"></i> Where the Points Are &mdash; Study in This Order</h2>
+     <p style="font-size: 11.5pt; color: var(--muted-color); margin-bottom: 10px;">Test 2 now spans <strong>eight chapters</strong> rather than six, so the multiple choice is thinner per chapter and <strong>breadth is the binding constraint</strong>. The written section is where depth pays.</p>
+     <table class="info-table" style="font-size: 12pt;">
+      <thead>
+       <tr><th style="text-align:left;">Block</th><th>Chapters</th><th>Where it shows up</th><th>Weight</th></tr>
+      </thead>
+      <tbody>
+       <tr><td style="text-align:left;"><strong style="color:var(--danger-color);">Strategic competition</strong></td><td>13&ndash;14</td><td>MC + written problem 2</td><td><strong>heaviest</strong></td></tr>
+       <tr><td style="text-align:left;"><strong style="color:var(--gold-color);">Market structure</strong></td><td>10&ndash;12</td><td>MC + written problem 1</td><td><strong>heavy</strong></td></tr>
+       <tr><td style="text-align:left;"><strong style="color:var(--success-color);">Market failure</strong></td><td>15&ndash;17</td><td>MC + written problem 3</td><td><strong>heavy</strong></td></tr>
+      </tbody>
+     </table>
+     <div class="two-col" style="margin-top: 12px;">
+      <div class="detail-card" style="border-left-color: var(--danger-color);">
+       <p><strong style="color: var(--primary-color);">Do not under-rate Ch 15&ndash;17</strong></p>
+       <p style="font-size: 11pt; margin-top: 4px;">They arrive late and each gets only one or two meetings, which makes them feel minor. They are <strong>three of the eight chapters</strong> and carry a written problem of their own. The computations are short &mdash; a certainty equivalent, an unravelling threshold, a Pigouvian tax &mdash; so they are among the cheapest points on the test.</p>
+      </div>
+      <div class="detail-card" style="border-left-color: var(--gold-color);">
+       <p><strong style="color: var(--primary-color);">Two things we did not examine</strong></p>
+       <p style="font-size: 11pt; margin-top: 4px;">The <strong>Arrow&ndash;Pratt coefficient</strong> (&sect;15.5 &mdash; \(A(W)\), CARA/CRRA, the small-risk approximation) and the <strong>principal&ndash;agent contract algebra</strong> (&sect;16.5 &mdash; first-best/second-best wages, the informativeness principle). Read them if you like; you will not be tested on them.</p>
+      </div>
+     </div>
+    </section>
+
+    <section id="study-plan">
+     <h2><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> Study Order &mdash; By Chapter Block</h2>
+     <p style="font-size: 11.5pt; color: var(--muted-color); margin-bottom: 12px;">Short on time? Prioritize <strong style="color: var(--danger-color);">Ch 13&ndash;14 (Cournot, Stackelberg, finding Nash equilibria)</strong> and <strong style="color: var(--danger-color);">Ch 11 (monopoly: \(MR = MC\), Lerner, DWL)</strong> &mdash; then make sure <strong>Ch 15&ndash;17 are not blank</strong>, because they carry a written problem of their own.</p>
+     <div class="two-col" style="margin-top: 4px;">
+      <div>
+       <div class="detail-card" style="margin-bottom: 10px; border-left-color: var(--gold-color);">
+        <p><strong style="color: var(--primary-color);">Block 1 &mdash; Market Structure &nbsp;<span class="chip amber" style="font-size: 9.5pt;">Ch 10&ndash;12</span></strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">Free entry pins long-run price at \(\min ATC\); market power then opens the \(P > MC\) wedge. Master \(MR = MC\), the <strong>Lerner index</strong>, the DWL triangle, and the three degrees of price discrimination.</p>
+       </div>
+       <div class="detail-card" style="margin-bottom: 10px; border-left-color: var(--danger-color); background: #FEF2F2;">
+        <p><strong style="color: var(--primary-color);">Block 2 &mdash; Strategic Competition &nbsp;<span class="chip" style="font-size: 9.5pt; background: var(--danger-color); color: white; border-color: var(--danger-color);">Ch 13&ndash;14 &nbsp; &mdash; PRIORITIZE</span></strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">Monopolistic competition (the <strong>Chamberlin tangency</strong>, excess capacity), then <strong>Cournot</strong>, <strong>Bertrand</strong> and <strong>Stackelberg</strong> &mdash; and the game theory underneath: dominance, Nash, mixed strategies, repeated games.</p>
+       </div>
+      </div>
+      <div>
+       <div class="detail-card" style="margin-bottom: 10px; border-left-color: var(--danger-color); background: #FEF2F2;">
+        <p><strong style="color: var(--primary-color);">Block 3 &mdash; Market Failure &nbsp;<span class="chip" style="font-size: 9.5pt;">Ch 15&ndash;17</span></strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">Oligopoly (<strong>Cournot and the cartel</strong>) and the game theory behind them (Nash equilibrium, dominant strategies, mixed strategies, repeated games). Ch 14 is heavily graphical &mdash; drill the check method. <strong>Skip &sect;13.2 (mon. comp.) and &sect;13.6 (Stackelberg).</strong></p>
+       </div>
+       <div class="detail-card" style="margin-bottom: 10px; border-left-color: var(--success-color);">
+        <p><strong style="color: var(--primary-color);">Final Pass &mdash; Mixed Practice</strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">Re-do the written practice problems and the MC you got wrong, with your formula sheet beside you. Time yourself on a Cournot solve and a "find all Nash equilibria" problem.</p>
+       </div>
+       <div class="tip-box" style="margin-top: 4px;">
+        <span class="label">Pro tip</span>
+        <p style="font-size: 11pt;">Build your formula sheet <strong>as you study</strong>, not the night before. You have a full page, both sides &mdash; plenty of room, so don&rsquo;t cram. Every time you reach for a formula in practice, write it down.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+
+
+    <section>
+     <section id="ch10">
+      <div class="chapter-header">
+       <div class="chapter-num">10</div>
+       <div class="chapter-title-pill">Perfect Competition</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">10.2</span>Four Conditions</span></div>
+       <div class="section-card"><span><span class="sec-num">10.3</span>Market Supply</span></div>
+       <div class="section-card"><span><span class="sec-num">10.4</span>SR Equilibrium</span></div>
+       <div class="section-card"><span><span class="sec-num">10.5</span>LR Free Entry</span></div>
+       <div class="section-card"><span><span class="sec-num">10.7</span>Welfare Theorem</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li>Many price-taking firms</li>
+         <li>Homogeneous product</li>
+         <li>Free entry/exit</li>
+         <li>Perfect information</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Horizontal sum of firm supplies</li>
+         <li>\(Q^s(p) = N \cdot q^*(p)\)</li>
+         <li>Add <strong>quantities</strong>, not prices</li>
+         <li>Multiplying by \(N\) keeps elasticity</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(N\) fixed</li>
+         <li>\(Q^s(P^*) = Q^d(P^*)\)</li>
+         <li>Firms can earn profit</li>
+         <li>Per-firm \(q^*\) from \(p = MC\)</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Entry drives \(\pi \to 0\)</li>
+         <li>\(p^{LR} = \min ATC\)</li>
+         <li>\(N^* = Q^d(p^{LR})/q^*\)</li>
+         <li>Zero <em>economic</em> profit</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li><strong>First Welfare Theorem</strong></li>
+         <li>Comp. eq. maximizes total surplus</li>
+         <li>Tax/floor/monopoly &rarr; DWL</li>
+         <li>Efficient, not necessarily "fair"</li>
+        </ul>
+       </div>
+      </div>
+      <div class="formula-card">
+       <strong>Key takeaway:</strong> Market supply is the <em>horizontal</em> sum \(Q^s = N q^*(p)\). Free entry pushes long-run price to \(\min ATC\), where \(N^* = Q^d(p^{LR})/q^*\) and each firm earns zero economic profit.
+      </div>
+     </section>
+
+    <section id="ch10-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">10</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Perfect Competition &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> Which is NOT one of the four conditions defining perfect competition?</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> Many small firms, each a price-taker.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> A homogeneous (identical) product.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> Free entry and exit in the long run.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> Each firm faces a downward-sloping demand curve.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>D</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">A competitive firm is a price-taker: it faces a <em>horizontal</em> (perfectly elastic) demand curve at the market price. A downward-sloping firm demand curve signals market power (Ch 11).</p>
+     </div>
+    </section>
+
+    <section id="ch10-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">10</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Perfect Competition &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> Market supply in a perfectly competitive industry is found by:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> adding up the prices each firm charges.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> horizontally summing firm supply curves (adding quantities at each price).</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> vertically summing firm marginal costs.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> multiplying one firm's price by the number of firms.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Market supply is the <strong>horizontal</strong> sum: at each price, add the quantities, giving \(Q^s = N q^*(p)\). Vertical summing is for public goods (Test 1 / later), not market supply.</p>
+     </div>
+    </section>
+
+    <section id="ch10-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">10</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Perfect Competition &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> In <strong>long-run</strong> competitive equilibrium, the market price equals:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> minimum average variable cost.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> minimum average total cost.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> marginal revenue minus marginal cost.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> the monopoly price.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Free entry drives economic profit to zero, which pins \(p^{LR} = \min ATC\). At that price each firm produces its \(\min ATC\) output and earns zero economic profit.</p>
+     </div>
+    </section>
+
+    <section id="ch10-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">10</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Perfect Competition &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> Each identical firm has \(\min ATC = \$12\) at output \(q^* = 10\). Market demand is \(Q^d = 2000 - 50p\). The long-run number of firms \(N^*\) is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> 50</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> 100</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> 140</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> 200</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(p^{LR} = \min ATC = 12\). \(Q^d(12) = 2000 - 50(12) = 1400\). \(N^* = Q^d/q^* = 1400/10 = 140\) firms.</p>
+     </div>
+    </section>
+
+    <section id="ch10-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">10</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Perfect Competition &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> The First Welfare Theorem says that a competitive equilibrium:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> distributes income fairly.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> maximizes total surplus (is allocatively efficient).</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> guarantees every firm a positive profit.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> eliminates all fixed costs.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">At \((P^*, Q^*)\), \(P^d = P^s\), so \(dTS/dQ = 0\) &mdash; total surplus is maximized. It says nothing about fairness; a binding tax, floor, or monopoly breaks it and creates DWL.</p>
+     </div>
+    </section>
+
+    <section id="ch10-handout">
+     <div class="chapter-header" style="margin-bottom: 10px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">10</div>
+      <div class="chapter-title-pill" style="font-size: 13pt; padding: 6px 0;">Perfect Competition &middot; Written Problem: Short Run to Long Run</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> Every firm has \(c(q) = 0.5q^2 + 2q + 50\), so \(MC = q + 2\) and \(\min ATC = \$12\) at \(q = 10\). Market demand is \(Q^d = 2000 - 50p\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">a</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">State the <strong>long-run equilibrium price</strong> and each firm's <strong>long-run output</strong>.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">b</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Find total market quantity at the LR price and the <strong>long-run number of firms</strong> \(N^*\).</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">c</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">A demand surge pushes price to \$14, where each firm earns \$22 profit. Is this a LR equilibrium? What adjusts, and where does price end up?</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">d</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">State the <strong>First Welfare Theorem</strong> in one sentence and explain what it claims here.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 10px;">
+      <span class="label">Answer Sketch</span>
+      <p style="font-size: 10pt; line-height: 1.45;"><strong>(a)</strong> LR price \(= \min ATC = \$12\); each firm produces \(q^* = 10\). <strong>(b)</strong> \(Q^d(12) = 1400\); \(N^* = 1400/10 = 140\) firms. <strong>(c)</strong> <strong>No</strong> &mdash; positive profit attracts entry, market supply rises, price falls back to \(\$12\) (and \(N \to 140\)). <strong>(d)</strong> A competitive equilibrium maximizes total surplus &mdash; this LR outcome is allocatively efficient (but not necessarily "fair").</p>
+     </div>
+    </section>
+    </section>
+
+    <section>
+     <section id="ch11">
+      <div class="chapter-header">
+       <div class="chapter-num">11</div>
+       <div class="chapter-title-pill">Monopoly</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">11.2</span>Market Power</span></div>
+       <div class="section-card"><span><span class="sec-num">11.3</span>Marginal Revenue</span></div>
+       <div class="section-card"><span><span class="sec-num">11.4</span>\(MR = MC\)</span></div>
+       <div class="section-card"><span><span class="sec-num">11.5</span>Lerner Index</span></div>
+       <div class="section-card"><span><span class="sec-num">11.6</span>Deadweight Loss</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li>Faces whole demand \(P(Q)\)</li>
+         <li><strong>Price-maker</strong></li>
+         <li>Downward-sloping demand</li>
+         <li>Source of market power</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(MR = P + Q\,P'(Q)\)</li>
+         <li>So \(MR < P\)</li>
+         <li>Linear: \(MR = a - 2bQ\)</li>
+         <li><strong>Twice the slope</strong></li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>FOC: \(MR(Q_M) = MC\)</li>
+         <li>Read \(P_M\) off demand</li>
+         <li>Then compute profit</li>
+         <li>Always \(|\varepsilon_D| > 1\)</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(L = (P{-}MC)/P = -1/\varepsilon_D\)</li>
+         <li>Markup = inverse elasticity</li>
+         <li>Less elastic &rarr; bigger markup</li>
+         <li>\(P = MC/(1 - L)\)</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Monopoly under-produces</li>
+         <li>\(DWL = \tfrac{1}{2}(P_M{-}MC)(Q_C{-}Q_M)\)</li>
+         <li>Harberger triangle</li>
+         <li>Natural monopoly: subadditive cost</li>
+        </ul>
+       </div>
+      </div>
+      <div class="formula-card">
+       <strong>Key takeaway:</strong> A monopolist sets \(MR = MC\) (with \(MR < P\)), then reads \(P_M\) off demand. The markup obeys the <em>Lerner index</em> \(L = (P - MC)/P = -1/\varepsilon_D\): the less elastic the demand, the larger the markup.
+      </div>
+     </section>
+
+    <section id="ch11-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">11</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Monopoly &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> A monopolist faces demand \(P = 100 - Q\). Its marginal revenue curve is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(MR = 100 - Q\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(MR = 100 - 2Q\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(MR = 50 - Q\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(MR = 100 - 0.5Q\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">For linear demand \(P = a - bQ\), \(MR = a - 2bQ\) &mdash; same intercept, <strong>twice the slope</strong>. Here \(MR = 100 - 2Q\). Always derive \(MR\) from \(TR = P \cdot Q\).</p>
+     </div>
+    </section>
+
+    <section id="ch11-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">11</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Monopoly &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> With demand \(P = 100 - Q\) and constant \(MC = 20\), the monopolist's profit-maximizing quantity and price are:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(Q_M = 80\), \(P_M = 20\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(Q_M = 40\), \(P_M = 60\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(Q_M = 50\), \(P_M = 50\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(Q_M = 40\), \(P_M = 40\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(MR = MC\): \(100 - 2Q = 20 \Rightarrow Q_M = 40\). Then \(P_M = 100 - 40 = 60\). (Canonical anchor: \(P = 100 - Q\), \(MC = 20\) &rarr; monopoly \(Q = 40, P = 60\).)</p>
+     </div>
+    </section>
+
+    <section id="ch11-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">11</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Monopoly &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> The Lerner index \(L = (P - MC)/P\) equals:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> the price elasticity of demand.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(-1/\varepsilon_D\) &mdash; the inverse of the (absolute) elasticity of demand.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> marginal cost divided by price.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> the deadweight loss.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(L = (P - MC)/P = -1/\varepsilon_D\). Since \(\varepsilon_D < 0\), \(L > 0\). Smaller \(|\varepsilon_D|\) (more inelastic) means a larger markup.</p>
+     </div>
+    </section>
+
+    <section id="ch11-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">11</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Monopoly &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> Continuing Q2 (\(P = 100 - Q\), \(MC = 20\)), the competitive benchmark is \(P = MC = 20 \Rightarrow Q_C = 80\). The deadweight loss from monopoly is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \$400</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \$800</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \$1{,}600</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \$0</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(DWL = \tfrac{1}{2}(P_M - MC)(Q_C - Q_M) = \tfrac{1}{2}(60 - 20)(80 - 40) = \tfrac{1}{2}(40)(40) = \$800\).</p>
+     </div>
+    </section>
+
+    <section id="ch11-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">11</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Monopoly &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> A profit-maximizing monopolist will never choose a quantity where demand is <strong>inelastic</strong> (\(|\varepsilon_D| < 1\)) because:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> marginal cost would be negative.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> marginal revenue would be negative, so cutting output would raise revenue and lower cost.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> the Lerner index would exceed 1.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> price would be below marginal cost.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">When \(|\varepsilon_D| < 1\), \(MR < 0\). Reducing output then <em>raises</em> revenue and lowers cost &mdash; so the optimum always lies in the elastic region (\(|\varepsilon_D| > 1\)).</p>
+     </div>
+    </section>
+
+    <section id="ch11-handout">
+     <div class="chapter-header" style="margin-bottom: 10px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">11</div>
+      <div class="chapter-title-pill" style="font-size: 13pt; padding: 6px 0;">Monopoly &middot; Written Problem: Monopoly End-to-End</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> A monopolist faces demand \(P = 120 - 2Q\) with constant marginal cost \(MC = 20\) (no fixed cost).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">a</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Write the <strong>marginal revenue</strong> curve. Find \(Q_M\) and \(P_M\).</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">b</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Compute the monopolist's <strong>profit</strong>.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">c</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Find the <strong>competitive benchmark</strong> \((Q_C, P_C)\) where \(P = MC\), and compute the <strong>deadweight loss</strong>.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">d</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Compute the <strong>Lerner index</strong> at the optimum and verify \(L = -1/\varepsilon_D\).</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 10px;">
+      <span class="label">Answer Sketch</span>
+      <p style="font-size: 10pt; line-height: 1.45;"><strong>(a)</strong> \(MR = 120 - 4Q\); \(MR = MC \Rightarrow 120 - 4Q = 20 \Rightarrow Q_M = 25\), \(P_M = \$70\). <strong>(b)</strong> \(\pi = (70 - 20)(25) = \$1{,}250\). <strong>(c)</strong> \(P = MC \Rightarrow Q_C = 50\); \(DWL = \tfrac{1}{2}(70 - 20)(50 - 25) = \$625\). <strong>(d)</strong> \(L = (70 - 20)/70 = 0.714\); point elasticity \(\varepsilon_D = -0.5(70/25) = -1.4\), so \(-1/\varepsilon_D = 0.714 = L\) ✓.</p>
+     </div>
+    </section>
+    </section>
+
+    <section>
+     <section id="ch12">
+      <div class="chapter-header">
+       <div class="chapter-num">12</div>
+       <div class="chapter-title-pill">Pricing with Market Power</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">12.2</span>First-Degree PD</span></div>
+       <div class="section-card"><span><span class="sec-num">12.3</span>Second-Degree PD</span></div>
+       <div class="section-card"><span><span class="sec-num">12.4</span>Third-Degree PD</span></div>
+       <div class="section-card"><span><span class="sec-num">12.5</span>Two-Part Tariffs</span></div>
+       <div class="section-card"><span><span class="sec-num">12.6</span>Bundling</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li>Charge each buyer reservation price</li>
+         <li>Captures all surplus</li>
+         <li>\(Q = Q_C\), \(CS = 0\), \(DWL = 0\)</li>
+         <li>Perfect price discrimination</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Self-selection menus</li>
+         <li>Versioning, quantity discounts</li>
+         <li>Screening</li>
+         <li>Information rent</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Segment by observable group</li>
+         <li>\(MR_i = MC\) per segment</li>
+         <li>\(P_i = MC/(1 + 1/\varepsilon_i)\)</li>
+         <li><strong>Inelastic group pays more</strong></li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Entry fee \(F\) + per-unit \(p\)</li>
+         <li>Set \(p = MC\)</li>
+         <li>\(F = CS(MC)\)</li>
+         <li>Captures consumer surplus</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Sell goods together</li>
+         <li>Pure vs mixed bundling</li>
+         <li>Profitable when valuations</li>
+         <li><strong>negatively correlated</strong></li>
+        </ul>
+       </div>
+      </div>
+      <div class="formula-card">
+       <strong>Key takeaway:</strong> Price discrimination needs <em>market power</em> + <em>no arbitrage</em>. Third-degree: \(P_i = MC/(1 + 1/\varepsilon_i)\) &mdash; the less-elastic group pays more. Two-part tariff: \(p = MC\), \(F = CS(MC)\).
+      </div>
+     </section>
+
+    <section id="ch12-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">12</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Pricing with Market Power &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> Price discrimination requires two conditions:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> constant marginal cost and many buyers.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> market power and the ability to prevent arbitrage (resale).</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> a homogeneous product and free entry.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> identical consumers and a single price.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Without market power a firm can't set price above \(MC\); without preventing resale, low-price buyers would arbitrage and resell to high-price buyers. Both conditions are required.</p>
+     </div>
+    </section>
+
+    <section id="ch12-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">12</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Pricing with Market Power &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> Under <strong>perfect (first-degree)</strong> price discrimination, compared to single-price monopoly:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> output falls and deadweight loss rises.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> output rises to the competitive level, consumer surplus falls to zero, and DWL is eliminated.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> consumer surplus is maximized.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> the firm earns zero profit.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Charging each buyer their reservation price means the firm serves every unit up to \(Q_C\) (where \(P = MC\)). Output is efficient (no DWL), but the firm captures all surplus, so \(CS = 0\).</p>
+     </div>
+    </section>
+
+    <section id="ch12-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">12</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Pricing with Market Power &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> A firm sells to two segments with \(MC = 10\). Segment A has \(\varepsilon_A = -2\); segment B has \(\varepsilon_B = -4\). Using \(P_i = MC/(1 + 1/\varepsilon_i)\):</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(P_A = \$20\), \(P_B = \$13.33\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(P_A = \$13.33\), \(P_B = \$20\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(P_A = P_B = \$15\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(P_A = \$10\), \(P_B = \$10\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>A</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(P_A = 10/(1 - 1/2) = 10/0.5 = 20\); \(P_B = 10/(1 - 1/4) = 10/0.75 = 13.33\). The <strong>less-elastic</strong> segment A pays the higher price.</p>
+     </div>
+    </section>
+
+    <section id="ch12-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">12</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Pricing with Market Power &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> A theme park sets an entry fee plus a per-ride price. The optimal <strong>two-part tariff</strong> for identical customers sets:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(p\) above \(MC\) and \(F = 0\).</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> the per-unit price \(p = MC\) and the entry fee \(F\) equal to each customer's consumer surplus at that price.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(p = 0\) and \(F\) equal to total revenue.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(p\) at the monopoly price and \(F = 0\).</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Setting \(p = MC\) maximizes the surplus the customer generates; the entry fee \(F = CS(MC)\) then captures all of it. Marking up the per-unit price would shrink total surplus.</p>
+     </div>
+    </section>
+
+    <section id="ch12-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">12</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Pricing with Market Power &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> Pure <strong>bundling</strong> of two goods tends to be more profitable than selling them separately when consumers' valuations for the two goods are:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> positively correlated.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> negatively correlated.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> identical.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> zero.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Negatively correlated valuations compress the spread of total willingness-to-pay for the bundle, letting a single bundle price capture more surplus than pricing each good separately.</p>
+     </div>
+    </section>
+
+    <section id="ch12-handout">
+     <div class="chapter-header" style="margin-bottom: 10px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">12</div>
+      <div class="chapter-title-pill" style="font-size: 13pt; padding: 6px 0;">Pricing with Market Power &middot; Written Problem: Third-Degree PD + Two-Part Tariff</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> <strong>Part 1:</strong> A monopolist with \(MC = \$8\) sells in two separable markets &mdash; adults (\(\varepsilon_A = -2\)) and students (\(\varepsilon_S = -4\)). <strong>Part 2:</strong> A tennis club's member has demand \(q = 20 - p\) for court-hours, \(MC = \$4\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">a</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Use \(P_i = MC/(1 + 1/\varepsilon_i)\) to find each group's price. Which group pays more, and why?</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">b</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Compute the <strong>Lerner index</strong> for each group and confirm \(L_i = -1/\varepsilon_i\).</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">c</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">For the tennis club: find the optimal <strong>per-unit price</strong> and the <strong>membership fee</strong> \(F = CS(MC)\).</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">d</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">How much total profit does the club earn per member?</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 10px;">
+      <span class="label">Answer Sketch</span>
+      <p style="font-size: 10pt; line-height: 1.45;"><strong>(a)</strong> \(P_A = 8/(1 - 1/2) = \$16\); \(P_S = 8/(1 - 1/4) = \$10.67\). Adults pay more &mdash; their demand is less elastic, so the optimal markup is larger. <strong>(b)</strong> \(L_A = (16-8)/16 = 0.5 = 1/2\) ✓; \(L_S = (10.67-8)/10.67 = 0.25 = 1/4\) ✓. <strong>(c)</strong> \(p^* = MC = \$4\); at \(p = 4\), \(q = 16\), \(CS = \tfrac{1}{2}(20 - 4)(16) = \$128 = F\). <strong>(d)</strong> Profit per member \(= F + (p - MC)q = 128 + 0 = \$128\).</p>
+     </div>
+    </section>
+    </section>
+
+    <section>
+     <section id="ch13">
+      <div class="chapter-header">
+       <div class="chapter-num">13</div>
+       <div class="chapter-title-pill">Oligopoly</div>
+      </div>
+      <div class="section-row cols-3">
+       <div class="section-card"><span><span class="sec-num">13.1</span>Cartel Benchmark</span></div>
+       <div class="section-card"><span><span class="sec-num">13.3</span>Cournot</span></div>
+       <div class="section-card"><span><span class="sec-num">13.3</span>N-Firm Limit</span></div>
+      </div>
+      <div class="detail-row cols-3">
+       <div class="detail-card">
+        <ul>
+         <li>Joint monopoly: \(Q^M = (a-c)/2b\)</li>
+         <li>Highest joint profit</li>
+         <li><strong>Unstable</strong> &mdash; each wants to cheat</li>
+         <li>Antitrust, coordination cost</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Choose <strong>quantities</strong> simultaneously</li>
+         <li>Best-response &rarr; Nash</li>
+         <li>Duopoly: each \(q = (a-c)/3b\)</li>
+         <li>\(N\)-firm: \(q_i = \frac{a-c}{(N+1)b}\)</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(q_i = \frac{a-c}{(N+1)b}\)</li>
+         <li>\(P = \frac{a+Nc}{N+1}\)</li>
+         <li>\(N \to \infty \Rightarrow P \to MC\)</li>
+         <li>More firms &rarr; less market power</li>
+        </ul>
+       </div>
+      </div>
+      <div class="formula-card">
+       <strong>Key takeaway:</strong> With \(P = 100 - Q\), \(MC = 20\): cartel \((Q=40, P=60)\) vs. Cournot \((Q=53.3, P=46.7)\). The cartel earns more per firm but <strong>is not a Nash equilibrium</strong> &mdash; each member wants to cheat, so Cournot is the prediction. <span style="color: var(--muted-color);">(<strong>Bertrand</strong>, &sect;13.2 mon. comp., &sect;13.6 Stackelberg, and &sect;13.7 capacity are <strong>not covered</strong>.)</span>
+      </div>
+     </section>
+
+    <section id="ch13-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">13</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Oligopoly &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> In the <strong>Cournot</strong> model, firms compete by choosing:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> prices simultaneously.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> quantities simultaneously.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> quantities, but only after seeing the rival's price.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> advertising budgets.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Cournot = simultaneous <strong>quantity</strong> competition. Each firm picks \(q_i\) taking the rival's quantity as given, then we impose symmetry \(q_1 = q_2\).</p>
+     </div>
+    </section>
+
+    <section id="ch13-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">13</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Oligopoly &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> Two Cournot firms face \(P = 100 - Q\) (where \(Q = q_1 + q_2\)) with \(MC = 20\). Firm 1's best-response function is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(q_1 = 40 - q_2\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(q_1 = 40 - \tfrac{1}{2}q_2\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(q_1 = 80 - q_2\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(q_1 = 26.67\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(\pi_1 = (80 - q_1 - q_2)q_1\); FOC \(80 - 2q_1 - q_2 = 0 \Rightarrow q_1 = 40 - \tfrac{1}{2}q_2\). Solving symmetrically gives each \(q^* = 26.67\) (choice D is the equilibrium, not the BR function).</p>
+     </div>
+    </section>
+
+    <section id="ch13-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">13</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Oligopoly &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> With \(P = 100 - Q\) and \(MC = 20\), the <strong>cartel</strong> (joint-monopoly) total output and price are:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(Q = 40\), \(P = 60\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(Q = 53.3\), \(P = 46.7\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(Q = 80\), \(P = 20\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(Q = 30\), \(P = 70\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>A</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Treat the two firms as one monopolist: \(MR = 100 - 2Q = 20 \Rightarrow Q^M = 40\), \(P = 60\). Joint profit \(= (60-20)(40) = \$1600\), or \(\$800\) each &mdash; higher than Cournot&rsquo;s \(\$711\), but <strong>unstable</strong>.</p>
+     </div>
+    </section>
+
+    <section id="ch13-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">13</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Oligopoly &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> As the number of firms \(N\) in a symmetric Cournot industry grows very large, the equilibrium price:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> rises toward the monopoly price.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> falls toward marginal cost.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> stays at the duopoly level.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> becomes indeterminate.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(q_i = \frac{a-c}{(N+1)b}\) and \(P = \frac{a+Nc}{N+1}\). As \(N \to \infty\), \(P \to c = MC\) &mdash; Cournot converges to perfect competition.</p>
+     </div>
+    </section>
+
+    <section id="ch13-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">13</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Oligopoly &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> On \(P = 100 - Q\) with \(MC = 20\), two firms split the cartel quantity \(20\) each. If firm 1 <strong>unilaterally cheats</strong> to its best response against \(q_2 = 20\), it produces:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(q_1 = 20\) &mdash; it has no reason to deviate.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(q_1 = 26.67\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(q_1 = 30\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(q_1 = 40\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">BR against \(q_2 = 20\): \(q_1 = 40 - \tfrac{1}{2}(20) = 30\). Then \(Q = 50\), \(P = 50\), \(\pi_1 = (50-20)(30) = \$900 > \$800\) under the cartel. <strong>Each firm gains by deviating, so the cartel is not a Nash equilibrium</strong> &mdash; which is why Cournot is the non-cooperative prediction.</p>
+     </div>
+    </section>
+
+    <section id="ch13-handout">
+     <div class="chapter-header" style="margin-bottom: 10px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">13</div>
+      <div class="chapter-title-pill" style="font-size: 13pt; padding: 6px 0;">Oligopoly &middot; Written Problem: Cournot &amp; the Cartel</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> A duopoly faces market demand \(P = 100 - Q\) (\(Q = q_1 + q_2\)). Both firms have constant marginal cost \(MC = 20\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">a</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;"><strong>Cournot.</strong> Derive firm 1's best response and solve the symmetric Nash equilibrium: \(q^*\), \(Q\), \(P\), each firm's profit.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">b</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;"><strong>Cartel.</strong> Find joint-monopoly total \(Q\), \(P\), and each firm's profit. Compare to Cournot.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">c</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;"><strong>Cheating.</strong> From the cartel split in (b), firm 1 moves to its best response while firm 2 holds its cartel quantity. Find \(q_1\) and firm 1's profit, and say whether the cartel is a Nash equilibrium.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">d</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;"><strong>Rank</strong> the three outcomes by total industry output and by price. Which is the non-cooperative prediction, and why isn't it the cartel?</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 10px;">
+      <span class="label">Answer Sketch</span>
+      <p style="font-size: 10pt; line-height: 1.45;"><strong>(a)</strong> BR \(q_1 = 40 - \tfrac{1}{2}q_2 \Rightarrow q^* = 26.67\), \(Q = 53.33\), \(P = 46.67\), each profit \(\approx \$711\). <strong>(b)</strong> Cartel \(MR = 100 - 2Q = 20 \Rightarrow Q^M = 40\), \(P = 60\), each \(\$800\) (higher, but unstable). <strong>(c)</strong> Cheating: BR against \(q_2=20\) gives \(q_1=30\), \(Q=50\), \(P=50\), profit \(\$900 > \$800\) &mdash; so the cartel is not a Nash equilibrium. <strong>Cournot</strong> is the non-cooperative prediction: at the cartel split each firm's \(MR > MC\), so each wants to expand.</p>
+     </div>
+    </section>
+    </section>
+
+    <section>
+     <section id="ch14">
+      <div class="chapter-header">
+       <div class="chapter-num">14</div>
+       <div class="chapter-title-pill">Game Theory</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">14.1</span>Dominance</span></div>
+       <div class="section-card"><span><span class="sec-num">14.2</span>Nash Equilibrium</span></div>
+       <div class="section-card"><span><span class="sec-num">14.2</span>Prisoner's Dilemma</span></div>
+       <div class="section-card"><span><span class="sec-num">14.3</span>Mixed Strategies</span></div>
+       <div class="section-card"><span><span class="sec-num">14.5</span>Repeated Games</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li>Players + strategies + payoffs</li>
+         <li><strong>Dominant</strong>: best vs. any rival</li>
+         <li><strong>Dominated</strong>: worse no matter what</li>
+         <li>IESDS</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Mutual best responses</li>
+         <li><strong>Check method</strong>: circle BR payoffs</li>
+         <li>Both circled &rarr; Nash</li>
+         <li>Zero, one, or several</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Both have dominant strategy</li>
+         <li>Nash worse for both</li>
+         <li>Pareto-dominated</li>
+         <li>Can't sustain cooperation</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>No pure NE &rarr; randomize</li>
+         <li>Make <strong>opponent indifferent</strong></li>
+         <li>Symmetric match: \(p = q = \tfrac{1}{2}\)</li>
+         <li>Indifference condition</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Grim trigger</li>
+         <li>Cooperate iff \(\delta \geq \delta^*\)</li>
+         <li>\(\delta^* = \dfrac{T - R}{T - P}\)</li>
+         <li>Patience sustains cooperation</li>
+        </ul>
+       </div>
+      </div>
+      <div class="formula-card">
+       <strong>Key takeaway:</strong> Find <em>all</em> Nash equilibria with the <em>check method</em>. Mix to make the <em>opponent</em> indifferent (symmetric match &rarr; \(p = q = \tfrac{1}{2}\)). Repeated cooperation holds iff \(\delta \geq \delta^* = (T-R)/(T-P)\) &mdash; canonical PD gives \(\delta^* = 0.5\).
+      </div>
+     </section>
+
+    <section id="ch14-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">14</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Game Theory &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> A <strong>dominant strategy</strong> is one that:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> is best only if the opponent cooperates.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> gives the player the highest payoff regardless of what the opponent does.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> is the same as the Nash equilibrium in every game.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> minimizes the opponent's payoff.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">A dominant strategy is a best response to <em>every</em> opponent action &mdash; always play it. A dominated strategy is worse no matter what, so it can be eliminated (IESDS).</p>
+     </div>
+    </section>
+
+    <section id="ch14-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">14</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Game Theory &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> A <strong>Nash equilibrium</strong> is an outcome in which:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> total payoffs are maximized.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> each player is playing a best response to the others, so no one wants to unilaterally deviate.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> both players have a dominant strategy.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> the payoffs are equal.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">At a Nash equilibrium every player best-responds to the others, so no one gains by deviating alone. It need not maximize total payoffs (the Prisoner's Dilemma is the classic counterexample).</p>
+     </div>
+    </section>
+
+    <section id="ch14-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">14</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Game Theory &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> James and David each choose \(Q = 250\) or \(Q = 350\). Payoffs (James, David): \((250,250)\to(\$200,\$200)\); \((250,350)\to(-\$50,\$350)\); \((350,250)\to(\$350,-\$50)\); \((350,350)\to(\$0,\$0)\). The Nash equilibrium is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \((250, 250)\) with \$200 each.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \((350, 350)\) with \$0 each &mdash; both have a dominant strategy to play 350.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \((250, 350)\).</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> there is no Nash equilibrium.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Playing 350 beats 350: against 250, \(350 > 200\); against 350, \(0 > -50\). Both have a dominant strategy to play 350, so \((350,350)\) is the unique Nash &mdash; a Prisoner's Dilemma (both worse than \(\$200\) each).</p>
+     </div>
+    </section>
+
+    <section id="ch14-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">14</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Game Theory &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> In <strong>matching pennies</strong> (or a penalty kick where the kicker wins by mismatching the goalie), there is no pure-strategy Nash equilibrium. The mixed-strategy equilibrium has each player:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> always choosing Left.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> randomizing 50/50 between the two actions.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> choosing the action with the higher payoff.</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> coordinating on the same side.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">By symmetry each player mixes \(\tfrac{1}{2}, \tfrac{1}{2}\) to keep the opponent indifferent. (If the goalie dives Left with prob \(q\), the kicker is indifferent when \(1 - q = q \Rightarrow q = \tfrac{1}{2}\).)</p>
+     </div>
+    </section>
+
+    <section id="ch14-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">14</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Game Theory &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> In an <strong>infinitely repeated</strong> Prisoner's Dilemma with stage payoffs \(T = 5\) (cheat), \(R = 3\) (cooperate), \(P = 1\) (mutual defection), cooperation can be sustained under a grim-trigger strategy if the discount factor satisfies:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(\delta \geq 0.25\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(\delta \geq 0.5\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(\delta \geq 0.75\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> cooperation is never sustainable</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(\delta^* = \dfrac{T - R}{T - P} = \dfrac{5 - 3}{5 - 1} = \dfrac{2}{4} = 0.5\). A high \(\delta\) (patient players) sustains cooperation: it holds iff \(\delta \geq 0.5\).</p>
+     </div>
+    </section>
+
+    <section id="ch14-handout">
+     <div class="chapter-header" style="margin-bottom: 10px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">14</div>
+      <div class="chapter-title-pill" style="font-size: 13pt; padding: 6px 0;">Game Theory &middot; Written Problem: Finding Nash Equilibria and a Mixed Strategy</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> <strong>Part 1:</strong> Samuel's (row) and Janice's (column) each choose Expand or Hold. Profits (Samuel's, Janice's): (Expand, Expand) \(=150,150\); (Expand, Hold) \(=300,100\); (Hold, Expand) \(=100,300\); (Hold, Hold) \(=200,200\). <strong>Part 2:</strong> a penalty kick (match &rarr; goalie saves; mismatch &rarr; kicker scores). <strong>Part 3:</strong> repeated PD with \(T=5, R=3, P=1, S=0\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">a</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Does each shop have a dominant strategy? Find <strong>all</strong> pure-strategy Nash equilibria (check method).</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">b</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">Is this a Prisoner's Dilemma? Compare the Nash outcome to (Hold, Hold).</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">c</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">For the penalty kick: show there is <strong>no</strong> pure NE, then find the mixed-strategy probabilities.</p>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12pt;">d</div>
+  <p style="font-size: 11pt; line-height: 1.4; margin: 4px 0 0 0;">For the repeated PD: use \(\delta^* = (T-R)/(T-P)\) to find the minimum discount factor for cooperation.</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 10px;">
+      <span class="label">Answer Sketch</span>
+      <p style="font-size: 10pt; line-height: 1.45;"><strong>(a)</strong> Expand is dominant for both (\(150>100\) and \(300>200\)). Unique Nash \(=\) (Expand, Expand) \(=(150,150)\). <strong>(b)</strong> <strong>Yes</strong> &mdash; both play dominant Expand for \(\$150\) each, but (Hold, Hold) gives \(\$200\) each. <strong>(c)</strong> No pure NE (every cell has a deviator); by symmetry Kicker and Goalie each play \(\tfrac{1}{2}, \tfrac{1}{2}\). <strong>(d)</strong> \(\delta^* = (5-3)/(5-1) = 0.5\).</p>
+     </div>
+    </section>
+    </section>
+
+<section>
+     <section id="ch15">
+      <div class="chapter-header">
+       <div class="chapter-num">15</div>
+       <div class="chapter-title-pill">Decisions Under Uncertainty</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">15.1</span>Lotteries &amp; EV</span></div>
+       <div class="section-card"><span><span class="sec-num">15.2</span>Expected Utility</span></div>
+       <div class="section-card"><span><span class="sec-num">15.3</span>Risk Aversion</span></div>
+       <div class="section-card"><span><span class="sec-num">15.4</span>CE &amp; Risk Premium</span></div>
+       <div class="section-card"><span><span class="sec-num">15.6</span>Insurance</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li>States, payoffs, probabilities</li>
+         <li>\(\sum_s \pi_s = 1\)</li>
+         <li>\(E[L] = \sum_s \pi_s W_s\)</li>
+         <li>Variance \(= E[L^2] - (E[L])^2\)</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(EU = \sum_s \pi_s u(W_s)\)</li>
+         <li>Utility <strong>then</strong> average</li>
+         <li>vNM: complete, transitive, continuous, <strong>independent</strong></li>
+         <li>Allais breaks independence</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Concave \(u\) \(\iff\) risk-averse</li>
+         <li><strong>Jensen</strong>: \(E[u(W)] \le u(E[W])\)</li>
+         <li>Linear = neutral, convex = loving</li>
+         <li>Curvature, not slope</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(u(CE) = E[u(L)]\)</li>
+         <li>\(\rho = E[L] - CE\)</li>
+         <li>Log \(u\) \(\Rightarrow\) CE = geometric mean</li>
+         <li>\(\rho\) grows with the spread</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Fair premium \(p = \pi\)</li>
+         <li><strong>Mossin</strong>: fair \(\Rightarrow\) full cover</li>
+         <li>Loaded \(\Rightarrow\) partial</li>
+         <li>Big loading \(\Rightarrow\) corner \(q^*=0\)</li>
+        </ul>
+       </div>
+      </div>
+     </section>
+
+     <section id="ch15-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">15</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Decisions Under Uncertainty &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> A 50/50 lottery pays \$36 or \$100. An agent has \(u(W)=\sqrt{W}\). Her <strong>expected utility</strong> is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(\sqrt{68} \approx 8.25\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(8\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(68\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(64\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(EU = \tfrac12\sqrt{36}+\tfrac12\sqrt{100} = 3+5 = 8\). \(\sqrt{68}\) is \(u(E[L])\) &mdash; the utility of the mean, which is <em>larger</em>. That gap is Jensen's inequality in one line. 64 is her certainty equivalent.</p>
+     </div>
+    </section>
+
+     <section id="ch15-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">15</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Decisions Under Uncertainty &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> Continuing that lottery, her <strong>certainty equivalent and risk premium</strong> are:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(CE=68,\ \rho=0\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(CE=8,\ \rho=60\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(CE=64,\ \rho=4\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(CE=64,\ \rho=-4\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(u(CE)=8 \Rightarrow CE = 8^2 = 64\); \(E[L]=68\) so \(\rho = 4\). Answer B forgets to invert \(u\) &mdash; 8 is in utils, not dollars. A negative \(\rho\) is the risk-<em>loving</em> case.</p>
+     </div>
+    </section>
+
+     <section id="ch15-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">15</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Decisions Under Uncertainty &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> An agent with \(u(W)=\ln W\) faces a 50/50 lottery over \(\{84, 204\}\). Her certainty equivalent is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> the arithmetic mean, \(144\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(\ln(144) \approx 4.97\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> the geometric mean, \(\sqrt{84 \cdot 204} \approx 130.9\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(\exp(144)\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(EU = \tfrac12\ln(84 \cdot 204)\), so \(CE = \exp(EU) = \sqrt{84 \cdot 204} \approx 130.9\). <strong>Log utility always makes the CE the geometric mean</strong>, which sits below the arithmetic mean &mdash; so \(\rho \approx 13.1\).</p>
+     </div>
+    </section>
+
+     <section id="ch15-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">15</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Decisions Under Uncertainty &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> Per <strong>Mossin's theorem</strong>, a risk-averse agent offered insurance at an <em>actuarially fair</em> premium buys:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> partial coverage, since full cover is never optimal</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> full coverage, equalizing wealth across states</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> full coverage only if she is sufficiently risk-averse</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> no coverage, since the premium offsets the expected benefit</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">At \(p = \pi\) the FOC gives \(u'(W_{bad}) = u'(W_{good})\); strict concavity forces \(W_{bad}=W_{good}\), i.e. \(q^*=L\). Note it does <strong>not</strong> depend on <em>how</em> risk-averse she is &mdash; degree only starts to matter once the premium is loaded.</p>
+     </div>
+    </section>
+
+     <section id="ch15-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">15</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Decisions Under Uncertainty &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> A contract's premium carries a large <strong>loading</strong> above the fair price. A risk-averse buyer's optimal coverage:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> stays at full coverage, since she is still risk-averse</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> exceeds the loss, to offset the higher price</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> falls below full coverage, and can hit \(q^*=0\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> is undefined, since the FOC has no solution</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Loading makes the last dollar of cover cost more than it is worth in expectation, so she self-insures at the margin. If the loading is large enough the interior root goes negative and the optimum is the corner \(q^*=0\) &mdash; she declines entirely.</p>
+     </div>
+    </section>
+
+     <section id="ch15-handout">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">15</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Decisions Under Uncertainty &middot; Written Problem</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> An agent has \(u(W)=\sqrt{W}\) and wealth \$100. She faces a \(\pi = 0.10\) chance of a \$50 loss. <strong>Part 1:</strong> insurance is offered at the fair price \(p=0.10\) per dollar of coverage. <strong>Part 2:</strong> the price rises to \(p = 0.15\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">1</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Write state wealths.</strong> \(W_g = 100 - pq\) and \(W_b = 50 + q - pq\). Keep \(q\) general.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">2</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Derive the FOC.</strong> Maximize \(EU\) over \(q\); rearrange to \(u'(W_b)/u'(W_g) = p(1-\pi)/[(1-p)\pi]\).</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">3</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Fair premium.</strong> Evaluate the ratio at \(p=\pi=0.10\) &mdash; it equals 1, so \(W_b = W_g\), giving \(q^*=50\) and wealth \$95 in <em>both</em> states.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">4</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Loaded premium.</strong> At \(p=0.15\) the ratio is \(\approx 1.588\). Show the interior root is negative, so \(q^*=0\): compare \(EU(0) \approx 9.707\) with \(EU(50) = \sqrt{92.5} \approx 9.618\).</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">5</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Interpret.</strong> Say in two sentences why risk aversion alone does not imply buying insurance &mdash; and what does.</p></div>
+</div>
+     </div>
+    </section>
+    </section>
+
+<section>
+     <section id="ch16">
+      <div class="chapter-header">
+       <div class="chapter-num">16</div>
+       <div class="chapter-title-pill">Asymmetric Information</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">16.1</span>Hidden Info vs Action</span></div>
+       <div class="section-card"><span><span class="sec-num">16.2</span>Lemons</span></div>
+       <div class="section-card"><span><span class="sec-num">16.3</span>Signalling</span></div>
+       <div class="section-card"><span><span class="sec-num">16.4</span>Screening</span></div>
+       <div class="section-card"><span><span class="sec-num">16.5</span>Moral Hazard</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li><strong>Type</strong> vs <strong>behaviour</strong></li>
+         <li>Adverse selection = before</li>
+         <li>Moral hazard = after</li>
+         <li>Either side may be informed</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Buyers pay pool average</li>
+         <li>\(\lambda^* = \dfrac{r_H - v_L}{v_H - v_L}\)</li>
+         <li>Below \(\lambda^*\): plums exit</li>
+         <li>Loss = <strong>missing trade</strong></li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Informed side moves first</li>
+         <li>Costly signal, no productivity</li>
+         <li><strong>Single-crossing</strong>: \(1/\theta_H < 1/\theta_L\)</li>
+         <li>Least-cost \(s_H^* = (p_H-p_L)\theta_L\)</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li><strong>Un</strong>informed side moves first</li>
+         <li>Menu &rarr; self-selection</li>
+         <li>High risk's IC binds</li>
+         <li><strong>Low</strong> risk is rationed</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Hidden action after signing</li>
+         <li>Fixed wage unenforceable</li>
+         <li>Pay tied to output &rarr; agent bears risk</li>
+         <li>That risk premium is the cost</li>
+        </ul>
+       </div>
+      </div>
+     </section>
+
+     <section id="ch16-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">16</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Asymmetric Information &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> A driver buys full coverage and then starts parking on the street instead of a paid garage. This is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> adverse selection</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> moral hazard</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> signalling</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> screening</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">The behaviour changes <em>because</em> she is insured, and the insurer cannot observe it &mdash; hidden action. Had the risky parker been likelier to buy the policy in the first place, <em>that</em> would be adverse selection.</p>
+     </div>
+    </section>
+
+     <section id="ch16-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">16</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Asymmetric Information &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> Plums are worth \(v_H = 20{,}000\), lemons \(v_L = 5{,}000\), and plum owners will not sell below \(r_H = 12{,}000\). The critical plum share is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(\lambda^* = 12{,}000/20{,}000 = 0.60\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(\lambda^* \approx 0.467\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(\lambda^* = 0.25\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(\lambda^* \approx 0.533\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Set the pooled willingness to pay equal to the plum reservation: \(\lambda^* = (r_H - v_L)/(v_H - v_L) = 7{,}000/15{,}000 \approx 0.467\). Answer D inverts the numerator and gives \(1-\lambda^*\).</p>
+     </div>
+    </section>
+
+     <section id="ch16-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">16</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Asymmetric Information &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> In the same market at \(\lambda = 0.40\), the equilibrium is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> all cars trade at the pooled \$11,000</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> plums trade at \$12,000, lemons at \$5,000 separately</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> plums withdraw; only lemons trade near \$5,000</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> no cars trade at all</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Pooled WTP \(= 0.4(20{,}000)+0.6(5{,}000) = 11{,}000 < r_H\), so no plum owner sells. <strong>\$11,000 is the tempting wrong answer</strong> &mdash; it is exactly the pooled price, and that is precisely why it cannot be an equilibrium. Lemons still trade.</p>
+     </div>
+    </section>
+
+     <section id="ch16-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">16</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Asymmetric Information &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> In the Spence model, the <strong>single-crossing</strong> condition requires that:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> the two cost curves cross exactly once</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> the high type's <em>marginal</em> signal cost is lower at every signal level</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> the high type's total cost is lower at the equilibrium signal</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> both types have the same marginal cost</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">With \(c(s,\theta)=s/\theta\), \(\partial c/\partial s = 1/\theta\), uniformly smaller for the higher \(\theta\). That uniformity is what makes an incentive-compatible separating signal exist; equal marginal costs would make separation impossible.</p>
+     </div>
+    </section>
+
+     <section id="ch16-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">16</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Asymmetric Information &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> In the Rothschild&ndash;Stiglitz separating equilibrium:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> low risks get full cover, high risks partial</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> high risks get full cover, low risks are rationed</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> both get full cover at different premiums</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> both get partial cover at the same premium</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">The binding constraint is the <em>high</em> risk's temptation to take the low-risk contract, so that contract must be made unattractive to her &mdash; by limiting its coverage. The good type pays for the bad type's private information.</p>
+     </div>
+    </section>
+
+     <section id="ch16-handout">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">16</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Asymmetric Information &middot; Written Problem</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> A used-car market has \(v_H = 18{,}000\), \(v_L = 4{,}500\), \(r_H = 11{,}000\), \(r_L = 3{,}000\). <strong>Part 2</strong> is a Spence labour market with \(p_H = 60\), \(p_L = 25\), \(\theta_H = 12\), \(\theta_L = 4\), and signal cost \(c(s,\theta) = s/\theta\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">1</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Unravelling threshold.</strong> Compute \(\lambda^* = (r_H - v_L)/(v_H - v_L)\).</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">2</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Both sides of it.</strong> At \(\lambda = 0.55\) and \(\lambda = 0.40\), give the equilibrium price and say which sellers participate.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">3</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Single-crossing.</strong> Verify it on <em>marginal</em> cost, and say precisely what it requires.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">4</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>IC bounds.</strong> Derive both: the low type must not mimic, and the high type must still prefer to signal. State the separating interval.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">5</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Least-cost equilibrium.</strong> Give \(s_H^*\) and each type's net payoff, then say how much output the signal creates and what that implies for welfare.</p></div>
+</div>
+     </div>
+    </section>
+    </section>
+
+<section>
+     <section id="ch17">
+      <div class="chapter-header">
+       <div class="chapter-num">17</div>
+       <div class="chapter-title-pill">Externalities &amp; Public Goods</div>
+      </div>
+      <div class="section-row cols-5">
+       <div class="section-card"><span><span class="sec-num">17.1</span>Taxonomy</span></div>
+       <div class="section-card"><span><span class="sec-num">17.2</span>Pigouvian</span></div>
+       <div class="section-card"><span><span class="sec-num">17.3</span>Coase</span></div>
+       <div class="section-card"><span><span class="sec-num">17.4</span>Public Goods</span></div>
+       <div class="section-card"><span><span class="sec-num">17.5</span>Free Riding</span></div>
+      </div>
+      <div class="detail-row cols-5">
+       <div class="detail-card">
+        <ul>
+         <li>Uncompensated third-party effect</li>
+         <li>Negative/positive \(\times\) production/consumption</li>
+         <li>Wedge \(=\) \(MEC\) or \(MEB\)</li>
+         <li>\(PMC < SMC\) &rarr; over-produce</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>\(t^* = MEC(Q^*)\)</li>
+         <li>\(s^* = MEB(Q^*)\)</li>
+         <li>Add \(MEC\) to <strong>supply</strong>, \(MEB\) to <strong>demand</strong></li>
+         <li>Revenue is a <strong>transfer</strong></li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Clear rights + low transaction costs</li>
+         <li><strong>Invariance</strong>: same \(Q^*\) either way</li>
+         <li>Only side payments differ</li>
+         <li>Fails with many parties</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Non-rival + non-excludable</li>
+         <li><strong>Samuelson</strong>: \(\sum_i MRS_i = MRT\)</li>
+         <li><strong>Vertical</strong> summation</li>
+         <li>Club = excludable; commons = rival</li>
+        </ul>
+       </div>
+       <div class="detail-card">
+        <ul>
+         <li>Enjoy without paying</li>
+         <li>Own MB vs <strong>full</strong> MC</li>
+         <li>Under-provision</li>
+         <li>Mechanisms elicit truth</li>
+        </ul>
+       </div>
+      </div>
+     </section>
+
+     <section id="ch17-mc1">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">17</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Externalities &amp; Public Goods &middot; Practice MC #1</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q1.</strong> The optimal Pigouvian tax on a negative externality equals:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> total external damage divided by output</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> the marginal external cost at the <em>efficient</em> quantity</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> the firm's marginal private cost</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> the deadweight loss the externality creates</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(t^* = MEC(Q^*)\) &mdash; it internalizes the wedge at the margin. Average damage is wrong when \(MEC\) varies, and setting the tax equal to the DWL confuses a per-unit price with a total area.</p>
+     </div>
+    </section>
+
+     <section id="ch17-mc2">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">17</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Externalities &amp; Public Goods &middot; Practice MC #2</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q2.</strong> With \(P^d = 80 - Q\), \(P^s = 10 + 3Q\) and \(MEC = 5\), the unregulated and efficient quantities are:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(Q^p = 17.5,\ Q^* = 16.25\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(Q^p = 16.25,\ Q^* = 17.5\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(Q^p = 20,\ Q^* = 15\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(Q^p = 17.5,\ Q^* = 14\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>A</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Unregulated: \(80-Q = 10+3Q \Rightarrow Q^p = 17.5\). Efficient: add \(MEC\) to supply, \(80-Q = 15+3Q \Rightarrow Q^* = 16.25\). Reversing the two is the standard slip.</p>
+     </div>
+    </section>
+
+     <section id="ch17-mc3">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">17</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Externalities &amp; Public Goods &middot; Practice MC #3</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q3.</strong> For that market, the deadweight loss with no policy and the tax revenue are:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(DWL = 6.25\), revenue \(= 87.5\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(DWL = 3.125\), revenue \(= 81.25\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(DWL = 81.25\), revenue \(= 3.125\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(DWL = 1.25\), revenue \(= 81.25\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">\(DWL = \tfrac12(1.25)(5) = 3.125\); revenue \(= t^*Q^* = 5(16.25) = 81.25\). Note the revenue is <strong>26 times</strong> the efficiency gain &mdash; it is a transfer, not welfare created. Answer A drops the \(\tfrac12\); D reports the quantity change as an area.</p>
+     </div>
+    </section>
+
+     <section id="ch17-mc4">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">17</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Externalities &amp; Public Goods &middot; Practice MC #4</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q4.</strong> Reassigning property rights in a Coasean bargain changes:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> the efficient quantity, but not the distribution</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> the distribution of surplus, but not the efficient quantity</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> neither, since bargaining is voluntary</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> both, in proportion to bargaining power</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>B</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">This is the invariance result. In the rancher&ndash;farmer problem the herd settles at \(N^*=14\) either way; what moves is who pays whom &mdash; a side payment in \([90,180]\) under one assignment versus \([420,910]\) under the other.</p>
+     </div>
+    </section>
+
+     <section id="ch17-mc5">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">17</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Externalities &amp; Public Goods &middot; Practice MC #5</div>
+     </div>
+     <div class="detail-card" style="font-size: 12pt; padding: 10px 14px; margin-bottom: 16px; border-left-color: var(--primary-color);">
+      <p style="font-size: 12pt;"><strong>Q5.</strong> Three consumers value a public good at \(12\sqrt{G}\), \(8\sqrt{G}\) and \(4\sqrt{G}\), with \(MC = 6\). The efficient quantity is:</p>
+     </div>
+
+     <div class="detail-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>A)</strong> \(G^* = 1\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>B)</strong> \(G^* = 2\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--success-color);">
+  <p style="font-size: 12pt;"><strong>C)</strong> \(G^* = 4\)</p>
+</div>
+         <div class="detail-card" style="border-left-color: var(--accent-color);">
+  <p style="font-size: 12pt;"><strong>D)</strong> \(G^* = 16\)</p>
+</div>
+     </div>
+     <div class="tip-box fragment fade-up" style="margin-top: 14px;">
+      <span class="label">Answer</span>
+      <p style="font-size: 14pt;"><strong>C</strong></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height: 1.4;">Marginal valuations \(6/\sqrt{G} + 4/\sqrt{G} + 2/\sqrt{G} = 12/\sqrt{G}\); set equal to 6 to get \(G^*=4\). <strong>\(G=1\) is what the largest single consumer would buy alone</strong> &mdash; the under-provision the condition exposes.</p>
+     </div>
+    </section>
+
+     <section id="ch17-handout">
+     <div class="chapter-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+      <div class="chapter-num" style="font-size: 16pt; padding: 4px 10px;">17</div>
+      <div class="chapter-title-pill" style="font-size: 14pt; padding: 6px 0;">Externalities &amp; Public Goods &middot; Written Problem</div>
+     </div>
+     <div style="background: #FFF8E7; border-left: 4px solid var(--accent-color); border-radius: 4px; padding: 8px 14px; margin-bottom: 10px;">
+      <p style="font-size: 11pt; line-height: 1.45; margin: 0;"><span style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--accent-color); text-transform: uppercase; margin-right: 8px;">Set-up</span> <strong>Part 1:</strong> a market with \(P^d = 80 - Q\), \(P^s = 10 + 3Q\) and \(MEC = 5\). <strong>Part 2:</strong> a rancher whose cattle damage a neighbouring farm, with revenue per head \(p = 100\), marginal herd cost parameter \(\alpha = 5\), and per-head crop damage \(\beta = 30\).</p>
+     </div>
+     <p style="font-size: 9pt; font-weight: 700; letter-spacing: 1px; color: var(--muted-color); text-transform: uppercase; margin: 0 0 6px 0;">Show your work for each part:</p>
+     <div style="display: flex; flex-direction: column; gap: 6px;">
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">1</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Unregulated vs efficient.</strong> Find \(Q^p\) and \(Q^*\); state the Pigouvian tax.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">2</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Welfare accounting.</strong> Compute the deadweight loss without policy and the tax revenue &mdash; then say in one sentence why they are not the same kind of quantity.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">3</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Coase quantities.</strong> Find the rancher's unilateral herd \(N^p = p/\alpha\) and the joint-surplus herd \(N^* = (p-\beta)/\alpha\).</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">4</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>Both rights assignments.</strong> Under the rancher's right, integrate \(\int_{14}^{20}(100-5N)\,dN\) for her forgone profit against the farmer's saved damage. Under the farmer's right, do the same over \([0,14]\). Give both payment ranges.</p></div>
+</div>
+         <div style="display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; background: #FAFAFA; border: 1px solid var(--line-color); border-radius: 4px; padding: 8px 12px;">
+  <div style="background: var(--primary-color); color: white; border-radius: 4px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13pt;">5</div>
+  <div><p style="font-size: 11.5pt; margin: 0;"><strong>State the invariance.</strong> Say exactly what is the same across the two assignments and what is not.</p></div>
+</div>
+     </div>
+    </section>
+    </section>
+
+
+
+
+    <section id="formulas">
+     <h2><i class="fa-solid fa-square-root-variable" style="color: var(--accent-color);"></i> Build Your Two-Sided Formula Sheet &nbsp;<span class="chip brown">BRING YOUR OWN</span></h2>
+     <p style="font-size: 11pt; color: var(--muted-color); margin-bottom: 10px;">Three columns, one full-size page, both sides allowed. Writing it out is the best memorization technique.</p>
+     <div class="formula-sheet">
+      <div class="formula-section">
+       <h3>Perfect Competition (Ch 10)</h3>
+       <table>
+        <tr><td>Market supply</td><td class="fml">\(N \cdot q^*(p)\) (sum quantities)</td></tr>
+        <tr><td>LR competition</td><td class="fml">\(p = \min ATC\); \(N^* = Q^d(p^{LR})/q^*\)</td></tr>
+        <tr><td>First Welfare Thm</td><td class="fml">comp. eq. maximizes total surplus</td></tr>
+       </table>
+      </div>
+      <div class="formula-section">
+       <h3>Market Power (Ch 11&ndash;12)</h3>
+       <table>
+        <tr><td>Marginal revenue</td><td class="fml">\(MR = P + Q\,P'(Q)\)</td></tr>
+        <tr><td>Linear MR</td><td class="fml">\(P = a - bQ \Rightarrow MR = a - 2bQ\)</td></tr>
+        <tr><td>Inverse-elasticity</td><td class="fml">\(MR = P(1 + 1/\varepsilon_D)\)</td></tr>
+        <tr><td>Monopoly FOC</td><td class="fml">\(MR = MC\), read \(P_M\) off demand</td></tr>
+        <tr><td>Lerner</td><td class="fml">\(L = (P - MC)/P = -1/\varepsilon_D\)</td></tr>
+        <tr><td>DWL (linear)</td><td class="fml">\(\tfrac{1}{2}(P_M - MC)(Q_C - Q_M)\)</td></tr>
+        <tr><td>3rd-degree PD</td><td class="fml">\(P_i = MC/(1 + 1/\varepsilon_i)\); inelastic pays more</td></tr>
+        <tr><td>1st-degree PD</td><td class="fml">\(Q = Q_C\), \(CS = 0\), \(DWL = 0\)</td></tr>
+        <tr><td>Two-part tariff</td><td class="fml">\(p = MC\), \(F = CS(MC)\)</td></tr>
+        <tr><td>Bundling</td><td class="fml">beats separate when val. neg. correlated</td></tr>
+       </table>
+      </div>
+      <div class="formula-section">
+       <h3>Strategic Competition (Ch 13&ndash;14)</h3>
+       <table>
+        <tr><td>Cournot \(N\)-firm</td><td class="fml">\(q_i = \dfrac{a-c}{(N+1)b}\), \(P = \dfrac{a+Nc}{N+1}\)</td></tr>
+        <tr><td>Cournot duopoly</td><td class="fml">each \(q = (a-c)/3b\)</td></tr>
+        <tr><td>Cartel</td><td class="fml">\(Q^M = (a-c)/2b\) &mdash; best, unstable</td></tr>
+        <tr><td>Cartel vs Cournot</td><td class="fml">cartel \(Q\) lower, \(P\) higher, but unstable</td></tr>
+        <tr><td>Dominant strategy</td><td class="fml">best vs. any rival action</td></tr>
+        <tr><td>Nash (check method)</td><td class="fml">both BR payoffs in same cell</td></tr>
+        <tr><td>Mixed strategy</td><td class="fml">make opponent indifferent; sym. \(\tfrac{1}{2},\tfrac{1}{2}\)</td></tr>
+        <tr><td>Grim trigger</td><td class="fml">cooperate iff \(\delta \geq (T - R)/(T - P)\)</td></tr>
+       </table>
+      </div>
+      <div class="formula-section">
+       <h3>Market Failure (Ch 15&ndash;17)</h3>
+       <table>
+        <tr><td>Expected utility</td><td class="fml">\(EU = \sum_s \pi_s u(W_s)\)</td></tr>
+        <tr><td>CE / risk premium</td><td class="fml">\(u(CE) = EU\); \(\rho = E[L] - CE\)</td></tr>
+        <tr><td>Mossin</td><td class="fml">fair \(\Rightarrow q^*{=}L\); loaded \(\Rightarrow q^*{<}L\)</td></tr>
+        <tr><td>Lemons</td><td class="fml">\(\lambda^* = (r_H - v_L)/(v_H - v_L)\)</td></tr>
+        <tr><td>Spence \(s_H^*\)</td><td class="fml">\((p_H{-}p_L)\theta_L\) (least-cost)</td></tr>
+        <tr><td>Pigou / Coase</td><td class="fml">\(t^* = MEC\); same \(Q^*\) either right</td></tr>
+        <tr><td>Samuelson</td><td class="fml">\(\sum_i MRS_i = MRT\)</td></tr>
+       </table>
+      </div>
+     </div>
+    </section>
+
+    <section class="mistakes-slide" id="mistakes">
+     <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Top Mistakes to Avoid (1&ndash;6)</h2>
+     <div class="mistakes-list">
+      <div class="mistake-item">
+       <div class="num-badge">1</div>
+       <p><strong>Using \(p = MC\) for a price-maker.</strong> Price-takers (Ch 10) use \(p = MC\). Monopolists/oligopolists (Ch 11&ndash;14) use \(MR = MC\), with \(MR < P\). The #1 Test 2 error.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">2</div>
+       <p><strong>Forgetting "twice the slope" for MR.</strong> For \(P = a - bQ\), \(MR = a - 2bQ\), not \(a - bQ\). Always derive \(MR\) from \(TR = P \cdot Q\).</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">3</div>
+       <p><strong>Confusing shutdown and exit.</strong> Shutdown (SR) uses \(\min AVC\); exit (LR) uses \(\min ATC\). With \(\min AVC < p < \min ATC\), operate in SR but exit in LR.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">4</div>
+       <p><strong>Treating quasi-rent as profit.</strong> \(QR = pq - VC\); profit \(= pq - VC - FC\). A firm can have positive quasi-rent and negative profit &mdash; and rationally keep operating.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">5</div>
+       <p><strong>Summing supply curves vertically.</strong> Market supply is the <em>horizontal</em> sum: add <strong>quantities</strong> at each price, giving \(Q^s = N q^*(p)\). Vertical summing is for public goods.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">6</div>
+       <p><strong>Lerner/elasticity sign backwards.</strong> \(L = (P - MC)/P = -1/\varepsilon_D\). Since \(\varepsilon_D < 0\), \(L > 0\). Less-elastic demand (smaller \(|\varepsilon_D|\)) &rarr; larger markup.</p>
+      </div>
+     </div>
+    </section>
+
+    <section class="mistakes-slide" id="mistakes-2">
+     <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Top Mistakes to Avoid (7&ndash;12)</h2>
+     <div class="mistakes-list">
+      <div class="mistake-item">
+       <div class="num-badge">7</div>
+       <p><strong>Monopolist in the inelastic region.</strong> A profit-maximizer always operates where \(|\varepsilon_D| > 1\); otherwise \(MR < 0\) and cutting output raises revenue while lowering cost.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">8</div>
+       <p><strong>Wrong PD group pays more.</strong> In 3rd-degree PD the <strong>inelastic</strong> segment pays the <em>higher</em> price (adults &gt; students; business &gt; tourists).</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">9</div>
+       <p><strong>Forgetting the cartel is unstable.</strong> Cartel gives highest joint profit, but each member's \(MR > MC\) at the cartel quantity, so each wants to cheat &mdash; Cournot, not cartel, is the non-cooperative prediction.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">10</div>
+       <p><strong>Mis-handling mixed-strategy logic.</strong> You pick your probabilities to make the <strong>opponent</strong> indifferent, not yourself. Set the opponent's two pure-strategy payoffs equal and solve.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">11</div>
+       <p><strong>Forgetting to find ALL Nash equilibria.</strong> Use the check method on every cell. A game can have zero (matching pennies), one (PD), or several (coordination) pure-strategy equilibria.</p>
+      </div>
+      <div class="mistake-item">
+       <div class="num-badge">12</div>
+       <p><strong>Reading the \(\delta\) threshold backwards.</strong> A <strong>high</strong> \(\delta\) (close to 1) means patient players &mdash; that's what <em>sustains</em> cooperation. It holds when \(\delta \geq \delta^* = (T-R)/(T-P)\).</p>
+      </div>
+     </div>
+    </section>
+
+    <section id="final">
+     <h2><i class="fa-solid fa-graduation-cap" style="color: var(--accent-color);"></i> Day-of-Test Game Plan</h2>
+     <div class="two-col" style="margin-top: 14px;">
+      <div>
+       <div class="detail-card" style="margin-bottom: 10px;">
+        <p><strong style="color: var(--primary-color);">1. Price-taker or price-maker?</strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">The first question on every firm problem. Price-taker &rarr; \(p = MC\). Price-maker &rarr; \(MR = MC\), then read \(P\) off demand. Get this right and half the work is done.</p>
+       </div>
+       <div class="detail-card" style="margin-bottom: 10px;">
+        <p><strong style="color: var(--primary-color);">2. Name the model before solving.</strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">Monopoly? Cournot? Cartel? A 2&times;2 game? Naming the structure tells you which formula to reach for &mdash; the algebra follows.</p>
+       </div>
+       <div class="detail-card" style="margin-bottom: 10px;">
+        <p><strong style="color: var(--primary-color);">3. For games, use the check method.</strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">Circle each player's best response to every rival action. A cell with both circled is a Nash equilibrium. Check <em>all</em> cells &mdash; there can be zero, one, or several.</p>
+       </div>
+      </div>
+      <div>
+       <div class="detail-card" style="margin-bottom: 10px;">
+        <p><strong style="color: var(--primary-color);">4. Memorize the canonical anchor.</strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">\(P = 100 - Q\), \(MC = 20\): monopoly/cartel \((40, 60)\), Cournot \((53.3, 46.7)\). A free sanity check on any oligopoly solve.</p>
+       </div>
+       <div class="detail-card" style="margin-bottom: 10px;">
+        <p><strong style="color: var(--primary-color);">5. Check signs &amp; the elastic region.</strong></p>
+        <p style="font-size: 11pt; margin-top: 4px;">\(\varepsilon_D < 0\), so \(L = -1/\varepsilon_D > 0\). A monopolist sits where \(|\varepsilon_D| > 1\). Mix to make the <em>opponent</em> indifferent. Easy points lost on flipped signs.</p>
+       </div>
+       <div class="tip-box" style="margin-top: 6px;">
+        <span class="label">Mindset</span>
+        <p style="font-size: 11pt;">Test 2 rewards <strong>structural reasoning</strong>: classify the market (price-taker vs. price-maker), name the model, apply its decision rule, then turn the crank. The mechanics are mechanical once the structure is right.</p>
+       </div>
+      </div>
+     </div>
+     <div style="text-align: center; margin-top: 22px; padding: 20px; background: var(--surface-color); border-radius: 6px; border: 1px solid var(--line-color); border-left: 3px solid var(--accent-color);">
+      <p style="font-size: 22pt; color: var(--primary-color); font-family: var(--heading-font); font-weight: 700; margin: 0; letter-spacing: -0.02em;">
+       Good luck &mdash; you&rsquo;ve got this.
+      </p>
+      <p style="font-size: 13pt; color: var(--muted-color); margin-top: 6px;">
+       Office hours posted on Canvas &mdash; come by if you want one last walkthrough.
+      </p>
+     </div>
+    </section>
+
+   </div>
+  </div>
+
+  <script>
+   window.MathJax = {
+    tex: {
+     inlineMath: [['\\(', '\\)']],
+     displayMath: [['\\[', '\\]']],
+     processEscapes: true
+    },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+   };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+   Reveal.initialize({
+    keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
+    hash: true,
+    slideNumber: 'c/t',
+    showSlideNumber: 'all',
+    progress: true,
+    width: 1280,
+    height: 720,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 2.0,
+    controls: true,
+  controlsLayout: 'edges',
+    center: false,
+    transition: 'none',         // disable cross-fade animations (cheaper with heavy slides)
+    backgroundTransition: 'none',
+    viewDistance: 1,            // only render 1 slide ahead/behind (key perf win for 62-slide deck)
+    mobileViewDistance: 1,
+    pdfSeparateFragments: false,
+    pdfMaxPagesPerSlide: 1
+   });
+  </script>
+<script>
+(function(){
+  document.addEventListener('keydown', function(e){
+    if(typeof Reveal==='undefined') return;
+    if(!e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag=((e.target&&e.target.tagName)||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select') return;
+    if(e.code==='KeyH' || e.keyCode===72){ Reveal.prev();  e.preventDefault(); }
+    else if(e.code==='KeyL' || e.keyCode===76){ Reveal.next(); e.preventDefault(); }
+  }, true);
+})();
+</script>
+
+<script>
+(function () {
+  // 29 Sep 2026, Ryan: reveal's "?" panel only knew reveal's own keys. Every
+  // key the decks add (pen, timers, poll, speaker-view relays) is registered
+  // here so the panel is the one place to look. Rows depend on the window: the
+  // projector and speaker view get the instructor keys; a student's copy gets
+  // only what works for a student. Rows for features a deck lacks are skipped.
+  var q = location.search;
+  var receiver = /[?&]receiver(&|$)/.test(q), current = receiver && /postMessageEvents=true/.test(q);
+  var projector = /[?&]presenter(&|=|$)/.test(q) && !receiver;
+  if (receiver && !current) return;                         // the Upcoming pane is view-only
+  var inst = projector || current || /[?&]instructor(&|=|$)/.test(q);
+  // twice as many rows as reveal's own list: wider and tighter so it fits one screen
+  var css = document.createElement('style');
+  var H = '.reveal .overlay.overlay-help .viewport .viewport-inner';
+  css.textContent = H + '{width:min(1000px,94vw)!important;max-width:none!important;}' +
+    H + ' table{width:100%!important;}' +
+    H + ' table th,' + H + ' table td{padding:4px 12px!important;font-size:13px!important;line-height:1.3!important;}' +
+    H + ' table td:last-child{text-align:left!important;}' +
+    H + ' table th:first-child,' + H + ' table td:first-child{width:24%!important;}' +
+    H + ' .title{margin:0!important;}' + H + ' br{display:none;}' +
+    '.reveal .overlay.overlay-help .viewport{padding-top:0!important;}' + H + '{padding-top:18px!important;}';
+  document.head.appendChild(css);
+  function go() {
+    if (!Reveal.registerKeyboardShortcut) return;
+    var K = function (k, d) { Reveal.registerKeyboardShortcut(k, d); };
+    var hasTimer = !!document.getElementById('cd-wrap');
+    var hasPoll = !!document.querySelector('.poll-grid, [data-poll-voting]');
+    if (inst) {
+      K('F', 'Fullscreen &mdash; pressed in speaker view, it full-screens the <b>projector</b>');
+      K('ESC, O', 'Slide overview &mdash; from speaker view, on <b>both</b> screens (Enter or a click picks a slide)');
+      K('M', 'Move keyboard focus between the projector and speaker view (Cmd-` brings a window forward)');
+      if (hasTimer) K('1 &ndash; 9', 'Countdown timer for that many minutes (same number again hides it); starts on both screens');
+      if (hasPoll) K('T', 'Poll slide: open / close voting. In speaker view, clicking an option votes on the projector');
+    }
+    K('D', 'Pen on / off (Esc also leaves it)');
+    K('Pen: F L A R S Y', 'Free draw &middot; line &middot; arrow &middot; box &middot; shade &middot; triangle');
+    K('Pen: G N H E', 'Axis guides &middot; curve label &middot; shifted copy &middot; eraser');
+    K('Pen: [ ] Z X C P', 'Thinner &middot; thicker &middot; undo &middot; redo &middot; clear slide &middot; save as PNG');
+    K('?', 'This list');
+    // S is registered by reveal's notes plugin as a key BINDING ("Speaker notes
+    // view"), which the panel lists after these rows; a second S row would be a
+    // duplicate. Its description is not reachable through the API, so the row is
+    // amended when the panel is drawn.
+    if (inst) {
+      var wrap = document.querySelector('.reveal');
+      if (wrap && window.MutationObserver) new MutationObserver(function () {
+        var o = wrap.querySelector('.overlay-help');
+        if (!o || o.__tiS) return; o.__tiS = 1;
+        [].forEach.call(o.querySelectorAll('td'), function (td) {
+          if (td.textContent === 'Speaker notes view' && td.parentNode) td.parentNode.remove();   // v3: Ryan does not want the S row
+        });
+      }).observe(wrap, { childList: true });
+    }
+  }
+  if (window.Reveal && Reveal.isReady && Reveal.isReady()) go();
+  else if (window.Reveal && Reveal.on) Reveal.on('ready', go);
+})();
+</script>
+<script>
+(function () {
+  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
+  var current = false;
+  // ---- annotation: temporary marks on the slide -------------------------
+  // A whiteboard, not a document. Strokes live in memory only, keyed by
+  // slide, and are gone when the deck is closed -- asked for explicitly, so
+  // there is no storage anywhere in here.
+  //
+  // Points are kept in SLIDE units, the same 1280x720 space the laser dot
+  // uses. Canvas pixels would be wrong the moment the window is resized or
+  // the deck is thrown at a projector with a different aspect: the marks
+  // have to sit on the WORDS they were drawn on.
+  //
+  // The shape set is chosen for an economics board, not for drawing in
+  // general: a straight LINE for a budget line or a tangent, an ARROW for
+  // "demand shifts right", a RECT and a translucent SHADE for tax revenue and
+  // surplus boxes, a right TRIANGLE for deadweight loss, and GUIDES -- the
+  // dashed pair dropped from a point to the two axes, which is the single
+  // most-drawn mark in a micro lecture.
+  var Ink = (function () {
+    var PENS = [
+      { n: 'Red',    c: '#e11d48' },
+      { n: 'Blue',   c: '#2563eb' },
+      { n: 'Green',  c: '#059669' },
+      { n: 'Orange', c: '#ea580c' },
+      { n: 'Black',  c: '#111827' },
+      { n: 'Highlighter', c: 'rgba(250,204,21,.45)', hi: true }
+    ];
+    var SIZES = [2, 4, 8];            // thin / medium / thick, in slide units
+    var TOOLS = [
+      { k: 'free',  i: 'fa-pencil',           t: 'Freehand (f)' },
+      { k: 'line',  i: 'fa-slash',            t: 'Straight line (l)' },
+      { k: 'arrow', i: 'fa-arrow-right-long', t: 'Arrow — a shift (a)' },
+      { k: 'rect',  i: 'fa-square',           t: 'Rectangle (r)' },
+      { k: 'shade', i: 'fa-fill-drip',        t: 'Shaded area — revenue, surplus (s)' },
+      { k: 'tri',   i: 'fa-play',             t: 'Right triangle — deadweight loss (y)' },
+      { k: 'guide', i: 'fa-crosshairs',       t: 'Dashed guides to the axes (g)' },
+      { k: 'label', i: 'fa-font',             t: 'Curve label \u2014 D, S, MC, D\u2032 (n)' },
+      { k: 'ghost', i: 'fa-clone',            t: 'Shifted ghost of a curve \u2014 drag it across (h)' }
+    ];
+    var cv, ctx, active = false, erasing = false, pi = 0, si = 1, tool = 'free';
+    var ops = {}, undone = {}, cur = null, rcur = null, relay = null, bar = null, btn = null;
+
+    function skey() { var i = Reveal.getIndices(); return i.h + '.' + (i.v || 0); }
+    function box() { var s = document.querySelector('.reveal .slides'); return s ? s.getBoundingClientRect() : null; }
+    function width() { return PENS[pi].hi ? 24 : SIZES[si]; }
+
+    function ensure() {
+      if (cv) return;
+      cv = document.createElement('canvas');
+      cv.id = 'ti-ink';
+      cv.style.cssText = 'position:fixed;z-index:9990;pointer-events:none;touch-action:none';
+      document.body.appendChild(cv);
+      cv.addEventListener('pointerdown', down);
+      cv.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+      window.addEventListener('pointercancel', up);
+      fit();
+    }
+    function fit() {
+      var r = box(); if (!r || !cv) return;
+      var dpr = window.devicePixelRatio || 1;
+      cv.style.left = r.left + 'px'; cv.style.top = r.top + 'px';
+      cv.style.width = r.width + 'px'; cv.style.height = r.height + 'px';
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx = cv.getContext('2d');
+      render();
+    }
+    // Live strokes are DERIVED by replaying this slide's op log, so undo and
+    // redo are a cursor into that log and never have to reverse a partially
+    // erased stroke by hand.
+    function live() {
+      var list = [], o = ops[skey()] || [];
+      o.forEach(function (op) {
+        if (op.t === 'add') list.push(op.s);
+        else if (op.t === 'del' && op.ids) list = list.filter(function (s) { return op.ids.indexOf(s.id) < 0; });
+        else if (op.t === 'del') op.ss.forEach(function (s) {
+          var i = list.indexOf(s); if (i >= 0) list.splice(i, 1);
+        });
+      });
+      return list;
+    }
+    // One description of every shape, used for BOTH drawing and erasing, so
+    // the two can never disagree about where a mark is.
+    function paths(s) {
+      var p = s.pts, a = p[0], b = p[p.length - 1];
+      if (s.k === 'free' || !s.k) return [p];
+      if (s.k === 'line' || s.k === 'arrow') return [[a, b]];
+      if (s.k === 'rect' || s.k === 'shade')
+        return [[a, { x: b.x, y: a.y }, b, { x: a.x, y: b.y }, a]];
+      if (s.k === 'tri') return [[a, b, { x: b.x, y: a.y }, a]];
+      if (s.k === 'guide') return [[a, { x: b.x, y: a.y }], [a, { x: a.x, y: b.y }]];
+      if (s.k === 'text') return [];
+      return [p];
+    }
+    function render() {
+      if (!cv || !ctx) return;
+      var r = box(); if (!r) return;
+      var dpr = window.devicePixelRatio || 1, k = Reveal.getScale() * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var all = live(); if (rcur) all = all.concat([rcur]); if (cur) all = all.concat([cur]);
+      all.forEach(function (s) {
+        if (!s.pts.length) return;
+        ctx.save();
+        if (s.k === 'text') {
+          ctx.globalAlpha = s.ghost ? 0.6 : 1;
+          ctx.fillStyle = s.c;
+          // italic serif, because that is how a curve is labelled on a board
+          ctx.font = 'italic 700 ' + (s.size || 22) + 'px Georgia,"Times New Roman",serif';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(s.txt || '', s.pts[0].x, s.pts[0].y);
+          ctx.restore(); return;
+        }
+        ctx.strokeStyle = s.c; ctx.lineWidth = s.w;
+        if (s.ghost) { ctx.globalAlpha = 0.6; ctx.setLineDash([9, 7]); }
+        else ctx.setLineDash(s.k === 'guide' ? [7, 6] : []);
+        if (s.k === 'shade') {
+          ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = s.c;
+          var q = s.pts[0], z = s.pts[s.pts.length - 1];
+          ctx.fillRect(Math.min(q.x, z.x), Math.min(q.y, z.y), Math.abs(z.x - q.x), Math.abs(z.y - q.y));
+          ctx.restore();
+        }
+        paths(s).forEach(function (seg) {
+          if (seg.length < 1) return;
+          ctx.beginPath(); ctx.moveTo(seg[0].x, seg[0].y);
+          for (var i = 1; i < seg.length; i++) ctx.lineTo(seg[i].x, seg[i].y);
+          if (seg.length === 1) ctx.lineTo(seg[0].x + 0.01, seg[0].y + 0.01);
+          ctx.stroke();
+        });
+        if (s.k === 'arrow') {
+          var a = s.pts[0], b = s.pts[s.pts.length - 1];
+          var ang = Math.atan2(b.y - a.y, b.x - a.x), L = 9 + s.w * 2.2;
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang - 0.42), b.y - L * Math.sin(ang - 0.42));
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang + 0.42), b.y - L * Math.sin(ang + 0.42));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.restore();
+      });
+    }
+    function at(ev) {
+      var r = box(), k = Reveal.getScale() || 1;
+      return { x: (ev.clientX - r.left) / k, y: (ev.clientY - r.top) / k };
+    }
+    function push(op) {
+      if (op.t === 'add' && op.s && !op.s.id) op.s.id = Math.random().toString(36).slice(2, 10);
+      var k = skey(); (ops[k] = ops[k] || []).push(op); undone[k] = [];
+    }
+    // v25: the WHOLE log of one slide, so the other window can replace its own -- the two
+    // can then never disagree about which stroke an undo or an erase meant
+    function snap() {
+      var k = skey();
+      send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+    }
+    function snapAll() {
+      Object.keys(ops).forEach(function (k) {
+        if ((ops[k] || []).length || (undone[k] || []).length)
+          send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+      });
+    }
+    function send(m) { if (relay) relay(m); }
+
+    // erase whole strokes, not pixels: one op to undo, and it never leaves
+    // half a rubbed-out line behind
+    function eraseAt(p) {
+      var hit = [], R = 14;
+      live().forEach(function (s) {
+        if (s.k === 'text') {
+          var half = (s.size || 22) * 0.6, wide = (s.txt || '').length * (s.size || 22) * 0.34;
+          if (p.x > s.pts[0].x - 8 && p.x < s.pts[0].x + wide + 8 &&
+              p.y > s.pts[0].y - half && p.y < s.pts[0].y + half) hit.push(s);
+          return;
+        }
+        var segs = paths(s), i, j, pts;
+        for (i = 0; i < segs.length; i++) {
+          pts = segs[i];
+          for (j = 0; j < pts.length; j++) {
+            var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+            if (dx * dx + dy * dy < (R + s.w) * (R + s.w)) { hit.push(s); return; }
+          }
+          // a long straight edge has few vertices: walk it
+          for (j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            if (L < 1) continue;
+            var t = ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L);
+            if (t < 0 || t > 1) continue;
+            var cx = A.x + t * (B.x - A.x), cy = A.y + t * (B.y - A.y);
+            if (Math.hypot(p.x - cx, p.y - cy) < R + s.w) { hit.push(s); return; }
+          }
+        }
+      });
+      if (hit.length) { push({ t: 'del', ids: hit.map(function (s) { return s.id; }) }); render(); paintBar(); return true; }
+    }
+    // nearest live stroke to a point, by the same segment walk the eraser uses
+    function nearest(p) {
+      var best = null, bd = 1e9;
+      live().forEach(function (s) {
+        paths(s).forEach(function (pts) {
+          for (var j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            var cx, cy, tt;
+            if (L < 1) { cx = A.x; cy = A.y; }
+            else {
+              tt = Math.max(0, Math.min(1, ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L)));
+              cx = A.x + tt * (B.x - A.x); cy = A.y + tt * (B.y - A.y);
+            }
+            var d = Math.hypot(p.x - cx, p.y - cy);
+            if (d < bd) { bd = d; best = s; }
+          }
+        });
+      });
+      return bd < 40 ? best : null;
+    }
+    // A label is typed, not drawn, so it gets a real input at the click point
+    // rather than a prompt() -- a modal dialog in front of a projected slide is
+    // worse than the thing it is trying to collect.
+    function labelAt(p, ev) {
+      var r = box(), k = Reveal.getScale() || 1, size = 16 + si * 6;
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'D\u2032';
+      inp.style.cssText = 'position:fixed;z-index:10004;left:' + (r.left + p.x * k - 6) + 'px;top:' +
+        (r.top + p.y * k - size * k * 0.75) + 'px;width:130px;font:italic 700 ' + Math.round(size * k) +
+        'px Georgia,serif;color:' + PENS[pi].c + ';background:rgba(255,255,255,.92);border:2px solid ' +
+        PENS[pi].c + ';border-radius:6px;padding:1px 5px;outline:none';
+      document.body.appendChild(inp);
+      // v27: the box grows with the text. At 130px fixed, a large italic label scrolled its
+      // start out of sight after four characters and Ryan could not see what he typed.
+      var meas = document.createElement('canvas').getContext('2d');
+      meas.font = 'italic 700 ' + Math.round(size * k) + 'px Georgia,serif';
+      var grow = function () {
+        var w = meas.measureText(inp.value || inp.placeholder).width;
+        inp.style.width = Math.max(60, Math.ceil(w + size * k * 0.9 + 14)) + 'px';
+      };
+      inp.addEventListener('input', grow); grow();
+      inp.focus();
+      var done = function (commit) {
+        var txt = inp.value.trim();
+        inp.remove();
+        if (!commit || !txt) return;
+        var s = { k: 'text', c: PENS[pi].c, w: SIZES[si], size: size, txt: txt, pts: [p] };
+        push({ t: 'add', s: s }); snap();
+        render(); paintBar();
+      };
+      inp.addEventListener('keydown', function (e) {
+        e.stopPropagation();                       // Reveal and Ink both listen on document
+        if (e.key === 'Enter') { e.preventDefault(); done(true); }
+        if (e.key === 'Escape') { e.preventDefault(); done(false); }
+      });
+      inp.addEventListener('blur', function () { done(true); });
+    }
+
+    function down(ev) {
+      if (!active) return;
+      ev.preventDefault(); ev.stopPropagation();
+      var p = at(ev);
+      if (erasing) { if (eraseAt(p)) snap(); return; }
+      if (tool === 'label') { labelAt(p, ev); return; }
+      if (tool === 'ghost') {
+        // copy the curve you pressed on, then drag the copy to where it shifted
+        var src = nearest(p);
+        if (!src) return;
+        var base = src.pts.map(function (q) { return { x: q.x, y: q.y }; });
+        cur = { k: src.k, c: src.c, w: src.w, size: src.size, txt: src.txt,
+                ghost: true, base: base, from: p, pts: base };
+        render(); return;
+      }
+      cur = { c: PENS[pi].c, w: width(), k: tool, pts: [p, p] };
+      send({ k: 'down', x: p.x, y: p.y, c: cur.c, w: cur.w, tool: tool });
+      render();
+    }
+    function move(ev) {
+      if (!active) return;
+      var p = at(ev);
+      if (erasing) {
+        if (ev.buttons && eraseAt(p)) snap();
+        return;
+      }
+      if (!cur) return;
+      ev.preventDefault();
+      if (cur.ghost) {
+        var dx = p.x - cur.from.x, dy = p.y - cur.from.y;
+        cur.pts = cur.base.map(function (q) { return { x: q.x + dx, y: q.y + dy }; });
+        render(); return;                          // relayed whole, on release
+      }
+      if (cur.k === 'free') cur.pts.push(p); else cur.pts[1] = p;
+      send({ k: 'move', x: p.x, y: p.y }); render();
+    }
+    function up() {
+      if (!cur) return;
+      // a shape needs two distinct corners; a tap is not a rectangle
+      var a = cur.pts[0], b = cur.pts[cur.pts.length - 1];
+      var ok = cur.ghost ? Math.hypot(b.x - a.x, b.y - a.y) >= 0
+             : cur.k === 'free' ? cur.pts.length > 1
+             : Math.hypot(b.x - a.x, b.y - a.y) > 4;
+      if (cur.ghost) {
+        var moved = cur.pts.length && cur.base.length &&
+                    Math.hypot(cur.pts[0].x - cur.base[0].x, cur.pts[0].y - cur.base[0].y) > 4;
+        if (moved) {
+          var g = { k: cur.k, c: cur.c, w: cur.w, size: cur.size, txt: cur.txt, ghost: true, pts: cur.pts };
+          push({ t: 'add', s: g }); snap();
+        }
+        cur = null; render(); paintBar(); return;
+      }
+      if (ok) { push({ t: 'add', s: cur }); cur = null; snap(); }
+      else { cur = null; send({ k: 'cancel' }); }
+      render(); paintBar();
+    }
+    // the projected window rebuilds the same stroke from the relayed points
+    function apply(m) {
+      if (!m) return;
+      ensure();
+      // v25: the other window's stroke in progress lives in rcur, never in cur, so a stroke
+      // drawn on each screen at once cannot merge into one
+      if (m.k === 'down') { rcur = { c: m.c, w: m.w, k: m.tool || 'free', pts: [{ x: m.x, y: m.y }, { x: m.x, y: m.y }] }; render(); return; }
+      if (m.k === 'move') { if (rcur) { if (rcur.k === 'free') rcur.pts.push({ x: m.x, y: m.y }); else rcur.pts[1] = { x: m.x, y: m.y }; render(); } return; }
+      if (m.k === 'cancel') { rcur = null; render(); return; }
+      if (m.k === 'snap') {
+        ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
+        render(); paintBar(); return;
+      }
+      if (m.k === 'req')  { snapAll(); return; }
+      // a window still on v24 or older sends these; keep them working during a mixed reload
+      if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
+      if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
+      if (m.k === 'erase'){ eraseAt({ x: m.x, y: m.y }); return; }
+      if (m.k === 'undo') { undo(true); return; }
+      if (m.k === 'redo') { redo(true); return; }
+      if (m.k === 'clear'){ clear(true); return; }
+      if (m.k === 'mode') { setActive(m.on, true); return; }
+    }
+    function undo(q) {
+      var k = skey(), o = ops[k] || [];
+      if (!o.length) return;
+      (undone[k] = undone[k] || []).push(o.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function redo(q) {
+      var k = skey(), u = undone[k] || [];
+      if (!u.length) return;
+      (ops[k] = ops[k] || []).push(u.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function clear(q) {
+      var k = skey();
+      if (!(ops[k] || []).length) return;
+      undone[k] = (undone[k] || []).concat(ops[k]); ops[k] = [];
+      render(); paintBar(); if (!q) snap();
+    }
+    function setActive(v, q) {
+      active = !!v; ensure();
+      cv.style.pointerEvents = active ? 'auto' : 'none';
+      cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
+      if (bar) bar.style.display = active ? 'flex' : 'none';
+      if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
+      paintBar(); if (!q) send({ k: 'mode', on: active });
+    }
+
+    /* ---------- save a picture of the board ---------- */
+    // The slide is DOM, not a canvas, so the page cannot screenshot itself
+    // without help. html2canvas is fetched only when this is first pressed --
+    // no cost to a lecture that never uses it -- and if the CDN is unreachable
+    // the ink alone is still saved rather than nothing.
+    function stamp() {
+      var m = location.pathname.match(/\/([^\/]+)\/[^\/]*$/);
+      var n = document.querySelector('.reveal .slide-number');
+      return (m ? m[1] : 'slide') + '-' + (n ? n.textContent.replace(/\s+/g, '') : skey());
+    }
+    function download(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = stamp() + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    function inkOnly() {
+      var out = document.createElement('canvas');
+      out.width = cv.width; out.height = cv.height;
+      var c = out.getContext('2d');
+      c.fillStyle = '#fff'; c.fillRect(0, 0, out.width, out.height);
+      c.drawImage(cv, 0, 0);
+      out.toBlob(download);
+    }
+    function savePng() {
+      var reveal = document.querySelector('.reveal');
+      var go = function () {
+        window.html2canvas(reveal, { backgroundColor: '#ffffff', scale: 2, logging: false })
+          .then(function (base) {
+            var out = document.createElement('canvas');
+            out.width = base.width; out.height = base.height;
+            var c = out.getContext('2d');
+            c.drawImage(base, 0, 0);
+            var rr = reveal.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+            var k = base.width / rr.width;
+            c.drawImage(cv, (cr.left - rr.left) * k, (cr.top - rr.top) * k, cr.width * k, cr.height * k);
+            out.toBlob(download);
+          })
+          .catch(inkOnly);
+      };
+      if (window.html2canvas) { go(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = go; s.onerror = inkOnly;
+      document.head.appendChild(s);
+    }
+
+    /* ---------- toolbar ---------- */
+    function paintBar() {
+      if (!bar) return;
+      [].forEach.call(bar.querySelectorAll('[data-pen]'), function (b) {
+        b.style.outline = (!erasing && +b.getAttribute('data-pen') === pi) ? '2px solid #111827' : '2px solid transparent';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-size]'), function (b) {
+        var on = +b.getAttribute('data-size') === si;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.firstChild.style.background = on ? '#fff' : '#374151';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-tool]'), function (b) {
+        var on = !erasing && b.getAttribute('data-tool') === tool;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.style.color = on ? '#fff' : '#374151';
+      });
+      var er = bar.querySelector('[data-a="erase"]');
+      if (er) { er.style.background = erasing ? '#111827' : '#e5e7eb'; er.style.color = erasing ? '#fff' : '#374151'; }
+      var k = skey();
+      var u = bar.querySelector('[data-a="undo"]'), rd = bar.querySelector('[data-a="redo"]'),
+          cl = bar.querySelector('[data-a="clear"]'), sv = bar.querySelector('[data-a="save"]');
+      if (u)  u.disabled  = !(ops[k] || []).length;
+      if (rd) rd.disabled = !(undone[k] || []).length;
+      if (cl) cl.disabled = !(ops[k] || []).length;
+      if (sv) sv.disabled = false;
+    }
+    function mount() {
+      if (bar) return;
+      btn = document.createElement('button');
+      btn.id = 'ti-pen'; btn.type = 'button'; btn.title = 'Draw on the slide (d)';
+      btn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      var rest = current ? '.55' : '.18';
+      btn.style.cssText = 'position:fixed;left:' + (current ? 14 : 94) + 'px;bottom:12px;' +
+        'z-index:10001;width:34px;height:34px;' +
+        'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+        'font-size:14px;padding:0;opacity:' + rest + ';transition:opacity .2s';
+      btn.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function () { if (!active) btn.style.opacity = rest; });
+      btn.addEventListener('click', function (e) { e.preventDefault(); setActive(!active); });
+      document.body.appendChild(btn);
+
+      bar = document.createElement('div');
+      bar.id = 'ti-ink-bar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:10px;z-index:10003;' +
+        'display:none;gap:6px;align-items:center;padding:7px 10px;border-radius:11px;' +
+        'background:rgba(255,255,255,.97);box-shadow:0 2px 12px rgba(0,0,0,.22);' +
+        'font:600 12px system-ui,sans-serif;max-width:96vw;flex-wrap:wrap;justify-content:center';
+      var sep = '<span style="width:1px;height:20px;background:#e5e7eb"></span>';
+      var btnCss = 'border:0;border-radius:6px;padding:5px 8px;cursor:pointer;background:#e5e7eb;color:#374151;font:inherit';
+      var html = '';
+      PENS.forEach(function (p, i) {
+        html += '<button data-pen="' + i + '" type="button" title="' + p.n + '" style="width:22px;height:22px;' +
+                'border-radius:50%;border:0;cursor:pointer;padding:0;background:' + p.c + ';' +
+                'outline:2px solid transparent;outline-offset:2px"></button>';
+      });
+      html += sep;
+      SIZES.forEach(function (w, i) {
+        var d = 4 + i * 4;
+        html += '<button data-size="' + i + '" type="button" title="Tip ' + w + '" style="width:26px;height:22px;' +
+                'border:0;border-radius:6px;cursor:pointer;background:#e5e7eb;display:inline-flex;' +
+                'align-items:center;justify-content:center;padding:0">' +
+                '<span style="display:block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:#374151"></span></button>';
+      });
+      html += sep;
+      TOOLS.forEach(function (t) {
+        html += '<button data-tool="' + t.k + '" type="button" title="' + t.t + '" style="' + btnCss + '">' +
+                '<i class="fa-solid ' + t.i + '"></i></button>';
+      });
+      html += sep +
+        '<button data-a="erase" type="button" title="Eraser (e)" style="' + btnCss + '">Erase</button>' +
+        '<button data-a="undo" type="button" title="Undo (z)" style="' + btnCss + '">Undo</button>' +
+        '<button data-a="redo" type="button" title="Redo (x)" style="' + btnCss + '">Redo</button>' +
+        '<button data-a="clear" type="button" title="Clear this slide (c)" style="' + btnCss + '">Clear</button>' +
+        '<button data-a="save" type="button" title="Save this slide as a PNG (p)" style="' + btnCss + '">' +
+        '<i class="fa-solid fa-camera"></i></button>' + sep +
+        '<button data-a="done" type="button" title="Stop drawing (d or Esc)" style="' + btnCss +
+        ';background:#111827;color:#fff">Done</button>';
+      bar.innerHTML = html;
+      bar.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+      bar.addEventListener('click', function (e) {
+        var t = e.target.closest('button'); if (!t) return;
+        e.preventDefault(); e.stopPropagation();
+        if (t.hasAttribute('data-pen'))  { pi = +t.getAttribute('data-pen'); erasing = false; setActive(true); return; }
+        if (t.hasAttribute('data-size')) { si = +t.getAttribute('data-size'); setActive(true); return; }
+        if (t.hasAttribute('data-tool')) { tool = t.getAttribute('data-tool'); erasing = false; setActive(true); return; }
+        var a = t.getAttribute('data-a');
+        if (a === 'erase') { erasing = !erasing; setActive(true); }
+        else if (a === 'undo') undo();
+        else if (a === 'redo') redo();
+        else if (a === 'clear') clear();
+        else if (a === 'save') savePng();
+        else if (a === 'done') setActive(false);
+      });
+      document.body.appendChild(bar);
+      ensure();
+      Reveal.on('resize', fit);
+      window.addEventListener('resize', fit);
+      Reveal.on('slidechanged', function () { cur = null; rcur = null; fit(); paintBar(); });
+      paintBar();
+    }
+
+    function keys(e) {
+      // v26: the system shortcuts too, while the pen is on -- Cmd/Ctrl-Z undo,
+      // Cmd/Ctrl-Shift-Z or Ctrl-Y redo. With the pen off they pass through untouched.
+      if (active && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        var kk = (e.key || '').toLowerCase();
+        if (kk === 'z' || kk === 'y') {
+          e.preventDefault(); e.stopPropagation();
+          if (kk === 'y' || e.shiftKey) redo(); else undo();
+          return;
+        }
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var k = e.key;
+      if (k === 'd' || k === 'D') { e.preventDefault(); e.stopPropagation(); setActive(!active); return; }
+      if (!active) return;                    // every other key is scoped to draw mode
+      var stop = function () { e.preventDefault(); e.stopPropagation(); };
+      if (k === 'Escape') { stop(); setActive(false); return; }
+      if (k === 'e' || k === 'E') { stop(); erasing = !erasing; setActive(true); return; }
+      if (k === 'z' || k === 'Z') { stop(); undo(); return; }
+      if (k === 'x' || k === 'X') { stop(); redo(); return; }
+      if (k === 'c' || k === 'C') { stop(); clear(); return; }
+      if (k === 'p' || k === 'P') { stop(); savePng(); return; }
+      if (k === '[') { stop(); si = Math.max(0, si - 1); setActive(true); return; }
+      if (k === ']') { stop(); si = Math.min(SIZES.length - 1, si + 1); setActive(true); return; }
+      // NOT "t": that is the poll open/close key, and it has to keep working
+      // while the pen is armed so a poll slide can be annotated and still
+      // opened for voting. Triangle takes "y" instead.
+      var map = { f: 'free', l: 'line', a: 'arrow', r: 'rect', s: 'shade', y: 'tri', g: 'guide',
+                  n: 'label', h: 'ghost' };
+      var want = map[k.toLowerCase && k.toLowerCase()];
+      if (want) { stop(); tool = want; erasing = false; setActive(true); }
+    }
+
+    return {
+      mount: mount, apply: apply, fit: fit, keys: keys, ask: function () { send({ k: 'req' }); },
+      on: function () { return active; },
+      relayTo: function (fn) { relay = fn; }
+    };
+  })();
+
+  // ---- full screen ----------------------------------------------------
+  // requestFullscreen needs TRANSIENT user activation IN THE WINDOW THAT GOES
+  // FULL SCREEN, so only a click (or "f") inside the projected window can do
+  // it. The speaker-view button and the click-anywhere target that used to work
+  // around that are GONE: they worked, but two windows and two clicks to reach
+  // full screen was never worth it. "m" then "f" does the same job from the
+  // keyboard -- see swapFocus below.
+  function goFull() {
+    var el = document.documentElement;
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    try {
+      var p = el.requestFullscreen();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function fsButton() {                 // projector window: the one-click path
+    if (document.getElementById('ti-fs')) return;
+    var b = document.createElement('button');
+    b.id = 'ti-fs'; b.type = 'button'; b.title = 'Full screen (f)';
+    b.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    b.style.cssText = 'position:fixed;left:54px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+      'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+      'font-size:14px;padding:0;opacity:.18;transition:opacity .2s';
+    b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+    b.addEventListener('mouseleave', function () { b.style.opacity = '.18'; });
+    b.addEventListener('click', function (e) { e.preventDefault(); goFull(); });
+    document.addEventListener('fullscreenchange', function () {
+      b.innerHTML = document.fullscreenElement ? '<i class="fa-solid fa-compress"></i>'
+                                               : '<i class="fa-solid fa-expand"></i>';
+    });
+    document.body.appendChild(b);
+  }
+
+  function homeLink() {            // presenter only: a faint way back to the chapter list
+    if (document.getElementById('ti-home')) return;
+    var a = document.createElement('a');
+    a.id = 'ti-home'; a.href = '../index.html'; a.title = 'Chapter list';
+    a.innerHTML = '<i class="fa-solid fa-house"></i>';
+    a.style.cssText = 'position:fixed;left:14px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);' +
+      'color:#6b8ba4;border:1px solid #e5e7eb;text-decoration:none;font-size:15px;opacity:.18;transition:opacity .2s';
+    a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+    a.addEventListener('mouseleave', function () { a.style.opacity = '.18'; });
+    document.body.appendChild(a);
+  }
+  function start() {
+    homeLink(); fsButton(); Ink.mount();
+    document.addEventListener('keydown', Ink.keys, true);
+  }
+  if (Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>
+</body>
+</html>

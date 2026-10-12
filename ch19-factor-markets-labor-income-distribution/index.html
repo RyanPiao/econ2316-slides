@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=ec537bdeaea7bfd98fcd49dd3357c23a">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Factor Markets, Labor, and Income Distribution &mdash; ECON 2316 Ch 19</title>
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' },
+      startup: { ready: () => { MathJax.startup.defaultReady(); } }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    .timer-badge { display: inline-block; background: #f0f5f8; color: var(--secondary-color); padding: 6px 14px; border-radius: 16px; font-size: 12pt; font-weight: 600; }
+    .timer-badge i { margin-right: 6px; }
+    .stat-card { background: #f8f6f3; border-radius: 10px; padding: 16px 14px; text-align: center; border-left: 4px solid var(--secondary-color); }
+    .stat-card .num { font-size: 28pt; font-weight: 800; color: var(--secondary-color); margin: 0; line-height: 1; }
+    .stat-card .lbl { font-size: 11.5pt; color: var(--muted-color); margin-top: 6px; }
+    .stat-card.accent { border-left-color: var(--accent-color); }
+    .stat-card.accent .num { color: var(--accent-color); }
+    .stat-card.sage { border-left-color: var(--success-color); }
+    .stat-card.sage .num { color: var(--success-color); }
+    .stat-card.rose { border-left-color: var(--danger-color); }
+    .stat-card.rose .num { color: var(--danger-color); }
+    .reveal table.table-standard { font-size: 14pt; }
+    .reveal table.table-standard th { padding: 9px 11px; font-size: 12.5pt; }
+    .reveal table.table-standard td { padding: 8px 11px; font-size: 12pt; vertical-align: middle; }
+    .conj-card { background: #f8f6f3; border-radius: 8px; padding: 11px 16px; }
+    .conj-card .nm { font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-bottom: 3px; }
+    /* mini grid */
+    .pm { border-collapse: collapse; margin: 0 auto; font-size: 13pt; }
+    .pm td, .pm th { border: 1.5px solid var(--line-color); padding: 9px 16px; text-align: center; }
+    .pm th { background: #f0f5f8; font-weight: 700; font-size: 11.5pt; color: var(--secondary-color); }
+    .pm td.ce { background: #d9f2e6; font-weight: 700; }
+    .pm td.hi { background: #fbeec8; }
+    /* HeadsUp callout */
+    .heads-up { background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 6px; padding: 11px 18px; margin-top: 12px; }
+    .heads-up .hu-tag { margin: 0 0 4px; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .heads-up p.body { margin: 0; font-size: 12.5pt; line-height: 1.5; }
+    /* MonopsonyExplorer preset toggles */
+    .ms-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 2px 0 4px; }
+    .ms-preset { font-family: var(--body-font); font-size: 11.5pt; font-weight: 600; padding: 5px 15px; border-radius: 16px; border: 1.5px solid var(--line-color); background: #f8f6f3; color: var(--text-color); cursor: pointer; transition: all .15s; }
+    .ms-preset:hover { border-color: var(--secondary-color); }
+    .ms-preset.active { background: var(--secondary-color); color: #fff; border-color: var(--secondary-color); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section class="section-divider" data-state="is-section-divider" id="title" style="padding: 0;">
+  <div style="display: grid; grid-template-columns: 55% 45%; height: 720px;">
+    <div style="display: flex; flex-direction: column; justify-content: center; padding: 50px 50px 50px 60px;">
+      <p style="font-size: 12pt; color: var(--secondary-color); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px;">
+        ECON 2316 &bull; Microeconomic Theory &bull; Chapter 19
+      </p>
+      <h1 style="font-size: 34pt; line-height: 1.18; color: var(--primary-color); margin-bottom: 22px;">
+        Factor Markets, Labor, and Income Distribution
+      </h1>
+      <p style="font-size: 14pt; color: var(--muted-color); font-style: italic; max-width: 520px; margin-top: 4px;">
+        Maya returns after 14 chapters with <strong style="color: var(--text-color);">two job offers</strong> &mdash; both paying $24/hour. The whole book is the machinery that tells them apart.
+      </p>
+      <div style="margin-top: auto; padding-bottom: 15px;">
+        <p style="font-size: 16pt; color: var(--primary-color); font-weight: 700; margin-bottom: 8px;">
+          Dr. Richeng Piao
+        </p>
+        <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; line-height: 1.8;">
+          Department of Economics<br>
+          Northeastern University &mdash; Closes the Manuscript
+        </p>
+      </div>
+    </div>
+    <div style="overflow: hidden;">
+      <img alt="A split scene of two workplaces — a school classroom and a glass-walled tech office — standing for the same headline wage set by two different market structures on the buyer side of the labor market" src="figures/ch19-cover.webp" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+<section id="learning-objectives" style="padding: 40px 50px;">
+  <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Learning Objectives</h2>
+  <p style="font-size: 13pt; color: var(--muted-color); margin-bottom: 14px;">
+    By the end of class today, you will be able to&hellip;
+  </p>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">1</p>
+      <p style="font-size: 13.5pt;"><strong>Derive</strong> the firm's labor demand as <em>derived demand</em>: \(w = VMP_L = p\cdot MP_L\) under perfect competition. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">2</p>
+      <p style="font-size: 13.5pt;"><strong>Distinguish</strong> \(MRP_L\) from \(VMP_L\) and show why a monopolist hires fewer workers at every wage. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">3</p>
+      <p style="font-size: 13.5pt;"><strong>Decompose</strong> a wage change into substitution and income effects, and explain forward- vs backward-bending labor supply. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">4</p>
+      <p style="font-size: 13.5pt;"><strong>Model</strong> monopsony and derive the wage-markdown formula \(w/MRP_L = \varepsilon_S/(\varepsilon_S+1)\) &mdash; the mirror of the Lerner rule. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L5)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">5</p>
+      <p style="font-size: 13.5pt;"><strong>Analyze</strong> economic rent on inelastic factors and <strong>measure</strong> inequality with the Lorenz curve and Gini coefficient. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
+    </div>
+  </div>
+</section>
+
+<section id="bridge">
+  <h2><i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--secondary-color);"></i> The Last Piece: Where Factor Prices Come From</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Chapters 4&ndash;18 &mdash; the toolkit</p>
+      <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        <li>Consumers maximize utility &rarr; demand (Chs 4&ndash;6)</li>
+        <li>Firms minimize cost, maximize profit &rarr; supply (Chs 7&ndash;9)</li>
+        <li>Market power: monopoly, the Lerner rule (Chs 11&ndash;14)</li>
+      </ul>
+    </div>
+    <div style="background: #fef9f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Chapter 19 &mdash; the synthesis</p>
+      <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
+        <li>Labor demand is <strong>derived</strong> from output max</li>
+        <li>Labor supply is the labor-leisure choice &mdash; <strong>Maya returns</strong></li>
+        <li>Monopsony = monopoly on the <em>buyer</em> side of the labor market</li>
+      </ul>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p style="margin: 0;"><strong>Factor markets are where the whole book converges.</strong> A wage is a price, and a price is set by demand (the firm's \(MRP_L\), from producer theory) meeting supply (the worker's labor-leisure tradeoff, from consumer theory) inside a market structure (competitive or monopsonistic, from Part IV). Today we assemble all three.</p>
+  </div>
+</section>
+
+<section id="opener">
+  <h2><i class="fa-solid fa-id-badge" style="color: var(--accent-color);"></i> Maya's Two Job Offers</h2>
+  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">Maya graduated last May. You've followed her since Ch 4 (preferences), Ch 5 (the time budget \(s+h+\ell=97\)), and Ch 6 (the Slutsky decomposition on a $18&rarr;$24/hour raise). Now she has two offers &mdash; <strong>both paying $24/hour</strong>.</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;"><strong>Offer A &mdash; teaching.</strong> Dozens of competing school districts bid for teachers. Competition forces the wage to the marginal value of her labor: \(w = MRP_L\). (&sect;19.1)</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;"><strong>Offer B &mdash; tech.</strong> One dominant employer in her specialization. Moving is costly; the firm faces an upward-sloping supply curve and sets the wage <em>below</em> \(MRP_L\) &mdash; a wage <strong>markdown</strong>, the mirror of monopoly's markup. (&sect;19.4)</p>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start;">
+      <div class="stat-card"><p class="num">$24</p><p class="lbl">Offer A wage (= \(MRP_L\))</p></div>
+      <div class="stat-card accent"><p class="num">$24</p><p class="lbl">Offer B wage (&lt; \(MRP_L\))</p></div>
+      <div class="stat-card sage"><p class="num">PC</p><p class="lbl">teaching: many buyers</p></div>
+      <div class="stat-card rose"><p class="num">Monopsony</p><p class="lbl">tech: one buyer</p></div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;">Same headline wage. Different market structure on the <strong>buyer</strong> side. By the end of class, Maya will compute the markdown her tech employer extracts &mdash; and so will you. The closing motif resolves it: a $4.80/hour markdown, about <strong>$9,600/year</strong>.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-derived">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;19.1</p>
+  <h1>Derived Demand for Factors</h1>
+  <p class="subtitle">Why a firm wants labor &mdash; and why \(w = p\cdot MP_L\)</p>
+</section>
+
+<section id="derived-demand">
+  <h2><i class="fa-solid fa-diagram-project" style="color: var(--accent-color);"></i> Labor Demand Is <em>Derived</em> from Output Demand</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 8px;">A chip fab doesn't want engineers for their own sake &mdash; it wants them <em>because</em> they produce chips that customers want. Labor demand is <strong>derived</strong> from output demand.</p>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 8px;">Short run: capital fixed at \(\bar K\), so the firm chooses only \(L\):</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ \pi(L) = p\, f(L,\bar K) - wL - r\bar K \]</p>
+        <p style="margin: 6px 0 0; font-size: 12.5pt;">FOC: \(\dfrac{d\pi}{dL}=0 \;\Rightarrow\; p\cdot MP_L = w\)</p>
+      </div>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--accent-color);">
+        <p class="nm" style="color: var(--accent-color);">Value of marginal product</p>
+        <p style="font-size: 12pt; line-height: 1.5; margin: 4px 0 0;">\[ VMP_L \equiv p\cdot MP_L = p\,\frac{\partial f}{\partial L} \]</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 8px 0 0;">The PC firm's rule: <strong>hire until the wage equals the value of the marginal worker's output</strong>, \(w = VMP_L\).</p>
+      </div>
+      <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 10px 0 0;">Derived, because \(VMP_L\) depends on the output price \(p\) (from output demand) and the production function \(f\) (technology). Shifts in either propagate to labor demand.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12.5pt;">Diminishing returns (\(MP_L\) falling, from Ch 7) makes \(VMP_L\) slope <strong>downward</strong> in \(L\) &mdash; so the labor-demand curve \(L^d(w)\) slopes downward in \(w\). The sharper \(MP_L\) falls, the steeper (less elastic) labor demand.</p>
+  </div>
+</section>
+
+<section id="walkthrough-19-1">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 19.1 &mdash; Labor Demand from Output Max</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> A chip firm has \(q = 100\sqrt{L}\), sells at \(p=\$10\), pays \(w=\$50\)/hour. Find \(L^*\), the accounting, and the new \(L^*\) if \(w\) falls to $40.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>1. Set up.</strong> \(MP_L = 50L^{-1/2}\), so \(VMP_L = p\cdot MP_L = 500L^{-1/2}\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. Solve \(VMP_L=w\):</strong> \(500L^{-1/2}=50 \Rightarrow L^{1/2}=10 \Rightarrow L^*=100\) hours.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. Accounting.</strong> \(q^*=1000\) chips; revenue $10,000; labor cost $5,000; gross margin $5,000.</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 12pt;">
+        <tr><th>Wage \(w\)</th><th>\(L^* = (500/w)^2\)</th></tr>
+        <tr><td>$50</td><td>100 hrs</td></tr>
+        <tr><td class="hi">$40</td><td class="ce">156.25 hrs</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4. Comparative static.</strong> \(w:50\to40\) raises \(L^*\) by 56.25%. Since \(L\propto w^{-2}\), the labor-demand elasticity is \(-2\) &mdash; the square-root production function's signature (\(-1/(1-\alpha)\) for \(q=AL^\alpha\)).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app-lebron">
+  <h2><i class="fa-solid fa-basketball" style="color: var(--secondary-color);"></i> Application &mdash; LeBron's MRP and the NBA Salary Cap</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0 0 8px;">The NBA caps each team's payroll near <strong>$165M</strong> (2025&ndash;26), yet teams pay max-contract stars enormous sums. Why? <strong>Derived demand.</strong></p>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">A franchise's revenue &mdash; tickets, merchandise, broadcasts, suites &mdash; scales with wins, and a superstar adds wins. If LeBron adds 10&ndash;15 wins at ~$3&ndash;$5M revenue each, his marginal revenue product runs <strong>$30&ndash;$75M/season</strong> &mdash; while the max-contract rule caps his wage near $50M.</p>
+    </div>
+    <div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat-card accent"><p class="num">$30&ndash;75M</p><p class="lbl">estimated \(MRP\)/season</p></div>
+        <div class="stat-card"><p class="num">~$50M</p><p class="lbl">max-contract wage</p></div>
+      </div>
+      <div class="key-result" style="margin-top: 12px;">
+        <p style="margin: 0; font-size: 12pt;">Even at the cap, the team captures much of his \(MRP\) as franchise <strong>rent</strong>. The cap blocks direct bidding, but the \(MRP\) logic still drives the wage &mdash; and the buyer-side angle returns in &sect;19.4.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-mrp">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;19.2</p>
+  <h1>\(MRP_L\) vs \(VMP_L\)</h1>
+  <p class="subtitle">Why a monopolist hires fewer workers than a competitive firm</p>
+</section>
+
+<section id="mrp-vs-vmp">
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--accent-color);"></i> Marginal Revenue Product of Labor</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ MRP_L \equiv \frac{dR}{dL} = MR\cdot MP_L \]</p>
+      </div>
+      <ul style="font-size: 12pt; line-height: 1.5; margin: 0;">
+        <li><strong>PC output:</strong> \(MR = p\), so \(MRP_L = p\cdot MP_L = VMP_L\) &mdash; they coincide</li>
+        <li><strong>Monopoly:</strong> \(MR &lt; p\), so \(MRP_L &lt; VMP_L\) at every \(L\)</li>
+        <li>The monopolist hires until \(MRP_L = w\), <em>not</em> \(VMP_L = w\)</li>
+      </ul>
+    </div>
+    <div>
+      <img alt="Labor demand under perfect competition versus monopoly: the downward-sloping MRP curve lies strictly below the VMP curve at every level of labor, so for any given wage the monopolist hires less labor than a competitive firm with the same production function" src="figures/figure-19-1-labor-demand-mrp.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="heads-up">
+    <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 19.1 &mdash; derived demand depends on output-market structure</p>
+    <p class="body">A monopolist hires <strong>fewer</strong> workers than a PC firm with the same production function and wage &mdash; <em>before</em> any buyer-side power. When critics say "monopoly is bad for workers," the \(MRP_L &lt; VMP_L\) wedge is the formal microfoundation: output-market power alone shrinks labor demand at every wage.</p>
+  </div>
+</section>
+
+<section id="cc-19-1">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 19.1 &mdash; Deriving \(MRP_L\) from the FOC</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">Revenue \(R(L) = p(q)\cdot q\) with \(q=f(L)\). Profit \(\pi(L) = R(L) - wL - r\bar K\).</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12pt;">FOC: \(\dfrac{d\pi}{dL}=\dfrac{dR}{dL}-w=0 \Rightarrow \dfrac{dR}{dL}=w\)</p>
+        <p style="margin: 6px 0 0; font-size: 12pt;">Chain rule: \(\dfrac{dR}{dL}=\dfrac{dR}{dq}\cdot\dfrac{dq}{dL}=MR\cdot MP_L\)</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0;">So the labor-demand condition is \(MRP_L = w\).</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--accent-color);">
+        <p class="nm" style="color: var(--accent-color);">The clean punchline</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">Under perfect competition \(MR=p\), so \(MRP_L = VMP_L\). Under monopoly \(MR = p + (dp/dq)q < p\), so \(MRP_L &lt; VMP_L\) &mdash; and <strong>the gap IS the labor-market consequence of monopoly power.</strong></p>
+      </div>
+      <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 10px 0 0;">Same FOC, two market structures, two answers. The wedge between \(MRP_L\) and \(VMP_L\) is what reduces employment, output, and consumer surplus simultaneously.</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-19-3">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 19.3 &mdash; Monopolist vs PC Labor Demand</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> \(q=100\sqrt{L}\), \(w=\$50\), monopolist facing \(p(q)=25-0.005q\). Find \(MRP_L(L)\), the monopolist's \(L^{mon}\), and compare to the PC industry.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> \(MR=25-0.01q\); with \(q=100\sqrt L\): \(MR=25-\sqrt L\). So \(MRP_L=(25-\sqrt L)\,50L^{-1/2}=1250L^{-1/2}-50\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2.</strong> Set \(MRP_L=50\): \(1250L^{-1/2}=100 \Rightarrow L^{mon}=156.25\). Then \(q^{mon}=1250\), \(p^{mon}=\$18.75\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. PC industry</strong> (same technology, full market demand): \(L^{PC}=277.78\), \(q^{PC}=1667\), \(p^{PC}=\$16.67\).</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 11.5pt;">
+        <tr><th></th><th>Monopoly</th><th>PC</th></tr>
+        <tr><td>Labor \(L\)</td><td class="hi">156.25</td><td>277.78</td></tr>
+        <tr><td>Output \(q\)</td><td>1250</td><td>1667</td></tr>
+        <tr><td>Price \(p\)</td><td>$18.75</td><td>$16.67</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4.</strong> The monopolist hires <strong>44% less labor</strong>, produces <strong>25% less output</strong>, and charges a <strong>12.5% higher price</strong>. The \(MRP_L\)&ndash;\(VMP_L\) wedge is why monopoly cuts employment, output, and CS at once &mdash; the labor mirror of the Ch 11 markup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="recall-1116-labor">
+  <h2><i class="fa-solid fa-rotate-left" style="color: var(--secondary-color);"></i> Recall from Principles &mdash; Labor Markets</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 14px 20px;">
+      <p style="margin: 0 0 4px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">1116 &sect;14.1 &mdash; The Demand for Labor</p>
+      <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;">Introduced labor demand as <strong>derived demand</strong> and developed marginal revenue product graphically &mdash; the NBA-vs-NFL pay differential was the canonical case. This chapter makes it the formal \(MRP_L = MR\cdot MP_L\) condition of &sect;&sect;19.1&ndash;19.2.</p>
+    </div>
+    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 14px 20px;">
+      <p style="margin: 0 0 4px; font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">1116 &sect;14.2 &mdash; The Supply of Labor</p>
+      <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;">Introduced the labor-leisure tradeoff and previewed the <strong>backward-bending</strong> supply curve &mdash; some workers, given a high enough wage, choose less work. &sect;19.3 makes it the formal Slutsky decomposition, with Maya as the example.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;">
+    <p style="margin: 0; font-size: 12.5pt;">The 1116&rarr;2316 jump: Principles gave the <strong>graphical intuition</strong> (MRP curve, backward-bending shape); this chapter gives the <strong>calculus that generates them</strong> &mdash; the profit-max FOC for demand, the Slutsky equation for supply.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-supply">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;19.3</p>
+  <h1>Labor Supply: Slutsky Revisited</h1>
+  <p class="subtitle">Why a raise can make you work <em>less</em> &mdash; Maya returns</p>
+</section>
+
+<section id="labor-supply">
+  <h2><i class="fa-solid fa-scale-unbalanced" style="color: var(--accent-color);"></i> The Labor-Leisure Tradeoff</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">A worker splits time \(T\) between leisure \(H\) and labor \(L=T-H\). The wage \(w\) is the <strong>price of leisure</strong>. Maximize \(u(c,H)\) s.t. \(c+wH = wT + m_0\).</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 11.5pt;">\[ \frac{\partial L^M}{\partial w} = \underbrace{-\frac{\partial H^H}{\partial w}}_{\text{sub effect} \,>\,0} \;-\; L\cdot\underbrace{\frac{\partial H^M}{\partial m_0}}_{\text{income effect} \,&lt;\,0 \text{ if leisure normal}} \]</p>
+      </div>
+      <ul style="font-size: 11.5pt; line-height: 1.45; margin: 0;">
+        <li><strong>Sub effect on labor &gt; 0:</strong> higher \(w\) makes leisure dearer &rarr; work more</li>
+        <li><strong>Income effect on labor &lt; 0:</strong> higher \(w\) raises income &rarr; buy more leisure</li>
+      </ul>
+    </div>
+    <div>
+      <img alt="Labor-leisure budget rotation: a higher wage pivots the budget line outward around the time endowment, and the new optimum can lie at more or fewer hours of work depending on whether the substitution or income effect dominates" src="figures/figure-19-4-labor-leisure-wage-rotation.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>The total Marshallian effect is the sum.</strong> Sub &gt; income &rarr; labor supply slopes <strong>up</strong> (typical for low-to-moderate earners). Income &gt; sub &rarr; supply <strong>bends backward</strong> (high earners with strong leisure preference).</p>
+  </div>
+</section>
+
+<section id="cc-19-3">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 19.3 &mdash; Slutsky for Labor Supply</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">Full-income budget: \(c + wH = wT + m_0\). The wage acts as <em>both</em> the price of leisure and an income shifter &mdash; the defining feature.</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 11.5pt;">\[ \frac{\partial H^M}{\partial w} = \underbrace{\frac{\partial H^H}{\partial w}}_{&lt;\,0} + (T-H)\underbrace{\frac{\partial H^M}{\partial m_0}}_{>\,0 \text{ if normal}} \]</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0;">The factor \((T-H)=L\) reflects that the worker is a <strong>net supplier</strong> of time: a wage rise raises income in proportion to hours worked.</p>
+    </div>
+    <div>
+      <div class="conj-card" style="border-left: 4px solid var(--secondary-color);">
+        <p class="nm" style="color: var(--secondary-color);">The sign is an empirical question</p>
+        <p style="font-size: 11.5pt; line-height: 1.5; margin: 4px 0 0;">The Marshallian wage-elasticity of labor supply can be <strong>positive</strong> (forward-bending) or <strong>negative</strong> (backward-bending) depending on which channel dominates. The decomposition makes visible what the Marshallian curve hides.</p>
+      </div>
+      <p style="font-size: 11pt; color: var(--muted-color); line-height: 1.45; margin: 10px 0 0;">Maya's W6.2 result is the knife-edge case: under Cobb-Douglas-log preferences the two channels cancel <em>exactly</em>, so labor supply doesn't move &mdash; even though both effects are large.</p>
+    </div>
+  </div>
+</section>
+
+<section id="walkthrough-19-4">
+  <h2><i class="fa-solid fa-user-clock" style="color: var(--accent-color);"></i> Walkthrough 19.4 &mdash; Maya's Wage Change (Callback to W6.2)</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Maya: \(U=60g(s)+96\ln(wh)+732\ln\ell\), \(s+h+\ell=97\), baseline \((28,8,61)\) at \(w=\$18\). Wage rises to \(w'=\$24\). Decompose the change in labor supply \(h\).</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> Recast as Cobb-Douglas-log over \((c,\ell)\), weights \((96,732)\), budget \(c+w\ell=69w\). Marshallian: \(\ell^M=61\) (constant in \(w\)!), \(h^M = c^M/w = 8\) at both wages.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. Total Marshallian \(\Delta h^M = 0\).</strong> Hicksian at \(\bar u=3486.26\): \(c^H=185.78\), \(\ell^H=59.00\), \(h^H=9.9989\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. Sub effect:</strong> \(h^H-h^M_{18}=+2.00\). <strong>Income effect:</strong> \(h^M_{24}-h^H=-2.00\).</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 12pt;">
+        <tr><th>Channel</th><th>\(\Delta h\) (hrs/wk)</th></tr>
+        <tr><td>Substitution</td><td class="hi">+2.00</td></tr>
+        <tr><td>Income</td><td class="hi">&minus;2.00</td></tr>
+        <tr><td>Total (Marshallian)</td><td class="ce">0.00</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4. The cancellation is the lesson.</strong> Maya sits exactly on the <strong>knife edge</strong> between forward- and backward-bending supply. The Slutsky machinery is what makes both non-trivial channels <em>visible</em> even when the Marshallian elasticity is zero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <section id="poll-1-question">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #1 &mdash; Why Didn't Maya's Hours Change?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.7;">
+        Maya's wage rose from $18 to $24/hour, yet her labor supply stayed at exactly 8 hours. In the Slutsky framework, what is the <strong>core mechanism</strong>?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch19-econ2316-poll-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) The raise was too small to matter</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) A \(+2.00\) substitution effect exactly cancels a \(-2.00\) income effect</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Leisure is an inferior good for her</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) There is no substitution effect in labor supply</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch19-econ2316-poll-1" id="poll-1-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Exact Cancellation, Not Inaction</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch19-econ2316-poll-1" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 15pt; line-height: 1.7;">Both channels are large &mdash; \(+2.00\) hours from substitution, \(-2.00\) from income &mdash; and Cobb-Douglas-log makes them cancel <em>exactly</em>. Maya sits on the boundary between forward- and backward-bending supply.</p>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
+          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> "nothing happened" misreads the result. A great deal happened &mdash; two offsetting forces of two hours each. The Marshallian curve hides what Slutsky reveals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="walkthrough-19-5">
+  <h2><i class="fa-solid fa-arrow-turn-up" style="color: var(--accent-color);"></i> Walkthrough 19.5 &mdash; Backward-Bending Supply at High Wages</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Give leisure stronger curvature than log: sub-utility \(96\ln(wh) + 1500\,\ell^{0.6}\), \(h+\ell=69\). Compute \(h^M\) at \(w\in\{18,24,36\}\). Does supply bend backward?</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> FOCs give \(0.10667\,\ell^{0.4}+\ell = 69\) &mdash; solve numerically for each \(w\) (Newton).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2.</strong> Leisure \(\ell^M\) <em>rises</em> with the wage, so labor \(h^M = 69-\ell^M\) <em>falls</em>.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3.</strong> The income effect (leisure income-elasticity \(\approx +1.05\)) exceeds the substitution effect at these wages.</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 12pt;">
+        <tr><th>Wage \(w\)</th><th>\(\ell^M\)</th><th>\(h^M=69-\ell^M\)</th></tr>
+        <tr><td>$18</td><td>65.50</td><td>3.50</td></tr>
+        <tr><td>$24</td><td>65.65</td><td>3.35</td></tr>
+        <tr><td>$36</td><td>65.79</td><td class="ce">3.21</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4. Backward-bending.</strong> Labor falls \(3.50\to3.35\to3.21\) as \(w\) rises. Documented for high-income professionals (lawyers cutting hours past a threshold), near-retirees, and target-earners &mdash; <em>not</em> the typical low-to-moderate wage worker.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app-cabs">
+  <h2><i class="fa-solid fa-taxi" style="color: var(--secondary-color);"></i> Application &mdash; The Cab-Driver Debate</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;"><strong>Camerer, Babcock, Loewenstein &amp; Thaler (1997 <em>QJE</em>)</strong> found NYC drivers worked <em>fewer</em> hours on high-wage days &mdash; the opposite of the neoclassical prediction &mdash; reading it as <strong>daily target-earning</strong> (~$200/day, hit faster on good days).</p>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0;"><strong>Farber (2015 <em>QJE</em>)</strong>, with far larger electronic trip records, found stopping depends mainly on <em>cumulative hours</em> and that drivers <em>do</em> extend hours on good days &mdash; the neoclassical substitution effect dominates for experienced drivers.</p>
+    </div>
+    <div>
+      <div class="heads-up" style="margin-top: 0;">
+        <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 19.2 &mdash; the shape depends on income &gt; vs sub &gt;</p>
+        <p class="body">A backward-bending curve requires the income effect to <em>exceed</em> the substitution effect &mdash; from either (a) strong leisure curvature, or (b) reference-dependent target-earning (Ch 18). <strong>Most workers do not face a backward-bending curve</strong> over the wage range they actually experience; it's documented for high-income professionals and target-earners.</p>
+      </div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>The lesson.</strong> Backward-bending supply can come from the income-&gt;-sub algebra of W19.5 <em>or</em> reference-dependent target-earning (W18.2). The empirical shape depends on the population, the institutional setting, and the data quality.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-monopsony">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;19.4</p>
+  <h1>Monopsony and Wage Markdown</h1>
+  <p class="subtitle">Monopoly's mirror image &mdash; on the buyer side of the labor market</p>
+</section>
+
+<section id="monopsony-setup">
+  <h2><i class="fa-solid fa-building-lock" style="color: var(--accent-color);"></i> Marginal Factor Cost Exceeds the Wage</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 8px;">A <strong>monopsonist</strong> is the only (or dominant) buyer of a kind of labor, facing an upward-sloping supply \(w(L)\). To hire one more worker it must raise the wage &mdash; and pay it to <em>all</em> inframarginal workers too:</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ MFC(L) = w(L) + L\cdot w'(L) > w(L) \]</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0;">The FOC is \(MRP_L = MFC\), <strong>not</strong> \(MRP_L = w\). This gives lower employment <em>and</em> lower wages than the competitive case at the same supply schedule.</p>
+    </div>
+    <div>
+      <img alt="Competitive versus monopsony labor market: the monopsonist's marginal factor cost curve lies above the labor supply curve, so hiring where MRP equals MFC yields employment and a wage both below the competitive equilibrium where MRP meets supply" src="figures/figure-19-2-competitive-vs-monopsony.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12.5pt;">The name is Joan Robinson's (1933). Think of a meatpacking plant in a small town, or Maya's tech firm as the dominant employer of her specialization &mdash; any employer in a low-density labor market with high job-search costs.</p>
+  </div>
+</section>
+
+<section id="cc-19-2">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 19.2 &mdash; The Wage-Markdown Formula</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0 0 6px;">FOC \(MRP_L = w + Lw'(L) = MFC\). With supply elasticity \(\varepsilon_S = (dL/dw)(w/L)\), we get \(Lw'(L)=w/\varepsilon_S\), so \(MFC = w(1+1/\varepsilon_S)\):</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 13pt;">\[ \boxed{\;\frac{w}{MRP_L} = \frac{\varepsilon_S}{\varepsilon_S+1}\;} \]</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0;">The share of marginal product workers capture &mdash; strictly \(&lt;1\) whenever supply is not perfectly elastic. The smaller \(\varepsilon_S\), the larger the markdown.</p>
+    </div>
+    <div>
+      <img alt="The monopsony wage-markdown formula displayed as the mirror of monopoly's Lerner rule, with the ratio of wage to marginal revenue product equal to the supply elasticity over one plus the supply elasticity" src="figures/figure-19-8-monopsony-markdown-formula.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="heads-up" style="background:#f0f5f8; border-left-color: var(--secondary-color);">
+    <p class="hu-tag" style="color: var(--secondary-color);"><i class="fa-solid fa-equals"></i> The Lerner mirror</p>
+    <p class="body">Monopoly: \(p/MC = \varepsilon_D/(\varepsilon_D+1) > 1\) (markup, since \(\varepsilon_D&lt;0\)). Monopsony: \(w/MRP_L = \varepsilon_S/(\varepsilon_S+1) < 1\) (markdown, since \(\varepsilon_S>0\)). <strong>Same algebra, opposite sign on the elasticity.</strong> Examples: \(\varepsilon_S=1\to0.5\); \(\varepsilon_S=2\to0.67\); \(\varepsilon_S=5\to0.83\) (Maya's tech firm); \(\varepsilon_S=\infty\to1\) (PC, no markdown).</p>
+  </div>
+</section>
+
+<section id="walkthrough-19-6">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 19.6 &mdash; Monopsony Equilibrium</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Tech firm: supply \(w(L)=16+0.05L\), \(q=100\sqrt L\), \(p=\$10\). So \(MRP_L=500L^{-1/2}\), \(MFC=16+0.1L\). Find \(L^{mon},w^{mon}\), the markdown, and the PC counterfactual.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> \(MRP_L=MFC\): \(500L^{-1/2}=16+0.1L\). Solve numerically \(\Rightarrow L^{mon}\approx196\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2.</strong> \(w^{mon}=16+0.05(196)=$25.80\); \(MRP_L(196)=$35.71\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. Markdown:</strong> \(w/MRP_L = 25.80/35.71 = 0.72\). Implied \(\varepsilon_S=2.63\); check \(2.63/3.63=0.72\) ✓.</p>
+    </div>
+    <div>
+      <table class="pm" style="font-size: 11.5pt;">
+        <tr><th></th><th>Monopsony</th><th>PC</th></tr>
+        <tr><td>Labor \(L\)</td><td class="hi">196</td><td>280</td></tr>
+        <tr><td>Wage \(w\)</td><td class="hi">$25.80</td><td>$30.00</td></tr>
+      </table>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4.</strong> Lower employment AND lower wages. Workers capture only <strong>72%</strong> of their marginal product; the firm extracts the rest as monopsony rent (~$823/period on inframarginal workers, ~$176/period deadweight loss).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ms-explorer">
+  <h2><i class="fa-solid fa-sliders" style="color: var(--accent-color);"></i> Drive It: The Markdown and the Minimum-Wage Floor</h2>
+  <div class="iv-card" style="padding: 8px 18px 10px;">
+    <div class="ms-row">
+      <button class="ms-preset" data-pre="tech"><i class="fa-solid fa-microchip"></i> W19.6 tech firm</button>
+      <button class="ms-preset" data-pre="town"><i class="fa-solid fa-industry"></i> Company town (steep supply)</button>
+      <button class="ms-preset" data-pre="comp"><i class="fa-solid fa-people-group"></i> Near-competitive (flat supply)</button>
+    </div>
+    <div style="text-align:center; margin-bottom:4px;"><span id="ms-banner" style="display:inline-block; font-size:11.5pt; font-weight:700; padding:3px 16px; border-radius:6px;"></span></div>
+    <div id="ms-score" style="text-align:center; font-size:12pt; font-weight:700; display:flex; flex-wrap:wrap; justify-content:center; gap:3px 16px; margin:0 0 4px; min-height:18px;"></div>
+    <svg id="ms-svg" viewBox="0 0 700 330" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:280px; display:block;"></svg>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px 26px; max-width:680px; margin:8px auto 0;">
+      <div><label class="iv-label">Supply intercept \(a\) <span class="iv-readout" id="ms-aRead">16</span></label><input type="range" class="iv-slider" id="ms-a" min="8" max="22" step="0.5" value="16"></div>
+      <div><label class="iv-label">Supply slope \(b\) <span class="iv-readout" id="ms-bRead">0.05</span></label><input type="range" class="iv-slider" id="ms-b" min="0.01" max="0.20" step="0.005" value="0.05"></div>
+      <div><label class="iv-label">Min wage \(w_{\min}\) <span class="iv-readout" id="ms-wRead">off</span></label><input type="range" class="iv-slider" id="ms-w" min="0" max="40" step="0.5" value="0"></div>
+    </div>
+    <p style="text-align:center; font-size:11pt; color:var(--muted-color); margin:7px 0 0;">\(MRP_L = 500L^{-1/2}\) (blue), supply \(w(L)=a+bL\) (green), \(MFC=a+2bL\) (orange). <span style="color:#b45309;font-weight:700;">Monopsony at \(MRP_L=MFC\)</span>; <span style="color:#16a34a;font-weight:700;">PC at \(MRP_L=\)supply</span>. Set \(w_{\min}>w^{mon}\) to see the welfare reversal.</p>
+  </div>
+</section>
+
+<section id="walkthrough-19-7">
+  <h2><i class="fa-solid fa-arrows-up-to-line" style="color: var(--accent-color);"></i> Walkthrough 19.7 &mdash; Minimum Wage in Monopsony</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Continue W19.6. The state sets \(w_{\min}=\$28\). Find the new \(L^*\) and compare to monopsony (196) and PC (280).</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> Below the floor, \(MFC = w_{\min}=28\) (a flat line) &mdash; adding a worker no longer requires raising the wage. FOC: \(MRP_L = 28\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2.</strong> Supply at \(w_{\min}=28\) is \(L=(28-16)/0.05=240\). At \(L=240\), \(MRP_L=32.28>28\) &mdash; the firm wants more, but supply runs out. So \(L^*=240\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3.</strong> Both employment AND wages rise vs monopsony: \(L\!:196\to240\), \(w\!:25.80\to28\).</p>
+    </div>
+    <div>
+      <img alt="Minimum wage in a monopsony: a wage floor set between the monopsony wage and the competitive wage flattens the effective marginal factor cost, raising both employment and the wage toward the competitive level — the opposite of the perfectly competitive prediction" src="figures/figure-19-3-minimum-wage-monopsony.png" style="width: 100%; border-radius: 8px;">
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 10px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4. The welfare reversal.</strong> A well-chosen minimum wage <em>raises</em> employment, raises wages, and improves total welfare (~+$130/period vs monopsony) &mdash; the <strong>opposite</strong> of the PC prediction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <section id="poll-2-question">
+    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll #2 &mdash; Why No Employment Loss?</h2>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
+      <p style="font-size: 15pt; line-height: 1.7;">
+        Empirical studies repeatedly find <strong>little or no</strong> employment loss from real-world minimum-wage hikes. What is the cleanest theoretical explanation?
+      </p>
+    </div>
+    <div class="poll-grid" data-poll-id="ch19-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
+      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) The studies must be flawed</div>
+      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Many labor markets are monopsonistic &mdash; a floor between \(w^{mon}\) and \(w^{PC}\) raises employment</div>
+      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Firms always absorb the cost out of profits</div>
+      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Workers don't respond to wages at all</div>
+    </div>
+    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
+  </section>
+  <section data-poll-results="ch19-econ2316-poll-2" id="poll-2-reveal" style="display: flex; flex-direction: column;">
+    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Monopsony Is the Right Baseline</h2>
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+      <div class="poll-results-chart" data-poll-id="ch19-econ2316-poll-2" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
+      <div style="padding: 14px 50px 0;">
+        <p style="font-size: 15pt; line-height: 1.7;">When supply to the firm is inelastic (low \(\varepsilon_S\)), a floor between the monopsony and competitive wages flattens the effective \(MFC\) and lets the firm hire <em>more</em>. The California $20 fast-food evidence fits this reading.</p>
+        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
+          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> the data aren't flawed &mdash; the basic <em>model</em> was wrong for these markets. Assuming perfect competition (high \(\varepsilon_S\)) is the wrong baseline for many low-wage labor markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section id="app-california">
+  <h2><i class="fa-solid fa-burger" style="color: var(--secondary-color);"></i> Evidence &mdash; The California $20 Fast-Food Experiment</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+    <div>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0 0 6px;"><strong>AB 1228</strong> (Apr 1, 2024): $20/hour for fast-food chains with 60+ locations &mdash; the largest sectoral minimum-wage shock in US history (~69% of CA median wage).</p>
+      <div style="background: #f0f5f8; border-radius: 8px; padding: 10px 14px; border-left: 4px solid var(--secondary-color); margin: 0 0 8px;">
+        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>Reich&ndash;Sosinskiy 2026</strong> (Berkeley): wages +11&ndash;12%, prices +1.5&ndash;2.1%, <strong>no employment loss</strong>.</p>
+      </div>
+      <div style="background: #fef9f3; border-radius: 8px; padding: 10px 14px; border-left: 4px solid var(--accent-color);">
+        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>Clemens&ndash;Edwards&ndash;Meer 2025</strong> (Cato): employment &minus;2.7% (&minus;3.2% trend-corrected, ~18,000 jobs).</p>
+      </div>
+      <p style="font-size:10.5pt; color:var(--muted-color); margin:7px 0 0;">Both credentialed teams, same QCEW data &mdash; the dispute is over how to build the counterfactual. <strong>Teach as a live methodological debate.</strong></p>
+    </div>
+    <div>
+      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 11px 16px; margin-bottom: 10px;">
+        <p style="margin: 0 0 4px; font-size: 10.5pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-database"></i> Theory &amp; Data 19.1 &mdash; Yeh&ndash;Macaluso&ndash;Hershbein 2022</p>
+        <p style="margin: 0; font-size: 11pt; line-height: 1.45;">US manufacturing markdown \(MRP_L/w\approx1.53\) &mdash; workers capture only ~$0.65 on the marginal dollar, implying \(\varepsilon_S\approx1.86\). Azar et al. 2020: avg labor-market HHI <strong>4,378</strong>, 60% highly concentrated. Prager&ndash;Schmitt 2021: hospital mergers cut nurse wage growth <strong>&minus;4 to &minus;6 pp</strong>.</p>
+      </div>
+      <div class="heads-up" style="margin-top: 0;">
+        <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 19.3 &mdash; the sign flips from PC</p>
+        <p class="body">In <strong>PC</strong> (high \(\varepsilon_S\)): a binding floor cuts employment + creates DWL. In <strong>monopsony</strong> (low \(\varepsilon_S\), markdown): a floor between \(w^{mon}\) and \(w^{PC}\) <em>raises</em> employment and wages. The operative question is always \(\varepsilon_S\).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-rent">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;19.5</p>
+  <h1>Capital, Land, and Economic Rent</h1>
+  <p class="subtitle">When supply can't respond, all payment is rent</p>
+</section>
+
+<section id="rent">
+  <h2><i class="fa-solid fa-mountain-sun" style="color: var(--accent-color);"></i> Economic Rent and Inelastic Supply</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;"><strong>Capital:</strong> firms rent at \(r\) (the user cost: interest + depreciation &minus; appreciation). Invest if \(\sum_{t=1}^{T} X_t/(1+r)^t \geq I\).</p>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;"><strong>Land:</strong> supply is nearly perfectly inelastic. When supply can't respond, the price is entirely demand-determined &mdash; and any payment above opportunity cost is <strong>pure economic rent</strong>.</p>
+      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 10px 14px; margin-top: 6px;">
+        <p style="margin: 0 0 3px; font-size: 10pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;"><i class="fa-solid fa-rotate-left"></i> Recall from 1116 &mdash; &sect;15.1</p>
+        <p style="margin: 0; font-size: 11pt; line-height: 1.4;">Ricardo's "three settlers": more fertile land commands more rent. The insight scales &mdash; <em>any</em> factor with a binding supply constraint earns rent, not just dirt.</p>
+      </div>
+    </div>
+    <div>
+      <img alt="Present value of an annuity: the bar heights show each future cash flow discounted back to today, with more distant flows contributing progressively less to total present value" src="figures/figure-19-5-pv-annuity.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>Henry George (1879):</strong> taxing land rent generates <em>zero</em> deadweight loss &mdash; supply can't withhold in response to the tax. The perennial appeal (and perennial political failure) of land-value taxation.</p>
+  </div>
+</section>
+
+<section id="walkthrough-19-8">
+  <h2><i class="fa-solid fa-server" style="color: var(--accent-color);"></i> Walkthrough 19.8 &mdash; Ricardian Rent on Data-Center Sites</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Loudoun County grid capacity is fixed at \(\bar L=2{,}500\) MW. Demand \(D(\rho)=5{,}000-12.5\rho\) ($/kW/mo). Find \(\rho^*\); the rent if AI demand doubles; the effect of a 50% land tax.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1.</strong> \(5000-12.5\rho=2500 \Rightarrow \rho^*=\$200\)/kW/mo (≈$195 empirically, CBRE Q1 2026). Total rent \(=\$500\)M/month \(\approx\$6\)B/year.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. Demand doubles</strong> (\(D'=10{,}000-12.5\rho\)): \(\rho^{*\prime}=\$600\)/kW/mo. <strong>Rent triples on a doubling of demand</strong> &mdash; purely Ricardian, because supply can't respond.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. 50% land tax:</strong> revenue $250M/month; quantity unchanged at 2,500 MW; <strong>DWL = 0</strong>.</p>
+    </div>
+    <div>
+      <div class="heads-up" style="margin-top: 0; background:#f0f5f8; border-left-color: var(--secondary-color);">
+        <p class="hu-tag" style="color: var(--secondary-color);"><i class="fa-solid fa-circle-info"></i> Heads Up 19.5 &mdash; economic rent is not just land</p>
+        <p class="body">Rent appears wherever supply has a binding constraint: OPEC oil rents, Sherwin Rosen "superstar" performer rents (LeBron vs his next-best alternative), patent rents, firm-specific human-capital rents (the Prager&ndash;Schmitt nurse case). <strong>Taxing rent without distorting quantity is the holy grail of public finance.</strong></p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4.</strong> Detroit's proposed Land Value Tax (Duggan, 2023&ndash;24) would cut building mills and raise land mills &mdash; the modern Henry George revival, still a proposal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="div-gini">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;19.6</p>
+  <h1>Income Distribution</h1>
+  <p class="subtitle">The Lorenz curve and the Gini coefficient</p>
+</section>
+
+<section id="lorenz-gini">
+  <h2><i class="fa-solid fa-chart-area" style="color: var(--accent-color);"></i> Measuring Inequality</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 6px;">The <strong>Lorenz curve</strong> \(L(p)\) = the income share of the bottom \(p\) fraction of households. Perfect equality: \(L(p)=p\) (the 45&deg; line). Real distributions bow below it.</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ G = 2\int_0^1 \big(p - L(p)\big)\,dp \;\in\;[0,1] \]</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 0;">\(G=0\): perfect equality. \(G=1\): one household has everything. The <strong>Gini</strong> is twice the area between the 45&deg; line and the Lorenz curve.</p>
+    </div>
+    <div>
+      <img alt="Lorenz curve and Gini coefficient: the cumulative income share curve bows below the 45-degree line of perfect equality, and the Gini coefficient is twice the shaded area between them" src="figures/figure-19-6-lorenz-gini.png" style="width: 100%; border-radius: 8px;">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 10px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>Factor markets together determine the distribution</strong> of national income &mdash; wages, capital income, and land rent aggregate up to household incomes. The Lorenz/Gini apparatus is how we summarize the result in one number.</p>
+  </div>
+</section>
+
+<section id="walkthrough-19-9">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 19.9 &mdash; Gini from US 2023 Quintile Data</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 15px; margin: 0 0 9px;">
+        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> US 2023 quintile income shares: 3.1 / 8.5 / 14.4 / 22.1 / 52.0 (%). Compute the Lorenz points and the trapezoidal Gini.</p>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>1. Lorenz:</strong> \(L=\{0.031,\,0.116,\,0.260,\,0.481,\,1.000\}\) at \(p=0.2,0.4,0.6,0.8,1.0\).</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>2. Area under Lorenz</strong> (trapezoids) \(=0.27760\). Area between \(=0.5-0.27760=0.22240\).</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 5px;"><strong>3. \(G\approx 2(0.22240)=0.445\)</strong> vs official Census <strong>0.488</strong> &mdash; the trapezoid underestimates by ~0.04 (5-bin linear interpolation misses the top-tail curvature).</p>
+    </div>
+    <div>
+      <div class="heads-up" style="margin-top: 0;">
+        <p class="hu-tag"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 19.4 &mdash; notation + the inequality debate</p>
+        <p class="body"><strong>Notation:</strong> \(L(p)\) is the Lorenz function here, <em>not</em> labor input \(L\). <strong>Debate:</strong> top-1% pre-tax share is <strong>~20%</strong> (Piketty&ndash;Saez&ndash;Zucman 2018) vs <strong>~14%</strong> (Auten&ndash;Splinter 2024) &mdash; same data, different allocation of unobserved income. Both peer-reviewed; <strong>present both, pick neither.</strong></p>
+      </div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 12px 0 0;">
+        <p style="margin: 0; font-size: 12pt;"><strong>4.</strong> Gini is sensitive to what's measured: pre-tax money income 0.488; post-tax-and-transfer ~0.39; <strong>wealth Gini ~0.85</strong>. The US sits at the upper end of OECD inequality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="app-ai">
+  <h2><i class="fa-solid fa-robot" style="color: var(--secondary-color);"></i> Application &mdash; AI, Labor, and the Open Question</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0 0 8px;">Acemoglu&ndash;Restrepo (2022 <em>Econometrica</em>): automation accounts for <strong>50&ndash;70%</strong> of the rise in US wage inequality 1980&ndash;2016. Generative AI is the latest wave.</p>
+      <p style="font-size: 12.5pt; line-height: 1.55; margin: 0;">Brynjolfsson&ndash;Li&ndash;Raymond (2023): an AI assistant raised customer-service productivity <strong>+14%</strong> on average but <strong>+34% for novices</strong> &mdash; AI captures top performers' tacit knowledge and compresses the distribution. Eloundou et al.: ~80% of workers have &ge;10% of tasks affected.</p>
+    </div>
+    <div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat-card accent"><p class="num">+34%</p><p class="lbl">novice productivity gain</p></div>
+        <div class="stat-card"><p class="num">~0.71%</p><p class="lbl">10-yr TFP gain (Acemoglu 2025)</p></div>
+      </div>
+      <div class="key-result" style="margin-top: 12px;">
+        <p style="margin: 0; font-size: 12pt;"><strong>What to teach.</strong> AI is so far a productivity-<em>augmentation</em> technology with documented novice gains; it has <em>not yet</em> produced displacement comparable to the 1980&ndash;2016 record. Augmentation (compressing inequality) vs displacement (widening it) is a <strong>live empirical question.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="summary">
+  <h2><i class="fa-solid fa-list-check" style="color: var(--secondary-color);"></i> Chapter 19 in a Nutshell</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>1. Derived demand.</strong> Labor demand comes from output max: \(w = VMP_L = p\cdot MP_L\) under perfect competition.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>2. The monopoly wedge.</strong> \(MRP_L = MR\cdot MP_L &lt; VMP_L\) &mdash; output-market power shrinks labor demand at every wage.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>3. Labor supply.</strong> Slutsky on the price of leisure &mdash; sub vs income &rarr; forward- or backward-bending. Maya's knife edge.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>4. Monopsony.</strong> \(w/MRP_L = \varepsilon_S/(\varepsilon_S+1)\) &mdash; the Lerner mirror. A minimum wage can <em>raise</em> employment.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>5. Economic rent.</strong> Payment above opportunity cost; inelastic supply &rarr; all rent &rarr; land tax has zero DWL.</p>
+    </div>
+    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12pt; margin: 0; line-height: 1.45;"><strong>6. Inequality.</strong> Lorenz curve + Gini (US 0.488); sensitive to measure; the PSZ vs Auten&ndash;Splinter debate is unresolved.</p>
+    </div>
+  </div>
+</section>
+
+<section id="closing-motif">
+  <h2><i class="fa-solid fa-flag-checkered" style="color: var(--accent-color);"></i> Closing Motif &mdash; Maya's Two Offers, Resolved</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">Both employers offer \(w=\$24\)/hour. Teaching: competitive districts force \(w = MRP_L = \$24\). The tech firm is the dominant buyer; her specialized labor pool has firm-level elasticity \(\varepsilon_S = 5\).</p>
+      <div class="key-result" style="margin: 0 0 8px;">
+        <p style="margin: 0; font-size: 12.5pt;">\[ \frac{w}{MRP_L} = \frac{\varepsilon_S}{\varepsilon_S+1} = \frac{5}{6} \;\Rightarrow\; MRP_L^{tech} = 24\cdot\tfrac{6}{5} = \$28.80 \]</p>
+      </div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">Maya is <em>worth</em> $28.80/hour but is paid $24 &mdash; the firm extracts <strong>$4.80/hour</strong> as monopsony rent. At 40 hrs/wk &times; 50 wks: <strong>$9,600/year</strong>.</p>
+    </div>
+    <div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div class="stat-card sage"><p class="num">$24.00</p><p class="lbl">wage paid (both)</p></div>
+        <div class="stat-card accent"><p class="num">$28.80</p><p class="lbl">tech \(MRP_L\)</p></div>
+        <div class="stat-card rose"><p class="num">$4.80</p><p class="lbl">markdown per hour</p></div>
+        <div class="stat-card"><p class="num">$9,600</p><p class="lbl">monopsony rent / year</p></div>
+      </div>
+      <div class="key-result" style="margin-top: 10px;">
+        <p style="margin: 0; font-size: 11.5pt;">Same headline wage. Same nominal income. <strong>Different economic interpretation entirely</strong> &mdash; and now Maya can see it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="closer">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">End of Chapter 19 &bull; End of the Manuscript</p>
+  <h1>Questions?</h1>
+  <p class="subtitle">Factor markets stitched the whole book together &mdash; consumer theory (supply), producer theory (demand), and market structure (the markdown). Maya's choice is yours to interpret.</p>
+  <div style="margin-top: 22px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+    <span class="timer-badge"><i class="fa-solid fa-rotate-left"></i> Derived Demand &middot; \(MRP_L\) &middot; Slutsky &middot; Monopsony &middot; Rent &middot; Gini</span>
+    <span class="timer-badge"><i class="fa-solid fa-pen"></i> Problems P19.1&ndash;P19.16</span>
+  </div>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
+    hash: true,
+    controls: true,
+  controlsLayout: 'edges',
+    progress: true,
+    slideNumber: 'c/t',
+    transition: 'slide',
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0
+  });
+  Reveal.on('slidechanged', e => {
+    const v = document.querySelector('.reveal-viewport') || document.body;
+    if (e.currentSlide.classList.contains('section-divider')) v.classList.add('is-section-divider');
+    else v.classList.remove('is-section-divider');
+  });
+</script>
+
+<style>
+ .cd-wrap{position:fixed;top:0;left:50%;transform:translateX(-50%) translateY(-100%);z-index:9999;transition:transform .4s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+ .cd-wrap.visible{transform:translateX(-50%) translateY(0)}
+ .cd-wrap.hiding{transform:translateX(-50%) translateY(-100%)}
+ .cd-pill{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#1e3a5f,#2a5a8a);color:#fff;padding:10px 24px;border-radius:0 0 16px 16px;box-shadow:0 4px 20px rgba(0,0,0,.3);font-family:'SF Mono',Menlo,monospace;pointer-events:auto}
+ .cd-pill .cd-time{font-size:32px;font-weight:700;letter-spacing:2px;min-width:80px;text-align:center}
+ .cd-pill .cd-label{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+ .cd-pill .cd-bar{width:120px;height:4px;background:rgba(255,255,255,.15);border-radius:2px;overflow:hidden}
+ .cd-pill .cd-fill{height:100%;background:#4ade80;border-radius:2px;transition:width 1s linear,background-color .5s}
+ .cd-pill.cd-warn{background:linear-gradient(135deg,#854d0e,#a16207)}.cd-pill.cd-warn .cd-fill{background:#fbbf24}
+ .cd-pill.cd-danger{background:linear-gradient(135deg,#991b1b,#dc2626)}.cd-pill.cd-danger .cd-fill{background:#ef4444}
+ .cd-pill.cd-done{animation:cdF .5s ease 3;background:linear-gradient(135deg,#166534,#22c55e)}
+ @keyframes cdF{0%,100%{opacity:1}50%{opacity:.4}}
+</style>
+<div class="cd-wrap" id="cd-wrap">
+ <div class="cd-pill" id="cd-pill">
+  <div>
+   <div class="cd-label">Activity Timer</div>
+   <div class="cd-time" id="cd-time">0:00</div>
+  </div>
+  <div class="cd-bar"><div class="cd-fill" id="cd-fill"></div></div>
+ </div>
+</div>
+<script>
+ (function(){
+  var w=document.getElementById('cd-wrap'),p=document.getElementById('cd-pill'),t=document.getElementById('cd-time'),f=document.getElementById('cd-fill');
+  var iv=null,rem=0,total=0;
+  function upd(){var m=Math.floor(rem/60),s=rem%60;t.textContent=m+':'+(s<10?'0':'')+s;f.style.width=((rem/total)*100)+'%';}
+  function hide(){w.classList.remove('visible');w.classList.add('hiding');setTimeout(function(){w.classList.remove('hiding');p.classList.remove('cd-done','cd-warn','cd-danger');},500);}
+  function done(){p.classList.remove('cd-warn','cd-danger');p.classList.add('cd-done');t.textContent='0:00';f.style.width='100%';setTimeout(hide,4000);}
+  function start(min){if(iv){clearInterval(iv);iv=null;}total=min*60;rem=total;p.classList.remove('cd-done','cd-warn','cd-danger');w.classList.remove('hiding');w.classList.add('visible');upd();
+    iv=setInterval(function(){rem--;if(rem<=0){rem=0;clearInterval(iv);iv=null;upd();done();return;}upd();
+      var pct=rem/total;if(pct<=.15){p.classList.add('cd-danger');p.classList.remove('cd-warn');}else if(pct<=.33){p.classList.add('cd-warn');p.classList.remove('cd-danger');}},1000);}
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+    if(e.key>='1'&&e.key<='9'&&!e.metaKey&&!e.ctrlKey&&!e.altKey){start(parseInt(e.key));}
+  });
+ })();
+</script>
+<style>
+ .poll-option:hover{background:#dbeafe!important;border-color:#3b82f6!important}
+ .poll-option.voted{background:#dbeafe!important;border-color:#2563eb!important;font-weight:600}
+ .poll-option.voted::after{content:" \2713";color:#2563eb}
+ .poll-option.disabled{pointer-events:none;opacity:.6}
+ .poll-bar-wrap{display:flex;flex-direction:column;align-items:center;flex:1}
+ .poll-bar{width:60px;border-radius:6px 6px 0 0;transition:height .5s ease;min-height:4px}
+ .poll-bar-label{font-size:13px;font-weight:700;margin-top:6px}
+ .poll-bar-count{font-size:20px;font-weight:700;margin-bottom:4px}
+ .poll-vote-count{text-align:center;font-size:13px;color:#888;margin-top:10px}
+ .reset-btn{display:none}body.instructor-mode .reset-btn{display:inline-block}
+</style>
+<script src="../poll.js" data-checkin></script>
+<script>
+ (function(){
+  var SU="https://dpntbrsorgbivmntwmod.supabase.co",SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI";
+  var VID="v_"+Math.random().toString(36).slice(2,10),voted={},CL={A:"#3b82f6",B:"#22c55e",C:"#f97316",D:"#a855f7"};
+  var localCounts={};
+  var isLocal=window.location.protocol==="file:";
+  if(window.location.search.indexOf("instructor")!==-1)document.body.classList.add("instructor-mode");
+  function sf(m,p,b){var o={method:m,headers:{"apikey":SK,"Authorization":"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store","Pragma":"no-cache"}};if(b)o.body=JSON.stringify(b);return fetch(SU+"/rest/v1/"+p,o);}
+  function vote(pid,ch){if(voted[pid])return;voted[pid]=ch;var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.add("disabled");if(o.dataset.choice===ch)o.classList.add("voted");});
+    if(!localCounts[pid])localCounts[pid]={};localCounts[pid][ch]=(localCounts[pid][ch]||0)+1;render(pid,localCounts[pid]);
+    if(!isLocal){sf("POST","poll_votes",(window.Poll?Poll.stamp(pid,ch):{poll_id:pid,choice:ch,voter_id:VID})).then(function(){fetchR(pid);}).catch(function(){});}}
+  function render(pid,ct){var t=0,ch=["A","B","C","D"];ch.forEach(function(k){t+=(ct[k]||0);});var c=document.querySelector('.poll-results-chart[data-poll-id="'+pid+'"]');if(c){var mx=Math.max.apply(null,ch.map(function(k){return ct[k]||0;}));if(mx===0)mx=1;var avail=Math.max(28,(c.clientHeight||parseFloat(getComputedStyle(c).height)||110)-46);var h="";ch.forEach(function(k){var n=ct[k]||0,ht=Math.max(4,(n/mx)*avail);h+='<div class="poll-bar-wrap"><div class="poll-bar-count">'+n+'</div><div class="poll-bar" style="height:'+ht+'px;background:'+CL[k]+';"></div><div class="poll-bar-label">'+k+'</div></div>';});if(t>0)h+='<div style="position:absolute;bottom:-25px;width:100%;text-align:center;font-size:12px;color:#888;">'+t+' vote'+(t!==1?"s":"")+'</div>';c.style.position="relative";if((parseFloat(getComputedStyle(c).marginBottom)||0)<28)c.style.marginBottom="28px";c.innerHTML=h;}var ce=document.querySelector('.poll-vote-count[data-poll-id="'+pid+'"]');if(ce)ce.textContent=t>0?t+" vote"+(t!==1?"s":"")+" so far":"";}
+  function fetchR(pid){if(!pid)return;if(isLocal){if(localCounts[pid])render(pid,localCounts[pid]);return;}sf("GET","poll_votes?poll_id=eq."+pid+"&select=choice"+(window.Poll?Poll.q():"")).then(function(r){return r.json();}).then(function(rows){var ct={};rows.forEach(function(r){ct[r.choice]=(ct[r.choice]||0)+1;});localCounts[pid]=ct;render(pid,ct);}).catch(function(){if(localCounts[pid])render(pid,localCounts[pid]);});}
+  window.clearPoll=function(pid){if(!confirm("Clear TODAY's votes for this poll? Earlier meetings are not touched."))return;localCounts[pid]={};render(pid,{});delete voted[pid];var g=document.querySelector('.poll-grid[data-poll-id="'+pid+'"]');if(g)g.querySelectorAll(".poll-option").forEach(function(o){o.classList.remove("disabled","voted");});if(!isLocal)sf("DELETE","poll_votes?poll_id=eq."+pid+(window.Poll?Poll.q():"")+(function(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());})());};
+  document.querySelectorAll(".poll-grid").forEach(function(g){var pid=g.dataset.pollId;if(!pid)return;g.querySelectorAll(".poll-option").forEach(function(o){o.addEventListener("click",function(){var go=function(){vote(pid,o.dataset.choice);};if(window.Poll){Poll.ready(pid,go);}else{go();}});});if(!g.parentNode.querySelector(".poll-vote-count")){var ce=document.createElement("div");ce.className="poll-vote-count";ce.dataset.pollId=pid;g.parentNode.insertBefore(ce,g.nextSibling);}fetchR(pid);if(!isLocal)setInterval(function(){if(document.hidden)return;var s=g.closest("section");if(s&&!s.classList.contains("present"))return;fetchR(pid);},5000);});
+ })();
+</script>
+
+<script>
+(function(){
+  var svg=document.getElementById('ms-svg'); if(!svg) return;
+  var dA=document.getElementById('ms-a'), rA=document.getElementById('ms-aRead');
+  var dB=document.getElementById('ms-b'), rB=document.getElementById('ms-bRead');
+  var dW=document.getElementById('ms-w'), rW=document.getElementById('ms-wRead');
+  var bn=document.getElementById('ms-banner'), sc=document.getElementById('ms-score');
+  var btns=document.querySelectorAll('.ms-preset');
+  var P=10, K=50;                       // MRP_L = P*K*L^{-1/2} = 500 L^{-1/2}
+  var PRE={ 'tech':{a:16,b:0.05,w:0}, 'town':{a:10,b:0.14,w:0}, 'comp':{a:14,b:0.015,w:0} };
+  var L0=70, R0=672, T=18, B=292;       // plot box
+  var LMAX=360, WMAX=60;                 // axis maxima (L hours, $ wage)
+  function mrp(L){ return P*K/Math.sqrt(L); }              // 500/sqrt(L)
+  function bisect(f){ var lo=1, hi=2000, mid; for(var i=0;i<80;i++){ mid=(lo+hi)/2; if(f(lo)*f(mid)<=0) hi=mid; else lo=mid; } return (lo+hi)/2; }
+  function draw(){
+    var a=parseFloat(dA.value), b=parseFloat(dB.value), wmin=parseFloat(dW.value);
+    function xL(L){ return L0 + (L/LMAX)*(R0-L0); }
+    function yW(w){ return B - (w/WMAX)*(B-T); }
+    // equilibria
+    var Lmon=bisect(function(L){ return mrp(L)-(a+2*b*L); });    // MRP = MFC
+    var wmon=a+b*Lmon, mrpMon=mrp(Lmon), markdown=wmon/mrpMon;
+    var epsS=wmon/(b*Lmon);                                       // w/(L w') = w/(b L)
+    var Lpc=bisect(function(L){ return mrp(L)-(a+b*L); });        // MRP = supply
+    var wpc=a+b*Lpc;
+    var s='', i;
+    // axes
+    s+='<line x1="'+L0+'" y1="'+B+'" x2="'+R0+'" y2="'+B+'" stroke="#374151" stroke-width="1.5"/>';
+    s+='<line x1="'+L0+'" y1="'+T+'" x2="'+L0+'" y2="'+B+'" stroke="#374151" stroke-width="1.5"/>';
+    s+='<text x="'+(R0-2)+'" y="'+(B+15)+'" text-anchor="end" font-size="10.5" fill="#374151">labor L (hours)</text>';
+    s+='<text x="'+(L0+6)+'" y="'+(T+11)+'" font-size="10.5" fill="#374151">$ / hour</text>';
+    // gridlines
+    [100,200,300].forEach(function(L){ var gx=xL(L); s+='<line x1="'+gx+'" y1="'+T+'" x2="'+gx+'" y2="'+B+'" stroke="rgba(156,163,175,0.12)"/><text x="'+gx+'" y="'+(B+13)+'" text-anchor="middle" font-size="9" fill="#6b7280">'+L+'</text>'; });
+    [20,40].forEach(function(w){ var gy=yW(w); s+='<line x1="'+L0+'" y1="'+gy+'" x2="'+R0+'" y2="'+gy+'" stroke="rgba(156,163,175,0.12)"/><text x="'+(L0-4)+'" y="'+(gy+3)+'" text-anchor="end" font-size="9" fill="#6b7280">'+w+'</text>'; });
+    function curve(fn,col,wd,dash){ var d=''; for(i=5;i<=LMAX;i+=3){ var px=xL(i),py=yW(fn(i)); if(py<T)py=T; d+=(d===''?'M':'L')+px.toFixed(1)+' '+py.toFixed(1)+' '; } return '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="'+wd+'"'+(dash?' stroke-dasharray="'+dash+'"':'')+'/>'; }
+    s+=curve(mrp,'#2563eb',2.6);                                 // MRP_L blue
+    s+=curve(function(L){return a+b*L;},'#16a34a',2.4);          // supply green
+    s+=curve(function(L){return a+2*b*L;},'#f59e0b',2.2,'5 4');  // MFC orange dashed
+    // PC point (green)
+    var pcx=xL(Lpc), pcy=yW(wpc);
+    s+='<circle cx="'+pcx+'" cy="'+pcy+'" r="5" fill="#16a34a"/><text x="'+(pcx+7)+'" y="'+(pcy-4)+'" font-size="9.5" font-weight="700" fill="#16a34a">PC ('+Lpc.toFixed(0)+', $'+wpc.toFixed(2)+')</text>';
+    // Monopsony point (orange): wage on supply at Lmon
+    var mx=xL(Lmon), mySup=yW(wmon), myMrp=yW(mrpMon);
+    s+='<line x1="'+mx+'" y1="'+mySup+'" x2="'+mx+'" y2="'+myMrp+'" stroke="#b45309" stroke-width="1" stroke-dasharray="2 3"/>';
+    s+='<circle cx="'+mx+'" cy="'+mySup+'" r="5" fill="#b45309"/><text x="'+(mx+7)+'" y="'+(mySup+12)+'" font-size="9.5" font-weight="700" fill="#b45309">mon ('+Lmon.toFixed(0)+', $'+wmon.toFixed(2)+')</text>';
+    s+='<circle cx="'+mx+'" cy="'+myMrp+'" r="3.5" fill="none" stroke="#b45309" stroke-width="1.5"/>';
+    // minimum wage floor
+    var note='';
+    if(wmin>0){
+      var fy=yW(wmin);
+      s+='<line x1="'+L0+'" y1="'+fy+'" x2="'+R0+'" y2="'+fy+'" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6 3"/><text x="'+(R0-2)+'" y="'+(fy-4)+'" text-anchor="end" font-size="9.5" font-weight="700" fill="#dc2626">w_min = $'+wmin.toFixed(2)+'</text>';
+      var Lsup=(wmin-a)/b;                                        // supply at the floor
+      var Ldem=Math.pow(P*K/wmin,2);                              // MRP = wmin
+      var Lstar=Math.min(Lsup,Ldem); if(Lstar<0)Lstar=0;
+      var fx=xL(Lstar);
+      s+='<circle cx="'+fx+'" cy="'+fy+'" r="5" fill="#dc2626"/>';
+      if(wmin>wmon && Lstar>Lmon) note=' &mdash; floor raises employment '+Lmon.toFixed(0)+'&rarr;'+Lstar.toFixed(0)+', wage $'+wmon.toFixed(2)+'&rarr;$'+wmin.toFixed(2);
+      else if(wmin<=wmon) note=' &mdash; floor below w_mon: not binding';
+      else note=' &mdash; floor above w_PC: employment falls (PC-style)';
+    }
+    svg.innerHTML=s;
+    // verdict banner
+    var col,bg,verdict;
+    if(markdown>0.97){ verdict='Markdown w/MRP = '+markdown.toFixed(2)+' &mdash; essentially competitive, no markdown'; col='#16a34a'; bg='rgba(16,185,129,0.12)'; }
+    else { verdict='Markdown w/MRP = '+markdown.toFixed(2)+' &mdash; workers capture '+(markdown*100).toFixed(0)+'% of MRP'+note; col='#b45309'; bg='rgba(245,158,11,0.16)'; }
+    bn.innerHTML=verdict; bn.style.color=col; bn.style.background=bg;
+    sc.innerHTML='<span style="color:#b45309;">L_mon = '+Lmon.toFixed(0)+'</span><span style="color:#b45309;">w_mon = $'+wmon.toFixed(2)+'</span><span style="color:#2563eb;">MRP_mon = $'+mrpMon.toFixed(2)+'</span><span style="color:#16a34a;">&#949;_S &asymp; '+epsS.toFixed(2)+'</span><span style="color:#16a34a;">w/MRP = &#949;/(&#949;+1) = '+(epsS/(epsS+1)).toFixed(2)+'</span>';
+  }
+  function setPre(k){ var p=PRE[k]; dA.value=p.a; dB.value=p.b; dW.value=p.w; rA.textContent=p.a; rB.textContent=p.b.toFixed(3); rW.textContent=p.w>0?('$'+p.w):'off'; btns.forEach(function(b){b.classList.toggle('active', b.dataset.pre===k);}); draw(); }
+  btns.forEach(function(b){b.addEventListener('click',function(){setPre(b.dataset.pre);});});
+  dA.addEventListener('input',function(){rA.textContent=parseFloat(dA.value); btns.forEach(function(b){b.classList.remove('active');}); draw();});
+  dB.addEventListener('input',function(){rB.textContent=parseFloat(dB.value).toFixed(3); btns.forEach(function(b){b.classList.remove('active');}); draw();});
+  dW.addEventListener('input',function(){var v=parseFloat(dW.value); rW.textContent=v>0?('$'+v.toFixed(1)):'off'; draw();});
+  setPre('tech');
+})();
+</script>
+
+<script>
+(function(){
+  document.addEventListener('keydown', function(e){
+    if(typeof Reveal==='undefined') return;
+    if(!e.ctrlKey || e.metaKey || e.altKey) return;
+    var tag=((e.target&&e.target.tagName)||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select') return;
+    if(e.code==='KeyH' || e.keyCode===72){ Reveal.prev();  e.preventDefault(); }
+    else if(e.code==='KeyL' || e.keyCode===76){ Reveal.next(); e.preventDefault(); }
+  }, true);
+})();
+</script>
+
+<style>
+ #lb-ov{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;cursor:zoom-out;padding:2vh 2vw;}
+ #lb-ov.open{display:flex;}
+ #lb-ov img{max-width:96vw;max-height:92vh;background:#fff;border-radius:6px;box-shadow:0 10px 50px rgba(0,0,0,0.6);}
+ #lb-hint{position:fixed;bottom:14px;left:0;right:0;text-align:center;color:rgba(255,255,255,0.65);font-size:13px;letter-spacing:0.04em;}
+ #lb-btn{position:fixed;z-index:9999;display:none;padding:5px 11px;border:0;border-radius:6px;background:rgba(31,41,55,0.85);color:#fff;font:600 13px/1.2 "Source Sans 3",system-ui,sans-serif;cursor:zoom-in;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+ #lb-btn:hover{background:rgba(37,99,235,0.95);}
+ #lb-btn.on{display:block;}
+</style>
+<div id="lb-ov"><img id="lb-img" alt="Enlarged image"><div id="lb-hint">Click anywhere (or press Esc) to close</div></div>
+<button id="lb-btn" type="button" aria-label="Enlarge image">&#128269; Enlarge</button>
+<script>
+(function(){
+  if(/[?&](receiver|print-pdf|export)/.test(location.search)) return;   // speaker-view previews, PDF export
+  var ov=document.getElementById('lb-ov'), im=document.getElementById('lb-img'), btn=document.getElementById('lb-btn');
+  if(!ov||!btn) return;
+  var cur=null, hideT=null, idleT=null;
+  function skip(z){ return z.closest('#title,.yt-facade,.poll-option,a,button,[data-no-zoom]'); }
+  function hide(){ clearTimeout(hideT); clearTimeout(idleT); btn.classList.remove('on'); cur=null; }
+  function open(z){ im.src=z.currentSrc||z.src; im.alt=z.alt||'Enlarged image'; ov.classList.add('open'); hide(); }
+  function close(){ ov.classList.remove('open'); }
+  function shown(z){                           // the visible picture, not the box: object-fit:contain letterboxes it
+    var b=z.getBoundingClientRect(), fit=getComputedStyle(z).objectFit, nw=z.naturalWidth, nh=z.naturalHeight;
+    if(!(fit==='contain'||fit==='scale-down')||!nw||!nh||!b.width||!b.height) return b;
+    var s=Math.min(b.width/nw,b.height/nh); if(fit==='scale-down') s=Math.min(s,1);
+    var w=nw*s, hh=nh*s;
+    return {left:b.left+(b.width-w)/2, top:b.top+(b.height-hh)/2, right:b.left+(b.width+w)/2, width:w, height:hh};
+  }
+  function show(z){
+    if(ov.classList.contains('open')) return;
+    var r=shown(z);
+    if(r.width<120||r.height<80) return;       // icons and emoji are not worth enlarging
+    clearTimeout(hideT); clearTimeout(idleT); cur=z;
+    btn.classList.add('on');
+    btn.style.top=Math.max(4,r.top+6)+'px';
+    btn.style.left=Math.max(4,r.right-btn.offsetWidth-6)+'px';
+    idleT=setTimeout(hide,2500);               // a resting pointer does not leave a button on the projector
+  }
+  document.querySelectorAll('.reveal .slides section img').forEach(function(z){
+    if(skip(z)) return;
+    z.addEventListener('mouseenter',function(){ show(z); });
+    z.addEventListener('mousemove',function(){ if(cur!==z||!btn.classList.contains('on')) show(z); else { clearTimeout(idleT); idleT=setTimeout(hide,2500); } });
+    z.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+    z.addEventListener('dblclick',function(e){ e.preventDefault(); e.stopPropagation(); open(z); });
+  });
+  btn.addEventListener('mouseenter',function(){ clearTimeout(hideT); clearTimeout(idleT); });
+  btn.addEventListener('mouseleave',function(){ hideT=setTimeout(hide,400); });
+  btn.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); if(cur) open(cur); });
+  ov.addEventListener('click', close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&ov.classList.contains('open')){ close(); e.stopPropagation(); } },true);
+  if(window.Reveal&&Reveal.on){ Reveal.on('slidechanged',function(){ hide(); close(); }); Reveal.on('fragmentshown',hide); Reveal.on('fragmenthidden',hide); }
+  window.addEventListener('resize',hide);
+})();
+</script>
+
+<script>
+(function () {
+  // 29 Sep 2026, Ryan: reveal's "?" panel only knew reveal's own keys. Every
+  // key the decks add (pen, timers, poll, speaker-view relays) is registered
+  // here so the panel is the one place to look. Rows depend on the window: the
+  // projector and speaker view get the instructor keys; a student's copy gets
+  // only what works for a student. Rows for features a deck lacks are skipped.
+  var q = location.search;
+  var receiver = /[?&]receiver(&|$)/.test(q), current = receiver && /postMessageEvents=true/.test(q);
+  var projector = /[?&]presenter(&|=|$)/.test(q) && !receiver;
+  if (receiver && !current) return;                         // the Upcoming pane is view-only
+  var inst = projector || current || /[?&]instructor(&|=|$)/.test(q);
+  // twice as many rows as reveal's own list: wider and tighter so it fits one screen
+  var css = document.createElement('style');
+  var H = '.reveal .overlay.overlay-help .viewport .viewport-inner';
+  css.textContent = H + '{width:min(1000px,94vw)!important;max-width:none!important;}' +
+    H + ' table{width:100%!important;}' +
+    H + ' table th,' + H + ' table td{padding:4px 12px!important;font-size:13px!important;line-height:1.3!important;}' +
+    H + ' table td:last-child{text-align:left!important;}' +
+    H + ' table th:first-child,' + H + ' table td:first-child{width:24%!important;}' +
+    H + ' .title{margin:0!important;}' + H + ' br{display:none;}' +
+    '.reveal .overlay.overlay-help .viewport{padding-top:0!important;}' + H + '{padding-top:18px!important;}';
+  document.head.appendChild(css);
+  function go() {
+    if (!Reveal.registerKeyboardShortcut) return;
+    var K = function (k, d) { Reveal.registerKeyboardShortcut(k, d); };
+    var hasTimer = !!document.getElementById('cd-wrap');
+    var hasPoll = !!document.querySelector('.poll-grid, [data-poll-voting]');
+    if (inst) {
+      K('F', 'Fullscreen &mdash; pressed in speaker view, it full-screens the <b>projector</b>');
+      K('ESC, O', 'Slide overview &mdash; from speaker view, on <b>both</b> screens (Enter or a click picks a slide)');
+      K('M', 'Move keyboard focus between the projector and speaker view (Cmd-` brings a window forward)');
+      if (hasTimer) K('1 &ndash; 9', 'Countdown timer for that many minutes (same number again hides it); starts on both screens');
+      if (hasPoll) K('T', 'Poll slide: open / close voting. In speaker view, clicking an option votes on the projector');
+    }
+    K('D', 'Pen on / off (Esc also leaves it)');
+    K('Pen: F L A R S Y', 'Free draw &middot; line &middot; arrow &middot; box &middot; shade &middot; triangle');
+    K('Pen: G N H E', 'Axis guides &middot; curve label &middot; shifted copy &middot; eraser');
+    K('Pen: [ ] Z X C P', 'Thinner &middot; thicker &middot; undo &middot; redo &middot; clear slide &middot; save as PNG');
+    K('?', 'This list');
+    // S is registered by reveal's notes plugin as a key BINDING ("Speaker notes
+    // view"), which the panel lists after these rows; a second S row would be a
+    // duplicate. Its description is not reachable through the API, so the row is
+    // amended when the panel is drawn.
+    if (inst) {
+      var wrap = document.querySelector('.reveal');
+      if (wrap && window.MutationObserver) new MutationObserver(function () {
+        var o = wrap.querySelector('.overlay-help');
+        if (!o || o.__tiS) return; o.__tiS = 1;
+        [].forEach.call(o.querySelectorAll('td'), function (td) {
+          if (td.textContent === 'Speaker notes view' && td.parentNode) td.parentNode.remove();   // v3: Ryan does not want the S row
+        });
+      }).observe(wrap, { childList: true });
+    }
+  }
+  if (window.Reveal && Reveal.isReady && Reveal.isReady()) go();
+  else if (window.Reveal && Reveal.on) Reveal.on('ready', go);
+})();
+</script>
+<script>
+(function () {
+  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
+  var current = false;
+  // ---- annotation: temporary marks on the slide -------------------------
+  // A whiteboard, not a document. Strokes live in memory only, keyed by
+  // slide, and are gone when the deck is closed -- asked for explicitly, so
+  // there is no storage anywhere in here.
+  //
+  // Points are kept in SLIDE units, the same 1280x720 space the laser dot
+  // uses. Canvas pixels would be wrong the moment the window is resized or
+  // the deck is thrown at a projector with a different aspect: the marks
+  // have to sit on the WORDS they were drawn on.
+  //
+  // The shape set is chosen for an economics board, not for drawing in
+  // general: a straight LINE for a budget line or a tangent, an ARROW for
+  // "demand shifts right", a RECT and a translucent SHADE for tax revenue and
+  // surplus boxes, a right TRIANGLE for deadweight loss, and GUIDES -- the
+  // dashed pair dropped from a point to the two axes, which is the single
+  // most-drawn mark in a micro lecture.
+  var Ink = (function () {
+    var PENS = [
+      { n: 'Red',    c: '#e11d48' },
+      { n: 'Blue',   c: '#2563eb' },
+      { n: 'Green',  c: '#059669' },
+      { n: 'Orange', c: '#ea580c' },
+      { n: 'Black',  c: '#111827' },
+      { n: 'Highlighter', c: 'rgba(250,204,21,.45)', hi: true }
+    ];
+    var SIZES = [2, 4, 8];            // thin / medium / thick, in slide units
+    var TOOLS = [
+      { k: 'free',  i: 'fa-pencil',           t: 'Freehand (f)' },
+      { k: 'line',  i: 'fa-slash',            t: 'Straight line (l)' },
+      { k: 'arrow', i: 'fa-arrow-right-long', t: 'Arrow — a shift (a)' },
+      { k: 'rect',  i: 'fa-square',           t: 'Rectangle (r)' },
+      { k: 'shade', i: 'fa-fill-drip',        t: 'Shaded area — revenue, surplus (s)' },
+      { k: 'tri',   i: 'fa-play',             t: 'Right triangle — deadweight loss (y)' },
+      { k: 'guide', i: 'fa-crosshairs',       t: 'Dashed guides to the axes (g)' },
+      { k: 'label', i: 'fa-font',             t: 'Curve label \u2014 D, S, MC, D\u2032 (n)' },
+      { k: 'ghost', i: 'fa-clone',            t: 'Shifted ghost of a curve \u2014 drag it across (h)' }
+    ];
+    var cv, ctx, active = false, erasing = false, pi = 0, si = 1, tool = 'free';
+    var ops = {}, undone = {}, cur = null, rcur = null, relay = null, bar = null, btn = null;
+
+    function skey() { var i = Reveal.getIndices(); return i.h + '.' + (i.v || 0); }
+    function box() { var s = document.querySelector('.reveal .slides'); return s ? s.getBoundingClientRect() : null; }
+    function width() { return PENS[pi].hi ? 24 : SIZES[si]; }
+
+    function ensure() {
+      if (cv) return;
+      cv = document.createElement('canvas');
+      cv.id = 'ti-ink';
+      cv.style.cssText = 'position:fixed;z-index:9990;pointer-events:none;touch-action:none';
+      document.body.appendChild(cv);
+      cv.addEventListener('pointerdown', down);
+      cv.addEventListener('pointermove', move);
+      window.addEventListener('pointerup', up);
+      window.addEventListener('pointercancel', up);
+      fit();
+    }
+    function fit() {
+      var r = box(); if (!r || !cv) return;
+      var dpr = window.devicePixelRatio || 1;
+      cv.style.left = r.left + 'px'; cv.style.top = r.top + 'px';
+      cv.style.width = r.width + 'px'; cv.style.height = r.height + 'px';
+      cv.width = Math.max(1, Math.round(r.width * dpr));
+      cv.height = Math.max(1, Math.round(r.height * dpr));
+      ctx = cv.getContext('2d');
+      render();
+    }
+    // Live strokes are DERIVED by replaying this slide's op log, so undo and
+    // redo are a cursor into that log and never have to reverse a partially
+    // erased stroke by hand.
+    function live() {
+      var list = [], o = ops[skey()] || [];
+      o.forEach(function (op) {
+        if (op.t === 'add') list.push(op.s);
+        else if (op.t === 'del' && op.ids) list = list.filter(function (s) { return op.ids.indexOf(s.id) < 0; });
+        else if (op.t === 'del') op.ss.forEach(function (s) {
+          var i = list.indexOf(s); if (i >= 0) list.splice(i, 1);
+        });
+      });
+      return list;
+    }
+    // One description of every shape, used for BOTH drawing and erasing, so
+    // the two can never disagree about where a mark is.
+    function paths(s) {
+      var p = s.pts, a = p[0], b = p[p.length - 1];
+      if (s.k === 'free' || !s.k) return [p];
+      if (s.k === 'line' || s.k === 'arrow') return [[a, b]];
+      if (s.k === 'rect' || s.k === 'shade')
+        return [[a, { x: b.x, y: a.y }, b, { x: a.x, y: b.y }, a]];
+      if (s.k === 'tri') return [[a, b, { x: b.x, y: a.y }, a]];
+      if (s.k === 'guide') return [[a, { x: b.x, y: a.y }], [a, { x: a.x, y: b.y }]];
+      if (s.k === 'text') return [];
+      return [p];
+    }
+    function render() {
+      if (!cv || !ctx) return;
+      var r = box(); if (!r) return;
+      var dpr = window.devicePixelRatio || 1, k = Reveal.getScale() * dpr;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.setTransform(k, 0, 0, k, 0, 0);
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      var all = live(); if (rcur) all = all.concat([rcur]); if (cur) all = all.concat([cur]);
+      all.forEach(function (s) {
+        if (!s.pts.length) return;
+        ctx.save();
+        if (s.k === 'text') {
+          ctx.globalAlpha = s.ghost ? 0.6 : 1;
+          ctx.fillStyle = s.c;
+          // italic serif, because that is how a curve is labelled on a board
+          ctx.font = 'italic 700 ' + (s.size || 22) + 'px Georgia,"Times New Roman",serif';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(s.txt || '', s.pts[0].x, s.pts[0].y);
+          ctx.restore(); return;
+        }
+        ctx.strokeStyle = s.c; ctx.lineWidth = s.w;
+        if (s.ghost) { ctx.globalAlpha = 0.6; ctx.setLineDash([9, 7]); }
+        else ctx.setLineDash(s.k === 'guide' ? [7, 6] : []);
+        if (s.k === 'shade') {
+          ctx.save(); ctx.globalAlpha = 0.22; ctx.fillStyle = s.c;
+          var q = s.pts[0], z = s.pts[s.pts.length - 1];
+          ctx.fillRect(Math.min(q.x, z.x), Math.min(q.y, z.y), Math.abs(z.x - q.x), Math.abs(z.y - q.y));
+          ctx.restore();
+        }
+        paths(s).forEach(function (seg) {
+          if (seg.length < 1) return;
+          ctx.beginPath(); ctx.moveTo(seg[0].x, seg[0].y);
+          for (var i = 1; i < seg.length; i++) ctx.lineTo(seg[i].x, seg[i].y);
+          if (seg.length === 1) ctx.lineTo(seg[0].x + 0.01, seg[0].y + 0.01);
+          ctx.stroke();
+        });
+        if (s.k === 'arrow') {
+          var a = s.pts[0], b = s.pts[s.pts.length - 1];
+          var ang = Math.atan2(b.y - a.y, b.x - a.x), L = 9 + s.w * 2.2;
+          ctx.beginPath();
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang - 0.42), b.y - L * Math.sin(ang - 0.42));
+          ctx.moveTo(b.x, b.y);
+          ctx.lineTo(b.x - L * Math.cos(ang + 0.42), b.y - L * Math.sin(ang + 0.42));
+          ctx.stroke();
+        }
+        ctx.setLineDash([]);
+        ctx.restore();
+      });
+    }
+    function at(ev) {
+      var r = box(), k = Reveal.getScale() || 1;
+      return { x: (ev.clientX - r.left) / k, y: (ev.clientY - r.top) / k };
+    }
+    function push(op) {
+      if (op.t === 'add' && op.s && !op.s.id) op.s.id = Math.random().toString(36).slice(2, 10);
+      var k = skey(); (ops[k] = ops[k] || []).push(op); undone[k] = [];
+    }
+    // v25: the WHOLE log of one slide, so the other window can replace its own -- the two
+    // can then never disagree about which stroke an undo or an erase meant
+    function snap() {
+      var k = skey();
+      send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+    }
+    function snapAll() {
+      Object.keys(ops).forEach(function (k) {
+        if ((ops[k] || []).length || (undone[k] || []).length)
+          send({ k: 'snap', key: k, ops: JSON.parse(JSON.stringify(ops[k] || [])), undone: JSON.parse(JSON.stringify(undone[k] || [])) });
+      });
+    }
+    function send(m) { if (relay) relay(m); }
+
+    // erase whole strokes, not pixels: one op to undo, and it never leaves
+    // half a rubbed-out line behind
+    function eraseAt(p) {
+      var hit = [], R = 14;
+      live().forEach(function (s) {
+        if (s.k === 'text') {
+          var half = (s.size || 22) * 0.6, wide = (s.txt || '').length * (s.size || 22) * 0.34;
+          if (p.x > s.pts[0].x - 8 && p.x < s.pts[0].x + wide + 8 &&
+              p.y > s.pts[0].y - half && p.y < s.pts[0].y + half) hit.push(s);
+          return;
+        }
+        var segs = paths(s), i, j, pts;
+        for (i = 0; i < segs.length; i++) {
+          pts = segs[i];
+          for (j = 0; j < pts.length; j++) {
+            var dx = pts[j].x - p.x, dy = pts[j].y - p.y;
+            if (dx * dx + dy * dy < (R + s.w) * (R + s.w)) { hit.push(s); return; }
+          }
+          // a long straight edge has few vertices: walk it
+          for (j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            if (L < 1) continue;
+            var t = ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L);
+            if (t < 0 || t > 1) continue;
+            var cx = A.x + t * (B.x - A.x), cy = A.y + t * (B.y - A.y);
+            if (Math.hypot(p.x - cx, p.y - cy) < R + s.w) { hit.push(s); return; }
+          }
+        }
+      });
+      if (hit.length) { push({ t: 'del', ids: hit.map(function (s) { return s.id; }) }); render(); paintBar(); return true; }
+    }
+    // nearest live stroke to a point, by the same segment walk the eraser uses
+    function nearest(p) {
+      var best = null, bd = 1e9;
+      live().forEach(function (s) {
+        paths(s).forEach(function (pts) {
+          for (var j = 1; j < pts.length; j++) {
+            var A = pts[j - 1], B = pts[j], L = Math.hypot(B.x - A.x, B.y - A.y);
+            var cx, cy, tt;
+            if (L < 1) { cx = A.x; cy = A.y; }
+            else {
+              tt = Math.max(0, Math.min(1, ((p.x - A.x) * (B.x - A.x) + (p.y - A.y) * (B.y - A.y)) / (L * L)));
+              cx = A.x + tt * (B.x - A.x); cy = A.y + tt * (B.y - A.y);
+            }
+            var d = Math.hypot(p.x - cx, p.y - cy);
+            if (d < bd) { bd = d; best = s; }
+          }
+        });
+      });
+      return bd < 40 ? best : null;
+    }
+    // A label is typed, not drawn, so it gets a real input at the click point
+    // rather than a prompt() -- a modal dialog in front of a projected slide is
+    // worse than the thing it is trying to collect.
+    function labelAt(p, ev) {
+      var r = box(), k = Reveal.getScale() || 1, size = 16 + si * 6;
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.placeholder = 'D\u2032';
+      inp.style.cssText = 'position:fixed;z-index:10004;left:' + (r.left + p.x * k - 6) + 'px;top:' +
+        (r.top + p.y * k - size * k * 0.75) + 'px;width:130px;font:italic 700 ' + Math.round(size * k) +
+        'px Georgia,serif;color:' + PENS[pi].c + ';background:rgba(255,255,255,.92);border:2px solid ' +
+        PENS[pi].c + ';border-radius:6px;padding:1px 5px;outline:none';
+      document.body.appendChild(inp);
+      // v27: the box grows with the text. At 130px fixed, a large italic label scrolled its
+      // start out of sight after four characters and Ryan could not see what he typed.
+      var meas = document.createElement('canvas').getContext('2d');
+      meas.font = 'italic 700 ' + Math.round(size * k) + 'px Georgia,serif';
+      var grow = function () {
+        var w = meas.measureText(inp.value || inp.placeholder).width;
+        inp.style.width = Math.max(60, Math.ceil(w + size * k * 0.9 + 14)) + 'px';
+      };
+      inp.addEventListener('input', grow); grow();
+      inp.focus();
+      var done = function (commit) {
+        var txt = inp.value.trim();
+        inp.remove();
+        if (!commit || !txt) return;
+        var s = { k: 'text', c: PENS[pi].c, w: SIZES[si], size: size, txt: txt, pts: [p] };
+        push({ t: 'add', s: s }); snap();
+        render(); paintBar();
+      };
+      inp.addEventListener('keydown', function (e) {
+        e.stopPropagation();                       // Reveal and Ink both listen on document
+        if (e.key === 'Enter') { e.preventDefault(); done(true); }
+        if (e.key === 'Escape') { e.preventDefault(); done(false); }
+      });
+      inp.addEventListener('blur', function () { done(true); });
+    }
+
+    function down(ev) {
+      if (!active) return;
+      ev.preventDefault(); ev.stopPropagation();
+      var p = at(ev);
+      if (erasing) { if (eraseAt(p)) snap(); return; }
+      if (tool === 'label') { labelAt(p, ev); return; }
+      if (tool === 'ghost') {
+        // copy the curve you pressed on, then drag the copy to where it shifted
+        var src = nearest(p);
+        if (!src) return;
+        var base = src.pts.map(function (q) { return { x: q.x, y: q.y }; });
+        cur = { k: src.k, c: src.c, w: src.w, size: src.size, txt: src.txt,
+                ghost: true, base: base, from: p, pts: base };
+        render(); return;
+      }
+      cur = { c: PENS[pi].c, w: width(), k: tool, pts: [p, p] };
+      send({ k: 'down', x: p.x, y: p.y, c: cur.c, w: cur.w, tool: tool });
+      render();
+    }
+    function move(ev) {
+      if (!active) return;
+      var p = at(ev);
+      if (erasing) {
+        if (ev.buttons && eraseAt(p)) snap();
+        return;
+      }
+      if (!cur) return;
+      ev.preventDefault();
+      if (cur.ghost) {
+        var dx = p.x - cur.from.x, dy = p.y - cur.from.y;
+        cur.pts = cur.base.map(function (q) { return { x: q.x + dx, y: q.y + dy }; });
+        render(); return;                          // relayed whole, on release
+      }
+      if (cur.k === 'free') cur.pts.push(p); else cur.pts[1] = p;
+      send({ k: 'move', x: p.x, y: p.y }); render();
+    }
+    function up() {
+      if (!cur) return;
+      // a shape needs two distinct corners; a tap is not a rectangle
+      var a = cur.pts[0], b = cur.pts[cur.pts.length - 1];
+      var ok = cur.ghost ? Math.hypot(b.x - a.x, b.y - a.y) >= 0
+             : cur.k === 'free' ? cur.pts.length > 1
+             : Math.hypot(b.x - a.x, b.y - a.y) > 4;
+      if (cur.ghost) {
+        var moved = cur.pts.length && cur.base.length &&
+                    Math.hypot(cur.pts[0].x - cur.base[0].x, cur.pts[0].y - cur.base[0].y) > 4;
+        if (moved) {
+          var g = { k: cur.k, c: cur.c, w: cur.w, size: cur.size, txt: cur.txt, ghost: true, pts: cur.pts };
+          push({ t: 'add', s: g }); snap();
+        }
+        cur = null; render(); paintBar(); return;
+      }
+      if (ok) { push({ t: 'add', s: cur }); cur = null; snap(); }
+      else { cur = null; send({ k: 'cancel' }); }
+      render(); paintBar();
+    }
+    // the projected window rebuilds the same stroke from the relayed points
+    function apply(m) {
+      if (!m) return;
+      ensure();
+      // v25: the other window's stroke in progress lives in rcur, never in cur, so a stroke
+      // drawn on each screen at once cannot merge into one
+      if (m.k === 'down') { rcur = { c: m.c, w: m.w, k: m.tool || 'free', pts: [{ x: m.x, y: m.y }, { x: m.x, y: m.y }] }; render(); return; }
+      if (m.k === 'move') { if (rcur) { if (rcur.k === 'free') rcur.pts.push({ x: m.x, y: m.y }); else rcur.pts[1] = { x: m.x, y: m.y }; render(); } return; }
+      if (m.k === 'cancel') { rcur = null; render(); return; }
+      if (m.k === 'snap') {
+        ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
+        render(); paintBar(); return;
+      }
+      if (m.k === 'req')  { snapAll(); return; }
+      // a window still on v24 or older sends these; keep them working during a mixed reload
+      if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
+      if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
+      if (m.k === 'erase'){ eraseAt({ x: m.x, y: m.y }); return; }
+      if (m.k === 'undo') { undo(true); return; }
+      if (m.k === 'redo') { redo(true); return; }
+      if (m.k === 'clear'){ clear(true); return; }
+      if (m.k === 'mode') { setActive(m.on, true); return; }
+    }
+    function undo(q) {
+      var k = skey(), o = ops[k] || [];
+      if (!o.length) return;
+      (undone[k] = undone[k] || []).push(o.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function redo(q) {
+      var k = skey(), u = undone[k] || [];
+      if (!u.length) return;
+      (ops[k] = ops[k] || []).push(u.pop());
+      render(); paintBar(); if (!q) snap();
+    }
+    function clear(q) {
+      var k = skey();
+      if (!(ops[k] || []).length) return;
+      undone[k] = (undone[k] || []).concat(ops[k]); ops[k] = [];
+      render(); paintBar(); if (!q) snap();
+    }
+    function setActive(v, q) {
+      active = !!v; ensure();
+      cv.style.pointerEvents = active ? 'auto' : 'none';
+      cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
+      if (bar) bar.style.display = active ? 'flex' : 'none';
+      if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
+      paintBar(); if (!q) send({ k: 'mode', on: active });
+    }
+
+    /* ---------- save a picture of the board ---------- */
+    // The slide is DOM, not a canvas, so the page cannot screenshot itself
+    // without help. html2canvas is fetched only when this is first pressed --
+    // no cost to a lecture that never uses it -- and if the CDN is unreachable
+    // the ink alone is still saved rather than nothing.
+    function stamp() {
+      var m = location.pathname.match(/\/([^\/]+)\/[^\/]*$/);
+      var n = document.querySelector('.reveal .slide-number');
+      return (m ? m[1] : 'slide') + '-' + (n ? n.textContent.replace(/\s+/g, '') : skey());
+    }
+    function download(blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = stamp() + '.png';
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+    function inkOnly() {
+      var out = document.createElement('canvas');
+      out.width = cv.width; out.height = cv.height;
+      var c = out.getContext('2d');
+      c.fillStyle = '#fff'; c.fillRect(0, 0, out.width, out.height);
+      c.drawImage(cv, 0, 0);
+      out.toBlob(download);
+    }
+    function savePng() {
+      var reveal = document.querySelector('.reveal');
+      var go = function () {
+        window.html2canvas(reveal, { backgroundColor: '#ffffff', scale: 2, logging: false })
+          .then(function (base) {
+            var out = document.createElement('canvas');
+            out.width = base.width; out.height = base.height;
+            var c = out.getContext('2d');
+            c.drawImage(base, 0, 0);
+            var rr = reveal.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+            var k = base.width / rr.width;
+            c.drawImage(cv, (cr.left - rr.left) * k, (cr.top - rr.top) * k, cr.width * k, cr.height * k);
+            out.toBlob(download);
+          })
+          .catch(inkOnly);
+      };
+      if (window.html2canvas) { go(); return; }
+      var s = document.createElement('script');
+      s.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      s.onload = go; s.onerror = inkOnly;
+      document.head.appendChild(s);
+    }
+
+    /* ---------- toolbar ---------- */
+    function paintBar() {
+      if (!bar) return;
+      [].forEach.call(bar.querySelectorAll('[data-pen]'), function (b) {
+        b.style.outline = (!erasing && +b.getAttribute('data-pen') === pi) ? '2px solid #111827' : '2px solid transparent';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-size]'), function (b) {
+        var on = +b.getAttribute('data-size') === si;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.firstChild.style.background = on ? '#fff' : '#374151';
+      });
+      [].forEach.call(bar.querySelectorAll('[data-tool]'), function (b) {
+        var on = !erasing && b.getAttribute('data-tool') === tool;
+        b.style.background = on ? '#111827' : '#e5e7eb';
+        b.style.color = on ? '#fff' : '#374151';
+      });
+      var er = bar.querySelector('[data-a="erase"]');
+      if (er) { er.style.background = erasing ? '#111827' : '#e5e7eb'; er.style.color = erasing ? '#fff' : '#374151'; }
+      var k = skey();
+      var u = bar.querySelector('[data-a="undo"]'), rd = bar.querySelector('[data-a="redo"]'),
+          cl = bar.querySelector('[data-a="clear"]'), sv = bar.querySelector('[data-a="save"]');
+      if (u)  u.disabled  = !(ops[k] || []).length;
+      if (rd) rd.disabled = !(undone[k] || []).length;
+      if (cl) cl.disabled = !(ops[k] || []).length;
+      if (sv) sv.disabled = false;
+    }
+    function mount() {
+      if (bar) return;
+      btn = document.createElement('button');
+      btn.id = 'ti-pen'; btn.type = 'button'; btn.title = 'Draw on the slide (d)';
+      btn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+      var rest = current ? '.55' : '.18';
+      btn.style.cssText = 'position:fixed;left:' + (current ? 14 : 94) + 'px;bottom:12px;' +
+        'z-index:10001;width:34px;height:34px;' +
+        'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+        'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+        'font-size:14px;padding:0;opacity:' + rest + ';transition:opacity .2s';
+      btn.addEventListener('mouseenter', function () { btn.style.opacity = '1'; });
+      btn.addEventListener('mouseleave', function () { if (!active) btn.style.opacity = rest; });
+      btn.addEventListener('click', function (e) { e.preventDefault(); setActive(!active); });
+      document.body.appendChild(btn);
+
+      bar = document.createElement('div');
+      bar.id = 'ti-ink-bar';
+      bar.style.cssText = 'position:fixed;left:50%;transform:translateX(-50%);bottom:10px;z-index:10003;' +
+        'display:none;gap:6px;align-items:center;padding:7px 10px;border-radius:11px;' +
+        'background:rgba(255,255,255,.97);box-shadow:0 2px 12px rgba(0,0,0,.22);' +
+        'font:600 12px system-ui,sans-serif;max-width:96vw;flex-wrap:wrap;justify-content:center';
+      var sep = '<span style="width:1px;height:20px;background:#e5e7eb"></span>';
+      var btnCss = 'border:0;border-radius:6px;padding:5px 8px;cursor:pointer;background:#e5e7eb;color:#374151;font:inherit';
+      var html = '';
+      PENS.forEach(function (p, i) {
+        html += '<button data-pen="' + i + '" type="button" title="' + p.n + '" style="width:22px;height:22px;' +
+                'border-radius:50%;border:0;cursor:pointer;padding:0;background:' + p.c + ';' +
+                'outline:2px solid transparent;outline-offset:2px"></button>';
+      });
+      html += sep;
+      SIZES.forEach(function (w, i) {
+        var d = 4 + i * 4;
+        html += '<button data-size="' + i + '" type="button" title="Tip ' + w + '" style="width:26px;height:22px;' +
+                'border:0;border-radius:6px;cursor:pointer;background:#e5e7eb;display:inline-flex;' +
+                'align-items:center;justify-content:center;padding:0">' +
+                '<span style="display:block;width:' + d + 'px;height:' + d + 'px;border-radius:50%;background:#374151"></span></button>';
+      });
+      html += sep;
+      TOOLS.forEach(function (t) {
+        html += '<button data-tool="' + t.k + '" type="button" title="' + t.t + '" style="' + btnCss + '">' +
+                '<i class="fa-solid ' + t.i + '"></i></button>';
+      });
+      html += sep +
+        '<button data-a="erase" type="button" title="Eraser (e)" style="' + btnCss + '">Erase</button>' +
+        '<button data-a="undo" type="button" title="Undo (z)" style="' + btnCss + '">Undo</button>' +
+        '<button data-a="redo" type="button" title="Redo (x)" style="' + btnCss + '">Redo</button>' +
+        '<button data-a="clear" type="button" title="Clear this slide (c)" style="' + btnCss + '">Clear</button>' +
+        '<button data-a="save" type="button" title="Save this slide as a PNG (p)" style="' + btnCss + '">' +
+        '<i class="fa-solid fa-camera"></i></button>' + sep +
+        '<button data-a="done" type="button" title="Stop drawing (d or Esc)" style="' + btnCss +
+        ';background:#111827;color:#fff">Done</button>';
+      bar.innerHTML = html;
+      bar.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+      bar.addEventListener('click', function (e) {
+        var t = e.target.closest('button'); if (!t) return;
+        e.preventDefault(); e.stopPropagation();
+        if (t.hasAttribute('data-pen'))  { pi = +t.getAttribute('data-pen'); erasing = false; setActive(true); return; }
+        if (t.hasAttribute('data-size')) { si = +t.getAttribute('data-size'); setActive(true); return; }
+        if (t.hasAttribute('data-tool')) { tool = t.getAttribute('data-tool'); erasing = false; setActive(true); return; }
+        var a = t.getAttribute('data-a');
+        if (a === 'erase') { erasing = !erasing; setActive(true); }
+        else if (a === 'undo') undo();
+        else if (a === 'redo') redo();
+        else if (a === 'clear') clear();
+        else if (a === 'save') savePng();
+        else if (a === 'done') setActive(false);
+      });
+      document.body.appendChild(bar);
+      ensure();
+      Reveal.on('resize', fit);
+      window.addEventListener('resize', fit);
+      Reveal.on('slidechanged', function () { cur = null; rcur = null; fit(); paintBar(); });
+      paintBar();
+    }
+
+    function keys(e) {
+      // v26: the system shortcuts too, while the pen is on -- Cmd/Ctrl-Z undo,
+      // Cmd/Ctrl-Shift-Z or Ctrl-Y redo. With the pen off they pass through untouched.
+      if (active && (e.metaKey || e.ctrlKey) && !e.altKey) {
+        var kk = (e.key || '').toLowerCase();
+        if (kk === 'z' || kk === 'y') {
+          e.preventDefault(); e.stopPropagation();
+          if (kk === 'y' || e.shiftKey) redo(); else undo();
+          return;
+        }
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target, tag = t && t.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var k = e.key;
+      if (k === 'd' || k === 'D') { e.preventDefault(); e.stopPropagation(); setActive(!active); return; }
+      if (!active) return;                    // every other key is scoped to draw mode
+      var stop = function () { e.preventDefault(); e.stopPropagation(); };
+      if (k === 'Escape') { stop(); setActive(false); return; }
+      if (k === 'e' || k === 'E') { stop(); erasing = !erasing; setActive(true); return; }
+      if (k === 'z' || k === 'Z') { stop(); undo(); return; }
+      if (k === 'x' || k === 'X') { stop(); redo(); return; }
+      if (k === 'c' || k === 'C') { stop(); clear(); return; }
+      if (k === 'p' || k === 'P') { stop(); savePng(); return; }
+      if (k === '[') { stop(); si = Math.max(0, si - 1); setActive(true); return; }
+      if (k === ']') { stop(); si = Math.min(SIZES.length - 1, si + 1); setActive(true); return; }
+      // NOT "t": that is the poll open/close key, and it has to keep working
+      // while the pen is armed so a poll slide can be annotated and still
+      // opened for voting. Triangle takes "y" instead.
+      var map = { f: 'free', l: 'line', a: 'arrow', r: 'rect', s: 'shade', y: 'tri', g: 'guide',
+                  n: 'label', h: 'ghost' };
+      var want = map[k.toLowerCase && k.toLowerCase()];
+      if (want) { stop(); tool = want; erasing = false; setActive(true); }
+    }
+
+    return {
+      mount: mount, apply: apply, fit: fit, keys: keys, ask: function () { send({ k: 'req' }); },
+      on: function () { return active; },
+      relayTo: function (fn) { relay = fn; }
+    };
+  })();
+
+  // ---- full screen ----------------------------------------------------
+  // requestFullscreen needs TRANSIENT user activation IN THE WINDOW THAT GOES
+  // FULL SCREEN, so only a click (or "f") inside the projected window can do
+  // it. The speaker-view button and the click-anywhere target that used to work
+  // around that are GONE: they worked, but two windows and two clicks to reach
+  // full screen was never worth it. "m" then "f" does the same job from the
+  // keyboard -- see swapFocus below.
+  function goFull() {
+    var el = document.documentElement;
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    try {
+      var p = el.requestFullscreen();
+      if (p && p.catch) p.catch(function () {});
+    } catch (e) {}
+  }
+
+  function fsButton() {                 // projector window: the one-click path
+    if (document.getElementById('ti-fs')) return;
+    var b = document.createElement('button');
+    b.id = 'ti-fs'; b.type = 'button'; b.title = 'Full screen (f)';
+    b.innerHTML = '<i class="fa-solid fa-expand"></i>';
+    b.style.cssText = 'position:fixed;left:54px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;' +
+      'background:rgba(255,255,255,.9);color:#6b8ba4;border:1px solid #e5e7eb;cursor:pointer;' +
+      'font-size:14px;padding:0;opacity:.18;transition:opacity .2s';
+    b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+    b.addEventListener('mouseleave', function () { b.style.opacity = '.18'; });
+    b.addEventListener('click', function (e) { e.preventDefault(); goFull(); });
+    document.addEventListener('fullscreenchange', function () {
+      b.innerHTML = document.fullscreenElement ? '<i class="fa-solid fa-compress"></i>'
+                                               : '<i class="fa-solid fa-expand"></i>';
+    });
+    document.body.appendChild(b);
+  }
+
+  function homeLink() {            // presenter only: a faint way back to the chapter list
+    if (document.getElementById('ti-home')) return;
+    var a = document.createElement('a');
+    a.id = 'ti-home'; a.href = '../index.html'; a.title = 'Chapter list';
+    a.innerHTML = '<i class="fa-solid fa-house"></i>';
+    a.style.cssText = 'position:fixed;left:14px;bottom:12px;z-index:10001;width:34px;height:34px;' +
+      'border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.9);' +
+      'color:#6b8ba4;border:1px solid #e5e7eb;text-decoration:none;font-size:15px;opacity:.18;transition:opacity .2s';
+    a.addEventListener('mouseenter', function () { a.style.opacity = '1'; });
+    a.addEventListener('mouseleave', function () { a.style.opacity = '.18'; });
+    document.body.appendChild(a);
+  }
+  function start() {
+    homeLink(); fsButton(); Ink.mount();
+    document.addEventListener('keydown', Ink.keys, true);
+  }
+  if (Reveal.isReady()) start(); else Reveal.on('ready', start);
+})();
+</script>
+</body>
+</html>

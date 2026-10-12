@@ -1,0 +1,467 @@
+/* Test 1 Review — Clean Minimal theme
+ * Slate / blue accent on white. Maximum readability.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Backgrounds */
+  --background-color: #FFFFFF;
+  --section-divider-bg: #F8FAFC;
+  --surface-color: #F8FAFC;          /* slate-50 — light card bg */
+  --surface-accent: #EFF6FF;         /* blue-50 — section breadcrumb bg */
+  --surface-darker: #E2E8F0;         /* slate-200 — borders */
+
+  /* Typography — single sans family for clean look */
+  --heading-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --base-font-size: 32px;
+  --text-size: 16pt;
+  --h1-size: 40pt;
+  --h2-size: 26pt;
+  --h3-size: 18pt;
+  --footnote-size: 11pt;
+
+  /* Colors — Clean slate/blue palette */
+  --primary-color: #0F172A;          /* slate-900 — headings, primary text */
+  --secondary-color: #334155;        /* slate-700 — sub-headings */
+  --accent-color: #2563EB;           /* blue-600 — accents, links */
+  --gold-color: #CBD5E1;             /* slate-300 — borders, dividers */
+  --text-color: #1E293B;             /* slate-800 — body text */
+  --muted-color: #64748B;            /* slate-500 — secondary text */
+  --line-color: #E2E8F0;             /* slate-200 — decorative lines */
+  --danger-color: #DC2626;           /* red-600 — warnings */
+  --success-color: #059669;          /* emerald-600 — success */
+
+  /* Chapter pill colors */
+  --pill-bg: #F1F5F9;                /* slate-100 — pill bg */
+  --pill-border: #CBD5E1;            /* slate-300 */
+  --num-bg: #0F172A;                 /* slate-900 — chapter number bg */
+  --num-text: #FFFFFF;
+
+  /* Layout */
+  --slide-padding: 36px;
+  --slide-padding-top: 26px;
+  --content-gap: 16px;
+  --box-radius: 6px;
+}
+
+/* Base */
+.reveal {
+  font-family: var(--body-font);
+  font-size: var(--base-font-size);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.reveal strong, .reveal b { font-weight: 600; color: var(--primary-color); }
+
+.reveal-viewport {
+  background-color: var(--background-color);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--heading-font);
+  text-transform: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.reveal h1 { font-size: var(--h1-size); letter-spacing: -0.025em; }
+.reveal h2 { font-size: var(--h2-size); margin-bottom: 18px; }
+.reveal h3 { font-size: var(--h3-size); color: var(--accent-color); }
+
+.reveal section {
+  padding: var(--slide-padding-top) var(--slide-padding);
+  font-size: var(--text-size);
+  text-align: left;
+  box-sizing: border-box;
+}
+.reveal section *, .reveal section *::before, .reveal section *::after {
+  box-sizing: border-box;
+}
+
+.reveal p { font-size: var(--text-size); line-height: 1.5; margin: 0; }
+.reveal ul, .reveal ol { padding-left: 1.4em; margin: 0; }
+.reveal li { font-size: var(--text-size); line-height: 1.45; margin: 4px 0; }
+
+/* Chapter header */
+.chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-color);
+}
+.chapter-num {
+  background: var(--num-bg);
+  color: var(--num-text);
+  font-family: var(--heading-font);
+  font-size: 22pt;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--box-radius);
+  line-height: 1;
+  letter-spacing: 0;
+}
+.chapter-title-pill {
+  background: transparent;
+  color: var(--primary-color);
+  font-family: var(--heading-font);
+  font-size: 22pt;
+  font-weight: 700;
+  padding: 6px 0;
+  border-radius: 0;
+  border: none;
+  flex: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Section breadcrumb row */
+.section-row {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.section-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.section-row.cols-5 { grid-template-columns: repeat(5, 1fr); }
+.section-row.cols-6 { grid-template-columns: repeat(6, 1fr); }
+.section-row.cols-7 { grid-template-columns: repeat(7, 1fr); }
+
+.section-card {
+  background: var(--surface-accent);
+  border: 1px solid var(--line-color);
+  border-radius: var(--box-radius);
+  padding: 9px 10px;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 11pt;
+  line-height: 1.25;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section-card .sec-num {
+  font-family: var(--heading-font);
+  display: block;
+  color: var(--accent-color);
+  font-size: 9pt;
+  font-weight: 600;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* Detail node column */
+.detail-row {
+  display: grid;
+  gap: 10px;
+}
+.detail-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.detail-row.cols-5 { grid-template-columns: repeat(5, 1fr); }
+.detail-row.cols-6 { grid-template-columns: repeat(6, 1fr); }
+.detail-row.cols-7 { grid-template-columns: repeat(7, 1fr); }
+
+.detail-card {
+  background: #FFFFFF;
+  border: 1px solid var(--line-color);
+  border-left: 3px solid var(--accent-color);
+  border-radius: var(--box-radius);
+  padding: 8px 10px;
+  font-size: 10pt;
+  line-height: 1.35;
+  color: var(--text-color);
+  min-width: 0;
+}
+.detail-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.detail-card li {
+  font-size: 10pt;
+  line-height: 1.4;
+  margin: 4px 0;
+  padding-left: 12px;
+  position: relative;
+}
+.detail-card li:before {
+  content: "·";
+  position: absolute;
+  left: 2px;
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 14pt;
+  line-height: 0.8;
+  top: 5px;
+}
+.detail-card strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Formula box */
+.formula-card {
+  background: var(--surface-color);
+  border: 1px solid var(--line-color);
+  border-left: 3px solid var(--muted-color);
+  border-radius: var(--box-radius);
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: 11pt;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+.formula-card strong { color: var(--primary-color); font-weight: 600; }
+
+/* Title slide */
+.title-cover {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 720px;
+  padding: 100px 80px;
+  background: var(--background-color);
+}
+.title-cover .label {
+  font-size: 11pt;
+  color: var(--accent-color);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+.title-cover h1 {
+  font-size: 56pt;
+  line-height: 1.05;
+  color: var(--primary-color);
+  margin-bottom: 14px;
+  letter-spacing: -0.03em;
+}
+.title-cover .subtitle {
+  font-size: 19pt;
+  color: var(--muted-color);
+  margin-bottom: 40px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.title-cover .meta {
+  font-size: 13pt;
+  color: var(--muted-color);
+  line-height: 1.7;
+}
+.title-cover .author {
+  font-size: 17pt;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-family: var(--heading-font);
+  margin-top: auto;
+}
+
+/* Info / logistics slide */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14pt;
+}
+.info-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--line-color);
+}
+.info-table td:first-child {
+  font-weight: 600;
+  color: var(--primary-color);
+  width: 30%;
+}
+.info-table td:last-child {
+  color: var(--text-color);
+}
+
+/* Pill / chip */
+.chip {
+  display: inline-block;
+  background: var(--surface-accent);
+  color: var(--accent-color);
+  padding: 3px 11px;
+  border-radius: 4px;
+  font-size: 10.5pt;
+  font-weight: 600;
+  border: 1px solid var(--line-color);
+}
+.chip.amber {
+  background: var(--surface-color);
+  color: var(--secondary-color);
+  border-color: var(--line-color);
+}
+.chip.brown {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Two-column layouts */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.two-col.uneven {
+  grid-template-columns: 1.3fr 1fr;
+}
+
+/* Tip box */
+.tip-box {
+  background: var(--surface-color);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 12px 18px;
+  margin-top: 12px;
+}
+.tip-box .label {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 9.5pt;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Footer */
+.slide-footer {
+  position: absolute;
+  bottom: 12px;
+  left: var(--slide-padding);
+  right: var(--slide-padding);
+  font-size: 9pt;
+  color: var(--muted-color);
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line-color);
+  padding-top: 6px;
+}
+
+/* Reveal slide number override */
+.reveal .slide-number {
+  background: var(--primary-color);
+  color: white;
+  font-size: 10pt;
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+/* Reveal controls — softer */
+.reveal .controls { color: var(--muted-color); }
+.reveal .progress { background: var(--line-color); color: var(--accent-color); }
+.reveal .progress span { background: var(--accent-color); }
+
+/* Section divider big title slide */
+.divider {
+  background: var(--background-color);
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+.divider h1 {
+  color: var(--primary-color);
+  font-size: 48pt;
+  margin-bottom: 12px;
+}
+.divider p {
+  font-size: 18pt;
+  color: var(--muted-color);
+}
+
+/* Number badges */
+.num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  font-family: var(--heading-font);
+  font-size: 13pt;
+  flex-shrink: 0;
+}
+
+/* Common mistake / warning list */
+.mistakes-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  margin-top: 12px;
+}
+.mistake-item {
+  background: #FFFFFF;
+  border: 1px solid var(--line-color);
+  border-left: 3px solid var(--danger-color);
+  border-radius: var(--box-radius);
+  padding: 9px 13px;
+  font-size: 10.5pt;
+  line-height: 1.4;
+  display: flex;
+  gap: 10px;
+}
+.mistake-item .num-badge {
+  width: 24px;
+  height: 24px;
+  font-size: 10pt;
+  background: var(--danger-color);
+  border-radius: 4px;
+}
+
+/* Formula sheet */
+.formula-sheet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.formula-section {
+  background: #FFFFFF;
+  border: 1px solid var(--line-color);
+  border-top: 3px solid var(--accent-color);
+  border-radius: var(--box-radius);
+  padding: 12px 14px;
+}
+.formula-section h3 {
+  font-size: 13pt;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line-color);
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+.formula-section table {
+  width: 100%;
+  font-size: 10.5pt;
+  border-collapse: collapse;
+}
+.formula-section td {
+  padding: 4px 4px;
+  vertical-align: top;
+}
+.formula-section td:first-child {
+  font-weight: 600;
+  color: var(--secondary-color);
+  width: 42%;
+}
+.formula-section .fml {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 10pt;
+  color: var(--text-color);
+}
+
+/* Aside / speaker notes hidden in present mode */
+.reveal aside.notes { display: none; }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=22728cfd465f3bea2169c24b83e38e91">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=dcf8f7c567fa5043c216446158110b85">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Production Functions &mdash; ECON 2316 Ch 7</title>
@@ -246,54 +246,6 @@
 
 </section>
 
-<section id="basics-production-functions">
-  <h2><i class="fa-solid fa-function" style="color: var(--secondary-color);"></i> The Basics of Production &mdash; Production Functions</h2>
-  <p style="font-size: 13pt; line-height: 1.5; margin: 0 0 12px 0;">
-    A <strong>production function</strong> describes how output is made from different combinations of inputs.
-  </p>
-
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;">
-
-    <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 16px 20px;">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px 0;">General form</p>
-      <p style="font-size: 22pt; text-align: center; margin: 8px 0 12px;">
-        \[ Q \;=\; f(K, L) \]
-      </p>
-      <ul style="font-size: 12.5pt; line-height: 1.55; margin: 0; padding-left: 20px;">
-        <li>\(Q\) &mdash; quantity of <strong>output</strong></li>
-        <li>\(K\) &mdash; quantity of <strong>capital</strong></li>
-        <li>\(L\) &mdash; quantity of <strong>labor</strong></li>
-      </ul>
-      <p style="font-size: 11pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">
-        \(f\) is the firm's <em>recipe</em> &mdash; the technology that maps inputs to maximum-feasible output.
-      </p>
-    </div>
-
-    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 16px 20px;">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px 0;">Cobb-Douglas (the workhorse)</p>
-      <p style="font-size: 22pt; text-align: center; margin: 8px 0 12px;">
-        \[ Q \;=\; A\, K^{\alpha}\, L^{\beta} \]
-      </p>
-      <ul style="font-size: 12.5pt; line-height: 1.55; margin: 0; padding-left: 20px;">
-        <li>\(\alpha, \beta\) &mdash; each input raised to a <strong>power</strong> (typically \( < 1 \))</li>
-        <li>\(A\) &mdash; total factor productivity (technology level)</li>
-        <li>Inputs are <strong>multiplied</strong> together &mdash; both are required</li>
-      </ul>
-      <p style="font-size: 11pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">
-        Gigafactory anchor: \( Q = 8\, K^{0.4}\, L^{0.6} \). We'll lock these exponents for Chs 7-9.
-      </p>
-    </div>
-
-  </div>
-
-  <div class="key-result" style="margin-top: 12px;">
-    <p style="margin: 0; font-size: 12.5pt;">
-      <strong>Why Cobb-Douglas?</strong> It's smooth (well-defined marginal products everywhere), it has clean algebra (\(MP_K = \alpha \cdot Q/K\), \(MP_L = \beta \cdot Q/L\)), and it fits US manufacturing data remarkably well &mdash; the original Cobb &amp; Douglas (1928) estimated \(\alpha \approx 0.25, \beta \approx 0.75\) for the US economy 1899&ndash;1922. We'll meet two other families &mdash; Leontief and perfect substitutes &mdash; in §7.6.
-    </p>
-  </div>
-
-</section>
-
 <section id="gigafactory-scale">
   <h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> From Wozniak's Garage to Tesla's Gigafactory</h2>
   <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 5px 14px; margin: 4px 0 12px; font-size: 11pt; line-height: 1.35;">
@@ -325,70 +277,6 @@
     <strong style="color: var(--primary-color);"><i class="fa-solid fa-circle-info" style="margin-right: 4px;"></i> Note on the 0.4 / 0.6 calibration.</strong>
     \(\alpha\) and \(\beta\) are <em>technology exponents</em> &mdash; they measure how output responds to changes in \(K\) and \(L\) (output's elasticity w.r.t. each input), <strong>not</strong> the physical quantities of \(K\) or \(L\) themselves. BLS NAICS 3359 (Batteries) puts real US plants closer to \(\alpha \approx 0.55, \beta \approx 0.45\) within the \(K+L\) portion of value added &mdash; modestly more capital-intensive than our 0.4 / 0.6 anchor. We round to 0.4 / 0.6 to keep Walkthrough arithmetic clean and to match the historical US-economy aggregate labor share.
   </p>
-</section>
-
-<section id="simplifying-assumptions">
-  <h2><i class="fa-solid fa-clipboard-list" style="color: var(--secondary-color);"></i> Simplifying Assumptions about Firms</h2>
-  <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 8px 0; font-style: italic;">
-    Nine working assumptions, grouped four ways &mdash; each buys algebraic transparency at the cost of some empirical bandwidth.
-  </p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-
-    <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 8px 12px;">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
-        <i class="fa-solid fa-box" style="margin-right: 4px;"></i> The firm's product
-      </p>
-      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
-        <li>The firm produces a <strong>single</strong> good.</li>
-        <li>The firm has <strong>already chosen</strong> which product to produce.</li>
-      </ul>
-      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
-        &rarr; \(Q\) is a scalar. Multi-product firms wait for grad IO.
-      </p>
-    </div>
-
-    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 12px;">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
-        <i class="fa-solid fa-bullseye" style="margin-right: 4px;"></i> Firm behavior
-      </p>
-      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
-        <li>Firms <strong>minimize cost</strong> at every level of production.</li>
-      </ul>
-      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
-        &rarr; Necessary condition for profit max. Ch 8 turns this into the Lagrangian.
-      </p>
-    </div>
-
-    <div style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 6px; padding: 8px 12px;">
-      <p style="font-size: 11pt; color: var(--success-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
-        <i class="fa-solid fa-gears" style="margin-right: 4px;"></i> Inputs &amp; technology
-      </p>
-      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
-        <li>Two inputs only: <strong>capital \(K\)</strong> &amp; <strong>labor \(L\)</strong>.</li>
-        <li>More inputs &rarr; <strong>more output</strong>.</li>
-        <li>Inputs show <strong>diminishing returns</strong>.</li>
-      </ul>
-      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
-        &rarr; The pillars of MP, MRTS, isoquants.
-      </p>
-    </div>
-
-    <div style="background: #f4f1ed; border-left: 4px solid #7C3A5F; border-radius: 6px; padding: 8px 12px;">
-      <p style="font-size: 11pt; color: #7C3A5F; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
-        <i class="fa-solid fa-clock" style="margin-right: 4px;"></i> Time &amp; markets
-      </p>
-      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
-        <li><strong>SR:</strong> \(K\) fixed; <strong>LR:</strong> both adjust.</li>
-        <li>Unlimited \(K, L\) at fixed input prices.</li>
-        <li>Capital markets work &mdash; no budget constraint.</li>
-      </ul>
-      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
-        &rarr; Firm = pure tech + price-taker.
-      </p>
-    </div>
-
-  </div>
-
 </section>
 
 <section id="ford-recipes">
@@ -445,13 +333,58 @@
   <p class="subtitle">isoquants &middot; free disposal &middot; convexity</p><div class="key-result" style="margin-top: 16px; text-align: left;"><p style="margin: 0 0 6px; font-size: 11pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--secondary-color);">The engagement</p><p style="margin: 0; font-size: 13pt; line-height: 1.5; text-transform: none; letter-spacing: normal; font-weight: 400; color: var(--text-color);"><strong>Client:</strong> Gigafactory Nevada &mdash; Priya Raman, operations. <strong>The question:</strong> add a shift, or add a machine?</p><p style="margin: 6px 0 0; font-size: 13pt; line-height: 1.5; text-transform: none; letter-spacing: normal; font-weight: 400; color: var(--text-color);"><strong>What she can show us:</strong> the plant&rsquo;s output, its headcount, its installed equipment, and what last quarter&rsquo;s mix produced. <strong>What she cannot:</strong> the price of either input &mdash; that is next chapter.</p><p style="margin: 6px 0 0; font-size: 13pt; line-height: 1.5; text-transform: none; letter-spacing: normal; font-weight: 400; color: var(--text-color);"><strong>This chapter&rsquo;s job:</strong> map what the plant <em>can</em> do, before anyone asks what it <em>should</em>. (Her numbers are stylised &mdash; ours, not Tesla&rsquo;s reported figures.)</p><p style="margin: 6px 0 0; font-size: 13pt; line-height: 1.5; text-transform: none; letter-spacing: normal; font-weight: 400; color: var(--text-color);"><strong>Hold one puzzle until the end:</strong> on the Kerala coast, more fish reached buyers with no new boat and no new fisher &mdash; neither a shift nor a machine.</p></div>
 </section>
 
+<section id="basics-production-functions">
+  <h2><i class="fa-solid fa-function" style="color: var(--secondary-color);"></i> The Basics of Production &mdash; Production Functions</h2>
+  <p style="font-size: 13pt; line-height: 1.5; margin: 0 0 12px 0;">
+    A <strong>production function</strong> describes how output is made from different combinations of inputs.
+  </p>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch;">
+
+    <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 16px 20px;">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px 0;">General form</p>
+      <p style="font-size: 22pt; text-align: center; margin: 8px 0 12px;">
+        \[ Q \;=\; f(K, L) \]
+      </p>
+      <ul style="font-size: 12.5pt; line-height: 1.55; margin: 0; padding-left: 20px;">
+        <li>\(Q\) &mdash; quantity of <strong>output</strong></li>
+        <li>\(K\) &mdash; quantity of <strong>capital</strong></li>
+        <li>\(L\) &mdash; quantity of <strong>labor</strong></li>
+      </ul>
+      <p style="font-size: 11pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">
+        \(f\) is the firm's <em>recipe</em> &mdash; the technology that maps inputs to maximum-feasible output.
+      </p>
+    </div>
+
+    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 16px 20px;">
+      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 6px 0;">Cobb-Douglas (the workhorse)</p>
+      <p style="font-size: 22pt; text-align: center; margin: 8px 0 12px;">
+        \[ Q \;=\; A\, K^{\alpha}\, L^{\beta} \]
+      </p>
+      <ul style="font-size: 12.5pt; line-height: 1.55; margin: 0; padding-left: 20px;">
+        <li>\(\alpha, \beta\) &mdash; each input raised to a <strong>power</strong> (typically \( < 1 \))</li>
+        <li>\(A\) &mdash; total factor productivity (technology level)</li>
+        <li>Inputs are <strong>multiplied</strong> together &mdash; both are required</li>
+      </ul>
+      <p style="font-size: 11pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">
+        Gigafactory anchor: \( Q = 8\, K^{0.4}\, L^{0.6} \). We'll lock these exponents for Chs 7-9.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 12.5pt;">
+      <strong>Why Cobb-Douglas?</strong> It's smooth (well-defined marginal products everywhere), it has clean algebra (\(MP_K = \alpha \cdot Q/K\), \(MP_L = \beta \cdot Q/L\)), and it fits US manufacturing data remarkably well &mdash; the original Cobb &amp; Douglas (1928) estimated \(\alpha \approx 0.25, \beta \approx 0.75\) for the US economy 1899&ndash;1922. We'll meet two other families &mdash; Leontief and perfect substitutes &mdash; in §7.6.
+    </p>
+  </div>
+
+</section>
+
 
 <section id="production-function-def">
-  <h2><i class="fa-solid fa-function" style="color: var(--secondary-color);"></i> The Production Function</h2>
-  <div class="key-result" style="padding: 8px 16px;">
-    <p style="margin: 0; font-size: 14pt; text-align: center;">\( Q = f(K, L) \) &nbsp;&mdash;&nbsp; <span style="font-size: 12pt; color: var(--muted-color);">maps inputs \(K\) (capital) and \(L\) (labor) to <em>maximum feasible</em> output \(Q\).</span></p>
-  </div>
-  <p style="font-size: 13pt; margin-top: 10px;">Four rules we assume throughout the chapter:</p>
+  <h2><i class="fa-solid fa-function" style="color: var(--secondary-color);"></i> The Production Function &mdash; Four Rules</h2>
+  <p style="font-size: 13pt; margin: 0;">Every production function in this chapter obeys four rules:</p>
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; margin-top: 4px;">
     <div style="background: #f6f1f4; padding: 9px 13px; border-radius: 8px; border-left: 4px solid #7C3A5F;"><p style="font-size: 11pt; color: #7C3A5F; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">1 &middot; Maximum feasible</p><p style="font-size: 12.5pt; margin: 5px 0 0;">\(f\) is a frontier, not a typical day.</p><p style="font-size: 12pt; color: var(--text-color); margin: 5px 0 0; line-height: 1.35;">The speedometer says 140; rush hour is 45. \(f\) is the 140.</p></div>
     <div style="background: #f0f5f8; padding: 9px 13px; border-radius: 8px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 0;">2 &middot; Free disposal</p><p style="font-size: 12.5pt; margin: 5px 0 0;">\(\partial f/\partial K \geq 0,\;\; \partial f/\partial L \geq 0\)</p><p style="font-size: 12pt; color: var(--text-color); margin: 5px 0 0; line-height: 1.35;">More input never reduces output: a worker who would be in the way can be told to stand still.</p></div>
@@ -460,6 +393,68 @@
   </div>
   <p style="font-size: 12pt; margin: 8px 0 0;"><strong>Cobb-Douglas with exponents below 1 obeys all four</strong> &mdash; that is why it is the workhorse.</p>
 <div class="mathjax_ignore tex2jax_ignore" style="width:100%;"><svg viewBox="0 0 1160 80" style="width:100%;max-width:1050px;margin:0 auto;height:auto;display:block;"><line x1="150" y1="50" x2="1000" y2="50" stroke="#D5CEC7" stroke-width="1.4"/><line x1="150" y1="12" x2="1000" y2="12" stroke="#8C8580" stroke-width="1.2" stroke-dasharray="3 5"/><text x="142" y="18" font-size="14.5" font-weight="600" text-anchor="end" fill="#8C8580">max feasible Q</text><rect x="274" y="12" width="112" height="38" fill="#2D2D2D"/><text x="330" y="67" font-size="14" font-weight="700" text-anchor="middle" fill="#3A3632">Plant A</text><rect x="519" y="31" width="112" height="19" fill="#6B8BA4"/><rect x="519" y="12" width="112" height="19" fill="#FFFFFF" stroke="#8C8580" stroke-width="1.3" stroke-dasharray="4 4"/><text x="575" y="67" font-size="14" font-weight="700" text-anchor="middle" fill="#3A3632">Plant B</text><rect x="764" y="23" width="112" height="27" fill="#6B8BA4"/><rect x="764" y="12" width="112" height="11" fill="#FFFFFF" stroke="#8C8580" stroke-width="1.3" stroke-dasharray="4 4"/><text x="820" y="67" font-size="14" font-weight="700" text-anchor="middle" fill="#3A3632">Plant C</text><text x="1152" y="24" font-size="14.5" font-weight="700" text-anchor="end" fill="#8C8580">same K, same L —</text><text x="1152" y="46" font-size="14.5" font-weight="700" text-anchor="end" fill="#8C8580">the gap is managerial slack</text></svg></div>
+</section>
+
+<section id="simplifying-assumptions">
+  <h2><i class="fa-solid fa-clipboard-list" style="color: var(--secondary-color);"></i> Simplifying Assumptions about Firms</h2>
+  <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 8px 0; font-style: italic;">
+    The rest of the contract: five assumptions the four rules do not cover. Each buys algebraic transparency at the cost of some empirical bandwidth.
+  </p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+
+    <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 8px 12px;">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
+        <i class="fa-solid fa-box" style="margin-right: 4px;"></i> The firm's product
+      </p>
+      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
+        <li>The firm produces a <strong>single</strong> good.</li>
+        <li>The firm has <strong>already chosen</strong> which product to produce.</li>
+      </ul>
+      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
+        &rarr; \(Q\) is a scalar. Multi-product firms wait for grad IO.
+      </p>
+    </div>
+
+    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 12px;">
+      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
+        <i class="fa-solid fa-bullseye" style="margin-right: 4px;"></i> Firm behavior
+      </p>
+      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
+        <li>Firms <strong>minimize cost</strong> at every level of production.</li>
+      </ul>
+      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
+        &rarr; Necessary condition for profit max. Ch 8 turns this into the Lagrangian.
+      </p>
+    </div>
+
+    <div style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 6px; padding: 8px 12px;">
+      <p style="font-size: 11pt; color: var(--success-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
+        <i class="fa-solid fa-scale-balanced" style="margin-right: 4px;"></i> Input markets
+      </p>
+      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
+        <li>Hire any \(K, L\) at <strong>fixed input prices</strong>.</li>
+      </ul>
+      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
+        &rarr; The firm is a price-taker for inputs. Ch 19 relaxes it (monopsony).
+      </p>
+    </div>
+
+    <div style="background: #f4f1ed; border-left: 4px solid #7C3A5F; border-radius: 6px; padding: 8px 12px;">
+      <p style="font-size: 11pt; color: #7C3A5F; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px 0;">
+        <i class="fa-solid fa-building-columns" style="margin-right: 4px;"></i> Capital markets
+      </p>
+      <ul style="font-size: 11.5pt; line-height: 1.4; margin: 0; padding-left: 18px;">
+        <li>Capital markets work &mdash; <strong>no budget constraint</strong>.</li>
+      </ul>
+      <p style="font-size: 9.5pt; color: var(--muted-color); margin: 4px 0 0; font-style: italic;">
+        &rarr; Firm = pure technology + price-taker.
+      </p>
+    </div>
+
+  </div>
+
+  <p style="font-size: 11.5pt; color: var(--muted-color); margin: 8px 0 0; font-style: italic;">Already said: two inputs only (slide 7) &middot; more input never hurts and diminishing MP (rules 2 and 3, slide 12) &middot; short run = K fixed (slide 15).</p>
+
 </section>
 
 <section class="section-divider abbreviation-divider" data-state="is-section-divider" id="div-sr">

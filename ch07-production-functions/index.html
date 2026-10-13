@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=095f01be0fba862ffb95402a6a501ab4">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=b92a57d5748e3a2a830d83ffffdddbb6">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Production Functions &mdash; ECON 2316 Ch 7</title>
@@ -786,8 +786,43 @@
 
 
 
-<section>
-<section id="burger-sr-increasing-mp">
+<section id="mp-definition-visual">
+  <h2><i class="fa-solid fa-plus-minus" style="color: var(--secondary-color);"></i> Marginal Product &mdash; What One More Worker Adds</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; align-items: center;">
+    <div>
+      <div class="key-result" style="margin-top: 0;">
+        <p style="margin: 0; font-size: 13pt; line-height: 1.5;">
+          <strong>Marginal product</strong> is the additional output a firm produces from <em>one more unit of an input</em>, holding all other inputs constant.
+        </p>
+      </div>
+      <p style="font-size: 18pt; text-align: center; margin: 16px 0 8px;">
+        \[ MP_L \;=\; \dfrac{\Delta Q}{\Delta L} \]
+      </p>
+
+    </div>
+    <div style="background: #f4f1ed; border-radius: 8px; padding: 10px;">
+      <div style="display: grid; grid-template-columns: 1fr 18px 1fr 18px 1.1fr; gap: 6px; align-items: center; text-align: center;">
+        <div>
+          <img alt="Worker — labor input" src="figures/illus-worker-labor.png" style="max-width: 100%; max-height: 110px;">
+          <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; margin: 4px 0 0;">Labor</p>
+        </div>
+        <div style="font-size: 22pt; font-weight: 700; color: var(--muted-color);">+</div>
+        <div>
+          <img alt="Tools — capital input" src="figures/illus-tools-capital.png" style="max-width: 100%; max-height: 110px;">
+          <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; margin: 4px 0 0;">Capital</p>
+          <p style="font-size: 9.5pt; color: var(--danger-color); font-style: italic; margin: 2px 0 0;">only 4 sets</p>
+        </div>
+        <div style="font-size: 22pt; font-weight: 700; color: var(--muted-color);">=</div>
+        <div>
+          <img alt="Finished Apple I motherboard" src="figures/photo-apple-i-with-manual.PNG" style="max-width: 100%; max-height: 110px; border-radius: 4px;">
+          <p style="font-size: 11pt; color: var(--primary-color); font-weight: 700; margin: 4px 0 0;">Output Q</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="burger-sr-increasing-mp" data-visibility="hidden">
   <h2><i class="fa-solid fa-arrow-trend-up" style="color: var(--success-color);"></i> Marginal Product of Labor &mdash; Increasing Returns at First</h2>
   <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 8px;">
     <strong>Marginal product of labor</strong> \((MP_L)\): the change in output from one more unit of labor. \(MP_L = \Delta Q / \Delta L\).
@@ -858,7 +893,9 @@
 </section>
 
 <section id="burger-sr-diminishing-mp">
-  <h2><i class="fa-solid fa-arrow-trend-down" style="color: var(--danger-color);"></i> Then \(MP_L\) Diminishes &mdash; and Eventually Turns Negative</h2>
+  <h2><i class="fa-solid fa-arrow-trend-down" style="color: var(--danger-color);"></i> Sam&rsquo;s \(MP_L\) &mdash; Rises, Then Falls, Then Turns Negative</h2>
+  <style>#burger-sr-diminishing-mp table td, #burger-sr-diminishing-mp table th{padding:3px 4px !important; font-size:11pt !important; line-height:1.25 !important;}</style>
+  <p style="font-size: 12pt; margin: 0 0 6px;">Sam&rsquo;s table read at the margin: \(MP_L = \Delta Q / \Delta L\), what each extra cook adds on the one griddle.</p>
   <div style="display: grid; grid-template-columns: 0.65fr 1fr 0.7fr; gap: 9px; align-items: stretch;">
 
     <div style="background: #f8f6f3; border-radius: 8px; padding: 5px 11px;">
@@ -882,7 +919,7 @@
 
     <div style="background: #f8f6f3; border-radius: 8px; padding: 5px 11px; text-align: center;">
       <p style="font-size: 10.5pt; color: var(--secondary-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 4px;">TP rises, peaks, falls</p>
-      <svg viewBox="0 0 320 200" style="width: 100%; max-height: 98px;" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 320 200" style="width: 100%; max-height: 225px;" xmlns="http://www.w3.org/2000/svg">
         <line x1="36" y1="170" x2="305" y2="170" stroke="#2D2D2D" stroke-width="1.5"/>
         <line x1="36" y1="20" x2="36" y2="170" stroke="#2D2D2D" stroke-width="1.5"/>
         <text x="30" y="172" text-anchor="end" font-size="9.5" fill="#2D2D2D">0</text>
@@ -916,25 +953,9 @@
       <p style="font-size: 10.5pt; color: var(--muted-color); font-style: italic; margin: 3px 0 0;">TP peaks at L=5; the 6th worker is in the way.</p>
     </div>
 
-    <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 6px 13px;">
-      <p style="font-size: 10.5pt; color: var(--accent-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0;">Returns to labor</p>
-      <p style="font-size: 12.5pt; line-height: 1.35; margin: 4px 0 0; color: var(--accent-color); font-weight: 700;">Diminishing marginal returns</p>
-      <p style="font-size: 11.5pt; line-height: 1.35; margin: 4px 0 0;">
-        Each additional worker adds <strong>less</strong> than the previous.
-      </p>
-      <p style="font-size: 11.5pt; text-align: center; margin: 5px 0 0; color: var(--accent-color); font-weight: 700;">
-        40 &rarr; 30 &rarr; 20
-      </p>
-      <hr style="border: none; border-top: 1px solid var(--muted-color); margin: 10px 0;">
-      <p style="font-size: 12.5pt; line-height: 1.35; margin: 0; color: var(--danger-color); font-weight: 700;">Negative marginal returns</p>
-      <p style="font-size: 11.5pt; line-height: 1.35; margin: 4px 0 0;">
-        The 6th worker <em>reduces</em> total output &mdash; they're getting in the way.
-      </p>
-    </div>
+    <div><div style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 6px; padding: 6px 12px; margin: 0 0 6px;"><p style="margin: 0; font-size: 12pt; font-weight: 700; color: var(--success-color);">Increasing &nbsp;<span style="font-weight: 700;">20 &rarr; 30 &rarr; 40</span></p><p style="margin: 2px 0 0; font-size: 11pt; line-height: 1.3;">Workers 1&ndash;3 specialize: one grills, one dresses buns, one rings up.</p></div><div class="fragment fade-up" data-fragment-index="1" style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 6px 12px; margin: 0 0 6px;"><p style="margin: 0; font-size: 12pt; font-weight: 700; color: var(--accent-color);">Diminishing &nbsp;<span style="font-weight: 700;">40 &rarr; 30 &rarr; 20</span></p><p style="margin: 2px 0 0; font-size: 11pt; line-height: 1.3;">Workers 4&ndash;5 still add, but less: they queue for the one griddle.</p></div><div class="fragment fade-up" data-fragment-index="2" style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 6px; padding: 6px 12px; margin: 0 0 6px;"><p style="margin: 0; font-size: 12pt; font-weight: 700; color: var(--danger-color);">Negative &nbsp;<span style="font-weight: 700;">&minus;20</span></p><p style="margin: 2px 0 0; font-size: 11pt; line-height: 1.3;">The 6th worker reduces output: in the way.</p></div></div>
   </div>
-  <div style="text-align: center; margin-top: 5px;">
-    <img src="figures/mp.png" alt="Three side-by-side TP panels for L=4, 5, 6. Panel 1 (gold): 4 workers, +4 Labor Hour, 120 burgers, MP_L=30. Panel 2 (faded): 5 workers, 140 burgers, MP_L=20. Panel 3 (red): 6 workers, 120 burgers, MP_L=-20." style="max-width: 96%; max-height: 104px;">
-  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px; align-items: center;"><img src="figures/tp2.png" alt="Three side-by-side TP panels with green worker icons. Panel 1: 1 worker, 20 burgers, MP_L=20. Panel 2: 2 workers, 50 burgers, MP_L=30. Panel 3: 3 workers, 90 burgers, MP_L=40." style="width: 100%; max-height: 80px; object-fit: contain;"><img class="fragment fade-up" data-fragment-index="1" src="figures/mp.png" alt="Three side-by-side TP panels for L=4, 5, 6. Panel 1 (gold): 4 workers, 120 burgers, MP_L=30. Panel 2 (faded): 5 workers, 140 burgers, MP_L=20. Panel 3 (red): 6 workers, 120 burgers, MP_L=-20." style="width: 100%; max-height: 80px; object-fit: contain;"></div>
 </section>
 
 <section id="burger-sr-capital-constraint">
@@ -977,6 +998,7 @@
   </div>
 
 </section>
+
 <section id="burger-sr-ap-full">
   <h2><i class="fa-solid fa-table-list" style="color: var(--secondary-color);"></i> Average Product &mdash; The Full Picture</h2>
 
@@ -1108,53 +1130,6 @@
   </div>
 
 </section>
-
-
-</section>
-
-
-
-
-<section id="mp-definition-visual">
-  <h2><i class="fa-solid fa-plus-minus" style="color: var(--secondary-color);"></i> Marginal Product &mdash; What One More Worker Adds</h2>
-  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px; align-items: center;">
-    <div>
-      <div class="key-result" style="margin-top: 0;">
-        <p style="margin: 0; font-size: 13pt; line-height: 1.5;">
-          <strong>Marginal product</strong> is the additional output a firm produces from <em>one more unit of an input</em>, holding all other inputs constant.
-        </p>
-      </div>
-      <p style="font-size: 18pt; text-align: center; margin: 16px 0 8px;">
-        \[ MP_L \;=\; \dfrac{\Delta Q}{\Delta L} \]
-      </p>
-      <div class="misconception" style="margin: 8px 0 0; padding: 8px 14px;">
-        <p style="margin: 0; font-size: 12pt;">
-          <i class="fa-solid fa-arrow-down" style="color: var(--danger-color); margin-right: 4px;"></i>
-          <strong>Diminishing marginal product:</strong> as more of a variable input is hired against a fixed input, each additional unit eventually adds less than the one before it.
-        </p>
-      </div>
-    </div>
-    <div style="background: #f4f1ed; border-radius: 8px; padding: 10px;">
-      <div style="display: grid; grid-template-columns: 1fr 18px 1fr 18px 1.1fr; gap: 6px; align-items: center; text-align: center;">
-        <div>
-          <img alt="Worker — labor input" src="figures/illus-worker-labor.png" style="max-width: 100%; max-height: 110px;">
-          <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; margin: 4px 0 0;">Labor</p>
-        </div>
-        <div style="font-size: 22pt; font-weight: 700; color: var(--muted-color);">+</div>
-        <div>
-          <img alt="Tools — capital input" src="figures/illus-tools-capital.png" style="max-width: 100%; max-height: 110px;">
-          <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; margin: 4px 0 0;">Capital</p>
-          <p style="font-size: 9.5pt; color: var(--danger-color); font-style: italic; margin: 2px 0 0;">only 4 sets</p>
-        </div>
-        <div style="font-size: 22pt; font-weight: 700; color: var(--muted-color);">=</div>
-        <div>
-          <img alt="Finished Apple I motherboard" src="figures/photo-apple-i-with-manual.PNG" style="max-width: 100%; max-height: 110px; border-radius: 4px;">
-          <p style="font-size: 11pt; color: var(--primary-color); font-weight: 700; margin: 4px 0 0;">Output Q</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <section id="tp-ap-mp-stages">
   <h2><i class="fa-solid fa-chart-area" style="color: var(--secondary-color);"></i> §7.4 &mdash; Total, Average, and Marginal Product</h2>
   <p style="font-size: 13pt; line-height: 1.5; margin: 0 0 8px 0;">
@@ -1234,33 +1209,28 @@
 </section>
 
 <section id="mp-K4-plugin">
-  <h2><i class="fa-solid fa-equals" style="color: var(--secondary-color);"></i> Numerical SR Example &mdash; Plug \(\bar K = 4\) into Cobb-Douglas</h2>
-  <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; align-items: center;">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> You Try! &mdash; Plug \(\bar K = 4\) into Cobb-Douglas</h2>
+  <div style="display: grid; grid-template-columns: 1.35fr 1fr; gap: 18px; align-items: start;">
     <div>
-      <p style="font-size: 13pt; line-height: 1.55; margin: 0 0 10px;">
-        Now the model we carry into every later chapter. Take the simplest Cobb-Douglas form and fix capital at the Apple Garage's <strong>4 workstations</strong>:
-      </p>
-      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 12px 16px;">
-        <p style="margin: 0; font-size: 11pt; color: var(--secondary-color); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">Step 1 &mdash; General</p>
-        <p style="font-size: 17pt; text-align: center; margin: 6px 0 0;">\( Q \;=\; K^{0.5}\, L^{0.5} \)</p>
+      <div class="key-result" style="margin: 0; padding: 9px 16px;">
+        <p style="margin: 0; font-size: 13pt;"><strong>Your turn.</strong> Take \( Q = K^{0.5} L^{0.5} \) and bolt capital at the garage&rsquo;s <strong>4 workstations</strong>.</p>
+        <ol style="margin: 6px 0 0; padding-left: 22px; font-size: 13pt; line-height: 1.5;">
+          <li>Write \(Q\) as a function of \(L\) alone.</li>
+          <li>How many boards with \(L = 4\) workers?</li>
+          <li>Compare \(MP_L = dQ/dL\) with \(AP_L = Q/L\). Which stage is this firm in?</li>
+        </ol>
       </div>
-      <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 12px 16px; margin-top: 10px;">
-        <p style="margin: 0; font-size: 11pt; color: var(--accent-color); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">Step 2 &mdash; Substitute \(\bar K = 4\)</p>
-        <p style="font-size: 17pt; text-align: center; margin: 6px 0 0;">\( Q \;=\; 4^{0.5}\, L^{0.5} \;=\; 2\, L^{0.5} \;=\; 2\sqrt{L} \)</p>
-      </div>
-      <p style="font-size: 11.5pt; color: var(--muted-color); font-style: italic; margin: 10px 0 0;">
-        Output now depends on labor alone &mdash; a one-variable function we can tabulate, plot, and differentiate.
-      </p>
+      <p class="fragment fade-up" data-fragment-index="1" style="margin: 8px 0 0; font-size: 13pt;"><strong>1.</strong> \( Q = 4^{0.5} L^{0.5} = 2\sqrt{L} \) &mdash; one variable left.</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="margin: 4px 0 0; font-size: 13pt;"><strong>2.</strong> \( Q = 2\sqrt{4} = 4 \) boards.</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="margin: 4px 0 0; font-size: 13pt;"><strong>3.</strong> \( MP_L = 1/\sqrt{L} \), \( AP_L = 2/\sqrt{L} \): \(MP = \tfrac12 AP\) at every \(L\) &mdash; <strong>Stage II only</strong>.</p>
     </div>
-    <div style="background: #f4f1ed; border-radius: 8px; padding: 12px; text-align: center;">
-      <p style="font-size: 11pt; color: var(--primary-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 8px;">The Apple Garage &mdash; 4 workstations</p>
-      <img src="figures/apple_garage.webp" alt="Four Apple founders at four workstations in the garage, each soldering circuit boards under desk lamps with boxes labelled APPLE I" style="max-width: 100%; max-height: 186px; border-radius: 4px; display: block; margin: 0 auto;">
-      <p style="font-size: 10pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">
-        \( \bar K = 4 \) workbenches with soldering iron + multimeter (fixed)
-      </p>
+    <div style="background: #f4f1ed; border-radius: 8px; padding: 10px; text-align: center;">
+      <p style="font-size: 11pt; color: var(--primary-color); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin: 0 0 6px;">The Apple Garage &mdash; 4 workstations</p>
+      <img src="figures/apple_garage.webp" alt="Four Apple founders at four workstations in the garage, each soldering circuit boards under desk lamps with boxes labelled APPLE I" style="max-width: 100%; max-height: 170px; border-radius: 4px; display: block; margin: 0 auto;">
+      <p style="font-size: 10pt; color: var(--muted-color); font-style: italic; margin: 6px 0 0;">\( \bar K = 4 \) workbenches (fixed)</p>
     </div>
   </div>
-  <div class="mathjax_ignore tex2jax_ignore" style="width:100%;margin-top:8px;"><svg viewBox="0 0 1160 172" style="width:100%;height:auto;display:block;" role="img" aria-label="Left: the cubic shows all three stages, with marginal product rising, crossing average product at its peak, then turning negative. Right: for Cobb-Douglas Q equals two root L, marginal product is half of average product at every L, so the curves never cross and never turn negative: Stage II only."><rect x="70.0" y="48" width="207.3" height="116" fill="#EFF3EF"/><rect x="277.3" y="48" width="138.2" height="116" fill="#F5E3D9"/><rect x="415.5" y="48" width="34.5" height="116" fill="#EED9D9"/><text x="70" y="20" font-size="16" font-weight="700" fill="#3A3632">The cubic (and Sam&#8217;s table): all three stages</text><text x="173.6" y="42" font-size="14.5" font-weight="700" text-anchor="middle" fill="#4F7350">Stage I</text><text x="346.4" y="42" font-size="14.5" font-weight="700" text-anchor="middle" fill="#A8603F">Stage II</text><text x="432.7" y="42" font-size="14.5" font-weight="700" text-anchor="middle" fill="#A85C5C">III</text><line x1="70" y1="131.4" x2="450" y2="131.4" stroke="#8C8580" stroke-width="1.5"/><line x1="70" y1="48" x2="70" y2="164" stroke="#8C8580" stroke-width="1.5"/><polyline points="70,87.9 79,85.7 87,83.7 96,81.8 105,79.9 113,78.1 122,76.5 130,74.9 139,73.4 148,72.0 156,70.7 165,69.4 174,68.3 182,67.3 191,66.3 200,65.4 208,64.7 217,64.0 225,63.4 234,62.9 243,62.5 251,62.2 260,62.0 269,61.8 277,61.8 286,61.8 295,62.0 303,62.2 312,62.5 320,62.9 329,63.4 338,64.0 346,64.7 355,65.4 364,66.3 372,67.3 381,68.3 390,69.4 398,70.7 407,72.0 415,73.4 424,74.9 433,76.5 441,78.1 450,79.9" fill="none" stroke="#C47B5A" stroke-width="3"/><polyline points="70,87.9 79,83.7 87,79.7 96,76.0 105,72.7 113,69.5 122,66.7 130,64.1 139,61.8 148,59.7 156,58.0 165,56.5 174,55.2 182,54.3 191,53.6 200,53.2 208,53.1 217,53.2 225,53.6 234,54.3 243,55.2 251,56.5 260,58.0 269,59.7 277,61.8 286,64.1 295,66.7 303,69.5 312,72.7 320,76.0 329,79.7 338,83.7 346,87.9 355,92.4 364,97.1 372,102.1 381,107.5 390,113.0 398,118.9 407,125.0 415,131.4 424,138.0 433,145.0 441,152.2 450,159.7" fill="none" stroke="#7C3A5F" stroke-width="3"/><circle cx="277.3" cy="61.8" r="4.5" fill="#3A3632"/><text x="101.1" y="102.6" font-size="15" font-weight="700" fill="#C47B5A">AP</text><text x="380.9" y="94.5" font-size="15" font-weight="700" fill="#7C3A5F">MP</text><text x="62" y="136.4" font-size="14" text-anchor="end" fill="#8C8580">0</text><text x="458" y="136.4" font-size="14.5" font-style="italic" fill="#8C8580">L</text><text x="585" y="84" font-size="16.5" font-weight="700" text-anchor="middle" fill="#A8603F">Cobb-Douglas keeps</text><text x="585" y="108" font-size="16.5" font-weight="700" text-anchor="middle" fill="#A8603F">only this band</text><line x1="482" y1="124" x2="676" y2="124" stroke="#A8603F" stroke-width="2.5"/><polygon points="676,117 692,124 676,131" fill="#A8603F"/><rect x="720" y="48" width="400" height="116" fill="#F5E3D9"/><text x="720" y="20" font-size="16" font-weight="700" fill="#3A3632">Cobb-Douglas, Q = 2&#8730;L: Stage II at every L</text><line x1="720" y1="164" x2="1120" y2="164" stroke="#8C8580" stroke-width="1.5"/><line x1="720" y1="48" x2="720" y2="164" stroke="#8C8580" stroke-width="1.5"/><polyline points="753.2,48.2 756.8,54.1 760.0,58.5 766.0,65.7 772.0,71.5 780.0,77.9 790.0,84.3 800.0,89.4 812.0,94.5 824.0,98.6 840.0,103.1 860.0,107.6 880.0,111.3 900.0,114.3 920.0,116.8 940.0,119.0 960.0,120.9 980.0,122.6 1000.0,124.1 1020.0,125.5 1040.0,126.7 1060.0,127.8 1080.0,128.8 1100.0,129.8 1120.0,130.7" fill="none" stroke="#C47B5A" stroke-width="3"/><polyline points="728.4,48.9 730.0,58.5 732.0,67.7 734.4,76.1 737.2,83.6 740.0,89.4 744.0,95.9 748.0,101.0 753.2,106.1 756.8,109.0 760.0,111.3 766.0,114.8 772.0,117.8 780.0,120.9 790.0,124.1 800.0,126.7 812.0,129.2 824.0,131.3 840.0,133.6 860.0,135.8 880.0,137.6 900.0,139.1 920.0,140.4 940.0,141.5 960.0,142.5 980.0,143.3 1000.0,144.1 1020.0,144.7 1040.0,145.4 1060.0,145.9 1080.0,146.4 1100.0,146.9 1120.0,147.3" fill="none" stroke="#7C3A5F" stroke-width="3"/><line x1="880.0" y1="111.3" x2="880.0" y2="137.6" stroke="#3A3632" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="880.0" cy="111.3" r="4" fill="#C47B5A"/><circle cx="880.0" cy="137.6" r="4" fill="#7C3A5F"/><text x="786.0" y="72" font-size="15" font-weight="700" fill="#C47B5A">AP</text><text x="750.0" y="146" font-size="15" font-weight="700" fill="#7C3A5F">MP</text><text x="856.0" y="70" font-size="17" font-weight="700" fill="#3A3632">MP = dQ/dL = &#189; &#183; AP at every L</text><text x="856.0" y="93" font-size="14.5" fill="#3A3632">never cross &#183; never negative</text><text x="1128" y="161" font-size="14.5" font-style="italic" fill="#8C8580">L</text></svg></div>
+  <div class="mathjax_ignore tex2jax_ignore fragment fade-up" data-fragment-index="3" style="width:100%;margin-top:8px;"><svg viewBox="0 0 1160 172" style="width:100%;height:auto;display:block;" role="img" aria-label="Left: the cubic shows all three stages, with marginal product rising, crossing average product at its peak, then turning negative. Right: for Cobb-Douglas Q equals two root L, marginal product is half of average product at every L, so the curves never cross and never turn negative: Stage II only."><rect x="70.0" y="48" width="207.3" height="116" fill="#EFF3EF"/><rect x="277.3" y="48" width="138.2" height="116" fill="#F5E3D9"/><rect x="415.5" y="48" width="34.5" height="116" fill="#EED9D9"/><text x="70" y="20" font-size="16" font-weight="700" fill="#3A3632">The cubic (and Sam&#8217;s table): all three stages</text><text x="173.6" y="42" font-size="14.5" font-weight="700" text-anchor="middle" fill="#4F7350">Stage I</text><text x="346.4" y="42" font-size="14.5" font-weight="700" text-anchor="middle" fill="#A8603F">Stage II</text><text x="432.7" y="42" font-size="14.5" font-weight="700" text-anchor="middle" fill="#A85C5C">III</text><line x1="70" y1="131.4" x2="450" y2="131.4" stroke="#8C8580" stroke-width="1.5"/><line x1="70" y1="48" x2="70" y2="164" stroke="#8C8580" stroke-width="1.5"/><polyline points="70,87.9 79,85.7 87,83.7 96,81.8 105,79.9 113,78.1 122,76.5 130,74.9 139,73.4 148,72.0 156,70.7 165,69.4 174,68.3 182,67.3 191,66.3 200,65.4 208,64.7 217,64.0 225,63.4 234,62.9 243,62.5 251,62.2 260,62.0 269,61.8 277,61.8 286,61.8 295,62.0 303,62.2 312,62.5 320,62.9 329,63.4 338,64.0 346,64.7 355,65.4 364,66.3 372,67.3 381,68.3 390,69.4 398,70.7 407,72.0 415,73.4 424,74.9 433,76.5 441,78.1 450,79.9" fill="none" stroke="#C47B5A" stroke-width="3"/><polyline points="70,87.9 79,83.7 87,79.7 96,76.0 105,72.7 113,69.5 122,66.7 130,64.1 139,61.8 148,59.7 156,58.0 165,56.5 174,55.2 182,54.3 191,53.6 200,53.2 208,53.1 217,53.2 225,53.6 234,54.3 243,55.2 251,56.5 260,58.0 269,59.7 277,61.8 286,64.1 295,66.7 303,69.5 312,72.7 320,76.0 329,79.7 338,83.7 346,87.9 355,92.4 364,97.1 372,102.1 381,107.5 390,113.0 398,118.9 407,125.0 415,131.4 424,138.0 433,145.0 441,152.2 450,159.7" fill="none" stroke="#7C3A5F" stroke-width="3"/><circle cx="277.3" cy="61.8" r="4.5" fill="#3A3632"/><text x="101.1" y="102.6" font-size="15" font-weight="700" fill="#C47B5A">AP</text><text x="380.9" y="94.5" font-size="15" font-weight="700" fill="#7C3A5F">MP</text><text x="62" y="136.4" font-size="14" text-anchor="end" fill="#8C8580">0</text><text x="458" y="136.4" font-size="14.5" font-style="italic" fill="#8C8580">L</text><text x="585" y="84" font-size="16.5" font-weight="700" text-anchor="middle" fill="#A8603F">Cobb-Douglas keeps</text><text x="585" y="108" font-size="16.5" font-weight="700" text-anchor="middle" fill="#A8603F">only this band</text><line x1="482" y1="124" x2="676" y2="124" stroke="#A8603F" stroke-width="2.5"/><polygon points="676,117 692,124 676,131" fill="#A8603F"/><rect x="720" y="48" width="400" height="116" fill="#F5E3D9"/><text x="720" y="20" font-size="16" font-weight="700" fill="#3A3632">Cobb-Douglas, Q = 2&#8730;L: Stage II at every L</text><line x1="720" y1="164" x2="1120" y2="164" stroke="#8C8580" stroke-width="1.5"/><line x1="720" y1="48" x2="720" y2="164" stroke="#8C8580" stroke-width="1.5"/><polyline points="753.2,48.2 756.8,54.1 760.0,58.5 766.0,65.7 772.0,71.5 780.0,77.9 790.0,84.3 800.0,89.4 812.0,94.5 824.0,98.6 840.0,103.1 860.0,107.6 880.0,111.3 900.0,114.3 920.0,116.8 940.0,119.0 960.0,120.9 980.0,122.6 1000.0,124.1 1020.0,125.5 1040.0,126.7 1060.0,127.8 1080.0,128.8 1100.0,129.8 1120.0,130.7" fill="none" stroke="#C47B5A" stroke-width="3"/><polyline points="728.4,48.9 730.0,58.5 732.0,67.7 734.4,76.1 737.2,83.6 740.0,89.4 744.0,95.9 748.0,101.0 753.2,106.1 756.8,109.0 760.0,111.3 766.0,114.8 772.0,117.8 780.0,120.9 790.0,124.1 800.0,126.7 812.0,129.2 824.0,131.3 840.0,133.6 860.0,135.8 880.0,137.6 900.0,139.1 920.0,140.4 940.0,141.5 960.0,142.5 980.0,143.3 1000.0,144.1 1020.0,144.7 1040.0,145.4 1060.0,145.9 1080.0,146.4 1100.0,146.9 1120.0,147.3" fill="none" stroke="#7C3A5F" stroke-width="3"/><line x1="880.0" y1="111.3" x2="880.0" y2="137.6" stroke="#3A3632" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="880.0" cy="111.3" r="4" fill="#C47B5A"/><circle cx="880.0" cy="137.6" r="4" fill="#7C3A5F"/><text x="786.0" y="72" font-size="15" font-weight="700" fill="#C47B5A">AP</text><text x="750.0" y="146" font-size="15" font-weight="700" fill="#7C3A5F">MP</text><text x="856.0" y="70" font-size="17" font-weight="700" fill="#3A3632">MP = dQ/dL = &#189; &#183; AP at every L</text><text x="856.0" y="93" font-size="14.5" fill="#3A3632">never cross &#183; never negative</text><text x="1128" y="161" font-size="14.5" font-style="italic" fill="#8C8580">L</text></svg></div>
 </section>
 
 <section id="mp-table-7-1">

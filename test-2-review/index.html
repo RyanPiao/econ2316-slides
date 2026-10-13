@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=5628d5db92bd305cf9640a3d764a722b">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=74329fb5cb0bee7b3a2c0697877ef171">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Test 2 Review — Chapters 10-17 — ECON 2316</title>
@@ -2409,7 +2409,7 @@
 </script>
 <script>
 (function () {
-  // public controls, cut from the presenter gate (v27) by strip_notes.py:
+  // public controls, cut from the presenter gate (v28) by strip_notes.py:
   // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
   var current = false;
   // ---- annotation: temporary marks on the slide -------------------------
@@ -2577,6 +2577,7 @@
       });
     }
     function send(m) { if (relay) relay(m); }
+    function sendMode() { send({ k: 'mode', on: active, pen: pi, size: si, tool: tool, erasing: erasing }); }
 
     // erase whole strokes, not pixels: one op to undo, and it never leaves
     // half a rubbed-out line behind
@@ -2736,7 +2737,7 @@
         ops[m.key] = m.ops || []; undone[m.key] = m.undone || []; rcur = null;
         render(); paintBar(); return;
       }
-      if (m.k === 'req')  { snapAll(); return; }
+      if (m.k === 'req')  { snapAll(); sendMode(); return; }
       // a window still on v24 or older sends these; keep them working during a mixed reload
       if (m.k === 'up')   { if (rcur) push({ t: 'add', s: rcur }); rcur = null; render(); return; }
       if (m.k === 'full') { if (m.s) { push({ t: 'add', s: m.s }); render(); } return; }
@@ -2744,7 +2745,14 @@
       if (m.k === 'undo') { undo(true); return; }
       if (m.k === 'redo') { redo(true); return; }
       if (m.k === 'clear'){ clear(true); return; }
-      if (m.k === 'mode') { setActive(m.on, true); return; }
+      if (m.k === 'mode') {
+        // v28: take the other window's pen setting (a v27 window sends none, so keep ours)
+        if (PENS[m.pen]) pi = m.pen;
+        if (SIZES[m.size] != null) si = m.size;
+        if (TOOLS.some(function (t) { return t.k === m.tool; })) tool = m.tool;
+        if (typeof m.erasing === 'boolean') erasing = m.erasing;
+        setActive(m.on, true); return;
+      }
     }
     function undo(q) {
       var k = skey(), o = ops[k] || [];
@@ -2770,7 +2778,8 @@
       cv.style.cursor = active ? (erasing ? 'cell' : 'crosshair') : '';
       if (bar) bar.style.display = active ? 'flex' : 'none';
       if (btn) btn.style.opacity = active ? '1' : (current ? '.55' : '.18');
-      paintBar(); if (!q) send({ k: 'mode', on: active });
+      // v28: the pen setting travels with it, so both toolbars always show the same pick
+      paintBar(); if (!q) sendMode();
     }
 
     /* ---------- save a picture of the board ---------- */

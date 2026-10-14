@@ -35,6 +35,15 @@
               diff.median, welch.se, welch.t, welch.df, welch.p, welch.decision, cohen.sp,
               cohen.d, device, dropped. Welch = scipy ttest_ind(equal_var=False), odd minus
               even; d uses the n-1 pooled SD (Lab 8 Steps 6-7). Event "pollnumbers" on document.
+              BOOTSTRAP keys (13 Oct 2026, 5200 Topic 7): se.mean (SD/sqrt n, the formula),
+              boot.B, boot.se.median, boot.se.mean, boot.ci.median.lo, boot.ci.median.hi,
+              boot.ci.mean.lo, boot.ci.mean.hi, boot.distinct.median: B = 2,000 resamples of
+              all the votes, with replacement, from a FIXED-seed generator (mulberry32, seed 42)
+              so every screen shows the same numbers; percentile interval as numpy's default
+              (linear). Fewer than two votes: every boot.* key shows an em dash. Computed only
+              when the deck asks for a boot.* or se.mean key. Poll.stats.bootstrap(values[, B,
+              seed]) returns the object; Poll.showNumbers(pid, rows) renders rows you hand it
+              (a rehearsal with intercepted rows, never a written vote).
    ARMS: <div data-arm="nuid-parity"> holding [data-arm-version="room|pending|odd|even"]
      children shows one of them: a student's device the odd or even block by the NUID's last
      digit; no NUID yet, the pending block (a [data-arm-checkin] button in it opens the
@@ -1259,6 +1268,41 @@
   }
   function describe(a) { return { n: a.length, median: median(a), mad: mad(a), mean: mean(a), sd: sd(a) }; }
 
+  // The room's own numbers, bootstrapped (Topic 7). A fixed seed, so the projector, the speaker
+  // view and every phone print the same SE; B is the slide's B = 2,000, and the percentile
+  // interval is numpy's default (linear interpolation between order statistics).
+  var BOOT_B = 2000, BOOT_SEED = 42;
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function percentile(sortedVals, q) {              // q in [0, 100]; numpy.percentile, method="linear"
+    var n = sortedVals.length; if (!n) return null;
+    var pos = (n - 1) * q / 100, lo = Math.floor(pos), hi = Math.ceil(pos);
+    return sortedVals[lo] + (sortedVals[hi] - sortedVals[lo]) * (pos - lo);
+  }
+  function bootstrap(a, B, seed) {
+    if (!a || a.length < 2) return null;              // one vote has no spread to resample
+    B = B || BOOT_B;
+    var rnd = mulberry32(seed === undefined ? BOOT_SEED : seed), n = a.length;
+    var meds = new Array(B), means = new Array(B), s = new Array(n);
+    for (var b = 0; b < B; b++) {
+      var t = 0;
+      for (var i = 0; i < n; i++) { var v = a[Math.floor(rnd() * n)]; s[i] = v; t += v; }
+      meds[b] = median(s); means[b] = t / n;
+    }
+    var sm = sorted(meds), sn = sorted(means), seen = {}, distinct = 0;
+    meds.forEach(function (m) { if (!seen[m]) { seen[m] = 1; distinct++; } });
+    return { B: B, n: n, seed: seed === undefined ? BOOT_SEED : seed,
+             se: { median: sd(meds), mean: sd(means) },
+             ci: { median: [percentile(sm, 2.5), percentile(sm, 97.5)], mean: [percentile(sn, 2.5), percentile(sn, 97.5)] },
+             distinct: { median: distinct }, formulaSE: sd(a) / Math.sqrt(n) };
+  }
+
   // Student-t two-sided p from the regularised incomplete beta (Numerical Recipes 6.4).
   function lgamma(x) {
     var c = [76.18009172947146, -86.50532032941677, 24.01409824083091,
@@ -1437,12 +1481,26 @@
              (w.p < 0.05 ? "p < 0.05: reject H₀ at α = 0.05" : "p ≥ 0.05: fail to reject H₀ at α = 0.05");
     },
     "cohen.sp": function (d, w) { return fmtNum(w.sp, 1); },     "cohen.d": function (d, w) { return fmtNum(w.d, 2); },
-    "device": function (d) { return d.device; },               "dropped": function (d) { return d.dropped; }
+    "device": function (d) { return d.device; },               "dropped": function (d) { return d.dropped; },
+    // bootstrap of all the votes; bt is null below two votes, and every key then prints an em dash
+    "se.mean": function (d) { var s = sd(d.all); return fmtNum(s === null ? null : s / Math.sqrt(d.all.length), 2); },
+    "boot.B": function (d, w, bt) { return bt ? bt.B.toLocaleString("en-US") : "—"; },
+    "boot.se.median": function (d, w, bt) { return fmtNum(bt && bt.se.median, 2); },
+    "boot.se.mean": function (d, w, bt) { return fmtNum(bt && bt.se.mean, 2); },
+    "boot.ci.median.lo": function (d, w, bt) { return fmtNum(bt && bt.ci.median[0], 1); },
+    "boot.ci.median.hi": function (d, w, bt) { return fmtNum(bt && bt.ci.median[1], 1); },
+    "boot.ci.mean.lo": function (d, w, bt) { return fmtNum(bt && bt.ci.mean[0], 1); },
+    "boot.ci.mean.hi": function (d, w, bt) { return fmtNum(bt && bt.ci.mean[1], 1); },
+    "boot.distinct.median": function (d, w, bt) { return bt ? String(bt.distinct.median) : "—"; }
   };
+  function wantsBoot(pid) {
+    return !!document.querySelector('[data-poll-fill="' + pid + '"][data-key^="boot."]');
+  }
 
   function renderNumber(pid, d, from) {
     var w = welch(d.odd, d.even);
-    numCache[pid] = { data: d, welch: w, from: from };
+    var bt = wantsBoot(pid) ? bootstrap(d.all, BOOT_B) : null;
+    numCache[pid] = { data: d, welch: w, boot: bt, from: from };
     [].forEach.call(document.querySelectorAll('.poll-number-results[data-poll-id="' + pid + '"]'), function (el) {
       var o = numOpts(el), ref = el.hasAttribute("data-ref") ? +el.getAttribute("data-ref") : null;
       var refLabel = attr(el, "data-ref-label", "");
@@ -1472,9 +1530,9 @@
     });
     [].forEach.call(document.querySelectorAll('[data-poll-fill="' + pid + '"]'), function (el) {
       var f = FILL[el.getAttribute("data-key")];
-      el.textContent = f ? f(d, w) : "?";
+      el.textContent = f ? f(d, w, bt) : "?";
     });
-    try { document.dispatchEvent(new CustomEvent("pollnumbers", { detail: { pollId: pid, data: d, welch: w, from: from } })); } catch (e) {}
+    try { document.dispatchEvent(new CustomEvent("pollnumbers", { detail: { pollId: pid, data: d, welch: w, boot: bt, from: from } })); } catch (e) {}
   }
 
   function refreshNumbers(pid) {
@@ -1660,7 +1718,14 @@
     numberData: function (pid) { return numCache[pid] || null; },
     refreshNumbers: refreshNumbers,
     refreshTally: refreshTally,
-    stats:      { describe: describe, welch: welch, parse: parseNumberRows, bins: binsFor, tTwoSided: tTwoSided }
+    // rows you hand it ({choice, voter_id}), rendered as if fetched: a rehearsal, no vote written
+    showNumbers: function (pid, rows) {
+      var el = document.querySelector('.poll-number-results[data-poll-id="' + pid + '"], .poll-number[data-poll-id="' + pid + '"]');
+      renderNumber(pid, parseNumberRows(rows, el ? numOpts(el) : null), null);
+      return numCache[pid];
+    },
+    stats:      { describe: describe, welch: welch, parse: parseNumberRows, bins: binsFor, tTwoSided: tTwoSided,
+                  bootstrap: bootstrap, percentile: percentile }
   };
 
   function boot() {

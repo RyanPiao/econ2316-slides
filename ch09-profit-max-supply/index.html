@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3c872638f1cb5fea27b936bc911e7d43">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6fb677498cb66cb3802fe2c79e6b032c">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -70,19 +70,20 @@
   </p>
   <div style="display: flex; flex-direction: column; gap: 9px;">
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">9.1</p>
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">&sect;9.2</p>
       <p style="font-size: 14pt;"><strong>Set up</strong> the price-taking firm's profit-maximization problem \(\pi(q) = pq - c(w, r, q)\) and explain what "price taking" means. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L2)</span></p>
     </div>
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">9.2</p>
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">&sect;9.3</p>
       <p style="font-size: 14pt;"><strong>Apply</strong> the profit-max first-order condition \(p = MC(q^*)\) and the second-order condition \(MC'(q^*) > 0\) to find the firm's optimal output. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L3)</span></p>
     </div>
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">9.3</p>
-      <p style="font-size: 14pt;"><strong>Derive</strong> the firm's supply curve as the inverse of marginal cost above shutdown, and compute the Cobb-Douglas supply elasticity. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
-    </div><div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">9.5</p>
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">&sect;9.4</p>
       <p style="font-size: 14pt;"><strong>Distinguish</strong> the short-run shutdown rule (\(p < \min AVC\)) from the long-run exit rule (\(p < \min ATC\)) using quasi-rents. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L5)</span></p>
+    </div>
+    <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 12px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">&sect;9.5</p>
+      <p style="font-size: 14pt;"><strong>Derive</strong> the firm's supply curve as the inverse of marginal cost above shutdown, and compute the Cobb-Douglas supply elasticity. <span style="color: var(--muted-color); font-size: 11pt;">(Bloom L4)</span></p>
     </div>
   </div>
 </section>
@@ -115,48 +116,10 @@
 </section>
 
 
-<section id="burger-market">
- <h2 style="margin-bottom:0;"><i class="fa-solid fa-burger" style="color: var(--secondary-color);"></i> Sam Has Cost Curves. What He Doesn&rsquo;t Have Is a <em>Market</em>.</h2>
- <p style="font-size: 12.5pt; color: var(--muted-color); margin: 6px 0 10px;">Chapter 8 gave us Sam&rsquo;s burger shop from the <em>inside</em> &mdash; FC, VC, MC, ATC. Before Sam can choose <strong>how many burgers to sell</strong>, we have to look <em>outside</em> the shop.</p>
- <div style="display:grid; grid-template-columns: 1.04fr 0.96fr; gap: 20px; align-items:center;">
-  <div style="text-align:center;">
-   <img alt="Map of Boston around Northeastern University showing roughly fifteen competing burger restaurants" src="figures/burger_market.webp" style="width:100%; max-height:455px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-   <p style="font-size:10.5pt; color:var(--muted-color); margin-top:6px; font-style:italic;">Burger sellers within a mile of campus. Sam is <strong>one dot</strong> &mdash; Shake Shack, Five Guys, Tasty Burger, Wahlburgers, The Capital Burger&hellip;</p>
-  </div>
-  <div>
-   <p style="font-size:12.5pt; color:var(--muted-color); margin:0 0 8px;">Sam&rsquo;s cost curves are the same either way. What <em>changes</em> is what he can do with a <strong>price</strong> &mdash; and that depends on five questions:</p>
-   <div style="display:flex; flex-direction:column; gap:6px;">
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--secondary-color); display:flex; align-items:center; gap:11px;">
-     <span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--secondary-color); color:#ffffff; font-size:11.5pt; font-weight:700; line-height:23px; text-align:center;">1</span>
-     <p style="font-size:12.5pt; margin:0;"><strong>How many others</strong> sell burgers here?</p>
-    </div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--accent-color); display:flex; align-items:center; gap:11px;">
-     <span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--accent-color); color:#ffffff; font-size:11.5pt; font-weight:700; line-height:23px; text-align:center;">2</span>
-     <p style="font-size:12.5pt; margin:0;">Is Sam&rsquo;s burger <strong>the same thing</strong> as a Shake Shack burger?</p>
-    </div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--success-color); display:flex; align-items:center; gap:11px;">
-     <span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--success-color); color:#ffffff; font-size:11.5pt; font-weight:700; line-height:23px; text-align:center;">3</span>
-     <p style="font-size:12.5pt; margin:0;">Could <strong>you</strong> open a burger place next semester?</p>
-    </div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--danger-color); display:flex; align-items:center; gap:11px;">
-     <span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--danger-color); color:#ffffff; font-size:11.5pt; font-weight:700; line-height:23px; text-align:center;">4</span>
-     <p style="font-size:12.5pt; margin:0;">If Sam posts <strong>$14</strong> while everyone else posts $11, does he keep <em>any</em> customers?</p>
-    </div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid #7C3A5F; display:flex; align-items:center; gap:11px;">
-     <span style="flex:0 0 23px; height:23px; border-radius:50%; background:#7C3A5F; color:#ffffff; font-size:11.5pt; font-weight:700; line-height:23px; text-align:center;">5</span>
-     <p style="font-size:12.5pt; margin:0;">If burgers pay well this year, will they <strong>still</strong> in 2031?</p>
-    </div>
-   </div>
-   <div style="margin-top:10px; background:#f4f1ed; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 15px;">
-    <p style="font-size:12.5pt; margin:0;">These five questions are the checklist that classifies <strong>every</strong> market. They have names &rarr;</p>
-   </div>
-  </div>
- </div>
-</section>
-
+<section>
 <section id="five-characteristics">
  <h2><i class="fa-solid fa-list-check" style="color: var(--secondary-color);"></i> The Five Industry Characteristics</h2>
- <p style="font-size: 13.5pt; color: var(--muted-color); margin: 4px 0 10px;">Commit these to memory &mdash; they are the checklist that decides whether a market is competitive, and you will meet them again across <strong>Chs 10&ndash;13</strong>.</p>
+ <p style="font-size: 13.5pt; color: var(--muted-color); margin: 4px 0 10px;">Five questions decide what kind of market a firm is in. Commit them to memory &mdash; we test Sam&rsquo;s market against them next, and you will meet them again across <strong>Chs 10&ndash;13</strong>.</p>
  <div style="display: flex; flex-direction: column; gap: 8px;">
   <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 18px; border-left: 4px solid var(--secondary-color);">
    <p style="font-size: 13.5pt;"><strong>1. Number of firms.</strong> A few giants? Hundreds of small shops? One sole provider?</p>
@@ -175,64 +138,45 @@
   </div>
  </div>
  <div style="margin-top: 11px; background: #f4f1ed; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 9px 16px;">
-  <p style="font-size: 13pt; margin: 0;">Based on these five differences, every market falls into one of <strong>four general structures</strong> &mdash; a <strong>spectrum of market power</strong> running from pure <strong>price-takers</strong> to pure <strong>price-makers</strong>. We meet all four next &rarr;</p>
+  <p style="font-size: 13pt; margin: 0;">Based on these five differences, every market falls into one of <strong>four general structures</strong> &mdash; a <strong>spectrum of market power</strong> running from pure <strong>price-takers</strong> to pure <strong>price-makers</strong>. Perfect competition first; the other three come in Chs 11 and 13. Examples below &darr;</p>
  </div>
 </section>
 
-<section>
-<section id="corn-market"
-         data-background-video="https://ryanpiao.github.io/econ-lectures/econ1116/ch10-perfect-competition/video/pc.mp4"
-         data-background-video-loop
-         data-background-video-muted
-         data-background-color="#0a1505"
-         data-background-size="cover">
- <div style="position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(180deg, rgba(3,8,2,0.82) 0%, rgba(3,8,2,0.55) 26%, rgba(3,8,2,0.55) 74%, rgba(3,8,2,0.70) 100%);"></div>
- <div style="position:relative; z-index:1; display:flex; flex-direction:column; flex:1;">
- <h2 style="color:#ffffff; text-shadow:0 2px 4px rgba(0,0,0,0.98), 0 0 16px rgba(0,0,0,0.7); border-bottom:1.5px solid rgba(255,255,255,0.55); padding-bottom:8px; margin-bottom:0;"><i class="fa-solid fa-wheat-awn" style="color:#fcd34d;"></i> The Corn Market &mdash; A Perfect-Competition Case</h2>
- <p style="font-size:13.5pt; color:#ffffff; font-weight:500; text-shadow:0 1px 3px rgba(0,0,0,1), 0 0 12px rgba(0,0,0,0.9); margin:8px 0 11px;">Score the five characteristics on US field corn (No.&nbsp;2 Yellow) &mdash; every one lines up.</p>
- <div style="display:flex; flex-direction:column; gap:7px;">
-  <div style="background:rgba(3,9,2,0.90); border-radius:8px; padding:9px 18px; border-left:4px solid #8fb0c9; box-shadow:0 2px 10px rgba(0,0,0,0.5);">
-   <p style="font-size:13.5pt; color:#ffffff;"><strong>1. Many firms</strong> &mdash; ~<strong>300,000</strong> US corn farms; one grower planting more never moves the price. <span style="color:#7df0a6; font-weight:700;">&check; very many</span></p>
+<section id="corn-market">
+ <h2><i class="fa-solid fa-wheat-awn" style="color: #b58900;"></i> Example: Test the Corn Market</h2>
+ <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:18px; align-items:center;">
+  <div style="text-align:center;"><img alt="A corn field on a farm in northwest Iowa in July, with the farmhouse, barns and a grain bin behind" src="figures/corn_iowa.jpg" style="width:100%; max-height:330px; object-fit:cover; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);"><p style="font-size:8.5pt; color:var(--muted-color); margin:3px 0 0;">Northwest Iowa corn farm. Photo: Don Graham, CC BY-SA 2.0, via Wikimedia Commons</p></div>
+  <div style="display:flex; flex-direction:column; gap:6px;">
+   <div class="fragment fade-up" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>1. Many firms</strong> &mdash; about <strong>300,000</strong> US corn farms; one grower planting more never moves the price. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; very many</span></p></div>
+   <div class="fragment fade-up" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>2. Homogeneous product</strong> &mdash; &ldquo;No.&nbsp;2 Yellow Corn&rdquo; is a federal grade; every farm&rsquo;s bushel is a perfect substitute. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; identical</span></p></div>
+   <div class="fragment fade-up" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--success-color);"><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>3. Free entry &amp; exit</strong> &mdash; no patents or licenses; rent land, buy seed, plant. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; low barriers</span></p></div>
+   <div class="fragment fade-up" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--danger-color);"><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>4. Price-takers</strong> &mdash; farmers accept the Chicago Board of Trade price (about <strong>$4.70/bu</strong>, 2026); they choose how much to plant, never the price. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; no control</span></p></div>
+   <div class="fragment fade-up" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid #7C3A5F;"><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>5. Zero long-run profit</strong> &mdash; good years draw entry and expansion &rarr; supply rises &rarr; the price falls back to min ATC. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; competed away</span></p></div>
+   <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>Result: perfect competition.</strong> Corn is the textbook case: a pure price-taker with no market power.</p></div>
   </div>
-  <div style="background:rgba(3,9,2,0.90); border-radius:8px; padding:9px 18px; border-left:4px solid #d99873; box-shadow:0 2px 10px rgba(0,0,0,0.5);">
-   <p style="font-size:13.5pt; color:#ffffff;"><strong>2. Homogeneous product</strong> &mdash; &ldquo;No.&nbsp;2 Yellow Corn&rdquo; is a federal grade; every farm&rsquo;s bushel is a perfect substitute. <span style="color:#7df0a6; font-weight:700;">&check; identical</span></p>
-  </div>
-  <div style="background:rgba(3,9,2,0.90); border-radius:8px; padding:9px 18px; border-left:4px solid #8cc08d; box-shadow:0 2px 10px rgba(0,0,0,0.5);">
-   <p style="font-size:13.5pt; color:#ffffff;"><strong>3. Free entry &amp; exit</strong> &mdash; no patents or licenses; rent land, buy seed, plant. <span style="color:#7df0a6; font-weight:700;">&check; low barriers</span></p>
-  </div>
-  <div style="background:rgba(3,9,2,0.90); border-radius:8px; padding:9px 18px; border-left:4px solid #cc8a8a; box-shadow:0 2px 10px rgba(0,0,0,0.5);">
-   <p style="font-size:13.5pt; color:#ffffff;"><strong>4. Price-takers</strong> &mdash; farmers accept the Chicago Board of Trade price (~<strong>$4.70/bu</strong>, 2026); they choose how much to plant, never the price. <span style="color:#7df0a6; font-weight:700;">&check; no control</span></p>
-  </div>
-  <div style="background:rgba(3,9,2,0.90); border-radius:8px; padding:9px 18px; border-left:4px solid #c98bb0; box-shadow:0 2px 10px rgba(0,0,0,0.5);">
-   <p style="font-size:13.5pt; color:#ffffff;"><strong>5. Zero long-run profit</strong> &mdash; good years lure entry &amp; expansion &rarr; supply rises &rarr; price falls back to min ATC. <span style="color:#7df0a6; font-weight:700;">&check; competed away</span></p>
-  </div>
- </div>
- <div style="margin-top:11px; background:rgba(20,83,48,0.94); border:1.5px solid #7df0a6; border-radius:10px; padding:10px 20px; text-align:center; box-shadow:0 2px 12px rgba(0,0,0,0.5);">
-  <p style="font-size:15pt; color:#ffffff; font-weight:700; text-shadow:0 1px 4px rgba(0,0,0,0.8);">Result &rarr; Perfect Competition &mdash; pure <strong>price-taker</strong>, zero market power &middot; <strong>&larr; this chapter</strong></p>
- </div>
  </div>
 </section>
 
 <section id="bottled-water">
- <h2><i class="fa-solid fa-bottle-water" style="color: var(--secondary-color);"></i> Another Competitive Market &mdash; Bottled Water</h2>
- <div style="display:grid; grid-template-columns: 0.92fr 1.08fr; gap: 24px; align-items:center;">
-  <div style="text-align:center;">
-   <img alt="Rows of nearly identical plastic water bottles on a store shelf" src="figures/bottled_water.webp" style="width:100%; max-height:430px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-   <p style="font-size:11pt; color:var(--muted-color); margin-top:6px; font-style:italic;">Store-brand water: many sellers, one near-identical product.</p>
-  </div>
-  <div>
-   <p style="font-size:13pt; color:var(--muted-color); margin:0 0 8px;">Run the same five-characteristic checklist &mdash; generic bottled water scores like corn.</p>
-   <div style="display:flex; flex-direction:column; gap:7px;">
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>1. Many sellers</strong> &mdash; national brands + every store&rsquo;s own label. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>2. Near-homogeneous</strong> &mdash; purified water is purified water. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>3. Free entry &amp; exit</strong> &mdash; modest startup cost <span style="color:var(--muted-color);">(next slide)</span>. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>4. Price-takers</strong> &mdash; generic water competes on price, little power. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>5. Zero long-run profit</strong> &mdash; easy entry competes margins away. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
+ <h2><i class="fa-solid fa-bottle-water" style="color: var(--secondary-color);"></i> Test Bottled Water &mdash; and How Easy Is It to Enter?</h2>
+ <div style="display:grid; grid-template-columns: 0.82fr 1.18fr; gap: 18px; align-items:start;">
+  <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+   <img alt="Rows of nearly identical plastic water bottles on a store shelf" src="figures/bottled_water.webp" style="width:100%; max-height:215px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#ffffff; border-radius:8px; padding:6px; box-shadow:0 3px 14px rgba(0,0,0,0.18); width:100%;">
+    <img alt="Quora answers on the cost of starting a bottled-water company" src="figures/quora.png" style="width:100%; max-height:215px; object-fit:contain; display:block; border-radius:4px;">
+    <p style="font-size:9.5pt; color:#555; margin:4px 2px 0; font-style:italic;">Quora: &ldquo;How much does it cost to start a bottled-water company?&rdquo;</p>
    </div>
-   <div style="margin-top:10px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:9px 16px; text-align:center;"><p style="font-size:13.5pt;"><strong>Result &rarr; Competitive</strong> &mdash; generic bottled water &asymp; perfect competition.</p></div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:6px;">
+   <p style="font-size:12.5pt; color:var(--muted-color); margin:0 0 2px;">Same checklist, store-brand water:</p>
+   <div class="fragment fade-up" data-fragment-index="1"><div style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--secondary-color); display:flex; align-items:center; gap:10px;"><span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--secondary-color); color:#ffffff; font-size:11pt; font-weight:700; line-height:23px; text-align:center;">1</span><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>Number of firms</strong> &mdash; national brands plus every store&rsquo;s own label. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; many</span></p></div></div>
+   <div class="fragment fade-up" data-fragment-index="2"><div style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--accent-color); display:flex; align-items:center; gap:10px;"><span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--accent-color); color:#ffffff; font-size:11pt; font-weight:700; line-height:23px; text-align:center;">2</span><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>Product</strong> &mdash; purified water is purified water (or is it? two slides on). <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; near-identical</span></p></div></div>
+   <div class="fragment fade-up" data-fragment-index="3"><div style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--success-color); display:flex; align-items:center; gap:10px;"><span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--success-color); color:#ffffff; font-size:11pt; font-weight:700; line-height:23px; text-align:center;">3</span><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>Barriers to entry</strong> &mdash; a small bottling operation can start for <strong>under $10,000</strong>; a full plan runs about $20K&ndash;$500K. No patents, no licenses to fight for. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; low</span></p></div></div>
+   <div class="fragment fade-up" data-fragment-index="4"><div style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid var(--danger-color); display:flex; align-items:center; gap:10px;"><span style="flex:0 0 23px; height:23px; border-radius:50%; background:var(--danger-color); color:#ffffff; font-size:11pt; font-weight:700; line-height:23px; text-align:center;">4</span><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>Control over price</strong> &mdash; store-brand water competes on price. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; price-taker</span></p></div></div>
+   <div class="fragment fade-up" data-fragment-index="5"><div style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid #7C3A5F; display:flex; align-items:center; gap:10px;"><span style="flex:0 0 23px; height:23px; border-radius:50%; background:#7C3A5F; color:#ffffff; font-size:11pt; font-weight:700; line-height:23px; text-align:center;">5</span><p style="font-size:12.5pt; margin:0; line-height:1.35;"><strong>Long-run profit</strong> &mdash; easy entry competes the margin away. <span style="color:var(--success-color); font-weight:700; white-space:nowrap;">&check; zero</span></p></div></div>
+   <div class="fragment fade-up" data-fragment-index="6" style="margin-top:4px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>Result: store-brand bottled water &asymp; competitive.</strong> Low entry cost is what keeps it that way.</p></div>
   </div>
  </div>
- <p style="font-size:11.5pt; color:var(--muted-color); margin-top:8px; font-style:italic;">Nuance: premium <em>brands</em> (Fiji, Evian) differentiate &rarr; monopolistic competition &mdash; but the commodity/store-brand segment is the competitive case.</p>
 </section>
 
 <section id="water-entry"
@@ -240,7 +184,7 @@
          data-background-video-loop
          data-background-video-muted
          data-background-color="#06121a"
-         data-background-size="cover">
+         data-background-size="cover" data-visibility="hidden">
  <div style="position:absolute; inset:0; z-index:0; pointer-events:none; background:linear-gradient(180deg, rgba(2,8,12,0.82) 0%, rgba(2,8,12,0.6) 26%, rgba(2,8,12,0.6) 74%, rgba(2,8,12,0.72) 100%);"></div>
  <div style="position:relative; z-index:1; display:flex; flex-direction:column; flex:1;">
  <h2 style="color:#ffffff; text-shadow:0 2px 4px rgba(0,0,0,0.98), 0 0 16px rgba(0,0,0,0.7); border-bottom:1.5px solid rgba(255,255,255,0.55); padding-bottom:8px; margin-bottom:0;"><i class="fa-solid fa-door-open" style="color:#7ec8e3;"></i> How Easy Is It to Enter? &mdash; Bottling Water</h2>
@@ -265,7 +209,30 @@
  </div>
 </section>
 
-<section id="pc-other-examples">
+<section id="homogeneous-poll">
+ <h2><i class="fa-solid fa-cloud" style="color: var(--accent-color);"></i> Poll &mdash; Name a Homogeneous Product</h2>
+ <div style="background:#f8f6f3; border-radius:10px; padding:12px 20px;"><p style="font-size:14pt; line-height:1.5; margin:0;">Type <strong>one word</strong>: a product where every seller&rsquo;s unit is a <strong>perfect substitute</strong> for every other seller&rsquo;s.</p></div>
+ <div class="poll-word" data-poll-id="ch09-econ2316-poll-6" data-poll-voting style="margin-top:14px;"></div>
+ <div class="poll-word-cloud" data-poll-id="ch09-econ2316-poll-6" style="margin-top:10px; background:#ffffff; border:1px solid #e5e7eb; border-radius:10px; padding:8px 10px; min-height:190px;"></div>
+ <span class="fragment wc-step" data-fragment-index="1" style="display:none"></span>
+</section>
+
+<section id="water-not-homogeneous">
+ <h2><i class="fa-solid fa-scale-unbalanced" style="color: var(--accent-color);"></i> What Makes a Product <em>Not</em> Homogeneous?</h2>
+ <div style="display:grid; grid-template-columns:0.72fr 1.28fr; gap:18px; align-items:center;">
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 420 320" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two water bottles side by side: a square premium-brand bottle labelled Fiji and a plain round store-brand bottle labelled with a store&rsquo;s own brand"><rect x="78" y="40" width="34" height="30" rx="4" fill="#2b6f99"/><rect x="40" y="70" width="110" height="230" rx="10" fill="#d8ecf5" stroke="#7aa0b8" stroke-width="2"/><rect x="46" y="160" width="98" height="78" rx="6" fill="#2f8fbf" stroke="#ffffff" stroke-width="1.5"/><text x="95" y="194" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">FIJI</text><text x="95" y="220" text-anchor="middle" font-size="12.5" fill="#ffffff">artesian water</text><rect x="288" y="40" width="34" height="30" rx="4" fill="#c43b3b"/><path d="M280 70 h50 v24 q30 18 30 52 v146 q0 8 -8 8 h-94 q-8 0 -8 -8 v-146 q0 -34 30 -52 z" fill="#e6f2f8" stroke="#7aa0b8" stroke-width="2"/><rect x="256" y="160" width="98" height="78" rx="6" fill="#b23a3a" stroke="#ffffff" stroke-width="1.5"/><text x="305" y="194" text-anchor="middle" font-size="19" font-weight="800" fill="#ffffff">STORE</text><text x="305" y="220" text-anchor="middle" font-size="12.5" fill="#ffffff">spring water</text><text x="95" y="316" text-anchor="middle" font-size="13" fill="#555">premium brand</text><text x="305" y="316" text-anchor="middle" font-size="13" fill="#555">store brand</text></svg></div>
+  <div style="display:flex; flex-direction:column; gap:6px;">
+   <div style="display:grid; grid-template-columns:0.7fr 1fr 1fr; gap:8px; padding:0 12px;"><p style="margin:0;"></p><p style="font-size:11pt; font-weight:700; margin:0;">Fiji</p><p style="font-size:11pt; font-weight:700; margin:0;">Store brand</p></div>
+   <div class="fragment fade-up" data-fragment-index="1" style="display:grid; grid-template-columns:0.7fr 1fr 1fr; gap:8px; align-items:center; background:#f8f6f3; border-radius:8px; padding:6px 12px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; margin:0;">What is inside</p><p style="font-size:12pt; margin:0;">water</p><p style="font-size:12pt; margin:0;">water</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="display:grid; grid-template-columns:0.7fr 1fr 1fr; gap:8px; align-items:center; background:#f8f6f3; border-radius:8px; padding:6px 12px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; margin:0;">The story</p><p style="font-size:12pt; margin:0;">from an artesian aquifer in Fiji</p><p style="font-size:12pt; margin:0;">spring water, store label</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="display:grid; grid-template-columns:0.7fr 1fr 1fr; gap:8px; align-items:center; background:#f8f6f3; border-radius:8px; padding:6px 12px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; margin:0;">Bottle &amp; brand</p><p style="font-size:12pt; margin:0;">square bottle, famous label</p><p style="font-size:12pt; margin:0;">plain bottle, the store&rsquo;s name</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="display:grid; grid-template-columns:0.7fr 1fr 1fr; gap:8px; align-items:center; background:#f8f6f3; border-radius:8px; padding:6px 12px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; margin:0;">What buyers believe</p><p style="font-size:12pt; margin:0;">purer, tastier, a treat</p><p style="font-size:12pt; margin:0;">&ldquo;it&rsquo;s just water&rdquo;</p></div>
+   <div class="fragment fade-up" data-fragment-index="5" style="margin-top:4px; background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:9px 15px;"><p style="font-size:13pt; margin:0;">If buyers will pay more for <strong>one seller&rsquo;s</strong> version, they do not treat the two as perfect substitutes: the product is <strong>differentiated</strong>. That is monopolistic competition (Ch 13), not perfect competition.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="pc-other-examples" data-visibility="hidden">
  <h2><i class="fa-solid fa-arrow-trend-up" style="color: var(--secondary-color);"></i> Perfect Competition: Other Examples</h2>
  <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0; padding-top:6px;">
   <div style="position:relative; height:480px; aspect-ratio:16/9; border-radius:8px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.16); background:#000; border:1px solid var(--line-color);">
@@ -274,12 +241,264 @@
   <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">A share = any other share &middot; one ounce of gold = another &middot; one public price &rarr; <span style="color:var(--success-color); font-weight:700;">millions of price-takers</span></p>
  </div>
 </section>
+</section>
 
+<section>
+<section id="burger-market">
+ <h2><i class="fa-solid fa-store" style="color: var(--secondary-color);"></i> Test 1 of 5 &mdash; How Many Sellers?</h2>
+ <div style="background:#eff6ff; border-left:4px solid var(--secondary-color); border-radius:8px; padding:6px 14px; margin:0 0 4px;"><p style="font-size:12pt; margin:0;"><strong>Sam asks us, his consultants:</strong> &ldquo;What price should I charge for a basic cheeseburger?&rdquo; We test his market against the five characteristics, one at a time.</p></div>
+ <div style="display:flex; gap:7px; justify-content:center; margin:2px 0 8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:var(--secondary-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700; box-shadow:0 0 0 2px #1f2937;">1 Sellers</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">2 Product</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">3 Entry</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">4 Price</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">5 Profit</span></div>
+ <div style="display:grid; grid-template-columns:580px 1fr; gap:22px; align-items:center;">
+  <div id="burger-map" style="position:relative; border-radius:8px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.16); line-height:0;">
+   <img alt="Map of Boston around Northeastern University with many burger restaurants marked, and Sam&rsquo;s Burger Shop drawn in" src="figures/burger_market.webp" style="width:100%; display:block;">
+   <div style="position:absolute; left:60%; top:60%; transform:translate(-50%,-100%); display:flex; flex-direction:column; align-items:center; gap:2px; pointer-events:none; line-height:1.25;"><span style="background:var(--accent-color); color:#ffffff; font-size:14pt; font-weight:800; border-radius:6px; padding:4px 12px; white-space:nowrap; border:2px solid #ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.45);">Sam&rsquo;s Burger Shop</span><svg viewBox="0 0 24 30" style="width:34px; height:42px; display:block;" xmlns="http://www.w3.org/2000/svg"><path d="M12 29 C12 29 2 17 2 10 a10 10 0 0 1 20 0 c0 7 -10 19 -10 19z" fill="var(--accent-color)" stroke="#ffffff" stroke-width="2"/><circle cx="12" cy="10" r="4" fill="#ffffff"/></svg></div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:10px;">
+   <p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">The evidence</p>
+   <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:22pt; font-weight:800; color:var(--secondary-color); line-height:1.1; margin:0;">Dozens</p><p style="font-size:12.5pt; line-height:1.35; margin:2px 0 0;">burger places within a mile of campus</p></div>
+   <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:22pt; font-weight:800; color:var(--secondary-color); line-height:1.1; margin:0;">About 50</p><p style="font-size:12.5pt; line-height:1.35; margin:2px 0 0;">within three miles</p></div>
+   <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:22pt; font-weight:800; color:var(--secondary-color); line-height:1.1; margin:0;">1 pin</p><p style="font-size:12.5pt; line-height:1.35; margin:2px 0 0;">Sam&rsquo;s shop is one seller among many</p></div>
+  </div>
+ </div>
+ <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Many sellers, each one small.</strong> No single shop is big enough to move the price.</p></div>
+</section>
+
+<section id="conditions-1-2" data-visibility="hidden">
+ <h2><i class="fa-solid fa-store" style="color: var(--accent-color);"></i> Conditions 1 &amp; 2 &mdash; Many Sellers, One Product</h2>
+ <div style="display: grid; grid-template-columns: 1fr 0.8fr; gap: 22px; align-items: center;">
+  <div>
+   <div class="key-result" style="margin-top:0;"><p><strong>Many sellers:</strong> if one wheat farmer plants half an acre more, the global price doesn&rsquo;t budge. 50 burger joints clears this bar; two airlines on a route does not.</p></div>
+   <div class="key-result" style="background:#fef9f3; border-left-color: var(--accent-color);"><p><strong>Homogeneous:</strong> a bushel of Kansas wheat is a bushel of Kansas wheat. Grade-A Large eggs from Iowa = from Pennsylvania. Buyers don&rsquo;t care.</p></div>
+   <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 8px;">Once buyers start caring about brand, recipe, or &ldquo;vibe,&rdquo; we&rsquo;ve moved toward <strong>monopolistic competition</strong> (Ch 13).</p>
+  </div>
+  <div style="text-align: center;">
+   <img alt="Many small sellers in a crowded marketplace" src="figures/ch10-many-sellers.webp" style="max-width: 100%; max-height: 360px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.10);">
+  </div>
+ </div>
+</section>
+
+<section id="pc-pizza-checks" data-visibility="hidden">
+ <h2><i class="fa-solid fa-burger" style="color: var(--accent-color);"></i> The Basic Cheeseburger &mdash; Every Box Checked</h2>
+ <div style="display:grid; grid-template-columns:0.95fr 1.05fr; gap:24px; align-items:center;">
+  <div style="text-align:center;">
+   <img alt="Sam’s basic cheeseburger" src="figures/samsburger.webp" style="width:100%; max-height:420px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+   <p style="font-size:11pt; color:var(--muted-color); margin-top:6px; font-style:italic;">Hold the extras &mdash; a basic cheeseburger is a near-commodity.</p>
+  </div>
+  <div>
+   <p style="font-size:13pt; color:var(--muted-color); margin:0 0 8px;">Run the four conditions on the <strong>basic cheeseburger</strong> market near campus:</p>
+   <div style="display:flex; flex-direction:column; gap:7px;">
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>1. Many buyers &amp; sellers</strong> &mdash; ~50 shops within 3 miles, thousands of late-night buyers. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>2. Homogeneous product</strong> &mdash; one basic cheeseburger ≈ any other. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>3. Free entry &amp; exit</strong> &mdash; rent a storefront, buy a griddle, open. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>4. Price-takers</strong> &mdash; everyone&rsquo;s at ~$10; charge more, lose the block; charge less, give up revenue. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
+   </div>
+   <div style="margin-top:10px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:9px 16px; text-align:center;"><p style="font-size:13.5pt;"><strong>All four boxes checked &rarr; perfect competition.</strong></p></div>
+  </div>
+ </div>
+ <p style="font-size:11.5pt; color:var(--muted-color); margin-top:8px; font-style:italic;">Caveat: this only holds for the <strong>basic cheeseburger</strong>. Signature builds, premium toppings, and brand/vibe differentiate &mdash; that&rsquo;s monopolistic competition (Ch 13).</p>
+</section>
+
+<section id="pc-pizza-map" data-visibility="hidden">
+ <h2><i class="fa-solid fa-map-location-dot" style="color: var(--secondary-color);"></i> Many Sellers &mdash; Just Look at the Map</h2>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
+  <img alt="Google map showing burger shops clustered around Northeastern" src="figures/burger_market.webp" style="width:100%; max-height:460px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">The same map from the top of the hour &mdash; <strong>condition 1 in one glance</strong>. No single burger shop has the market power to move the price.</p>
+ </div>
+</section>
+
+<section id="pc-pizza-3mile" data-visibility="hidden">
+ <h2><i class="fa-solid fa-location-crosshairs" style="color: var(--accent-color);"></i> Fifty Shops Within Three Miles</h2>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
+  <img alt="A 3-mile-radius map around campus with ~50 burger shops marked" src="figures/burger_3_miles.webp" style="max-width:100%; max-height:455px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">About <strong>50 shops</strong> compete inside a 3-mile radius of campus &mdash; and we&rsquo;re studying just one product across all of them: the <strong>basic cheeseburger</strong>.</p>
+ </div>
+</section>
+
+<section id="sam-test-product">
+ <h2><i class="fa-solid fa-burger" style="color: var(--accent-color);"></i> Test 2 of 5 &mdash; Is the Product the Same?</h2>
+ <div style="display:flex; gap:7px; justify-content:center; margin:2px 0 8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:var(--secondary-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Sellers</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--accent-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700; box-shadow:0 0 0 2px #1f2937;">2 Product</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">3 Entry</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">4 Price</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">5 Profit</span></div>
+ <div style="display:grid; grid-template-columns:600px 1fr; gap:22px; align-items:center;">
+  <div style="position:relative; border-radius:8px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.16); line-height:0;">
+   <img alt="Basic cheeseburgers from several fast-food chains piled on a board, their takeout bags behind them" src="figures/cheeseburger_lineup.webp" style="width:100%; display:block;">
+   <div style="position:absolute; left:0; right:0; bottom:0; padding:22px 14px 10px; background:linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0)); line-height:1.3; text-align:center;"><span style="color:#ffffff; font-size:15pt; font-weight:800;">Which shop made which?</span></div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:10px;">
+   <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:10px 14px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">The product we test</p><p style="font-size:14.5pt; line-height:1.4; margin:3px 0 0;">A <strong>basic cheeseburger</strong>: bun, patty, cheese. Hold the extras.</p></div>
+   <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:10px 14px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">Ask a buyer</p><p style="font-size:14.5pt; line-height:1.4; margin:3px 0 0;">Would you walk an extra block for one shop&rsquo;s basic cheeseburger over another&rsquo;s? Most buyers would not.</p></div>
+   <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:10px 14px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">So</p><p style="font-size:14.5pt; line-height:1.4; margin:3px 0 0;">One is a perfect substitute for the next.</p></div>
+  </div>
+ </div>
+ <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Homogeneous</strong>, for the basic cheeseburger. Signature builds and brand are differentiated: that is Ch 13.</p></div>
+</section>
+
+<section id="sam-test-entry">
+ <h2><i class="fa-solid fa-door-open" style="color: var(--success-color);"></i> Test 3 of 5 &mdash; Could You Open One Next Semester?</h2>
+ <div style="display:flex; gap:7px; justify-content:center; margin:2px 0 8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:var(--secondary-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Sellers</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--accent-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Product</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--success-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700; box-shadow:0 0 0 2px #1f2937;">3 Entry</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">4 Price</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">5 Profit</span></div>
+ <div style="position:relative; width:100%; max-width:1000px; margin:0 auto; aspect-ratio:3168/1062; border-radius:8px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.16); background:#ffffff; max-height:250px;">
+  <img src="figures/burger_production.webp" alt="Inputs (a griddle and a cook) go into the shop and come out as burgers" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block;">
+ </div>
+ <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:10px;">
+  <div style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--success-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">A storefront</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">Lease one; plenty come up every year.</p></div>
+  <div style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--success-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">A griddle</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">In Sam&rsquo;s costs, $50 a day.</p></div>
+  <div style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--success-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">Some cooks</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">Hire them at the going wage.</p></div>
+ </div>
+ <p style="font-size:12.5pt; text-align:center; margin:8px 0 0;">No patent, no secret recipe, no cap on the number of burger shops; just the usual city permits.</p>
+ <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Low barriers: free entry and exit.</strong> A shop that spots profit can open; one losing money can close.</p></div>
+</section>
+
+<section id="conditions-3-4" data-visibility="hidden">
+ <h2><i class="fa-solid fa-door-open" style="color: var(--secondary-color);"></i> Conditions 3 &amp; 4 &mdash; Free Entry, Price-Takers</h2>
+ <div style="display: grid; grid-template-columns: 0.8fr 1fr; gap: 22px; align-items: center;">
+  <div style="text-align: center;">
+   <img alt="A price-taking firm facing a fixed market price" src="figures/ch10-price-taker.png" style="max-width: 100%; max-height: 340px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.10);">
+  </div>
+  <div>
+   <div class="key-result" style="margin-top:0;"><p><strong>Free entry &amp; exit:</strong> a firm that spots profit can enter; a firm losing money can leave. This is what drives the <strong>long-run zero-profit result</strong> later in the chapter.</p></div>
+   <div style="background: #eef2f0; border-radius: 10px; padding: 12px 18px; border-left: 4px solid var(--danger-color); margin: 12px 0;">
+    <p style="font-size: 13.5pt;"><strong>Price taker:</strong> a firm that must accept the market price as given. It chooses its <em>quantity</em>; it cannot influence the <em>price</em>.</p>
+   </div>
+   <p style="font-size: 13pt;">Taking the price is the <strong>rational</strong> choice. Charge above market &rarr; lose every customer. Charge below &rarr; give up revenue for nothing.</p>
+  </div>
+ </div>
 </section>
 
 
 
+<section id="pc-price-market" data-visibility="hidden">
+ <h2><i class="fa-solid fa-tags" style="color: var(--secondary-color);"></i> The Going Price &mdash; Everyone Lands in the Same Band</h2>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-height:0;">
+  <img alt="Google Maps listings for 7th Street Burger, Tasty Burger, Shake Shack, Five Guys and Wahlburgers, each reporting $10-20 per person" src="figures/burger_map_price.webp" style="width:100%; max-height:512px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+  <p style="font-size:13.5pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">7th Street, Tasty Burger, Shake Shack, Five Guys, Wahlburgers &mdash; every one reports <strong>$10&ndash;20 per person</strong>. Nobody&rsquo;s an outlier. That&rsquo;s the band the market hands Sam.</p>
+  <p style="font-size:12pt; color:var(--muted-color); text-align:center; margin:0;">Narrow it from a whole meal to the <strong>basic burger</strong> and the going price is about <strong>$10</strong> &mdash; the number the next three slides deviate from. &darr;</p>
+ </div>
+</section>
 
+<section id="pc-price-poll">
+ <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; You Own Sam&rsquo;s Shop. What Price Do You Post?</h2>
+ <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 1100 220" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A street of five burger shops; four post 10 dollars for a basic burger and Sam&rsquo;s shop is in the middle"><rect x="0" y="165" width="1100" height="10" fill="#d1d5db"/><rect x="40" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="40" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="125" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Tasty Burger</text><rect x="108" y="112" width="34" height="48" fill="#d1d5db"/><rect x="80" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="125" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><rect x="250" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="250" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="335" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Shake Shack</text><rect x="318" y="112" width="34" height="48" fill="#d1d5db"/><rect x="290" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="335" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><rect x="460" y="40" width="170" height="120" rx="6" fill="#fff4e6" stroke="var(--accent-color)" stroke-width="3"/><rect x="460" y="40" width="170" height="26" rx="6" fill="var(--accent-color)"/><text x="545" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Sam&rsquo;s</text><rect x="528" y="112" width="34" height="48" fill="#e9c9a0"/><rect x="500" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="var(--accent-color)" stroke-width="2"/><text x="545" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="var(--accent-color)">?</text><rect x="670" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="670" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="755" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Five Guys</text><rect x="738" y="112" width="34" height="48" fill="#d1d5db"/><rect x="710" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="755" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><rect x="880" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="880" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="965" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Wahlburgers</text><rect x="948" y="112" width="34" height="48" fill="#d1d5db"/><rect x="920" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="965" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text></svg></div>
+ <p style="font-size:13pt; margin:6px 0 8px; text-align:center;">Every shop on the block sells a basic burger for <strong>$10</strong>. Pick his price.</p>
+ <div class="poll-grid" data-poll-id="ch09-econ2316-poll-5" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; font-size:13.5pt;">
+  <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 10px 16px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;"><strong>A)</strong> <strong>$11</strong> &mdash; a little more on every burger</div>
+  <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 10px 16px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;"><strong>B)</strong> <strong>$9</strong> &mdash; undercut and win the block</div>
+  <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 10px 16px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;"><strong>C)</strong> <strong>$10</strong> &mdash; the same as everyone</div>
+ </div>
+ <div style="width:62%; margin:12px auto 0;"><div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:6px 16px;"><p style="font-size:10.5pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 2px;">The room&rsquo;s vote</p><div class="poll-choice-tally" data-poll-id="ch09-econ2316-poll-5" data-choices="A=A) $11|B=B) $9|C=C) $10"></div></div></div>
+</section>
+
+<section id="pc-price-outcomes">
+ <style>#pc-price-outcomes .walk.fragment{opacity:1 !important; visibility:visible !important;} #pc-price-outcomes .walk .cust{opacity:0; transition:transform 2.2s ease-in-out, opacity .3s;} #pc-price-outcomes .walk.visible .cust{opacity:1; transform:translateX(var(--dx));} #pc-price-outcomes .walk .cust + .x{} #pc-price-outcomes .walk.visible ~ .cust-home{opacity:0; transition:opacity .2s;} #pc-price-outcomes .walk:not(.visible) > rect, #pc-price-outcomes .walk:not(.visible) > text{opacity:0;} #pc-price-outcomes .rush.fragment, #pc-price-outcomes .ten.fragment{opacity:1 !important; visibility:visible !important;} #pc-price-outcomes .rush .cust2{opacity:0; transform:translateX(var(--dx)); transition:transform 2.2s ease-in-out, opacity .3s;} #pc-price-outcomes .rush.visible .cust2{opacity:1; transform:translateX(0);} #pc-price-outcomes .rush:not(.visible) > rect, #pc-price-outcomes .rush:not(.visible) > text, #pc-price-outcomes .ten:not(.visible) > *{opacity:0;} #pc-price-outcomes svg:has(.rush.visible) .walk .cust{opacity:0;} #pc-price-outcomes svg:has(.ten.visible) .rush .cust2{opacity:0;} #pc-price-outcomes svg:has(.ten.visible) .rush > rect, #pc-price-outcomes svg:has(.ten.visible) .rush > text{opacity:0;}</style>
+ <h2><i class="fa-solid fa-store" style="color: var(--accent-color);"></i> What Happens at $11, $9 and $10?</h2>
+ <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 1100 220" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A street of five burger shops; four post 10 dollars for a basic burger and Sam&rsquo;s shop is in the middle"><rect x="0" y="165" width="1100" height="10" fill="#d1d5db"/><rect x="40" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="40" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="125" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Tasty Burger</text><rect x="108" y="112" width="34" height="48" fill="#d1d5db"/><rect x="80" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="125" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><rect x="250" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="250" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="335" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Shake Shack</text><rect x="318" y="112" width="34" height="48" fill="#d1d5db"/><rect x="290" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="335" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><rect x="460" y="40" width="170" height="120" rx="6" fill="#fff4e6" stroke="var(--accent-color)" stroke-width="3"/><rect x="460" y="40" width="170" height="26" rx="6" fill="var(--accent-color)"/><text x="545" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Sam&rsquo;s</text><rect x="528" y="112" width="34" height="48" fill="#e9c9a0"/><rect x="500" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="var(--accent-color)" stroke-width="2"/><text x="545" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="var(--accent-color)">?</text><rect x="670" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="670" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="755" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Five Guys</text><rect x="738" y="112" width="34" height="48" fill="#d1d5db"/><rect x="710" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="755" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><rect x="880" y="40" width="170" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/><rect x="880" y="40" width="170" height="26" rx="6" fill="#6b7280"/><text x="965" y="59" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Wahlburgers</text><rect x="948" y="112" width="34" height="48" fill="#d1d5db"/><rect x="920" y="76" width="90" height="30" rx="15" fill="#ffffff" stroke="#6b7280" stroke-width="2"/><text x="965" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="#374151">$10</text><g class="fragment walk" data-fragment-index="1"><circle class="cust" cx="530" cy="190" r="6" fill="#2563eb" style="--dx:-420px"/><circle class="cust" cx="544" cy="190" r="6" fill="#2563eb" style="--dx:-210px"/><circle class="cust" cx="558" cy="190" r="6" fill="#2563eb" style="--dx:-210px"/><circle class="cust" cx="530" cy="204" r="6" fill="#2563eb" style="--dx:210px"/><circle class="cust" cx="544" cy="204" r="6" fill="#2563eb" style="--dx:210px"/><circle class="cust" cx="558" cy="204" r="6" fill="#2563eb" style="--dx:420px"/><rect x="500" y="76" width="90" height="30" rx="15" fill="#fef2f2" stroke="var(--danger-color)" stroke-width="2.5"/><text x="545" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="var(--danger-color)">$11</text></g><circle cx="530" cy="190" r="6" fill="#2563eb" class="cust-home"/><circle cx="544" cy="190" r="6" fill="#2563eb" class="cust-home"/><circle cx="558" cy="190" r="6" fill="#2563eb" class="cust-home"/><circle cx="530" cy="204" r="6" fill="#2563eb" class="cust-home"/><circle cx="544" cy="204" r="6" fill="#2563eb" class="cust-home"/><circle cx="558" cy="204" r="6" fill="#2563eb" class="cust-home"/><g class="fragment rush" data-fragment-index="2"><circle class="cust2" cx="520" cy="186" r="6" fill="#2563eb" style="--dx:-405px"/><circle class="cust2" cx="535" cy="186" r="6" fill="#2563eb" style="--dx:-408px"/><circle class="cust2" cx="550" cy="186" r="6" fill="#2563eb" style="--dx:-411px"/><circle class="cust2" cx="565" cy="186" r="6" fill="#2563eb" style="--dx:-240px"/><circle class="cust2" cx="580" cy="186" r="6" fill="#2563eb" style="--dx:-243px"/><circle class="cust2" cx="595" cy="186" r="6" fill="#2563eb" style="--dx:-246px"/><circle class="cust2" cx="520" cy="200" r="6" fill="#2563eb" style="--dx:225px"/><circle class="cust2" cx="535" cy="200" r="6" fill="#2563eb" style="--dx:222px"/><circle class="cust2" cx="550" cy="200" r="6" fill="#2563eb" style="--dx:219px"/><circle class="cust2" cx="565" cy="200" r="6" fill="#2563eb" style="--dx:390px"/><circle class="cust2" cx="580" cy="200" r="6" fill="#2563eb" style="--dx:387px"/><circle class="cust2" cx="595" cy="200" r="6" fill="#2563eb" style="--dx:384px"/><rect x="500" y="76" width="90" height="30" rx="15" fill="#fff7ed" stroke="var(--accent-color)" stroke-width="2.5"/><text x="545" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="var(--accent-color)">$9</text><rect x="478" y="8" width="134" height="26" rx="13" fill="var(--danger-color)"/><text x="545" y="26" text-anchor="middle" font-size="14" font-weight="800" fill="#ffffff">griddle full</text></g><g class="fragment ten" data-fragment-index="3"><rect x="500" y="76" width="90" height="30" rx="15" fill="#ecfdf5" stroke="var(--success-color)" stroke-width="2.5"/><text x="545" y="97" text-anchor="middle" font-size="18" font-weight="800" fill="var(--success-color)">$10</text></g></svg></div>
+ <div style="display:grid; grid-template-columns:1fr 1.25fr 1fr; gap:12px; margin-top:4px; align-items:stretch;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#fef2f2; border-left:4px solid var(--danger-color); border-radius:8px; padding:8px 13px; display:flex; flex-direction:column; gap:4px;"><p style="font-size:11pt; color:var(--danger-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">$11: customers walk</p><p style="font-size:12pt; line-height:1.4; margin:0;">A dollar more, and every customer walks one door down to a $10 shop. Sam sells <strong>nothing</strong> and still pays the $50 griddle.</p><p style="font-size:13pt; margin:auto 0 0; font-weight:700;">Profit: <span style="color:var(--danger-color);">&minus;$50</span></p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:8px 13px; display:flex; flex-direction:column; gap:4px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">$9: a crowd he cannot serve</p><div style="display:grid; grid-template-columns:0.95fr 1.05fr; gap:8px; align-items:center;"><img alt="A griddle already covered with burger patties" src="figures/griddle_full.jpg" style="width:100%; max-height:92px; object-fit:cover; border-radius:6px;"><p style="font-size:11.5pt; line-height:1.35; margin:0;">Customers rush back, but his griddle is already full at his best quantity, and he could already sell all he wants at $10. A lower price wins no burgers he could make; it only cuts what each one earns.</p></div><p style="font-size:11pt; color:var(--muted-color); margin:0;">At $9 his best is 40 burgers: 360 &minus; 280.</p><p style="font-size:13pt; margin:auto 0 0; font-weight:700;">Profit: <span style="color:var(--accent-color);">$80</span></p></div>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 13px; display:flex; flex-direction:column; gap:4px;"><p style="font-size:11pt; color:var(--success-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">$10: take the price</p><p style="font-size:12pt; line-height:1.4; margin:0;">He sells all he chooses to make at the going price: 40 or 50 burgers.</p><p style="font-size:13pt; margin:auto 0 0; font-weight:700;">Profit: <span style="color:var(--success-color);">$120</span></p></div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="4" style="margin-top:8px; background:#f8f6f3; border:2px solid var(--primary-color); border-radius:10px; padding:8px 18px; text-align:center;"><p style="font-size:13.5pt; margin:0;">Profit for one day: <strong style="color:var(--danger-color);">&minus;$50</strong> at $11 &middot; <strong style="color:var(--accent-color);">$80</strong> at $9 &middot; <strong style="color:var(--success-color);">$120</strong> at $10. <strong>Our advice to Sam: charge the market price. The only thing you choose is how many.</strong></p></div>
+</section>
+
+<section id="pc-price-high" data-visibility="hidden">
+ <h2><i class="fa-solid fa-arrow-up" style="color: var(--danger-color);"></i> Charge Too High ($11) &rarr; Lose Everyone</h2>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
+  <img alt="A grid of burger shops at $10 with one outlier priced at $11, highlighted" src="figures/burger_p_11.webp" style="max-width:100%; max-height:440px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">Price your burger at <strong>$11</strong> while the block sits at $10, and customers just walk to the next shop. You sell <strong>almost nothing</strong>.</p>
+ </div>
+</section>
+
+<section id="pc-price-low" data-visibility="hidden">
+ <h2><i class="fa-solid fa-arrow-down" style="color: var(--accent-color);"></i> Charge Too Low ($9) &rarr; Give Up Revenue</h2>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
+  <img alt="A grid of burger shops at $10 with one outlier priced at $9, highlighted" src="figures/burger_p_9.webp" style="max-width:100%; max-height:440px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">Drop to <strong>$9</strong> and you&rsquo;ll sell &mdash; but you give up margin you did not need to lose. The market would have paid <strong>$10</strong>.</p>
+ </div>
+</section>
+
+<section id="pc-price-match" data-visibility="hidden">
+ <h2><i class="fa-solid fa-equals" style="color: var(--success-color);"></i> Match the Market ($10) &rarr; You Sell</h2>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
+  <img alt="A grid of burger shops all priced at $10, including yours" src="figures/burger_p_10.webp" style="max-width:100%; max-height:440px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">Price at <strong>$10</strong>, like everyone else, and you sell all you can make at the going rate. The only <strong>rational</strong> choice.</p>
+ </div>
+</section>
+
+<section id="pc-price-synthesis" data-visibility="hidden">
+ <h2><i class="fa-solid fa-hand-holding-dollar" style="color: var(--accent-color);"></i> Therefore: a Price-Taker</h2>
+ <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
+  <div style="background:#fef2f2; border-radius:10px; padding:12px 20px; border-left:4px solid var(--danger-color);"><p style="font-size:14.5pt;"><strong>Above the market ($11)</strong> &rarr; lose every customer to the 49 rivals.</p></div>
+  <div style="background:#fff7ed; border-radius:10px; padding:12px 20px; border-left:4px solid var(--accent-color);"><p style="font-size:14.5pt;"><strong>Below the market ($9)</strong> &rarr; sell, but give up margin for no reason.</p></div>
+  <div style="background:#ecfdf5; border-radius:10px; padding:12px 20px; border-left:4px solid var(--success-color);"><p style="font-size:14.5pt;"><strong>At the market ($10)</strong> &rarr; sell all you can make. The only sensible choice.</p></div>
+ </div>
+ <div style="background:#f8f6f3; border-radius:10px; padding:13px 22px; margin-top:14px; text-align:center; border:2px solid var(--primary-color);">
+  <p style="font-size:15pt;">Sam can&rsquo;t <em>set</em> the price &mdash; he can only <strong>take</strong> it. That&rsquo;s a <strong>price-taker</strong> (condition 4), and it&rsquo;s why his firm demand curve is <strong>flat</strong>.</p>
+ </div>
+</section>
+
+<section id="sam-test-price">
+ <h2><i class="fa-solid fa-tags" style="color: var(--danger-color);"></i> Test 4 of 5 &mdash; Who Sets the Price?</h2>
+ <div style="display:flex; gap:7px; justify-content:center; margin:2px 0 8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:var(--secondary-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Sellers</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--accent-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Product</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--success-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Entry</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--danger-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700; box-shadow:0 0 0 2px #1f2937;">4 Price</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">5 Profit</span></div>
+ <div style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:16px; align-items:center;">
+  <div style="text-align:center;"><img alt="Map listings for burger places near campus, each reporting about the same price per person" src="figures/burger_map_price.webp" style="width:100%; max-height:390px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);"></div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+   <div style="background:#fef2f2; border-left:4px solid var(--danger-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--danger-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">The evidence</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">Every shop near campus sits in the same price band. For a basic burger, the going price is about <strong>$10</strong>.</p></div>
+   <div style="background:#fef2f2; border-left:4px solid var(--danger-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--danger-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">Price taker</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">A firm that must accept the market price. It chooses its <strong>quantity</strong>; it cannot choose its <strong>price</strong>.</p></div>
+  </div>
+ </div>
+ <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Price-taker.</strong> The poll showed it: a higher price loses every customer, a lower one gives up revenue. Sam takes the going price.</p></div>
+</section>
+
+<section id="sam-test-profit">
+ <h2><i class="fa-solid fa-chart-line" style="color: #7C3A5F;"></i> Test 5 of 5 &mdash; Can Profit Last?</h2>
+ <div style="display:flex; gap:7px; justify-content:center; margin:2px 0 8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:var(--secondary-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Sellers</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--accent-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Product</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--success-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Entry</span><span style="display:inline-flex; align-items:center; gap:5px; background:var(--danger-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">&check; Price</span><span style="display:inline-flex; align-items:center; gap:5px; background:#7C3A5F; color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700; box-shadow:0 0 0 2px #1f2937;">5 Profit</span></div>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--success-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">A good year (economic profit &gt; 0)</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 4px;">New shops open &rarr; supply shifts right &rarr; the price falls.</p><div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 250 142" style="width:100%; max-height:200px; display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supply shifts right along a fixed demand curve, so the price falls"><g style="stroke:#57534e; stroke-width:1.4;"><line x1="34" y1="12" x2="34" y2="126"/><line x1="34" y1="126" x2="236" y2="126"/></g><line x1="40" y1="20" x2="220" y2="125" style="stroke:#2563eb; stroke-width:2.2;"/><line x1="40" y1="125" x2="220" y2="30" style="stroke:#78716c; stroke-width:2.2;"/><line x1="82" y1="125" x2="220" y2="52" style="stroke:var(--success-color); stroke-width:2.6;"/><line x1="34" y1="75" x2="134" y2="75" style="stroke:#78716c; stroke-width:1.2;" stroke-dasharray="4 3"/><line x1="34" y1="87" x2="154" y2="87" style="stroke:var(--success-color); stroke-width:1.4;" stroke-dasharray="4 3"/><text x="222" y="120" font-size="14" fill="#2563eb" text-anchor="end">D</text><text x="223" y="55" font-size="14" fill="var(--success-color)">S&#8322;</text><text x="223" y="33" font-size="14" fill="#78716c">S&#8321;</text><text x="30" y="73" font-size="13" fill="#57534e" text-anchor="end">P&#8321;</text><text x="30" y="99" font-size="13" fill="var(--success-color)" text-anchor="end">P&#8322;</text><text x="236" y="138" font-size="13" fill="#57534e" text-anchor="end">burgers</text><text x="37" y="18" font-size="13" fill="#57534e">price</text></svg></div></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#fef2f2; border-left:4px solid var(--danger-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--danger-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">A bad year (economic profit &lt; 0)</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 4px;">Shops close &rarr; supply shifts left &rarr; the price rises.</p><div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 250 142" style="width:100%; max-height:200px; display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supply shifts left along a fixed demand curve, so the price rises"><g style="stroke:#57534e; stroke-width:1.4;"><line x1="34" y1="12" x2="34" y2="126"/><line x1="34" y1="126" x2="236" y2="126"/></g><line x1="40" y1="20" x2="220" y2="125" style="stroke:#2563eb; stroke-width:2.2;"/><line x1="40" y1="125" x2="220" y2="30" style="stroke:#78716c; stroke-width:2.2;"/><line x1="40" y1="103" x2="178" y2="30" style="stroke:var(--danger-color); stroke-width:2.6;"/><line x1="34" y1="75" x2="134" y2="75" style="stroke:#78716c; stroke-width:1.2;" stroke-dasharray="4 3"/><line x1="34" y1="63" x2="115" y2="63" style="stroke:var(--danger-color); stroke-width:1.4;" stroke-dasharray="4 3"/><text x="222" y="120" font-size="14" fill="#2563eb" text-anchor="end">D</text><text x="181" y="33" font-size="14" fill="var(--danger-color)">S&#8322;</text><text x="223" y="33" font-size="14" fill="#78716c">S&#8321;</text><text x="30" y="87" font-size="13" fill="#57534e" text-anchor="end">P&#8321;</text><text x="30" y="61" font-size="13" fill="var(--danger-color)" text-anchor="end">P&#8322;</text><text x="236" y="138" font-size="13" fill="#57534e" text-anchor="end">burgers</text><text x="37" y="18" font-size="13" fill="#57534e">price</text></svg></div></div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:9px 16px; margin-top:10px; text-align:center;"><p style="font-size:13pt; margin:0;">Either way the price moves until economic profit is <strong>zero</strong> in the long run: shops earn exactly what their owners could earn elsewhere. Ch 10 builds this.</p></div>
+ <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Five for five.</strong> Sam&rsquo;s basic-cheeseburger market is <strong>perfectly competitive</strong>. Our advice: charge the market price. The only thing you choose is how many.</p></div>
+</section>
+</section>
+
+<section>
+<section id="flat-demand">
+ <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Firm&rsquo;s Demand Curve Is Flat</h2>
+ <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: center;">
+  <div style="text-align: center;">
+   <img alt="Two panels: downward-sloping market demand vs flat firm-level demand at the market price" src="figures/fig-market-vs-firm.png" style="max-width: 100%; max-height: 350px; object-fit: contain;">
+  </div>
+  <div>
+   <p style="font-size: 13.5pt;">Market demand <strong>slopes down.</strong> But the demand facing <em>one</em> firm is a <strong>horizontal line</strong> at the market price. How can both be true?</p>
+   <p style="font-size: 13pt; margin-top: 8px;">Because the firm is a tiny share. If Sam raises his price, he loses his customers to <strong>49 rivals</strong>. If he lowers it, he can sell everything he makes without moving the market.</p>
+   <div style="background: #eef2f0; border-radius: 10px; padding: 12px 18px; border-left: 4px solid var(--accent-color); margin-top: 10px;">
+    <p style="font-size: 14pt;"><strong>Marginal revenue (MR)</strong> = revenue from one more unit. For a price-taker, every unit sells at the same price, so&hellip;</p>
+    <p style="font-size: 17pt; font-weight: 700; color: var(--primary-color); text-align: center; margin-top: 6px;">P = MR</p>
+   </div>
+  </div>
+ </div>
+ <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 8px; text-align: center; font-style: italic;">The single most important equation in the chapter. Everything builds on it.</p>
+</section>
+
+<section id="fig-10-1-industry-firm">
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Industry Sets the Price; the Firm Takes It</h2>
+  <div class="iv-card" style="padding: 8px 18px 10px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+      <div>
+        <p style="text-align:center; font-weight:700; color:var(--primary-color); font-size:12.5pt; margin:0 0 2px;">Panel A &mdash; Industry (Market)</p>
+        <svg id="f101-panelA" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
+      </div>
+      <div>
+        <p style="text-align:center; font-weight:700; color:var(--primary-color); font-size:12.5pt; margin:0 0 2px;">Panel B &mdash; Firm (price-taker)</p>
+        <svg id="f101-panelB" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 4px;">
+      <div><label class="iv-label">Market demand shift <span class="iv-readout" id="f101-dRead">15.0</span></label><input type="range" class="iv-slider" id="f101-dShift" min="11" max="19" step="0.5" value="15"></div>
+      <div><label class="iv-label">Market supply shift <span class="iv-readout" id="f101-sRead">5.0</span></label><input type="range" class="iv-slider" id="f101-sShift" min="1" max="9" step="0.5" value="5"></div>
+    </div>
+    <p id="f101-caption" style="text-align:center; font-size:12.5pt; color:var(--secondary-color); margin:7px 0 0;"></p>
+    <div style="text-align:center; margin-top:5px;"><button id="f101-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:4px 16px; font-size:11pt; color:var(--secondary-color); font-weight:600; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button></div>
+  </div>
+</section>
+</section>
 
 <section id="three-decisions">
   <h2><i class="fa-solid fa-list-ol" style="color: var(--accent-color);"></i> What Sam Decides Each Day</h2>
@@ -305,169 +524,8 @@
   </div>
 </section>
 
-<section>
-<section id="conditions-1-2">
- <h2><i class="fa-solid fa-store" style="color: var(--accent-color);"></i> Conditions 1 &amp; 2 &mdash; Many Sellers, One Product</h2>
- <div style="display: grid; grid-template-columns: 1fr 0.8fr; gap: 22px; align-items: center;">
-  <div>
-   <div class="key-result" style="margin-top:0;"><p><strong>Many sellers:</strong> if one wheat farmer plants half an acre more, the global price doesn&rsquo;t budge. 50 burger joints clears this bar; two airlines on a route does not.</p></div>
-   <div class="key-result" style="background:#fef9f3; border-left-color: var(--accent-color);"><p><strong>Homogeneous:</strong> a bushel of Kansas wheat is a bushel of Kansas wheat. Grade-A Large eggs from Iowa = from Pennsylvania. Buyers don&rsquo;t care.</p></div>
-   <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 8px;">Once buyers start caring about brand, recipe, or &ldquo;vibe,&rdquo; we&rsquo;ve moved toward <strong>monopolistic competition</strong> (Ch 13).</p>
-  </div>
-  <div style="text-align: center;">
-   <img alt="Many small sellers in a crowded marketplace" src="figures/ch10-many-sellers.webp" style="max-width: 100%; max-height: 360px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.10);">
-  </div>
- </div>
-</section>
-
-<section id="pc-pizza-checks">
- <h2><i class="fa-solid fa-burger" style="color: var(--accent-color);"></i> The Basic Cheeseburger &mdash; Every Box Checked</h2>
- <div style="display:grid; grid-template-columns:0.95fr 1.05fr; gap:24px; align-items:center;">
-  <div style="text-align:center;">
-   <img alt="Sam’s basic cheeseburger" src="figures/samsburger.webp" style="width:100%; max-height:420px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-   <p style="font-size:11pt; color:var(--muted-color); margin-top:6px; font-style:italic;">Hold the extras &mdash; a basic cheeseburger is a near-commodity.</p>
-  </div>
-  <div>
-   <p style="font-size:13pt; color:var(--muted-color); margin:0 0 8px;">Run the four conditions on the <strong>basic cheeseburger</strong> market near campus:</p>
-   <div style="display:flex; flex-direction:column; gap:7px;">
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>1. Many buyers &amp; sellers</strong> &mdash; ~50 shops within 3 miles, thousands of late-night buyers. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>2. Homogeneous product</strong> &mdash; one basic cheeseburger ≈ any other. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>3. Free entry &amp; exit</strong> &mdash; rent a storefront, buy a griddle, open. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--success-color);"><p style="font-size:13pt;"><strong>4. Price-takers</strong> &mdash; everyone&rsquo;s at ~$10; charge more, lose the block; charge less, give up revenue. <span style="color:var(--success-color); font-weight:700;">&check;</span></p></div>
-   </div>
-   <div style="margin-top:10px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:9px 16px; text-align:center;"><p style="font-size:13.5pt;"><strong>All four boxes checked &rarr; perfect competition.</strong></p></div>
-  </div>
- </div>
- <p style="font-size:11.5pt; color:var(--muted-color); margin-top:8px; font-style:italic;">Caveat: this only holds for the <strong>basic cheeseburger</strong>. Signature builds, premium toppings, and brand/vibe differentiate &mdash; that&rsquo;s monopolistic competition (Ch 13).</p>
-</section>
-
-<section id="pc-pizza-map">
- <h2><i class="fa-solid fa-map-location-dot" style="color: var(--secondary-color);"></i> Many Sellers &mdash; Just Look at the Map</h2>
- <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
-  <img alt="Google map showing burger shops clustered around Northeastern" src="figures/burger_market.webp" style="width:100%; max-height:460px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">The same map from the top of the hour &mdash; <strong>condition 1 in one glance</strong>. No single burger shop has the market power to move the price.</p>
- </div>
-</section>
-
-<section id="pc-pizza-3mile">
- <h2><i class="fa-solid fa-location-crosshairs" style="color: var(--accent-color);"></i> Fifty Shops Within Three Miles</h2>
- <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
-  <img alt="A 3-mile-radius map around campus with ~50 burger shops marked" src="figures/burger_3_miles.webp" style="max-width:100%; max-height:455px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">About <strong>50 shops</strong> compete inside a 3-mile radius of campus &mdash; and we&rsquo;re studying just one product across all of them: the <strong>basic cheeseburger</strong>.</p>
- </div>
-</section>
-
-</section>
-
-<section>
-<section id="conditions-3-4">
- <h2><i class="fa-solid fa-door-open" style="color: var(--secondary-color);"></i> Conditions 3 &amp; 4 &mdash; Free Entry, Price-Takers</h2>
- <div style="display: grid; grid-template-columns: 0.8fr 1fr; gap: 22px; align-items: center;">
-  <div style="text-align: center;">
-   <img alt="A price-taking firm facing a fixed market price" src="figures/ch10-price-taker.png" style="max-width: 100%; max-height: 340px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.10);">
-  </div>
-  <div>
-   <div class="key-result" style="margin-top:0;"><p><strong>Free entry &amp; exit:</strong> a firm that spots profit can enter; a firm losing money can leave. This is what drives the <strong>long-run zero-profit result</strong> later in the chapter.</p></div>
-   <div style="background: #eef2f0; border-radius: 10px; padding: 12px 18px; border-left: 4px solid var(--danger-color); margin: 12px 0;">
-    <p style="font-size: 13.5pt;"><strong>Price taker:</strong> a firm that must accept the market price as given. It chooses its <em>quantity</em>; it cannot influence the <em>price</em>.</p>
-   </div>
-   <p style="font-size: 13pt;">Taking the price is the <strong>rational</strong> choice. Charge above market &rarr; lose every customer. Charge below &rarr; give up revenue for nothing.</p>
-  </div>
- </div>
-</section>
-
-<section id="pc-price-market">
- <h2><i class="fa-solid fa-tags" style="color: var(--secondary-color);"></i> The Going Price &mdash; Everyone Lands in the Same Band</h2>
- <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; min-height:0;">
-  <img alt="Google Maps listings for 7th Street Burger, Tasty Burger, Shake Shack, Five Guys and Wahlburgers, each reporting $10-20 per person" src="figures/burger_map_price.webp" style="width:100%; max-height:512px; object-fit:contain; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-  <p style="font-size:13.5pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">7th Street, Tasty Burger, Shake Shack, Five Guys, Wahlburgers &mdash; every one reports <strong>$10&ndash;20 per person</strong>. Nobody&rsquo;s an outlier. That&rsquo;s the band the market hands Sam.</p>
-  <p style="font-size:12pt; color:var(--muted-color); text-align:center; margin:0;">Narrow it from a whole meal to the <strong>basic burger</strong> and the going price is about <strong>$10</strong> &mdash; the number the next three slides deviate from. &darr;</p>
- </div>
-</section>
-
-<section id="pc-price-high">
- <h2><i class="fa-solid fa-arrow-up" style="color: var(--danger-color);"></i> Charge Too High ($11) &rarr; Lose Everyone</h2>
- <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
-  <img alt="A grid of burger shops at $10 with one outlier priced at $11, highlighted" src="figures/burger_p_11.webp" style="max-width:100%; max-height:440px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">Price your burger at <strong>$11</strong> while the block sits at $10, and customers just walk to the next shop. You sell <strong>almost nothing</strong>.</p>
- </div>
-</section>
-
-<section id="pc-price-low">
- <h2><i class="fa-solid fa-arrow-down" style="color: var(--accent-color);"></i> Charge Too Low ($9) &rarr; Give Up Revenue</h2>
- <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
-  <img alt="A grid of burger shops at $10 with one outlier priced at $9, highlighted" src="figures/burger_p_9.webp" style="max-width:100%; max-height:440px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">Drop to <strong>$9</strong> and you&rsquo;ll sell &mdash; but you give up margin you did not need to lose. The market would have paid <strong>$10</strong>.</p>
- </div>
-</section>
-
-<section id="pc-price-match">
- <h2><i class="fa-solid fa-equals" style="color: var(--success-color);"></i> Match the Market ($10) &rarr; You Sell</h2>
- <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; min-height:0;">
-  <img alt="A grid of burger shops all priced at $10, including yours" src="figures/burger_p_10.webp" style="max-width:100%; max-height:440px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-  <p style="font-size:14pt; color:var(--text-color); font-weight:600; text-align:center; margin:0;">Price at <strong>$10</strong>, like everyone else, and you sell all you can make at the going rate. The only <strong>rational</strong> choice.</p>
- </div>
-</section>
-
-<section id="pc-price-synthesis">
- <h2><i class="fa-solid fa-hand-holding-dollar" style="color: var(--accent-color);"></i> Therefore: a Price-Taker</h2>
- <div style="display:flex; flex-direction:column; gap:10px; margin-top:8px;">
-  <div style="background:#fef2f2; border-radius:10px; padding:12px 20px; border-left:4px solid var(--danger-color);"><p style="font-size:14.5pt;"><strong>Above the market ($11)</strong> &rarr; lose every customer to the 49 rivals.</p></div>
-  <div style="background:#fff7ed; border-radius:10px; padding:12px 20px; border-left:4px solid var(--accent-color);"><p style="font-size:14.5pt;"><strong>Below the market ($9)</strong> &rarr; sell, but give up margin for no reason.</p></div>
-  <div style="background:#ecfdf5; border-radius:10px; padding:12px 20px; border-left:4px solid var(--success-color);"><p style="font-size:14.5pt;"><strong>At the market ($10)</strong> &rarr; sell all you can make. The only sensible choice.</p></div>
- </div>
- <div style="background:#f8f6f3; border-radius:10px; padding:13px 22px; margin-top:14px; text-align:center; border:2px solid var(--primary-color);">
-  <p style="font-size:15pt;">Sam can&rsquo;t <em>set</em> the price &mdash; he can only <strong>take</strong> it. That&rsquo;s a <strong>price-taker</strong> (condition 4), and it&rsquo;s why his firm demand curve is <strong>flat</strong>.</p>
- </div>
-</section>
-
-</section>
-
-
-<section>
-<section id="flat-demand">
- <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Firm&rsquo;s Demand Curve Is Flat</h2>
- <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: center;">
-  <div style="text-align: center;">
-   <img alt="Two panels: downward-sloping market demand vs flat firm-level demand at the market price" src="figures/fig-market-vs-firm.png" style="max-width: 100%; max-height: 350px; object-fit: contain;">
-  </div>
-  <div>
-   <p style="font-size: 13.5pt;">Market demand <strong>slopes down.</strong> But the demand facing <em>one</em> firm is a <strong>horizontal line</strong> at the market price. How can both be true?</p>
-   <p style="font-size: 13pt; margin-top: 8px;">Because the firm is a tiny share. If Sam raises his price, he loses <strong>all</strong> 49 rivals&rsquo; worth of customers. If he lowers it, he can sell everything he makes without moving the market.</p>
-   <div style="background: #eef2f0; border-radius: 10px; padding: 12px 18px; border-left: 4px solid var(--accent-color); margin-top: 10px;">
-    <p style="font-size: 14pt;"><strong>Marginal revenue (MR)</strong> = revenue from one more unit. For a price-taker, every unit sells at the same price, so&hellip;</p>
-    <p style="font-size: 17pt; font-weight: 700; color: var(--primary-color); text-align: center; margin-top: 6px;">P = MR</p>
-   </div>
-  </div>
- </div>
- <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 8px; text-align: center; font-style: italic;">The single most important equation in the chapter. Everything builds on it.</p>
-</section>
-
-<section id="fig-10-1-industry-firm">
-  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> Figure 10.1 &mdash; The Industry Sets the Price; the Firm Takes It</h2>
-  <div class="iv-card" style="padding: 8px 18px 10px;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
-      <div>
-        <p style="text-align:center; font-weight:700; color:var(--primary-color); font-size:12.5pt; margin:0 0 2px;">Panel A &mdash; Industry (Market)</p>
-        <svg id="f101-panelA" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
-      </div>
-      <div>
-        <p style="text-align:center; font-weight:700; color:var(--primary-color); font-size:12.5pt; margin:0 0 2px;">Panel B &mdash; Firm (price-taker)</p>
-        <svg id="f101-panelB" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 4px;">
-      <div><label class="iv-label">Market demand shift <span class="iv-readout" id="f101-dRead">15.0</span></label><input type="range" class="iv-slider" id="f101-dShift" min="11" max="19" step="0.5" value="15"></div>
-      <div><label class="iv-label">Market supply shift <span class="iv-readout" id="f101-sRead">5.0</span></label><input type="range" class="iv-slider" id="f101-sShift" min="1" max="9" step="0.5" value="5"></div>
-    </div>
-    <p id="f101-caption" style="text-align:center; font-size:12.5pt; color:var(--secondary-color); margin:7px 0 0;"></p>
-    <div style="text-align:center; margin-top:5px;"><button id="f101-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:4px 16px; font-size:11pt; color:var(--secondary-color); font-weight:600; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button></div>
-  </div>
-</section>
-</section>
-
 <section class="section-divider" data-state="is-section-divider" id="divider-decision">
- <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Section 3 &middot; LO 10.3 &amp; 10.4</p>
+ <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Section 3 &middot; &sect;9.3</p>
  <h1 style="font-size: 38pt; color: var(--primary-color); margin-bottom: 16px;">The Competitive Firm&rsquo;s Decision</h1>
  <p style="font-size: 18pt; color: var(--muted-color); font-style: italic;">Sam can&rsquo;t choose his price &mdash; only his quantity</p>
 </section>
@@ -490,23 +548,24 @@
 </section>
 
 <section id="alex-io-1">
- <h2><i class="fa-solid fa-burger" style="color: var(--accent-color);"></i> More Cooks, More Profit? &mdash; Start With One</h2>
- <div style="display:grid; grid-template-columns:1fr 56px 1fr; align-items:stretch; gap:10px; margin-top:6px;">
-  <p style="text-align:center; font-size:15pt; font-weight:700; margin:0;">Input</p><div></div><p class="fragment" data-fragment-index="1" style="text-align:center; font-size:15pt; font-weight:700; margin:0;">Output</p>
-  <div style="border:2px solid #2D2D2D; border-radius:8px; padding:8px 12px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:6px;">
-   <div style="text-align:center;"><p style="font-size:10.5pt; margin:0;">Capital Costs</p><p style="font-size:12.5pt; font-weight:700; margin:0;">$50 / Day</p><img src="figures/griddle.png" style="height:74px; object-fit:contain;"><p style="font-size:14pt; font-weight:700; margin:0;">&times; 1</p></div>
-   <div style="font-size:20pt; font-weight:700;">+</div>
-   <div style="text-align:center;"><p style="font-size:10.5pt; margin:0;">Labor Costs</p><p style="font-size:12.5pt; font-weight:700; margin:0;">$40 / Day</p><img src="figures/burger_maker.png" style="height:74px; object-fit:contain;"><p style="font-size:14pt; font-weight:700; margin:0;">&times; 1</p></div>
+ <style>#alex-io-1 .rush-tight th, #alex-io-1 .rush-tight td{padding:2px 8px !important; font-size:11pt !important; line-height:1.25 !important;} #alex-io-1 [style*="grid-area:1/1"]{padding:7px 14px !important;} #alex-io-1 [style*="grid-area:1/1"] p{font-size:12pt !important; margin-top:3px !important;}</style>
+ <h2><i class="fa-solid fa-burger" style="color: var(--accent-color);"></i> Rush Hour at Sam&rsquo;s &mdash; Add Workers from 3 pm to 8 pm</h2>
+ <div style="display:grid; grid-template-columns:1.12fr 0.88fr; gap:16px; align-items:center;">
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 580 400" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan of Sam&rsquo;s kitchen with one fixed griddle; from 3 pm to 8 pm staff are added one at a time: a cook, a cashier, a prep cook, a second and third cook at the same griddle, and a dishwasher"><rect x="10" y="10" width="560" height="380" rx="10" fill="#fafaf9" stroke="#a8a29e" stroke-width="2"/><rect x="110" y="30" width="200" height="56" rx="6" fill="#57534e"/><text x="210" y="64" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">1 griddle (fixed)</text><rect x="420" y="70" width="110" height="46" rx="6" fill="#d6d3d1"/><text x="475" y="98" text-anchor="middle" font-size="13" fill="#44403c">prep table</text><rect x="420" y="330" width="110" height="40" rx="6" fill="#d6d3d1"/><text x="475" y="355" text-anchor="middle" font-size="13" fill="#44403c">register</text><rect x="30" y="330" width="100" height="40" rx="6" fill="#d6d3d1"/><text x="80" y="355" text-anchor="middle" font-size="13" fill="#44403c">sink</text><g class="fragment fade-in" data-fragment-index="1"><circle cx="150" cy="102" r="12" fill="#C72A2A"/><rect x="137" y="115" width="26" height="34" rx="9" fill="#C72A2A"/><text x="150" y="166" text-anchor="middle" font-size="13" font-weight="700" fill="#C72A2A">cook</text></g><g class="fragment fade-in" data-fragment-index="2"><circle cx="475" cy="250" r="12" fill="#2563eb"/><rect x="462" y="263" width="26" height="34" rx="9" fill="#2563eb"/><text x="475" y="314" text-anchor="middle" font-size="13" font-weight="700" fill="#2563eb">cashier</text></g><g class="fragment fade-in" data-fragment-index="3"><circle cx="470" cy="132" r="12" fill="#16a34a"/><rect x="457" y="145" width="26" height="34" rx="9" fill="#16a34a"/><text x="470" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a">prep</text></g><g class="fragment fade-in" data-fragment-index="4"><circle cx="205" cy="107" r="12" fill="#C72A2A"/><rect x="192" y="120" width="26" height="34" rx="9" fill="#C72A2A"/><text x="205" y="171" text-anchor="middle" font-size="13" font-weight="700" fill="#C72A2A">cook 2</text></g><g class="fragment fade-in" data-fragment-index="5"><circle cx="178" cy="282" r="12" fill="#7C3A5F"/><rect x="165" y="295" width="26" height="34" rx="9" fill="#7C3A5F"/><text x="178" y="346" text-anchor="middle" font-size="13" font-weight="700" fill="#7C3A5F">dish</text></g><g class="fragment fade-in" data-fragment-index="6"><circle cx="260" cy="112" r="12" fill="#C72A2A"/><rect x="247" y="125" width="26" height="34" rx="9" fill="#C72A2A"/><text x="260" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#C72A2A">cook 3</text></g><g class="fragment current-visible" data-fragment-index="1"><rect x="215" y="318" width="150" height="56" rx="10" fill="#1f2937"/><text x="290" y="356" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">3 pm</text></g><g class="fragment current-visible" data-fragment-index="2"><rect x="215" y="318" width="150" height="56" rx="10" fill="#1f2937"/><text x="290" y="356" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">4 pm</text></g><g class="fragment current-visible" data-fragment-index="3"><rect x="215" y="318" width="150" height="56" rx="10" fill="#1f2937"/><text x="290" y="356" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">5 pm</text></g><g class="fragment current-visible" data-fragment-index="4"><rect x="215" y="318" width="150" height="56" rx="10" fill="#1f2937"/><text x="290" y="356" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">6 pm</text></g><g class="fragment current-visible" data-fragment-index="5"><rect x="215" y="318" width="150" height="56" rx="10" fill="#1f2937"/><text x="290" y="356" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">7 pm</text></g><g class="fragment" data-fragment-index="6"><rect x="215" y="318" width="150" height="56" rx="10" fill="#1f2937"/><text x="290" y="356" text-anchor="middle" font-size="30" font-weight="800" fill="#ffffff">8 pm</text></g><g class="fragment" data-fragment-index="6"><text x="290" y="200" text-anchor="middle" font-size="15" font-style="italic" fill="#b91c1c">crowded at the griddle</text></g></svg></div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+   <div style="display:grid;">
+   <div class="fragment fade-out" data-fragment-index="1" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:13pt; margin:0;">One griddle, $50 a day. Price $10. Each hire lets the line turn out <strong>10 more burgers</strong>. Watch the labor bill.</p></div>
+   <div class="fragment current-visible" data-fragment-index="1" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">1 worker &middot; 10 burgers</p><p style="font-size:13pt; margin:6px 0 0;">This hire adds <strong>$40</strong> of labor for 10 more burgers</p><p style="font-size:13pt; margin:4px 0 0;">Labor $40 + griddle $50 = <strong>TC $90</strong></p><p style="font-size:13pt; margin:4px 0 0;">TR = $10 &times; 10 = <strong>$100</strong></p><p style="font-size:16pt; font-weight:800; margin:6px 0 0; color:var(--success-color);">Profit $10</p></div>
+   <div class="fragment current-visible" data-fragment-index="2" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">2 workers &middot; 20 burgers</p><p style="font-size:13pt; margin:6px 0 0;">This hire adds <strong>$50</strong> of labor for 10 more burgers</p><p style="font-size:13pt; margin:4px 0 0;">Labor $90 + griddle $50 = <strong>TC $140</strong></p><p style="font-size:13pt; margin:4px 0 0;">TR = $10 &times; 20 = <strong>$200</strong></p><p style="font-size:16pt; font-weight:800; margin:6px 0 0; color:var(--success-color);">Profit $60</p></div>
+   <div class="fragment current-visible" data-fragment-index="3" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">3 workers &middot; 30 burgers</p><p style="font-size:13pt; margin:6px 0 0;">This hire adds <strong>$60</strong> of labor for 10 more burgers</p><p style="font-size:13pt; margin:4px 0 0;">Labor $150 + griddle $50 = <strong>TC $200</strong></p><p style="font-size:13pt; margin:4px 0 0;">TR = $10 &times; 30 = <strong>$300</strong></p><p style="font-size:16pt; font-weight:800; margin:6px 0 0; color:var(--success-color);">Profit $100</p></div>
+   <div class="fragment current-visible" data-fragment-index="4" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">4 workers &middot; 40 burgers</p><p style="font-size:13pt; margin:6px 0 0;">This hire adds <strong>$80</strong> of labor for 10 more burgers</p><p style="font-size:13pt; margin:4px 0 0;">Labor $230 + griddle $50 = <strong>TC $280</strong></p><p style="font-size:13pt; margin:4px 0 0;">TR = $10 &times; 40 = <strong>$400</strong></p><p style="font-size:16pt; font-weight:800; margin:6px 0 0; color:var(--success-color);">Profit $120</p></div>
+   <div class="fragment current-visible" data-fragment-index="5" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">5 workers &middot; 50 burgers</p><p style="font-size:13pt; margin:6px 0 0;">This hire adds <strong>$100</strong> of labor for 10 more burgers</p><p style="font-size:13pt; margin:4px 0 0;">Labor $330 + griddle $50 = <strong>TC $380</strong></p><p style="font-size:13pt; margin:4px 0 0;">TR = $10 &times; 50 = <strong>$500</strong></p><p style="font-size:16pt; font-weight:800; margin:6px 0 0; color:var(--success-color);">Profit $120</p></div>
+   <div class="fragment" data-fragment-index="6" style="grid-area:1/1; background:#f8f6f3; border-radius:10px; padding:10px 16px;"><p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">6 workers &middot; 60 burgers</p><p style="font-size:13pt; margin:6px 0 0;">This hire adds <strong>$120</strong> of labor for 10 more burgers</p><p style="font-size:13pt; margin:4px 0 0;">Labor $450 + griddle $50 = <strong>TC $500</strong></p><p style="font-size:13pt; margin:4px 0 0;">TR = $10 &times; 60 = <strong>$600</strong></p><p style="font-size:16pt; font-weight:800; margin:6px 0 0; color:var(--success-color);">Profit $100</p><p style="font-size:12pt; color:var(--danger-color); font-weight:700; margin:4px 0 0;">Profit falls: the sixth hire costs $120 for $100 of burgers.</p></div>
   </div>
-  <div class="fragment" data-fragment-index="1" style="display:flex; align-items:center; justify-content:center; height:100%; font-size:28pt; font-weight:700;">=</div>
-  <div class="fragment" data-fragment-index="1" style="border:2px solid #2D2D2D; border-radius:8px; padding:8px 12px; text-align:center; display:flex; flex-direction:column; justify-content:center;"><p style="font-size:10.5pt; margin:0;">Price</p><p style="font-size:12.5pt; font-weight:700; margin:0 0 4px;">$10</p><div style="display:flex; justify-content:center; gap:5px;"><img src="figures/burger.png" style="height:34px;"></div><p style="font-size:15pt; font-weight:700; margin:2px 0 0;">&times; 10</p></div>
-  <div class="fragment" data-fragment-index="2" style="text-align:center; color:#dc2626; font-size:20pt; line-height:1; margin-top:4px;"><i class="fa-solid fa-circle-chevron-down"></i></div><div></div><div class="fragment" data-fragment-index="2" style="text-align:center; color:#dc2626; font-size:20pt; line-height:1; margin-top:4px;"><i class="fa-solid fa-circle-chevron-down"></i></div>
-  <div class="fragment" data-fragment-index="2" style="border:2px solid #2D2D2D; border-radius:8px; padding:9px 12px; text-align:center;"><p style="font-size:14pt; font-weight:700; margin:0;">Total Costs = $40 + $50 = $90</p></div>
-  <div class="fragment" data-fragment-index="2" style="display:flex; align-items:center; justify-content:center;"><span style="background:#1a1a1a; color:#fff; font-size:11pt; font-weight:700; border-radius:50%; width:34px; height:34px; display:inline-flex; align-items:center; justify-content:center;">VS</span></div>
-  <div class="fragment" data-fragment-index="2" style="border:2px solid #2D2D2D; border-radius:8px; padding:9px 12px; text-align:center;"><p style="font-size:14pt; font-weight:700; margin:0;">Total Revenue = P&times;Q = $10&times;10 = $100</p></div>
+   <div class="fragment fade-up" data-fragment-index="6"><p style="font-size:10.5pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0 0 3px;">Sam&rsquo;s day at a glance &middot; P = MR = $10</p><table class="table-standard rush-tight" style="font-size:11pt; width:100%; margin:0;"><thead><tr><th>Workers</th><th>Q</th><th>Labor (VC)</th><th>TC</th><th>MC</th><th>Profit</th></tr></thead><tbody><tr><td>1</td><td>10</td><td>$40</td><td>$90</td><td>$4</td><td>$10</td></tr><tr><td>2</td><td>20</td><td>$90</td><td>$140</td><td>$5</td><td>$60</td></tr><tr><td>3</td><td>30</td><td>$150</td><td>$200</td><td>$6</td><td>$100</td></tr><tr style="background:rgba(106,142,107,0.18); font-weight:700;"><td>4</td><td>40</td><td>$230</td><td>$280</td><td>$8</td><td>$120</td></tr><tr style="background:rgba(106,142,107,0.18); font-weight:700;"><td>5</td><td>50</td><td>$330</td><td>$380</td><td>$10</td><td>$120</td></tr><tr><td>6</td><td>60</td><td>$450</td><td>$500</td><td>$12</td><td>$100</td></tr></tbody></table></div>
+   </div>
  </div>
- <p class="fragment" data-fragment-index="3" style="text-align:center; font-size:18pt; font-weight:700; margin-top:14px;">Profit = Total Revenue &minus; Total Cost = $100 &minus; $90 = $10</p>
- <p class="fragment" data-fragment-index="4" style="text-align:center; font-size:12.5pt; color:var(--muted-color); margin-top:8px;">Now do that for two cooks, three, four&hellip; the full run is tabulated two slides on.</p>
+ <p class="fragment fade-up" data-fragment-index="7" style="text-align:center; font-size:13pt; margin-top:8px;">With the griddle fixed, each extra 10 burgers takes more labor as the kitchen crowds: <strong>$40, 50, 60, 80, 100, 120</strong>. That is marginal cost rising. Profit peaks at 4&ndash;5 workers (<strong>$120</strong>).</p>
 </section>
 
 <section id="alex-io-marginal">
@@ -533,13 +592,13 @@
  <p class="fragment" data-fragment-index="2" style="text-align:center; font-size:14pt; font-weight:700; margin-top:10px;">When <strong>MC = MR</strong>, the extra batch exactly breaks even &mdash; that&rsquo;s the profit-maximizing quantity.</p>
 </section>
 
-<section id="alex-table">
+<section id="alex-table" data-visibility="hidden">
  <h2><i class="fa-solid fa-table" style="color: var(--secondary-color);"></i> Sam&rsquo;s Burger Shop at a $10 Price</h2>
  <p style="font-size: 12.5pt; color: var(--muted-color); margin: 2px 0 6px;">FC = $50/day (rent, griddle, POS). Labor is variable. Each worker makes 10 burgers/hr.</p>
  <table class="table-standard" style="font-size: 13pt;">
   <thead><tr><th>Q</th><th>FC</th><th>VC</th><th>TC</th><th>MC</th><th>P</th><th>TR</th><th>MR</th><th>Profit</th></tr></thead>
   <tbody>
-   <tr><td>10</td><td>$50</td><td>$40</td><td>$90</td><td>$9</td><td>$10</td><td>$100</td><td>$10</td><td>$10</td></tr>
+   <tr><td>10</td><td>$50</td><td>$40</td><td>$90</td><td>$4</td><td>$10</td><td>$100</td><td>$10</td><td>$10</td></tr>
    <tr><td>20</td><td>$50</td><td>$90</td><td>$140</td><td>$5</td><td>$10</td><td>$200</td><td>$10</td><td>$60</td></tr>
    <tr><td>30</td><td>$50</td><td>$150</td><td>$200</td><td>$6</td><td>$10</td><td>$300</td><td>$10</td><td>$100</td></tr>
    <tr><td>40</td><td>$50</td><td>$230</td><td>$280</td><td>$8</td><td>$10</td><td>$400</td><td>$10</td><td>$120</td></tr>
@@ -569,7 +628,7 @@
 </section>
 
 <section id="fig-10-2-mr-mc">
-  <h2><i class="fa-solid fa-crosshairs" style="color: var(--accent-color);"></i> Figure 10.2 &mdash; The MR = MC Rule (Marginal Batch)</h2>
+  <h2><i class="fa-solid fa-crosshairs" style="color: var(--accent-color);"></i> The MR = MC Rule (Marginal Batch)</h2>
   <div class="iv-card" style="padding: 8px 18px 10px;">
     <div id="f102-readout" style="text-align:center; font-size:12.5pt; font-weight:700; margin:0 0 4px; display:flex; flex-wrap:wrap; justify-content:center; gap:3px 16px; min-height:20px;"></div>
     <svg id="f102-svg" viewBox="0 0 700 360" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:344px; display:block;"></svg>
@@ -728,7 +787,7 @@
     <tr>
       <th>Workers \(L\)</th><th>Burgers \(q\)</th><th>Variable cost</th><th>Total cost</th><th>\(MC = \Delta TC/\Delta q\)</th><th>Revenue \(pq\)</th><th>Profit</th>
     </tr>
-    <tr><td>1</td><td>10</td><td>\$40</td><td>\$90</td><td>&mdash;</td><td>\$100</td><td>\$10</td></tr>
+    <tr><td>1</td><td>10</td><td>\$40</td><td>\$90</td><td>\$4</td><td>\$100</td><td>\$10</td></tr>
     <tr><td>2</td><td>20</td><td>\$90</td><td>\$140</td><td>\$5</td><td>\$200</td><td>\$60</td></tr>
     <tr><td>3</td><td>30</td><td>\$150</td><td>\$200</td><td>\$6</td><td>\$300</td><td>\$100</td></tr>
     <tr><td>4</td><td>40</td><td>\$230</td><td>\$280</td><td>\$8</td><td>\$400</td><td>\$120</td></tr>
@@ -736,7 +795,7 @@
     <tr><td>6</td><td>60</td><td>\$450</td><td>\$500</td><td>\$12 \(> p\)</td><td>\$600</td><td>\$100</td></tr>
   </table>
   <div class="key-result" style="margin-top: 10px; padding: 9px 16px;">
-    <p style="margin: 0; font-size: 12.5pt;">\(MC\) rises monotonically (diminishing returns to labor &rarr; SOC holds). At \(p = \$10\), marginal cost crosses price at \(L = 5\); a sixth worker pushes \(MC\) to \(\$12 > p\). <strong>Profit-max: 50 burgers, 5 workers, \$120/day.</strong></p>
+    <p style="margin: 0; font-size: 12.5pt;">\(MC\) rises monotonically (each extra batch costs more labor as the kitchen crowds &rarr; \(MC\) rises &rarr; SOC holds). At \(p = \$10\), marginal cost crosses price at \(L = 5\); a sixth worker pushes \(MC\) to \(\$12 > p\). <strong>Profit-max: 50 burgers, 5 workers, \$120/day.</strong></p>
   </div>
 </section>
 
@@ -817,14 +876,14 @@
 </section>
 
 <section id="app-tesla-semi">
-  <h2><i class="fa-solid fa-truck" style="color: var(--secondary-color);"></i> Application &mdash; Tesla Semi Gigafactory Expansion, 2026</h2>
+  <h2><i class="fa-solid fa-truck" style="color: var(--secondary-color);"></i> Application &mdash; Tesla Semi, Nevada</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: center;">
     <div>
       <p style="font-size: 13pt; line-height: 1.55;">
-        Our theoretical optimum \(q^* = 50.9\) GWh is about <strong>60% above</strong> the Ch 7 baseline plant of 32 GWh. In early 2026 Tesla announced a Semi-truck capacity expansion at Nevada Gigafactory.
+        Our theoretical optimum \(q^* = 50.9\) GWh is about <strong>60% above</strong> the Ch 7 baseline plant of 32 GWh. In January 2023 Tesla announced a Nevada expansion that includes its first high-volume Semi factory.
       </p>
       <div class="key-result" style="margin-top: 10px;">
-        <p style="margin: 0; font-size: 12.5pt;">50,000 trucks/yr \(\times\) ~1 MWh per battery \(\approx\) <strong>50 GWh</strong> of incremental production &mdash; within rounding error of \(q^*\).</p>
+        <p style="margin: 0; font-size: 12.5pt;">Tesla&rsquo;s Nevada expansion plans 50,000 Semis a year: \(\times\) ~1 MWh \(\approx\) <strong>50 GWh</strong> a year &mdash; the same scale as our whole plant&rsquo;s \(q^* = 50.9\) GWh. Same order of magnitude; <strong>not a test of the model</strong>.</p>
       </div>
       <p style="font-size: 11.5pt; color: var(--muted-color); font-style: italic; margin-top: 10px;">
         Caveat: a forward-looking expansion isn't a pure static profit-max response &mdash; it bakes in expected future demand and the choice of installed capital \(\bar K\) for the <em>next</em> short run.
@@ -832,9 +891,9 @@
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
       <div class="stat-card sage"><p class="num">50.9</p><p class="lbl">Theoretical \(q^*\) (GWh/yr) at \(p=\$84\)</p></div>
-      <div class="stat-card accent"><p class="num">50K</p><p class="lbl">Semi trucks/yr target (Tesla, 2026)</p></div>
-      <div class="stat-card"><p class="num">~50</p><p class="lbl">GWh incremental (\(\times\)1 MWh/truck)</p></div>
-      <div class="stat-card rose"><p class="num">\$3.5B</p><p class="lbl">Announced capex line</p></div>
+      <div class="stat-card accent"><p class="num">50K</p><p class="lbl">Semi trucks/yr, Nevada design capacity</p></div>
+      <div class="stat-card"><p class="num">~50</p><p class="lbl">GWh a year (\(\times\)1 MWh/truck)</p></div>
+      <div class="stat-card rose"><p class="num">\$3.6B</p><p class="lbl">Nevada expansion, announced Jan 2023</p></div>
     </div>
   </div>
 </section>
@@ -1096,7 +1155,7 @@
         <p style="margin: 0; font-size: 12.5pt;"><strong>Walgreens (Oct 2024):</strong> closes ~1,200 stores <strong>over three years</strong>, keeps ~7,500 open. The <em>timing</em> shows it &mdash; a store below AVC closes this quarter, not in 2027. So the 1,200 sit in \(AVC < P < ATC\): worth running while the lease is sunk, not worth renewing &rarr; <strong>LR exit</strong>. The 7,500 are the \(P > ATC\) keepers.</p>
       </div>
       <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 9px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>Spirit Airlines (Nov 2024):</strong> Chapter 11 at the firm level, but SR shutdown played out <em>route by route</em> &mdash; with jet fuel \(+95\%\) to \$4.88/gal, ticket revenue fell below per-flight AVC on 14 cancelled airports.</p>
+        <p style="margin: 0; font-size: 12.5pt;"><strong>Spirit Airlines (Nov 2024):</strong> Chapter 11 at the firm level, but SR shutdown played out <em>route by route</em>: it cancelled flights where ticket revenue fell below per-flight AVC (14 airports dropped).</p>
       </div>
       <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 9px 14px;">
         <p style="margin: 0; font-size: 12.5pt;"><strong>Northvolt (Nov 2024):</strong> textbook LR exit. Production cost \(\sim\$130\)/kWh against a \$84/kWh China-frontier price: \(p < ATC\) sustained <em>even at full capacity</em>. Operations weren't value-creating at any output.</p>
@@ -1178,10 +1237,10 @@
       <table class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; margin: 6px 0 0;">
         <tr><th>\(p\) (B\$/GWh)</th><th>\(q_s^*\) (GWh)</th></tr>
         <tr><td>0.060</td><td>3.10</td></tr>
-        <tr><td>0.070</td><td>18.37</td></tr>
+        <tr><td>0.070</td><td>18.39</td></tr>
         <tr><td>0.080</td><td>40.55</td></tr>
-        <tr style="background: rgba(106,142,107,0.18);"><td><strong>0.084</strong></td><td><strong>50.93</strong> &#10003; (= W9.1)</td></tr>
-        <tr><td>0.090</td><td>67.92</td></tr>
+        <tr style="background: rgba(106,142,107,0.18);"><td><strong>0.084</strong></td><td><strong>50.93</strong> &#10003; (= the gigafactory slide)</td></tr>
+        <tr><td>0.090</td><td>67.89</td></tr>
       </table>
     </div>
     <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
@@ -1383,6 +1442,7 @@
  .reset-btn{display:none}body.instructor-mode .reset-btn{display:inline-block}
 </style>
 <script src="../poll.js" data-checkin></script>
+<script src="figures/wordcloud.js" data-k="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI"></script>
 <script>
  (function(){
   var SU="https://dpntbrsorgbivmntwmod.supabase.co",SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI";
@@ -1834,7 +1894,7 @@
 </script>
 <script>
 (function () {
-  // public controls, cut from the presenter gate (v28) by strip_notes.py:
+  // public controls, cut from the presenter gate (v29) by strip_notes.py:
   // what a student's copy of the deck always had (pen, full screen, home link). No speaker view in this build.
   var current = false;
   // ---- annotation: temporary marks on the slide -------------------------

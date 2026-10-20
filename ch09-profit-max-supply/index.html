@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6fb677498cb66cb3802fe2c79e6b032c">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=339664d24c6ae0c12aba45ec44215899">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -249,18 +249,20 @@
  <div style="background:#eff6ff; border-left:4px solid var(--secondary-color); border-radius:8px; padding:6px 14px; margin:0 0 4px;"><p style="font-size:12pt; margin:0;"><strong>Sam asks us, his consultants:</strong> &ldquo;What price should I charge for a basic cheeseburger?&rdquo; We test his market against the five characteristics, one at a time.</p></div>
  <div style="display:flex; gap:7px; justify-content:center; margin:2px 0 8px;"><span style="display:inline-flex; align-items:center; gap:5px; background:var(--secondary-color); color:#ffffff; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700; box-shadow:0 0 0 2px #1f2937;">1 Sellers</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">2 Product</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">3 Entry</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">4 Price</span><span style="display:inline-flex; align-items:center; gap:5px; background:#e7e5e4; color:#78716c; border-radius:14px; padding:2px 11px; font-size:10.5pt; font-weight:700;">5 Profit</span></div>
  <div style="display:grid; grid-template-columns:580px 1fr; gap:22px; align-items:center;">
-  <div id="burger-map" style="position:relative; border-radius:8px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.16); line-height:0;">
+  <div id="burger-map" class="fragment fade-up" data-fragment-index="1" style="position:relative; border-radius:8px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.16); line-height:0;">
    <img alt="Map of Boston around Northeastern University with many burger restaurants marked, and Sam&rsquo;s Burger Shop drawn in" src="figures/burger_market.webp" style="width:100%; display:block;">
    <div style="position:absolute; left:60%; top:60%; transform:translate(-50%,-100%); display:flex; flex-direction:column; align-items:center; gap:2px; pointer-events:none; line-height:1.25;"><span style="background:var(--accent-color); color:#ffffff; font-size:14pt; font-weight:800; border-radius:6px; padding:4px 12px; white-space:nowrap; border:2px solid #ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.45);">Sam&rsquo;s Burger Shop</span><svg viewBox="0 0 24 30" style="width:34px; height:42px; display:block;" xmlns="http://www.w3.org/2000/svg"><path d="M12 29 C12 29 2 17 2 10 a10 10 0 0 1 20 0 c0 7 -10 19 -10 19z" fill="var(--accent-color)" stroke="#ffffff" stroke-width="2"/><circle cx="12" cy="10" r="4" fill="#ffffff"/></svg></div>
   </div>
-  <div style="display:flex; flex-direction:column; gap:10px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="display:flex; flex-direction:column; gap:10px;">
    <p style="font-size:11pt; color:var(--secondary-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">The evidence</p>
    <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:22pt; font-weight:800; color:var(--secondary-color); line-height:1.1; margin:0;">Dozens</p><p style="font-size:12.5pt; line-height:1.35; margin:2px 0 0;">burger places within a mile of campus</p></div>
    <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:22pt; font-weight:800; color:var(--secondary-color); line-height:1.1; margin:0;">About 50</p><p style="font-size:12.5pt; line-height:1.35; margin:2px 0 0;">within three miles</p></div>
    <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:22pt; font-weight:800; color:var(--secondary-color); line-height:1.1; margin:0;">1 pin</p><p style="font-size:12.5pt; line-height:1.35; margin:2px 0 0;">Sam&rsquo;s shop is one seller among many</p></div>
+  
+   <div class="fragment fade-up" data-fragment-index="2" style="margin-top:2px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Many sellers, each one small.</strong> No single shop is big enough to move the price.</p></div>
   </div>
  </div>
- <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Many sellers, each one small.</strong> No single shop is big enough to move the price.</p></div>
+ 
 </section>
 
 <section id="conditions-1-2" data-visibility="hidden">
@@ -326,9 +328,11 @@
    <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:10px 14px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">The product we test</p><p style="font-size:14.5pt; line-height:1.4; margin:3px 0 0;">A <strong>basic cheeseburger</strong>: bun, patty, cheese. Hold the extras.</p></div>
    <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:10px 14px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">Ask a buyer</p><p style="font-size:14.5pt; line-height:1.4; margin:3px 0 0;">Would you walk an extra block for one shop&rsquo;s basic cheeseburger over another&rsquo;s? Most buyers would not.</p></div>
    <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:10px 14px;"><p style="font-size:11pt; color:var(--accent-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">So</p><p style="font-size:14.5pt; line-height:1.4; margin:3px 0 0;">One is a perfect substitute for the next.</p></div>
+  
+   <div class="fragment fade-up" style="margin-top:2px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Homogeneous</strong>, for the basic cheeseburger. Signature builds and brand are differentiated: that is Ch 13.</p></div>
   </div>
  </div>
- <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Homogeneous</strong>, for the basic cheeseburger. Signature builds and brand are differentiated: that is Ch 13.</p></div>
+ 
 </section>
 
 <section id="sam-test-entry">
@@ -441,9 +445,11 @@
   <div style="display:flex; flex-direction:column; gap:8px;">
    <div style="background:#fef2f2; border-left:4px solid var(--danger-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--danger-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">The evidence</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">Every shop near campus sits in the same price band. For a basic burger, the going price is about <strong>$10</strong>.</p></div>
    <div style="background:#fef2f2; border-left:4px solid var(--danger-color); border-radius:8px; padding:8px 14px;"><p style="font-size:11pt; color:var(--danger-color); font-weight:700; letter-spacing:0.05em; text-transform:uppercase; margin:0;">Price taker</p><p style="font-size:12.5pt; line-height:1.4; margin:3px 0 0;">A firm that must accept the market price. It chooses its <strong>quantity</strong>; it cannot choose its <strong>price</strong>.</p></div>
+  
+   <div class="fragment fade-up" style="margin-top:2px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Price-taker.</strong> The poll showed it: a higher price loses every customer, a lower one gives up revenue. Sam takes the going price.</p></div>
   </div>
  </div>
- <div class="fragment fade-up" style="margin-top:8px; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:8px; padding:8px 15px;"><p style="font-size:13pt; margin:0;"><strong>&check; Price-taker.</strong> The poll showed it: a higher price loses every customer, a lower one gives up revenue. Sam takes the going price.</p></div>
+ 
 </section>
 
 <section id="sam-test-profit">
@@ -459,7 +465,7 @@
 </section>
 
 <section>
-<section id="flat-demand">
+<section id="flat-demand" data-visibility="hidden">
  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Firm&rsquo;s Demand Curve Is Flat</h2>
  <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: center;">
   <div style="text-align: center;">
@@ -478,16 +484,16 @@
 </section>
 
 <section id="fig-10-1-industry-firm">
-  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Industry Sets the Price; the Firm Takes It</h2>
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Industry Sets the Price; the Firm&rsquo;s Demand Is Flat</h2>
   <div class="iv-card" style="padding: 8px 18px 10px;">
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
       <div>
         <p style="text-align:center; font-weight:700; color:var(--primary-color); font-size:12.5pt; margin:0 0 2px;">Panel A &mdash; Industry (Market)</p>
-        <svg id="f101-panelA" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
+        <svg id="f101-panelA" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:255px; display:block;"></svg>
       </div>
-      <div>
+      <div class="fragment fade-up" data-fragment-index="1">
         <p style="text-align:center; font-weight:700; color:var(--primary-color); font-size:12.5pt; margin:0 0 2px;">Panel B &mdash; Firm (price-taker)</p>
-        <svg id="f101-panelB" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
+        <svg id="f101-panelB" viewBox="0 0 430 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:255px; display:block;"></svg>
       </div>
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 4px;">
@@ -497,31 +503,21 @@
     <p id="f101-caption" style="text-align:center; font-size:12.5pt; color:var(--secondary-color); margin:7px 0 0;"></p>
     <div style="text-align:center; margin-top:5px;"><button id="f101-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:4px 16px; font-size:11pt; color:var(--secondary-color); font-weight:600; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button></div>
   </div>
+  <div class="fragment fade-up" data-fragment-index="2" style="display:grid; grid-template-columns:1.6fr 1fr; gap:14px; margin-top:8px; align-items:stretch;"><div style="background:#f8f6f3; border-radius:10px; padding:8px 16px;"><p style="font-size:12.5pt; line-height:1.4; margin:0;">The market&rsquo;s demand slopes down, but the demand facing <strong>one</strong> firm is flat at the market price. Raise the price and Sam loses his customers to <strong>49 rivals</strong>; at the market price he sells everything he makes.</p></div><div style="background:#eef2f0; border-left:4px solid var(--accent-color); border-radius:10px; padding:8px 16px; text-align:center;"><p style="font-size:11pt; margin:0;">Every burger sells at the same price, so marginal revenue is that price:</p><p style="font-size:20pt; font-weight:800; color:var(--primary-color); margin:2px 0 0;">P = MR</p></div></div>
 </section>
 </section>
 
 <section id="three-decisions">
-  <h2><i class="fa-solid fa-list-ol" style="color: var(--accent-color);"></i> What Sam Decides Each Day</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 4px;">
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 30pt; margin: 0; line-height: 1;">&#127828;</p>
-      <p style="font-size: 14pt; font-weight: 700; color: var(--secondary-color); margin: 6px 0 2px;">1. Output</p>
-      <p style="font-size: 12pt; margin: 0; line-height: 1.45;">Given \(p = \$10\), how many burgers &mdash; fifty? eighty? <span style="color: var(--muted-color);">&rarr; \(p = MC\) (&sect;9.3)</span></p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 30pt; margin: 0; line-height: 1;">&#128101;</p>
-      <p style="font-size: 14pt; font-weight: 700; color: var(--accent-color); margin: 6px 0 2px;">2. Labor</p>
-      <p style="font-size: 12pt; margin: 0; line-height: 1.45;">How many on shift? Too few stalls the line; too many eats the day. <span style="color: var(--muted-color);">&rarr; the cost side, Ch 8</span></p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 16px; border-left: 4px solid var(--danger-color);">
-      <p style="font-size: 30pt; margin: 0; line-height: 1;">&#128274;</p>
-      <p style="font-size: 14pt; font-weight: 700; color: var(--danger-color); margin: 6px 0 2px;">3. Shutdown</p>
-      <p style="font-size: 12pt; margin: 0; line-height: 1.45;">Slow week, revenue barely covers ingredients &mdash; stay open or close? <span style="color: var(--muted-color);">&rarr; \(p\) vs min AVC (&sect;9.4)</span></p>
-    </div>
-  </div>
-  <div class="key-result" style="margin-top: 14px;">
-    <p style="margin: 0; font-size: 13pt;"><strong>Today's plan.</strong> &sect;9.2 sets up profit \(= pq - c\) and &sect;9.3 finds the profit-max output where \(p = MC\). &sect;9.4 settles <strong>shutdown and exit</strong> &mdash; when to stop producing, when to leave for good &mdash; with three real 2024 bankruptcies. That leads to &sect;9.5, the <strong>supply curve</strong>, which turns out to <em>be</em> the rising part of \(MC\); &sect;9.7 closes on comparative statics &mdash; what a wage shock or a price drop does to \(q^*\).</p>
-  </div>
+ <h2><i class="fa-solid fa-list-ol" style="color: var(--accent-color);"></i> Sam Takes the Price. What Does He Still Decide?</h2>
+ <p style="font-size:13pt; color:var(--muted-color); margin:0 0 10px;">The market sets $10. Three choices are left, and the rest of the chapter answers them in order.</p>
+ <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; align-items:stretch;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:10px; padding:12px 16px; border-left:4px solid var(--secondary-color); display:flex; flex-direction:column; gap:6px;"><p style="font-size:28pt; margin:0; line-height:1;">&#127828;</p><p style="font-size:14pt; font-weight:700; color:var(--secondary-color); margin:0;">1. How many burgers?</p><p style="font-size:12.5pt; margin:0; line-height:1.45;">At $10 a burger, does Sam make 30 a day? 50? 60? Each extra batch costs more than the last.</p><p style="font-size:12pt; margin:auto 0 0; padding-top:6px; border-top:1px dashed #d6d3d1; color:#44403c;"><strong>Answered in</strong> &sect;9.3: make burgers while the next one costs no more than $10, so <strong>\(p = MC\)</strong>.</p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:10px; padding:12px 16px; border-left:4px solid var(--accent-color); display:flex; flex-direction:column; gap:6px;"><p style="font-size:28pt; margin:0; line-height:1;">&#128101;</p><p style="font-size:14pt; font-weight:700; color:var(--accent-color); margin:0;">2. How many workers?</p><p style="font-size:12.5pt; margin:0; line-height:1.45;">Rush hour, 3 pm to 8 pm: one griddle, and every hire adds 10 burgers but more labor than the one before.</p><p style="font-size:12pt; margin:auto 0 0; padding-top:6px; border-top:1px dashed #d6d3d1; color:#44403c;"><strong>Answered in</strong> the rush-hour slide next: the worker who brings MC up to $10 is the last one hired.</p></div>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:10px; padding:12px 16px; border-left:4px solid var(--danger-color); display:flex; flex-direction:column; gap:6px;"><p style="font-size:28pt; margin:0; line-height:1;">&#128274;</p><p style="font-size:14pt; font-weight:700; color:var(--danger-color); margin:0;">3. Open or closed?</p><p style="font-size:12.5pt; margin:0; line-height:1.45;">A slow week: the price of a basic burger drops. Does Sam keep the grill on, or close until it recovers?</p><p style="font-size:12pt; margin:auto 0 0; padding-top:6px; border-top:1px dashed #d6d3d1; color:#44403c;"><strong>Answered in</strong> &sect;9.4: compare the price with <strong>min AVC</strong> (close for now) and min ATC (leave for good).</p></div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="4" style="margin-top:12px; background:#eff6ff; border-left:4px solid var(--secondary-color); border-radius:8px; padding:9px 16px;">
+  <p style="margin:0; font-size:13pt;">Put the three answers together and you get Sam&rsquo;s <strong>supply curve</strong> (&sect;9.5): the rising part of his MC above min AVC. &sect;9.7 then asks what a wage rise or a price drop does to it.</p>
+ </div>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="divider-decision">

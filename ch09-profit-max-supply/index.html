@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=fc4df69f98bf2bfd0135326e8881a949">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f33e6d5fc8acd3647cf4bd8b72676fb1">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -855,7 +855,7 @@
   #five-steps .fs-n { flex:0 0 26px; height:26px; border-radius:50%; background:var(--secondary-color); color:#fff; font-weight:700; font-size:12.5pt; display:flex; align-items:center; justify-content:center; margin-top:2px; }
   #five-steps .fs-t { margin:0; font-size:12.5pt; font-weight:700; color:var(--primary-color); line-height:1.3; }
   #five-steps .fs-v { margin:2px 0 0; font-size:11.5pt; line-height:1.35; color:#374151; }
-  #five-steps .fs-btn { background:#f0f5f8; border:1.5px solid var(--line-color); border-radius:16px; padding:4px 12px; font-size:11pt; font-weight:600; color:var(--secondary-color); cursor:pointer; }
+  #five-steps .fs-btn { background:#f0f5f8; border:1.5px solid var(--line-color); border-radius:16px; padding:2px 9px; font-size:10pt; font-weight:600; color:var(--secondary-color); cursor:pointer; }
   #five-steps .fs-btn.on { background:var(--secondary-color); border-color:var(--secondary-color); color:#fff; }
  </style>
  <div class="key-result" style="margin:0 0 8px; padding:5px 14px; background:#ecfdf5; border-left-color:var(--success-color);"><p style="margin:0; text-align:center; font-size:13pt;">\(\pi = TR - TC = (P\times q) - (ATC\times q) = (P - ATC)\times q\) &nbsp;&middot;&nbsp; Sam&rsquo;s cost \(c(q) = 50 + 2q + 0.08q^2\)</p></div>
@@ -868,17 +868,20 @@
     <div class="fs-step fragment fade-up" data-fragment-index="5"><div class="fs-n">5</div><div><p class="fs-t">The rectangle: &pi; = (P &minus; ATC) &times; q*</p><p class="fs-v" id="fs-v5"></p></div></div>
   </div>
   <div>
-   <div style="display:flex; gap:6px; justify-content:center; margin:0 0 4px;">
+   <div style="display:flex; flex-wrap:wrap; gap:4px 5px; justify-content:center; margin:0 0 3px;">
     <button class="fs-btn" data-p="10">$10 &middot; profit</button>
+    <button class="fs-btn" data-p="6">$6 &middot; break even (exit point)</button>
     <button class="fs-btn" data-p="5">$5 &middot; loss but stay open</button>
+    <button class="fs-btn" data-p="2">$2 &middot; shutdown point</button>
     <button class="fs-btn" data-p="1.5">$1.50 &middot; shut down</button>
    </div>
-   <svg id="fs-svg" viewBox="0 0 500 362" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:346px; display:block;"></svg>
+   <svg id="fs-svg" viewBox="0 0 500 362" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:306px; display:block;"></svg>
    <div style="display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center; margin:2px 8px 0;">
     <label class="iv-label" style="margin:0;">Price <span class="iv-readout" id="fs-pRead">$10.00</span></label>
     <input type="range" class="iv-slider" id="fs-p" min="1" max="13" step="0.25" value="10" aria-label="Market price (P = MR)">
     <button id="fs-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:3px 12px; font-size:10.5pt; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button>
    </div>
+   <p style="font-size:9.5pt; color:var(--muted-color); font-style:italic; margin:2px 8px 0;">With this cost, MC and AVC are straight lines; the textbook U shapes are on slide 25.</p>
    <p id="fs-check" style="font-size:11.5pt; margin:5px 0 0; border:1.5px solid transparent; border-radius:8px; padding:5px 12px; line-height:1.35; min-height:20px;"></p>
   </div>
  </div>
@@ -1705,7 +1708,7 @@
     pR.textContent='$'+p.toFixed(2);
     btns.forEach(function(b){ b.classList.toggle('on', user && Math.abs(parseFloat(b.dataset.p)-p)<1e-9); });
     var A=q>0? atc(q) : null, prof=q>0? p*q-(FC+2*q+0.08*q*q) : -FC;
-    var zone= q===0? 'shut' : (prof>1e-9? 'profit' : (prof<-1e-9? 'loss' : 'even'));
+    var zone= q===0? (Math.abs(p-2)<1e-9? 'point' : 'shut') : (prof>1e-9? 'profit' : (prof<-1e-9? 'loss' : 'even'));
     // axes and grid
     var by=[]; if(k>=3) by.push(y(p)); if(k>=4 && q>0 && A<=PMAX) by.push(y(A));
     var bx= k>=2? x(q) : null;
@@ -1715,8 +1718,8 @@
     if(k>=5 && q>0){
       var top=Math.max(p,A), bot=Math.min(p,A), col= zone==='profit'? '#16a34a' : '#dc2626';
       if(zone!=='even') s+='<rect x="'+L+'" y="'+y(top)+'" width="'+(x(q)-L)+'" height="'+(y(bot)-y(top))+'" fill="'+col+'" fill-opacity="0.22" stroke="'+col+'" stroke-width="1.5"/>';
-      if(zone==='loss'){ var av=avc(q); s+='<rect x="'+L+'" y="'+y(p)+'" width="'+(x(q)-L)+'" height="'+(y(av)-y(p))+'" fill="#f59e0b" fill-opacity="0.22" stroke="#d97706" stroke-width="1" stroke-dasharray="4 3"/>';
-        if(x(q)-L>=96 && y(av)-y(p)>=15) s+=txt((L+x(q))/2,(y(av)+y(p))/2+4,'pays '+m((p-av)*q)+' of FC',{a:'middle',fs:11.5,w:700,c:'#b45309',h:1}); }
+      if(zone==='loss' || zone==='even'){ var av=avc(q); s+='<rect x="'+L+'" y="'+y(p)+'" width="'+(x(q)-L)+'" height="'+(y(av)-y(p))+'" fill="#f59e0b" fill-opacity="0.22" stroke="#d97706" stroke-width="1" stroke-dasharray="4 3"/>';
+        if(x(q)-L>=96 && y(av)-y(p)>=15) s+=txt((L+x(q))/2,(y(av)+y(p))/2+4,(zone==='even'? 'pays all $50 of FC' : 'pays '+m((p-av)*q)+' of FC'),{a:'middle',fs:11.5,w:700,c:'#b45309',h:1}); }
       if(zone!=='even' && x(q)-L>=96 && y(bot)-y(top)>=15) s+=txt((L+x(q))/2,(y(top)+y(bot))/2+4,(zone==='profit'?'profit ':'loss ')+m(prof),{a:'middle',fs:12.5,w:700,c:zone==='profit'?'#15803d':'#b91c1c',h:1});
     }
     s+=line(L,T,L,B,'#374151')+line(L,B,R,B,'#374151');
@@ -1732,13 +1735,13 @@
     s+=line(L,y(p),R,y(p),'#7c3aed',2.5)+txt(R-2,y(p)-6,'P = MR = '+m(p),{a:'end',fs:12.5,w:700,c:'#7c3aed'});
     // steps 1-4
     if(k>=1){ if(q>0) s+='<circle cx="'+x(q)+'" cy="'+y(p)+'" r="7" fill="none" stroke="#7c3aed" stroke-width="2.5"/><circle cx="'+x(q)+'" cy="'+y(p)+'" r="3.5" fill="#7c3aed"/>';
-              else s+=txt(L+8,y(p)+17,'P below min AVC $2: nothing worth making',{fs:11.5,w:700,c:'#b91c1c',h:1}); }
+              else s+=txt(L+8,y(p)+17,zone==='point'? 'P = min AVC $2: the shutdown point' : 'P below min AVC $2: nothing worth making',{fs:11.5,w:700,c:'#b91c1c',h:1}); }
     if(k>=2 && q>0){ s+=line(x(q),y(p),x(q),B,'#111827',1.5,'4 3')+txt(x(q),B+16,'',{})+'<rect x="'+(x(q)-26)+'" y="'+(B+3)+'" width="52" height="17" rx="4" fill="#111827"/>'+txt(x(q),B+16,'q* = '+f(q),{a:'middle',fs:11.5,w:700,c:'#fff'}); }
     if(k>=2 && q===0){ s+='<rect x="'+(L-22)+'" y="'+(B+3)+'" width="44" height="17" rx="4" fill="#b91c1c"/>'+txt(L,B+16,'q* = 0',{a:'middle',fs:11.5,w:700,c:'#fff'}); }
     if(k>=3){ s+='<rect x="'+(L-46)+'" y="'+(y(p)-9)+'" width="44" height="17" rx="4" fill="#7c3aed"/>'+txt(L-24,y(p)+4,m(p),{a:'middle',fs:11.5,w:700,c:'#fff'}); }
     if(k>=4 && q>0 && A<=PMAX){ s+=line(L,y(A),x(q),y(A),'#1d4ed8',1.5,'4 3')+'<circle cx="'+x(q)+'" cy="'+y(A)+'" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>';
       if(Math.abs(y(A)-y(p))>=18) s+='<rect x="'+(L-46)+'" y="'+(y(A)-9)+'" width="44" height="17" rx="4" fill="#1d4ed8"/>'+txt(L-24,y(A)+4,m(Math.round(A*100)/100),{a:'middle',fs:11.5,w:700,c:'#fff'}); }
-    if(k>=5 && q===0) s+=txt(x(32),y(11.5),'shut down: loss = FC = $50',{a:'middle',fs:14,w:700,c:'#b91c1c',h:1});
+    if(k>=5 && q===0) s+=txt(x(32),y(11.5),zone==='point'? 'open and shut both lose $50 (FC)' : 'shut down: loss = FC = $50',{a:'middle',fs:14,w:700,c:'#b91c1c',h:1});
     svg.innerHTML=s;
     // left panel numbers
     var v=[];
@@ -1749,16 +1752,17 @@
       v[4]='ATC('+f(q)+') = 50/'+f(q)+' + 2 + 0.08&middot;'+f(q)+' = <strong>'+m(A)+'</strong>';
       v[5]='&pi; = ('+f(p)+' &minus; '+f(A)+') &times; '+f(q)+' = <strong>'+m(prof)+'</strong>';
     } else {
-      v[1]='P = '+m(p)+' is below min AVC = $2: MC never comes down to P above AVC';
-      v[2]='q* = <strong>0</strong>: shut down';
+      v[1]= zone==='point'? 'P = $2 = min AVC: MC meets P only at q = 0' : 'P = '+m(p)+' is below min AVC = $2: MC never comes down to P above AVC';
+      v[2]= zone==='point'? 'q* = <strong>0</strong>: open or shut, the same' : 'q* = <strong>0</strong>: shut down';
       v[3]='P = '+m(p)+', but TR = $0 at q* = 0';
       v[4]='No output, so TC = FC = $50';
-      v[5]='&pi; = &minus;FC = <strong>&minus;$50</strong>';
+      v[5]='&pi; = &minus;FC = <strong>&minus;$50</strong>'+(zone==='point'? ' either way' : '');
     }
     for(j=1;j<=5;j++) document.getElementById('fs-v'+j).innerHTML=v[j];
     var col,bg,msg;
     if(zone==='profit'){ col='#16a34a'; bg='#ecfdf5'; msg='<strong style="color:#15803d">Positive profit '+m(prof)+'.</strong> P &gt; ATC at q*: stay in the long run.'; }
-    else if(zone==='even'){ col='#b45309'; bg='#fffbeb'; msg='<strong style="color:#b45309">Break even at the exit point.</strong> P = min ATC = $6: zero economic profit.'; }
+    else if(zone==='even'){ col='#b45309'; bg='#fffbeb'; msg='<strong style="color:#b45309">Break even at the exit point.</strong> P = min ATC = $6: zero economic profit. Revenue covers VC and all $50 of FC.'; }
+    else if(zone==='point'){ col='#b45309'; bg='#fffbeb'; msg='<strong style="color:#b45309">Shutdown point: open and shut both lose $50 (FC).</strong> P = min AVC = $2. Exit in the long run.'; }
     else if(zone==='loss'){ col='#dc2626'; bg='#fef2f2'; msg='<strong style="color:#b91c1c">Loss '+m(prof)+', but the loss-minimizing choice.</strong> Revenue covers VC and pays '+m((p-avc(q))*q)+' of the $50 FC, so operating beats shutting (&minus;$50). Exit in the long run.'; }
     else { col='#dc2626'; bg='#fef2f2'; msg='<strong style="color:#b91c1c">Shut down: loss = &minus;FC = &minus;$50.</strong> P is below the shutdown point (min AVC = $2). Exit in the long run.'; }
     if(k>=5){ chk.style.visibility='visible'; chk.style.background=bg; chk.style.borderColor=col; chk.innerHTML=msg; } else { chk.style.visibility='hidden'; chk.innerHTML='&nbsp;'; }

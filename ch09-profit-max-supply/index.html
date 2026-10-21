@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3e279238a5cee8f171b01b1fb935df1f">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=fc4df69f98bf2bfd0135326e8881a949">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -811,35 +811,40 @@
 
 <section id="walkthrough-9-1">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 9.1 &mdash; Profit-Max by Calculus: Differentiate in \(q\)</h2>
-  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
+  <style>#walkthrough-9-1 table.w91-tight th, #walkthrough-9-1 table.w91-tight td { padding: 3px 8px !important; line-height: 1.3 !important; } #walkthrough-9-1 table.w91-tight .nw { white-space: nowrap !important; } #walkthrough-9-1 .w91-box { display: inline-block; background: #fff3e0; padding: 4px 9px; border-radius: 5px; border: 1px solid var(--accent-color); line-height: 1.2; vertical-align: middle; }</style>
+  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 7px 16px; margin: 0 0 8px;">
     <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">
-      <strong>Problem.</strong> Sam's cost curve in smooth form: \(c(q) = 50 + 2q + 0.08q^2\) (\(FC = \$50\)). (1) Differentiate and solve the FOC \(p = MC\) for \(q^*(p)\). (2) Read the shutdown (min AVC) and exit (min ATC) floors off the cost curve. (3) Classify \(p = \$10,\ \$5,\ \$1.50\).
+      <strong>Problem.</strong> Sam's cost curve in smooth form: \(c(q) = 50 + 2q + 0.08q^2\) (\(FC = \$50\)). (1) Differentiate and solve the FOC \(p = MC\) for \(q^*(p)\). (2) Read the shutdown (min AVC) and exit (min ATC) points off the cost curve. (3) Classify \(p = \$10,\ \$6,\ \$5,\ \$2,\ \$1.50\): open or shut now, stay or exit in the long run.
     </p>
   </div>
-  <div class="key-result" style="margin: 0 0 8px; padding: 7px 14px; background: #ecfdf5; border-left-color: var(--success-color);">
-    <p style="margin: 0; font-size: 12pt; text-align: center;"><strong>Method (&sect;9.3):</strong> \(\displaystyle\max_q\;\pi(q) = pq - c(q)\;\Rightarrow\;\frac{d\pi}{dq} = p - MC(q) = 0\;\Rightarrow\;p = MC.\)</p>
-  </div>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-    <div class="fragment fade-up" data-fragment-index="1" style="background: #f0f5f8; border-radius: 8px; padding: 9px 14px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 5px;">(1) Differentiate &rarr; FOC &rarr; \(q^*(p)\)</p>
-      <p style="font-size: 12.5pt; margin: 0 0 6px; line-height: 1.5;">\(MC(q) = c'(q) = 2 + 0.16q\)</p>
-      <p style="font-size: 12.5pt; margin: 0; line-height: 1.5;">\(p = 2 + 0.16q \;\Rightarrow\;\) <strong style="background: #fff3e0; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--accent-color);">\(q^*(p) = \dfrac{p-2}{0.16} = 6.25(p-2)\)</strong></p>
+    <div class="fragment fade-up" data-fragment-index="1" style="background: #f0f5f8; border-radius: 8px; padding: 8px 14px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 4px;">(1) Differentiate &rarr; FOC &rarr; \(q^*(p)\)</p>
+      <p style="font-size: 12pt; margin: 0 0 4px; line-height: 1.45;">\(\max_q\ \pi = pq - c(q)\;\Rightarrow\; p = MC(q) = c'(q) = 2 + 0.16q\)</p>
+      <p style="font-size: 12.5pt; margin: 0; line-height: 1.5;">\(p = 2 + 0.16q \;\Rightarrow\;\) <strong class="w91-box">\(q^*(p) = \dfrac{p-2}{0.16} = 6.25(p-2)\)</strong></p>
     </div>
-    <div class="fragment fade-up" data-fragment-index="2" style="background: #fef9f3; border-radius: 8px; padding: 9px 14px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 5px;">(2) Read the floors off \(c(q)\)</p>
+    <div class="fragment fade-up" data-fragment-index="2" style="background: #fef9f3; border-radius: 8px; padding: 8px 14px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 4px;">(2) Read the floors off \(c(q)\)</p>
       <p style="font-size: 12pt; margin: 0 0 2px; line-height: 1.4;">\(AVC = 2 + 0.08q\) &rarr; <strong>Shutdown point:</strong> \(p = \min AVC = \$2\)</p>
       <p style="font-size: 12pt; margin: 0; line-height: 1.4;">\(ATC = \frac{50}{q} + 2 + 0.08q\) &rarr; <strong>Exit (break-even) point:</strong> \(p = \min ATC = \$6\) at \(q = 25\)</p>
     </div>
   </div>
-  <style>#walkthrough-9-1 table.w91-tight th, #walkthrough-9-1 table.w91-tight td { padding: 3px 10px !important; line-height: 1.3 !important; } #walkthrough-9-1 table.w91-tight .nw { white-space: nowrap !important; }</style>
   <table class="w91-tight fragment fade-up" data-fragment-index="3" style="font-size: 11pt; margin: 8px 0 0;">
-    <tr><th class="nw">Price \(p\)</th><th class="nw">\(q^* = 6.25(p-2)\)</th><th class="nw">vs the two points</th><th>Now (short run)</th><th class="nw">Long run</th></tr>
-    <tr><td>\$10</td><td>50</td><td>\(p > \$6\)</td><td><strong style="color: var(--success-color);">Positive profit</strong>: \(\pi = 500 - 350 = +\$150\)</td><td class="nw"><strong>Stay</strong> (\(p > \min ATC\))</td></tr>
-    <tr><td>\$5</td><td>18.75</td><td class="nw">\(\$2 < p < \$6\)</td><td><strong style="color: var(--accent-color);">Loss, but the loss-minimizing choice</strong>: \(\pi \approx -\$22\) beats \(-\$50\) (revenue covers VC)</td><td class="nw"><strong>Exit</strong> (\(p < \min ATC\))</td></tr>
-    <tr><td>\$1.50</td><td>0</td><td>\(p < \$2\)</td><td><strong style="color: var(--danger-color);">Shut down</strong>: loss \(= -FC = -\$50\)</td><td class="nw"><strong>Exit</strong> (\(p < \min ATC\))</td></tr>
+    <tr><th class="nw">\(p\)</th><th class="nw">\(q^*\)</th><th>\(\pi\) if open now</th><th>\(\pi\) if shut now</th><th>Now</th><th>Long run: \(\pi\) if stay vs exit</th><th>Long run</th></tr>
+    <tr><td class="nw">\$10</td><td>50</td><td class="nw">\(500 - 350 = +\$150\)</td><td>\(-\$50\)</td><td><strong style="color: var(--success-color);">Open</strong></td><td class="nw">\(+\$150\) vs \(\$0\)</td><td><strong style="color: var(--success-color);">Stay</strong></td></tr>
+    <tr class="fragment fade-up" data-fragment-index="4"><td class="nw">\$6</td><td>25</td><td class="nw">\(150 - 150 = \$0\)</td><td>\(-\$50\)</td><td><strong style="color: var(--success-color);">Open</strong></td><td class="nw">\(\$0\) vs \(\$0\)</td><td><strong style="color: #b45309;">Break even: the exit point</strong></td></tr>
+    <tr class="fragment fade-up" data-fragment-index="5"><td class="nw">\$5</td><td>18.75</td><td class="nw">\(93.75 - 115.63 = -\$21.88\)</td><td>\(-\$50\)</td><td><strong style="color: var(--accent-color);">Open (loses less)</strong></td><td class="nw">\(-\$21.88\) vs \(\$0\)</td><td><strong style="color: var(--danger-color);">Exit</strong></td></tr>
+    <tr class="fragment fade-up" data-fragment-index="6"><td class="nw">\$2</td><td>0</td><td class="nw">\(-\$50\)</td><td>\(-\$50\)</td><td><strong style="color: #b45309;">Either: the shutdown point</strong></td><td class="nw">\(-\$50\) vs \(\$0\)</td><td><strong style="color: var(--danger-color);">Exit</strong></td></tr>
+    <tr class="fragment fade-up" data-fragment-index="7"><td class="nw">\$1.50</td><td>0</td><td>below \(-\$50\) at any \(q > 0\)</td><td>\(-\$50\)</td><td><strong style="color: var(--danger-color);">Shut down</strong></td><td class="nw">\(-\$50\) vs \(\$0\)</td><td><strong style="color: var(--danger-color);">Exit</strong></td></tr>
   </table>
-  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 10px; padding: 8px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> One cost curve &rarr; one supply formula \(q^*(p) = 6.25(p-2)\) plus two floors (min AVC, min ATC) that classify <em>every</em> price. The burger table's \(p = MC\) row was this same first-order condition &mdash; now solved in closed form, good for any \(p\).</p>
+  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 14px; margin-top: 8px;">
+    <div class="fragment fade-up" data-fragment-index="8" style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 6px 14px;">
+      <p style="margin: 0; font-size: 11pt; line-height: 1.4;"><strong>Now</strong> the \(\$50\) is paid either way, so open if \(\pi_{\text{open}} \ge -\$50\), i.e. \(p \ge \min AVC = \$2\).</p>
+      <p style="margin: 3px 0 0; font-size: 11pt; line-height: 1.4;"><strong>In the long run</strong> exit avoids the \(\$50\), so stay if \(\pi \ge 0\), i.e. \(p \ge \min ATC = \$6\).</p>
+    </div>
+    <div class="key-result fragment fade-up" data-fragment-index="9" style="margin: 0; padding: 6px 14px;">
+      <p style="margin: 0; font-size: 11pt; line-height: 1.4;"><strong>Takeaway.</strong> One cost curve gives the supply formula \(q^*(p) = 6.25(p-2)\) and two points that sort every price: open at \(p \ge \$2\), stay at \(p \ge \$6\).</p>
+    </div>
   </div>
 </section>
 
@@ -881,45 +886,26 @@
 
 <section id="foc-figure">
   <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Same Rule at the Gigafactory</h2>
+  <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 7px 16px; margin: 0 0 10px;">
+    <p style="font-size: 12.5pt; margin: 0; line-height: 1.5;"><strong style="color: var(--secondary-color);">Gigafactory numbers (Chs 7&ndash;8):</strong> \(A=8,\ \alpha=0.4,\ \beta=0.6,\ \bar K=4,\ w=0.10,\ r=0.13\) &nbsp;&middot;&nbsp; <strong>New in Ch 9:</strong> price \(p=\$84\)/kWh, materials \(m=\$55.6\)/kWh</p>
+  </div>
   <div style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 22px; align-items: center;">
     <div style="text-align: center;">
-      <img alt="Profit-max FOC: the upward-sloping SMC(q) curve crosses the horizontal price line p = $84/kWh at q* = 50.9 GWh/yr. The crossing is the firm's optimal output." src="figures/figure-9-2-profit-max-foc.png" class="figure" style="max-height: 428px;">
+      <img alt="Profit-max FOC: the upward-sloping SMC(q) curve crosses the horizontal price line p = $84/kWh at q* = 50.9 GWh/yr. The crossing is the firm's optimal output." src="figures/figure-9-2-profit-max-foc.png" class="figure" style="max-height: 360px;">
     </div>
     <div>
-      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 12px 16px;">
-        <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Gigafactory numbers (Chs 7&ndash;8)</p>
-        <p style="font-size: 12pt; margin: 6px 0 0; line-height: 1.6;">\(A=8,\ \alpha=0.4,\ \beta=0.6,\ \bar K=4\)<br>\(w=0.10,\ r=0.13\)<br><strong>New: \(p=\$84\)/kWh output price, \(m=\$55.6\)/kWh <em>materials cost</em></strong></p>
+      <div style="background: #faf7f2; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 10px 16px;">
+        <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">Where we computed them</p>
+        <p style="font-size: 12.5pt; margin: 0 0 6px; line-height: 1.45;">Short-run cost at \(\bar K = 4\): <strong>Ch 8 &sect;8.7, Walkthrough 8.5</strong>.</p>
+        <p style="font-size: 12.5pt; margin: 0; line-height: 1.45;">\(SMC\) with materials \(m\), and \(q^* = 50.9\): <strong>Ch 9 &sect;9.3</strong> (reading).</p>
       </div>
-      <div class="key-result" style="margin-top: 12px;">
-        <p style="margin: 0; font-size: 12.5pt;">The rising \(SMC(q)\) crosses \(p = \$84\)/kWh at <strong>\(q^* = 50.9\) GWh/yr</strong>. Same picture as the burger table &mdash; only the axes are in batteries, not burgers.</p>
-      </div>
-      <p style="font-size: 11.5pt; color: var(--muted-color); font-style: italic; margin-top: 10px;">
-        Read it left to right: below \(q^*\), \(p > MC\) (expand); above \(q^*\), \(p < MC\) (contract).
-      </p>
+      <p style="font-size: 12.5pt; margin: 12px 0 0; line-height: 1.5;">Read it left to right: below \(q^*\), \(p > MC\) (expand); above \(q^*\), \(p < MC\) (contract).</p>
+      <p style="font-size: 10.5pt; color: var(--muted-color); font-style: italic; margin: 10px 0 0; line-height: 1.4;">Materials enter as the constant \(m\); labor supplies the rising term. So \(SMC\) slopes up and never falls below \(m\), and \(\min AVC = m\) is the shutdown floor (&sect;9.4).</p>
     </div>
   </div>
-      <div style="margin-top: 12px; background: #faf7f2; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 9px 16px;">
-        <p style="font-size: 10pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">Where \(SMC\) comes from &mdash; four steps from the Ch 7&ndash;8 numbers</p>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; align-items: start;">
-          <div>
-            <p style="font-size: 9.5pt; color: var(--muted-color); margin: 0;">1 &middot; SR production, \(\bar K = 4\) fixed</p>
-            <p style="font-size: 11pt; margin: 2px 0 0;">\(q = A\bar K^{\alpha}L^{\beta} = 13.929\,L^{0.6}\)</p>
-          </div>
-          <div>
-            <p style="font-size: 9.5pt; color: var(--muted-color); margin: 0;">2 &middot; invert for labor</p>
-            <p style="font-size: 11pt; margin: 2px 0 0;">\(L(q) = (q/13.929)^{5/3}\)</p>
-          </div>
-          <div>
-            <p style="font-size: 9.5pt; color: var(--muted-color); margin: 0;">3 &middot; variable cost = wages + materials</p>
-            <p style="font-size: 11pt; margin: 2px 0 0;">\(VC(q) = wL(q) + mq\)</p>
-          </div>
-          <div>
-            <p style="font-size: 9.5pt; color: var(--muted-color); margin: 0;">4 &middot; differentiate</p>
-            <p style="font-size: 11pt; margin: 2px 0 0;">\(SMC = \dfrac{dVC}{dq} = 0.011967\,(q/13.929)^{2/3} + m\)</p>
-          </div>
-        </div>
-        <p style="font-size: 10pt; color: var(--muted-color); font-style: italic; margin: 7px 0 0;">Materials enter as the <strong>constant</strong> \(m\); labor supplies the <strong>rising</strong> term. That is why \(SMC\) slopes up and never falls below \(m\) &mdash; which is exactly why \(\min AVC = m\) is the shutdown floor (&sect;9.4).</p>
-      </div>
+  <div class="key-result fragment fade-up" data-fragment-index="1" style="margin-top: 10px; padding: 8px 16px;">
+    <p style="margin: 0; font-size: 13pt;">\(SMC\) crosses \(p = \$84\) at <strong>\(q^* = 50.9\) GWh/yr</strong> (Ch 8 ran the plant at 32). Revenue <strong>\$4.28B</strong>, profit <strong>\$58.6M</strong>: about <strong>1.4%</strong> of revenue.</p>
+  </div>
 </section>
 
 <section id="app-tesla-semi">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=a3592217eef22229abdb702c244af5f8">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3e279238a5cee8f171b01b1fb935df1f">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -843,6 +843,42 @@
   </div>
 </section>
 
+<section id="five-steps">
+ <h2><i class="fa-solid fa-shoe-prints" style="color: var(--secondary-color);"></i> Measuring Profit in Five Steps &mdash; on Walkthrough 9.1&rsquo;s Cost</h2>
+ <style>
+  #five-steps .fs-step { display:flex; gap:10px; align-items:flex-start; background:#f8f6f3; border-radius:8px; padding:6px 12px; border-left:4px solid var(--secondary-color); }
+  #five-steps .fs-n { flex:0 0 26px; height:26px; border-radius:50%; background:var(--secondary-color); color:#fff; font-weight:700; font-size:12.5pt; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+  #five-steps .fs-t { margin:0; font-size:12.5pt; font-weight:700; color:var(--primary-color); line-height:1.3; }
+  #five-steps .fs-v { margin:2px 0 0; font-size:11.5pt; line-height:1.35; color:#374151; }
+  #five-steps .fs-btn { background:#f0f5f8; border:1.5px solid var(--line-color); border-radius:16px; padding:4px 12px; font-size:11pt; font-weight:600; color:var(--secondary-color); cursor:pointer; }
+  #five-steps .fs-btn.on { background:var(--secondary-color); border-color:var(--secondary-color); color:#fff; }
+ </style>
+ <div class="key-result" style="margin:0 0 8px; padding:5px 14px; background:#ecfdf5; border-left-color:var(--success-color);"><p style="margin:0; text-align:center; font-size:13pt;">\(\pi = TR - TC = (P\times q) - (ATC\times q) = (P - ATC)\times q\) &nbsp;&middot;&nbsp; Sam&rsquo;s cost \(c(q) = 50 + 2q + 0.08q^2\)</p></div>
+ <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:16px; align-items:start;">
+  <div style="display:flex; flex-direction:column; gap:6px;">
+    <div class="fs-step fragment fade-up" data-fragment-index="1"><div class="fs-n">1</div><div><p class="fs-t">Find where MR = MC</p><p class="fs-v" id="fs-v1"></p></div></div>
+    <div class="fs-step fragment fade-up" data-fragment-index="2"><div class="fs-n">2</div><div><p class="fs-t">Drop down to q*</p><p class="fs-v" id="fs-v2"></p></div></div>
+    <div class="fs-step fragment fade-up" data-fragment-index="3"><div class="fs-n">3</div><div><p class="fs-t">Read P: the height of the revenue box</p><p class="fs-v" id="fs-v3"></p></div></div>
+    <div class="fs-step fragment fade-up" data-fragment-index="4"><div class="fs-n">4</div><div><p class="fs-t">Read ATC at q*</p><p class="fs-v" id="fs-v4"></p></div></div>
+    <div class="fs-step fragment fade-up" data-fragment-index="5"><div class="fs-n">5</div><div><p class="fs-t">The rectangle: &pi; = (P &minus; ATC) &times; q*</p><p class="fs-v" id="fs-v5"></p></div></div>
+  </div>
+  <div>
+   <div style="display:flex; gap:6px; justify-content:center; margin:0 0 4px;">
+    <button class="fs-btn" data-p="10">$10 &middot; profit</button>
+    <button class="fs-btn" data-p="5">$5 &middot; loss but stay open</button>
+    <button class="fs-btn" data-p="1.5">$1.50 &middot; shut down</button>
+   </div>
+   <svg id="fs-svg" viewBox="0 0 500 362" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:346px; display:block;"></svg>
+   <div style="display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center; margin:2px 8px 0;">
+    <label class="iv-label" style="margin:0;">Price <span class="iv-readout" id="fs-pRead">$10.00</span></label>
+    <input type="range" class="iv-slider" id="fs-p" min="1" max="13" step="0.25" value="10" aria-label="Market price (P = MR)">
+    <button id="fs-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:3px 12px; font-size:10.5pt; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+   </div>
+   <p id="fs-check" style="font-size:11.5pt; margin:5px 0 0; border:1.5px solid transparent; border-radius:8px; padding:5px 12px; line-height:1.35; min-height:20px;"></p>
+  </div>
+ </div>
+</section>
+
 <section id="foc-figure">
   <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Same Rule at the Gigafactory</h2>
   <div style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 22px; align-items: center;">
@@ -909,7 +945,7 @@
   </div>
 </section>
 
-<section id="measuring-profit">
+<section id="measuring-profit" data-visibility="hidden">
   <h2><i class="fa-solid fa-ruler-combined" style="color: var(--accent-color);"></i> Measuring the Firm's Profit</h2>
   <p style="font-size: 13pt; margin: 0 0 6px;">Profit is total revenue minus total cost &mdash; rewrite it with price and average total cost:</p>
   <div class="key-result" style="background: #ecfdf5; border-left-color: var(--success-color); margin: 6px 0 10px;">
@@ -928,26 +964,6 @@
       <img alt="Profit and loss rectangles: with p above min SATC the (P-ATC) x Q area is positive profit (green); with p between min AVC and min SATC it is a loss (red)" src="figures/figure-9-3-profit-loss-rectangles.png" class="figure" style="max-height: 350px;">
     </div>
   </div>
-</section>
-<section id="five-steps">
- <h2><i class="fa-solid fa-shoe-prints" style="color: var(--secondary-color);"></i> Five Steps to Profit-Max on a Graph</h2>
- <div id="fs-chips" style="display:grid; grid-template-columns:repeat(5,1fr); gap:7px; margin:2px 0 5px;">
-  <div data-fs="1" style="border-radius:7px; padding:5px 9px; text-align:center; font-size:11pt; border:1.5px solid transparent;"><strong>1</strong> &middot; MR = MC</div>
-  <div data-fs="2" style="border-radius:7px; padding:5px 9px; text-align:center; font-size:11pt; border:1.5px solid transparent;"><strong>2</strong> &middot; drop to Q*</div>
-  <div data-fs="3" style="border-radius:7px; padding:5px 9px; text-align:center; font-size:11pt; border:1.5px solid transparent;"><strong>3</strong> &middot; read P</div>
-  <div data-fs="4" style="border-radius:7px; padding:5px 9px; text-align:center; font-size:11pt; border:1.5px solid transparent;"><strong>4</strong> &middot; read ATC</div>
-  <div data-fs="5" style="border-radius:7px; padding:5px 9px; text-align:center; font-size:11pt; border:1.5px solid transparent;"><strong>5</strong> &middot; the rectangle</div>
- </div>
- <p id="fs-caption" style="text-align:center; font-size:12pt; font-weight:600; color:var(--secondary-color); margin:0 0 3px; min-height:18px;"></p>
- <svg id="fs-svg" viewBox="0 0 960 330" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:400px; display:block;"></svg>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:820px; margin:4px auto 0;">
-  <div><label class="iv-label">Reveal through step <span class="iv-readout" id="fs-sRead">5</span></label><input type="range" class="iv-slider" id="fs-s" min="1" max="5" step="1" value="5"></div>
-  <div><label class="iv-label">Market price (P = MR) <span class="iv-readout" id="fs-pRead">$10.00</span></label><input type="range" class="iv-slider" id="fs-p" min="6" max="13" step="0.1" value="10"></div>
- </div>
- <div style="display:flex; align-items:center; justify-content:center; gap:14px; margin-top:5px;">
-  <p id="fs-check" style="font-size:12pt; margin:0; background:#ecfdf5; border:1.5px solid var(--success-color); border-radius:9px; padding:6px 15px;"></p>
-  <button id="fs-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:4px 16px; font-size:11pt; cursor:pointer;">Reset the sliders</button>
- </div>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="div-shutdown">
@@ -1685,91 +1701,88 @@
 <script>
 (function(){
   var svg=document.getElementById('fs-svg'); if(!svg) return;
-  var sS=document.getElementById('fs-s'), sR=document.getElementById('fs-sRead');
-  var pS=document.getElementById('fs-p'), pR=document.getElementById('fs-pRead');
-  var cap=document.getElementById('fs-caption'), chk=document.getElementById('fs-check');
-  var chips=[].slice.call(document.querySelectorAll('#fs-chips [data-fs]'));
-  var rst=document.getElementById('fs-reset');
-  // Sam's smooth cost curve, calibrated to the burger table: VC(50)=330, TC(50)=380, MC(50)=10
-  var A=0.0012, B=-0.052, C=6.2, FC=50;
-  var QMAX=70, PMAX=14, L=56, R=936, T=18, Bm=292;
-  var CAPS=['Find MR = MC — that crossing gives the profit-max quantity Q*.',
-            'Read Q* off the quantity axis — straight down from the crossing.',
-            'Read the price off the MR line (P = MR) — never off MC or ATC.',
-            'Read ATC at Q* — straight up from Q* to the ATC curve.',
-            'Profit = (P − ATC) × Q* — the shaded rectangle.'];
-  function xx(q){return L+q*((R-L)/QMAX);}
-  function yy(p){return Bm-p*((Bm-T)/PMAX);}
-  function avc(q){return A*q*q+B*q+C;}
-  function atc(q){return q<=0?0:FC/q+avc(q);}
-  function mc(q){return 3*A*q*q+2*B*q+C;}
-  function optQ(p){var d=4*B*B-12*A*(C-p); if(d<0) return 0; return (-2*B+Math.sqrt(d))/(6*A);}
-  function curve(fn,q0){var d='',first=true,q,v;for(q=(q0||0.5);q<=QMAX;q+=0.5){v=fn(q);if(v<0||v>PMAX)continue;d+=(first?'M':'L')+xx(q).toFixed(1)+' '+yy(v).toFixed(1)+' ';first=false;}return d;}
-  function axes(){
-    var s='',p,q,x,y;
-    for(p=0;p<=PMAX;p+=2){y=yy(p);s+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="rgba(156,163,175,0.22)" stroke-width="1"/><text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="10.5" fill="#6b7280">'+p+'</text>';}
-    for(q=0;q<=QMAX;q+=10){x=xx(q);s+='<line x1="'+x+'" y1="'+T+'" x2="'+x+'" y2="'+Bm+'" stroke="rgba(156,163,175,0.14)" stroke-width="1"/><text x="'+x+'" y="'+(Bm+16)+'" text-anchor="middle" font-size="10.5" fill="#6b7280">'+q+'</text>';}
-    s+='<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+Bm+'" stroke="#374151" stroke-width="1.5"/><line x1="'+L+'" y1="'+Bm+'" x2="'+R+'" y2="'+Bm+'" stroke="#374151" stroke-width="1.5"/>';
-    s+='<text x="14" y="155" text-anchor="middle" font-size="10.5" fill="#374151" transform="rotate(-90 14 155)">Price / Cost per burger ($)</text>';
-    s+='<text x="496" y="'+(Bm+33)+'" text-anchor="middle" font-size="11.5" fill="#374151">Quantity (burgers)</text>';
-    return s;
-  }
+  var sec=document.getElementById('five-steps'), pS=document.getElementById('fs-p'), pR=document.getElementById('fs-pRead');
+  var chk=document.getElementById('fs-check'), rst=document.getElementById('fs-reset');
+  var btns=[].slice.call(sec.querySelectorAll('.fs-btn')), user=false;
+  // W9.1: c(q) = 50 + 2q + 0.08q^2
+  var FC=50, QMAX=70, PMAX=14, L=48, R=448, T=14, B=310;
+  function x(q){return L+q*(R-L)/QMAX;} function y(p){return B-p*(B-T)/PMAX;}
+  function mc(q){return 2+0.16*q;} function avc(q){return 2+0.08*q;} function atc(q){return FC/q+avc(q);}
+  function qstar(p){return p>2? (p-2)/0.16 : 0;}
+  function f(v){ var a=Math.abs(v), t=(Math.abs(a-Math.round(a))<1e-9)? String(Math.round(a)) : a.toFixed(2); return t; }
+  function m(v){ return (v<0?'&minus;$':'$')+f(v); }
+  function step(){ return user? 5 : sec.querySelectorAll('.fs-step.visible').length; }
+  function txt(x0,y0,s,o){ o=o||{}; return '<text x="'+x0+'" y="'+y0+'" font-size="'+(o.fs||13)+'"'+(o.a?' text-anchor="'+o.a+'"':'')+(o.w?' font-weight="'+o.w+'"':'')+(o.h?' stroke="#fff" stroke-width="3.5" paint-order="stroke"':'')+' fill="'+(o.c||'#374151')+'">'+s+'</text>'; }
+  function line(x1,y1,x2,y2,c,w,dash){ return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+c+'" stroke-width="'+(w||1.5)+'"'+(dash?' stroke-dasharray="'+dash+'"':'')+'/>'; }
   function draw(){
-    var step=parseInt(sS.value,10), price=parseFloat(pS.value);
-    sR.textContent=step; pR.textContent='$'+price.toFixed(2);
-    var q=optQ(price), aq=atc(q), prof=(price-aq)*q, up=prof>=0;
-    var s=axes();
-    if(step>=5&&q>0){
-      var yTop=yy(Math.max(price,aq)), h=Math.abs(yy(price)-yy(aq));
-      s+='<rect x="'+xx(0)+'" y="'+yTop+'" width="'+(xx(q)-xx(0))+'" height="'+h+'" fill="'+(up?'rgba(16,185,129,0.20)':'rgba(239,68,68,0.18)')+'" stroke="'+(up?'#10b981':'#ef4444')+'" stroke-width="1.2" stroke-dasharray="4 3"/>';
-      s+='<text x="'+((xx(0)+xx(q))/2)+'" y="'+(yTop+h/2+5)+'" text-anchor="middle" font-size="13" font-weight="700" fill="'+(up?'#047857':'#b91c1c')+'">'+(up?'Profit':'Loss')+' = $'+Math.abs(prof).toFixed(0)+'</text>';
+    var p=parseFloat(pS.value), k=step(), q=qstar(p), s='', j;
+    pR.textContent='$'+p.toFixed(2);
+    btns.forEach(function(b){ b.classList.toggle('on', user && Math.abs(parseFloat(b.dataset.p)-p)<1e-9); });
+    var A=q>0? atc(q) : null, prof=q>0? p*q-(FC+2*q+0.08*q*q) : -FC;
+    var zone= q===0? 'shut' : (prof>1e-9? 'profit' : (prof<-1e-9? 'loss' : 'even'));
+    // axes and grid
+    var by=[]; if(k>=3) by.push(y(p)); if(k>=4 && q>0 && A<=PMAX) by.push(y(A));
+    var bx= k>=2? x(q) : null;
+    for(j=0;j<=PMAX;j+=2){ s+=line(L,y(j),R,y(j),'rgba(156,163,175,0.2)',1); if(!by.some(function(v){return Math.abs(v-y(j))<16;}) && !(j===0 && bx!==null && bx-L<30)) s+=txt(L-6,y(j)+4,'$'+j,{a:'end',fs:12,c:'#6b7280'}); }
+    for(j=0;j<=QMAX;j+=10){ if(bx===null || Math.abs(bx-x(j))>=34) s+=txt(x(j),B+16,j,{a:'middle',fs:12,c:'#6b7280'}); }
+    // step 5 region (drawn first so curves sit on top)
+    if(k>=5 && q>0){
+      var top=Math.max(p,A), bot=Math.min(p,A), col= zone==='profit'? '#16a34a' : '#dc2626';
+      if(zone!=='even') s+='<rect x="'+L+'" y="'+y(top)+'" width="'+(x(q)-L)+'" height="'+(y(bot)-y(top))+'" fill="'+col+'" fill-opacity="0.22" stroke="'+col+'" stroke-width="1.5"/>';
+      if(zone==='loss'){ var av=avc(q); s+='<rect x="'+L+'" y="'+y(p)+'" width="'+(x(q)-L)+'" height="'+(y(av)-y(p))+'" fill="#f59e0b" fill-opacity="0.22" stroke="#d97706" stroke-width="1" stroke-dasharray="4 3"/>';
+        if(x(q)-L>=96 && y(av)-y(p)>=15) s+=txt((L+x(q))/2,(y(av)+y(p))/2+4,'pays '+m((p-av)*q)+' of FC',{a:'middle',fs:11.5,w:700,c:'#b45309',h:1}); }
+      if(zone!=='even' && x(q)-L>=96 && y(bot)-y(top)>=15) s+=txt((L+x(q))/2,(y(top)+y(bot))/2+4,(zone==='profit'?'profit ':'loss ')+m(prof),{a:'middle',fs:12.5,w:700,c:zone==='profit'?'#15803d':'#b91c1c',h:1});
     }
-    s+='<path d="'+curve(avc)+'" fill="none" stroke="#14b8a6" stroke-width="2" stroke-dasharray="6 3"/>';
-    s+='<path d="'+curve(atc,3)+'" fill="none" stroke="#6366f1" stroke-width="2.5"/>';
-    s+='<path d="'+curve(mc)+'" fill="none" stroke="#f97316" stroke-width="2.5"/>';
-    s+='<text x="'+xx(52)+'" y="'+(yy(mc(52))-8)+'" font-size="11" font-weight="700" fill="#f97316">MC</text>';
-    s+='<text x="'+xx(62)+'" y="'+(yy(atc(62))-7)+'" font-size="11" font-weight="700" fill="#6366f1">ATC</text>';
-    s+='<text x="'+xx(64)+'" y="'+(yy(avc(64))+14)+'" font-size="11" font-weight="700" fill="#14b8a6">AVC</text>';
-    // step 1: MR line + the crossing
-    s+='<line x1="'+xx(0)+'" y1="'+yy(price)+'" x2="'+xx(QMAX)+'" y2="'+yy(price)+'" stroke="#8b5cf6" stroke-width="2.5"/>';
-    s+='<text x="'+(R-4)+'" y="'+(yy(price)-7)+'" text-anchor="end" font-size="11" font-weight="700" fill="#8b5cf6">d = MR = P</text>';
-    if(q>0){
-      s+='<circle cx="'+xx(q)+'" cy="'+yy(price)+'" r="6.5" fill="#10b981" stroke="#fff" stroke-width="2"/>';
-      if(step===1) s+='<text x="'+(xx(q)+13)+'" y="'+(yy(price)+20)+'" font-size="11.5" font-weight="700" fill="#047857">MR = MC here</text>';
-    }
-    // step 2: drop to the quantity axis
-    if(step>=2&&q>0){
-      s+='<line x1="'+xx(q)+'" y1="'+yy(price)+'" x2="'+xx(q)+'" y2="'+Bm+'" stroke="#9ca3af" stroke-width="1.3" stroke-dasharray="4 3"/>';
-      s+='<circle cx="'+xx(q)+'" cy="'+Bm+'" r="4.5" fill="#111827"/>';
-      s+='<rect x="'+(xx(q)-30)+'" y="'+(Bm+20)+'" width="60" height="17" rx="4" fill="#111827"/><text x="'+xx(q)+'" y="'+(Bm+32)+'" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">Q* = '+q.toFixed(1)+'</text>';
-    }
-    // step 3: read the price off MR
-    if(step>=3){
-      s+='<line x1="'+L+'" y1="'+yy(price)+'" x2="'+xx(q)+'" y2="'+yy(price)+'" stroke="#8b5cf6" stroke-width="1.3" stroke-dasharray="4 3"/>';
-      s+='<circle cx="'+L+'" cy="'+yy(price)+'" r="4.5" fill="#8b5cf6"/>';
-      s+='<rect x="'+(L+6)+'" y="'+(yy(price)-19)+'" width="74" height="16" rx="4" fill="#8b5cf6"/><text x="'+(L+43)+'" y="'+(yy(price)-7)+'" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">P = $'+price.toFixed(2)+'</text>';
-    }
-    // step 4: read ATC at Q*
-    if(step>=4&&q>0){
-      s+='<circle cx="'+xx(q)+'" cy="'+yy(aq)+'" r="6" fill="#6366f1" stroke="#fff" stroke-width="2"/>';
-      s+='<line x1="'+L+'" y1="'+yy(aq)+'" x2="'+xx(q)+'" y2="'+yy(aq)+'" stroke="#6366f1" stroke-width="1.3" stroke-dasharray="4 3"/>';
-      s+='<circle cx="'+L+'" cy="'+yy(aq)+'" r="4.5" fill="#6366f1"/>';
-      s+='<rect x="'+(L+6)+'" y="'+(yy(aq)+4)+'" width="92" height="16" rx="4" fill="#6366f1"/><text x="'+(L+52)+'" y="'+(yy(aq)+16)+'" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">ATC = $'+aq.toFixed(2)+'</text>';
-    }
+    s+=line(L,T,L,B,'#374151')+line(L,B,R,B,'#374151');
+    s+=txt(L+4,T+2,'$ per unit',{fs:12,c:'#374151'})+txt((L+R)/2,B+33,'output, q',{a:'middle',fs:12.5});
+    // cost curves (clip ATC to the plot)
+    var dA='',first=true,qq; for(qq=4;qq<=QMAX;qq+=0.5){ var v=atc(qq); if(v>PMAX) continue; dA+=(first?'M':'L')+x(qq).toFixed(1)+' '+y(v).toFixed(1)+' '; first=false; }
+    s+='<path d="'+dA+'" fill="none" stroke="#2563eb" stroke-width="2.5"/>';
+    s+=line(x(0),y(avc(0)),x(QMAX),y(avc(QMAX)),'#0d9488',2.5);
+    s+=line(x(0),y(mc(0)),x(QMAX),y(mc(QMAX)),'#f97316',3);
+    s+=txt(R+4,y(mc(QMAX))+4,'MC',{fs:13,w:700,c:'#c2410c'})+txt(R+4,y(atc(QMAX))-2,'ATC',{fs:13,w:700,c:'#1d4ed8'})+txt(R+4,y(avc(QMAX))+12,'AVC',{fs:13,w:700,c:'#0f766e'});
+    s+='<circle cx="'+x(25)+'" cy="'+y(6)+'" r="3.5" fill="#1d4ed8"/>'+txt(x(25)+2,y(6)+17,'min ATC $6',{fs:11,c:'#1d4ed8'});
+    // price line = MR
+    s+=line(L,y(p),R,y(p),'#7c3aed',2.5)+txt(R-2,y(p)-6,'P = MR = '+m(p),{a:'end',fs:12.5,w:700,c:'#7c3aed'});
+    // steps 1-4
+    if(k>=1){ if(q>0) s+='<circle cx="'+x(q)+'" cy="'+y(p)+'" r="7" fill="none" stroke="#7c3aed" stroke-width="2.5"/><circle cx="'+x(q)+'" cy="'+y(p)+'" r="3.5" fill="#7c3aed"/>';
+              else s+=txt(L+8,y(p)+17,'P below min AVC $2: nothing worth making',{fs:11.5,w:700,c:'#b91c1c',h:1}); }
+    if(k>=2 && q>0){ s+=line(x(q),y(p),x(q),B,'#111827',1.5,'4 3')+txt(x(q),B+16,'',{})+'<rect x="'+(x(q)-26)+'" y="'+(B+3)+'" width="52" height="17" rx="4" fill="#111827"/>'+txt(x(q),B+16,'q* = '+f(q),{a:'middle',fs:11.5,w:700,c:'#fff'}); }
+    if(k>=2 && q===0){ s+='<rect x="'+(L-22)+'" y="'+(B+3)+'" width="44" height="17" rx="4" fill="#b91c1c"/>'+txt(L,B+16,'q* = 0',{a:'middle',fs:11.5,w:700,c:'#fff'}); }
+    if(k>=3){ s+='<rect x="'+(L-46)+'" y="'+(y(p)-9)+'" width="44" height="17" rx="4" fill="#7c3aed"/>'+txt(L-24,y(p)+4,m(p),{a:'middle',fs:11.5,w:700,c:'#fff'}); }
+    if(k>=4 && q>0 && A<=PMAX){ s+=line(L,y(A),x(q),y(A),'#1d4ed8',1.5,'4 3')+'<circle cx="'+x(q)+'" cy="'+y(A)+'" r="5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>';
+      if(Math.abs(y(A)-y(p))>=18) s+='<rect x="'+(L-46)+'" y="'+(y(A)-9)+'" width="44" height="17" rx="4" fill="#1d4ed8"/>'+txt(L-24,y(A)+4,m(Math.round(A*100)/100),{a:'middle',fs:11.5,w:700,c:'#fff'}); }
+    if(k>=5 && q===0) s+=txt(x(32),y(11.5),'shut down: loss = FC = $50',{a:'middle',fs:14,w:700,c:'#b91c1c',h:1});
     svg.innerHTML=s;
-    cap.textContent=CAPS[step-1];
-    chips.forEach(function(el){
-      var n=+el.getAttribute('data-fs'), on=n<=step, cur=n===step;
-      el.style.background=cur?'#f59e0b':(on?'#fef3c7':'#f3f4f6');
-      el.style.color=cur?'#fff':(on?'#92400e':'#9ca3af');
-      el.style.borderColor=cur?'#b45309':'transparent';
-    });
-    chk.innerHTML='At P = $'+price.toFixed(2)+': Q* = <strong>'+q.toFixed(1)+'</strong> &middot; ATC = <strong>$'+aq.toFixed(2)+'</strong> &middot; '+(up?'profit':'loss')+' = ('+price.toFixed(2)+' &minus; '+aq.toFixed(2)+') &times; '+q.toFixed(1)+' = <strong>'+(prof<0?'&minus;$'+Math.abs(prof).toFixed(0):'$'+prof.toFixed(0))+'</strong>';
-    chk.style.background=up?'#ecfdf5':'#fef2f2';
-    chk.style.borderColor=up?'var(--success-color)':'var(--danger-color)';
+    // left panel numbers
+    var v=[];
+    if(q>0){
+      v[1]='P = MC: '+m(p)+' = 2 + 0.16q';
+      v[2]='q* = (P &minus; 2) / 0.16 = <strong>'+f(q)+'</strong>';
+      v[3]='P = '+m(p)+', so TR = P &times; q* = '+m(p*q);
+      v[4]='ATC('+f(q)+') = 50/'+f(q)+' + 2 + 0.08&middot;'+f(q)+' = <strong>'+m(A)+'</strong>';
+      v[5]='&pi; = ('+f(p)+' &minus; '+f(A)+') &times; '+f(q)+' = <strong>'+m(prof)+'</strong>';
+    } else {
+      v[1]='P = '+m(p)+' is below min AVC = $2: MC never comes down to P above AVC';
+      v[2]='q* = <strong>0</strong>: shut down';
+      v[3]='P = '+m(p)+', but TR = $0 at q* = 0';
+      v[4]='No output, so TC = FC = $50';
+      v[5]='&pi; = &minus;FC = <strong>&minus;$50</strong>';
+    }
+    for(j=1;j<=5;j++) document.getElementById('fs-v'+j).innerHTML=v[j];
+    var col,bg,msg;
+    if(zone==='profit'){ col='#16a34a'; bg='#ecfdf5'; msg='<strong style="color:#15803d">Positive profit '+m(prof)+'.</strong> P &gt; ATC at q*: stay in the long run.'; }
+    else if(zone==='even'){ col='#b45309'; bg='#fffbeb'; msg='<strong style="color:#b45309">Break even at the exit point.</strong> P = min ATC = $6: zero economic profit.'; }
+    else if(zone==='loss'){ col='#dc2626'; bg='#fef2f2'; msg='<strong style="color:#b91c1c">Loss '+m(prof)+', but the loss-minimizing choice.</strong> Revenue covers VC and pays '+m((p-avc(q))*q)+' of the $50 FC, so operating beats shutting (&minus;$50). Exit in the long run.'; }
+    else { col='#dc2626'; bg='#fef2f2'; msg='<strong style="color:#b91c1c">Shut down: loss = &minus;FC = &minus;$50.</strong> P is below the shutdown point (min AVC = $2). Exit in the long run.'; }
+    if(k>=5){ chk.style.visibility='visible'; chk.style.background=bg; chk.style.borderColor=col; chk.innerHTML=msg; } else { chk.style.visibility='hidden'; chk.innerHTML='&nbsp;'; }
   }
-  sS.addEventListener('input',draw); pS.addEventListener('input',draw);
-  rst.addEventListener('click',function(){sS.value=5;pS.value=10;draw();});
+  function use(){ user=true; draw(); }
+  pS.addEventListener('input',use);
+  ['keydown','keyup','keypress'].forEach(function(ev){ pS.addEventListener(ev,function(e){e.stopPropagation();}); });
+  btns.forEach(function(b){ b.addEventListener('click',function(){ pS.value=b.dataset.p; use(); }); });
+  rst.addEventListener('click',function(){ pS.value=10; user=false; draw(); });
+  if(window.Reveal && Reveal.on){ Reveal.on('fragmentshown',draw); Reveal.on('fragmenthidden',draw); Reveal.on('slidechanged',draw); }
   draw();
 })();
 </script>

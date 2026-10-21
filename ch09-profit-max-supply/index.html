@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f33e6d5fc8acd3647cf4bd8b72676fb1">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6c9aa6da89d3640adb21c84afe8bb344">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -964,7 +964,7 @@
 <section id="shutdown-vs-exit">
   <h2><i class="fa-solid fa-door-closed" style="color: var(--danger-color);"></i> Short-Run Shutdown vs Long-Run Exit</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-    <div style="background: #f0f5f8; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--secondary-color);">
+    <div class="fragment fade-up" data-fragment-index="1" style="background: #f0f5f8; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--secondary-color);">
       <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Short run &mdash; \(\bar K\) sunk</p>
       <p style="font-size: 12.5pt; line-height: 1.5; margin: 6px 0;">Fixed cost \(r\bar K\) is paid whether or not you produce, so it cancels. Compare revenue to <em>variable</em> cost:</p>
       <p style="text-align: center; font-size: 13.5pt; margin: 6px 0;">\(pq^* - VC \geq -r\bar K\)</p>
@@ -972,7 +972,7 @@
         <p style="margin: 0; font-size: 13pt; text-align: center;"><strong>Operate iff \(p \geq \min AVC\)</strong></p>
       </div>
     </div>
-    <div style="background: #fef9f3; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--accent-color);">
+    <div class="fragment fade-up" data-fragment-index="2" style="background: #fef9f3; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--accent-color);">
       <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Long run &mdash; \(K\) adjustable</p>
       <p style="font-size: 12.5pt; line-height: 1.5; margin: 6px 0;">Nothing is sunk: sell equipment, walk away from leases, leave the industry. Every cost is avoidable, so compare to <em>total</em> cost:</p>
       <p style="text-align: center; font-size: 13.5pt; margin: 6px 0;">\(pq^* \geq c_l(q^*)\)</p>
@@ -981,29 +981,40 @@
       </div>
     </div>
   </div>
-  <div class="key-result" style="margin-top: 12px;">
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top: 12px;">
     <p style="margin: 0; font-size: 12.5pt;"><strong>The asymmetry.</strong> SR uses min AVC (the fixed cost is sunk, so operating at a loss can beat not operating); LR uses min ATC (exit avoids every cost). The wedge between the two thresholds is exactly the <em>avoidable</em> fixed cost.</p>
+    <p style="margin: 6px 0 0; font-size: 12.5pt;"><strong>Sam:</strong> open if \(p \geq \$2\) (min AVC); stay if \(p \geq \$6\) (min ATC).</p>
   </div>
 </section>
 
 <section id="three-zones">
+  <style>
+   #three-zones .ax-slider { position:absolute; margin:0; padding:0; height:22px; -webkit-appearance:none; appearance:none; background:transparent; outline:none; transform-origin:50% 50%; }
+   #three-zones .ax-slider::-webkit-slider-runnable-track { height:6px; border-radius:3px; background:#ddd6fe; }
+   #three-zones .ax-slider::-webkit-slider-thumb { -webkit-appearance:none; appearance:none; width:20px; height:20px; margin-top:-7px; border-radius:50%; border:2px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,0.35); cursor:grab; background:#8b5cf6; }
+   #three-zones .ax-slider::-moz-range-track { height:6px; border-radius:3px; background:#ddd6fe; }
+   #three-zones .ax-slider::-moz-range-thumb { width:20px; height:20px; border-radius:50%; border:2px solid #fff; cursor:grab; background:#8b5cf6; }
+   #three-zones .zbox { transition: opacity .2s, box-shadow .2s; }
+  </style>
   <h2><i class="fa-solid fa-traffic-light" style="color: var(--accent-color);"></i> Shutdown, Loss-Min, and the Three Price Zones</h2>
   <div style="display: grid; grid-template-columns: 1.52fr 1fr; gap: 18px; align-items: center;">
     <div class="iv-card" style="padding: 8px 14px 10px;">
       <div style="text-align:center; margin-bottom:4px;"><span id="f103-banner" style="display:inline-block; font-size:12pt; font-weight:700; padding:3px 16px; border-radius:6px;"></span></div>
       <div id="f103-score" style="text-align:center; font-size:11.5pt; font-weight:700; display:flex; flex-wrap:wrap; justify-content:center; gap:3px 14px; margin:0 0 4px; min-height:17px;"></div>
-      <svg id="f103-svg" viewBox="0 0 700 360" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:322px; display:block;"></svg>
-      <div style="max-width:520px; margin:7px auto 0;"><label class="iv-label">Market Price (P) <span class="iv-readout" id="f103-pRead">10.0</span></label><input type="range" class="iv-slider" id="f103-p" min="1" max="11.5" step="0.1" value="10"></div>
+      <div id="f103-wrap" style="position:relative;">
+        <svg id="f103-svg" viewBox="0 0 700 360" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;"></svg>
+        <input type="range" class="ax-slider" id="f103-p" min="1" max="11.5" step="0.1" value="10" aria-label="Market price (P)">
+      </div>
       <div style="text-align:center; margin-top:6px; display:flex; gap:10px; justify-content:center;">
         <button id="f103-supply" style="background:#fff; border:1px solid var(--line-color); border-radius:16px; padding:4px 14px; font-size:11pt; color:var(--danger-color); font-weight:600; cursor:pointer;">Show firm supply curve</button>
         <button id="f103-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:4px 16px; font-size:11pt; color:var(--secondary-color); font-weight:600; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button>
       </div>
-      <p style="text-align:center; font-size:10.5pt; color:var(--muted-color); margin:6px 0 0;">Drag the price through all three zones. Break-even is min ATC&nbsp;$9; the shutdown floor is min AVC&nbsp;$4.20.</p>
+      <p style="text-align:center; font-size:10.5pt; color:var(--muted-color); margin:6px 0 0;">Drag the price up and down the axis. Break-even is min ATC&nbsp;$9; the shutdown floor is min AVC&nbsp;$4.20.</p>
     </div>
     <div>
-      <div style="background:#ecfdf5; border-radius:8px; padding:10px 15px; border-left:4px solid var(--success-color); margin-bottom:9px;"><p style="font-size:12.5pt;"><strong>Zone 1 &mdash; P &gt; min ATC:</strong> economic profit. Produce, pocket it.</p></div>
-      <div style="background:#fffbeb; border-radius:8px; padding:10px 15px; border-left:4px solid #d97706; margin-bottom:9px;"><p style="font-size:12.5pt;"><strong>Zone 2 &mdash; min AVC &lt; P &lt; min ATC:</strong> losing money, but <strong>stay open</strong> &mdash; you still cover some fixed cost.</p></div>
-      <div style="background:#fef2f2; border-radius:8px; padding:10px 15px; border-left:4px solid var(--danger-color);"><p style="font-size:12.5pt;"><strong>Zone 3 &mdash; P &lt; min AVC:</strong> every burger loses money before rent. <strong>Shut down.</strong></p></div>
+      <div id="f103-z1" class="zbox" style="background:#ecfdf5; border-radius:8px; padding:10px 15px; border-left:4px solid #10b981; margin-bottom:9px;"><p style="font-size:12.5pt;"><strong style="color:#15803d;">Zone 1 &mdash; P &gt; min ATC:</strong> economic profit. Produce, pocket it.</p></div>
+      <div id="f103-z2" class="zbox" style="background:#fffbeb; border-radius:8px; padding:10px 15px; border-left:4px solid #d97706; margin-bottom:9px;"><p style="font-size:12.5pt;"><strong style="color:#b45309;">Zone 2 &mdash; min AVC &lt; P &lt; min ATC:</strong> losing money, but <strong>stay open</strong> &mdash; you still cover some fixed cost.</p></div>
+      <div id="f103-z3" class="zbox" style="background:#fef2f2; border-radius:8px; padding:10px 15px; border-left:4px solid #dc2626;"><p style="font-size:12.5pt;"><strong style="color:#dc2626;">Zone 3 &mdash; P &lt; min AVC:</strong> every burger loses money before rent. <strong>Shut down.</strong></p></div>
       <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin:10px 0 0; line-height:1.45;">Generic U-shaped costs here. We run the same three zones on the gigafactory&rsquo;s own numbers a few slides from now &mdash; where AVC turns out <em>not</em> to be U-shaped.</p>
     </div>
   </div>
@@ -1011,24 +1022,32 @@
 
 
 <section id="shutdown-algebra">
+  <style>#shutdown-algebra table.table-standard th, #shutdown-algebra table.table-standard td { padding: 5px 12px !important; line-height: 1.3 !important; }</style>
   <h2><i class="fa-solid fa-power-off" style="color: var(--danger-color);"></i> Negative Profit &mdash; Operate at a Loss, or Shut Down?</h2>
-  <p style="font-size: 13pt; margin: 0 0 8px;">In the short run the firm owes its <strong>fixed cost</strong> whether or not it produces. Lay the two options side by side &mdash; \(FC\) appears in <em>both</em> columns:</p>
-  <table class="table-standard" style="margin-top: 4px; text-align: center;">
-    <thead><tr><th></th><th>Shut down (\(Q = 0\))</th><th>Operate (\(Q = Q^*\))</th></tr></thead>
+  <p style="font-size: 12.5pt; margin: 0 0 6px;">In the short run the firm owes its <strong>fixed cost</strong> whether or not it produces. Follow the logic one step at a time:</p>
+  <table class="table-standard fragment fade-up" data-fragment-index="1" style="margin-top: 2px; text-align: center; font-size: 12pt;">
+    <thead><tr><th>1 &middot; Two columns</th><th>Shut down (\(Q = 0\))</th><th>Operate (\(Q = Q^*\))</th></tr></thead>
     <tbody>
       <tr><th>Revenue</th><td style="text-align:center;">None</td><td style="text-align:center;">\(TR\)</td></tr>
       <tr><th>Cost</th><td style="text-align:center;">\(FC\)</td><td style="text-align:center;">\(FC + VC\)</td></tr>
       <tr><th>Profit / loss</th><td style="text-align:center;">\(\pi_{\text{shut}} = -FC\)</td><td style="text-align:center;">\(\pi_{\text{op}} = TR - FC - VC\)</td></tr>
     </tbody>
   </table>
-  <div class="key-result" style="margin-top: 12px;">
-    <p style="text-align: center; font-size: 14.5pt; margin: 0;">Operating wins when \(\;\pi_{\text{op}} > \pi_{\text{shut}}\;\): \(\quad TR - FC - VC \;>\; -FC \quad\Longrightarrow\quad \pi_{\text{op}} - \pi_{\text{shut}} = TR - VC \;>\; 0\)</p>
+  <div class="key-result fragment fade-up" data-fragment-index="2" style="margin-top: 8px; padding: 6px 14px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>2 &middot; Subtract.</strong> \(FC\) is in both columns, so it cancels: \(\pi_{\text{op}} - \pi_{\text{shut}} = TR - VC\). Operate if and only if <strong>\(TR > VC\)</strong>.</p>
   </div>
-  <div class="misconception" style="margin-top: 10px;">
-    <p style="font-size: 13pt; margin: 0;"><strong>Operate at a loss whenever \(TR > VC\).</strong> The \(FC\) cancels &mdash; it is paid either way. Fixed cost is <em>sunk</em> in the short run, so what matters is whether revenue beats <em>variable</em> cost, not total cost.</p>
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top: 6px; padding: 6px 14px; background: #f0f5f8; border-left-color: var(--secondary-color);">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>3 &middot; Divide by \(Q\).</strong> \(TR > VC \iff P\cdot Q > AVC\cdot Q \iff P > AVC\). The lowest AVC can go is \(\min AVC\): that is the cutoff.</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="4" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
+    <div class="key-result" style="margin: 0; padding: 6px 14px; background: #ecfdf5; border-left-color: var(--success-color); text-align: center;"><p style="margin: 0; font-size: 13pt;"><strong style="color: var(--success-color);">Operate</strong> if \(P \geq \min AVC\) &nbsp;(\(TR \geq VC\))</p></div>
+    <div class="misconception" style="margin: 0; padding: 6px 14px; text-align: center;"><p style="margin: 0; font-size: 13pt;"><strong style="color: var(--danger-color);">Shut down</strong> if \(P < \min AVC\) &nbsp;(\(TR < VC\))</p></div>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="5" style="margin-top: 6px; background: #fffbeb; border-left: 4px solid #d97706; border-radius: 8px; padding: 6px 14px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>5 &middot; Sam&rsquo;s check (W9.1, \(\$5\)).</strong> \(TR = \$93.75 > VC = \$65.63\), so he operates: \(-\$21.88\) beats \(-\$50\). Per unit: \(P = \$5 > AVC(18.75) = \$3.50\).</p>
   </div>
 </section>
-<section id="shutdown-rule">
+<section id="shutdown-rule" data-visibility="hidden">
   <h2><i class="fa-solid fa-gavel" style="color: var(--secondary-color);"></i> The Short-Run Shutdown Rule</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 12px;">
     <div class="key-result" style="background: #ecfdf5; border-left-color: var(--success-color); text-align: center; padding: 18px 16px;">
@@ -1098,87 +1117,89 @@
         <p style="font-size: 11pt; color: var(--danger-color); font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 4px;"><i class="fa-solid fa-circle-exclamation"></i> Heads Up &mdash; quasi-rents \(\neq\) profit</p>
         <p style="margin: 0; font-size: 12pt; line-height: 1.5;">Quasi-rents \(= R - VC\). Profit \(= R - VC - FC\). They differ by the fixed cost. A firm can have <strong>positive quasi-rents and negative profit</strong> &mdash; operating, losing money, and rationally choosing to. Shutdown uses quasi-rents; exit uses profit.</p>
       </div>
-      <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 9px 14px; margin-top: 8px;">
-        <p style="font-size: 10.5pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 2px;"><i class="fa-solid fa-rotate-left"></i> Recall from Principles &mdash; 1116 §10.3</p>
-        <p style="font-size: 11.5pt; margin: 0; line-height: 1.45;">Sam's three zones as price fell \(\$8 \to \$7 \to \$6.50\): positive profit, operate-at-a-loss, shut down. We now write them as \(p \geq \min AVC\) (SR) and \(p < \min ATC\) (LR exit).</p>
+      <div class="fragment fade-up" data-fragment-index="4" style="background: #fffbeb; border-left: 4px solid #d97706; border-radius: 6px; padding: 9px 14px; margin-top: 8px;">
+        <p style="font-size: 12pt; margin: 0; line-height: 1.45;">On Sam&rsquo;s cost at \(\$5\), quasi-rents \(= \$93.75 - \$65.63 = \$28.13\): the amber &ldquo;pays \(\$28.13\) of FC&rdquo; band on slide 20.</p>
       </div>
     </div>
     <div style="text-align: center;">
-      <img alt="Stacked-bar decomposition at the SR optimum q* = 50.9 GWh. Left bar: revenue = $4278M. Right bar: variable cost K+L ($868M) + variable cost materials ($2832M) + sunk fixed cost rK-bar ($520M) + profit ($59M). Quasi-rents = revenue minus variable cost = $579M, the bracket spanning fixed cost plus profit." src="figures/figure-9-9-quasi-rents-decomposition.png" class="figure" style="max-height: 420px;">
+      <svg viewBox="0 0 520 400" style="width:100%; height:auto; max-height:390px; display:block;" class="mathjax_ignore"><line x1="60" y1="372.0" x2="400" y2="372.0" stroke="rgba(156,163,175,0.22)"/><text x="54" y="376.0" text-anchor="end" font-size="12" fill="#6b7280">0</text><line x1="60" y1="294.2" x2="400" y2="294.2" stroke="rgba(156,163,175,0.22)"/><text x="54" y="298.2" text-anchor="end" font-size="12" fill="#6b7280">1,000</text><line x1="60" y1="216.4" x2="400" y2="216.4" stroke="rgba(156,163,175,0.22)"/><text x="54" y="220.4" text-anchor="end" font-size="12" fill="#6b7280">2,000</text><line x1="60" y1="138.7" x2="400" y2="138.7" stroke="rgba(156,163,175,0.22)"/><text x="54" y="142.7" text-anchor="end" font-size="12" fill="#6b7280">3,000</text><line x1="60" y1="60.9" x2="400" y2="60.9" stroke="rgba(156,163,175,0.22)"/><text x="54" y="64.9" text-anchor="end" font-size="12" fill="#6b7280">4,000</text><line x1="60" y1="22" x2="60" y2="372" stroke="#374151" stroke-width="1.5"/><line x1="60" y1="372" x2="400" y2="372" stroke="#374151" stroke-width="1.5"/><text x="64" y="14" font-size="12" fill="#374151">$M a year at q* = 50.9 GWh</text><text x="144.0" y="390" text-anchor="middle" font-size="13" fill="#374151">Revenue</text><text x="304.0" y="390" text-anchor="middle" font-size="13" fill="#374151">Costs + profit</text><g class="fragment fade-up" data-fragment-index="1" ><rect x="92" y="39.3" width="104" height="332.7" fill="#3b82f6"/><text x="144.0" y="205.6" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">$4,278M</text><line x1="196" y1="39.3" x2="364" y2="39.3" stroke="#3b82f6" stroke-width="1.2" stroke-dasharray="4 3"/></g><g class="fragment fade-up" data-fragment-index="2" ><rect x="252" y="304.5" width="104" height="67.5" fill="#f59e0b"/><text x="304.0" y="343.2" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">labor $868M</text><rect x="252" y="84.2" width="104" height="220.3" fill="#a855f7"/><text x="304.0" y="199.4" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">materials $2,832M</text><line x1="370" y1="39.3" x2="370" y2="84.2" stroke="#10b981" stroke-width="2.5"/><line x1="364" y1="84.2" x2="376" y2="84.2" stroke="#10b981" stroke-width="2.5"/><line x1="364" y1="39.3" x2="376" y2="39.3" stroke="#10b981" stroke-width="2.5"/><text x="382" y="59.3" font-size="13" font-weight="700" fill="#15803d">quasi-rents</text><text x="382" y="77.3" font-size="13" font-weight="700" fill="#15803d">= R &#8722; VC = $579M</text><text x="382" y="228.1" font-size="12" fill="#6b7280">VC = $3,700M</text></g><g class="fragment fade-up" data-fragment-index="3" ><rect x="252" y="43.8" width="104" height="40.4" fill="#9ca3af"/><text x="304.0" y="69.0" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">FC $520M</text><rect x="252" y="39.3" width="104" height="4.5" fill="#10b981"/><text x="382" y="33.3" font-size="12.5" font-weight="700" fill="#15803d">profit $59M</text><line x1="358" y1="64.0" x2="378" y2="109.3" stroke="#9ca3af" stroke-width="1.2"/><text x="382" y="113.3" font-size="12" fill="#4b5563">FC $520M is paid</text><text x="382" y="130.3" font-size="12" fill="#4b5563">out of the quasi-rents</text></g></svg>
     </div>
   </div>
 </section>
 
 <section id="three-regimes-figure">
-  <h2><i class="fa-solid fa-traffic-light" style="color: var(--accent-color);"></i> Three Price Regimes at a Glance</h2>
-  <div style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 22px; align-items: center;">
-    <div style="text-align: center;">
-      <img alt="One MC/ATC/AVC diagram with three horizontal price lines. At $95/kWh: positive profit (p above min SATC = $82.8). At $75/kWh: SR loss but operate, LR exit (min AVC < p < min SATC). At $40/kWh: shutdown, since p is below min AVC = $55.6 = materials cost m." src="figures/figure-9-4-shutdown-three-regimes.png" class="figure" style="max-height: 440px;">
+  <h2><i class="fa-solid fa-traffic-light" style="color: var(--accent-color);"></i> Three Price Regimes at the Gigafactory</h2>
+  <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 6px 16px; margin: 0 0 8px;">
+    <p style="font-size: 12.5pt; margin: 0; line-height: 1.5;"><strong style="color: var(--secondary-color);">Gigafactory numbers (Chs 7&ndash;8):</strong> \(A=8,\ \alpha=0.4,\ \beta=0.6,\ \bar K=4,\ w=0.10,\ r=0.13\) &nbsp;&middot;&nbsp; <strong>New in Ch 9:</strong> materials \(m=\$55.6\)/kWh, \(FC = r\bar K = \$520\)M</p>
+  </div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(0, 1fr); gap: 18px; align-items: center;">
+    <div><svg viewBox="0 0 640 392" style="width:100%; height:auto; max-height:356px; display:block;" class="mathjax_ignore"><line x1="62" y1="352.0" x2="600" y2="352.0" stroke="rgba(156,163,175,0.2)"/><text x="56" y="356.0" text-anchor="end" font-size="12" fill="#6b7280">$20</text><line x1="62" y1="314.7" x2="600" y2="314.7" stroke="rgba(156,163,175,0.2)"/><text x="56" y="318.7" text-anchor="end" font-size="12" fill="#6b7280">$30</text><line x1="62" y1="277.3" x2="600" y2="277.3" stroke="rgba(156,163,175,0.2)"/><text x="56" y="281.3" text-anchor="end" font-size="12" fill="#6b7280">$40</text><line x1="62" y1="240.0" x2="600" y2="240.0" stroke="rgba(156,163,175,0.2)"/><text x="56" y="244.0" text-anchor="end" font-size="12" fill="#6b7280">$50</text><line x1="62" y1="202.7" x2="600" y2="202.7" stroke="rgba(156,163,175,0.2)"/><text x="56" y="206.7" text-anchor="end" font-size="12" fill="#6b7280">$60</text><line x1="62" y1="165.3" x2="600" y2="165.3" stroke="rgba(156,163,175,0.2)"/><text x="56" y="169.3" text-anchor="end" font-size="12" fill="#6b7280">$70</text><line x1="62" y1="128.0" x2="600" y2="128.0" stroke="rgba(156,163,175,0.2)"/><text x="56" y="132.0" text-anchor="end" font-size="12" fill="#6b7280">$80</text><line x1="62" y1="90.7" x2="600" y2="90.7" stroke="rgba(156,163,175,0.2)"/><text x="56" y="94.7" text-anchor="end" font-size="12" fill="#6b7280">$90</text><line x1="62" y1="53.3" x2="600" y2="53.3" stroke="rgba(156,163,175,0.2)"/><text x="56" y="57.3" text-anchor="end" font-size="12" fill="#6b7280">$100</text><line x1="62" y1="16.0" x2="600" y2="16.0" stroke="rgba(156,163,175,0.2)"/><text x="56" y="20.0" text-anchor="end" font-size="12" fill="#6b7280">$110</text><text x="62.0" y="369" text-anchor="middle" font-size="12" fill="#6b7280">0</text><text x="129.2" y="369" text-anchor="middle" font-size="12" fill="#6b7280">10</text><text x="196.5" y="369" text-anchor="middle" font-size="12" fill="#6b7280">20</text><text x="263.8" y="369" text-anchor="middle" font-size="12" fill="#6b7280">30</text><text x="331.0" y="369" text-anchor="middle" font-size="12" fill="#6b7280">40</text><text x="398.2" y="369" text-anchor="middle" font-size="12" fill="#6b7280">50</text><text x="465.5" y="369" text-anchor="middle" font-size="12" fill="#6b7280">60</text><text x="532.8" y="369" text-anchor="middle" font-size="12" fill="#6b7280">70</text><text x="600.0" y="369" text-anchor="middle" font-size="12" fill="#6b7280">80</text><line x1="62" y1="16" x2="62" y2="352" stroke="#374151" stroke-width="1.5"/><line x1="62" y1="352" x2="600" y2="352" stroke="#374151" stroke-width="1.5"/><text x="68" y="20" font-size="12" fill="#374151">$/kWh</text><text x="331.0" y="387" text-anchor="middle" font-size="12.5" fill="#374151">output q (GWh/yr)</text><path d="M63.7 217.3 L65.4 216.2 L67.0 215.3 L68.7 214.5 L70.4 213.7 L72.1 213.0 L73.8 212.4 L75.5 211.7 L77.1 211.1 L78.8 210.6 L80.5 210.0 L82.2 209.5 L83.9 208.9 L85.5 208.4 L87.2 207.9 L88.9 207.4 L90.6 206.9 L92.3 206.5 L93.9 206.0 L95.6 205.6 L97.3 205.1 L99.0 204.7 L100.7 204.2 L102.3 203.8 L104.0 203.4 L105.7 203.0 L107.4 202.6 L109.1 202.2 L110.8 201.8 L112.4 201.4 L114.1 201.0 L115.8 200.6 L117.5 200.2 L119.2 199.8 L120.8 199.4 L122.5 199.1 L124.2 198.7 L125.9 198.3 L127.6 198.0 L129.2 197.6 L130.9 197.2 L132.6 196.9 L134.3 196.5 L136.0 196.2 L137.7 195.8 L139.3 195.5 L141.0 195.2 L142.7 194.8 L144.4 194.5 L146.1 194.2 L147.7 193.8 L149.4 193.5 L151.1 193.2 L152.8 192.8 L154.5 192.5 L156.2 192.2 L157.8 191.9 L159.5 191.6 L161.2 191.2 L162.9 190.9 L164.6 190.6 L166.2 190.3 L167.9 190.0 L169.6 189.7 L171.3 189.4 L173.0 189.1 L174.6 188.8 L176.3 188.5 L178.0 188.2 L179.7 187.9 L181.4 187.6 L183.1 187.3 L184.7 187.0 L186.4 186.7 L188.1 186.4 L189.8 186.1 L191.5 185.8 L193.1 185.6 L194.8 185.3 L196.5 185.0 L198.2 184.7 L199.9 184.4 L201.5 184.1 L203.2 183.9 L204.9 183.6 L206.6 183.3 L208.3 183.0 L209.9 182.7 L211.6 182.5 L213.3 182.2 L215.0 181.9 L216.7 181.6 L218.4 181.4 L220.0 181.1 L221.7 180.8 L223.4 180.6 L225.1 180.3 L226.8 180.0 L228.4 179.8 L230.1 179.5 L231.8 179.2 L233.5 179.0 L235.2 178.7 L236.8 178.5 L238.5 178.2 L240.2 177.9 L241.9 177.7 L243.6 177.4 L245.3 177.2 L246.9 176.9 L248.6 176.7 L250.3 176.4 L252.0 176.1 L253.7 175.9 L255.3 175.6 L257.0 175.4 L258.7 175.1 L260.4 174.9 L262.1 174.6 L263.8 174.4 L265.4 174.1 L267.1 173.9 L268.8 173.7 L270.5 173.4 L272.2 173.2 L273.8 172.9 L275.5 172.7 L277.2 172.4 L278.9 172.2 L280.6 171.9 L282.2 171.7 L283.9 171.5 L285.6 171.2 L287.3 171.0 L289.0 170.7 L290.6 170.5 L292.3 170.3 L294.0 170.0 L295.7 169.8 L297.4 169.6 L299.1 169.3 L300.7 169.1 L302.4 168.8 L304.1 168.6 L305.8 168.4 L307.5 168.1 L309.1 167.9 L310.8 167.7 L312.5 167.5 L314.2 167.2 L315.9 167.0 L317.6 166.8 L319.2 166.5 L320.9 166.3 L322.6 166.1 L324.3 165.8 L326.0 165.6 L327.6 165.4 L329.3 165.2 L331.0 164.9 L332.7 164.7 L334.4 164.5 L336.0 164.3 L337.7 164.0 L339.4 163.8 L341.1 163.6 L342.8 163.4 L344.4 163.2 L346.1 162.9 L347.8 162.7 L349.5 162.5 L351.2 162.3 L352.9 162.0 L354.5 161.8 L356.2 161.6 L357.9 161.4 L359.6 161.2 L361.3 161.0 L362.9 160.7 L364.6 160.5 L366.3 160.3 L368.0 160.1 L369.7 159.9 L371.4 159.7 L373.0 159.4 L374.7 159.2 L376.4 159.0 L378.1 158.8 L379.8 158.6 L381.4 158.4 L383.1 158.2 L384.8 157.9 L386.5 157.7 L388.2 157.5 L389.8 157.3 L391.5 157.1 L393.2 156.9 L394.9 156.7 L396.6 156.5 L398.2 156.3 L399.9 156.0 L401.6 155.8 L403.3 155.6 L405.0 155.4 L406.7 155.2 L408.3 155.0 L410.0 154.8 L411.7 154.6 L413.4 154.4 L415.1 154.2 L416.7 154.0 L418.4 153.8 L420.1 153.6 L421.8 153.4 L423.5 153.2 L425.1 152.9 L426.8 152.7 L428.5 152.5 L430.2 152.3 L431.9 152.1 L433.6 151.9 L435.2 151.7 L436.9 151.5 L438.6 151.3 L440.3 151.1 L442.0 150.9 L443.6 150.7 L445.3 150.5 L447.0 150.3 L448.7 150.1 L450.4 149.9 L452.1 149.7 L453.7 149.5 L455.4 149.3 L457.1 149.1 L458.8 148.9 L460.5 148.7 L462.1 148.5 L463.8 148.3 L465.5 148.1 L467.2 147.9 L468.9 147.7 L470.5 147.5 L472.2 147.3 L473.9 147.2 L475.6 147.0 L477.3 146.8 L478.9 146.6 L480.6 146.4 L482.3 146.2 L484.0 146.0 L485.7 145.8 L487.4 145.6 L489.0 145.4 L490.7 145.2 L492.4 145.0 L494.1 144.8 L495.8 144.6 L497.4 144.4 L499.1 144.2 L500.8 144.1 L502.5 143.9 L504.2 143.7 L505.9 143.5 L507.5 143.3 L509.2 143.1 L510.9 142.9 L512.6 142.7 L514.3 142.5 L515.9 142.3 L517.6 142.2 L519.3 142.0 L521.0 141.8 L522.7 141.6 L524.3 141.4 L526.0 141.2 L527.7 141.0 L529.4 140.8 L531.1 140.6 L532.8 140.5 L534.4 140.3 L536.1 140.1 L537.8 139.9 L539.5 139.7 L541.2 139.5 L542.8 139.3 L544.5 139.2 L546.2 139.0 L547.9 138.8 L549.6 138.6 L551.2 138.4 L552.9 138.2 L554.6 138.0 L556.3 137.9 L558.0 137.7 L559.6 137.5 L561.3 137.3 L563.0 137.1 L564.7 136.9 L566.4 136.8 L568.1 136.6 L569.7 136.4 L571.4 136.2 L573.1 136.0 L574.8 135.8 L576.5 135.7 L578.1 135.5 L579.8 135.3 L581.5 135.1 L583.2 134.9 L584.9 134.8 L586.5 134.6 L588.2 134.4 L589.9 134.2 L591.6 134.0 L593.3 133.9 L595.0 133.7 L596.6 133.5 L598.3 133.3 L600.0 133.1" fill="none" stroke="#14b8a6" stroke-width="2.5" stroke-dasharray="7 4"/><path d="M136.0 19.7 L137.7 23.3 L139.3 26.7 L141.0 29.9 L142.7 33.0 L144.4 36.0 L146.1 38.9 L147.7 41.6 L149.4 44.2 L151.1 46.7 L152.8 49.0 L154.5 51.3 L156.2 53.5 L157.8 55.6 L159.5 57.7 L161.2 59.6 L162.9 61.5 L164.6 63.3 L166.2 65.1 L167.9 66.7 L169.6 68.4 L171.3 69.9 L173.0 71.4 L174.6 72.9 L176.3 74.3 L178.0 75.6 L179.7 77.0 L181.4 78.2 L183.1 79.4 L184.7 80.6 L186.4 81.8 L188.1 82.9 L189.8 84.0 L191.5 85.0 L193.1 86.0 L194.8 87.0 L196.5 87.9 L198.2 88.8 L199.9 89.7 L201.5 90.6 L203.2 91.4 L204.9 92.2 L206.6 93.0 L208.3 93.8 L209.9 94.5 L211.6 95.2 L213.3 95.9 L215.0 96.6 L216.7 97.2 L218.4 97.9 L220.0 98.5 L221.7 99.1 L223.4 99.7 L225.1 100.2 L226.8 100.8 L228.4 101.3 L230.1 101.9 L231.8 102.4 L233.5 102.9 L235.2 103.3 L236.8 103.8 L238.5 104.2 L240.2 104.7 L241.9 105.1 L243.6 105.5 L245.3 105.9 L246.9 106.3 L248.6 106.7 L250.3 107.1 L252.0 107.4 L253.7 107.8 L255.3 108.1 L257.0 108.4 L258.7 108.8 L260.4 109.1 L262.1 109.4 L263.8 109.7 L265.4 110.0 L267.1 110.2 L268.8 110.5 L270.5 110.8 L272.2 111.0 L273.8 111.3 L275.5 111.5 L277.2 111.8 L278.9 112.0 L280.6 112.2 L282.2 112.4 L283.9 112.6 L285.6 112.8 L287.3 113.0 L289.0 113.2 L290.6 113.4 L292.3 113.6 L294.0 113.8 L295.7 113.9 L297.4 114.1 L299.1 114.2 L300.7 114.4 L302.4 114.5 L304.1 114.7 L305.8 114.8 L307.5 115.0 L309.1 115.1 L310.8 115.2 L312.5 115.3 L314.2 115.5 L315.9 115.6 L317.6 115.7 L319.2 115.8 L320.9 115.9 L322.6 116.0 L324.3 116.1 L326.0 116.2 L327.6 116.2 L329.3 116.3 L331.0 116.4 L332.7 116.5 L334.4 116.6 L336.0 116.6 L337.7 116.7 L339.4 116.8 L341.1 116.8 L342.8 116.9 L344.4 116.9 L346.1 117.0 L347.8 117.0 L349.5 117.1 L351.2 117.1 L352.9 117.2 L354.5 117.2 L356.2 117.2 L357.9 117.3 L359.6 117.3 L361.3 117.3 L362.9 117.4 L364.6 117.4 L366.3 117.4 L368.0 117.4 L369.7 117.4 L371.4 117.5 L373.0 117.5 L374.7 117.5 L376.4 117.5 L378.1 117.5 L379.8 117.5 L381.4 117.5 L383.1 117.5 L384.8 117.5 L386.5 117.5 L388.2 117.5 L389.8 117.5 L391.5 117.5 L393.2 117.5 L394.9 117.5 L396.6 117.4 L398.2 117.4 L399.9 117.4 L401.6 117.4 L403.3 117.4 L405.0 117.4 L406.7 117.3 L408.3 117.3 L410.0 117.3 L411.7 117.3 L413.4 117.2 L415.1 117.2 L416.7 117.2 L418.4 117.1 L420.1 117.1 L421.8 117.1 L423.5 117.0 L425.1 117.0 L426.8 117.0 L428.5 116.9 L430.2 116.9 L431.9 116.8 L433.6 116.8 L435.2 116.8 L436.9 116.7 L438.6 116.7 L440.3 116.6 L442.0 116.6 L443.6 116.5 L445.3 116.5 L447.0 116.4 L448.7 116.4 L450.4 116.3 L452.1 116.3 L453.7 116.2 L455.4 116.1 L457.1 116.1 L458.8 116.0 L460.5 116.0 L462.1 115.9 L463.8 115.8 L465.5 115.8 L467.2 115.7 L468.9 115.7 L470.5 115.6 L472.2 115.5 L473.9 115.5 L475.6 115.4 L477.3 115.3 L478.9 115.3 L480.6 115.2 L482.3 115.1 L484.0 115.0 L485.7 115.0 L487.4 114.9 L489.0 114.8 L490.7 114.8 L492.4 114.7 L494.1 114.6 L495.8 114.5 L497.4 114.5 L499.1 114.4 L500.8 114.3 L502.5 114.2 L504.2 114.1 L505.9 114.1 L507.5 114.0 L509.2 113.9 L510.9 113.8 L512.6 113.7 L514.3 113.7 L515.9 113.6 L517.6 113.5 L519.3 113.4 L521.0 113.3 L522.7 113.2 L524.3 113.2 L526.0 113.1 L527.7 113.0 L529.4 112.9 L531.1 112.8 L532.8 112.7 L534.4 112.6 L536.1 112.5 L537.8 112.5 L539.5 112.4 L541.2 112.3 L542.8 112.2 L544.5 112.1 L546.2 112.0 L547.9 111.9 L549.6 111.8 L551.2 111.7 L552.9 111.6 L554.6 111.5 L556.3 111.4 L558.0 111.3 L559.6 111.3 L561.3 111.2 L563.0 111.1 L564.7 111.0 L566.4 110.9 L568.1 110.8 L569.7 110.7 L571.4 110.6 L573.1 110.5 L574.8 110.4 L576.5 110.3 L578.1 110.2 L579.8 110.1 L581.5 110.0 L583.2 109.9 L584.9 109.8 L586.5 109.7 L588.2 109.6 L589.9 109.5 L591.6 109.4 L593.3 109.3 L595.0 109.2 L596.6 109.1 L598.3 109.0 L600.0 108.9" fill="none" stroke="#6366f1" stroke-width="3"/><path d="M63.7 216.0 L65.4 214.2 L67.0 212.7 L68.7 211.4 L70.4 210.1 L72.1 209.0 L73.8 207.9 L75.5 206.8 L77.1 205.8 L78.8 204.9 L80.5 203.9 L82.2 203.0 L83.9 202.2 L85.5 201.3 L87.2 200.5 L88.9 199.6 L90.6 198.8 L92.3 198.1 L93.9 197.3 L95.6 196.5 L97.3 195.8 L99.0 195.0 L100.7 194.3 L102.3 193.6 L104.0 192.9 L105.7 192.2 L107.4 191.5 L109.1 190.9 L110.8 190.2 L112.4 189.5 L114.1 188.9 L115.8 188.2 L117.5 187.6 L119.2 187.0 L120.8 186.3 L122.5 185.7 L124.2 185.1 L125.9 184.5 L127.6 183.9 L129.2 183.3 L130.9 182.7 L132.6 182.1 L134.3 181.5 L136.0 180.9 L137.7 180.3 L139.3 179.8 L141.0 179.2 L142.7 178.6 L144.4 178.1 L146.1 177.5 L147.7 177.0 L149.4 176.4 L151.1 175.9 L152.8 175.3 L154.5 174.8 L156.2 174.3 L157.8 173.7 L159.5 173.2 L161.2 172.7 L162.9 172.2 L164.6 171.6 L166.2 171.1 L167.9 170.6 L169.6 170.1 L171.3 169.6 L173.0 169.1 L174.6 168.6 L176.3 168.1 L178.0 167.6 L179.7 167.1 L181.4 166.6 L183.1 166.1 L184.7 165.6 L186.4 165.1 L188.1 164.6 L189.8 164.1 L191.5 163.7 L193.1 163.2 L194.8 162.7 L196.5 162.2 L198.2 161.8 L199.9 161.3 L201.5 160.8 L203.2 160.4 L204.9 159.9 L206.6 159.4 L208.3 159.0 L209.9 158.5 L211.6 158.0 L213.3 157.6 L215.0 157.1 L216.7 156.7 L218.4 156.2 L220.0 155.8 L221.7 155.3 L223.4 154.9 L225.1 154.4 L226.8 154.0 L228.4 153.6 L230.1 153.1 L231.8 152.7 L233.5 152.2 L235.2 151.8 L236.8 151.4 L238.5 150.9 L240.2 150.5 L241.9 150.1 L243.6 149.6 L245.3 149.2 L246.9 148.8 L248.6 148.4 L250.3 147.9 L252.0 147.5 L253.7 147.1 L255.3 146.7 L257.0 146.2 L258.7 145.8 L260.4 145.4 L262.1 145.0 L263.8 144.6 L265.4 144.2 L267.1 143.8 L268.8 143.3 L270.5 142.9 L272.2 142.5 L273.8 142.1 L275.5 141.7 L277.2 141.3 L278.9 140.9 L280.6 140.5 L282.2 140.1 L283.9 139.7 L285.6 139.3 L287.3 138.9 L289.0 138.5 L290.6 138.1 L292.3 137.7 L294.0 137.3 L295.7 136.9 L297.4 136.5 L299.1 136.1 L300.7 135.7 L302.4 135.3 L304.1 135.0 L305.8 134.6 L307.5 134.2 L309.1 133.8 L310.8 133.4 L312.5 133.0 L314.2 132.6 L315.9 132.2 L317.6 131.9 L319.2 131.5 L320.9 131.1 L322.6 130.7 L324.3 130.3 L326.0 130.0 L327.6 129.6 L329.3 129.2 L331.0 128.8 L332.7 128.5 L334.4 128.1 L336.0 127.7 L337.7 127.3 L339.4 127.0 L341.1 126.6 L342.8 126.2 L344.4 125.8 L346.1 125.5 L347.8 125.1 L349.5 124.7 L351.2 124.4 L352.9 124.0 L354.5 123.6 L356.2 123.3 L357.9 122.9 L359.6 122.5 L361.3 122.2 L362.9 121.8 L364.6 121.5 L366.3 121.1 L368.0 120.7 L369.7 120.4 L371.4 120.0 L373.0 119.7 L374.7 119.3 L376.4 118.9 L378.1 118.6 L379.8 118.2 L381.4 117.9 L383.1 117.5 L384.8 117.2 L386.5 116.8 L388.2 116.5 L389.8 116.1 L391.5 115.8 L393.2 115.4 L394.9 115.1 L396.6 114.7 L398.2 114.4 L399.9 114.0 L401.6 113.7 L403.3 113.3 L405.0 113.0 L406.7 112.6 L408.3 112.3 L410.0 111.9 L411.7 111.6 L413.4 111.2 L415.1 110.9 L416.7 110.5 L418.4 110.2 L420.1 109.9 L421.8 109.5 L423.5 109.2 L425.1 108.8 L426.8 108.5 L428.5 108.2 L430.2 107.8 L431.9 107.5 L433.6 107.1 L435.2 106.8 L436.9 106.5 L438.6 106.1 L440.3 105.8 L442.0 105.5 L443.6 105.1 L445.3 104.8 L447.0 104.5 L448.7 104.1 L450.4 103.8 L452.1 103.5 L453.7 103.1 L455.4 102.8 L457.1 102.5 L458.8 102.1 L460.5 101.8 L462.1 101.5 L463.8 101.1 L465.5 100.8 L467.2 100.5 L468.9 100.2 L470.5 99.8 L472.2 99.5 L473.9 99.2 L475.6 98.9 L477.3 98.5 L478.9 98.2 L480.6 97.9 L482.3 97.6 L484.0 97.2 L485.7 96.9 L487.4 96.6 L489.0 96.3 L490.7 95.9 L492.4 95.6 L494.1 95.3 L495.8 95.0 L497.4 94.7 L499.1 94.3 L500.8 94.0 L502.5 93.7 L504.2 93.4 L505.9 93.1 L507.5 92.7 L509.2 92.4 L510.9 92.1 L512.6 91.8 L514.3 91.5 L515.9 91.2 L517.6 90.8 L519.3 90.5 L521.0 90.2 L522.7 89.9 L524.3 89.6 L526.0 89.3 L527.7 89.0 L529.4 88.6 L531.1 88.3 L532.8 88.0 L534.4 87.7 L536.1 87.4 L537.8 87.1 L539.5 86.8 L541.2 86.5 L542.8 86.1 L544.5 85.8 L546.2 85.5 L547.9 85.2 L549.6 84.9 L551.2 84.6 L552.9 84.3 L554.6 84.0 L556.3 83.7 L558.0 83.4 L559.6 83.1 L561.3 82.8 L563.0 82.5 L564.7 82.1 L566.4 81.8 L568.1 81.5 L569.7 81.2 L571.4 80.9 L573.1 80.6 L574.8 80.3 L576.5 80.0 L578.1 79.7 L579.8 79.4 L581.5 79.1 L583.2 78.8 L584.9 78.5 L586.5 78.2 L588.2 77.9 L589.9 77.6 L591.6 77.3 L593.3 77.0 L595.0 76.7 L596.6 76.4 L598.3 76.1 L600.0 75.8" fill="none" stroke="#f97316" stroke-width="3"/><circle cx="383.3" cy="117.5" r="5" fill="#6366f1" stroke="#fff" stroke-width="1.5"/><text x="375.3" y="137.5" text-anchor="end" font-size="11.5" fill="#4f46e5">min ATC $82.8 (q &#8776; 48)</text><circle cx="62.0" cy="219.1" r="5" fill="#14b8a6" stroke="#fff" stroke-width="1.5"/><text x="122.5" y="237.1" font-size="11.5" fill="#0f766e">min AVC = m = $55.6 (q &#8594; 0)</text><rect x="430.6" y="11.5" width="170" height="54" rx="5" fill="#fff" stroke="#e5e7eb"/><line x1="438.6" y1="21.5" x2="460.6" y2="21.5" stroke="#f97316" stroke-width="3"/><text x="466.6" y="25.5" font-size="11.5" fill="#374151">SMC (marginal cost)</text><line x1="438.6" y1="37.5" x2="460.6" y2="37.5" stroke="#6366f1" stroke-width="3"/><text x="466.6" y="41.5" font-size="11.5" fill="#374151">SATC (average total)</text><line x1="438.6" y1="53.5" x2="460.6" y2="53.5" stroke="#14b8a6" stroke-width="2.5" stroke-dasharray="7 4"/><text x="466.6" y="57.5" font-size="11.5" fill="#374151">AVC (average variable)</text><g class="fragment fade-up" data-fragment-index="1" ><line x1="62" y1="113.1" x2="600" y2="113.1" stroke="#10b981" stroke-width="2.5"/><text x="598" y="107.1" text-anchor="end" font-size="12.5" font-weight="700" fill="#10b981">p = $84</text><line x1="404.5" y1="113.1" x2="404.5" y2="352" stroke="#10b981" stroke-width="1.4" stroke-dasharray="4 3"/><circle cx="404.5" cy="113.1" r="6.5" fill="#10b981" stroke="#fff" stroke-width="2"/><text x="414.5" y="131.1" font-size="12" font-weight="700" fill="#10b981">q* = 50.9</text></g><g class="fragment fade-up" data-fragment-index="2" ><line x1="62" y1="207.1" x2="600" y2="207.1" stroke="#d97706" stroke-width="2.5"/><text x="598" y="201.1" text-anchor="end" font-size="12.5" font-weight="700" fill="#d97706">p = $58.80</text><line x1="75.0" y1="207.1" x2="75.0" y2="352" stroke="#d97706" stroke-width="1.4" stroke-dasharray="4 3"/><circle cx="75.0" cy="207.1" r="6.5" fill="#d97706" stroke="#fff" stroke-width="2"/><text x="87.0" y="198.1" font-size="12" font-weight="700" fill="#d97706">q* = 1.9</text></g><g class="fragment fade-up" data-fragment-index="3" ><line x1="62" y1="302.0" x2="600" y2="302.0" stroke="#dc2626" stroke-width="2.5"/><text x="598" y="296.0" text-anchor="end" font-size="12.5" font-weight="700" fill="#dc2626">p = $33.40</text><rect x="68" y="308.0" width="150" height="18" rx="4" fill="#dc2626"/><text x="143" y="321.0" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">below m: q* = 0</text></g></svg></div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background: #ecfdf5; border-left: 4px solid #10b981; border-radius: 8px; padding: 8px 14px;">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.4;"><strong style="color: #15803d;">\(p = \$84\)</strong> (slide 21): \(q^* = 50.9\), ATC \(\$82.85\), profit \(+\$58.6\)M. <strong style="color: #15803d;">Operate and stay.</strong></p>
+      </div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background: #fffbeb; border-left: 4px solid #d97706; border-radius: 8px; padding: 8px 14px;">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.4;"><strong style="color: #b45309;">\(p = \$58.80\)</strong> (the 30% drop, W9.6): \(q^* = 1.9\), quasi-rents about \(+\$2\)M, loss \(-\$518\)M. <strong style="color: #b45309;">Open now, exit in the long run.</strong></p>
+      </div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background: #fef2f2; border-left: 4px solid #dc2626; border-radius: 8px; padding: 8px 14px;">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.4;"><strong style="color: #dc2626;">\(p = \$33.40\)</strong> (W9.2, next slide): below \(m = \$55.6\), so \(q^* = 0\), loss \(-\$520\)M. <strong style="color: #dc2626;">Shut down.</strong></p>
+      </div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-      <div style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 8px; padding: 10px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>\(p = \$95\):</strong> \(p > \min ATC\) \(\Rightarrow\) <strong>positive profit</strong>.</p>
-      </div>
-      <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 10px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>\(p = \$75\):</strong> \(\min AVC < p < \min ATC\) \(\Rightarrow\) <strong>operate at a loss (SR), exit (LR)</strong>. The zone the closing Walgreens stores are in.</p>
-      </div>
-      <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 10px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>\(p = \$40\):</strong> \(p < \min AVC\) \(\Rightarrow\) <strong>shut down</strong>. Every unit loses money before fixed cost.</p>
-      </div>
-      <p style="font-size: 10.5pt; color: var(--muted-color); font-style: italic; margin: 2px 0 0;">The <strong>AVC</strong> rises monotonically from the materials floor &mdash; it isn't U-shaped, because the gigafactory cost is Cobb-Douglas (not the cubic textbook case). So min AVC \(= m = \$55.6\)/kWh sits at \(q \to 0\) (where \(MC = AVC\)); min SATC \(= \$82.8\)/kWh at \(q \approx 48\). The classic U-shaped AVC with \(MC\) through its bottom is the generic three-zones figure.</p>
-    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 8px; padding: 7px 16px;">
+    <p style="margin: 0; font-size: 12.5pt;">Min AVC \(= m = \$55.6\) at \(q \to 0\); min ATC \(= \$82.8\) at \(q \approx 48\). \(\$84\) is only \(\$1.20\) above min ATC: a thin margin.</p>
   </div>
 </section>
 
 <section id="walkthrough-9-2">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 9.2 &mdash; Price Collapse Below Materials Cost</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
-    <p style="margin: 0; font-size: 12pt; line-height: 1.5;">
-      <strong>Problem.</strong> Gigafactory baseline (\(\bar K=4, m=0.0556\)). The output price collapses to \(p_{\text{shock}} = 0.0334\) B\$/GWh (\(\$33.40\)/kWh, below materials cost). (1) SR optimal output? (2) Loss at shutdown? (3) Verify shutdown beats producing \(q = 10\).
+    <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;">
+      <strong>Problem.</strong> Gigafactory baseline (\(\bar K = 4\), materials \(m = \$55.6\)/kWh, \(FC = \$520\)M a year). The price collapses to <strong>\(\$33.40\)/kWh</strong>, below materials cost. (1) Short-run output? (2) Loss at shutdown? (3) Check that shutting beats producing \(q = 10\) GWh. <em>This is the \(\$33.40\) line on the previous slide.</em>
     </p>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Set up &amp; solve</p>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
-        <strong>(1)</strong> Min AVC \(= m = 0.0556\). Since \(p_{\text{shock}} = 0.0334 < m\), the firm can't cover even marginal materials cost. The FOC has no positive solution: \(q_s^* = 0\) (shutdown).
-      </p>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.55; margin: 8px 0 0;">
-        <strong>(2)</strong> At \(q=0\): pay the sunk fixed cost, produce nothing. Loss \(= -r\bar K = -0.52\) B\$/yr \(= -\$520\)M/yr.
-      </p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1.25fr; gap: 14px; align-items: stretch;">
+    <div class="fragment fade-up" data-fragment-index="1" style="background: #f0f5f8; border-radius: 8px; padding: 10px 15px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">(1) Output</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">Min AVC \(= m = \$55.6\). At \(\$33.40\) every unit loses money on materials alone, so the FOC has no positive solution: <strong>\(q^* = 0\)</strong>.</p>
     </div>
-    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">(3) Check \(q = 10\)</p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
-        \(VC = 0.058 + 0.556 = 0.614\); revenue \(= 0.334\). Profit \(= 0.334 - 0.614 - 0.52 = -0.800\) B\$/yr.
-      </p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 10pt; color: var(--muted-color); line-height: 1.42; margin: 5px 0 0;">\(0.058 = wL(10)\), the labor VC: invert \(q = 13.929\,L^{0.6}\) to get \(L(10) = (10/13.929)^{1/0.6}\approx 0.576\), so \(wL = 0.10\times 0.576\). The other piece \(0.556 = mq\) is materials VC.</p>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.55; margin: 8px 0 0;">
-        \(-\$800\)M is <strong>worse</strong> than the \(-\$520\)M shutdown loss. Any positive \(q\) widens the loss. Shutdown is optimal.
-      </p>
+    <div class="fragment fade-up" data-fragment-index="2" style="background: #fef2f2; border-radius: 8px; padding: 10px 15px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">(2) Loss at shutdown</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">Produce nothing, pay the sunk fixed cost: loss \(= -FC = -r\bar K =\) <strong>\(-\$520\)M</strong> a year.</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="3" style="background: #fef9f3; border-radius: 8px; padding: 10px 15px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">(3) Check \(q = 10\) GWh</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">Revenue \(= \$33.40 \times 10 = \$334\)M.<br>VC \(=\) labor \(\$58\)M \(+\) materials \(\$556\)M \(= \$614\)M.<br>Profit \(= 334 - 614 - 520 =\) <strong>\(-\$800\)M</strong>, worse than \(-\$520\)M: <strong>shut down</strong>.</p>
     </div>
   </div>
-  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 12px; padding: 9px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> When the price falls below materials cost, the next unit loses money on materials alone &mdash; before labor even enters. Shutdown caps the loss at the sunk fixed cost: the SR version of "stop digging."</p>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 12px; padding: 9px 16px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>Takeaway.</strong> When the price falls below materials cost, the next unit loses money on materials alone &mdash; before labor even enters. Shutdown caps the loss at the sunk fixed cost: the short-run version of &ldquo;stop digging.&rdquo;</p>
   </div>
 </section>
 
 <section id="bankruptcies">
   <h2><i class="fa-solid fa-building-circle-xmark" style="color: var(--danger-color);"></i> Three Real 2024 Decisions &mdash; SR Shutdown vs LR Exit</h2>
-  <div style="display: grid; grid-template-columns: 1.55fr 1fr; gap: 18px; align-items: center;">
-    <div style="display: flex; flex-direction: column; gap: 10px;">
-      <div style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 9px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>Walgreens (Oct 2024):</strong> closes ~1,200 stores <strong>over three years</strong>, keeps ~7,500 open. The <em>timing</em> shows it &mdash; a store below AVC closes this quarter, not in 2027. So the 1,200 sit in \(AVC < P < ATC\): worth running while the lease is sunk, not worth renewing &rarr; <strong>LR exit</strong>. The 7,500 are the \(P > ATC\) keepers.</p>
-      </div>
-      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 9px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>Spirit Airlines (Nov 2024):</strong> Chapter 11 at the firm level, but SR shutdown played out <em>route by route</em>: it cancelled flights where ticket revenue fell below per-flight AVC (14 airports dropped).</p>
-      </div>
-      <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 9px 14px;">
-        <p style="margin: 0; font-size: 12.5pt;"><strong>Northvolt (Nov 2024):</strong> textbook LR exit. Production cost \(\sim\$130\)/kWh against a \$84/kWh China-frontier price: \(p < ATC\) sustained <em>even at full capacity</em>. Operations weren't value-creating at any output.</p>
-      </div>
+  <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 8px;">Colours are slide 25&rsquo;s zones: <strong style="color:#15803d">green</strong> \(P > \min ATC\), <strong style="color:#b45309">amber</strong> \(\min AVC < P < \min ATC\), <strong style="color:#dc2626">red</strong> \(P < \min AVC\).</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: stretch;">
+    <div class="fragment fade-up" data-fragment-index="1" style="background: #fffdf8; border: 1px solid #f3e8d6; border-top: 5px solid #d97706; border-radius: 8px; padding: 10px 14px; display:flex; flex-direction:column; gap:6px;">
+      <img alt="CBS News, 15 Oct 2024: Walgreens announces plan to close 1,200 stores over next 3 years" src="figures/walgreen.png" style="width:100%; height:92px; object-fit:cover; object-position:50% 10%; border-radius:6px; border:1px solid #e5e7eb;">
+      <p style="margin: 0; font-size: 13pt; font-weight: 700;">Walgreens (Oct 2024)</p>
+      <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">Closes ~1,200 stores <strong>over three years</strong>, keeps ~7,500 open. The timing shows it: a store below AVC would close this quarter, not in 2027. The closing stores are worth running while the lease is sunk, not worth renewing.</p>
+      <p style="margin: auto 0 0; font-size: 11pt;"><strong>Rule:</strong> LR exit</p>
+      <span style="display:inline-block; background:#fffbeb; color:#b45309; border:1.5px solid #b45309; border-radius:6px; padding:2px 8px; font-size:10.5pt; font-weight:700; margin:3px 0 0;">1,200 closing: AVC &lt; P &lt; ATC</span>
+      <span style="display:inline-block; background:#ecfdf5; color:#15803d; border:1.5px solid #15803d; border-radius:6px; padding:2px 8px; font-size:10.5pt; font-weight:700; margin:3px 0 0;">7,500 kept: P &gt; ATC</span>
     </div>
-    <div style="text-align: center;">
-      <img alt="A Walgreens drugstore storefront — millions in sunk store build-out per location." src="figures/walgreen.png" style="width: 100%; max-height: 380px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);">
+    <div class="fragment fade-up" data-fragment-index="2" style="background: #fffafa; border: 1px solid #f5dcdc; border-top: 5px solid #dc2626; border-radius: 8px; padding: 10px 14px; display:flex; flex-direction:column; gap:6px;">
+      <p style="margin: 0; font-size: 13pt; font-weight: 700;">Spirit Airlines (Nov 2024)</p>
+      <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">Chapter 11 at the firm level, but the shutdown played out <em>route by route</em>: it cancelled flights where ticket revenue fell below per-flight AVC (14 airports dropped).</p>
+      <p style="margin: auto 0 0; font-size: 11pt;"><strong>Rule:</strong> SR shutdown, one route at a time</p>
+      <span style="display:inline-block; background:#fef2f2; color:#dc2626; border:1.5px solid #dc2626; border-radius:6px; padding:2px 8px; font-size:10.5pt; font-weight:700; margin:3px 0 0;">each dropped route: P &lt; AVC</span>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="3" style="background: #fffdf8; border: 1px solid #f3e8d6; border-top: 5px solid #d97706; border-radius: 8px; padding: 10px 14px; display:flex; flex-direction:column; gap:6px;">
+      <p style="margin: 0; font-size: 13pt; font-weight: 700;">Northvolt (Nov 2024)</p>
+      <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">Production cost about \(\$130\)/kWh against the \(\$84\)/kWh China-frontier price: \(p < ATC\) <em>even at full capacity</em>. Operations were not value-creating at any output.</p>
+      <p style="margin: auto 0 0; font-size: 11pt;"><strong>Rule:</strong> LR exit</p>
+      <span style="display:inline-block; background:#fffbeb; color:#b45309; border:1.5px solid #b45309; border-radius:6px; padding:2px 8px; font-size:10.5pt; font-weight:700; margin:3px 0 0;">P &lt; ATC at every output</span>
     </div>
   </div>
 </section>
@@ -1212,31 +1233,34 @@
 </section>
 
 <section id="cd-supply-elasticity">
-  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Closed-Form Cobb-Douglas Supply &amp; Its Elasticity</h2>
-  <div class="key-result" style="background: #f4f1ed; border-left-color: #7C3A5F; margin: 4px 0 10px;">
-    <p style="margin: 0 0 4px; font-size: 12pt;"><strong>Calculus Corner 9.3.</strong> Differentiating the FOC: \(dq^*/dp = 1/MC'(q^*) > 0\) &mdash; supply slopes up because \(MC\) slopes up. Supply <em>is</em> the \(MC\) curve read backwards, so take the gigafactory \(SMC(q) = 0.011967\,(q/13.929)^{2/3} + m\), set \(SMC(q) = p\), and invert:</p>
-    <p style="margin: 4px 0 2px; font-size: 11.5pt; text-align: center; color: var(--muted-color);">\((q/13.929)^{2/3} = \dfrac{p - m}{0.011967}\) &nbsp;&nbsp;&rarr;&nbsp;&nbsp; raise both sides to the \(3/2\) &nbsp;&nbsp;&rarr;</p>
-    <p style="text-align: center; font-size: 14pt; margin: 6px 0;">\[ q_s^*(p) = 13.929\left(\frac{p - m}{0.011967}\right)^{1.5}\ \text{for } p > m,\qquad q_s^*(p)=0 \text{ otherwise} \]</p>
-    <p style="font-size: 11pt; color: var(--muted-color); margin: 2px 0 0;">Not new numbers: \(13.929 = A\bar K^{\alpha} = 8\cdot 4^{0.4}\) and \(0.011967 = w/(\beta A\bar K^{\alpha})\) &mdash; both inherited from the Ch 8 cost function.</p>
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> The Gigafactory&rsquo;s Supply Curve (Walkthrough 9.3)</h2>
+  <div class="key-result fragment fade-up" data-fragment-index="1" style="background: #f4f1ed; border-left-color: #7C3A5F; margin: 2px 0 8px; padding: 7px 16px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>1 &middot; Invert the MC curve.</strong> From slide 21: \(SMC(q) = \$11.97\,(q/13.929)^{2/3} + \$55.6\). Set \(SMC = p\) and solve for \(q\):</p>
+    <p style="text-align: center; font-size: 14pt; margin: 4px 0 0;">\(q^*(p) = 13.929\left(\dfrac{p - 55.6}{11.97}\right)^{1.5}\) for \(p > \$55.6\), &nbsp; \(q^* = 0\) otherwise</p>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: center;">
-    <div style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 8px; padding: 12px 16px;">
-      <p style="font-size: 12pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 4px;">Supply elasticity</p>
-      <p style="text-align: center; font-size: 15pt; margin: 6px 0;">\(\dfrac{d\ln q_s^*}{d\ln p} = 1.5 \cdot \dfrac{p}{p-m}\)</p>
-      <p style="font-size: 11.5pt; margin: 6px 0 0; line-height: 1.45;">Leading \(1.5 = \beta/(1-\beta)\) is set by the production exponent; \(p/(p-m)\) amplifies through the thin value-added margin. At baseline: <strong>4.44</strong>.</p>
-    </div>
-    <div>
-      <p style="font-size: 12pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 6px;">Three consequences</p>
-      <ul style="font-size: 12pt; line-height: 1.55; margin: 0;">
-        <li><strong>Market supply</strong> (Ch 10) = horizontal sum of firms' \(MC\) curves.</li>
-        <li>Anything shifting \(MC\) (wage, capital, technology) <strong>shifts supply</strong>.</li>
-        <li>Supply elasticity is set by the <strong>technology</strong>: \(\beta/(1-\beta)\) under Cobb-Douglas with no materials.</li>
-      </ul>
+  <div style="display: grid; grid-template-columns: 0.9fr 1.1fr 1.1fr; gap: 16px; align-items: center;">
+    <table class="fragment fade-up" data-fragment-index="2" style="font-size: 12.5pt; margin: 0;">
+      <tr><th>\(p\) ($/kWh)</th><th>\(q^*\) (GWh)</th></tr>
+      <tr><td>\$60</td><td>3.1</td></tr>
+      <tr class="fragment fade-up" data-fragment-index="3"><td>\$70</td><td>18.4</td></tr>
+      <tr class="fragment fade-up" data-fragment-index="4"><td>\$80</td><td>40.6</td></tr>
+      <tr class="fragment fade-up" data-fragment-index="5" style="background: rgba(106,142,107,0.18);"><td><strong>\$84</strong></td><td><strong>50.9</strong> (= slide 21)</td></tr>
+      <tr class="fragment fade-up" data-fragment-index="6"><td>\$90</td><td>67.9</td></tr>
+    </table>
+    <div><svg viewBox="0 0 360 290" style="width:100%; height:auto; max-height:290px; display:block;" class="mathjax_ignore"><line x1="52" y1="252.0" x2="340" y2="252.0" stroke="rgba(156,163,175,0.2)"/><text x="46" y="256.0" text-anchor="end" font-size="11.5" fill="#6b7280">$50</text><line x1="52" y1="199.1" x2="340" y2="199.1" stroke="rgba(156,163,175,0.2)"/><text x="46" y="203.1" text-anchor="end" font-size="11.5" fill="#6b7280">$60</text><line x1="52" y1="146.2" x2="340" y2="146.2" stroke="rgba(156,163,175,0.2)"/><text x="46" y="150.2" text-anchor="end" font-size="11.5" fill="#6b7280">$70</text><line x1="52" y1="93.3" x2="340" y2="93.3" stroke="rgba(156,163,175,0.2)"/><text x="46" y="97.3" text-anchor="end" font-size="11.5" fill="#6b7280">$80</text><line x1="52" y1="40.4" x2="340" y2="40.4" stroke="rgba(156,163,175,0.2)"/><text x="46" y="44.4" text-anchor="end" font-size="11.5" fill="#6b7280">$90</text><text x="52.0" y="268" text-anchor="middle" font-size="11.5" fill="#6b7280">0</text><text x="148.0" y="268" text-anchor="middle" font-size="11.5" fill="#6b7280">25</text><text x="244.0" y="268" text-anchor="middle" font-size="11.5" fill="#6b7280">50</text><text x="340.0" y="268" text-anchor="middle" font-size="11.5" fill="#6b7280">75</text><line x1="52" y1="14" x2="52" y2="252" stroke="#374151" stroke-width="1.5"/><line x1="52" y1="252" x2="340" y2="252" stroke="#374151" stroke-width="1.5"/><text x="58" y="16" font-size="11.5" fill="#374151">p ($/kWh)</text><text x="196.0" y="285" text-anchor="middle" font-size="12" fill="#374151">q* (GWh/yr)</text><g class="fragment fade-up" data-fragment-index="2" ><line x1="52.0" y1="252.0" x2="52.0" y2="222.4" stroke="#f97316" stroke-width="3"/><path d="M52.0 222.4 L52.2 221.1 L52.5 219.7 L52.8 218.4 L53.3 217.1 L53.8 215.8 L54.4 214.4 L55.0 213.1 L55.7 211.8 L56.4 210.5 L57.1 209.2 L57.9 207.8 L58.7 206.5 L59.6 205.2 L60.5 203.9 L61.4 202.5 L62.3 201.2 L63.3 199.9 L64.3 198.6 L65.4 197.3 L66.4 195.9 L67.5 194.6 L68.7 193.3 L69.8 192.0 L71.0 190.6 L72.2 189.3 L73.4 188.0 L74.7 186.7 L75.9 185.4 L77.2 184.0 L78.5 182.7 L79.9 181.4 L81.2 180.1 L82.6 178.7 L84.0 177.4 L85.4 176.1 L86.9 174.8 L88.3 173.5 L89.8 172.1 L91.3 170.8 L92.9 169.5 L94.4 168.2 L96.0 166.8 L97.5 165.5 L99.1 164.2 L100.8 162.9 L102.4 161.6 L104.0 160.2 L105.7 158.9 L107.4 157.6 L109.1 156.3 L110.8 154.9 L112.6 153.6 L114.3 152.3 L116.1 151.0 L117.9 149.7 L119.7 148.3 L121.5 147.0 L123.3 145.7 L125.2 144.4 L127.1 143.0 L128.9 141.7 L130.8 140.4 L132.8 139.1 L134.7 137.8 L136.6 136.4 L138.6 135.1 L140.6 133.8 L142.6 132.5 L144.6 131.1 L146.6 129.8 L148.6 128.5 L150.7 127.2 L152.7 125.9 L154.8 124.5 L156.9 123.2 L159.0 121.9 L161.1 120.6 L163.3 119.2 L165.4 117.9 L167.6 116.6 L169.7 115.3 L171.9 114.0 L174.1 112.6 L176.3 111.3 L178.6 110.0 L180.8 108.7 L183.1 107.3 L185.3 106.0 L187.6 104.7 L189.9 103.4 L192.2 102.1 L194.5 100.7 L196.8 99.4 L199.2 98.1 L201.5 96.8 L203.9 95.4 L206.3 94.1 L208.7 92.8 L211.1 91.5 L213.5 90.2 L215.9 88.8 L218.4 87.5 L220.8 86.2 L223.3 84.9 L225.8 83.5 L228.3 82.2 L230.8 80.9 L233.3 79.6 L235.8 78.3 L238.3 76.9 L240.9 75.6 L243.4 74.3 L246.0 73.0 L248.6 71.6 L251.2 70.3 L253.8 69.0 L256.4 67.7 L259.0 66.4 L261.7 65.0 L264.3 63.7 L267.0 62.4 L269.6 61.1 L272.3 59.7 L275.0 58.4 L277.7 57.1 L280.4 55.8 L283.1 54.5 L285.9 53.1 L288.6 51.8 L291.4 50.5 L294.2 49.2 L296.9 47.8 L299.7 46.5 L302.5 45.2 L305.3 43.9 L308.1 42.6 L311.0 41.2 L313.8 39.9 L316.7 38.6 L319.5 37.3 L322.4 35.9 L325.3 34.6 L328.2 33.3 L331.1 32.0 L334.0 30.7 L336.9 29.3 L339.8 28.0" fill="none" stroke="#f97316" stroke-width="3" opacity="0.85"/><text x="59.7" y="35.2" font-size="12" font-weight="700" fill="#c2410c">supply = SMC above $55.6</text></g><g class="fragment fade-up" data-fragment-index="2" ><circle cx="63.9" cy="199.1" r="5.5" fill="#2563eb" stroke="#fff" stroke-width="2"/></g><g class="fragment fade-up" data-fragment-index="3" ><circle cx="122.7" cy="146.2" r="5.5" fill="#2563eb" stroke="#fff" stroke-width="2"/></g><g class="fragment fade-up" data-fragment-index="4" ><circle cx="207.9" cy="93.3" r="5.5" fill="#2563eb" stroke="#fff" stroke-width="2"/></g><g class="fragment fade-up" data-fragment-index="5" ><circle cx="247.5" cy="72.2" r="7" fill="#15803d" stroke="#fff" stroke-width="2"/></g><g class="fragment fade-up" data-fragment-index="6" ><circle cx="312.7" cy="40.4" r="5.5" fill="#2563eb" stroke="#fff" stroke-width="2"/></g></svg></div>
+    <div style="display: flex; flex-direction: column; gap: 10px;">
+      <div class="fragment fade-up" data-fragment-index="7" style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 8px; padding: 9px 14px;">
+        <p style="font-size: 11pt; color: var(--success-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 4px;">Supply elasticity at \$84</p>
+        <p style="font-size: 13.5pt; margin: 0; text-align: center;">\(1.5 \times \dfrac{p}{p - m} = 1.5 \times \dfrac{84}{28.4} = \mathbf{4.44}\)</p>
+      </div>
+      <div class="fragment fade-up" data-fragment-index="8" style="background: #f8f6f3; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 9px 14px;">
+        <p style="font-size: 12.5pt; margin: 0; line-height: 1.45;">A 1% price rise &rarr; about <strong>4.4% more output</strong>, because the margin over materials is thin (\(\$28.40\) on \(\$84\)). 4.44 is for small changes.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="walkthrough-9-3">
+<section id="walkthrough-9-3" data-visibility="hidden">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 9.3 &mdash; Cobb-Douglas SR Firm Supply</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
     <p style="margin: 0; font-size: 11.5pt; line-height: 1.5;">
@@ -1625,9 +1649,10 @@
 (function(){
   var svg=document.getElementById('f103-svg'); if(!svg) return;
   var pS=document.getElementById('f103-p'), pR=document.getElementById('f103-pRead');
+  var wrap=document.getElementById('f103-wrap'), zb=[1,2,3].map(function(i){return document.getElementById('f103-z'+i);});
   var bn=document.getElementById('f103-banner'), sc=document.getElementById('f103-score');
   var btnS=document.getElementById('f103-supply'), rst=document.getElementById('f103-reset');
-  var QMAX=80, PMAX=12, L=56, R=676, T=22, Bm=322;
+  var QMAX=80, PMAX=12, L=96, R=676, T=22, Bm=322, PX=40, VW=700, VH=360, THUMB=20;
   var FC=200, AA=6, BB=0.12, CC=0.002, QAVC=30, AVCMIN=4.2, QATC=50, ATCMIN=9.0, showS=false;
   function xx(q){return L+q*((R-L)/QMAX);}
   function yy(p){return Bm-p*((Bm-T)/PMAX);}
@@ -1641,16 +1666,23 @@
     for(p=0;p<=12;p+=2){ y=yy(p); s+='<line x1="'+L+'" y1="'+y+'" x2="'+R+'" y2="'+y+'" stroke="rgba(156,163,175,0.25)" stroke-width="1"/><text x="'+(L-6)+'" y="'+(y+4)+'" text-anchor="end" font-size="10.5" fill="#6b7280">'+p+'</text>'; }
     for(q=0;q<=80;q+=10){ x=xx(q); s+='<line x1="'+x+'" y1="'+T+'" x2="'+x+'" y2="'+Bm+'" stroke="rgba(156,163,175,0.16)" stroke-width="1"/><text x="'+x+'" y="'+(Bm+16)+'" text-anchor="middle" font-size="10.5" fill="#6b7280">'+q+'</text>'; }
     s+='<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+Bm+'" stroke="#374151" stroke-width="1.5"/><line x1="'+L+'" y1="'+Bm+'" x2="'+R+'" y2="'+Bm+'" stroke="#374151" stroke-width="1.5"/>';
-    s+='<text x="15" y="172" text-anchor="middle" font-size="10.5" fill="#374151" transform="rotate(-90 15 172)">Price / Cost per Unit ($)</text>';
-    s+='<text x="366" y="'+(Bm+34)+'" text-anchor="middle" font-size="11.5" fill="#374151">Quantity (Q)</text>';
+    s+='<text x="'+(L+6)+'" y="14" font-size="11" fill="#374151">$ per unit</text>';
+    s+='<rect x="'+(L+1)+'" y="'+yy(PMAX)+'" width="7" height="'+(yy(9)-yy(PMAX))+'" fill="#10b981" opacity="0.85"/>';
+    s+='<rect x="'+(L+1)+'" y="'+yy(9)+'" width="7" height="'+(yy(4.2)-yy(9))+'" fill="#d97706" opacity="0.85"/>';
+    s+='<rect x="'+(L+1)+'" y="'+yy(4.2)+'" width="7" height="'+(yy(0)-yy(4.2))+'" fill="#dc2626" opacity="0.85"/>';
+    s+='<text x="'+PX+'" y="'+(yy(11.5)-16)+'" text-anchor="middle" font-size="13" font-weight="700" fill="#8b5cf6">P</text>';
+    s+='<text x="'+((L+R)/2)+'" y="'+(Bm+34)+'" text-anchor="middle" font-size="11.5" fill="#374151">Quantity (Q)</text>';
     return s;
   }
+  // the vertical price bar sits beside the price axis, thumb at the price line's height (chart pixels; clientWidth ignores Reveal's scale)
+  function layout(){ var cw=svg.clientWidth, ch=svg.clientHeight; if(!cw||!ch) return; var k=Math.min(cw/VW,ch/VH), ox=(cw-VW*k)/2, oy=(ch-VH*k)/2;
+    var span=(yy(1)-yy(11.5))*k, cy=oy+(yy(1)+yy(11.5))/2*k, w=span+THUMB; pS.style.width=w+'px'; pS.style.left=(ox+PX*k-w/2)+'px'; pS.style.top=(cy-11)+'px'; pS.style.transform='rotate(-90deg)'; }
   function draw(){
-    var price=parseFloat(pS.value); pR.textContent=price.toFixed(1);
+    var price=parseFloat(pS.value); if(pR) pR.textContent=price.toFixed(1);
     var qs=optQ(price), atcQ=qs>0?atc(qs):0, prof=qs>0?(price-atcQ)*qs:-FC;
     var zone=price>=ATCMIN+0.05?'profit':(Math.abs(price-ATCMIN)<0.05?'be':(price>=AVCMIN+0.01?'loss':'shut'));
     var zLab=zone==='profit'?'Economic profit':zone==='be'?'Break-even (zero profit)':zone==='loss'?'Loss minimization — stay open':'Shut down (P < AVC)';
-    var zCol=zone==='profit'?'#10b981':zone==='be'?'#b45309':zone==='loss'?'#b45309':'#6b7280';
+    var zCol=zone==='profit'?'#15803d':zone==='be'?'#b45309':zone==='loss'?'#b45309':'#dc2626';
     var zBg=zone==='profit'?'rgba(16,185,129,0.12)':zone==='loss'?'rgba(245,158,11,0.14)':zone==='shut'?'rgba(239,68,68,0.12)':'rgba(107,114,128,0.12)';
     var s=axes();
     if(qs>0){ var yTop=yy(Math.max(price,atcQ)), h=Math.abs(yy(price)-yy(atcQ));
@@ -1672,15 +1704,20 @@
       s+='<path d="'+d+'" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round" opacity="0.45"/>';
       s+='<text x="'+(xx(QAVC)+14)+'" y="'+(yy(AVCMIN)-9)+'" font-size="11" font-weight="700" fill="#ef4444">Firm supply (S)</text>';
     }
-    s+='<text x="484" y="41" font-size="11" font-weight="700" fill="#f97316">MC</text>';
-    s+='<text x="620" y="49" font-size="11" font-weight="700" fill="#6366f1">ATC</text>';
-    s+='<text x="620" y="138" font-size="11" font-weight="700" fill="#14b8a6">AVC</text>';
+    s+='<text x="'+(xx(57.4)+8)+'" y="'+(yy(11.6)+4)+'" font-size="11" font-weight="700" fill="#f97316">MC</text>';
+    s+='<text x="'+xx(74)+'" y="'+(yy(atc(74))-8)+'" font-size="11" font-weight="700" fill="#6366f1">ATC</text>';
+    s+='<text x="'+xx(74)+'" y="'+(yy(avc(74))+16)+'" font-size="11" font-weight="700" fill="#14b8a6">AVC</text>';
     svg.innerHTML=s;
     bn.textContent=zLab; bn.style.color=zCol; bn.style.background=zBg;
+    var on=[zone==='profit'||zone==='be', zone==='loss'||zone==='be', zone==='shut'], zc=['#10b981','#d97706','#dc2626'];
+    zb.forEach(function(el,i){ if(!el) return; el.style.opacity=on[i]?'1':'0.4'; el.style.boxShadow=on[i]?'0 0 0 2px '+zc[i]:'none'; });
+    layout();
     var pc=prof>0?'#10b981':(Math.abs(prof)<0.5?'#b45309':'#ef4444');
     sc.innerHTML='<span style="color:#8b5cf6;">Price (P=MR): $'+price.toFixed(2)+'</span><span style="color:#10b981;">Q*: '+(zone==='shut'?'0':qs.toFixed(1))+'</span><span style="color:#6366f1;">ATC @ Q*: '+(zone==='shut'?'&mdash;':'$'+atcQ.toFixed(2))+'</span><span style="color:'+pc+';">Profit: $'+prof.toFixed(0)+'</span>';
   }
   pS.addEventListener('input',draw);
+  ['keydown','keyup','keypress'].forEach(function(ev){ pS.addEventListener(ev,function(e){e.stopPropagation();}); });
+  window.addEventListener('resize',layout); if(window.Reveal && Reveal.on){ Reveal.on('slidechanged',layout); Reveal.on('resize',layout); }
   btnS.addEventListener('click',function(){ showS=!showS; btnS.textContent=showS?'✓ Showing firm supply':'Show firm supply curve'; btnS.style.background=showS?'#ef4444':'#fff'; btnS.style.color=showS?'#fff':'var(--danger-color)'; draw(); });
   rst.addEventListener('click',function(){ pS.value=10; showS=false; btnS.textContent='Show firm supply curve'; btnS.style.background='#fff'; btnS.style.color='var(--danger-color)'; draw(); });
   draw();

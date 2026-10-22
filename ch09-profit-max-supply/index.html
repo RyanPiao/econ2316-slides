@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=558592210b3443e30d3594ddca78499e">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f8c2b86e17ad216fbcf781f7092a581a">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -879,7 +879,7 @@
     <input type="range" class="ax-slider" id="fs-p" min="1" max="13" step="0.25" value="10" aria-label="Market price (P = MR)">
    </div>
    <div style="display:flex; gap:10px; align-items:center; margin:2px 8px 0;">
-    <p style="flex:1; font-size:9.5pt; color:var(--muted-color); font-style:italic; margin:0;">With this cost, MC and AVC are straight lines; the textbook U shapes are on slide 25.</p>
+    <p style="flex:1; font-size:9.5pt; color:var(--muted-color); font-style:italic; margin:0;">With this cost, MC and AVC are straight lines; the textbook U shapes are on slide 26.</p>
     <button id="fs-reset" style="background:#f0f5f8; border:1px solid var(--line-color); border-radius:16px; padding:3px 12px; font-size:10.5pt; cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> Reset</button>
    </div>
    <p id="fs-check" style="font-size:11.5pt; margin:5px 0 0; border:1.5px solid transparent; border-radius:8px; padding:5px 12px; line-height:1.35; min-height:20px;"></p>
@@ -961,13 +961,40 @@
   <p class="subtitle">The asymmetry of sunk vs avoidable fixed costs</p>
 </section>
 
+<section id="shutdown-algebra">
+  <style>#shutdown-algebra table.table-standard th, #shutdown-algebra table.table-standard td { padding: 5px 12px !important; line-height: 1.3 !important; }</style>
+  <h2><i class="fa-solid fa-power-off" style="color: var(--danger-color);"></i> Negative Profit &mdash; Operate at a Loss, or Shut Down?</h2>
+  <p style="font-size: 12.5pt; margin: 0 0 6px;">In the short run the firm owes its <strong>fixed cost</strong> whether or not it produces. Follow the logic one step at a time:</p>
+  <table class="table-standard fragment fade-up" data-fragment-index="1" style="margin-top: 2px; text-align: center; font-size: 12pt;">
+    <thead><tr><th>1 &middot; Two columns</th><th>Shut down (\(Q = 0\))</th><th>Operate (\(Q = Q^*\))</th></tr></thead>
+    <tbody>
+      <tr><th>Revenue</th><td style="text-align:center;">None</td><td style="text-align:center;">\(TR\)</td></tr>
+      <tr><th>Cost</th><td style="text-align:center;">\(FC\)</td><td style="text-align:center;">\(FC + VC\)</td></tr>
+      <tr><th>Profit / loss</th><td style="text-align:center;">\(\pi_{\text{shut}} = -FC\)</td><td style="text-align:center;">\(\pi_{\text{op}} = TR - FC - VC\)</td></tr>
+    </tbody>
+  </table>
+  <div class="key-result fragment fade-up" data-fragment-index="2" style="margin-top: 8px; padding: 6px 14px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>2 &middot; Subtract.</strong> \(FC\) is in both columns, so it cancels: \(\pi_{\text{op}} - \pi_{\text{shut}} = TR - VC\). Operate if and only if <strong>\(TR > VC\)</strong>.</p>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top: 6px; padding: 6px 14px; background: #f0f5f8; border-left-color: var(--secondary-color);">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>3 &middot; Divide by \(Q\).</strong> \(TR > VC \iff P\cdot Q > AVC\cdot Q \iff P > AVC\). The lowest AVC can go is \(\min AVC\): that is the cutoff.</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="4" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
+    <div class="key-result" style="margin: 0; padding: 6px 14px; background: #ecfdf5; border-left-color: var(--success-color); text-align: center;"><p style="margin: 0; font-size: 13pt;"><strong style="color: var(--success-color);">Operate</strong> if \(P \geq \min AVC\) &nbsp;(\(TR \geq VC\))</p></div>
+    <div class="misconception" style="margin: 0; padding: 6px 14px; text-align: center;"><p style="margin: 0; font-size: 13pt;"><strong style="color: var(--danger-color);">Shut down</strong> if \(P < \min AVC\) &nbsp;(\(TR < VC\))</p></div>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="5" style="margin-top: 6px; background: #fffbeb; border-left: 4px solid #d97706; border-radius: 8px; padding: 6px 14px;">
+    <p style="margin: 0; font-size: 12.5pt;"><strong>5 &middot; Sam&rsquo;s check (W9.1, \(\$5\)).</strong> \(TR = \$93.75 > VC = \$65.63\), so he operates: \(-\$21.88\) beats \(-\$50\). Per unit: \(P = \$5 > AVC(18.75) = \$3.50\).</p>
+  </div>
+</section>
+
 <section id="shutdown-vs-exit">
   <h2><i class="fa-solid fa-door-closed" style="color: var(--danger-color);"></i> Short-Run Shutdown vs Long-Run Exit</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
     <div class="fragment fade-up" data-fragment-index="1" style="background: #f0f5f8; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--secondary-color);">
       <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Short run &mdash; \(\bar K\) sunk</p>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin: 6px 0;">Fixed cost \(r\bar K\) is paid whether or not you produce, so it cancels. Compare revenue to <em>variable</em> cost:</p>
-      <p style="text-align: center; font-size: 13.5pt; margin: 6px 0;">\(pq^* - VC \geq -r\bar K\)</p>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 6px 0;">From the last slide: fixed cost \(r\bar K\) is paid either way, so it cancels. Compare revenue to <em>variable</em> cost:</p>
+      <p style="text-align: center; font-size: 13.5pt; margin: 6px 0;">\(pq^* \geq VC\)</p>
       <div class="key-result" style="margin: 6px 0 0; padding: 8px 14px; background: #ecfdf5; border-left-color: var(--success-color);">
         <p style="margin: 0; font-size: 13pt; text-align: center;"><strong>Operate iff \(p \geq \min AVC\)</strong></p>
       </div>
@@ -1021,32 +1048,7 @@
 </section>
 
 
-<section id="shutdown-algebra">
-  <style>#shutdown-algebra table.table-standard th, #shutdown-algebra table.table-standard td { padding: 5px 12px !important; line-height: 1.3 !important; }</style>
-  <h2><i class="fa-solid fa-power-off" style="color: var(--danger-color);"></i> Negative Profit &mdash; Operate at a Loss, or Shut Down?</h2>
-  <p style="font-size: 12.5pt; margin: 0 0 6px;">In the short run the firm owes its <strong>fixed cost</strong> whether or not it produces. Follow the logic one step at a time:</p>
-  <table class="table-standard fragment fade-up" data-fragment-index="1" style="margin-top: 2px; text-align: center; font-size: 12pt;">
-    <thead><tr><th>1 &middot; Two columns</th><th>Shut down (\(Q = 0\))</th><th>Operate (\(Q = Q^*\))</th></tr></thead>
-    <tbody>
-      <tr><th>Revenue</th><td style="text-align:center;">None</td><td style="text-align:center;">\(TR\)</td></tr>
-      <tr><th>Cost</th><td style="text-align:center;">\(FC\)</td><td style="text-align:center;">\(FC + VC\)</td></tr>
-      <tr><th>Profit / loss</th><td style="text-align:center;">\(\pi_{\text{shut}} = -FC\)</td><td style="text-align:center;">\(\pi_{\text{op}} = TR - FC - VC\)</td></tr>
-    </tbody>
-  </table>
-  <div class="key-result fragment fade-up" data-fragment-index="2" style="margin-top: 8px; padding: 6px 14px;">
-    <p style="margin: 0; font-size: 12.5pt;"><strong>2 &middot; Subtract.</strong> \(FC\) is in both columns, so it cancels: \(\pi_{\text{op}} - \pi_{\text{shut}} = TR - VC\). Operate if and only if <strong>\(TR > VC\)</strong>.</p>
-  </div>
-  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top: 6px; padding: 6px 14px; background: #f0f5f8; border-left-color: var(--secondary-color);">
-    <p style="margin: 0; font-size: 12.5pt;"><strong>3 &middot; Divide by \(Q\).</strong> \(TR > VC \iff P\cdot Q > AVC\cdot Q \iff P > AVC\). The lowest AVC can go is \(\min AVC\): that is the cutoff.</p>
-  </div>
-  <div class="fragment fade-up" data-fragment-index="4" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
-    <div class="key-result" style="margin: 0; padding: 6px 14px; background: #ecfdf5; border-left-color: var(--success-color); text-align: center;"><p style="margin: 0; font-size: 13pt;"><strong style="color: var(--success-color);">Operate</strong> if \(P \geq \min AVC\) &nbsp;(\(TR \geq VC\))</p></div>
-    <div class="misconception" style="margin: 0; padding: 6px 14px; text-align: center;"><p style="margin: 0; font-size: 13pt;"><strong style="color: var(--danger-color);">Shut down</strong> if \(P < \min AVC\) &nbsp;(\(TR < VC\))</p></div>
-  </div>
-  <div class="fragment fade-up" data-fragment-index="5" style="margin-top: 6px; background: #fffbeb; border-left: 4px solid #d97706; border-radius: 8px; padding: 6px 14px;">
-    <p style="margin: 0; font-size: 12.5pt;"><strong>5 &middot; Sam&rsquo;s check (W9.1, \(\$5\)).</strong> \(TR = \$93.75 > VC = \$65.63\), so he operates: \(-\$21.88\) beats \(-\$50\). Per unit: \(P = \$5 > AVC(18.75) = \$3.50\).</p>
-  </div>
-</section>
+
 <section id="shutdown-rule" data-visibility="hidden">
   <h2><i class="fa-solid fa-gavel" style="color: var(--secondary-color);"></i> The Short-Run Shutdown Rule</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 12px;">
@@ -1179,7 +1181,7 @@
 
 <section id="bankruptcies">
   <h2><i class="fa-solid fa-building-circle-xmark" style="color: var(--danger-color);"></i> Three Real 2024 Decisions &mdash; SR Shutdown vs LR Exit</h2>
-  <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 8px;">Colours are slide 25&rsquo;s zones: <strong style="color:#15803d">green</strong> \(P > \min ATC\), <strong style="color:#b45309">amber</strong> \(\min AVC < P < \min ATC\), <strong style="color:#dc2626">red</strong> \(P < \min AVC\).</p>
+  <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 8px;">Colours are slide 26&rsquo;s zones: <strong style="color:#15803d">green</strong> \(P > \min ATC\), <strong style="color:#b45309">amber</strong> \(\min AVC < P < \min ATC\), <strong style="color:#dc2626">red</strong> \(P < \min AVC\).</p>
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: stretch;">
     <div class="fragment fade-up" data-fragment-index="1" style="background: #fffdf8; border: 1px solid #f3e8d6; border-top: 5px solid #d97706; border-radius: 8px; padding: 10px 14px; display:flex; flex-direction:column; gap:6px;">
       <img alt="CBS News, 15 Oct 2024: Walgreens announces plan to close 1,200 stores over next 3 years" src="figures/walgreen.png" style="width:100%; height:92px; object-fit:cover; object-position:50% 10%; border-radius:6px; border:1px solid #e5e7eb;">
@@ -1392,7 +1394,7 @@
     <li><strong>Gigafactory example ends:</strong> the fixed \(p = \$84\) becomes endogenous.</li>
   </ul>
   <p style="font-size: 12pt; color: var(--muted-color); font-style: italic; margin-top: 12px; text-align: center;">
-    Before next class: read manuscript §10.1&ndash;§10.3. Today's firm supply curve is the building block.
+    Before Chapter 10: read manuscript §10.1&ndash;§10.3. Today's firm supply curve is the building block.
   </p>
 </section>
 

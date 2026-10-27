@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro Mission 6 Outputs</title>
+<meta name="description" content="Static copy of every output of the Micro Mission 6 lab, for students whose browser or Colab session does not run it.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<style>
+:root { --ink:#1f2328; --muted:#5c6570; --line:#e3e6ea; --panel:#f6f7f9; --brand:#2c3e50; --bg:#ffffff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#e6e6e3; --muted:#a4abb3; --line:#3a3f45; --panel:#22262b; --brand:#9cc0e8; --bg:#16191d; } }
+:root[data-theme="dark"] { --ink:#e6e6e3; --muted:#a4abb3; --line:#3a3f45; --panel:#22262b; --brand:#9cc0e8; --bg:#16191d; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; }
+main { max-width:860px; margin:0 auto; padding:24px 16px 60px; }
+h1 { font-size:25px; color:var(--brand); } h2 { font-size:20px; color:var(--brand); margin-top:1.4em; } h3 { font-size:16px; }
+table { border-collapse:collapse; font-size:14px; margin:10px 0; display:block; overflow-x:auto; }
+th, td { border-bottom:1px solid var(--line); padding:5px 10px; text-align:left; } th { background:var(--panel); }
+.tbl td { text-align:right; font-variant-numeric:tabular-nums; }
+blockquote { margin:12px 0; padding:8px 14px; background:var(--panel); border-left:4px solid var(--brand); border-radius:4px; }
+code { background:var(--panel); padding:1px 4px; border-radius:3px; }
+.cell { margin:10px 0 18px; padding:10px 12px; border:1px solid var(--line); border-radius:8px; }
+.cell .ttl { font-size:13px; color:var(--muted); margin-bottom:4px; }
+.cell pre { margin:0; white-space:pre-wrap; font-size:13.5px; }
+img.fig { max-width:100%; height:auto; display:block; margin:8px 0; background:#fff; }
+.top { padding:12px 14px; border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+hr { border:0; border-top:1px solid var(--line); }
+</style></head><body><main>
+<div class="top"><strong>Static copy of the lab's outputs.</strong> Use this page only if the lab page and Colab both fail for you.
+Nothing runs here: every output below is from one run of the lab (pyblp 1.3.0, 27 Oct 2026),
+and the numbers are the same for everyone. <strong>Make each prediction before you scroll past it.</strong>
+Your Canvas post is the same as everyone else's: five numbers, four predictions with one sentence each, three answers.</div>
+<div class="md"><h1>Micro Mission 6 Lab: Reading a Markup off Demand</h1>
+<h2>ECON 2316, Chapters 11 and 12</h2>
+<h3>About 45 minutes, including the write-up. Nothing to install.</h3>
+<p><strong>What you do.</strong> You run a demand model on cereal data and read results off the output. Each
+result is one number. Then you explain what the numbers mean with the Chapter 11 and 12 formulas.
+<strong>You do not write code.</strong> Every step's code is given and hidden; you press Run and read.</p>
+<p><strong>The data.</strong> <code>pyblp</code>, a library economists use to estimate demand, ships a teaching dataset
+modelled on Aviv Nevo's (2000) study of ready-to-eat cereal: 24 brands, 5 firms, 47 cities,
+2 quarters. <strong>The numbers are made up</strong> so that they look like real supermarket data. So every
+result in this lab is <em>what the model says on teaching data</em>. It is not a fact about real cereal
+companies, and your write-up should say it that way.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Question</th>
+<th>Chapter formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>How fast does demand fall when price rises?</td>
+<td>the price coefficient</td>
+</tr>
+<tr>
+<td>2</td>
+<td>How elastic is each brand's demand?</td>
+<td>$MR = P(1 + 1/\varepsilon_D)$, Heads Up 11.3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>What markup does that elasticity imply?</td>
+<td>$L = (P - MC)/P = -1/\varepsilon_D$, §11.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Would one price fit every city?</td>
+<td>$L_i = -1/\varepsilon_{D,i}$, Calculus Corner 12.1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Write-up: three short answers</td>
+<td>all of the above</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Before each estimate you predict the result</strong> (multiple choice). Being wrong costs nothing;
+your one-sentence explanation of what happened is what counts.</p>
+<blockquote>
+<h3>How to use this notebook (no coding needed)</h3>
+<ul>
+<li><strong>Save your own copy first:</strong> <em>File → Save a copy in Drive</em>.</li>
+<li><strong>Run everything:</strong> <em>Runtime → Run all</em>. The first cell installs <code>pyblp</code> (about a minute); everything else takes a few seconds. If Colab warns that the notebook was not authored by Google, choose <em>Run anyway</em>.</li>
+<li>Each grey cell shows its title and its output. <em>Show code</em> is there if you are curious; you never need it.</li>
+<li>Keep a note of your four predictions and the five numbers. Your Canvas post asks for them.</li>
+</ul>
+</blockquote></div><div class="cell"><div class="ttl">Output: Setup: install pyblp and load the libraries</div><pre>pyblp 1.3.0 | numpy 2.5.4 | pandas 3.0.1 | Python 3.14.7
+Setup complete.</pre></div><div class="md"><hr />
+<h2>The data (3 min)</h2>
+<p>One row is one brand in one market, and a <strong>market</strong> is one city in one quarter. For each row the
+data give the price per serving and the brand's <strong>market share</strong>: its servings sold divided by all
+the servings people in that city could have eaten (one per person per day). Whatever is left over
+is the <strong>outside option</strong>, no cereal at all. Brands and firms are numbers, not names: the data are
+made up.</p></div><div class="cell"><div class="ttl">Output: Load the cereal data and look at it</div><pre>2,256 rows: one row per brand per market
+47 cities x 2 quarters = 94 markets
+24 brands, owned by 5 firms
+Median price per serving: $0.124.  Median market share: 1.1%.
+In the median market, 54% of possible servings are &#x27;no cereal&#x27;.
+
+The first six rows:
+Who owns how many brands:</pre><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>city</th>
+      <th>quarter</th>
+      <th>brand</th>
+      <th>firm</th>
+      <th>price ($/serving)</th>
+      <th>market share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>1</td>
+      <td>F1B04</td>
+      <td>1</td>
+      <td>0.072</td>
+      <td>0.012</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>F1B06</td>
+      <td>1</td>
+      <td>0.114</td>
+      <td>0.008</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>1</td>
+      <td>F1B07</td>
+      <td>1</td>
+      <td>0.132</td>
+      <td>0.013</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>F1B09</td>
+      <td>1</td>
+      <td>0.130</td>
+      <td>0.006</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>1</td>
+      <td>F1B11</td>
+      <td>1</td>
+      <td>0.155</td>
+      <td>0.018</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1</td>
+      <td>1</td>
+      <td>F1B13</td>
+      <td>1</td>
+      <td>0.137</td>
+      <td>0.027</td>
+    </tr>
+  </tbody>
+</table><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brands owned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Firm 1</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Firm 2</th>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>Firm 3</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Firm 4</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Firm 6</th>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table></div><div class="md"><hr />
+<h2>Part 1: How fast does demand fall when price rises? (8 min)</h2>
+<p>The model is a <strong>logit</strong>: each shopper picks the one cereal, or no cereal, that gives the highest
+utility. A brand's average utility in a market is</p>
+<p>$$\delta_{jt} = \alpha\, p_{jt} + (\text{brand effect})_j + \xi_{jt}$$</p>
+<ul>
+<li>$p_{jt}$ is the price per serving of brand $j$ in market $t$.</li>
+<li>$\alpha$ is the <strong>price coefficient</strong>, the slope we want: how much utility falls per dollar of price.</li>
+<li>The <strong>brand effect</strong> is one constant per brand (loyalty to the brand). With it in the model, $\alpha$ is learned from the <em>same</em> brand's price moving across cities and quarters.</li>
+<li>$\xi_{jt}$ is what shoppers see and the data do not: a store display, a local ad campaign.</li>
+</ul>
+<p><strong>Why the step uses instruments.</strong> Firms charge more where $\xi$ is high, where the brand is popular
+for reasons the data do not show. So high prices and high demand turn up together, and a plain
+regression understates how much price hurts demand. The fix is an <strong>instrument</strong>: a variable
+that moves price for cost reasons and has nothing to do with $\xi$. The data come with 20 of them,
+and the step names all 20 explicitly. You do not need the econometrics for the write-up; you
+need the sign and the size of $\alpha$.</p></div><div class="md w predict"><blockquote>
+<p><strong>Predict before you run.</strong> What sign will the price coefficient $\alpha$ have?</p>
+<ul>
+<li>Negative: a higher price lowers utility</li>
+<li>About zero: price does not matter much for cereal</li>
+<li>Positive: a higher price signals a better cereal</li>
+</ul>
+<p>Write down your choice before you run the next cell.</p>
+</blockquote></div><div class="cell"><div class="ttl">Output: Part 1: estimate demand (logit, instrumented price, brand fixed effects)</div><pre>Price coefficient alpha: -30.10   (standard error 1.02)
+So a 1-cent rise in a brand&#x27;s price lowers its average utility by 0.30.
+At the median price ($0.124 per serving), alpha x price = -3.73.</pre></div><div class="md w readoff"><blockquote>
+<p><strong>Read it off your output.</strong> The price coefficient $\alpha$, <strong>with its sign</strong>, to one decimal.</p>
+</blockquote></div><div class="md w formula"><blockquote>
+<p><strong>Chapter formula.</strong> In the logit, a brand's own-price elasticity is $\varepsilon_{jt} = \alpha\, p_{jt}\,(1 - s_{jt})$, where $s_{jt}$ is its market share. A higher price or a smaller share makes demand more elastic. Part 2 computes it for every row.</p>
+</blockquote></div><div class="md w whatif"><blockquote>
+<p><strong>Use the formula.</strong> Use your $\alpha$ and the formula: a brand priced at 20 cents (0.20 dollars) per serving with a 2% share ($s = 0.02$). What is its own-price elasticity? Two decimals, with the sign.</p>
+</blockquote></div><div class="md"><hr />
+<h2>Part 2: How elastic is each brand's demand? (8 min)</h2>
+<p>The next step computes $\varepsilon_{jt}$ for all 2,256 rows: every brand in every market. Recall
+§11.3: marginal revenue is $MR = P\,(1 + 1/\varepsilon_D)$. Heads Up 11.3 says what that implies
+for where a profit-maximizing firm can be on its demand curve.</p></div><div class="md w predict"><blockquote>
+<p><strong>Predict before you run.</strong> For the typical (median) brand and market, will demand be inelastic, about unit-elastic, or elastic?</p>
+<ul>
+<li>Inelastic: between 0 and −1</li>
+<li>About unit-elastic: close to −1</li>
+<li>Elastic: below −1 (for example −2 or −4)</li>
+</ul>
+<p>Write down your choice before you run the next cell.</p>
+</blockquote></div><div class="cell"><div class="ttl">Output: Part 2: the own-price elasticity of every brand in every market</div><pre>2,256 own-price elasticities (24 brands x 94 markets)
+Median: -3.65
+Middle half of the rows: -4.24 to -3.10
+Most elastic row: -6.63.  Least elastic row: -1.33
+Rows in the elastic part of demand (|elasticity| &gt; 1): 100%</pre><img class="fig" alt="figure" src="data:image/png;base64,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IiJyTHxMjEQeO6JuuE9uNGIfFRWlUlYQVKNMZXx8vLz44osqReadd96RggULypQpUxxepl6O8uLFi+okVtSf148Q5MiRQ8aNGyedO3eW5557TtWxx+vv27fPpKY+LlrVuHFjee211+STTz5R5TnfffddKVOmjLRu3Topb5eIiIiIyD1H7N966y3ZunWrqhmPABxpLzqMiq9fv97hZd64cUPatWunbtu2bVN58vrfuCotdOrUSb766itZsmSJCt537dolK1euVMG8MQT8qGPfp08feeWVV6RIkSJqpyFDhiTtxxARERERubwkRboYSZ86daqqZ29e/SYsLEwuXLjg8DLxPOMdBGt69uypbrZkzpxZXXkWNyIiIiKi9CBJI/YPHz6U3LlzW3zs0aNHz9omIiIiIiJKicAe+erLly+3+NiaNWukUqVKSVksERERERGlZCrOe++9Jy1atFAnvCIHHmUl9+/fL99//73Mnz/fcBIsERERERG5cGDfrFkzWbp0qQwfPlwWL16spvXv31/y5cun/kb5SSIiIiJyD17+AZKrQWPDfXJNSS4T07ZtW3VDjfhbt26pq7rqF5EiIkpvHkbHyZlrT+yaNzzEVzL6eSV7m4iInMUvV4hUmvsNO9TFPXP9R1w0CjciovQMQX2XLy7aNe+ivgWkQhhHvIiIyEWuPIva8rhYVOHChSUwMFD9/+qrrxpqzhMRERERkYuP2KPyDa7iipz6li1bSq5cueT69evy008/SYUKFWTFihUqD5+IiIiI0r7omzfk5Ifj1P3i74wTvxw5U7tJ5KzAHifNvvjii+qqr56e/w3646JVqJaDxxnYExEREbmHuEcP5covK9X98DfeEmFg7z6pOOfPn5fXX3/dJKhXC/P0lAEDBqjHiYjIstBgb3YNERG5xog9LlBlLXjH9FKlSj1ru4iI3Ja/j6dDVXTK5vdP9jYREVE6Dew//fRT6dixowQEBKgc+8yZM0tkZKRKzfnkk0/UhaqIiMg5VXT2jWXlMSIicmJgHxQUpK4wq4uJiZHXXntN3by9vSU2NlZNx31coOr+/fv2LpqIiIiIiFIqsB82bJhJYE9ERERERGkwsB837t8SR0RERPTseBI1EbnclWeJiIgo+U+iDg/xlYx+XuxqShUe3t6SsXC44T65WWC/dOlSWbZsmUREREh0dHSCx48ePfqs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"></div><div class="md w readoff"><blockquote>
+<p><strong>Read it off your output.</strong> The <strong>median</strong> own-price elasticity, two decimals, with its sign.</p>
+</blockquote></div><div class="md w formula"><blockquote>
+<p><strong>Chapter formula.</strong> §11.3: $MR = P\,(1 + 1/\varepsilon_D)$. Heads Up 11.3: where $|\varepsilon_D| &lt; 1$, $MR &lt; 0$, so a profit-maximizing firm never prices on the inelastic part of its demand curve.</p>
+</blockquote></div><div class="md w whatif"><blockquote>
+<p><strong>Use the formula.</strong> Suppose one brand had $\varepsilon = -0.8$. Its marginal revenue $MR = P(1 + 1/\varepsilon)$ would be …</p>
+<ul>
+<li>positive</li>
+<li>zero</li>
+<li>negative</li>
+</ul>
+</blockquote></div><div class="md"><hr />
+<h2>Part 3: From elasticity to markup (12 min)</h2>
+<p>§11.5: a profit-maximizing firm sets $MR = MC$. With $MR = P(1 + 1/\varepsilon_D)$ this rearranges to</p>
+<p>$$L = \frac{P - MC}{P} = -\frac{1}{\varepsilon_D}.$$</p>
+<p>Read it backwards: <strong>if you know the elasticity, you know the markup</strong>, without ever seeing costs.
+That is how economists measure market power from demand data. The formula is for a firm that sells
+<strong>one</strong> product. Step 3a uses it as if every brand were its own firm.</p></div><div class="cell"><div class="ttl">Output: Part 3a: the single-product Lerner index, L = −1/ε</div><pre>Median single-product Lerner index: 0.27
+Middle half of the rows: 0.24 to 0.32
+So at the median, the gap between price and marginal cost is 27% of the price.</pre></div><div class="md w readoff"><blockquote>
+<p><strong>Read it off your output.</strong> The <strong>median single-product Lerner index</strong> $-1/\varepsilon$, two decimals.</p>
+</blockquote></div><div class="md w whatif"><blockquote>
+<p><strong>Use the formula.</strong> Walkthrough 11.2 put Spotify Premium's elasticity at $\varepsilon_D = -3.33$. What Lerner index does the inverse-elasticity rule give? Two decimals.</p>
+</blockquote></div><div class="md"><h3>3b: the firms own several brands</h3>
+<p>In these data 5 firms own the 24 brands: Firms 1 and 2 own nine each, Firm 6 owns one. When a
+firm sets prices it looks at <strong>all of its brands together</strong>. pyblp's <code>compute_costs</code> works
+backwards from each firm's pricing first-order conditions: given the demand you estimated and who
+owns what, which marginal cost would make today's prices the profit-maximizing ones? From that
+$MC$ the step computes the markup $(P - MC)/P$.</p></div><div class="md w predict"><blockquote>
+<p><strong>Predict before you run.</strong> Compared with the single-product Lerner $-1/\varepsilon$ from 3a, will the median markup be smaller, about the same, or larger when each firm prices all of its brands together?</p>
+<ul>
+<li>Smaller</li>
+<li>About the same (within 5%)</li>
+<li>Larger</li>
+</ul>
+<p>Write down your choice before you run the next cell.</p>
+</blockquote></div><div class="cell"><div class="ttl">Output: Part 3b: markups when each firm prices all its brands together</div><pre>Median markup (P - MC)/P with the real owners: 0.31
+Median single-product Lerner -1/elasticity:    0.27
+Check: with every brand as its own firm, compute_costs gives back -1/elasticity exactly: True
+
+By firm:</pre><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>brands owned</th>
+      <th>single-product L = -1/elasticity (median)</th>
+      <th>markup with real owners (median)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Firm 1</th>
+      <td>9</td>
+      <td>0.286</td>
+      <td>0.350</td>
+    </tr>
+    <tr>
+      <th>Firm 2</th>
+      <td>9</td>
+      <td>0.270</td>
+      <td>0.313</td>
+    </tr>
+    <tr>
+      <th>Firm 3</th>
+      <td>2</td>
+      <td>0.251</td>
+      <td>0.256</td>
+    </tr>
+    <tr>
+      <th>Firm 4</th>
+      <td>3</td>
+      <td>0.292</td>
+      <td>0.306</td>
+    </tr>
+    <tr>
+      <th>Firm 6</th>
+      <td>1</td>
+      <td>0.242</td>
+      <td>0.242</td>
+    </tr>
+  </tbody>
+</table></div><div class="md w readoff"><blockquote>
+<p><strong>Read it off your output.</strong> The <strong>median markup with the real owners</strong>, two decimals.</p>
+</blockquote></div><div class="md"><hr />
+<h2>Part 4: One price for every city? (6 min)</h2>
+<p>Chapter 12 (§12.4, Calculus Corner 12.1): if a firm can tell segments apart and stop resale between
+them, it sets each segment's price by that segment's own Lerner rule. Here the segments are the 47
+cities. <strong>Nothing is re-estimated</strong>: the step takes the Part 2 elasticities and groups them by city.</p></div><div class="md w predict"><blockquote>
+<p><strong>Predict before you run.</strong> Suppose a cereal firm could set a different price in each city, and nobody could resell between cities. Which city would pay the higher markup?</p>
+<ul>
+<li>The city where demand is more elastic</li>
+<li>The city where demand is less elastic</li>
+<li>Neither: marginal cost is the same everywhere, so the markup is the same</li>
+</ul>
+<p>Write down your choice before you run the next cell.</p>
+</blockquote></div><div class="cell"><div class="ttl">Output: Part 4: elasticities and implied markups, city by city</div><pre>47 cities. Median elasticity runs from -3.32 (City 23, least elastic) to -4.10 (City 47, most elastic).
+The five least elastic cities (top) and the five most elastic (bottom):</pre><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>median elasticity</th>
+      <th>implied L = -1/elasticity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>City 23</th>
+      <td>-3.319</td>
+      <td>0.301</td>
+    </tr>
+    <tr>
+      <th>City 16</th>
+      <td>-3.349</td>
+      <td>0.299</td>
+    </tr>
+    <tr>
+      <th>City 34</th>
+      <td>-3.415</td>
+      <td>0.293</td>
+    </tr>
+    <tr>
+      <th>City 58</th>
+      <td>-3.422</td>
+      <td>0.292</td>
+    </tr>
+    <tr>
+      <th>City 18</th>
+      <td>-3.485</td>
+      <td>0.287</td>
+    </tr>
+    <tr>
+      <th>City 5</th>
+      <td>-3.881</td>
+      <td>0.258</td>
+    </tr>
+    <tr>
+      <th>City 44</th>
+      <td>-3.933</td>
+      <td>0.254</td>
+    </tr>
+    <tr>
+      <th>City 1</th>
+      <td>-4.001</td>
+      <td>0.250</td>
+    </tr>
+    <tr>
+      <th>City 30</th>
+      <td>-4.006</td>
+      <td>0.250</td>
+    </tr>
+    <tr>
+      <th>City 47</th>
+      <td>-4.100</td>
+      <td>0.244</td>
+    </tr>
+  </tbody>
+</table></div><div class="md w readoff"><blockquote>
+<p><strong>Read it off your output.</strong> The implied Lerner index in the <strong>least elastic city</strong> (the first row), two decimals.</p>
+</blockquote></div><div class="md w formula"><blockquote>
+<p><strong>Chapter formula.</strong> Calculus Corner 12.1: with no resale between segments, each segment $i$ gets $L_i = (P_i - MC)/P_i = -1/\varepsilon_{D,i}$. Same $MC$ everywhere, different $\varepsilon_{D,i}$, different markup.</p>
+</blockquote></div><div class="md"><hr />
+<h2>Your five numbers (1 min)</h2>
+<p>The next step collects the five numbers you read off. They go at the top of your Canvas post.</p></div><div class="cell"><div class="ttl">Output: Your five numbers, for your Canvas post</div><pre>All five are what the model says on pyblp&#x27;s synthetic teaching data.</pre><table class="dataframe tbl">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>What</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <th>Part</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>price coefficient alpha</td>
+      <td>-30.10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>median own-price elasticity</td>
+      <td>-3.65</td>
+    </tr>
+    <tr>
+      <th>3a</th>
+      <td>median single-product Lerner -1/elasticity</td>
+      <td>0.27</td>
+    </tr>
+    <tr>
+      <th>3b</th>
+      <td>median markup with the real owners</td>
+      <td>0.31</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>implied Lerner, least elastic city</td>
+      <td>0.30 (City 23)</td>
+    </tr>
+  </tbody>
+</table></div><div class="md"><hr />
+<h2>Part 5: Write-up (15 min)</h2>
+<p>Answer the three questions, <strong>about 80 words each (about 250 in all)</strong>. Each answer must use the
+formula named in it and at least one of your numbers. Write results as what the model says on
+teaching data (for example "in the model, the median markup is …"), not as facts about real cereal
+companies.</p>
+<ol>
+<li><strong>Elastic or not ($MR = P(1 + 1/\varepsilon_D)$, Heads Up 11.3).</strong> Is your median own-price elasticity where a profit-maximizing firm could be pricing? Explain with the MR formula, and say what a median of −0.6 would have told you.</li>
+<li><strong>Owning substitutes ($L = -1/\varepsilon_D$, §11.5).</strong> Your single-product Lerner index and the markup with the real owners differ. Which is larger, and why does owning several brands change how a firm prices each one? Use the firm table (compare Firm 6 with Firm 1). Chapter 13 starts from here.</li>
+<li><strong>One price for every city? ($L_i = -1/\varepsilon_{D,i}$, Calculus Corner 12.1).</strong> If a cereal firm could set a different price in each city, which city would pay the higher markup, and what would the firm need for that to work (§12.1)?</li>
+</ol></div><div class="md"><hr />
+<h2>Submit</h2>
+<p>Post in the <strong>Micro Mission 6</strong> discussion on Canvas:</p>
+<ul>
+<li>your five numbers (the table above),</li>
+<li>your four predictions, each with one sentence on what happened and why,</li>
+<li>your three write-up answers (about 250 words in all).</li>
+</ul>
+<p>Then reply to one classmate (two or three sentences). Nothing was installed on your computer.</p></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<script>try { renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}], throwOnError: false }); } catch (e) {}</script>
+</body></html>

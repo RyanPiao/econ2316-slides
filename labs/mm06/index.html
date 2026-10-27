@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro Mission 6</title>
+<meta name="description" content="ECON 2316 Micro Mission 6 lab: read a markup off estimated demand (Lerner index, Ch 11) and ask whether one price fits every city (Ch 12). Runs in the browser; nothing to install.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<style>
+:root { --ink:#1f2328; --muted:#5c6570; --line:#e3e6ea; --panel:#f6f7f9; --brand:#2c3e50; --accent:#1357c9; --ok:#1a7f37; --warn:#b35c00; --bad:#b42318; --bg:#ffffff; }
+* { box-sizing: border-box; }
+html, body { margin:0; height:100%; background:var(--bg); color:var(--ink); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+#app { display:grid; grid-template-columns: 300px 1fr; height:100vh; }
+nav { border-right:1px solid var(--line); background:var(--panel); overflow:auto; padding:14px 0 30px; }
+nav h1 { font-size:15px; margin:0 16px 4px; color:var(--brand); }
+nav .sub { font-size:12px; color:var(--muted); margin:0 16px 12px; }
+nav .grp { font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:14px 16px 4px; }
+nav button.step { display:flex; gap:8px; align-items:flex-start; width:100%; text-align:left; border:0; background:none; padding:6px 16px; font:inherit; font-size:13.5px; color:var(--ink); cursor:pointer; border-left:3px solid transparent; }
+nav button.step:hover { background:#eceff3; }
+nav button.step.current { background:#e7eef9; border-left-color:var(--accent); }
+nav .ic { width:18px; flex:none; text-align:center; font-size:13px; }
+nav .ic.done { color:var(--ok); } nav .ic.bad { color:var(--warn); } nav .ic.stale { color:var(--muted); }
+main { overflow:auto; padding:28px 40px 80px; }
+.wrap { max-width: 900px; margin: 0 auto; }
+.crumb { font-size:13px; color:var(--muted); margin-bottom:6px; }
+h2.pt { font-size:24px; margin:0 0 14px; color:var(--brand); }
+.md h1 { font-size:26px; } .md h2 { font-size:21px; color:var(--brand); margin-top:1.2em; } .md h3 { font-size:17px; margin-top:1.2em; }
+.md table { border-collapse:collapse; font-size:14px; margin:10px 0; } .md th, .md td { border-bottom:1px solid var(--line); padding:5px 10px; text-align:left; vertical-align:top; }
+.md th { background:var(--panel); }
+.md blockquote { margin:12px 0; padding:10px 16px; background:#f0f7fb; border-left:4px solid #c4dfe6; border-radius:4px; }
+.md code { background:#eef1f4; padding:1px 5px; border-radius:4px; font-size:90%; }
+.md pre { background:#f6f7f9; border:1px solid var(--line); padding:12px; border-radius:6px; overflow:auto; font-size:13.5px; }
+.md pre code { background:none; padding:0; }
+.note { margin:16px 0; padding:12px 16px; background:#fff7e6; border:1px solid #f1d7a3; border-radius:6px; font-size:15px; }
+.note p { margin:0; }
+.ctl { display:grid; grid-template-columns: 1fr; gap:12px; margin:14px 0 6px; padding:14px 16px; background:var(--panel); border:1px solid var(--line); border-radius:8px; }
+.ctl label { font-size:14px; color:var(--ink); display:block; }
+.ctl .row { display:flex; gap:12px; align-items:center; }
+.ctl input[type=range] { flex:1; } .ctl .val { min-width:48px; text-align:right; font-variant-numeric: tabular-nums; }
+.ctl select, .ctl input[type=number] { font:inherit; padding:6px 8px; border:1px solid #c6ccd3; border-radius:6px; }
+.box { margin:14px 0 6px; padding:14px 16px; background:#f3f7ff; border:1px solid #cfdcf3; border-radius:8px; }
+.box label { font-weight:600; font-size:14px; }
+.box .sym { font-size:13px; color:var(--muted); margin:2px 0 8px; }
+.box input[type=text], .paste textarea { width:100%; font: 16px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding:9px 10px; border:1px solid #b9c6dd; border-radius:6px; background:#fff; }
+.paste textarea { min-height:160px; font-size:14px; }
+.preview { min-height:38px; margin:8px 0 4px; padding:8px 10px; background:#fff; border:1px dashed #c9d4e8; border-radius:6px; font-size:18px; }
+.preview .raw { color:var(--muted); font-size:14px; }
+.bar { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:14px 0; }
+button.btn { font:inherit; font-size:15px; padding:9px 18px; border-radius:7px; border:1px solid var(--brand); background:var(--brand); color:#fff; cursor:pointer; }
+button.btn.sec { background:#fff; color:var(--brand); }
+button.btn.lite { background:none; border-color:transparent; color:var(--accent); padding:6px 8px; font-size:14px; }
+button.btn:disabled { opacity:.55; cursor:default; }
+.status { font-size:14px; color:var(--muted); }
+.out { margin-top:12px; }
+.out pre { background:#fbfbfc; border:1px solid var(--line); border-radius:6px; padding:12px; overflow:auto; font-size:13.5px; white-space:pre; }
+.out .tbl { border-collapse:collapse; font-size:13.5px; margin:8px 0; font-variant-numeric: tabular-nums; }
+.out .tbl th, .out .tbl td { border-bottom:1px solid var(--line); padding:4px 10px; text-align:right; }
+.out .tbl th:first-child, .out .tbl td:first-child { text-align:left; }
+.out .tbl thead th { background:var(--panel); }
+.out img.fig { max-width:100%; height:auto; display:block; margin:10px 0; }
+.out .err { background:#fff1f0; border:1px solid #f3b4ae; padding:10px 12px; border-radius:6px; color:var(--bad); white-space:pre-wrap; }
+.verdict { font-weight:600; margin:10px 0 0; }
+.verdict.ok { color:var(--ok); } .verdict.bad { color:var(--warn); }
+details.code { margin-top:12px; } details.code summary { cursor:pointer; color:var(--accent); font-size:14px; }
+details.code pre { background:#f6f7f9; border:1px solid var(--line); border-radius:6px; padding:12px; overflow:auto; font-size:13px; }
+.foot { display:flex; justify-content:space-between; margin-top:28px; padding-top:16px; border-top:1px solid var(--line); }
+#overlay { position:fixed; inset:0; background:#fff; display:flex; align-items:center; justify-content:center; z-index:10; }
+#overlay .card { max-width:560px; padding:28px 32px; border:1px solid var(--line); border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.06); }
+#overlay h1 { font-size:22px; margin:0 0 8px; color:var(--brand); } #overlay p { margin:6px 0; color:var(--muted); }
+#overlay ul { margin:12px 0 0; padding-left:18px; font-size:14px; color:var(--ink); } #overlay li.doing::after { content:" …"; }
+#overlay .err { color:var(--bad); white-space:pre-wrap; font-size:14px; }
+.spin { display:inline-block; width:14px; height:14px; border:2px solid #c6ccd3; border-top-color:var(--brand); border-radius:50%; animation:sp .8s linear infinite; vertical-align:-2px; margin-right:6px; }
+@keyframes sp { to { transform:rotate(360deg); } }
+.dl { display:grid; gap:10px; margin:14px 0; }
+.dl .item { display:flex; justify-content:space-between; align-items:center; gap:14px; padding:12px 14px; border:1px solid var(--line); border-radius:8px; background:var(--panel); }
+.chk { margin:10px 0; padding:12px 16px; border:1px solid var(--line); border-radius:8px; font-size:15px; }
+.chk li.ok { color:var(--ok); } .chk li.bad { color:var(--warn); }
+#menu { display:none; }
+.keys { display:flex; flex-wrap:wrap; gap:6px; margin:2px 0 8px; align-items:center; }
+.keys .lab { font-size:12.5px; color:var(--muted); margin-right:2px; }
+.keys button { font: 14px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding:6px 9px; border:1px solid #b9c6dd; border-radius:6px; background:#fff; color:var(--ink); cursor:pointer; }
+.keys button:hover { background:#e7eef9; border-color:var(--accent); }
+.keys button.sym { font-weight:600; color:#1d4f9a; }
+.keys button.clr { margin-left:auto; color:var(--muted); font-family:inherit; font-size:13px; }
+.wbox textarea { overflow:hidden; line-height:1.5; }
+.wbox textarea:focus, .box input[type=text]:focus, .wbox input.num:focus { outline:2px solid #8fb2ea; outline-offset:0; border-color:var(--accent); }
+.wbox .meta { display:flex; justify-content:space-between; gap:10px; font-size:12.5px; color:var(--muted); margin-top:3px; }
+.wbox .meta .saved { color:var(--ok); }
+.wbox .unit { font-size:15px; color:var(--muted); margin-left:-4px; }
+nav .who { font-size:12.5px; margin:0 16px 10px; padding:8px 10px; background:#fff; border:1px solid var(--line); border-radius:6px; }
+nav .who:empty { display:none; }
+nav .who button { font:inherit; font-size:12px; border:0; background:none; color:var(--accent); cursor:pointer; padding:0; }
+.wbox { margin:14px 0 6px; padding:14px 16px; border-radius:8px; border:1px solid var(--line); background:var(--panel); }
+.wbox h4 { margin:0 0 6px; font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+.wbox .q { margin:0 0 8px; }
+.wbox.pred { background:#fff8ec; border-color:#efd3a1; } .wbox.pred h4 { color:#8a5a00; }
+.wbox.ro { background:#f1f8f3; border-color:#bfdcc8; } .wbox.ro h4 { color:#1a6b35; }
+.wbox.wi { background:#f3f7ff; border-color:#cfdcf3; } .wbox.wi h4 { color:#1d4f9a; }
+.wbox.fm { background:#faf7ff; border-color:#ddd2f2; } .wbox.fm h4 { color:#5b3c99; }
+textarea.post { width:100%; min-height:260px; font: 13.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; padding:10px; border:1px solid #c6ccd3; border-radius:6px; }
+.wbox.ans { background:#fff; }
+.wbox label.opt { display:flex; gap:8px; align-items:flex-start; margin:4px 0; font-size:15px; cursor:pointer; }
+.wbox textarea { width:100%; min-height:84px; font:inherit; font-size:15px; padding:8px 10px; border:1px solid #c6ccd3; border-radius:6px; background:#fff; resize:vertical; }
+.wbox textarea.long { min-height:300px; }
+.wbox input.num { width:140px; font:inherit; padding:7px 9px; border:1px solid #c6ccd3; border-radius:6px; }
+.wbox .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px; }
+.wbox .msg { font-size:14px; } .msg.ok { color:var(--ok); font-weight:600; } .msg.bad { color:var(--warn); font-weight:600; }
+.wbox .lock { font-size:15px; }
+.wbox .item { margin:12px 0 4px; font-size:15px; }
+.wbox .count { font-size:13px; color:var(--muted); margin-top:4px; }
+.banner { margin:12px 0; padding:10px 14px; border-radius:6px; background:#fff1f0; border:1px solid #f3b4ae; color:var(--bad); font-weight:600; }
+#overlay label.f { display:block; margin:12px 0 0; font-size:14px; color:var(--ink); }
+#overlay input { width:100%; font:inherit; padding:8px 10px; border:1px solid #c6ccd3; border-radius:6px; margin-top:4px; }
+#overlay .small { font-size:13px; color:var(--muted); }
+@media (max-width: 820px) {
+  #app { grid-template-columns: 1fr; grid-template-rows:auto 1fr; height:auto; min-height:100vh; }
+  nav { border-right:0; border-bottom:1px solid var(--line); padding:10px 0; max-height:45vh; }
+  #menu { display:block; margin:6px 16px 0; width:calc(100% - 32px); font:inherit; padding:8px; }
+  nav .list { display:none; }
+  main { padding:20px 16px 60px; }
+}
+</style>
+</head>
+<body>
+<div id="overlay"><div class="card">
+  <h1>Micro Mission 6 Lab</h1>
+  <p>Python and <code>pyblp</code> are loading into this page (15 to 60 seconds the first time; nothing is installed on your computer). Meanwhile, type your name.</p>
+  <label class="f">Your name, as in Canvas<input id="who-name" autocomplete="name"></label>
+  <p class="small">Your name goes only into the text you paste into Canvas.</p>
+  <ul id="prog"></ul>
+  <div class="bar"><button class="btn" id="start" disabled>Start the lab</button><span class="status" id="start-msg">Loading …</span></div>
+  <div id="overlay-err" class="err"></div>
+</div></div>
+<div id="app">
+  <nav>
+    <h1>Micro Mission 6 Lab</h1>
+    <div class="sub">ECON 2316 · Chapters 11–12 · reading a markup off demand</div>
+    <div class="who" id="who"></div>
+    <select id="menu" aria-label="Go to step"></select>
+    <div class="list" id="steps"></div>
+  </nav>
+  <main><div class="wrap" id="page"></div></main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js"></script>
+<script id="preamble" type="text/x-python">
+import os, sys, io, json, html as _html, traceback, contextlib, base64
+os.environ["MPLBACKEND"] = "agg"
+_NS = {"__name__": "__main__"}
+_OUT = []
+
+def display(obj):
+    try:
+        import pandas as pd
+        if isinstance(obj, (pd.DataFrame, pd.Series)):
+            df = obj.to_frame() if isinstance(obj, pd.Series) else obj
+            _OUT.append(df.to_html(border=0, classes="tbl", float_format=lambda v: f"{v:,.3f}", na_rep="—"))
+            return
+    except Exception:
+        pass
+    _OUT.append("<pre>" + _html.escape(repr(obj)) + "</pre>")
+
+_NS["display"] = display
+
+def _show(*a, **k):
+    import matplotlib.pyplot as plt
+    for num in plt.get_fignums():
+        fig = plt.figure(num)
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=110, bbox_inches="tight")
+        _OUT.append('<img class="fig" alt="figure" src="data:image/png;base64,' + base64.b64encode(buf.getvalue()).decode() + '">')
+    plt.close("all")
+
+def _run_cell(src):
+    _OUT.clear()
+    out = io.StringIO()
+    err = None
+    try:
+        import matplotlib.pyplot as plt
+        plt.show = _show
+    except Exception:
+        pass
+    with contextlib.redirect_stdout(out), contextlib.redirect_stderr(io.StringIO()):
+        try:
+            exec(compile(src, "<step>", "exec"), _NS)
+        except Exception as e:
+            err = "".join(traceback.format_exception_only(type(e), e)).strip()
+    return json.dumps({"text": out.getvalue(), "html": list(_OUT), "error": err})
+
+def _eval(expr):
+    # value of a Python expression in the lab's namespace, for predictions and read-offs
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            v = eval(expr, _NS)
+        return json.dumps({"ok": True, "value": v if isinstance(v, str) else float(v)})
+    except Exception as e:
+        return json.dumps({"ok": False, "error": f"{type(e).__name__}: {e}"})
+
+def _tables():
+    # the run's summary, firm and city tables, for the report
+    out = {}
+    if "summary" in _NS:
+        out["summary"] = _NS["summary"].to_html(border=0, classes="tbl")
+    if "firm_table" in _NS:
+        out["firms"] = _NS["firm_table"].to_html(border=0, classes="tbl", float_format=lambda v: f"{v:,.3f}")
+    if "city" in _NS:
+        c = _NS["city"]
+        out["cities"] = __import__("pandas").concat([c.head(5), c.tail(5)]).to_html(border=0, classes="tbl", float_format=lambda v: f"{v:,.3f}")
+    return json.dumps(out)
+
+def _summary_text():
+    # the five numbers as plain text, for the Canvas post
+    if "summary" not in _NS:
+        return json.dumps("")
+    s = _NS["summary"]
+    return json.dumps("\n".join(f"Part {i}: {r['What']} = {r['Value']}" for i, r in s.iterrows()))
+</script>
+<script>
+const PAGES = [{"kind": "code", "text": "# Micro Mission 6 Lab: Reading a Markup off Demand\n## ECON 2316, Chapters 11 and 12\n### About 45 minutes, including the write-up. Nothing to install.\n\n**What you do.** You run a demand model on cereal data and read results off the output. Each\nresult is one number. Then you explain what the numbers mean with the Chapter 11 and 12 formulas.\n**You do not write code.** Every step's code is given and hidden; you press Run and read.\n\n**The data.** `pyblp`, a library economists use to estimate demand, ships a teaching dataset\nmodelled on Aviv Nevo's (2000) study of ready-to-eat cereal: 24 brands, 5 firms, 47 cities,\n2 quarters. **The numbers are made up** so that they look like real supermarket data. So every\nresult in this lab is *what the model says on teaching data*. It is not a fact about real cereal\ncompanies, and your write-up should say it that way.\n\n| Part | Question | Chapter formula |\n|---|---|---|\n| 1 | How fast does demand fall when price rises? | the price coefficient |\n| 2 | How elastic is each brand's demand? | $MR = P(1 + 1/\\varepsilon_D)$, Heads Up 11.3 |\n| 3 | What markup does that elasticity imply? | $L = (P - MC)/P = -1/\\varepsilon_D$, §11.5 |\n| 4 | Would one price fit every city? | $L_i = -1/\\varepsilon_{D,i}$, Calculus Corner 12.1 |\n| 5 | Write-up: three short answers | all of the above |\n\n**Before each estimate you predict the result** (multiple choice). Being wrong costs nothing;\nyour one-sentence explanation of what happened is what counts.\n\n> ### How to use this page (nothing to install)\n>\n> - **It runs in your browser.** The first time, it downloads Python and `pyblp` (15 to 60 seconds). Everything you type is saved in this browser as you go; use the same computer and browser to come back.\n> - **Steps are on the left.** Press **Run** on each step in order, or **Run all up to here** to catch up. Each run takes a second or two.\n> - **Predictions.** Before each estimate the page asks what you expect. Your choice locks when you press **Run**, so think first. Afterwards the page tells you what happened and you explain it in one or two sentences.\n> - **Read it off.** Under the output, type the number the box asks for and press **Check number**.\n> - **At the end**, the finish step puts everything into one text for your Canvas post. Copy, paste, done.\n> - **Code is hidden** behind **Show code**. You never need it.", "code": "# @title Setup: install pyblp and load the libraries { display-mode: \"form\" }\n# GIVEN: run as-is. pyblp is Conlon and Gortmaker's demand-estimation library.\nimport importlib.util, subprocess, sys, warnings\nif importlib.util.find_spec(\"pyblp\") is None:\n    print(\"Installing pyblp (about a minute the first time) ...\")\n    subprocess.run([sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"pyblp>=1.2,<2\"], check=True)\n\nimport numpy as np\nimport pandas as pd\nimport pyblp\nimport matplotlib.pyplot as plt\n\nwarnings.filterwarnings(\"ignore\")          # pyblp prints a few harmless numerical notes\npyblp.options.verbose = False              # keep the output short\npd.set_option(\"display.width\", 120)\npd.set_option(\"display.float_format\", lambda v: f\"{v:,.3f}\")\nplt.rcParams.update({\"figure.dpi\": 110, \"axes.spines.top\": False, \"axes.spines.right\": False, \"axes.grid\": False})\n\ndef _cmp3(a, b, band=0.05):\n    # 0 / 1 / 2 = a is below / within 5% of / above b (used to score a prediction)\n    return 1 if abs(a - b) <= band * abs(b) else (0 if a < b else 2)\n\nprint(f\"pyblp {pyblp.__version__} | numpy {np.__version__} | pandas {pd.__version__} | Python {sys.version.split()[0]}\")\nprint(\"Setup complete.\")", "note": "", "group": "Start", "title": "Setup: install pyblp and load the libraries", "controls": []}, {"kind": "code", "text": "---\n## The data (3 min)\n\nOne row is one brand in one market, and a **market** is one city in one quarter. For each row the\ndata give the price per serving and the brand's **market share**: its servings sold divided by all\nthe servings people in that city could have eaten (one per person per day). Whatever is left over\nis the **outside option**, no cereal at all. Brands and firms are numbers, not names: the data are\nmade up.", "code": "# @title Load the cereal data and look at it { display-mode: \"form\" }\n# GIVEN: run as-is. pyblp's teaching copy of the Nevo (2000) cereal data (synthetic numbers).\ndf = pd.read_csv(pyblp.data.NEVO_PRODUCTS_LOCATION)      # df is read here and never changed later\n\nprint(f\"{len(df):,} rows: one row per brand per market\")\nprint(f\"{df.city_ids.nunique()} cities x {df.quarter.nunique()} quarters = {df.market_ids.nunique()} markets\")\nprint(f\"{df.product_ids.nunique()} brands, owned by {df.firm_ids.nunique()} firms\")\nprint(f\"Median price per serving: ${df.prices.median():.3f}.  Median market share: {df.shares.median():.1%}.\")\nprint(f\"In the median market, {1 - df.groupby('market_ids').shares.sum().median():.0%} of possible servings are 'no cereal'.\")\n\nprint(\"\\nThe first six rows:\")\ndisplay(df[[\"city_ids\", \"quarter\", \"product_ids\", \"firm_ids\", \"prices\", \"shares\"]].head(6)\n        .rename(columns={\"city_ids\": \"city\", \"product_ids\": \"brand\", \"firm_ids\": \"firm\",\n                         \"prices\": \"price ($/serving)\", \"shares\": \"market share\"}))\nowners = df.groupby(\"firm_ids\").product_ids.nunique().rename(\"brands owned\").to_frame()\nowners.index = [f\"Firm {i}\" for i in owners.index]\nprint(\"Who owns how many brands:\")\ndisplay(owners)", "note": "", "group": "The data", "title": "Load the cereal data and look at it", "controls": []}, {"kind": "code", "text": "---\n## Part 1: How fast does demand fall when price rises? (8 min)\n\nThe model is a **logit**: each shopper picks the one cereal, or no cereal, that gives the highest\nutility. A brand's average utility in a market is\n\n$$\\delta_{jt} = \\alpha\\, p_{jt} + (\\text{brand effect})_j + \\xi_{jt}$$\n\n- $p_{jt}$ is the price per serving of brand $j$ in market $t$.\n- $\\alpha$ is the **price coefficient**, the slope we want: how much utility falls per dollar of price.\n- The **brand effect** is one constant per brand (loyalty to the brand). With it in the model, $\\alpha$ is learned from the *same* brand's price moving across cities and quarters.\n- $\\xi_{jt}$ is what shoppers see and the data do not: a store display, a local ad campaign.\n\n**Why the step uses instruments.** Firms charge more where $\\xi$ is high, where the brand is popular\nfor reasons the data do not show. So high prices and high demand turn up together, and a plain\nregression understates how much price hurts demand. The fix is an **instrument**: a variable\nthat moves price for cost reasons and has nothing to do with $\\xi$. The data come with 20 of them,\nand the step names all 20 explicitly. You do not need the econometrics for the write-up; you\nneed the sign and the size of $\\alpha$.", "code": "# @title Part 1: estimate demand (logit, instrumented price, brand fixed effects) { display-mode: \"form\" }\n# GIVEN: run as-is.\n# The instrument set is written out here, and the step builds its own copy of the columns it needs,\n# so it gives the same answer however often, and in whatever order, the steps are run.\nIV_COLS = [f\"demand_instruments{k}\" for k in range(20)]\nCOLS = [\"market_ids\", \"city_ids\", \"quarter\", \"firm_ids\", \"product_ids\", \"prices\", \"shares\"] + IV_COLS\ndemand = pyblp.Problem(pyblp.Formulation(\"0 + prices\", absorb=\"C(product_ids)\"), df[COLS])\nlogit = demand.solve(method=\"1s\")            # one-step GMM with these instruments = plain IV (2SLS)\n\nalpha = float(logit.beta[0, 0])\nalpha_se = float(logit.beta_se[0, 0])\nprint(f\"Price coefficient alpha: {alpha:.2f}   (standard error {alpha_se:.2f})\")\nprint(f\"So a 1-cent rise in a brand's price lowers its average utility by {abs(alpha) * 0.01:.2f}.\")\nprint(f\"At the median price (${df.prices.median():.3f} per serving), alpha x price = {alpha * df.prices.median():.2f}.\")", "note": "", "predict": {"kind": "predict", "id": "p_sign", "question": "What sign will the price coefficient $\\alpha$ have?", "choices": ["Negative: a higher price lowers utility", "About zero: price does not matter much for cereal", "Positive: a higher price signals a better cereal"], "correct": "0 if alpha < 0 and abs(alpha) > 2 * alpha_se else (1 if abs(alpha) <= 2 * alpha_se else 2)", "result": "f'price coefficient = {alpha:.2f} (standard error {alpha_se:.2f})'"}, "after": [{"kind": "readoff", "id": "r_alpha", "label": "The price coefficient $\\alpha$, **with its sign**, to one decimal.", "expr": "alpha", "tol": 0.051, "unit": ""}, {"kind": "formula", "id": "f_logit", "body": "In the logit, a brand's own-price elasticity is $\\varepsilon_{jt} = \\alpha\\, p_{jt}\\,(1 - s_{jt})$, where $s_{jt}$ is its market share. A higher price or a smaller share makes demand more elastic. Part 2 computes it for every row."}, {"kind": "whatif", "id": "w_eps", "question": "Use your $\\alpha$ and the formula: a brand priced at 20 cents (0.20 dollars) per serving with a 2% share ($s = 0.02$). What is its own-price elasticity? Two decimals, with the sign.", "choices": null, "title": "Use the formula", "unit": "", "h": 2389485198, "n": 2}], "group": "Part 1: How fast does demand fall when price rises?", "title": "Part 1: estimate demand (logit, instrumented price, brand fixed effects)", "controls": []}, {"kind": "code", "text": "---\n## Part 2: How elastic is each brand's demand? (8 min)\n\nThe next step computes $\\varepsilon_{jt}$ for all 2,256 rows: every brand in every market. Recall\n§11.3: marginal revenue is $MR = P\\,(1 + 1/\\varepsilon_D)$. Heads Up 11.3 says what that implies\nfor where a profit-maximizing firm can be on its demand curve.", "code": "# @title Part 2: the own-price elasticity of every brand in every market { display-mode: \"form\" }\n# GIVEN: run as-is. Uses Part 1's estimate (logit).\nE = logit.compute_elasticities()               # one matrix per market: how each share responds to each price\nown = logit.extract_diagonals(E).ravel()       # the diagonal = each brand's OWN-price elasticity\neps_median = float(np.median(own))\n\nprint(f\"{len(own):,} own-price elasticities (24 brands x 94 markets)\")\nprint(f\"Median: {eps_median:.2f}\")\nprint(f\"Middle half of the rows: {np.percentile(own, 25):.2f} to {np.percentile(own, 75):.2f}\")\nprint(f\"Most elastic row: {own.min():.2f}.  Least elastic row: {own.max():.2f}\")\nprint(f\"Rows in the elastic part of demand (|elasticity| > 1): {(np.abs(own) > 1).mean():.0%}\")\n\nfig, ax = plt.subplots(figsize=(7, 3.2))\nax.hist(own, bins=40, color=\"#2a78d6\", edgecolor=\"white\")\nax.set_ylim(0, ax.get_ylim()[1] * 1.3)          # headroom for the two labels\nax.axvline(-1, color=\"#b42318\", ls=\"--\", lw=1.5)\nax.text(-1.08, ax.get_ylim()[1] * 0.92, \"unit-elastic\\n(ε = −1)\", ha=\"right\", va=\"top\", color=\"#b42318\", fontsize=9)\nax.axvline(eps_median, color=\"#1a1a19\", lw=1.2)\nax.text(eps_median + 0.08, ax.get_ylim()[1] * 0.92, f\"median {eps_median:.2f}\", ha=\"left\", va=\"top\", fontsize=9)\nax.set_xlim(-7.5, 0)\nax.set_xlabel(\"own-price elasticity of demand, ε\")\nax.set_ylabel(\"number of rows\")\nax.set_title(\"Own-price elasticities, 24 brands x 94 markets (teaching data)\", fontsize=10)\nplt.tight_layout()\nplt.show()", "note": "", "predict": {"kind": "predict", "id": "p_elastic", "question": "For the typical (median) brand and market, will demand be inelastic, about unit-elastic, or elastic?", "choices": ["Inelastic: between 0 and −1", "About unit-elastic: close to −1", "Elastic: below −1 (for example −2 or −4)"], "correct": "0 if eps_median > -0.9 else (1 if eps_median >= -1.1 else 2)", "result": "f'median elasticity = {eps_median:.2f}; elastic (|ε| > 1) in {(np.abs(own) > 1).mean():.0%} of rows'"}, "after": [{"kind": "readoff", "id": "r_eps", "label": "The **median** own-price elasticity, two decimals, with its sign.", "expr": "eps_median", "tol": 0.01, "unit": ""}, {"kind": "formula", "id": "f_mr", "body": "§11.3: $MR = P\\,(1 + 1/\\varepsilon_D)$. Heads Up 11.3: where $|\\varepsilon_D| < 1$, $MR < 0$, so a profit-maximizing firm never prices on the inelastic part of its demand curve."}, {"kind": "whatif", "id": "w_mr", "question": "Suppose one brand had $\\varepsilon = -0.8$. Its marginal revenue $MR = P(1 + 1/\\varepsilon)$ would be …", "choices": ["positive", "zero", "negative"], "title": "Use the formula", "unit": "", "h": 4065124946}], "group": "Part 2: How elastic is each brand's demand?", "title": "Part 2: the own-price elasticity of every brand in every market", "controls": []}, {"kind": "code", "text": "---\n## Part 3: From elasticity to markup (12 min)\n\n§11.5: a profit-maximizing firm sets $MR = MC$. With $MR = P(1 + 1/\\varepsilon_D)$ this rearranges to\n\n$$L = \\frac{P - MC}{P} = -\\frac{1}{\\varepsilon_D}.$$\n\nRead it backwards: **if you know the elasticity, you know the markup**, without ever seeing costs.\nThat is how economists measure market power from demand data. The formula is for a firm that sells\n**one** product. Step 3a uses it as if every brand were its own firm.", "code": "# @title Part 3a: the single-product Lerner index, L = −1/ε { display-mode: \"form\" }\n# GIVEN: run as-is. Uses Part 2's elasticities (own).\nlerner_single = -1 / own\nL_single = float(np.median(lerner_single))\nprint(f\"Median single-product Lerner index: {L_single:.2f}\")\nprint(f\"Middle half of the rows: {np.percentile(lerner_single, 25):.2f} to {np.percentile(lerner_single, 75):.2f}\")\nprint(f\"So at the median, the gap between price and marginal cost is {L_single:.0%} of the price.\")", "note": "", "after": [{"kind": "readoff", "id": "r_L1", "label": "The **median single-product Lerner index** $-1/\\varepsilon$, two decimals.", "expr": "L_single", "tol": 0.01, "unit": ""}, {"kind": "whatif", "id": "w_spotify", "question": "Walkthrough 11.2 put Spotify Premium's elasticity at $\\varepsilon_D = -3.33$. What Lerner index does the inverse-elasticity rule give? Two decimals.", "choices": null, "title": "Use the formula", "unit": "", "h": 2864127912, "n": 1}], "group": "Part 3: From elasticity to markup", "title": "Part 3a: the single-product Lerner index, L = −1/ε", "controls": []}, {"kind": "code", "text": "### 3b: the firms own several brands\n\nIn these data 5 firms own the 24 brands: Firms 1 and 2 own nine each, Firm 6 owns one. When a\nfirm sets prices it looks at **all of its brands together**. pyblp's `compute_costs` works\nbackwards from each firm's pricing first-order conditions: given the demand you estimated and who\nowns what, which marginal cost would make today's prices the profit-maximizing ones? From that\n$MC$ the step computes the markup $(P - MC)/P$.", "code": "# @title Part 3b: markups when each firm prices all its brands together { display-mode: \"form\" }\n# GIVEN: run as-is. Uses Part 1's estimate (logit) and Part 2's elasticities (own).\nprice = df.prices.values\nmc = logit.compute_costs().ravel()                  # firm_ids in the data say who owns which brand\nmarkup = (price - mc) / price\nL_portfolio = float(np.median(markup))\n\nsingle = -1 / own                                    # recomputed here, so this step does not depend on 3a\nmc_alone = logit.compute_costs(firm_ids=np.arange(len(df))).ravel()   # pretend every brand is its own firm\nsame = np.allclose((price - mc_alone) / price, single)\n\nprint(f\"Median markup (P - MC)/P with the real owners: {L_portfolio:.2f}\")\nprint(f\"Median single-product Lerner -1/elasticity:    {float(np.median(single)):.2f}\")\nprint(f\"Check: with every brand as its own firm, compute_costs gives back -1/elasticity exactly: {same}\")\n\nfirm_table = (pd.DataFrame({\"firm\": df.firm_ids, \"brand\": df.product_ids, \"single\": single, \"portfolio\": markup})\n              .groupby(\"firm\").agg(brands=(\"brand\", \"nunique\"), single=(\"single\", \"median\"), portfolio=(\"portfolio\", \"median\")))\nfirm_table.index = [f\"Firm {i}\" for i in firm_table.index]\nfirm_table.columns = [\"brands owned\", \"single-product L = -1/elasticity (median)\", \"markup with real owners (median)\"]\nprint(\"\\nBy firm:\")\ndisplay(firm_table)", "note": "", "predict": {"kind": "predict", "id": "p_portfolio", "question": "Compared with the single-product Lerner $-1/\\varepsilon$ from 3a, will the median markup be smaller, about the same, or larger when each firm prices all of its brands together?", "choices": ["Smaller", "About the same (within 5%)", "Larger"], "correct": "_cmp3(L_portfolio, float(np.median(-1 / own)))", "result": "f'median markup with the real owners = {L_portfolio:.2f}; single-product = {float(np.median(-1 / own)):.2f}'"}, "after": [{"kind": "readoff", "id": "r_Lp", "label": "The **median markup with the real owners**, two decimals.", "expr": "L_portfolio", "tol": 0.01, "unit": ""}], "group": "Part 3: From elasticity to markup", "title": "Part 3b: markups when each firm prices all its brands together", "controls": []}, {"kind": "code", "text": "---\n## Part 4: One price for every city? (6 min)\n\nChapter 12 (§12.4, Calculus Corner 12.1): if a firm can tell segments apart and stop resale between\nthem, it sets each segment's price by that segment's own Lerner rule. Here the segments are the 47\ncities. **Nothing is re-estimated**: the step takes the Part 2 elasticities and groups them by city.", "code": "# @title Part 4: elasticities and implied markups, city by city { display-mode: \"form\" }\n# GIVEN: run as-is. Uses Part 2's elasticities (own); no new estimation.\ncity = (pd.DataFrame({\"city\": df.city_ids, \"elasticity\": own})\n        .groupby(\"city\").elasticity.median()\n        .sort_values(ascending=False)                # least elastic first\n        .to_frame(\"median elasticity\"))\ncity[\"implied L = -1/elasticity\"] = -1 / city[\"median elasticity\"]\ncity.index = [f\"City {c}\" for c in city.index]\ncity_L = city[\"implied L = -1/elasticity\"]\n\nprint(f\"{len(city)} cities. Median elasticity runs from {city.iloc[0, 0]:.2f} ({city.index[0]}, least elastic) \"\n      f\"to {city.iloc[-1, 0]:.2f} ({city.index[-1]}, most elastic).\")\nprint(\"The five least elastic cities (top) and the five most elastic (bottom):\")\ndisplay(pd.concat([city.head(5), city.tail(5)]))", "note": "", "predict": {"kind": "predict", "id": "p_city", "question": "Suppose a cereal firm could set a different price in each city, and nobody could resell between cities. Which city would pay the higher markup?", "choices": ["The city where demand is more elastic", "The city where demand is less elastic", "Neither: marginal cost is the same everywhere, so the markup is the same"], "correct": "1 if float(city_L.iloc[0]) > float(city_L.iloc[-1]) else 0", "result": "f'implied L = {float(city_L.iloc[0]):.2f} in the least elastic city, {float(city_L.iloc[-1]):.2f} in the most elastic'"}, "after": [{"kind": "readoff", "id": "r_city", "label": "The implied Lerner index in the **least elastic city** (the first row), two decimals.", "expr": "float(city_L.iloc[0])", "tol": 0.01, "unit": ""}, {"kind": "formula", "id": "f_pd", "body": "Calculus Corner 12.1: with no resale between segments, each segment $i$ gets $L_i = (P_i - MC)/P_i = -1/\\varepsilon_{D,i}$. Same $MC$ everywhere, different $\\varepsilon_{D,i}$, different markup."}], "group": "Part 4: One price for every city?", "title": "Part 4: elasticities and implied markups, city by city", "controls": []}, {"kind": "code", "text": "---\n## Your five numbers (1 min)\n\nThe next step collects the five numbers you read off. The finish step puts them at the top of your Canvas post for you.", "code": "# @title Your five numbers, for your Canvas post { display-mode: \"form\" }\n# GIVEN: run as-is.\nsummary = pd.DataFrame({\n    \"Part\": [\"1\", \"2\", \"3a\", \"3b\", \"4\"],\n    \"What\": [\"price coefficient alpha\", \"median own-price elasticity\", \"median single-product Lerner -1/elasticity\",\n             \"median markup with the real owners\", \"implied Lerner, least elastic city\"],\n    \"Value\": [f\"{alpha:.2f}\", f\"{eps_median:.2f}\", f\"{float(np.median(-1 / own)):.2f}\", f\"{L_portfolio:.2f}\",\n              f\"{float(city_L.iloc[0]):.2f} ({city_L.index[0]})\"],\n}).set_index(\"Part\")\ndisplay(summary)\nprint(\"All five are what the model says on pyblp's synthetic teaching data.\")", "note": "", "group": "Your five numbers", "title": "Your five numbers, for your Canvas post", "controls": []}, {"kind": "text", "text": "---\n## Part 5: Write-up (15 min)\n\nAnswer the three questions in the boxes on this page, **about 80 words each (about 250 in all)**. Each answer must use the\nformula named in it and at least one of your numbers. Write results as what the model says on\nteaching data (for example \"in the model, the median markup is …\"), not as facts about real cereal\ncompanies.\n\n1. **Elastic or not ($MR = P(1 + 1/\\varepsilon_D)$, Heads Up 11.3).** Is your median own-price elasticity where a profit-maximizing firm could be pricing? Explain with the MR formula, and say what a median of −0.6 would have told you.\n2. **Owning substitutes ($L = -1/\\varepsilon_D$, §11.5).** Your single-product Lerner index and the markup with the real owners differ. Which is larger, and why does owning several brands change how a firm prices each one? Use the firm table (compare Firm 6 with Firm 1). Chapter 13 starts from here.\n3. **One price for every city? ($L_i = -1/\\varepsilon_{D,i}$, Calculus Corner 12.1).** If a cereal firm could set a different price in each city, which city would pay the higher markup, and what would the firm need for that to work (§12.1)?", "code": "", "note": "", "answers": {"kind": "answers", "id": "write-up", "label": "Write-up", "n": 3, "words": null, "items": ["**Elastic or not ($MR = P(1 + 1/\\varepsilon_D)$, Heads Up 11.3).** Is your median own-price elasticity where a profit-maximizing firm could be pricing? Explain with the MR formula, and say what a median of −0.6 would have told you.", "**Owning substitutes ($L = -1/\\varepsilon_D$, §11.5).** Your single-product Lerner index and the markup with the real owners differ. Which is larger, and why does owning several brands change how a firm prices each one? Use the firm table (compare Firm 6 with Firm 1). Chapter 13 starts from here.", "**One price for every city? ($L_i = -1/\\varepsilon_{D,i}$, Calculus Corner 12.1).** If a cereal firm could set a different price in each city, which city would pay the higher markup, and what would the firm need for that to work (§12.1)?"]}, "group": "Part 5: Write-up", "title": "Part 5: Write-up (15 min)", "controls": []}, {"kind": "submit", "text": "---\n## Submit\n\nPost in the **Micro Mission 6** discussion on Canvas:\n\n- your five numbers (the table above),\n- your four predictions, each with one sentence on what happened and why,\n- your three write-up answers (about 250 words in all).\n\nThen reply to one classmate (two or three sentences). Nothing was installed on your computer.", "code": "", "note": "", "group": "Submit", "title": "Finish: your Canvas post", "controls": []}];
+const STORE_KEY = "econ2316-mm06-lab-v1";
+const DEFAULTS = Object.fromEntries(PAGES.filter(p => p.kind === "controls").flatMap(p => p.controls.map(c => [c.name, c.default])));
+let py = null;
+const state = { cur: 0, formulas: {}, controls: {}, paste: "", results: {}, status: {}, banner: null,
+  student: { name: "" }, preds: {}, reads: {}, whatifs: {}, answers: {}, tries: {}, lastChecked: {} };
+const KEEP = ["cur", "formulas", "controls", "paste", "student", "preds", "reads", "whatifs", "answers", "tries", "lastChecked"];
+
+// ---------- persistence (this browser only; wrapped so a blocked store never breaks the page)
+function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(Object.fromEntries(KEEP.map(k => [k, state[k]])))); } catch (e) {} }
+function load() { try { const s = JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); for (const k of KEEP) if (s[k] !== undefined) state[k] = s[k]; } catch (e) {} }
+
+// ---------- markdown with math protected from the markdown parser
+function renderMd(src, mathml = false) {
+  const math = [];
+  let t = src.replace(/\$\$([\s\S]+?)\$\$/g, (m, x) => { math.push([x, true]); return `@@M${math.length - 1}@@`; });
+  t = t.replace(/\$([^$\n]+?)\$/g, (m, x) => { math.push([x, false]); return `@@M${math.length - 1}@@`; });
+  let html = marked.parse(t, { gfm: true, breaks: false });
+  html = html.replace(/@@M(\d+)@@/g, (m, i) => { const [tex, disp] = math[+i]; try { return katex.renderToString(tex, { displayMode: disp, throwOnError: false, output: mathml ? "mathml" : "htmlAndMathml" }); } catch (e) { return `<code>${esc(tex)}</code>`; } });
+  return html;
+}
+function mdInline(src, mathml = false) { return renderMd(src, mathml).replace(/^<p>|<\/p>\s*$/g, ""); }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function words(t) { return (t || "").trim().split(/\s+/).filter(Boolean).length; }
+const MIN_EXPLAIN = 8, MIN_ANSWER = 5, MAX_TRIES = 5;
+function substantive(t, n) { t = (t || "").trim(); const letters = (t.match(/[A-Za-z\u00C0-\u024F]/g) || []).length; return words(t) >= n && letters >= 0.5 * t.replace(/\s/g, "").length; }
+function fnv(text) { let h = 0x811c9dc5; for (const b of new TextEncoder().encode(text)) { h ^= b; h = Math.imul(h, 0x01000193) >>> 0; } return h >>> 0; }
+function num(text) { const t = String(text || "").trim().replace(/\s+/g, "").replace(/%$/, "").replace(",", ".").replace(/^\+/, "").replace(/[−–]/g, "-"); return t === "" || isNaN(+t) ? null : +t; }
+function seed() { return 0; }
+function nowStr() { return new Date().toLocaleString(); }
+
+// ---------- live preview of a typed formula (the Python reader is the referee; this is only a picture)
+function toTex(t) {
+  t = t.trim(); if (!t) return "";
+  t = t.replace(/^\s*(gen|generate)\s+/, "");
+  const G = { "δ": "\\delta", "μ": "\\mu", "ξ": "\\xi", "σ": "\\sigma", "ν": "\\nu", "α": "\\alpha", "ρ": "\\rho", "θ": "\\theta", "β": "\\beta", "ε": "\\epsilon", "ζ": "\\zeta", "Σ": "\\sum", "∑": "\\sum", "𝒮": "\\mathcal{S}", "−": "-", "×": "\\times", "·": "\\cdot" };
+  t = t.replace(/[δμξσναρθβεζΣ∑𝒮−×·]/gu, c => G[c] + " ");
+  t = t.replace(/(?<!\\)\b(delta|mu|xi|sigma|nu|alpha|rho|theta|beta|epsilon|zeta)\b/g, "\\$1");
+  t = t.replace(/(?<!\\)\b(ln|log|exp)\b/g, "\\$1 ");
+  t = t.replace(/(?<![\\\w])(Cov|cov|COV)\s*\(/g, "\\operatorname{Cov}(");
+  t = t.replace(/(?<![\\\w])(sum|SUM)\b/g, "\\sum");
+  t = t.replace(/_([A-Za-z0-9|]{2,})(?![}\w])/g, "_{$1}");
+  t = t.replace(/\^([A-Za-z0-9+]{2,})(?![}\w])/g, "^{$1}");
+  t = t.replace(/\*/g, "\\cdot ");
+  return t;
+}
+function previewFormula(el, text) {
+  const tex = toTex(text);
+  if (!tex) { el.innerHTML = '<span class="raw">Your formula will appear here as you type.</span>'; return; }
+  try { el.innerHTML = katex.renderToString(tex, { displayMode: true, throwOnError: true }); }
+  catch (e) { el.innerHTML = `<span class="raw">${esc(text)}</span>`; }
+}
+
+// ---------- running Python
+function codeFor(i) {
+  const p = PAGES[i];
+  let code = p.code;
+  if (p.kind === "controls") {
+    for (const c of p.controls) {
+      const v = c.type === "nuid" ? seed() : state.controls[c.name] !== undefined ? state.controls[c.name] : c.default;
+      const lit = c.type === "select" || c.type === "string" ? JSON.stringify(String(v)) : String(Number(v));
+      code = code.replace(c.line, `${c.name} = ${lit}`);
+    }
+  } else if (p.kind === "box") {
+    code = code.replace(/^your_formula = "".*$/m, "your_formula = " + JSON.stringify(state.formulas[i] || ""));
+  } else if (p.kind === "paste") {
+    code = state.paste || "";
+  }
+  return code;
+}
+async function runPython(code) {
+  py.globals.set("_SRC", code);
+  await new Promise(r => setTimeout(r, 30));           // let the spinner paint before the (synchronous) solve
+  return JSON.parse(py.runPython("_run_cell(_SRC)"));
+}
+function pyEval(expr) { py.globals.set("_EXPR", expr); return JSON.parse(py.runPython("_eval(_EXPR)")); }
+function verdictOf(p, res) {
+  if (p.kind === "box") {
+    if (/: Passed\./.test(res.text)) return "passed";
+    if (/not attempted/.test(res.text)) return "empty";
+    return "notyet";
+  }
+  if (p.kind === "code" && /^# @title CHECK: your Hausman/.test(p.code)) {
+    if (/Passed: your instrument/.test(res.text)) return "passed";
+    if (/Paste the AI/.test(res.text)) return "empty";
+    return "notyet";
+  }
+  return res.error ? "error" : "done";
+}
+function isRunnable(p) { return ["code", "controls", "box", "paste"].includes(p.kind); }
+function predReady(id) { const s = state.preds[id] || {}; return s.choice !== undefined; }
+async function runPage(i, { silent = false } = {}) {
+  const p = PAGES[i];
+  if (!isRunnable(p)) return false;
+  // a prediction must be made before its step runs, here or as an earlier step run on the way
+  for (let j = 0; j <= i; j++) {
+    const pr = PAGES[j].predict;
+    if (pr && !(state.preds[pr.id] || {}).locked && !predReady(pr.id)) {
+      state.banner = j === i ? `Make your prediction first: choose one of the answers, then press ${PAGES[j].kind === "box" ? "Check" : "Run"}.`
+        : "This step needs an earlier one, and that step asks for your prediction first. Make it, press Run, then come back.";
+      go(j); return false;
+    }
+  }
+  state.banner = null;
+  for (let j = 0; j < i; j++) if (isRunnable(PAGES[j]) && !["done", "passed", "notyet", "empty"].includes(state.status[j])) await runOne(j, true);
+  await runOne(i, silent);
+  for (let j = i + 1; j < PAGES.length; j++) if (isRunnable(PAGES[j]) && state.status[j]) state.status[j] = "stale";
+  renderSidebar(); if (!silent) renderPage(state.cur);
+  return true;
+}
+async function runOne(i, silent) {
+  const p = PAGES[i];
+  if (p.predict) { const s = state.preds[p.predict.id] = state.preds[p.predict.id] || {}; if (!s.locked) { s.locked = true; s.lockedAt = nowStr(); } }
+  if (p.kind === "box") { const f = (state.formulas[i] || "").trim(); if (f && f !== state.lastChecked[i]) { state.tries[i] = (state.tries[i] || 0) + 1; state.lastChecked[i] = f; } }
+  state.status[i] = "running"; renderSidebar();
+  const st = document.getElementById("st-" + i); if (st) st.innerHTML = '<span class="spin"></span>' + (p.kind === "box" ? "Checking" : "Running") + " …";
+  try {
+    const res = await runPython(codeFor(i));
+    state.results[i] = res; state.status[i] = verdictOf(p, res);
+  } catch (e) {
+    state.results[i] = { text: "", html: [], error: String(e) }; state.status[i] = "error";
+  }
+  if (p.predict && state.status[i] !== "error") {
+    const s = state.preds[p.predict.id], c = pyEval(p.predict.correct), r = pyEval(p.predict.result);
+    if (c.ok) s.correct = c.value; if (r.ok) s.result = r.value;
+  }
+  save();
+  if (!silent && i === state.cur) renderPage(i);
+}
+
+// ---------- rendering
+const ICON = { done: ["✓", "done"], passed: ["✓", "done"], notyet: ["!", "bad"], empty: ["○", "stale"], error: ["×", "bad"], stale: ["↻", "stale"], running: ["…", "stale"] };
+function answersDone(p) { const a = p.answers; if (!a) return null; const v = state.answers[a.id] || []; return a.items.every((_, k) => substantive(v[k], a.words ? a.words[0] : MIN_ANSWER)); }
+function renderSidebar() {
+  const list = document.getElementById("steps"), menu = document.getElementById("menu");
+  list.innerHTML = ""; menu.innerHTML = "";
+  document.getElementById("who").innerHTML = state.student.name ? `${esc(state.student.name)} <button id="who-edit">change</button>` : "";
+  const we = document.getElementById("who-edit"); if (we) we.onclick = askWho;
+  let g = null;
+  PAGES.forEach((p, i) => {
+    if (p.group !== g) { g = p.group; const h = document.createElement("div"); h.className = "grp"; h.textContent = g; list.appendChild(h); const og = document.createElement("optgroup"); og.label = g; menu.appendChild(og); }
+    const b = document.createElement("button"); b.className = "step" + (i === state.cur ? " current" : "");
+    let [ic, cls] = ICON[state.status[i]] || ["·", "stale"];
+    if (!isRunnable(p)) { const d = answersDone(p); const ws = (p.after || []).filter(w => w.kind === "whatif"); [ic, cls] = d === null ? (ws.length ? (ws.every(w => (state.whatifs[w.id] || {}).tries) ? ["✓", "done"] : ["✎", "stale"]) : ["", "stale"]) : d ? ["✓", "done"] : ["✎", "stale"]; }
+    b.innerHTML = `<span class="ic ${cls}">${ic}</span><span>${esc(p.title)}</span>`;
+    b.onclick = () => go(i); list.appendChild(b);
+    const o = document.createElement("option"); o.value = i; o.textContent = (ic ? ic + " " : "") + p.title; if (i === state.cur) o.selected = true; menu.lastChild.appendChild(o);
+  });
+  menu.onchange = () => go(+menu.value);
+}
+function go(i) { state.cur = Math.max(0, Math.min(PAGES.length - 1, i)); save(); renderSidebar(); renderPage(state.cur); document.querySelector("main").scrollTop = 0; }
+
+function renderPage(i) {
+  const p = PAGES[i], el = document.getElementById("page");
+  const parts = [];
+  parts.push(`<div class="crumb">Step ${i + 1} of ${PAGES.length} · ${esc(p.group)}</div>`);
+  const firstHeading = (p.text.match(/^#{1,3}\s+(.+)$/m) || [])[1] || "";
+  const sameAsTitle = firstHeading.replace(/[*`$\\]/g, "").trim().toLowerCase().startsWith(p.title.toLowerCase().slice(0, 24));
+  if (!(sameAsTitle && p.text.trim().startsWith("#")) && !(p.kind === "text" && firstHeading)) parts.push(`<h2 class="pt">${esc(p.title)}</h2>`);
+  if (state.banner) parts.push(`<div class="banner">${esc(state.banner)}</div>`);
+  if (p.kind === "submit") { parts.push(renderSubmit()); }
+  else {
+    parts.push(`<div class="md">${renderMd(p.text)}</div>`);
+    if (p.note) parts.push(`<div class="note">${renderMd(p.note)}</div>`);
+    if (p.predict) parts.push(renderPredict(p.predict, p.kind === "box" ? "Check" : "Run"));
+    if (p.kind === "controls") parts.push(renderControls(p, i));
+    if (p.kind === "box") parts.push(renderBox(p, i));
+    if (p.kind === "paste") parts.push(`<div class="paste"><label for="paste">Paste the function here (replace nothing else):</label><textarea id="paste" spellcheck="false" placeholder="def hausman_instrument(df):\n    ...">${esc(state.paste)}</textarea></div>`);
+    if (isRunnable(p)) {
+      const label = p.kind === "box" ? "Check" : p.kind === "controls" ? "Apply and run" : p.kind === "paste" ? "Run my function" : "Run";
+      parts.push(`<div class="bar"><button class="btn" id="run">${label}</button><button class="btn sec" id="runall">Run all up to here</button><span class="status" id="st-${i}">${statusText(i)}</span></div>`);
+      parts.push(`<div class="out" id="out">${renderOut(i)}</div>`);
+      if (p.predict && (state.preds[p.predict.id] || {}).locked) parts.push(renderReflect(p.predict));
+      for (const w of p.after || []) parts.push(w.kind === "readoff" ? renderReadoff(w, i) : w.kind === "formula" ? renderFormula(w) : renderWhatif(w));
+      if (p.kind !== "paste") parts.push(`<details class="code"><summary>Show code</summary><pre><code>${esc(p.code)}</code></pre></details>`);
+    } else {
+      for (const w of p.after || []) if (w.kind === "whatif") parts.push(renderWhatif(w)); else if (w.kind === "formula") parts.push(renderFormula(w));
+    }
+    if (p.answers) parts.push(renderAnswers(p.answers));
+  }
+  parts.push(`<div class="foot"><button class="btn sec" id="prev" ${i === 0 ? "disabled" : ""}>← Back</button><button class="btn" id="next" ${i === PAGES.length - 1 ? "disabled" : ""}>Next →</button></div>`);
+  el.innerHTML = parts.join("");
+  el.querySelectorAll(".wbox textarea").forEach(autosize);
+  state.banner = null;
+  // wire
+  document.getElementById("prev").onclick = () => go(i - 1);
+  document.getElementById("next").onclick = () => go(i + 1);
+  const run = document.getElementById("run"); if (run) run.onclick = () => runPage(i);
+  const ra = document.getElementById("runall"); if (ra) ra.onclick = async () => { for (let j = 0; j <= i; j++) if (isRunnable(PAGES[j])) state.status[j] = undefined; await runPage(i); };
+  if (p.kind === "controls") p.controls.forEach(c => {
+    const inp = document.getElementById("c-" + c.name); if (!inp) return;
+    const show = () => { const v = document.getElementById("v-" + c.name); if (v) v.textContent = inp.value; };
+    inp.oninput = () => { state.controls[c.name] = c.type === "select" ? inp.value : Number(inp.value); show(); save(); };
+  });
+  if (p.kind === "box") {
+    const inp = document.getElementById("f-" + i), pv = document.getElementById("pv-" + i);
+    previewFormula(pv, inp.value);
+    inp.oninput = () => { state.formulas[i] = inp.value; previewFormula(pv, inp.value); save(); };
+    inp.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); runPage(i); } };
+    document.querySelectorAll(".box .keys button").forEach(btn => btn.onclick = () => {
+      if (btn.dataset.clear) inp.value = "";
+      else { const a = inp.selectionStart ?? inp.value.length, z = inp.selectionEnd ?? a, t = btn.dataset.ins;
+        inp.value = inp.value.slice(0, a) + t + inp.value.slice(z); inp.selectionStart = inp.selectionEnd = a + t.length; }
+      inp.focus(); inp.oninput();
+    });
+  }
+  if (p.kind === "paste") { const ta = document.getElementById("paste"); ta.oninput = () => { state.paste = ta.value; save(); }; }
+  if (p.predict) wirePredict(p.predict);
+  for (const w of p.after || []) if (w.kind !== "formula") (w.kind === "readoff" ? wireReadoff : wireWhatif)(w, i);
+  if (p.answers) wireAnswers(p.answers);
+  if (p.kind === "submit") wireSubmit();
+}
+function statusText(i) {
+  const s = state.status[i];
+  return { done: "Done.", passed: "Passed.", notyet: "Not yet: see the message below.", empty: "", error: "Something went wrong: see below.", stale: "An earlier step changed: press Run again.", running: "Running …" }[s] || "";
+}
+function renderControls(p, i) {
+  return `<div class="ctl">` + p.controls.map(c => {
+    const v = state.controls[c.name] !== undefined ? state.controls[c.name] : c.default;
+    if (c.type === "nuid") return `<label>${esc(c.label)}<div class="row"><strong>${esc(state.student.nuid || "—")}</strong>&nbsp;(seed ${seed()})</div></label>`;
+    if (c.type === "select") return `<label>${esc(c.label)}<div class="row"><select id="c-${c.name}">${c.options.map(o => `<option ${o === v ? "selected" : ""}>${esc(o)}</option>`).join("")}</select></div></label>`;
+    if (c.type === "slider") return `<label>${esc(c.label)}<div class="row"><input type="range" id="c-${c.name}" min="${c.min}" max="${c.max}" step="${c.step}" value="${v}"><span class="val" id="v-${c.name}">${v}</span></div></label>`;
+    return `<label>${esc(c.label)}<div class="row"><input type="number" id="c-${c.name}" value="${v}" step="1"></div></label>`;
+  }).join("") + `</div>`;
+}
+function boxSymbols(p) {
+  // the box's own symbols, as insertable tokens: "S_jt = 𝒮_jt (model)" -> "S_jt"; "Cov( , )" -> "Cov("
+  // drop explanatory parentheses, keep the first word of each entry; Σ and brackets have their own buttons
+  return p.symbols.replace(/\([^)]*[a-z]{3,}[^)]*\)/g, "").split(/,(?![^{]*\})/).map(t => t.trim().split(/\s+/)[0])
+    .filter(t => t && !/^[()]$/.test(t) && !t.startsWith("Σ") && !t.startsWith("\\sum")).filter((t, k, a) => a.indexOf(t) === k);
+}
+function renderBox(p, i) {
+  const v = state.formulas[i] || "";
+  const syms = boxSymbols(p).map(t => `<button type="button" class="sym" data-ins="${esc(t)}">${esc(t)}</button>`).join("");
+  const ops = [["ln(", "ln( )"], ["exp(", "exp( )"], ["Σ_{k=0}^J ", "Σ"], ["(", "("], [")", ")"], [" / ", "÷"], [" − ", "−"]]
+    .map(([ins, lab]) => `<button type="button" data-ins="${esc(ins)}">${esc(lab)}</button>`).join("");
+  return `<div class="box"><label for="f-${i}">Your formula (${p.box} of 5)</label>
+    <div class="keys"><span class="lab">Click to insert:</span>${syms}${ops}<button type="button" class="clr" data-clear="1">Clear</button></div>
+    <input type="text" id="f-${i}" value="${esc(v)}" spellcheck="false" autocomplete="off" placeholder="type or click the symbols above; press Enter or Check">
+    <div class="preview" id="pv-${i}"></div></div>`;
+}
+function renderOut(i) {
+  const r = state.results[i]; if (!r) return "";
+  let h = "";
+  if (r.text && r.text.trim()) h += `<pre>${esc(r.text.trimEnd())}</pre>`;
+  for (const frag of r.html) h += frag;
+  if (r.error) h += `<div class="err">${esc(r.error)}\n\nIf this step was given to you (not something you typed), reload the page and use Run all up to here.</div>`;
+  const s = state.status[i];
+  if (s === "passed") h = `<div class="verdict ok">✓ Passed</div>` + h;
+  if (s === "notyet") h = `<div class="verdict bad">Not yet — read the message, fix the formula, press Check again.</div>` + h;
+  return h;
+}
+
+// ---------- predictions: commit before running, explain after
+function renderPredict(w, btn = "Run") {
+  const s = state.preds[w.id] || {};
+  if (s.locked) return `<div class="wbox pred"><h4>Your prediction</h4><div class="q">${mdInline(w.question)}</div>
+    <div class="lock"><strong>${esc(s.choice !== undefined ? w.choices[s.choice] : "(none)")}</strong></div><div class="count">Locked when the step first ran (${esc(s.lockedAt || "")}).</div></div>`;
+  return `<div class="wbox pred" id="pred"><h4>Predict before you run</h4><div class="q">${mdInline(w.question)}</div>
+    ${w.choices.map((c, k) => `<label class="opt"><input type="radio" name="pred" value="${k}" ${s.choice === k ? "checked" : ""}> ${esc(c)}</label>`).join("")}
+    <div class="count">Think, choose, then press ${esc(btn)}: the choice locks. Being wrong costs nothing. After the run you explain the result, and that is what is graded.</div></div>`;
+}
+function wirePredict(w) {
+  const box = document.getElementById("pred"); if (!box) return;
+  const s = state.preds[w.id] = state.preds[w.id] || {};
+  box.querySelectorAll("input[name=pred]").forEach(r => r.onchange = () => { s.choice = +r.value; save(); });
+}
+function renderReflect(w) {
+  const s = state.preds[w.id] || {};
+  const right = s.correct !== undefined && s.choice === s.correct;
+  const ok = substantive(s.reflect, MIN_EXPLAIN);
+  return `<div class="wbox pred"><h4>Were you right? Explain the result</h4>
+    <div class="q">You predicted <strong>${esc(s.choice !== undefined ? w.choices[s.choice] : "(none)")}</strong>. Result: ${esc(s.result || "(run this step to see it)")}. ${s.correct !== undefined ? `<span class="msg ${right ? "ok" : "bad"}">${right ? "Your prediction was right." : "Your prediction was wrong: it came out " + esc(w.choices[s.correct]) + "."}</span>` : ""}</div>
+    <textarea id="reflect" placeholder="Why did it come out this way? One or two sentences, using the economics (what shoppers or firms do). If you were wrong, what did you miss?">${esc(s.reflect || "")}</textarea>
+    <div class="meta"><span id="reflect-wc">${words(s.reflect)} words${ok ? "" : ` (at least ${MIN_EXPLAIN}, in words)`}</span><span class="${ok ? "saved" : ""}" id="reflect-ok">${ok ? "✓ counts as an explanation" : ""}</span></div></div>`;
+}
+
+// ---------- read it off your output (checked against this run)
+function renderReadoff(w, i) {
+  const s = state.reads[w.id] || {};
+  return `<div class="wbox ro" id="ro-${w.id}"><h4>Read it off your output</h4><div class="q">${mdInline(w.label)}</div>
+    <div class="row"><input class="num" id="ro-in-${w.id}" value="${esc(s.value || "")}" inputmode="decimal" placeholder="number">${w.unit ? `<span class="unit">${esc(w.unit)}</span>` : ""}
+    <button class="btn sec" id="ro-btn-${w.id}">Check number</button><span class="msg ${s.ok ? "ok" : s.tries ? "bad" : ""}" id="ro-msg-${w.id}">${s.ok ? "✓ Correct" : s.tries ? "Not yet: look again at the output above." : ""}</span></div></div>`;
+}
+function wireReadoff(w, i) {
+  const s = state.reads[w.id] = state.reads[w.id] || {};
+  const inp = document.getElementById("ro-in-" + w.id), msg = document.getElementById("ro-msg-" + w.id);
+  inp.oninput = () => { s.value = inp.value; save(); };
+  inp.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); document.getElementById("ro-btn-" + w.id).click(); } };
+  document.getElementById("ro-btn-" + w.id).onclick = () => {
+    if (!state.results[i] || state.status[i] === "error") { msg.className = "msg bad"; msg.textContent = "Run this step first."; return; }
+    const v = num(inp.value); if (v === null) { msg.className = "msg bad"; msg.textContent = "Type a number."; return; }
+    const r = pyEval(w.expr); if (!r.ok) { msg.className = "msg bad"; msg.textContent = "Run this step first."; return; }
+    if (s.ok || (s.tries || 0) >= MAX_TRIES) return;
+    s.tries = (s.tries || 0) + 1; s.expected = r.value; s.ok = Math.abs(v - r.value) <= w.tol + 1e-9; s.value = inp.value; save();
+    msg.className = "msg " + (s.ok ? "ok" : "bad"); msg.textContent = s.ok ? "✓ Correct" : s.tries >= MAX_TRIES ? `Not correct after ${MAX_TRIES} tries; this item is closed. Your attempts are recorded. Move on.` : `Not yet: look again at the output above (${MAX_TRIES - s.tries} ${MAX_TRIES - s.tries === 1 ? "try" : "tries"} left).`;
+    renderSidebar();
+  };
+}
+
+// ---------- the chapter formula, shown under the output
+function renderFormula(w) { return `<div class="wbox fm"><h4>Chapter formula</h4><div class="q">${mdInline(w.body)}</div></div>`; }
+
+// ---------- use the formula (answers are hashed; a choice gets one try)
+function renderWhatif(w) {
+  const s = state.whatifs[w.id] || {};
+  const head = `<div class="wbox wi" id="wi-${w.id}"><h4>${esc(w.title || "Use the formula")}</h4><div class="q">${mdInline(w.question)}</div>`;
+  if (w.choices) {
+    if (s.locked) return head + `<div class="lock">Your answer: <strong>${esc(w.choices[s.choice])}</strong> <span class="msg ${s.ok ? "ok" : "bad"}">${s.ok ? "✓ Correct" : "Not correct. Work out why before you go on: it matters for what follows."}</span></div></div>`;
+    return head + w.choices.map((c, k) => `<label class="opt"><input type="radio" name="wi-${w.id}" value="${k}"> ${esc(c)}</label>`).join("")
+      + `<div class="row"><button class="btn sec" id="wi-btn-${w.id}">Submit answer (one try)</button><span class="msg" id="wi-msg-${w.id}"></span></div></div>`;
+  }
+  return head + `<div class="row"><input class="num" id="wi-in-${w.id}" value="${esc(s.value || "")}" inputmode="decimal" placeholder="number">${w.unit ? `<span class="unit">${esc(w.unit)}</span>` : ""}
+    <button class="btn sec" id="wi-btn-${w.id}">Check</button><span class="msg ${s.ok ? "ok" : s.tries ? "bad" : ""}" id="wi-msg-${w.id}">${s.ok ? "✓ Correct" : s.tries ? "Not yet: check your answer and try again." : ""}</span></div></div>`;
+}
+function wireWhatif(w) {
+  const s = state.whatifs[w.id] = state.whatifs[w.id] || {};
+  const btn = document.getElementById("wi-btn-" + w.id), msg = document.getElementById("wi-msg-" + w.id);
+  if (!btn) return;
+  if (w.choices) {
+    btn.onclick = () => {
+      const r = document.querySelector(`input[name="wi-${w.id}"]:checked`); if (!r) { msg.className = "msg bad"; msg.textContent = "Choose an answer first."; return; }
+      s.choice = +r.value; s.ok = fnv(`${w.id}|${s.choice}`) === w.h; s.locked = true; s.tries = 1; save(); renderPage(state.cur); renderSidebar();
+    };
+    return;
+  }
+  const inp = document.getElementById("wi-in-" + w.id);
+  inp.oninput = () => { s.value = inp.value; save(); };
+  inp.onkeydown = e => { if (e.key === "Enter") { e.preventDefault(); btn.click(); } };
+  btn.onclick = () => {
+    const v = num(inp.value); if (v === null) { msg.className = "msg bad"; msg.textContent = "Type a number."; return; }
+    const hit = x => { const base = Math.round(x * 100); for (let k = -w.n; k <= w.n; k++) if (fnv(`${w.id}|${((base + k) / 100).toFixed(2)}`) === w.h) return true; return false; };
+    if (s.ok || (s.tries || 0) >= MAX_TRIES) return;
+    const ok = hit(v);
+    s.tries = (s.tries || 0) + 1; s.ok = ok; s.value = inp.value; save();
+    const hint = !ok && hit(v * 100) ? "That looks like a fraction; the question asks for percent (multiply by 100)."
+      : !ok && hit(v / 100) ? "That looks like a percent; the question asks for a fraction (divide by 100)."
+      : s.tries >= MAX_TRIES ? `Not correct after ${MAX_TRIES} tries; this item is closed. Your attempts are recorded. Move on.`
+      : (w.title === "Work it out" ? "Not yet. Check the arithmetic against the table above." : "Not yet. Work it through the formula you just wrote.") + ` (${MAX_TRIES - s.tries} ${MAX_TRIES - s.tries === 1 ? "try" : "tries"} left)`;
+    msg.className = "msg " + (ok ? "ok" : "bad"); msg.textContent = ok ? "✓ Correct" : hint;
+  };
+}
+
+// ---------- answers typed in the page
+function renderAnswers(a) {
+  const v = state.answers[a.id] || [];
+  const cnt = (k, txt) => a.words ? `${words(txt)} words (${a.words[0]} to ${a.words[1]})` : `${words(txt)} words${substantive(txt, MIN_ANSWER) ? "" : ` (at least ${MIN_ANSWER})`}`;
+  return `<div class="wbox ans"><h4>Your answers: ${esc(a.label)}</h4>` + a.items.map((t, k) => {
+    const lab = a.n > 1 ? `<div class="item"><strong>${k + 1}.</strong> ${mdInline(t)}</div>` : "";
+    return lab + `<textarea class="${a.words ? "long" : ""}" id="ans-${a.id}-${k}" placeholder="${a.words ? "Your write-up. Cite at least three numbers from your own run." : "Your answer, in plain sentences. Two to five sentences is plenty."}">${esc(v[k] || "")}</textarea>`
+      + `<div class="meta"><span id="wc-${a.id}-${k}">${cnt(k, v[k])}</span><span class="saved" id="sv-${a.id}-${k}"></span></div>`;
+  }).join("") + `<div class="count">Saved in this browser as you type, and copied into your report.</div></div>`;
+}
+function wireAnswers(a) {
+  a.items.forEach((_, k) => {
+    const ta = document.getElementById(`ans-${a.id}-${k}`), wc = document.getElementById(`wc-${a.id}-${k}`), sv = document.getElementById(`sv-${a.id}-${k}`);
+    let t = null;
+    ta.oninput = () => { (state.answers[a.id] = state.answers[a.id] || [])[k] = ta.value; save(); autosize(ta);
+      wc.textContent = a.words ? `${words(ta.value)} words (${a.words[0]} to ${a.words[1]})` : `${words(ta.value)} words${substantive(ta.value, MIN_ANSWER) ? "" : ` (at least ${MIN_ANSWER})`}`;
+      sv.textContent = "saved"; clearTimeout(t); t = setTimeout(() => { sv.textContent = ""; }, 1500); };
+    ta.onblur = renderSidebar;
+  });
+}
+function autosize(ta) { ta.style.height = "auto"; ta.style.height = (ta.scrollHeight + 2) + "px"; }
+document.addEventListener("input", e => { if (e.target.tagName === "TEXTAREA" && e.target.closest(".wbox")) autosize(e.target); });
+document.addEventListener("input", e => { if (e.target.id === "reflect") { const p = PAGES[state.cur]; if (p.predict) { const s = state.preds[p.predict.id] = state.preds[p.predict.id] || {}; s.reflect = e.target.value; save();
+  const ok = substantive(s.reflect, MIN_EXPLAIN), wc = document.getElementById("reflect-wc"), ko = document.getElementById("reflect-ok");
+  if (wc) wc.textContent = `${words(s.reflect)} words${ok ? "" : ` (at least ${MIN_EXPLAIN}, in words)`}`; if (ko) { ko.textContent = ok ? "✓ counts as an explanation" : ""; ko.className = ok ? "saved" : ""; } } } });
+
+// ---------- finish page: one text for the Canvas post (plus an optional report file)
+function inventory() {
+  const all = k => PAGES.flatMap(p => (p.after || []).filter(w => w.kind === k));
+  const preds = PAGES.filter(p => p.predict).map(p => p.predict);
+  const ans = PAGES.filter(p => p.answers).map(p => p.answers);
+  return { reads: all("readoff"), whatifs: all("whatif"), preds, ans };
+}
+function writeupWords(v) { const a = v.ans[0]; if (!a) return 0; return a.items.reduce((n, _, k) => n + words((state.answers[a.id] || [])[k]), 0); }
+function summaryText() { try { return JSON.parse(py.runPython("_summary_text()")); } catch (e) { return ""; } }
+function postText() {
+  const v = inventory(), plain = s => String(s || "").replace(/\$([^$]+)\$/g, "$1").replace(/\\varepsilon/g, "ε").replace(/\\alpha/g, "α").replace(/\\,/g, " ").replace(/\*\*/g, "").replace(/\\\$/g, "$");
+  const L = [];
+  L.push(`Micro Mission 6, ${state.student.name || "(name)"}`, "");
+  L.push("MY FIVE NUMBERS (what the model says on pyblp's synthetic teaching data)");
+  const st = summaryText(); L.push(st || "(run the steps first: the finish page has a Run everything button)", "");
+  L.push("MY FOUR PREDICTIONS");
+  v.preds.forEach((w, k) => { const s = state.preds[w.id] || {};
+    L.push(`${k + 1}. ${plain(w.question)}`, `   I predicted: ${s.choice !== undefined ? w.choices[s.choice] : "(none)"}. Result: ${s.result || "(not run)"}.`, `   Why: ${s.reflect || "(no explanation yet)"}`); });
+  L.push("", "WRITE-UP");
+  const a = v.ans[0];
+  if (a) a.items.forEach((t, k) => L.push(`${k + 1}. ${plain((t.match(/\*\*(.+?)\*\*/) || [, t])[1])}`, (state.answers[a.id] || [])[k] || "(no answer yet)", ""));
+  return L.join("\n");
+}
+function renderSubmit() {
+  const v = inventory();
+  const li = (ok, text) => `<li class="${ok ? "ok" : "bad"}">${ok ? "✓" : "○"} ${text}</li>`;
+  const nr = v.reads.filter(w => (state.reads[w.id] || {}).ok).length;
+  const nw = v.whatifs.filter(w => (state.whatifs[w.id] || {}).tries).length;
+  const np = v.preds.filter(w => (state.preds[w.id] || {}).locked).length, nrf = v.preds.filter(w => substantive((state.preds[w.id] || {}).reflect, MIN_EXPLAIN)).length;
+  const a = v.ans[0], na = a ? a.items.filter((_, k) => substantive((state.answers[a.id] || [])[k], MIN_ANSWER)).length : 0, ww = writeupWords(v);
+  const items = [
+    li(!!state.student.name, `Name: ${esc(state.student.name || "missing")}`),
+    li(nr === v.reads.length, `Numbers read off your output: ${nr} of ${v.reads.length} correct`),
+    li(nw === v.whatifs.length, `Use-the-formula questions answered: ${nw} of ${v.whatifs.length}`),
+    li(np === v.preds.length && nrf === v.preds.length, `Predictions: ${np} of ${v.preds.length} made, ${nrf} explained`),
+    li(a && na === a.n && ww >= 200 && ww <= 350, `Write-up: ${na} of ${a ? a.n : 3} answered, ${ww} words in all (aim for about 250)`),
+  ];
+  return `<div class="md"><p>Anything with ○ can still be fixed: go back to that step. Then copy the text below into your Micro Mission 6 discussion post.</p></div>
+  <div class="chk"><strong>Checklist</strong><ul>${items.join("")}</ul></div>
+  <div class="bar"><button class="btn sec" id="runeverything">Run everything</button><span class="status" id="st-all"></span></div>
+  <div class="md"><h3>Your Canvas post</h3></div>
+  <textarea class="post" id="post" readonly>${esc(postText())}</textarea>
+  <div class="bar"><button class="btn" id="copypost">Copy the post</button><span class="status" id="copymsg"></span></div>
+  <div class="md"><h3>Then</h3><p>In Canvas, open the <strong>Micro Mission 6</strong> discussion, choose <strong>Reply</strong>, paste, and post. Read it once before you post. Later, reply to one classmate in two or three sentences.</p></div>
+  <details class="code"><summary>Optional: a report file with your run's tables</summary><div class="dl"><div class="item"><div>One short HTML file. Not required; attach it only if your instructor asks.</div><button class="btn sec" id="dlreport">Download report</button></div></div></details>`;
+}
+function wireSubmit() {
+  document.getElementById("copypost").onclick = async () => {
+    const ta = document.getElementById("post"), msg = document.getElementById("copymsg");
+    try { await navigator.clipboard.writeText(ta.value); msg.textContent = "Copied. Paste it into Canvas."; }
+    catch (e) { ta.removeAttribute("readonly"); ta.focus(); ta.select(); try { document.execCommand("copy"); msg.textContent = "Copied. Paste it into Canvas."; } catch (e2) { msg.textContent = "Select the text and copy it (Ctrl+C or Cmd+C)."; } ta.setAttribute("readonly", ""); }
+  };
+  document.getElementById("dlreport").onclick = () => {
+    const slug = (state.student.name || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "student";
+    download(`MM6-lab-report-${slug}.html`, buildReport(), "text/html");
+  };
+  document.getElementById("runeverything").onclick = async () => {
+    const last = PAGES.map((p, i) => i).filter(i => isRunnable(PAGES[i])).pop();
+    document.getElementById("st-all").innerHTML = '<span class="spin"></span>Running every step …';
+    const cur = state.cur;
+    if (await runPage(last, { silent: true }) && state.cur === cur) renderPage(cur);
+  };
+}
+function download(name, content, type) {
+  const blob = new Blob([content], { type }); const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+function buildReport() {
+  const v = inventory(), M = t => mdInline(t, true);
+  const yes = ok => ok ? `<span class="ok">✓</span>` : `<span class="no">✗</span>`;
+  let tb = {}; try { tb = JSON.parse(py.runPython("_tables()")); } catch (e) {}
+  let h = `<h1>Micro Mission 6 lab report</h1><table class="meta"><tr><th>Student</th><td>${esc(state.student.name || "(no name)")}</td></tr><tr><th>Made</th><td>${esc(nowStr())}</td></tr></table>`;
+  h += `<h2>1. Numbers read off and use-the-formula answers</h2><table class="tbl"><thead><tr><th>Item</th><th>Entered</th><th>Result</th></tr></thead><tbody>`;
+  v.reads.forEach(w => { const s = state.reads[w.id] || {}; h += `<tr><td>Read off: ${M(w.label)}</td><td>${esc(s.value || "(not answered)")}${s.expected !== undefined ? ` <span class="muted">(run's value ${(+s.expected).toFixed(3)})</span>` : ""}</td><td>${yes(s.ok)} ${s.ok ? "correct" : s.tries ? "not correct" : "not answered"}</td></tr>`; });
+  v.whatifs.forEach(w => { const s = state.whatifs[w.id] || {}; h += `<tr><td>${esc(w.title || "Use the formula")}: ${M(w.question)}</td><td>${esc(w.choices ? (s.choice !== undefined ? w.choices[s.choice] : "(not answered)") : (s.value || "(not answered)"))}</td><td>${yes(s.ok)} ${s.ok ? "correct" : s.tries ? "not correct" : "not answered"}</td></tr>`; });
+  h += `</tbody></table>`;
+  h += `<h2>2. Predictions and explanations</h2><table class="tbl"><thead><tr><th>Before running</th><th>Prediction</th><th>What happened</th><th>Explanation</th></tr></thead><tbody>`;
+  v.preds.forEach(w => { const s = state.preds[w.id] || {}; h += `<tr><td>${M(w.question)}</td><td><strong>${esc(s.choice !== undefined ? w.choices[s.choice] : "(none)")}</strong>${s.lockedAt ? `<div class="muted">locked ${esc(s.lockedAt)}</div>` : ""}</td><td>${esc(s.result || "(step not run)")}</td><td>${esc(s.reflect || "(none)")}</td></tr>`; });
+  h += `</tbody></table>`;
+  const a = v.ans[0];
+  h += `<h2>3. Write-up (${writeupWords(v)} words)</h2>`;
+  if (a) h += `<ol class="qa">` + a.items.map((t, k) => `<li><div class="qt">${M(t)}</div><div class="a">${esc((state.answers[a.id] || [])[k] || "(no answer)")}</div></li>`).join("") + `</ol>`;
+  h += `<h2>4. This run's tables (synthetic teaching data)</h2>${tb.summary || "<p>(not run in this session)</p>"}<h3>By firm</h3>${tb.firms || "<p>(not run)</p>"}<h3>Least and most elastic cities</h3>${tb.cities || "<p>(not run)</p>"}`;
+  const css = `body{font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#1f2328;background:#fff;max-width:980px;margin:auto;padding:28px 16px 60px}
+  h1{font-size:24px;margin:0 0 10px}h2{font-size:19px;margin:28px 0 8px;padding-top:12px;border-top:1px solid #e3e6ea}h3{font-size:16px;margin:16px 0 6px}
+  table{border-collapse:collapse;font-size:14px;margin:8px 0}th,td{border-bottom:1px solid #e3e6ea;padding:5px 9px;text-align:left;vertical-align:top}thead th{background:#f6f7f9}
+  .ok{color:#1a7f37;font-weight:700}.no{color:#b42318;font-weight:700}.muted{color:#5c6570;font-size:13px}
+  ol.qa{padding-left:22px}ol.qa li{margin:10px 0}.qt{color:#5c6570;font-size:14px}.a{white-space:pre-wrap;background:#fbfbf8;border-left:3px solid #2c3e50;padding:6px 10px;margin-top:4px}`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MM6 lab report: ${esc(state.student.name || "")}</title><style>${css}</style></head><body>${h}</body></html>`;
+}
+
+// ---------- who is this (name only)
+function whoValid() { return document.getElementById("who-name").value.trim().length >= 2; }
+function askWho() {
+  const ov = document.createElement("div"); ov.id = "overlay";
+  ov.innerHTML = `<div class="card"><h1>Change your name</h1>
+    <label class="f">Your name, as in Canvas<input id="who-name" value="${esc(state.student.name)}"></label>
+    <div class="bar"><button class="btn" id="start">Save</button><button class="btn sec" id="cancel">Cancel</button></div></div>`;
+  document.body.appendChild(ov);
+  const st = document.getElementById("start"); const upd = () => st.disabled = !whoValid();
+  ov.querySelectorAll("input").forEach(x => x.oninput = upd); upd();
+  document.getElementById("cancel").onclick = () => ov.remove();
+  st.onclick = () => { takeWho(); ov.remove(); renderSidebar(); renderPage(state.cur); };
+}
+function takeWho() { state.student = { name: document.getElementById("who-name").value.trim() }; save(); }
+
+// ---------- boot
+async function boot() {
+  load();
+  const prog = document.getElementById("prog"), startBtn = document.getElementById("start"), smsg = document.getElementById("start-msg");
+  document.getElementById("who-name").value = state.student.name || "";
+  let ready = false;
+  const upd = () => { startBtn.disabled = !(ready && whoValid()); smsg.textContent = !ready ? "Loading …" : whoValid() ? "Ready." : "Type your name to start."; };
+  document.querySelectorAll("#overlay input").forEach(x => { x.oninput = upd; x.onkeydown = e => { if (e.key === "Enter" && !startBtn.disabled) startBtn.click(); }; });
+  startBtn.onclick = () => { takeWho(); renderSidebar(); renderPage(state.cur); document.getElementById("overlay").remove(); };
+  const step = (msg) => { const li = document.createElement("li"); li.textContent = msg; li.className = "doing"; prog.appendChild(li); return li; };
+  const done = (li) => { li.className = ""; li.textContent = li.textContent + " ✓"; };
+  try {
+    let li = step("Loading Python (Pyodide)");
+    py = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v314.0.7/full/" }); done(li);
+    li = step("Loading numpy, scipy, pandas, matplotlib");
+    await py.loadPackage(["micropip", "numpy", "scipy", "pandas", "sympy", "matplotlib"]); done(li);
+    li = step("Installing pyblp");
+    const micropip = py.pyimport("micropip"); await micropip.install(["pyblp>=1.2,<2"]); done(li);
+    li = step("Preparing the lab");
+    py.runPython(document.getElementById("preamble").textContent); done(li);
+    ready = true; upd();
+  } catch (e) {
+    document.getElementById("overlay-err").textContent = "Setup did not finish: " + String(e).slice(0, 600) + "\n\nCheck your internet connection and reload the page. If it keeps failing, try another browser (Chrome, Edge, Safari or Firefox).";
+  }
+}
+boot();
+</script>
+</body>
+</html>

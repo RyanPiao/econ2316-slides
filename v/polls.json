@@ -35,7 +35,9 @@
   "ch09-econ2316-poll-3": "9-4",
   "ch09-econ2316-poll-5": "9-2",
   "ch09-econ2316-poll-6": "9-1",
-  "ch10-econ2316-poll-1": "10-1",
+  "ch10-econ2316-poll-1": "10-2",
+  "ch10-econ2316-ww-1": "10-1",
+  "ch10-econ2316-ww-2": "10-3",
   "ch11-econ2316-poll-1": "11-2",
   "ch11-econ2316-poll-apple": "11-1",
   "ch13-econ2316-poll-2": "13p2-1",
@@ -68,7 +70,15 @@
   ],
   "10-1": [
    "ch10-perfect-competition",
+   "ch10-econ2316-ww-1"
+  ],
+  "10-2": [
+   "ch10-perfect-competition",
    "ch10-econ2316-poll-1"
+  ],
+  "10-3": [
+   "ch10-perfect-competition",
+   "ch10-econ2316-ww-2"
   ],
   "11-1": [
    "ch11-monopoly",

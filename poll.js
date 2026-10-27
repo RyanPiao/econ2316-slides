@@ -44,6 +44,16 @@
               when the deck asks for a boot.* or se.mean key. Poll.stats.bootstrap(values[, B,
               seed]) returns the object; Poll.showNumbers(pid, rows) renders rows you hand it
               (a rehearsal with intercepted rows, never a written vote).
+   SCAN-TO-VOTE (27 Oct 2026). The PROJECTOR draws a QR code on every poll slide (top-right; Q, on
+     the projector or in speaker view, cycles corner -> full height -> hidden; a click toggles big;
+     bottom-right, because the page-number badge owns the top-right).
+     It opens https://ryanpiao.github.io/<econXXXX>-slides/v/#<code>, a phone page that strip_notes.py
+     GENERATES in each course repository from TA/teaching-improvement/tools/vote/index.html, with the
+     short codes in v/polls.json (code -> [deck folder, poll id], byPoll: poll id -> code). A poll id
+     not in the map gets #<poll id>@<deck folder>. ?sec= on the projector is carried into the link.
+     The page votes through Poll.cast(pollId, choice, done) below: same check-in, isOpen, stamp and
+     one-vote index as a click on the deck; done("ok"|"dup"|"closed"|"err"). New poll ids keep the
+     pattern chNN-econXXXX-poll-N (the econXXXX token is what keeps courses apart).
    ARMS: <div data-arm="nuid-parity"> holding [data-arm-version="room|pending|odd|even"]
      children shows one of them: a student's device the odd or even block by the NUID's last
      digit; no NUID yet, the pending block (a [data-arm-checkin] button in it opens the
@@ -1614,6 +1624,13 @@
 
   var css = document.createElement("style");
   css.textContent =
+    "#ec-qr{position:fixed;bottom:6vh;right:1.2vw;z-index:9985;display:none;flex-direction:column;align-items:center;" +
+      "background:#fff;padding:1vh 1vh .7vh;border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.28);cursor:pointer}" +
+    "#ec-qr .ec-qr-code svg{width:22vh;height:22vh;display:block}" +
+    "#ec-qr .ec-qr-cap{font:700 1.7vh system-ui,-apple-system,sans-serif;color:#1f2937;margin-top:.4vh;white-space:nowrap}" +
+    "#ec-qr.big{top:50%;left:50%;right:auto;bottom:auto;transform:translate(-50%,-50%);padding:2.4vh 3vh 1.6vh;z-index:99990}" +
+    "#ec-qr.big .ec-qr-code svg{width:76vh;height:76vh}" +
+    "#ec-qr.big .ec-qr-cap{font-size:2.8vh;margin-top:1.2vh}" +
     "#ec-checkin{position:fixed;inset:0;z-index:99999;background:rgba(15,23,42,.72);" +
       "display:flex;align-items:center;justify-content:center;font-family:system-ui,-apple-system,sans-serif}" +
     ".ec-ci-card{background:#fff;border-radius:16px;padding:26px 30px;max-width:430px;width:90%;" +
@@ -1698,7 +1715,113 @@
 
   /* ---------- boot ---------- */
 
+  /* ---------- Poll.cast: a vote from the scan-to-vote page (27 Oct 2026) ---------- */
+  // What a click on an A-D option does in a deck, without the deck: check-in (skippable, as
+  // ever), the voting window, then one row through stamp(). A second vote from the same device on
+  // the same poll and session hits the unique index and comes back as "dup".
+  function cast(pollId, choice, done) {
+    done = done || function () {};
+    var send = function () {
+      Promise.resolve(probeP).then(function () { return isOpen(pollId); }).then(function (open) {
+        if (!open) { done("closed"); return; }
+        return sf("POST", "poll_votes", stamp(pollId, choice)).then(function (r) {
+          done(r.ok ? "ok" : (r.status === 409 ? "dup" : "err"));
+        });
+      }).catch(function () { done("err"); });
+    };
+    if (!CHECKIN || nuid() || PROJECTOR || SPEAKER) { send(); return; }
+    modal(function () { send(); });
+  }
+
+  /* ---------- scan-to-vote QR, projector only (27 Oct 2026) ---------- */
+  // Drawn only on the PROJECTED deck, only on a slide with a voting block, so a student's own copy
+  // and the speaker view never show it. Every slide change goes back to the corner.
+  var QR_LIB = "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js";
+  var qrMode = 1, qrBox = null, qrMaps = {}, qrLibP = null, qrSeq = 0;   // 1 corner, 2 full height, 0 hidden
+  // only the courses whose repository has the generated v/ page (1116 shares this file and has none)
+  var QR_COURSES = { econ2316: 1, econ3916: 1, econ5200: 1 };
+  function qrCourse(pid) { var m = String(pid).match(/econ\d{4}/i), c = m && m[0].toLowerCase(); return c && QR_COURSES[c] ? c : null; }
+  function qrMap(course) {
+    if (!qrMaps[course]) qrMaps[course] = fetch("https://ryanpiao.github.io/" + course + "-slides/v/polls.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+    return qrMaps[course];
+  }
+  function qrFolder() {
+    var p = location.pathname.split("/").filter(Boolean);
+    if (p.length && /\.html?$/i.test(p[p.length - 1])) p.pop();
+    return p[p.length - 1] || "";
+  }
+  function qrIds() { return pollIdsOnCurrentSlide().filter(function (id) { return /^[\w.-]+$/.test(id); }); }
+  function qrHide() { if (qrBox) qrBox.style.display = "none"; }
+  function qrDraw(url, label) {
+    var q = window.qrcode(0, "M"); q.addData(url); q.make();
+    if (!qrBox) {
+      qrBox = document.createElement("div"); qrBox.id = "ec-qr";
+      qrBox.addEventListener("click", function () { qrMode = qrMode === 2 ? 1 : 2; qrShow(); });
+      document.body.appendChild(qrBox);
+    }
+    var big = qrMode === 2;
+    qrBox.className = big ? "big" : "";
+    qrBox.setAttribute("data-url", url);
+    qrBox.innerHTML = '<div class="ec-qr-code">' + q.createSvgTag({ cellSize: 8, margin: 2, scalable: true }) + "</div>" +
+      '<div class="ec-qr-cap">' + (big ? "Scan to vote &middot; " + esc(label) : "Scan to vote") + "</div>";
+    qrBox.style.display = "flex";
+  }
+  function qrShow() {
+    if (!PROJECTOR) return;
+    var ids = qrIds(), my = ++qrSeq;
+    if (!ids.length || qrMode === 0 || (window.Reveal && Reveal.isOverview && Reveal.isOverview())) { qrHide(); return; }
+    var pid = ids[0], course = qrCourse(pid);
+    if (!course) { qrHide(); return; }
+    Promise.all([qrMap(course), window.qrcode ? null : (qrLibP = qrLibP || loadScript(QR_LIB))]).then(function (r) {
+      if (my !== qrSeq || !window.qrcode) return;                    // the slide moved on meanwhile
+      var code = ((r[0] || {}).byPoll || {})[pid], sec = qs.get("sec");
+      var url = "https://ryanpiao.github.io/" + course + "-slides/v/" + (sec ? "?sec=" + encodeURIComponent(sec) : "") +
+                "#" + (code || (pid + "@" + qrFolder()));
+      qrDraw(url, url.replace(/^https:\/\//, ""));
+    }).catch(function () { qrLibP = null; });
+  }
+  function qrRelay() {                     // speaker preview -> projected window
+    try {
+      var o = window.parent && window.parent.opener;
+      if (o) o.postMessage(JSON.stringify({ pollqr: "cycle" }), IS_FILE ? "*" : location.origin);
+    } catch (err) {}
+  }
+  function qrCycle() { qrMode = qrMode === 1 ? 2 : qrMode === 2 ? 0 : 1; qrShow(); }
+  function bootQr() {
+    if (PROJECTOR) {
+      if (window.Reveal && Reveal.addEventListener) {
+        Reveal.addEventListener("slidechanged", function () { qrMode = 1; qrShow(); });
+        ["ready", "overviewshown", "overviewhidden"].forEach(function (ev) { Reveal.addEventListener(ev, qrShow); });
+      }
+      qrShow();
+      // Q pressed in the speaker view arrives here (the speaker preview is a different window)
+      window.addEventListener("message", function (ev) {
+        if (ev.origin !== location.origin && !IS_FILE) return;
+        var d; try { d = JSON.parse(ev.data); } catch (e) { return; }
+        if (d && d.pollqr === "cycle") qrCycle();
+      });
+    }
+    if (PROJECTOR || SPEAKER) {
+      document.addEventListener("keydown", function (e) {
+        if (e.metaKey || e.ctrlKey || e.altKey || (e.key !== "q" && e.key !== "Q")) return;
+        var t = e.target, tag = t && t.tagName;
+        if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
+        if (!qrIds().length) return;           // only on a poll slide, so a deck's own Q elsewhere is untouched
+        e.preventDefault(); e.stopPropagation();
+        if (PROJECTOR) { qrCycle(); return; }
+        qrRelay();
+      }, true);
+    }
+    // Q pressed over the speaker NOTES reaches this preview as reveal's triggerKey, not as a key event
+    if (SPEAKER) window.addEventListener("message", function (ev) {
+      var d; try { d = JSON.parse(ev.data); } catch (e) { return; }
+      if (d && d.method === "triggerKey" && d.args && d.args[0] === 81 && qrIds().length) qrRelay();
+    });
+  }
+
   window.Poll = {
+    cast:       cast,
     deviceId:   deviceId,
     nuid:       nuid,
     sessionKey: sessionKey,
@@ -1735,6 +1858,7 @@
     mountSpeakerBar();
     applyArms();
     bootNumbers();
+    bootQr();
     if (INSTRUCTOR) {
       document.addEventListener("keydown", function (e) {
         if (e.metaKey || e.ctrlKey || e.altKey) return;

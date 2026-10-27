@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f8c2b86e17ad216fbcf781f7092a581a">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6cafd15895fce2c3de79d47be468a3c6">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Profit Maximization and Firm Supply &mdash; ECON 2316 Ch 9</title>
@@ -1312,18 +1312,19 @@
     <div style="text-align: center;">
       <img alt="Two panels. (a) Baseline w = $50/hr: SMC crosses p = $84/kWh at q* = 50.9 GWh. (b) After a 20% wage shock to w = $60/hr, SMC rotates up and the crossing falls to q* = 38.7 GWh, a 24% drop in output." src="figures/figure-9-6-wage-shock-comparative-statics.png" class="figure" style="max-width: 100%; max-height: 400px; object-fit: contain;">
     </div>
-    <div>
-      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 9px 14px; margin-bottom: 10px;">
-        <p style="font-size: 11.5pt; line-height: 1.45; margin: 0;">Wage rises 20% (\(w: 0.10 \to 0.12\), the UAW spillover from Ch 8). Output price stays at \(p = \$84\). How does the firm re-optimize?</p>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 8px 14px;">
+        <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong>1 &middot; The shock.</strong> Wage +20%: \(\$100\)K &rarr; \(\$120\)K a worker-year (\(w\): 0.10 &rarr; 0.12), the UAW spillover from Ch 8. The price stays \(\$84\)/kWh.</p>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="stat-card rose"><p class="num">&minus;24%</p><p class="lbl">Output \(q^*\): 50.9 &rarr; 38.7 GWh</p></div>
-        <div class="stat-card rose"><p class="num">&minus;37%</p><p class="lbl">Labor \(L^*\): 8.68 &rarr; 5.50 K</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 8px 14px;">
+        <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong>2 &middot; Output</strong> 50.9 &rarr; 38.7 GWh: <strong>&minus;24%</strong>.</p>
       </div>
-      <div class="key-result" style="margin-top: 10px; padding: 8px 14px;">
-        <p style="margin: 0; font-size: 12pt;">Profit flips: \(+\$58.6\)M \(\to -\$80\)M. The firm still operates (\(p > m\)), absorbing a SR loss. Labor falls faster than output because \(L_s \propto q^{1.667}\) under \(\beta = 0.6\).</p>
+      <div class="fragment fade-up" data-fragment-index="3" style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 8px 14px;">
+        <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong>3 &middot; Labor</strong> 8,680 &rarr; 5,500 workers: <strong>&minus;37%</strong>. Labor falls faster than output because \(L \propto q^{1.667}\).</p>
       </div>
-      <p style="font-size: 10.5pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">The dashed <strong>AVC</strong> rises from the materials floor \(m\) &mdash; monotonic, not U-shaped (Cobb-Douglas, not the cubic case). The firm operates because \(p = \$84 > m = \$55.6\).</p>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 0; padding: 8px 14px;">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>4 &middot; Profit</strong> \(+\$58.6\)M &rarr; \(-\$80\)M, but the plant still operates: \(\$84 > m = \$55.6\).</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1334,49 +1335,45 @@
     <div style="text-align: center;">
       <img alt="SMC, SATC and AVC curves with two price lines. At p0 = $84/kWh, q* = 50.9 GWh. After a 30% drop to p1 = $58.8/kWh, q* collapses to 1.9 GWh (a 96% fall). Annotation: p1 > min AVC $55.6 so operate in the SR; p1 < min SATC $82.8 so exit in the LR." src="figures/figure-9-7-price-drop-comparative-statics.png" class="figure" style="max-height: 400px;">
     </div>
-    <div>
-      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 9px 14px; margin-bottom: 10px;">
-        <p style="font-size: 11.5pt; line-height: 1.45; margin: 0;">Price falls 30% (\(p: 0.084 \to 0.0588\)). The value-added margin \(p - m = 0.0032\) is very thin.</p>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 8px 14px;">
+        <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong>1 &middot; The shock.</strong> Price &minus;30%: \(\$84\) &rarr; \(\$58.80\)/kWh. The margin over materials is \(p - m = \$3.20\).</p>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div class="stat-card rose"><p class="num">&minus;96%</p><p class="lbl">Output \(q^*\): 50.9 &rarr; 1.9 GWh</p></div>
-        <div class="stat-card"><p class="num">SR: stay</p><p class="lbl">\(p_1 > m\): quasi-rents \(+\$2\)M</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background: #fef2f2; border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 8px 14px;">
+        <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong>2 &middot; Output</strong> 50.9 &rarr; 1.9 GWh: <strong>&minus;96%</strong>. (4.44 is the elasticity for small changes; a 30% cut is not small.)</p>
       </div>
-      <div class="key-result" style="margin-top: 10px; padding: 8px 14px; background: #fef2f2; border-left-color: var(--danger-color);">
-        <p style="margin: 0; font-size: 12pt;"><strong>LR: exit.</strong> \(p_1 = 0.0588 < \min ATC \approx 0.0828\). The firm operates today (loss \$518M, a hair under the \$520M shutdown loss) but cannot cover total cost &mdash; it exits.</p>
+      <div class="fragment fade-up" data-fragment-index="3" style="background: #fffbeb; border-left: 4px solid #d97706; border-radius: 8px; padding: 8px 14px;">
+        <p style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong style="color: #b45309;">3 &middot; Short run: stay.</strong> \(\$58.80 > m\), quasi-rents about \(+\$2\)M. The loss is \(\$518\)M, a hair under the \(\$520\)M shutdown loss.</p>
       </div>
-      <p style="font-size: 10.5pt; color: var(--muted-color); font-style: italic; margin: 8px 0 0;">The dashed <strong>AVC</strong> rises from the materials floor \(m\) &mdash; monotonic, not U-shaped (Cobb-Douglas, not the cubic case). \(p_1\) sits just above it, so the firm still operates in the SR.</p>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin: 0; padding: 8px 14px; background: #fef2f2; border-left-color: var(--danger-color);">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong style="color: var(--danger-color);">4 &middot; Long run: exit.</strong> \(\$58.80 < \min ATC = \$82.8\).</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="chapter-summary">
   <h2><i class="fa-solid fa-list-check" style="color: var(--secondary-color);"></i> Chapter Summary</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-    <div>
-      <div style="background: #f0f5f8; padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-bottom: 10px;">
-        <p style="font-size: 12pt; font-weight: 700; color: var(--secondary-color);">Profit-max problem</p>
-        <p style="font-size: 12pt; margin: 4px 0 0;">Choose \(q \geq 0\) to maximize \(\pi = pq - c(w,r,q)\). FOC: \(p = MC(q^*)\). SOC: \(MC'(q^*) > 0\) (\(MC\) slopes up).</p>
-      </div>
-      <div style="background: #f0f5f8; padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--secondary-color); margin-bottom: 10px;">
-        <p style="font-size: 12pt; font-weight: 700; color: var(--secondary-color);">Supply = inverse-MC</p>
-        <p style="font-size: 12pt; margin: 4px 0 0;">\(q^*(p)\) solves \(MC(q)=p\) above min AVC, else zero. CD SR elasticity \(= \dfrac{\beta}{1-\beta}\cdot\dfrac{p}{p-m}\).</p>
-      </div>
+  <p style="font-size: 13pt; color: var(--muted-color); font-style: italic; margin: 0 0 10px;">How many burgers should Sam grill &mdash; and when should he shut the doors?</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div class="fragment fade-up" data-fragment-index="1" style="background: #f0f5f8; padding: 11px 16px; border-radius: 8px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12.5pt; font-weight: 700; color: var(--secondary-color); margin: 0;">1 &middot; What price?</p>
+      <p style="font-size: 12.5pt; margin: 4px 0 0; line-height: 1.45;">Sam takes the market&rsquo;s \(\$10\): a price taker, so his demand is flat and \(P = MR\).</p>
     </div>
-    <div>
-      <div style="background: #f9f0ee; padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--danger-color); margin-bottom: 10px;">
-        <p style="font-size: 12pt; font-weight: 700; color: var(--danger-color);">Shutdown vs exit</p>
-        <p style="font-size: 12pt; margin: 4px 0 0;">SR: operate iff \(p \geq \min AVC\) (FC sunk). LR: iff \(p \geq \min ATC\). Quasi-rents \(= pq - VC\) can be \(+\) while profit is \(-\).</p>
-      </div>
-      <div style="background: #ecfdf5; padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--success-color); margin-bottom: 10px;">
-        <p style="font-size: 12pt; font-weight: 700; color: var(--success-color);">Gigafactory example</p>
-        <p style="font-size: 12pt; margin: 4px 0 0;">At \(p=\$84\), \(m=\$55.6\): \(q^*=50.9\) GWh, \(L^*=8.68\)K, \(\pi^*=\$58.6\)M. \(p\) inherited by Ch 10.</p>
-      </div>
+    <div class="fragment fade-up" data-fragment-index="2" style="background: #ecfdf5; padding: 11px 16px; border-radius: 8px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 12.5pt; font-weight: 700; color: var(--success-color); margin: 0;">2 &middot; How many?</p>
+      <p style="font-size: 12.5pt; margin: 4px 0 0; line-height: 1.45;">\(MR = MC\), so \(p = MC\) (SOC: \(MC\) slopes up). At \(\$10\): 50 burgers, profit \(+\$150\). The five steps give the profit rectangle \((P - ATC)\times q^*\).</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="3" style="background: #fffbeb; padding: 11px 16px; border-radius: 8px; border-left: 4px solid #d97706;">
+      <p style="font-size: 12.5pt; font-weight: 700; color: #b45309; margin: 0;">3 &middot; When to close?</p>
+      <p style="font-size: 12.5pt; margin: 4px 0 0; line-height: 1.45;">Now: open if \(p \geq \min AVC\) (\(\$2\), the shutdown point). Long run: stay if \(p \geq \min ATC\) (\(\$6\), the exit point). Quasi-rents \((R - VC)\) decide the first; profit decides the second.</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="4" style="background: #f9f0ee; padding: 11px 16px; border-radius: 8px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 12.5pt; font-weight: 700; color: var(--danger-color); margin: 0;">4 &middot; Supply</p>
+      <p style="font-size: 12.5pt; margin: 4px 0 0; line-height: 1.45;">Supply is the \(MC\) curve above \(\min AVC\). Gigafactory: \(\$84\) &rarr; 50.9 GWh, profit \(\$58.6\)M (1.4%), elasticity 4.44.</p>
     </div>
   </div>
-  <p style="text-align: center; font-size: 12pt; color: var(--muted-color); margin-top: 14px; font-style: italic;">
-    <strong>Numbers carried into Ch 10:</strong> \(p = \$84\)/kWh, \(m = \$55.6\)/kWh (per-unit materials cost), plus all Ch 7&ndash;8 calibration. The gigafactory example ends with Ch 10.
-  </p>
+  <p style="text-align: center; font-size: 11pt; color: var(--muted-color); margin-top: 12px; font-style: italic;"><strong>Numbers carried into Ch 10:</strong> \(p = \$84\)/kWh, \(m = \$55.6\)/kWh.</p>
 </section>
 
 <section id="looking-ahead">

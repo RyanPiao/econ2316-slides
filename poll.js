@@ -1752,6 +1752,9 @@
     return p[p.length - 1] || "";
   }
   function qrIds() { return pollIdsOnCurrentSlide().filter(function (id) { return /^[\w.-]+$/.test(id); }); }
+  // a deck's own Q wins: the room slides (3916 T12, 5200 Topic 11b: room-trip, -mean, -line, -chance) use Q
+  // for their practice numbers, and room-trip also has number polls
+  function deckOwnsQ() { var s = currentSlide(); return !!(s && /^room-/.test(s.id || "")); }
   function qrHide() { if (qrBox) qrBox.style.display = "none"; }
   function qrDraw(url, label) {
     var q = window.qrcode(0, "M"); q.addData(url); q.make();
@@ -1807,7 +1810,7 @@
         if (e.metaKey || e.ctrlKey || e.altKey || (e.key !== "q" && e.key !== "Q")) return;
         var t = e.target, tag = t && t.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
-        if (!qrIds().length) return;           // only on a poll slide, so a deck's own Q elsewhere is untouched
+        if (!qrIds().length || deckOwnsQ()) return;   // only on a poll slide, and never where the deck binds Q itself
         e.preventDefault(); e.stopPropagation();
         if (PROJECTOR) { qrCycle(); return; }
         qrRelay();
@@ -1816,7 +1819,7 @@
     // Q pressed over the speaker NOTES reaches this preview as reveal's triggerKey, not as a key event
     if (SPEAKER) window.addEventListener("message", function (ev) {
       var d; try { d = JSON.parse(ev.data); } catch (e) { return; }
-      if (d && d.method === "triggerKey" && d.args && d.args[0] === 81 && qrIds().length) qrRelay();
+      if (d && d.method === "triggerKey" && d.args && d.args[0] === 81 && qrIds().length && !deckOwnsQ()) qrRelay();
     });
   }
 

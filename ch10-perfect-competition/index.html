@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=c1fccb7ac047413da3ccdd5bfae4b558">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=a50f9bf8920989d0cd9c3361991ff39d">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -226,12 +226,36 @@
   </div>
 </section>
 
+<section id="electricity-generation">
+<h2><i class="fa-solid fa-bolt" style="color: var(--accent-color);"></i> Electricity Generation Is a Competitive Market</h2>
+<p style="font-size: 13pt; color: var(--muted-color); margin: 0 0 6px;">Electricity has two very different sides. The <em>wires</em> are a natural monopoly (Ch 11), but <strong>generation</strong>, where the power is made, is close to perfect competition.</p>
+<div style="text-align: center; margin: 0 0 4px;">
+<img alt="The electricity value chain: many generating plants feed power into one high-voltage transmission grid, which carries it through local distribution wires to homes" class="figure" src="figures/power_a.png" style="width: 100%; max-height: 250px; object-fit: contain;"/>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 0 0 8px;">
+<div style="background: #ecfdf5; border-radius: 10px; padding: 9px 14px; border-left: 5px solid var(--success-color);">
+<p style="font-size: 12.5pt; margin: 0; line-height: 1.4;"><strong style="color: var(--success-color);">1 · Generation</strong> (this chapter): many plants (coal, gas, nuclear, wind, solar) bid into one shared pool. <strong>Price takers.</strong></p>
+</div>
+<div style="background: #f9f0ee; border-radius: 10px; padding: 9px 14px; border-left: 5px solid var(--danger-color);">
+<p style="font-size: 12.5pt; margin: 0; line-height: 1.4;"><strong style="color: var(--danger-color);">2 · Transmission</strong>: one high-voltage grid with an enormous fixed cost, so a <strong>natural monopoly</strong> (Ch 11).</p>
+</div>
+<div style="background: #f9f0ee; border-radius: 10px; padding: 9px 14px; border-left: 5px solid var(--danger-color);">
+<p style="font-size: 12.5pt; margin: 0; line-height: 1.4;"><strong style="color: var(--danger-color);">3 · Distribution</strong>: the local wires to every home, also a regulated <strong>monopoly</strong>.</p>
+</div>
+</div>
+<div class="key-result" style="margin-top: 4px;">
+<p style="margin: 0; font-size: 13pt;">In <strong>generation</strong>, \(\partial p / \partial q_i = 0\): dozens of plants sell an identical product (a MWh is a MWh) into one market, and no single plant moves the wholesale price. The grid operator dispatches plants in <strong>merit order</strong>, cheapest \(MC\) first, until demand is met, so <strong>the wholesale price equals the \(MC\) of the last plant switched on.</strong></p>
+</div>
+</section>
+
 <section id="power-plant-supply">
   <h2><i class="fa-solid fa-chart-line" style="color: var(--accent-color);"></i> A Generator's Marginal-Cost Curve <em>Is</em> Its Supply Curve</h2>
   <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 20px; align-items: center;">
-    <div style="text-align: center;">
-      <img alt="Step-shaped marginal cost curve for an electricity firm: a coal plant flat near 18 dollars per MWh, stepping up to two gas plants near 37 and 39 dollars, then turning vertical at the firm's maximum capacity" class="figure" src="figures/electricity1.png" style="max-width: 100%; max-height: 400px;">
-    </div>
+<div class="iv-card" style="padding: 6px 14px 8px;">
+<svg id="pp-chart" viewBox="0 0 640 380" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:380px; display:block;"></svg>
+<div><label class="iv-label">Wholesale price \(p\) <span class="iv-readout" id="pp-pRead">$25</span></label><input type="range" class="iv-slider" id="pp-p" min="10" max="45" step="1" value="25"></div>
+<p id="pp-caption" style="text-align:center; font-size:12pt; color:var(--secondary-color); margin:4px 0 0;"></p>
+</div>
     <div>
       <p style="font-size: 13pt; line-height: 1.5; margin: 0 0 8px;">A generator runs its <strong>cheapest unit first</strong>. As the wholesale price rises, it brings costlier plants online in <strong>merit order</strong>:</p>
       <ul style="font-size: 12.5pt; line-height: 1.6; margin: 0 0 8px;">
@@ -254,22 +278,23 @@
   <p class="subtitle">\(\displaystyle Q^s(p) = \sum_{i=1}^N q_i^*(p)\)</p>
 </section>
 
-<section id="industry-supply-three-firms">
-  <h2><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> Three Generators, Three Step-Supply Curves</h2>
-  <p style="font-size: 12.5pt; color: var(--muted-color); margin: 0 0 8px;">Each firm's supply curve is its own merit-order staircase &mdash; cheapest plant first, stepping up as the price rises.</p>
-  <div style="display: grid; grid-template-columns: 1.18fr 0.82fr; gap: 24px; align-items: center;">
+<section id="industry-supply-overview">
+  <h2><i class="fa-solid fa-arrows-left-right" style="color: var(--accent-color);"></i> Industry Short-Run Supply Curve</h2>
+  <p style="font-size: 13pt; margin: 0 0 6px;">Market (industry) supply is the <strong>horizontal sum</strong> of every firm's short-run supply curve: at each price, add up the quantities.</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: center;">
     <div style="text-align: center;">
-      <img alt="Three generators' step marginal-cost supply curves in one figure: (a) Firm 1 — coal near $18/MWh stepping up to gas near $39, capacity 250 MW; (b) Firm 2 — cheapest coal near $15 stepping up through gas, capacity about 2,000 MW; (c) Firm 3 — a larger gas-heavy fleet from about $23 upward, capacity about 4,867 MW." src="figures/frim1.png" style="max-width: 100%; max-height: 472px; object-fit: contain;">
+      <img alt="One firm's step supply curve beside the industry supply curve for 100 identical firms, the same shape scaled out along the quantity axis by a factor of 100" src="figures/firm_industry.png" style="max-width: 100%; max-height: 380px; object-fit: contain;">
+      <p style="font-size: 11pt; color: var(--muted-color); margin: 4px 0 0;"><strong>Identical firms:</strong> one firm's curve, scaled out by \(N\).</p>
     </div>
-    <div>
-      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 7px;"><strong>Firm 1 (a)</strong> &mdash; coal first (~\$18), then gas up to ~\$39; small 250 MW fleet.</p>
-      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 7px;"><strong>Firm 2 (b)</strong> &mdash; cheapest coal (~\$15), so it runs first.</p>
-      <p style="font-size: 12pt; line-height: 1.5; margin: 0 0 12px;"><strong>Firm 3 (c)</strong> &mdash; largest fleet; gas-heavy, from ~\$23.</p>
-      <div class="key-result" style="margin: 0;">
-        <p style="margin: 0; font-size: 12pt;">As demand grows, the grid operator turns on the <strong>cheapest available unit next</strong> &mdash; Firm 2's coal (~\$15), then Firm 1's coal (~\$18), then Firm 3's gas (~\$23&ndash;24)&hellip; Stacking these staircases cheapest-first builds the <strong>industry supply curve</strong>.</p>
-      </div>
+    <div style="text-align: center;">
+      <img alt="Heterogeneous firms A, B, C, D with different supply curves adding horizontally into one upward-sloping industry supply curve" src="figures/firm_industry_sum.png" style="max-width: 100%; max-height: 380px; object-fit: contain;">
+      <p style="font-size: 11pt; color: var(--muted-color); margin: 4px 0 0;"><strong>Different firms:</strong> add the curves left-to-right at each price.</p>
     </div>
   </div>
+  <div class="key-result" style="margin-top: 8px;">
+    <p style="margin: 0; font-size: 13pt;">Industry output rises as \(P\) rises for two reasons: <strong>(1)</strong> each operating firm's \(MC\) slopes up, so it makes more; <strong>(2)</strong> higher-cost firms cross their shutdown price and <strong>switch on</strong>.</p>
+  </div>
+  
 </section>
 
 <section id="horizontal-sum">
@@ -315,6 +340,26 @@
       </p>
     </div>
   </div>
+</section>
+
+<section id="industry-supply-hetero">
+<h2><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> Different Costs: Three Generators, One Market Supply</h2>
+<p style="font-size: 12.5pt; margin: 0 0 6px;">Each generator&rsquo;s supply is its own merit-order staircase, cheapest plant first. At every price, <strong>add the three quantities</strong>: that sum is the market supply curve.</p>
+<div class="iv-card" style="padding: 6px 12px 8px;">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1.9fr; gap: 8px; align-items: end;">
+<div><svg id="hs-f1" viewBox="0 0 250 314" style="width:100%; height:auto; display:block;"></svg></div>
+<div><svg id="hs-f2" viewBox="0 0 250 314" style="width:100%; height:auto; display:block;"></svg></div>
+<div><svg id="hs-f3" viewBox="0 0 250 314" style="width:100%; height:auto; display:block;"></svg></div>
+<div><svg id="hs-m" viewBox="0 0 470 314" style="width:100%; height:auto; display:block;"></svg></div>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1.25fr; gap: 18px; align-items: center; margin-top: 2px;">
+<div><label class="iv-label">Market price \(P\) <span class="iv-readout" id="hs-pRead">$25</span></label><input type="range" class="iv-slider" id="hs-p" min="10" max="45" step="1" value="25"></div>
+<p id="hs-caption" style="font-size:12.5pt; color:var(--secondary-color); margin:0; text-align:center;"></p>
+</div>
+</div>
+<div class="key-result" style="margin-top: 8px; padding: 8px 16px;">
+<p style="margin: 0; font-size: 12.5pt;">Market supply rises with \(P\) for two reasons: firms already running climb their own \(MC\) steps, and <strong>higher-cost plants switch on</strong>. Every plant that runs has \(MC \le P\), so the market price equals the \(MC\) of the last plant switched on.</p>
+</div>
 </section>
 
 <section id="walkthrough-10-1">
@@ -399,6 +444,18 @@
  </div>
 </section>
 
+<section id="sr-profit">
+ <h2><i class="fa-solid fa-arrow-trend-up" style="color: var(--success-color);"></i> In the Short Run: Positive Economic Profit</h2>
+ <p style="font-size:11.5pt; color:var(--muted-color); margin:0 0 4px;"><i class="fa-solid fa-burger" style="color:var(--accent-color);"></i> &nbsp;<strong style="color:var(--accent-color);">Burger example</strong> &mdash; the campus market from the previous slide, one shop and the whole market side by side.</p>
+ <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; min-height:0;">
+  <img src="figures/fig-sr-profit.png" alt="Two panels. The market: a rightward demand shift from D-zero to D-one lifts the burger price from 8 to 10 dollars. The representative burger shop: at a price of 10 the shop produces where MC equals 10 and earns a shaded profit rectangle between average total cost and price." style="max-width:100%; max-height:396px;">
+ </div>
+ <div style="background:rgba(106,142,107,0.12); border-radius:8px; border-left:4px solid var(--success-color); padding:9px 18px; margin-top:6px;">
+  <p style="font-size:13.5pt; margin:0;">The new dorm opens &rarr; <strong>demand shifts right</strong> (D&#8320;&rarr;D&#8321;) &rarr; the burger price rises <strong>\$8 &rarr; \$10</strong>. Each shop slides up its \(MC\) curve to \(q_1\), and since <strong>P &gt; ATC</strong> it pockets the shaded <strong>profit</strong> rectangle.</p>
+  <p style="font-size:13pt; margin:7px 0 0; color:var(--accent-color); font-weight:600;"><i class="fa-solid fa-magnet"></i> &nbsp;But with <strong>free entry, economic profit is a magnet</strong> &mdash; it lures new shops in. That&rsquo;s the trigger for what happens next.</p>
+ </div>
+</section>
+
 <section id="sr-equilibrium">
   <h2><i class="fa-solid fa-scale-balanced" style="color: var(--accent-color);"></i> With \(N\) Fixed, Price Clears the Market</h2>
   <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
@@ -422,8 +479,7 @@
   </div>
 </section>
 
-<section>
-  <section id="walkthrough-10-2">
+<section id="walkthrough-10-2">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 10.2 &mdash; SR Equilibrium with \(N_{SR}=30\)</h2>
   <div style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; align-items: stretch; margin: 0 0 11px;">
     <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px;">
@@ -456,7 +512,8 @@
     <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> At \(N_{SR}=30\) the Ch 9 snapshot is an SR equilibrium &mdash; by construction, since demand was calibrated through it. What matters is the profit: the <strong>\$1.19 wedge</strong> between \$84 and the \$82.81 break-even price is the slack that will drive entry &mdash; next.</p>
   </div>
 </section>
-  <section id="ww1-question">
+
+<section id="ww1-question">
     <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Which Way? #1 &mdash; Price Above the Break-Even</h2>
     <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
       <p style="font-size: 15pt; line-height: 1.7;">Thirty plants sell at \(p=\$84\)/kWh, while \(\min LRATC=\$82.81\). Over the next few years, what happens?</p>
@@ -469,7 +526,8 @@
     </div>
     <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 60 sec to vote</span></p>
   </section>
-  <section data-poll-results="ch10-econ2316-ww-1" id="ww1-reveal" style="display: flex; flex-direction: column;">
+
+<section data-poll-results="ch10-econ2316-ww-1" id="ww1-reveal" style="display: flex; flex-direction: column;">
     <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; firms enter until \(p=\min LRATC\)</h2>
     <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div class="poll-results-chart" data-poll-id="ch10-econ2316-ww-1" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
@@ -481,7 +539,6 @@
       </div>
     </div>
   </section>
-</section>
 
 <section class="section-divider" data-state="is-section-divider" id="div-lrentry">
   <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">§10.5 &mdash; the central derivation</p>
@@ -489,31 +546,60 @@
   <p class="subtitle">\(\pi^{LR}=0 \iff p^{LR}=\min LRATC\), and \(N^*\) absorbs demand</p>
 </section>
 
-<section id="free-entry">
-  <h2><i class="fa-solid fa-door-open" style="color: var(--accent-color);"></i> Free Entry Drives Profit to Zero</h2>
-  <p style="font-size:12pt; color:var(--muted-color); margin:0 0 8px;"><i class="fa-solid fa-car-battery" style="color:var(--secondary-color);"></i> &nbsp;<strong style="color:var(--secondary-color);">Back to the gigafactory</strong> &mdash; same picture as the burger market, now with the Ch 9 numbers attached.</p>
-  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 20px; align-items: center;">
-    <div>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">Above \(\min LRATC\), profit is positive and firms <em>enter</em>; below, profit is negative and firms <em>exit</em>. Price settles where the marginal entrant earns exactly zero:</p>
-      <div class="key-result" style="background: #ecfdf5; border-left-color: var(--success-color); margin: 6px 0;">
-        <p style="margin: 0; text-align: center; font-size: 16pt;">\(\pi^{LR}=0 \iff p^{LR}=\min LRATC\)</p>
-      </div>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin-top: 8px;">
-        For the gigafactory, \(\min LRATC\) was derived in Ch 9: long-run \(K\!+\!L\) marginal cost \(\$27.21\) (constant under CRS) plus materials \(m=\$55.60\):
-      </p>
-      <div class="key-result" style="margin: 8px 0;">
-        <p style="margin: 0; text-align: center; font-size: 15pt;">\(\min LRATC = \$27.21 + \$55.60 = \mathbf{\$82.81}\)/kWh</p>
-      </div>
-      <div style="background:#f4f1ed; border-left:3px solid var(--accent-color); border-radius:var(--box-radius); padding:9px 14px; margin-top:8px;">
-        <p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>Why is \(LRATC\) flat?</strong> Under <strong>constant returns to scale</strong>, doubling every input doubles output, so long-run cost is proportional to output: \(c(q)=k\,q\). Then \(LRAC=c/q=k\) and \(LRMC=dc/dq=k\) &mdash; both equal the <em>same constant</em>. The LR cost curves are <strong>horizontal</strong> lines, so \(\min LRATC = LRATC = \$82.81\) at <em>every</em> \(q\).</p>
-      </div>
-    </div>
-    <div style="text-align: center;">
-      <img alt="Long-run competitive equilibrium: the firm produces where price equals the minimum of long-run average total cost, earning zero economic profit, with the price line tangent to the bottom of the LRATC curve" class="figure" src="figures/figure-10-4-lr-equilibrium-zero-profit.png" style="max-height: 400px; margin: 0 auto;">
-      <p style="font-size: 11pt; color: var(--muted-color); margin: 6px 0 0;">Fig 10.4 &mdash; LR equilibrium: \(p=\min LRATC\), \(\pi=0\).</p>
-    </div>
+<section id="entry-exit-chart">
+ <h2><i class="fa-solid fa-arrows-down-to-line" style="color: var(--accent-color);"></i> Entry Drives Profit to Zero</h2>
+ <p style="font-size:12pt; color:var(--muted-color); margin:0 0 8px;"><i class="fa-solid fa-burger" style="color:var(--accent-color);"></i> &nbsp;<strong style="color:var(--accent-color);">Still the burger market</strong> &mdash; the short-run profit at \$10 from the dorm shock is a magnet for entry. Here is the long-run dance:</p>
+ <div style="text-align: center; margin: 0 0 6px;">
+  <img alt="Two panels. Panel A, the market: entry shifts supply right from S-zero to S-one and price falls from 10 to 8 dollars. Panel B, a representative burger shop: the price line settles on the minimum of average total cost, marked with a star, where profit is zero." src="figures/fig-entry-exit.png" style="width: 100%; max-height: 318px; object-fit: contain;">
+ </div>
+ <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: center;">
+  <div>
+   <p style="font-size: 12.5pt; margin: 0 0 6px;">Owners see the profit &rarr; new shops open &rarr; supply shifts right &rarr; price falls &rarr; back to <strong>zero profit.</strong> Overshoot? Some exit, price rises. It settles.</p>
+   <p style="font-size: 12.5pt; margin: 0;"><strong>In the panels:</strong> entry shifts market supply right (S&#8320;&rarr;S&#8321;), price falls <strong>\$10&rarr;\$8</strong>; the shop's profit rectangle shrinks to nothing at <strong>P = min ATC</strong> (gold star).</p>
+  </div>
+  <div class="key-result" style="margin: 0;"><p>The market ends at the price where every surviving shop sits at the <strong>bottom of its ATC curve</strong> &mdash; its efficient scale.</p></div>
+ </div>
+ <div class="key-result fragment fade-up" style="margin-top: 8px; padding: 8px 16px; background: #f0f5f8; border-left-color: var(--secondary-color);">
+  <p style="margin: 0; font-size: 13pt;"><strong>The rule:</strong> \(\pi^{LR}=0 \iff p^{LR}=\min LRATC\). <strong>Gigafactory:</strong> long-run \(K\!+\!L\) cost \$27.21 plus materials \$55.60 gives \(\min LRATC = \mathbf{\$82.81}\)/kWh.</p>
+ </div>
+</section>
+
+<section id="overshoot-loss">
+ <h2><i class="fa-solid fa-fire-flame-curved" style="color: var(--danger-color);"></i> Overshoot: Even More Stores Open, Now a Loss</h2>
+ <div style="display:grid; grid-template-columns:0.5fr 1.28fr; gap:20px; align-items:center;">
+  <div style="text-align:center;">
+   <img src="figures/evenmore_burger.webp" alt="A fanned stack of burger promo flyers and grand-opening notices — Shake Shack, Five Guys, and several independents all advertising at once — a flood of new entrants chasing the profit" style="max-width:100%; max-height:355px; object-fit:contain; filter:drop-shadow(0 3px 10px rgba(0,0,0,0.18));">
+   <p style="font-size:11pt; color:var(--muted-color); margin:7px 0 0;">The profit got <strong>over-hyped</strong> &mdash; a flood of new shops.</p>
+  </div>
+  <div style="text-align:center;">
+   <img src="figures/fig-overshoot-loss.png" alt="Two panels: waves of entry shift market supply right S0 to S1 to S2 and price falls $10 to $8 to $6; the firm at P=$6 now shows a red loss rectangle because ATC exceeds price" style="max-width:100%; max-height:378px; object-fit:contain;">
+  </div>
+ </div>
+ <div style="background:rgba(168,92,92,0.10); border-radius:8px; border-left:4px solid var(--danger-color); padding:9px 18px; margin-top:6px;">
+  <p style="font-size:13.5pt; margin:0;">Entry <strong>overshoots</strong>: so many shops open that supply slides right past $8 all the way to <strong>$6</strong> &mdash; below ATC. Now <strong>P &lt; ATC</strong>, so the firm runs a <strong>loss</strong> (red box). Losses are the <em>exit</em> signal &rarr; some shops close &rarr; supply contracts &rarr; price climbs back to <strong>$8.</strong></p>
+ </div>
+ <div class="fragment fade-up" style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 10px 16px; margin-top: 10px;">
+    <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;"><strong>&hellip;and then exit restores zero profit.</strong> A chain closes a location, market supply shifts back left, price recovers to \(\min LRATC\). Entry and exit are the same mechanism running in opposite directions.</p>
   </div>
 </section>
+
+<section id="exit-zero-profit">
+ <h2><i class="fa-solid fa-door-closed" style="color: var(--danger-color);"></i> Exit Restores Zero Profit</h2>
+ <div style="display:grid; grid-template-columns:0.5fr 1.28fr; gap:20px; align-items:center;">
+  <div style="text-align:center;">
+   <img src="figures/burgerking.png" alt="A Burger King store-closing notice taped inside a restaurant door, announcing the location will close permanently — a firm exiting the market" style="max-width:100%; max-height:300px; object-fit:contain; border-radius:8px; box-shadow:0 3px 10px rgba(0,0,0,0.18);">
+   <p style="font-size:11pt; color:var(--muted-color); margin:7px 0 0;">A burger chain closes a location &mdash; a firm <strong>exits the market.</strong></p>
+  </div>
+  <div style="text-align:center;">
+   <img src="figures/fig-lr-settle.png" alt="Two panels: entry waves push price down to $6, then an exit wave pulls market supply back, settling at $8; the firm sits at min ATC earning zero economic profit" style="max-width:100%; max-height:378px; object-fit:contain;">
+  </div>
+ </div>
+ <div style="background:rgba(106,142,107,0.12); border-radius:8px; border-left:4px solid var(--success-color); padding:9px 18px; margin-top:6px;">
+  <p style="font-size:13.5pt; margin:0;">Losses force <strong>exit</strong>: supply contracts, price climbs back from \$6 to <strong>\$8</strong>. The dance ends where it must &mdash; <strong>P = min ATC</strong>, every surviving firm earning exactly <strong>zero economic profit.</strong></p>
+ </div>
+</section>
+
+
 
 <section id="lr-conditions">
   <h2><i class="fa-solid fa-equals" style="color: var(--secondary-color);"></i> Four Equalities, One Resting Point</h2>
@@ -630,25 +716,6 @@
       </div>
     </div>
   </section>
-</section>
-
-<section id="overshoot-loss">
- <h2><i class="fa-solid fa-fire-flame-curved" style="color: var(--danger-color);"></i> Overshoot: Even More Stores Open, Now a Loss</h2>
- <div style="display:grid; grid-template-columns:0.5fr 1.28fr; gap:20px; align-items:center;">
-  <div style="text-align:center;">
-   <img src="figures/evenmore_burger.webp" alt="A fanned stack of burger promo flyers and grand-opening notices — Shake Shack, Five Guys, and several independents all advertising at once — a flood of new entrants chasing the profit" style="max-width:100%; max-height:355px; object-fit:contain; filter:drop-shadow(0 3px 10px rgba(0,0,0,0.18));">
-   <p style="font-size:11pt; color:var(--muted-color); margin:7px 0 0;">The profit got <strong>over-hyped</strong> &mdash; a flood of new shops.</p>
-  </div>
-  <div style="text-align:center;">
-   <img src="figures/fig-overshoot-loss.png" alt="Two panels: waves of entry shift market supply right S0 to S1 to S2 and price falls $10 to $8 to $6; the firm at P=$6 now shows a red loss rectangle because ATC exceeds price" style="max-width:100%; max-height:378px; object-fit:contain;">
-  </div>
- </div>
- <div style="background:rgba(168,92,92,0.10); border-radius:8px; border-left:4px solid var(--danger-color); padding:9px 18px; margin-top:6px;">
-  <p style="font-size:13.5pt; margin:0;">Entry <strong>overshoots</strong>: so many shops open that supply slides right past $8 all the way to <strong>$6</strong> &mdash; below ATC. Now <strong>P &lt; ATC</strong>, so the firm runs a <strong>loss</strong> (red box). Losses are the <em>exit</em> signal &rarr; some shops close &rarr; supply contracts &rarr; price climbs back to <strong>$8.</strong></p>
- </div>
- <div class="fragment fade-up" style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 10px 16px; margin-top: 10px;">
-    <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;"><strong>&hellip;and then exit restores zero profit.</strong> A chain closes a location, market supply shifts back left, price recovers to \(\min LRATC\). Entry and exit are the same mechanism running in opposite directions.</p>
-  </div>
 </section>
 
 <section id="walkthrough-10-4">
@@ -1030,6 +1097,7 @@
   <p class="subtitle">Entry and exit carry a competitive market from one long-run equilibrium to the next</p>
 </section>
 
+<section>
 <section id="lr-adjust-demand">
   <h2><i class="fa-solid fa-arrow-trend-up" style="color: var(--success-color);"></i> Adjustment to an Increase in Demand</h2>
   <div style="display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 22px; align-items: center;">
@@ -1048,6 +1116,23 @@
   <div class="fragment fade-up" style="background: #fef9f3; border-left: 4px solid var(--accent-color); border-radius: 8px; padding: 10px 16px; margin-top: 10px;">
     <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;"><strong>A cost increase runs the same trace backwards:</strong> \(ATC\) and \(MC\) shift up &rArr; marginal firms exit &rArr; price settles at the new, higher \(\min LRATC\).</p>
   </div>
+</section>
+<section id="lr-adjust-cost">
+  <h2><i class="fa-solid fa-arrow-trend-down" style="color: var(--danger-color);"></i> Adjustment to an Increase in Production Costs</h2>
+  <div style="display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 22px; align-items: center;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 8px;">Now costs rise &mdash; <strong>cheese, flour, wages, or rent</strong> climb &mdash; shifting supply up and in, \(S_1\!\to\!S_2\).</p>
+      <div style="background: rgba(168,92,92,0.10); border-left: 4px solid var(--danger-color); border-radius: 8px; padding: 10px 16px;">
+        <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Short run:</strong> some pizzerias earn <strong>negative economic profit</strong>: \(P &lt; LRATC\).</p>
+        <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.5;"><strong>Long run:</strong> those firms <strong>exit</strong>, supply shifts inward, and price <strong>rises</strong> until \(P\) equals the new, higher <strong>min \(LRATC\)</strong> at \(P_2\).</p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 8px 0 0;">Net: <strong>fewer firms, lower quantity, higher price</strong>.</p>
+    </div>
+    <div style="text-align: center;">
+      <img alt="Three-part pizza-market figure: panel a shows industry supply shifting inward S1 to S2 as costs rise, raising price from P1 to P2 and lowering quantity from Q1 to Q2; panel b shows a representative pizzeria whose LMC and LATC curves shift up; panels c and d show price rising over time to P2 while quantity falls to Q2" class="figure" src="figures/fig-lr-adjust-cost.png" style="max-height: 540px; margin: 0 auto;">
+    </div>
+  </div>
+</section>
 </section>
 
 <section id="walkthrough-10-7">
@@ -1484,6 +1569,123 @@
     if(e.code==='KeyH' || e.keyCode===72){ Reveal.prev();  e.preventDefault(); }
     else if(e.code==='KeyL' || e.keyCode===76){ Reveal.next(); e.preventDefault(); }
   }, true);
+})();
+</script>
+
+<script>
+/* Slide "power-plant-supply": one generator's merit order (Firm 1 of the three-firm slide).
+   Plant A coal $18 for 0-200 MW, plant B gas $37 to 222 MW, plant C gas $39 to 250 MW (maximum capacity).
+   A plant runs when the price covers its MC, so the lit staircase IS the firm's supply curve. */
+(function(){
+  var svg=document.getElementById('pp-chart'); if(!svg) return;
+  var sl=document.getElementById('pp-p'), rd=document.getElementById('pp-pRead'), cap=document.getElementById('pp-caption');
+  var P=[{mc:18,q:200,n:'A (coal)'},{mc:37,q:22,n:'B (gas)'},{mc:39,q:28,n:'C (gas)'}], CAP=250;
+  var L=66,R=620,T=22,B=318,QX=300,PX=45;
+  function x(q){return L+q*(R-L)/QX;} function y(p){return B-p*(B-T)/PX;}
+  function draw(){
+    var p=+sl.value; rd.textContent='$'+p;
+    var s='',q0=0,qrun=0,i,c;
+    for(c=0;c<=45;c+=5){ s+='<line x1="'+L+'" y1="'+y(c)+'" x2="'+R+'" y2="'+y(c)+'" stroke="#ecebe8"/><text x="'+(L-8)+'" y="'+(y(c)+4)+'" text-anchor="end" font-size="13" fill="#8C8580">'+c+'</text>'; }
+    for(c=0;c<=300;c+=50){ s+='<text x="'+x(c)+'" y="'+(B+19)+'" text-anchor="middle" font-size="13" fill="#8C8580">'+c+'</text>'; }
+    s+='<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+B+'" stroke="#7A736D" stroke-width="1.5"/><line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="#7A736D" stroke-width="1.5"/>';
+    s+='<text x="18" y="'+((T+B)/2)+'" text-anchor="middle" font-size="14" fill="#3A3632" transform="rotate(-90 18 '+((T+B)/2)+')">Marginal cost ($/MWh)</text>';
+    s+='<text x="'+((L+R)/2)+'" y="'+(B+44)+'" text-anchor="middle" font-size="14" fill="#3A3632">Quantity produced (MW)</text>';
+    /* maximum capacity */
+    s+='<line x1="'+x(CAP)+'" y1="'+T+'" x2="'+x(CAP)+'" y2="'+B+'" stroke="#7A736D" stroke-width="1.3" stroke-dasharray="5 4"/>';
+    s+='<text x="'+(x(CAP)+6)+'" y="'+(B-12)+'" font-size="13" fill="#5E5852">Max capacity</text><text x="'+(x(CAP)+6)+'" y="'+(B-27)+'" font-size="13" font-weight="700" fill="#5E5852">250 MW</text>';
+    /* staircase */
+    var prev=null;
+    for(i=0;i<P.length;i++){
+      var on=P[i].mc<=p, col=on?'#C47B5A':'#c9c3bd', w=on?4:2.4;
+      if(prev!==null) s+='<line x1="'+x(q0)+'" y1="'+y(prev)+'" x2="'+x(q0)+'" y2="'+y(P[i].mc)+'" stroke="'+col+'" stroke-width="'+(w-1)+'"/>';
+      s+='<line x1="'+x(q0)+'" y1="'+y(P[i].mc)+'" x2="'+x(q0+P[i].q)+'" y2="'+y(P[i].mc)+'" stroke="'+col+'" stroke-width="'+w+'"/>';
+      s+='<text x="'+(i==2?x(q0+P[i].q)-8:x(q0)+(i?4:10))+'" y="'+(y(P[i].mc)-(i==2?8:-18))+'" text-anchor="'+(i==2?'end':'start')+'" font-size="12.5" fill="'+(on?'#8A4A2E':'#9A938C')+'">'+P[i].n+' $'+P[i].mc+'</text>';
+      if(on) qrun=q0+P[i].q; prev=P[i].mc; q0+=P[i].q;
+    }
+    var allOn=p>=39, vc=allOn?'#C47B5A':'#c9c3bd';
+    s+='<line x1="'+x(CAP)+'" y1="'+y(39)+'" x2="'+x(CAP)+'" y2="'+y(45)+'" stroke="'+vc+'" stroke-width="'+(allOn?4:2.4)+'"/>';
+    /* price line and output */
+    s+='<line x1="'+L+'" y1="'+y(p)+'" x2="'+R+'" y2="'+y(p)+'" stroke="#1F3B57" stroke-width="2.2"/>';
+    s+='<text x="'+(R-4)+'" y="'+(y(p)-7)+'" text-anchor="end" font-size="14" font-weight="700" fill="#1F3B57">p = $'+p+'</text>';
+    if(qrun>0){ s+='<line x1="'+x(qrun)+'" y1="'+y(p)+'" x2="'+x(qrun)+'" y2="'+B+'" stroke="#1F3B57" stroke-width="1.4" stroke-dasharray="5 4"/><circle cx="'+x(qrun)+'" cy="'+y(p)+'" r="6" fill="#1F3B57"/>'
+      +'<text x="'+(x(qrun)-8)+'" y="'+(y(p)+22)+'" text-anchor="end" font-size="13.5" font-weight="700" fill="#1F3B57">q = '+qrun+' MW</text>'; }
+    svg.innerHTML=s;
+    cap.textContent = p<18 ? 'Below $18 no plant covers its marginal cost: output is 0.'
+      : p<37 ? 'Coal plant A runs (MC $18 ≤ p): 200 MW. The gas plants stay off.'
+      : p<39 ? 'Plant B (gas, $37) switches on: 222 MW.'
+      : 'All three plants run: 250 MW, the maximum capacity. A higher price adds nothing, so supply turns vertical.';
+  }
+  sl.addEventListener('input',draw);
+  ['change','pointerup'].forEach(function(ev){ sl.addEventListener(ev,function(){ sl.blur(); }); });
+  draw();
+  if(typeof Reveal!=='undefined' && Reveal.on){ Reveal.on('slidechanged',function(e){ if(e.currentSlide && e.currentSlide.id==='power-plant-supply') draw(); }); }
+})();
+</script>
+
+<script>
+/* Slide "industry-supply-hetero": three generators with different merit orders, read off the original
+   three-firm figure (frim1.png). Firm 1 = the generator on the power-plant slide (250 MW).
+   Firm 2: coal $15 to 650, gas $24 to 920, $29 to 1,340, $32 to 1,921 MW.
+   Firm 3: gas $23 to 1,500, $24 to 4,200, $26 to 4,700, $36 to 4,867 MW.
+   Market supply = horizontal sum: every plant of every firm, cheapest first; segments coloured by firm. */
+(function(){
+  var m=document.getElementById('hs-m'); if(!m) return;
+  var sl=document.getElementById('hs-p'), rd=document.getElementById('hs-pRead'), cap=document.getElementById('hs-caption');
+  var F=[{n:'Firm 1',c:'#C47B5A',qx:300,tk:[0,100,200,300],pl:[[18,200],[37,22],[39,28]]},
+         {n:'Firm 2',c:'#2E6DB4',qx:2500,tk:[0,1000,2000],pl:[[15,650],[24,270],[29,420],[32,581]]},
+         {n:'Firm 3',c:'#4E7A50',qx:6000,tk:[0,2000,4000,6000],pl:[[23,1500],[24,2700],[26,500],[36,167]]}];
+  var PX=45, T=30, B=268;
+  function y(p){return B-p*(B-T)/PX;}
+  function fmt(n){return n.toLocaleString('en-US');}
+  function axes(L,R,qx,tk,title,ylab){
+    var s='',c; for(c=0;c<=45;c+=15){ s+='<line x1="'+L+'" y1="'+y(c)+'" x2="'+R+'" y2="'+y(c)+'" stroke="#ecebe8"/>'+(ylab?'<text x="'+(L-6)+'" y="'+(y(c)+4)+'" text-anchor="end" font-size="12" fill="#8C8580">'+c+'</text>':''); }
+    tk.forEach(function(q){ s+='<text x="'+(L+q*(R-L)/qx)+'" y="'+(B+16)+'" text-anchor="middle" font-size="11.5" fill="#8C8580">'+fmt(q)+'</text>'; });
+    s+='<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+B+'" stroke="#7A736D" stroke-width="1.4"/><line x1="'+L+'" y1="'+B+'" x2="'+R+'" y2="'+B+'" stroke="#7A736D" stroke-width="1.4"/>';
+    s+='<text x="'+((L+R)/2)+'" y="16" text-anchor="middle" font-size="14" font-weight="700" fill="#3A3632">'+title+'</text>';
+    return s;
+  }
+  function stairs(L,R,qx,segs,p){ /* segs: [{mc,q,c}] in order */
+    var s='',q0=0,prev=null,qrun=0;
+    function x(q){return L+q*(R-L)/qx;}
+    segs.forEach(function(g){
+      var on=g.mc<=p, col=on?g.c:'#cfc9c3', w=on?3.6:2.2;
+      if(prev!==null) s+='<line x1="'+x(q0)+'" y1="'+y(prev)+'" x2="'+x(q0)+'" y2="'+y(g.mc)+'" stroke="'+col+'" stroke-width="'+(w-1.2)+'"/>';
+      s+='<line x1="'+x(q0)+'" y1="'+y(g.mc)+'" x2="'+x(q0+g.q)+'" y2="'+y(g.mc)+'" stroke="'+col+'" stroke-width="'+w+'"/>';
+      if(on) qrun=q0+g.q; prev=g.mc; q0+=g.q;
+    });
+    var last=segs[segs.length-1], allOn=last.mc<=p;
+    s+='<line x1="'+x(q0)+'" y1="'+y(prev)+'" x2="'+x(q0)+'" y2="'+y(45)+'" stroke="'+(allOn?last.c:'#cfc9c3')+'" stroke-width="'+(allOn?3.6:2.2)+'"/>';
+    s+='<line x1="'+L+'" y1="'+y(p)+'" x2="'+R+'" y2="'+y(p)+'" stroke="#1F3B57" stroke-width="1.8"/>';
+    if(qrun>0) s+='<line x1="'+x(qrun)+'" y1="'+y(p)+'" x2="'+x(qrun)+'" y2="'+B+'" stroke="#1F3B57" stroke-width="1.2" stroke-dasharray="4 3"/><circle cx="'+x(qrun)+'" cy="'+y(p)+'" r="4.5" fill="#1F3B57"/>';
+    return {s:s,q:qrun};
+  }
+  function draw(){
+    var p=+sl.value; rd.textContent='$'+p;
+    var qs=[];
+    F.forEach(function(f,k){
+      var L=k?16:34, R=238, segs=f.pl.map(function(a){return {mc:a[0],q:a[1],c:f.c};});
+      var st=stairs(L,R,f.qx,segs,p); qs.push(st.q);
+      document.getElementById('hs-f'+(k+1)).innerHTML=axes(L,R,f.qx,f.tk,f.n,!k)+st.s
+        +'<text x="'+((L+R)/2)+'" y="'+(B+36)+'" text-anchor="middle" font-size="13" font-weight="700" fill="'+f.c+'">q'+(k+1)+' = '+fmt(st.q)+' MW</text>';
+    });
+    /* market: all plants sorted by MC */
+    var all=[]; F.forEach(function(f){ f.pl.forEach(function(a){ all.push({mc:a[0],q:a[1],c:f.c}); }); });
+    all.sort(function(a,b){return a.mc-b.mc;});
+    var L=34,R=458,QX=8000, st=stairs(L,R,QX,all,p), Q=st.q;
+    var s=axes(L,R,QX,[0,2000,4000,6000,8000],'Market supply = q1 + q2 + q3',true)+st.s;
+    /* contribution bar under the axis */
+    var x0=L, bw=function(q){return q*(R-L)/QX;};
+    qs.forEach(function(q,k){ if(q>0){ s+='<rect x="'+x0+'" y="'+(B+24)+'" width="'+bw(q)+'" height="12" fill="'+F[k].c+'"/>'; x0+=bw(q);} });
+    if(Q>0) s+='<text x="'+(L+Q*(R-L)/QX-7)+'" y="'+(B-8)+'" text-anchor="end" font-size="13.5" font-weight="700" fill="#1F3B57">Q = '+fmt(Q)+' MW</text>';
+    s+='<text x="'+(R-2)+'" y="'+(y(p)-6)+'" text-anchor="end" font-size="13.5" font-weight="700" fill="#1F3B57">P = $'+p+'</text>';
+    m.innerHTML=s;
+    cap.innerHTML='At $'+p+': '+qs.map(function(q,k){return '<span style="color:'+F[k].c+';font-weight:700">'+fmt(q)+'</span>';}).join(' + ')+' = <strong>'+fmt(Q)+' MW</strong>'
+      +(p>=39?' · all plants on: vertical':'');
+  }
+  sl.addEventListener('input',draw);
+  ['change','pointerup'].forEach(function(ev){ sl.addEventListener(ev,function(){ sl.blur(); }); });
+  draw();
+  if(typeof Reveal!=='undefined' && Reveal.on){ Reveal.on('slidechanged',function(e){ if(e.currentSlide && e.currentSlide.id==='industry-supply-hetero') draw(); }); }
 })();
 </script>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=cafa306d48501ee8402e4bf72fcf624f">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=fb64bb4a5c733cb7a316883e518c1b18">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -1318,7 +1318,8 @@
   <h2><i id="da-secret" class="fa-solid fa-people-arrows" style="color: var(--accent-color); cursor: pointer;"></i> Classroom Experiment &mdash; Finding the Clearing Price</h2>
   <p style="font-size: 11.5pt; color: var(--muted-color); margin: 0 0 10px;">Walras's auctioneer gathers everyone's willingness to trade and computes the price that clears the market. <strong>For the next ten minutes, that auctioneer is us.</strong></p>
   <div style="display: grid; grid-template-columns: 1.06fr 0.94fr; gap: 18px; align-items: start;">
-    <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:11px 17px;">
+    <div>
+    <div id="da-rules" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:11px 17px;">
       <p style="margin:0; font-size:10.5pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">What is about to happen</p>
       <p style="margin:6px 0 0; font-size:11.5pt; line-height:1.5;"><strong>1.</strong> Your device deals you a card &mdash; a <strong>buyer</strong> with a private maximum, or a <strong>seller</strong> with a private minimum. <strong>Tell nobody your number.</strong></p>
       <p style="margin:5px 0 0; font-size:11.5pt; line-height:1.5;"><strong>2.</strong> Submit <em>one</em> number: buyers, the most you would pay. Sellers, the least you would accept.</p>
@@ -1330,25 +1331,40 @@
         <p style="margin:4px 0 0; font-size:10.5pt; line-height:1.4; color:var(--text-color);">So shading wins you a better price <em>only if you still trade</em>. That is the whole game.</p>
       </div>
     </div>
+    <div id="da-market1" style="display:none;">
+      <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+        <span id="da-roundlabel1" style="font-size:15pt; font-weight:700; color:var(--primary-color);">Round &mdash;</span>
+        <span id="da-timer1" style="font-size:12pt; font-weight:700; color:var(--accent-color); font-family:'SF Mono',Menlo,monospace;"></span>
+      </div>
+      <div id="da-curtain1" style="display:none; height:270px; border-radius:9px; background:#f8f6f3; border:1px dashed var(--line-color); flex-direction:column; align-items:center; justify-content:center;">
+        <p id="da-count1" style="margin:0; font-size:44pt; font-weight:700; color:var(--secondary-color); line-height:1.1;">0</p>
+        <p id="da-countlbl1" style="margin:2px 0 0; font-size:14pt; color:var(--muted-color);">numbers in</p>
+        <p style="margin:10px 0 0; font-size:11pt; color:var(--muted-color); font-style:italic;">The curves do not exist until the round closes.</p>
+      </div>
+      <svg id="da-hist1" viewBox="0 0 520 196" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:300px; display:block;"></svg>
+      <p id="da-stats1" style="font-size:12pt; color:var(--text-color); margin:5px 0 0; text-align:center; min-height:15px;"></p>
+    </div>
+    </div>
     <div>
       <div id="da-lobbypanel" style="border-radius:10px; padding:12px 17px; background:#f4f1ed; border:2px dashed var(--line-color); min-height:92px; display:flex; flex-direction:column; justify-content:center;">
         <p style="margin:0; font-size:11pt; color:var(--muted-color);">Connecting&hellip;</p>
       </div>
       <div style="display:flex; align-items:center; gap:9px; margin-top:10px;">
-        <button id="da-start" style="display:none; background:var(--success-color); color:#fff; border:0; border-radius:9px; padding:9px 22px; font-size:13pt; font-weight:700; cursor:pointer;"><i class="fa-solid fa-play"></i> Start lab</button>
+        <button id="da-start" style="display:none; background:var(--success-color); color:#fff; border:0; border-radius:9px; padding:9px 22px; font-size:13pt; font-weight:700; cursor:pointer;"><i class="fa-solid fa-play"></i> Start round 1</button>
+        <button id="da-join" style="display:none; background:var(--success-color); color:#fff; border:0; border-radius:9px; padding:10px 24px; font-size:14pt; font-weight:700; cursor:pointer;"><i class="fa-solid fa-right-to-bracket"></i> Join the market</button>
         <button id="da-reset" style="display:none; background:#f4f1ed; border:1px solid var(--line-color); border-radius:14px; padding:4px 13px; font-size:10pt; color:var(--muted-color); cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> reset lab</button>
         <span id="da-lobbystatus" style="font-size:11pt; color:var(--muted-color); font-style:italic;"></span>
       </div>
       <div id="da-qr" style="display:none; align-items:center; gap:14px; margin-top:10px; background:#fff; border:1px solid var(--line-color); border-radius:10px; padding:8px 12px;">
         <div id="da-qrcode" style="width:132px; height:132px; flex:none;"></div>
-        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>Scan to join.</strong><br>Or open ryanpiao.github.io/<br>econ2316-slides &rarr; Ch 10</p>
+        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>Scan to join.</strong><br>On a laptop: ryanpiao.github.io/<br>econ2316-slides &rarr; Ch 10 &rarr; this slide &rarr; <strong>Join the market</strong></p>
       </div>
       <div class="misconception" style="padding:9px 15px; margin-top:11px;">
         <p style="margin:0; font-size:11pt; line-height:1.42;"><strong>Nobody here can see the market.</strong> You will know one number. The two curves do not exist anywhere until every one of you has submitted.</p>
       </div>
     </div>
   </div>
-  <p style="font-size:11pt; color:var(--accent-color); margin-top:11px; text-align:center;"><i class="fa-solid fa-angle-down"></i> &nbsp;Cards appear on the next slide, the moment the lab starts.</p>
+  <p style="font-size:11pt; color:var(--accent-color); margin-top:11px; text-align:center;"><i class="fa-solid fa-mobile-screen-button"></i> &nbsp;Scan the code or tap <strong>Join the market</strong>: your card, your number and your result are all on that screen.</p>
 </section>
 
 <section id="double-auction-lab">
@@ -1516,12 +1532,14 @@
   });
   (function () {
     var b = document.createElement('div');
-    b.id = 'da-rotate'; b.textContent = 'Turn your phone sideways for the lab.';
-    b.style.cssText = 'display:none;position:fixed;top:0;left:0;right:0;z-index:99999;background:#C47B5A;color:#fff;font:600 16px system-ui,-apple-system,sans-serif;padding:11px 14px;text-align:center';
+    b.id = 'da-rotate'; b.textContent = 'Tap here to open the lab screen';
+    b.style.cssText = 'display:none;position:fixed;top:0;left:0;right:0;z-index:99999;background:#4E7A50;color:#fff;font:700 17px system-ui,-apple-system,sans-serif;padding:13px 14px;text-align:center;cursor:pointer';
+    b.addEventListener('click', function () { if (window.DA) DA.open(); paint(); });
     document.body.appendChild(b);
     function paint() {
       var c = Reveal.getCurrentSlide(), lab = !!c && /^(da-lobby|double-auction)/.test(c.id || '');
-      b.style.display = (lab && innerWidth < 600 && innerWidth < innerHeight) ? 'block' : 'none';
+      var instr = /[?&](presenter|receiver|instructor)/.test(location.search);
+      b.style.display = (lab && !instr && innerWidth < 900 && !(window.DA && DA.isOpen())) ? 'block' : 'none';
     }
     ['hashchange', 'resize', 'orientationchange'].forEach(function (ev) { window.addEventListener(ev, paint); });
     Reveal.on('slidechanged', paint); Reveal.on('ready', function () { setTimeout(paint, 400); });
@@ -1586,6 +1604,7 @@
  .poll-vote-count{text-align:center;font-size:13px;color:#888;margin-top:10px}
  .reset-btn{display:none}body.instructor-mode .reset-btn{display:inline-block}
 </style>
+<script>window.__realFetch=window.fetch.bind(window);   /* the lab needs live reads: poll.js holds a student device's poll_votes GETs for 20 s */</script>
 <script src="../poll.js" data-checkin></script>
 <script>
  (function(){
@@ -1839,12 +1858,15 @@
   var VID=localStorage.getItem("ch10-da-vid");
   if(!VID){VID="v_"+Math.random().toString(36).slice(2,10);localStorage.setItem("ch10-da-vid",VID);}
   var data={},seat=null,card=null,joins=0,clockAt=null,skips={},live=1,view=null,ph={state:"pre"};
+  /* rounds are opened and closed by the instructor (ch10-da-open / ch10-da-close, choice = round), no timer */
+  var opens={},closes={},pend={},appOpen=false;
   var $=function(id){return document.getElementById(id);};
 
-  function sf(m,p,b){var o={method:m,headers:{apikey:SK,Authorization:"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store"}};if(b)o.body=JSON.stringify(b);if(m==="GET"&&p.indexOf("poll_id=eq.ch10-da-")!==-1)p+=daWin();return fetch(SU+"/rest/v1/"+p,o);}
+  function sf(m,p,b){var o={method:m,headers:{apikey:SK,Authorization:"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store"},cache:"no-store"};if(b)o.body=JSON.stringify(b);if(m==="GET"&&p.indexOf("ch10-da-")!==-1)p+=daWin();return (window.__realFetch||fetch)(SU+"/rest/v1/"+p,o);}
   /* reads see only this half-day (am/pm, or ?sec=am|pm), the same window Reset clears, so old test rows and the other section never leak in */
   function daWin(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());}
   function pid(r){return "ch10-da-r"+r;}
+  function roundRows(r){var d=data[r]||[],c=closes[r];return c?d.filter(function(x){return !x.t||x.t<=c+1500;}):d;}
   function cardFor(s){var pr=Math.floor(s/2)%13;return s%2===0?{role:"BUYER",v:14-pr}:{role:"SELLER",v:2+pr};}
 
   // sort bids down, asks up, walk until they cross: that is the market
@@ -1859,7 +1881,7 @@
   // did I trade this round, and what did the card earn me?
   function myResult(r){
     if(!card||INSTR)return null;
-    var d=data[r]||[];
+    var d=roundRows(r);
     var mine=null;for(var i=0;i<d.length;i++)if(d[i].vid===VID){mine=d[i];break;}
     if(!mine)return {submitted:false};
     var c=clearing(d);
@@ -1917,7 +1939,7 @@
     el.style.background=clockAt?"rgba(106,142,107,.12)":"#f4f1ed";
     el.style.borderColor=clockAt?"var(--success-color)":"var(--line-color)";
     var st=$("da-lobbystatus");
-    if(st)st.textContent=clockAt?"Running — press down for the submit slide.":(INSTR?"":"Waiting for your instructor to start.");}
+    if(st)st.textContent=INSTR?(ph.state==="trade"?(data[ph.r]||[]).length+" of "+joins+" in":""):(appOpen?"":"Your card and number box are on the Join screen.");}
 
   // ---------- card
   function renderCard(){
@@ -1926,8 +1948,8 @@
       el.innerHTML='<p style="margin:0;font-size:10pt;color:var(--secondary-color);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Presenter view</p>'
         +'<p style="margin:4px 0 0;font-size:12pt;line-height:1.4;"><strong>'+joins+'</strong> in the market. Cards are private to their phones.</p>';
       if(pr)pr.innerHTML="Students submit from their own devices.";return;}
-    if(!clockAt){el.style.borderStyle="dashed";el.style.background="#f4f1ed";el.style.borderColor="var(--line-color)";
-      el.innerHTML='<p style="margin:0;font-size:11.5pt;color:var(--muted-color);line-height:1.45;">Your card appears here <strong>the moment the lab starts</strong>.</p>';return;}
+    if(card===null&&!clockAt){el.style.borderStyle="dashed";el.style.background="#f4f1ed";el.style.borderColor="var(--line-color)";
+      el.innerHTML='<p style="margin:0;font-size:11.5pt;color:var(--muted-color);line-height:1.45;">Your card appears here <strong>once you join</strong> (Join the market, on the slide before).</p>';return;}
     if(card===null){el.innerHTML='<p style="margin:0;font-size:11pt;color:var(--muted-color);">Joining the market&hellip;</p>';return;}
     var buy=card.role==="BUYER";
     el.style.borderStyle="solid";
@@ -1942,84 +1964,87 @@
       : "<strong>Ask</strong> &mdash; the least you will accept. Asking over $"+card.v+" is allowed.";}
 
   // ---------- seats
+  /* a seat is a device's FIRST join row; duplicates (two tabs, a retry) never shift anyone else's card */
+  function seats(rows){var seen={},out=[];(rows||[]).forEach(function(x){if(!seen[x.voter_id]){seen[x.voter_id]=1;out.push(x.voter_id);}});return out;}
+  var joining=false;
   function join(){
     if(INSTR||isLocal){renderLobby();renderCard();return;}
+    if(joining)return;joining=true;
+    function sit(rows){var v=seats(rows),k=v.indexOf(VID);if(k<0)return false;seat=k;card=cardFor(seat);joins=v.length;renderLobby();renderCard();renderApp();return true;}
     sf("GET","poll_votes?poll_id=eq.ch10-da-join&select=voter_id,created_at&order=created_at.asc")
       .then(function(r){return r.json();}).then(function(rows){
-        var i=rows.findIndex(function(x){return x.voter_id===VID;});
-        if(i>=0){seat=i;card=cardFor(seat);joins=rows.length;renderLobby();renderCard();return;}
-        sf("POST","poll_votes",{poll_id:"ch10-da-join",choice:"seat",voter_id:VID}).then(function(){
-          sf("GET","poll_votes?poll_id=eq.ch10-da-join&select=voter_id,created_at&order=created_at.asc")
-            .then(function(r){return r.json();}).then(function(rs){
-              seat=rs.findIndex(function(x){return x.voter_id===VID;});
-              if(seat<0)seat=rs.length-1;
-              card=cardFor(seat);joins=rs.length;renderLobby();renderCard();});});
-      }).catch(function(){});}
+        if(sit(rows)){joining=false;return;}
+        return sf("POST","poll_votes",{poll_id:"ch10-da-join",choice:"seat",voter_id:VID}).then(function(){
+          return sf("GET","poll_votes?poll_id=eq.ch10-da-join&select=voter_id,created_at&order=created_at.asc");})
+          .then(function(r){return r.json();}).then(function(rs){sit(rs);joining=false;});
+      }).catch(function(){joining=false;});}
 
   function refreshJoins(){
     if(isLocal)return;
-    sf("GET","poll_votes?poll_id=eq.ch10-da-join&select=voter_id").then(function(r){return r.json();})
-      .then(function(rows){joins=rows.length;renderLobby();renderCard();}).catch(function(){});}
+    sf("GET","poll_votes?poll_id=eq.ch10-da-join&select=voter_id,created_at&order=created_at.asc").then(function(r){return r.json();})
+      .then(function(rows){var v=seats(rows);joins=v.length;
+        /* a reset removed this device's seat: take a new one */
+        if(joined&&!INSTR&&!joining&&seat!==null&&v.indexOf(VID)<0){seat=null;card=null;join();}
+        else if(!INSTR&&v.indexOf(VID)>=0&&v.indexOf(VID)!==seat){seat=v.indexOf(VID);card=cardFor(seat);}
+        renderLobby();renderCard();renderApp();}).catch(function(){});}
 
   // ---------- clock
   function readClock(){
     if(isLocal)return;
-    sf("GET","poll_votes?poll_id=eq.ch10-da-clock&select=created_at&order=created_at.asc&limit=1")
+    sf("GET","poll_votes?poll_id=in.(ch10-da-open,ch10-da-close)&select=poll_id,choice,created_at&order=created_at.asc")
       .then(function(r){return r.json();}).then(function(rows){
-        clockAt=rows.length?Date.parse(rows[0].created_at):null;
-        return sf("GET","poll_votes?poll_id=eq.ch10-da-skip&select=choice,created_at&order=created_at.asc");})
-      .then(function(r){return r?r.json():[];}).then(function(rows){
-        skips={};(rows||[]).forEach(function(o){var k=parseInt(o.choice,10);if(!skips[k])skips[k]=Date.parse(o.created_at);});
+        var o={},c={};(rows||[]).forEach(function(x){var k=parseInt(x.choice,10),t=Date.parse(x.created_at),m=x.poll_id==="ch10-da-open"?o:c;if(k>=1&&k<=ROUNDS&&!m[k])m[k]=t;});
+        opens=o;closes=c;clockAt=opens[1]||null;
         paintStart();renderLobby();renderCard();tick();}).catch(function(){});}
 
-  function paintStart(){var b=$("da-start");if(b)b.style.display=(INSTR&&!clockAt)?"inline-block":"none";}
+  /* one button walks the lab: Start round 1 -> Close round 1 -> Start round 2 ... -> Close round 5 -> Results */
+  function goLabel(){
+    if(ph.state==="pre")return '<i class="fa-solid fa-play"></i> Start round 1';
+    if(ph.state==="trade")return '<i class="fa-solid fa-stop"></i> Close round '+ph.r;
+    if(ph.state==="reveal")return '<i class="fa-solid fa-play"></i> Start round '+(ph.r+1);
+    return '<i class="fa-solid fa-chart-line"></i> Results &darr;';}
+  function paintStart(){
+    var lbl=goLabel();
+    ["da-start","da-revealnow"].forEach(function(id){var b=$(id);if(!b)return;
+      b.style.display=INSTR?"inline-block":"none";if(b.dataset.lbl!==lbl){b.innerHTML=lbl;b.dataset.lbl=lbl;}});}
 
   function startLab(){
-    if(!INSTR||clockAt)return;
-    var b=$("da-start");b.disabled=true;b.textContent="Starting…";
-    sf("POST","poll_votes",{poll_id:"ch10-da-clock",choice:"start",voter_id:VID})
-      .then(function(){setTimeout(readClock,400);})
-      .catch(function(){b.disabled=false;b.innerHTML='<i class="fa-solid fa-play"></i> Start lab';});}
-
-  function revealNow(){
-    if(!INSTR||ph.state!=="trade"||skips[ph.r])return;
-    var b=$("da-revealnow");b.disabled=true;skips[ph.r]=Date.now();
-    if(!isLocal)sf("POST","poll_votes",{poll_id:"ch10-da-skip",choice:String(ph.r),voter_id:VID}).then(function(){setTimeout(readClock,400);});
-    setTimeout(function(){b.disabled=false;},1500);tick();}
-
-  function segments(){
-    var segs=[],t=clockAt;
-    for(var r=1;r<=ROUNDS;r++){
-      var sched=t+TRADE_SECS[r-1]*1000;
-      var end=(skips[r]&&skips[r]<sched)?skips[r]:sched;
-      segs.push({r:r,start:t,tradeEnd:end,revealEnd:end+REVEAL_SECS*1000});
-      t=end+REVEAL_SECS*1000;}
-    return segs;}
+    if(!INSTR)return;
+    var b=this&&this.tagName?this:$("da-start");
+    if(ph.state==="done"){var el=$("double-auction-results");if(el&&window.Reveal){var ix=Reveal.getIndices(el);Reveal.slide(ix.h,ix.v);}return;}
+    var open=ph.state!=="trade",r=ph.state==="pre"?1:(open?ph.r+1:ph.r);
+    if(r>ROUNDS)return;
+    (open?opens:closes)[r]=Date.now();if(r===1&&open)clockAt=opens[1];
+    if(b){b.disabled=true;setTimeout(function(){b.disabled=false;},1200);}
+    tick();paintStart();
+    if(!isLocal)sf("POST","poll_votes",{poll_id:open?"ch10-da-open":"ch10-da-close",choice:String(r),voter_id:VID})
+      .then(function(){setTimeout(readClock,300);fetchRound(r);}).catch(function(){});}
+  function revealNow(){startLab.call(this);}
 
   function phase(){
-    if(!clockAt)return {state:"pre"};
-    var now=Date.now(),segs=segments();
-    for(var i=0;i<segs.length;i++){var s=segs[i];
-      if(now<s.tradeEnd)return {state:"trade",r:s.r,left:Math.ceil((s.tradeEnd-now)/1000),span:TRADE_SECS[s.r-1]};
-      if(now<s.revealEnd)return {state:"reveal",r:s.r,left:Math.ceil((s.revealEnd-now)/1000),span:REVEAL_SECS};}
-    return {state:"done",r:ROUNDS,left:0,span:1};}
+    var r=0;for(var k=1;k<=ROUNDS;k++)if(opens[k])r=k;
+    if(!r)return {state:"pre"};
+    if(!closes[r])return {state:"trade",r:r,since:opens[r]};
+    return {state:r===ROUNDS?"done":"reveal",r:r};}
 
   function tick(){
     var lbl=$("da-roundlabel"),tm=$("da-timer"),pg=$("da-progress");if(!lbl)return;
     var prev=ph.state+"/"+ph.r;
     ph=phase();
     if(ph.r&&ph.r!==live){live=ph.r;if(view===null)paintBtns();}
-    if(prev!==ph.state+"/"+ph.r)syncInput();
-    var rn=$("da-revealnow");
-    if(rn)rn.style.display=(INSTR&&ph.state==="trade")?"inline-block":"none";
-    if(ph.state==="pre"){lbl.textContent="Waiting to start";tm.textContent="";pg.style.width="0%";}
-    else if(ph.state==="done"){lbl.textContent="All rounds complete";tm.textContent="";pg.style.width="100%";}
+    if(prev!==ph.state+"/"+ph.r){syncInput();paintStart();}
+    var n=(data[ph.r]||[]).length,txt="",tt="";
+    if(ph.state==="pre"){txt="Waiting for round 1";pg.style.width="0%";}
+    else if(ph.state==="done"){txt="All "+ROUNDS+" rounds complete";pg.style.width="100%";}
     else{
-      lbl.textContent="Round "+ph.r+" of "+ROUNDS+(ph.state==="reveal"?" — the market clears":" — bidding open");
-      tm.textContent=Math.floor(ph.left/60)+":"+("0"+(ph.left%60)).slice(-2)+(ph.state==="reveal"?" to next round":" left");
-      pg.style.width=(100*(1-(ph.left/ph.span))).toFixed(1)+"%";}
-    if(view===null)renderCross();
-    renderPayoff();}
+      txt="Round "+ph.r+" of "+ROUNDS+(ph.state==="reveal"?" — the market cleared":" — bidding open");
+      if(ph.state==="trade"){var el=Math.max(0,Math.floor((Date.now()-ph.since)/1000));tt=Math.floor(el/60)+":"+("0"+(el%60)).slice(-2);}
+      pg.style.width=(ph.state==="trade"?(joins?Math.min(100,100*n/joins):0):100).toFixed(1)+"%";}
+    lbl.textContent=txt;tm.textContent=tt;
+    if($("da-roundlabel1")){$("da-roundlabel1").textContent=txt;$("da-timer1").textContent=tt;}
+    if(INSTR&&$("da-rules")){$("da-rules").style.display=ph.state==="pre"?"block":"none";$("da-market1").style.display=ph.state==="pre"?"none":"block";}
+    if(view===null)renderCross();else renderCrossInto("1");
+    renderLobby();renderPayoff();renderApp();}
 
   // ---------- round view
   var btns=$("da-round-btns");
@@ -2045,18 +2070,29 @@
     if(localStorage.getItem(votedKey(ph.r))){i.disabled=true;s.disabled=true;s.textContent="Submitted ✓";s.style.opacity=".65";st.textContent="Round "+ph.r+" recorded.";}
     else{i.disabled=false;i.value="";s.disabled=false;s.textContent="Submit";s.style.opacity="1";st.textContent="";}}
 
+  /* one checker and one sender for both the slide box and the phone screen; a resubmission replaces the earlier number */
+  function checkNumber(v){
+    if(!card)return "Joining the market…";
+    var buy=card.role==="BUYER";
+    if(isNaN(v)||v!==Math.floor(v))return "Type a whole-dollar number.";
+    if(v<0||v>30)return "Use a number from $0 to $30.";
+    if(buy&&v>card.v)return "You can't bid above your card ($"+card.v+"): you would pay more than it is worth to you.";
+    if(!buy&&v<card.v)return "You can't ask below your cost ($"+card.v+"): you would sell at a loss.";
+    return null;}
+  function sendNumber(v){
+    if(INSTR||ph.state!=="trade")return "This round is closed.";
+    var e=checkNumber(v);if(e)return e;
+    var r=ph.r,buy=card.role==="BUYER",row={role:buy?"B":"S",v:v,vid:VID,t:Date.now()};
+    pend[r]=row;localStorage.setItem(votedKey(r),String(v));
+    data[r]=(data[r]||[]).filter(function(x){return x.vid!==VID;}).concat([row]);
+    syncInput();renderCross();renderConverge();renderPayoff();renderApp();
+    if(!isLocal)sf("POST","poll_votes",{poll_id:pid(r),choice:(buy?"B:":"S:")+v,voter_id:VID}).then(function(){fetchRound(r);}).catch(function(){});
+    return null;}
   function submit(){
     if(INSTR||ph.state!=="trade"||localStorage.getItem(votedKey(ph.r))||!card)return;
-    var i=$("da-input"),v=parseInt(i.value,10),st=$("da-status");
-    if(isNaN(v)||v<0){st.style.color="var(--danger-color)";st.textContent="Enter a whole-dollar number.";return;}
-    var buy=card.role==="BUYER";
-    if(buy?v>card.v:v<card.v){st.style.color="var(--danger-color)";
-      st.textContent=(buy?"You cannot bid above your $":"You cannot ask below your $")+card.v+".";return;}
-    st.style.color="var(--success-color)";
-    localStorage.setItem(votedKey(ph.r),String(v));
-    if(!data[ph.r])data[ph.r]=[];data[ph.r].push({role:buy?"B":"S",v:v,vid:VID,t:Date.now()});
-    syncInput();renderCross();renderConverge();renderPayoff();
-    if(!isLocal)sf("POST","poll_votes",{poll_id:pid(ph.r),choice:(buy?"B:":"S:")+v,voter_id:VID}).then(function(){fetchRound(ph.r);}).catch(function(){});}
+    var i=$("da-input"),st=$("da-status"),e=sendNumber(parseInt(i.value,10));
+    if(e){st.style.color="var(--danger-color)";st.textContent=e;return;}
+    st.style.color="var(--success-color)";}
 
   $("da-submit").addEventListener("click",submit);
   $("da-input").addEventListener("keydown",function(e){if(e.key==="Enter")submit();});
@@ -2073,7 +2109,7 @@
   /* join QR on the lobby, instructor windows only: it opens the student copy at this slide */
   var qrb=$("da-qr");
   if(INSTR&&qrb){
-    var drawQr=function(){var q=window.qrcode(0,"M");q.addData("https://ryanpiao.github.io/econ2316-slides/ch10-perfect-competition/#/da-lobby");q.make();
+    var drawQr=function(){var q=window.qrcode(0,"M");q.addData("https://ryanpiao.github.io/econ2316-slides/ch10-perfect-competition/?lab#/da-lobby");q.make();
       var box=$("da-qrcode");box.innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});var sv=box.querySelector("svg");if(sv){sv.style.width="100%";sv.style.height="100%";sv.style.display="block";}
       qrb.style.display="flex";};
     if(window.qrcode)drawQr();
@@ -2082,26 +2118,28 @@
   var rst=$("da-reset");
   if(INSTR&&rst){rst.style.display="inline-block";
     rst.addEventListener("click",function(){
-      if(!confirm("Clear all seats, the clock and every round?"))return;
-      ["ch10-da-join","ch10-da-clock","ch10-da-skip"].concat([1,2,3,4,5].map(pid)).forEach(function(q){if(!isLocal)sf("DELETE","poll_votes?poll_id=eq."+q+(function(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());})());});
+      if(!confirm("Clear all seats and every round? Do this before students join, never during the lab."))return;
+      ["ch10-da-join","ch10-da-clock","ch10-da-skip","ch10-da-open","ch10-da-close"].concat([1,2,3,4,5].map(pid)).forEach(function(q){if(!isLocal)sf("DELETE","poll_votes?poll_id=eq."+q+(function(){var f=new URLSearchParams(location.search).get("sec"),h=f?f.toLowerCase():(new Date().getHours()<12?"am":"pm"),s=new Date();s.setHours(h==="am"?0:12,0,0,0);var e=new Date(s.getTime()+12*36e5);return "&created_at=gte."+encodeURIComponent(s.toISOString())+"&created_at=lt."+encodeURIComponent(e.toISOString());})());});
       for(var r=1;r<=ROUNDS;r++)localStorage.removeItem(votedKey(r));
-      data={};clockAt=null;skips={};live=1;view=null;joins=0;ph={state:"pre"};
-      var sb=$("da-start");sb.disabled=false;sb.innerHTML='<i class="fa-solid fa-play"></i> Start lab';
+      data={};clockAt=null;skips={};opens={};closes={};pend={};live=1;view=null;joins=0;ph={state:"pre"};
+      paintStart();
       setTimeout(function(){readClock();refreshJoins();renderCross();renderConverge();paintBtns();syncInput();},600);});}
 
   // ---------- the two curves, built from the pooled numbers
-  function curtain(on,count){
-    var c=$("da-curtain"),h=$("da-hist"),st=$("da-stats");
+  function curtain(on,count,sfx){
+    var c=$("da-curtain"+sfx),h=$("da-hist"+sfx),st=$("da-stats"+sfx);
     c.style.display=on?"flex":"none";
     h.style.display=on?"none":"block";
-    if(on){$("da-count").textContent=count;
-      $("da-countlbl").textContent=count===1?"number in":"numbers in";
+    if(on){$("da-count"+sfx).textContent=count;
+      $("da-countlbl"+sfx).textContent=sfx?"of "+joins+" numbers in":(count===1?"number in":"numbers in");
       st.textContent="";}}
 
-  function renderCross(){
-    var r=shown(),d=data[r]||[];
-    if(view===null&&ph.state==="trade"){curtain(true,d.length);return;}
-    curtain(false);
+  function renderCross(){renderCrossInto("");renderCrossInto("1");}
+  function renderCrossInto(sfx){
+    if(!$("da-hist"+sfx))return;
+    var r=sfx?live:shown(),d=roundRows(r);
+    if((sfx||view===null)&&ph.state==="trade"){curtain(true,d.length,sfx);return;}
+    curtain(false,0,sfx);
     var W=520,H=196,L=38,B=28,R=12,T=12;
     var c=clearing(d),n=Math.max(c.B.length,c.A.length,1);
     var vals=d.map(function(x){return x.v;});
@@ -2129,8 +2167,8 @@
     h+='<text x="'+(L+6)+'" y="'+(T+9)+'" font-size="9.5" font-weight="700" fill="#6B8BA4">bids &rarr; demand</text>';
     h+='<text x="'+(W-R)+'" y="'+(T+9)+'" text-anchor="end" font-size="9.5" font-weight="700" fill="#C47B5A">asks &rarr; supply</text>';
     if(!d.length)h+='<text x="'+((W-L)/2+L)+'" y="'+((H-B+T)/2)+'" text-anchor="middle" font-size="11.5" fill="#b3aca6">'+(clockAt?"No submissions in round "+r:"Waiting for the lab to start…")+'</text>';
-    $("da-hist").innerHTML=h;
-    var st=$("da-stats");
+    $("da-hist"+sfx).innerHTML=h;
+    var st=$("da-stats"+sfx);
     if(!d.length){st.textContent="";return;}
     st.innerHTML=c.q
       ? "<strong>Round "+r+(view?" (reviewing)":"")+"</strong> &middot; "+c.B.length+" bids, "+c.A.length+" asks &middot; clears at <strong>$"+c.p.toFixed(2)+"</strong> with <strong>"+c.q+"</strong> trade"+(c.q===1?"":"s")
@@ -2141,7 +2179,7 @@
     var W=560,H=300,L=48,B=42,R=16,T=16;
     var e=truthful(joins||16),TARGET=e.p||8;
     var all=[TARGET];
-    for(var r=1;r<=ROUNDS;r++){var c=clearing(data[r]||[]);if(c.p!==null)all.push(c.p);}
+    for(var r=1;r<=ROUNDS;r++){var c=clearing(roundRows(r));if(c.p!==null)all.push(c.p);}
     var lo=Math.min.apply(null,all)-2,hi=Math.max.apply(null,all)+2;
     lo=Math.min(lo,4);hi=Math.max(hi,12);
     var yy=function(p){return H-B-((p-lo)/((hi-lo)||1))*(H-B-T);};
@@ -2154,7 +2192,7 @@
     h+='<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+(H-B)+'" stroke="#7A736D" stroke-width="1.2"/><line x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'" stroke="#7A736D" stroke-width="1.2"/>';
     var pts=[];
     for(var r2=1;r2<=ROUNDS;r2++){
-      var cc=clearing(data[r2]||[]);
+      var cc=clearing(roundRows(r2));
       h+='<text x="'+xx(r2)+'" y="'+(H-B+16)+'" text-anchor="middle" font-size="11" fill="#3A3632">'+r2+'</text>';
       if(cc.p===null)continue;
       var bh=Math.max(3,(cc.q/Math.max(1,e.q||1))*34);
@@ -2173,20 +2211,136 @@
     if(isLocal){renderCross();renderConverge();return;}
     sf("GET","poll_votes?poll_id=eq."+pid(r)+"&select=choice,voter_id,created_at&order=created_at.asc").then(function(x){return x.json();})
       .then(function(rows){
-        data[r]=rows.map(function(o){var m=/^([BS]):(-?\d+)$/.exec(o.choice||"");
-          return m?{role:m[1],v:parseInt(m[2],10),vid:o.voter_id,t:Date.parse(o.created_at)}:null;}).filter(Boolean);
-        renderCross();renderConverge();renderPayoff();})
+        var by={};rows.forEach(function(o){var m=/^([BS]):(-?\d+)$/.exec(o.choice||"");
+          if(m)by[o.voter_id]={role:m[1],v:parseInt(m[2],10),vid:o.voter_id,t:Date.parse(o.created_at)};});
+        var p=pend[r];if(p){if(by[VID]&&by[VID].v===p.v)delete pend[r];else by[VID]=p;}
+        data[r]=Object.keys(by).map(function(k){return by[k];});
+        renderCross();renderConverge();renderPayoff();renderApp();})
       .catch(function(){});}
   function fetchAll(){for(var r=1;r<=ROUNDS;r++)fetchRound(r);}
+
+
+  // ---------- the phone screen: card, number box and each round's result, full-screen and unscaled
+  var appEl=null,appKeys={},editing=false;
+  function money(x){return "$"+(Math.round(x*100)%100?x.toFixed(2):String(Math.round(x)));}
+  function openApp(){
+    if(INSTR)return;
+    if(!appEl){
+      var css=document.createElement("style");css.textContent=
+        "#da-app{position:fixed;inset:0;z-index:100000;background:#f7f4ef;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'Source Sans 3','Source Sans Pro',system-ui,-apple-system,sans-serif;color:#2b2724;text-align:left}"+
+        "#da-app .w{max-width:470px;margin:0 auto;padding:14px 16px 48px}"+
+        "#da-app .top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#8c8580;gap:8px}"+
+        "#da-app .pill{display:inline-block;padding:5px 11px;border-radius:999px;font-weight:700;font-size:14px;background:#e9e4dc;color:#3a3632}"+
+        "#da-app .pill.open{background:#4E7A50;color:#fff}"+
+        "#da-app .card{border-radius:16px;padding:16px 18px;margin-top:12px;border:2px solid}"+
+        "#da-app .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}"+
+        "#da-app .role{font-size:30px;font-weight:800;letter-spacing:.03em;margin-top:2px}"+
+        "#da-app .val{font-size:46px;font-weight:800;line-height:1.05}"+
+        "#da-app .sub{font-size:16px;line-height:1.45;margin-top:6px}"+
+        "#da-app .box{background:#fff;border-radius:16px;padding:15px 17px;margin-top:12px;box-shadow:0 1px 4px rgba(0,0,0,.08);font-size:16px;line-height:1.5}"+
+        "#da-app .box.ok{border-left:6px solid #4E7A50}#da-app .box.no{border-left:6px solid #A85C5C}#da-app .box.none{border-left:6px solid #a59d95}"+
+        "#da-app .res{font-size:22px;font-weight:800;line-height:1.3;margin-bottom:6px}"+
+        "#da-app input{width:100%;box-sizing:border-box;font-size:32px;font-weight:700;text-align:center;padding:10px;border:2px solid #6B8BA4;border-radius:12px;font-family:inherit;color:#1F3B57;background:#fff;margin-top:8px}"+
+        "#da-app button.big{width:100%;margin-top:10px;font-size:20px;font-weight:700;padding:15px;border:0;border-radius:12px;color:#fff;background:#4E7A50;font-family:inherit}"+
+        "#da-app button.big:disabled{opacity:.6}"+
+        "#da-app button.alt{width:100%;margin-top:10px;font-size:16px;font-weight:600;padding:11px;border:1px solid #d6d0c8;border-radius:12px;background:#fff;color:#3a3632;font-family:inherit}"+
+        "#da-app .err{color:#A85C5C;font-size:15px;margin-top:8px;min-height:1.2em;line-height:1.4}"+
+        "#da-app .hint{color:#8c8580;font-size:14px;margin-top:6px}"+
+        "#da-app table{width:100%;border-collapse:collapse;font-size:15px;margin-top:4px}"+
+        "#da-app td,#da-app th{padding:6px 4px;text-align:right;border-bottom:1px solid #eee}"+
+        "#da-app th{color:#8c8580;font-weight:600;font-size:13px}"+
+        "#da-app td:first-child,#da-app th:first-child{text-align:left}"+
+        "#da-app .tot td{font-weight:800;border-bottom:0}"+
+        "#da-app .back{background:none;border:0;color:#8c8580;font-size:13px;text-decoration:underline;padding:0;font-family:inherit}";
+      document.head.appendChild(css);
+      appEl=document.createElement("div");appEl.id="da-app";
+      appEl.innerHTML='<div class="w"><div class="top"><span>ECON 2316 &middot; classroom market</span><button class="back" id="da-a-back">back to slides</button></div>'
+        +'<div style="margin-top:10px"><span class="pill" id="da-a-pill">Joining&hellip;</span></div>'
+        +'<div id="da-a-card"></div><div id="da-a-act"></div><div id="da-a-hist"></div></div>';
+      document.body.appendChild(appEl);
+      $("da-a-back").addEventListener("click",function(){appEl.style.display="none";appOpen=false;if(window.Reveal)Reveal.configure({touch:true});renderLobby();});
+      appEl.addEventListener("click",function(e){var t=e.target.closest("button");if(!t)return;
+        if(t.id==="da-a-send")appSend();
+        if(t.id==="da-a-edit"){editing=true;appKeys.act="";renderApp();var i=$("da-a-in");if(i)i.focus();}});
+      appEl.addEventListener("keydown",function(e){if(e.target.id==="da-a-in"&&e.key==="Enter"){e.preventDefault();appSend();}});}
+    appEl.style.display="block";appOpen=true;appKeys={};
+    if(window.Reveal)Reveal.configure({touch:false});
+    if(!joined){joined=true;join();}
+    renderApp();renderLobby();}
+  function appSend(){
+    var i=$("da-a-in"),er=$("da-a-err");if(!i)return;
+    var e=sendNumber(parseInt(i.value,10));
+    if(e){er.textContent=e;return;}
+    editing=false;appKeys.act="";renderApp();}
+  function setHtml(id,key,html){if(appKeys[id]===key)return;appKeys[id]=key;$(id).innerHTML=html;}
+  function mine(r){var d=data[r]||[];for(var i=0;i<d.length;i++)if(d[i].vid===VID)return d[i];return null;}
+  function verdict(r){
+    var m=myResult(r),c=clearing(roundRows(r)),buy=card.role==="BUYER",word=buy?"bid":"ask";
+    var mkt=c.q?"The market cleared at <b>"+money(c.p)+"</b> with <b>"+c.q+"</b> trade"+(c.q===1?"":"s")+".":"No bid reached any ask, so nothing traded this round.";
+    if(!m||!m.submitted)return {cls:"none",head:"Round "+r+": no number from you. $0",body:mkt};
+    if(m.traded){
+      var gap=buy?card.v-m.bid:m.bid-card.v;
+      return {cls:"ok",head:"&#10003; You "+(buy?"bought":"sold")+" at "+money(m.p)+". You earned "+money(m.earned),
+        body:"Your "+word+" was $"+m.bid+" and your card is $"+card.v+": "+(buy?"card &minus; price":"price &minus; card")+" = "+money(m.earned)+". "+mkt
+          +(gap>0?" You shaded $"+gap+(buy?" below":" above")+" your card and still traded.":"")};}
+    var body;
+    if(!c.q)body=mkt;
+    else if(buy?m.bid<c.p:m.bid>c.p){
+      var gain=buy?card.v-c.p:c.p-card.v;
+      body="Your "+word+" of $"+m.bid+" was "+(buy?"below":"above")+" the "+money(c.p)+" price. "+mkt
+        +(gain>0?" Trading at that price would have paid you <b>"+money(gain)+"</b>.":" At that price you would have lost money, so staying out was right.");}
+    else body="Your "+word+" of $"+m.bid+" reached the "+money(c.p)+" price, but "+(buy?"the sellers":"the buyers")+" ran out before your turn. A "+(buy?"higher bid":"lower ask")+" goes earlier in line. "+mkt;
+    return {cls:"no",head:"&#10007; No trade this round. $0",body:body};}
+  function renderApp(){
+    if(!appOpen||!appEl)return;
+    var pill=$("da-a-pill");
+    pill.className="pill"+(ph.state==="trade"?" open":"");
+    pill.textContent=ph.state==="pre"?"Waiting for round 1":ph.state==="trade"?"Round "+ph.r+" of "+ROUNDS+" is open":ph.state==="reveal"?"Round "+ph.r+" closed: next round soon":"All "+ROUNDS+" rounds done";
+    if(!card){setHtml("da-a-card","none",'<div class="box">Joining the market&hellip;</div>');setHtml("da-a-act","none","");setHtml("da-a-hist","none","");return;}
+    var buy=card.role==="BUYER",col=buy?"#6B8BA4":"#C47B5A";
+    setHtml("da-a-card",card.role+card.v,'<div class="card" style="border-color:'+col+';background:'+(buy?"#eef3f7":"#f8ece6")+'">'
+      +'<div class="k" style="color:'+col+'">Your card: keep it private</div>'
+      +'<div class="role" style="color:#1F3B57">'+card.role+'</div>'
+      +'<div class="val">$'+card.v+'</div>'
+      +'<div class="sub">'+(buy?"The most one unit is worth to you. You earn <b>$"+card.v+" &minus; the price</b> if you buy.":"What one unit costs you. You earn <b>the price &minus; $"+card.v+"</b> if you sell.")+' No trade earns $0.</div></div>');
+    var my=ph.r?mine(ph.r):null,act="",key=ph.state+"/"+ph.r+"/"+(my?my.v:"")+"/"+editing;
+    if(ph.state==="pre")act='<div class="box">You are in. Keep this screen open: when round 1 opens, a box for your number appears here.<div class="hint">Five rounds, same card. Silent: tell nobody your number.</div></div>';
+    else if(ph.state==="trade"&&(!my||editing))
+      act='<div class="box"><b>Round '+ph.r+': your '+(buy?"bid":"ask")+'</b><br>'+(buy?"The most you will pay.":"The least you will accept.")
+        +'<input id="da-a-in" type="number" inputmode="numeric" pattern="[0-9]*" min="0" max="30" step="1" placeholder="$" value="'+(my?my.v:"")+'">'
+        +'<button class="big" id="da-a-send">'+(my?"Change to this number":"Submit")+'</button><div class="err" id="da-a-err"></div>'
+        +'<div class="hint">'+(buy?"Any whole number from $0 to $"+card.v+".":"Any whole number from $"+card.v+" to $30.")+'</div></div>';
+    else if(ph.state==="trade")
+      act='<div class="box ok"><div class="res">&#10003; Your '+(buy?"bid":"ask")+' of $'+my.v+' is in.</div>Nobody sees it until the round closes. You can change it until then.<button class="alt" id="da-a-edit">Change my number</button></div>';
+    else{var v=verdict(ph.r);key+="/"+v.head+v.body;
+      act='<div class="box '+v.cls+'"><div class="res">'+v.head+'</div>'+v.body+'</div>'
+        +(ph.state==="done"?'<div class="box"><div class="res">Total: '+money(totalEarned())+'</div>That is the lab. Look up at the screen.</div>':'<div class="hint" style="text-align:center;margin-top:10px">Wait for the next round to open.</div>');}
+    setHtml("da-a-act",key,act);
+    var rows="",any=false;
+    for(var r=1;r<=ROUNDS;r++){if(!opens[r])continue;any=true;
+      var me=mine(r),c=clearing(roundRows(r)),closed=!!closes[r],res=closed?myResult(r):null;
+      rows+='<tr><td>Round '+r+'</td><td>'+(me?"$"+me.v:"&mdash;")+'</td><td>'+(closed?(c.q?money(c.p):"no trade"):"open")+'</td><td>'+(closed?(res&&res.traded?money(res.earned):"$0"):"")+'</td></tr>';}
+    var hk=any?rows+totalEarned():"";
+    setHtml("da-a-hist",hk,any?'<div class="box"><table><tr><th>Round</th><th>Yours</th><th>Price</th><th>Earned</th></tr>'+rows
+      +'<tr class="tot"><td>Total</td><td></td><td></td><td>'+money(totalEarned())+'</td></tr></table></div>':"");}
+  window.DA={open:openApp,isOpen:function(){return appOpen;},state:function(){return {ph:ph,opens:opens,closes:closes,seat:seat,card:card,joins:joins,n:(data[ph.r]||[]).length};}};
+  if($("da-join")&&!INSTR){$("da-join").style.display="inline-block";$("da-join").addEventListener("click",openApp);}
 
   paintBtns();paintStart();syncInput();renderLobby();renderCard();renderCross();renderConverge();renderPayoff();
   /* take a seat only when this device reaches the lab slides, not on page load: students who merely open the deck never get a card */
   var joined=false;function maybeJoin(){if(joined||!window.Reveal||!Reveal.getCurrentSlide)return;var c=Reveal.getCurrentSlide();if(c&&/^(da-lobby|double-auction-lab|double-auction-results)$/.test(c.id)){joined=true;join();}}
   if(window.Reveal&&Reveal.on){Reveal.on("slidechanged",maybeJoin);Reveal.on("ready",maybeJoin);}
+  if(/[?&]lab(&|=|$)/.test(location.search))openApp();
   if(!isLocal){maybeJoin();readClock();refreshJoins();fetchAll();
     setInterval(tick,1000);
-    setInterval(function(){fetchRound(shown());},2000);
-    setInterval(function(){fetchAll();refreshJoins();readClock();},10000);}
+    var got={};
+    setInterval(function(){
+      if(INSTR){fetchRound(live);if(shown()!==live)fetchRound(shown());return;}
+      var c=closes[live],k=live+":"+c;if(c&&(got[k]||0)<3){got[k]=(got[k]||0)+1;fetchRound(live);}
+      if(shown()!==live&&ph.state!=="pre")fetchRound(shown());},2000);
+    setInterval(readClock,2000);
+    setInterval(function(){if(joined&&card===null&&!INSTR)refreshJoins();},2000);
+    setInterval(function(){if(INSTR)fetchAll();refreshJoins();},8000);}
  })();
 </script>
 

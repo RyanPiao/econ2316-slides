@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=9e198997e8a002fcc46ca92c06bf6c52">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f811ae8346313d01c2907850c0a38cfd">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -842,31 +842,53 @@
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 10.5 &mdash; LR Supply with a Uniform Cost Distribution</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
     <p style="margin: 0; font-size: 12pt; line-height: 1.5;">
-      <strong>Problem.</strong> 100 potential operators, each with \(\min LRATC\) from \(\$80\) to \(\$90\) <span style="color:var(--muted-color);">(drawn uniformly, so the cost CDF is \(F(p)=(p-80)/10\))</span>. Each active firm produces \(q^*=32\) GWh. Find LR market supply on \([80,90]\).
+      <strong>Problem.</strong> 100 potential operators, each with its own \(\min LRATC\), spread evenly from \(\$80\) to \(\$90\): <strong>10 operators in every \$1 band</strong>. Each active firm produces \(q^*=32\) GWh. Find LR market supply on \([80,90]\).
     </p>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Set up &amp; solve</p>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
-        Active firms (those with cost \(\leq p\)): \(100\,F(p) = 10(p-80)\).
-      </p>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.55; margin: 8px 0 0;">
-        Market supply: \(Q^s_{LR}(p) = 10(p-80)\times 32 = 320(p-80)\) GWh.
-      </p>
+  <div style="display: grid; grid-template-columns: 1.08fr 1fr; gap: 16px; align-items: start;">
+    <div>
+      <svg viewBox="0 0 580 320" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:320px; display:block;" role="img" aria-label="100 operators drawn as dots, ten in each one-dollar cost band from 80 to 90 dollars; at a price of 85 dollars the 50 dots in the five cheapest columns are active">
+  <text x="46" y="18" font-size="13" fill="#5A5550">Each dot = one operator, 32 GWh. Ten in every $1 cost band.</text>
+  <circle cx="72" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="72" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="72" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="72" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="72" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="72" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="72" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="72" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="72" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="72" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="124" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="124" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="124" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="124" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="124" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="124" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="124" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="124" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="124" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="124" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="176" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="176" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="176" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="176" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="176" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="176" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="176" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="176" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="176" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="176" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="228" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="228" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="228" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="228" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="228" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="228" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="228" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="228" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="228" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="228" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="280" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="280" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="280" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="280" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="280" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="280" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="280" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="280" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="280" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="280" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="332" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="332" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="332" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="332" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="332" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="332" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="332" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="332" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="332" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="332" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="384" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="384" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="384" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="384" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="384" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="384" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="384" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="384" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="384" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="384" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="436" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="436" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="436" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="436" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="436" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="436" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="436" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="436" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="436" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="436" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="488" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="488" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="488" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="488" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="488" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="488" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="488" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="488" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="488" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="488" cy="83.5" r="7" fill="#DDD8D1"/><circle cx="540" cy="250.0" r="7" fill="#DDD8D1"/><circle cx="540" cy="231.5" r="7" fill="#DDD8D1"/><circle cx="540" cy="213.0" r="7" fill="#DDD8D1"/><circle cx="540" cy="194.5" r="7" fill="#DDD8D1"/><circle cx="540" cy="176.0" r="7" fill="#DDD8D1"/><circle cx="540" cy="157.5" r="7" fill="#DDD8D1"/><circle cx="540" cy="139.0" r="7" fill="#DDD8D1"/><circle cx="540" cy="120.5" r="7" fill="#DDD8D1"/><circle cx="540" cy="102.0" r="7" fill="#DDD8D1"/><circle cx="540" cy="83.5" r="7" fill="#DDD8D1"/>
+  <line x1="46" y1="266" x2="566" y2="266" stroke="#8C8580" stroke-width="1.2"/>
+  <line x1="46" y1="266" x2="46" y2="271" stroke="#8C8580"/><text x="46" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$80</text><line x1="98" y1="266" x2="98" y2="271" stroke="#8C8580"/><text x="98" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$81</text><line x1="150" y1="266" x2="150" y2="271" stroke="#8C8580"/><text x="150" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$82</text><line x1="202" y1="266" x2="202" y2="271" stroke="#8C8580"/><text x="202" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$83</text><line x1="254" y1="266" x2="254" y2="271" stroke="#8C8580"/><text x="254" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$84</text><line x1="306" y1="266" x2="306" y2="271" stroke="#8C8580"/><text x="306" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$85</text><line x1="358" y1="266" x2="358" y2="271" stroke="#8C8580"/><text x="358" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$86</text><line x1="410" y1="266" x2="410" y2="271" stroke="#8C8580"/><text x="410" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$87</text><line x1="462" y1="266" x2="462" y2="271" stroke="#8C8580"/><text x="462" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$88</text><line x1="514" y1="266" x2="514" y2="271" stroke="#8C8580"/><text x="514" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$89</text><line x1="566" y1="266" x2="566" y2="271" stroke="#8C8580"/><text x="566" y="285" text-anchor="middle" font-size="12" fill="#5A5550">$90</text>
+  <text x="306" y="308" text-anchor="middle" font-size="12.5" fill="#5A5550">each operator&#8217;s min LRATC</text>
+  <g class="fragment" data-fragment-index="1">
+    <circle cx="72" cy="250.0" r="7" fill="#6B8BA4"/><circle cx="72" cy="231.5" r="7" fill="#6B8BA4"/><circle cx="72" cy="213.0" r="7" fill="#6B8BA4"/><circle cx="72" cy="194.5" r="7" fill="#6B8BA4"/><circle cx="72" cy="176.0" r="7" fill="#6B8BA4"/><circle cx="72" cy="157.5" r="7" fill="#6B8BA4"/><circle cx="72" cy="139.0" r="7" fill="#6B8BA4"/><circle cx="72" cy="120.5" r="7" fill="#6B8BA4"/><circle cx="72" cy="102.0" r="7" fill="#6B8BA4"/><circle cx="72" cy="83.5" r="7" fill="#6B8BA4"/><circle cx="124" cy="250.0" r="7" fill="#6B8BA4"/><circle cx="124" cy="231.5" r="7" fill="#6B8BA4"/><circle cx="124" cy="213.0" r="7" fill="#6B8BA4"/><circle cx="124" cy="194.5" r="7" fill="#6B8BA4"/><circle cx="124" cy="176.0" r="7" fill="#6B8BA4"/><circle cx="124" cy="157.5" r="7" fill="#6B8BA4"/><circle cx="124" cy="139.0" r="7" fill="#6B8BA4"/><circle cx="124" cy="120.5" r="7" fill="#6B8BA4"/><circle cx="124" cy="102.0" r="7" fill="#6B8BA4"/><circle cx="124" cy="83.5" r="7" fill="#6B8BA4"/><circle cx="176" cy="250.0" r="7" fill="#6B8BA4"/><circle cx="176" cy="231.5" r="7" fill="#6B8BA4"/><circle cx="176" cy="213.0" r="7" fill="#6B8BA4"/><circle cx="176" cy="194.5" r="7" fill="#6B8BA4"/><circle cx="176" cy="176.0" r="7" fill="#6B8BA4"/><circle cx="176" cy="157.5" r="7" fill="#6B8BA4"/><circle cx="176" cy="139.0" r="7" fill="#6B8BA4"/><circle cx="176" cy="120.5" r="7" fill="#6B8BA4"/><circle cx="176" cy="102.0" r="7" fill="#6B8BA4"/><circle cx="176" cy="83.5" r="7" fill="#6B8BA4"/><circle cx="228" cy="250.0" r="7" fill="#6B8BA4"/><circle cx="228" cy="231.5" r="7" fill="#6B8BA4"/><circle cx="228" cy="213.0" r="7" fill="#6B8BA4"/><circle cx="228" cy="194.5" r="7" fill="#6B8BA4"/><circle cx="228" cy="176.0" r="7" fill="#6B8BA4"/><circle cx="228" cy="157.5" r="7" fill="#6B8BA4"/><circle cx="228" cy="139.0" r="7" fill="#6B8BA4"/><circle cx="228" cy="120.5" r="7" fill="#6B8BA4"/><circle cx="228" cy="102.0" r="7" fill="#6B8BA4"/><circle cx="228" cy="83.5" r="7" fill="#6B8BA4"/><circle cx="280" cy="250.0" r="7" fill="#6B8BA4"/><circle cx="280" cy="231.5" r="7" fill="#6B8BA4"/><circle cx="280" cy="213.0" r="7" fill="#6B8BA4"/><circle cx="280" cy="194.5" r="7" fill="#6B8BA4"/><circle cx="280" cy="176.0" r="7" fill="#6B8BA4"/><circle cx="280" cy="157.5" r="7" fill="#6B8BA4"/><circle cx="280" cy="139.0" r="7" fill="#6B8BA4"/><circle cx="280" cy="120.5" r="7" fill="#6B8BA4"/><circle cx="280" cy="102.0" r="7" fill="#6B8BA4"/><circle cx="280" cy="83.5" r="7" fill="#6B8BA4"/>
+    <line x1="306" y1="30" x2="306" y2="266" stroke="#2D2D2D" stroke-width="2.2" stroke-dasharray="6 4"/>
+    <text x="300" y="40" text-anchor="end" font-size="13.5" font-weight="700" fill="#2D2D2D">p = $85</text>
+    <text x="176.0" y="64" text-anchor="middle" font-size="13.5" font-weight="700" fill="#6B8BA4">50 active</text>
+    <text x="462" y="64" text-anchor="middle" font-size="13.5" fill="#8C8580">50 stay out</text>
+  </g>
+  <g class="fragment" data-fragment-index="4">
+    <rect x="308" y="72.5" width="48" height="188.5" rx="7" fill="none" stroke="#C47B5A" stroke-width="2.6"/>
+    <text x="312" y="40" font-size="13" font-weight="700" fill="#C47B5A">+$1 &#8594; +10 firms</text>
+  </g>
+</svg>
     </div>
-    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Check the endpoints</p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
-        At \(p=\$80\): \(Q^s_{LR}=0\) (no firm profitable yet). At \(p=\$90\): \(320\times 10 = 3{,}200\) GWh (all 100 operate).
-      </p>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.55; margin: 8px 0 0;">
-        Slope \(dQ^s_{LR}/dp = 320\) GWh per \$/kWh &mdash; entrants flow in at a constant rate as price climbs the cost distribution.
-      </p>
+    <div>
+      <div style="background: #f0f5f8; border-radius: 8px; padding: 9px 16px; border-left: 4px solid var(--secondary-color);">
+        <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Set up &amp; solve</p>
+        <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 5px 0 0;">
+          Active firms = the dots left of the price: 10 per \$1 above \$80, so \(N(p) = 10(p-80)\).
+        </p>
+        <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">
+          Market supply: \(Q^s_{LR}(p) = 10(p-80)\times 32 = 320(p-80)\) GWh. At \$85: 1,600 GWh.
+        </p>
+      </div>
+      <div style="background: #fef9f3; border-radius: 8px; padding: 9px 16px; border-left: 4px solid var(--accent-color); margin-top: 10px;">
+        <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Check the endpoints</p>
+        <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 5px 0 0;">
+          At \(p=\$80\): no dot lit, \(Q^s_{LR}=0\). At \(p=\$90\): all 100 lit, \(320\times 10 = 3{,}200\) GWh.
+        </p>
+        <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">
+          Slope \(dQ^s_{LR}/dp = 320\): each extra \$1 lights one more column, \(10 \times 32\) GWh.
+        </p>
+      </div>
     </div>
   </div>
-  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 12px; padding: 9px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Heterogeneous costs &rarr; upward-sloping LR supply. A <em>tighter</em> cost distribution gives a flatter curve; a <em>wider</em> one steeper. The marginal firm earns zero; infra-marginal firms earn Ricardian rents.</p>
+  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 10px; padding: 9px 16px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Heterogeneous costs &rarr; upward-sloping LR supply. Bunch the costs <em>tighter</em> and the columns get taller, so each \$1 lights more firms: a flatter curve. Spread them <em>wider</em>: steeper. The marginal firm earns zero; infra-marginal firms earn Ricardian rents.</p>
   </div>
 </section>
 
@@ -1786,7 +1808,9 @@
   var SU="https://dpntbrsorgbivmntwmod.supabase.co",SK="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwbnRicnNvcmdiaXZtbnR3bW9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NjY5NzksImV4cCI6MjA5MTQ0Mjk3OX0.7__ja5Sq2AB__iFXhj-CKZJ0l7SjUerf8mpGQlo2bxI";
   if(!document.getElementById("da-hist"))return;
   var isLocal=window.location.protocol==="file:";
-  var INSTR=window.location.search.indexOf("instructor")!==-1;
+  /* presenter windows (projector, speaker-view previews) are instructor windows: they never take a seat. SPK = a speaker-view preview, the only place the truthful answer is shown */
+  var SPK=/[?&]receiver(&|$)/.test(window.location.search);
+  var INSTR=window.location.search.indexOf("instructor")!==-1||SPK||/[?&]presenter(&|=|$)/.test(window.location.search);
   var ROUNDS=5,TRADE_SECS=[60,45,45,45,45],REVEAL_SECS=20;
   var VID=localStorage.getItem("ch10-da-vid");
   if(!VID){VID="v_"+Math.random().toString(36).slice(2,10);localStorage.setItem("ch10-da-vid",VID);}
@@ -1863,7 +1887,7 @@
     var head=clockAt?"Lab running":"Lobby &mdash; waiting to start";
     var body='<p style="margin:0;font-size:10pt;color:var(--secondary-color);font-weight:700;text-transform:uppercase;letter-spacing:.06em;">'+head+'</p>'
       +'<p style="margin:4px 0 0;font-size:13pt;line-height:1.35;"><strong>'+joins+'</strong> seated &mdash; <strong style="color:var(--secondary-color);">'+nb+'</strong> buyer'+(nb===1?"":"s")+' &middot; <strong style="color:var(--accent-color);">'+ns+'</strong> seller'+(ns===1?"":"s")+'</p>';
-    if(INSTR&&joins>1&&e.q)body+='<p style="margin:3px 0 0;font-size:10.5pt;color:var(--muted-color);">Truthful bidding would clear at <strong>$'+(e.lo===e.hi?e.lo:e.lo+"&ndash;$"+e.hi)+'</strong> with <strong>'+e.q+'</strong> trades</p>';
+    if(SPK&&joins>1&&e.q)body+='<p style="margin:3px 0 0;font-size:10.5pt;color:var(--muted-color);">Truthful bidding would clear at <strong>$'+(e.lo===e.hi?e.lo:e.lo+"&ndash;$"+e.hi)+'</strong> with <strong>'+e.q+'</strong> trades</p>';
     el.innerHTML=body;
     el.style.borderStyle=clockAt?"solid":"dashed";
     el.style.background=clockAt?"rgba(106,142,107,.12)":"#f4f1ed";

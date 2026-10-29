@@ -1180,7 +1180,8 @@
     return {
       min: +attr(el, "data-min", 0), max: +attr(el, "data-max", 1e9),
       unit: attr(el, "data-unit", ""), step: attr(el, "data-step", ""),
-      arms: el.getAttribute("data-arm") === "nuid-parity"
+      arms: el.getAttribute("data-arm") === "nuid-parity",
+      initials: el.getAttribute("data-kind") === "initials"
     };
   }
   function fmtNum(x, dp) {
@@ -1197,7 +1198,8 @@
     var room = PROJECTOR || SPEAKER;
     el.innerHTML =
       '<div class="ec-num-row">' +
-        '<input class="ec-num-in" type="text" inputmode="decimal" autocomplete="off" maxlength="9"' +
+        '<input class="ec-num-in" type="text" inputmode="' + (o.initials ? "text" : "decimal") + '" autocomplete="off" maxlength="' + (o.initials ? 6 : 9) + '"' +
+          (o.initials ? ' autocapitalize="characters" spellcheck="false"' : "") +
           ' placeholder="' + esc(attr(el, "data-placeholder", room ? "typed on phones" : "")) + '"' +
           (room ? " disabled" : "") + ">" +
         (o.unit ? '<span class="ec-num-unit">' + esc(o.unit) + "</span>" : "") +
@@ -1223,6 +1225,11 @@
     function submit() {
       if (sent) return;
       var raw = String(input.value).replace(/[,\s]/g, "");
+      if (o.initials) {                  // data-kind="initials": 1-3 letters ("J.K." is fine), stored upper-case as the choice text
+        var ini = raw.replace(/\./g, "").toUpperCase();
+        if (!/^[A-Z]{1,3}$/.test(ini)) { st.textContent = "Type your initials: one to three letters."; input.focus(); return; }
+        return send(ini, ini);
+      }
       var n = Number(raw);
       if (raw === "" || !isFinite(n) || n < o.min || n > o.max) {
         st.textContent = "Type one number from " + fmtNum(o.min) + " to " + fmtNum(o.max) +
@@ -1236,6 +1243,9 @@
         if (!nuid() && !armDevice) { armDevice = true; applyArms(); }   // ready() has run: no NUID = skipped
         choice = arm().charAt(0) + (nuid() ? "" : "*") + ":" + val;
       }
+      send(val, choice);
+    }
+    function send(val, choice) {
       sent = true; lock(true); input.blur();
       if (IS_FILE) {
         (numLocal[pid] = numLocal[pid] || []).push({ choice: choice, voter_id: deviceId(),

@@ -85,8 +85,10 @@
     var h2 = sec && sec.querySelector("h2");
     var title = h2 ? clean(h2.cloneNode(true)).textContent.replace(/\s+/g, " ").trim() : "Poll";
     var prompt = document.createElement("div"); prompt.className = "prompt";
+    var multi = !grid && !!sec && sec.querySelectorAll(".poll-number[data-poll-voting][data-poll-id]").length > 1;
     if (sec) [].forEach.call(sec.querySelectorAll("p"), function (p) {
       if (p.closest(".poll-grid, aside, .poll-results-chart") || !p.textContent.trim()) return;
+      if (multi && p.parentNode && p.parentNode.querySelector(".poll-number[data-poll-voting]")) return;   // a box's own label: shown above that box
       if (p.compareDocumentPosition(box) & Node.DOCUMENT_POSITION_FOLLOWING || box.contains(p)) {
         if (!box.contains(p) && prompt.children.length < 3) prompt.appendChild(clean(p.cloneNode(true)));
       }
@@ -131,10 +133,18 @@
       go.innerHTML = 'This question is answered on the slide itself. <a href="' + slideLink + '"><strong>Open the slide to answer</strong></a>';
       app.appendChild(go);
     } else {                                       // typed number: poll.js draws the box and Send
-      var wrap = document.createElement("div"); wrap.className = "other";
-      var mine = document.importNode(box, true);
-      mine.removeAttribute("style");
-      wrap.appendChild(mine); app.appendChild(wrap);
+      // every typed box on the slide, in slide order, each under its own label (3916 T12 room-trip asks
+      // minutes, miles and initials on one slide; linking only the first left the room's pairs unmatched)
+      var boxes = sec ? [].slice.call(sec.querySelectorAll(".poll-number[data-poll-voting][data-poll-id]")) : [];
+      if (boxes.indexOf(box) < 0) boxes = [box];
+      boxes.forEach(function (bx) {
+        var wrap = document.createElement("div"); wrap.className = "other";
+        var lab = boxes.length > 1 && bx.parentNode && bx.parentNode.querySelector("p");
+        if (lab) wrap.appendChild(clean(lab.cloneNode(true)));
+        var mine = document.importNode(bx, true);
+        mine.removeAttribute("style");
+        wrap.appendChild(mine); app.appendChild(wrap);
+      });
     }
     app.appendChild(status);
     var foot = document.createElement("p"); foot.className = "foot";

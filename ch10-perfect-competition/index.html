@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=b95a91a5945e965603b2e4d3d76eb75e">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6bb27a990de4af945e8b01140fd82dab">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -1380,6 +1380,10 @@
       <div class="misconception" style="padding:7px 14px; margin-top:8px;">
         <p style="margin:0; font-size:10.5pt; line-height:1.38;">You may shade &mdash; but never past your own card. The box will stop you.</p>
       </div>
+      <div id="da-qr2" style="display:none; align-items:center; gap:12px; margin-top:8px; background:#fff; border:1px solid var(--line-color); border-radius:10px; padding:7px 11px;">
+        <div id="da-qrcode2" style="width:104px; height:104px; flex:none;"></div>
+        <p style="margin:0; font-size:10.5pt; line-height:1.4;"><strong>Late? Scan to join.</strong><br>You get a card and can play the next round.</p>
+      </div>
       <div id="da-payoff" style="display:none; border-radius:9px; padding:9px 14px; margin-top:8px; border-left:4px solid var(--success-color); background:rgba(106,142,107,0.12);"></div>
     </div>
     <div>
@@ -1387,7 +1391,7 @@
         <span id="da-roundlabel" style="font-size:13pt; font-weight:700; color:var(--primary-color);">Round &mdash;</span>
         <span id="da-timer" style="font-size:12pt; font-weight:700; color:var(--accent-color); font-family:'SF Mono',Menlo,monospace;"></span>
         <span style="flex:1;"></span>
-        <button id="da-revealnow" style="display:none; background:#f4f1ed; border:1px solid var(--line-color); border-radius:13px; padding:3px 12px; font-size:9.5pt; color:var(--muted-color); cursor:pointer;"><i class="fa-solid fa-forward"></i> close round</button>
+        <button id="da-revealnow" style="display:none; background:var(--success-color); color:#fff; border:0; border-radius:9px; padding:6px 16px; font-size:12pt; font-weight:700; cursor:pointer;"><i class="fa-solid fa-forward"></i> close round</button>
         <span id="da-round-btns" style="display:flex; gap:4px;"></span>
       </div>
       <div style="height:5px; background:#efece8; border-radius:3px; overflow:hidden; margin-bottom:8px;"><div id="da-progress" style="height:100%; width:0%; background:var(--accent-color); transition:width .9s linear;"></div></div>
@@ -2044,7 +2048,6 @@
     /* the projector (never a speaker preview) closes the round when the minute is up; Close round still ends it early */
     if(INSTR&&!SPK&&ph.state==="trade"&&ph.left<=0&&!autoClosed[ph.r]){autoClosed[ph.r]=1;startLab();}
     if($("da-roundlabel1")){$("da-roundlabel1").textContent=txt;$("da-timer1").textContent=tt;}
-    if(INSTR&&$("da-rules")){$("da-rules").style.display=ph.state==="pre"?"block":"none";$("da-market1").style.display=ph.state==="pre"?"none":"block";}
     if(view===null)renderCross();else renderCrossInto("1");
     renderLobby();renderPayoff();renderApp();}
 
@@ -2114,7 +2117,8 @@
   if(INSTR&&qrb){
     var drawQr=function(){var q=window.qrcode(0,"M");q.addData("https://ryanpiao.github.io/econ2316-slides/ch10-perfect-competition/?lab#/da-lobby");q.make();
       var box=$("da-qrcode");box.innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});var sv=box.querySelector("svg");if(sv){sv.style.width="100%";sv.style.height="100%";sv.style.display="block";}
-      qrb.style.display="flex";};
+      qrb.style.display="flex";
+      var b2=$("da-qrcode2");if(b2){b2.innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});var s2=b2.querySelector("svg");if(s2){s2.style.width="100%";s2.style.height="100%";s2.style.display="block";}$("da-qr2").style.display="flex";}};
     if(window.qrcode)drawQr();
     else{var qsc=document.createElement("script");qsc.src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js";qsc.onload=drawQr;document.head.appendChild(qsc);}}
 

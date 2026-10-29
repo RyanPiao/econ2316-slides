@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=fb64bb4a5c733cb7a316883e518c1b18">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=b95a91a5945e965603b2e4d3d76eb75e">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -1316,18 +1316,18 @@
 <section>
 <section id="da-lobby">
   <h2><i id="da-secret" class="fa-solid fa-people-arrows" style="color: var(--accent-color); cursor: pointer;"></i> Classroom Experiment &mdash; Finding the Clearing Price</h2>
-  <p style="font-size: 11.5pt; color: var(--muted-color); margin: 0 0 10px;">Walras's auctioneer gathers everyone's willingness to trade and computes the price that clears the market. <strong>For the next ten minutes, that auctioneer is us.</strong></p>
+  <p style="font-size: 11.5pt; color: var(--muted-color); margin: 0 0 10px;">Back to the campus burger market. Walras's auctioneer gathers everyone's willingness to trade and computes the price that clears the market. <strong>For the next ten minutes, that auctioneer is us.</strong></p>
   <div style="display: grid; grid-template-columns: 1.06fr 0.94fr; gap: 18px; align-items: start;">
     <div>
     <div id="da-rules" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:11px 17px;">
       <p style="margin:0; font-size:10.5pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">What is about to happen</p>
-      <p style="margin:6px 0 0; font-size:11.5pt; line-height:1.5;"><strong>1.</strong> Your device deals you a card &mdash; a <strong>buyer</strong> with a private maximum, or a <strong>seller</strong> with a private minimum. <strong>Tell nobody your number.</strong></p>
+      <p style="margin:6px 0 0; font-size:11.5pt; line-height:1.5;"><strong>1.</strong> Your device deals you a card: a <strong>student buyer</strong> (the most one burger is worth to you) or a <strong>burger shop</strong> (what one burger costs you to make). <strong>Tell nobody your number.</strong></p>
       <p style="margin:5px 0 0; font-size:11.5pt; line-height:1.5;"><strong>2.</strong> Submit <em>one</em> number: buyers, the most you would pay. Sellers, the least you would accept.</p>
       <p style="margin:5px 0 0; font-size:11.5pt; line-height:1.5;"><strong>3.</strong> You may bid strategically &mdash; buyers <em>can</em> offer less than their card, sellers <em>can</em> ask more. You just cannot go past your own limit.</p>
       <p style="margin:5px 0 0; font-size:11.5pt; line-height:1.5;"><strong>4.</strong> When the round closes, every bid and every ask is <strong>sorted into two curves</strong> and we read off where they cross.</p>
       <p style="margin:5px 0 0; font-size:11.5pt; line-height:1.5;"><strong>5.</strong> Five rounds, <strong>same card throughout</strong>. No talking &mdash; this one is silent.</p>
       <div style="background:rgba(106,142,107,0.14); border-radius:7px; padding:7px 12px; margin-top:8px;">
-        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>What you earn.</strong> Buy and you keep <strong>your card &minus; the price</strong>. Sell and you keep <strong>the price &minus; your card</strong>. <strong>No trade earns you nothing.</strong></p>
+        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>What you earn.</strong> Buy a burger and you keep <strong>your card &minus; the price</strong>. Sell one and you keep <strong>the price &minus; your card</strong>. <strong>No trade earns you nothing.</strong></p>
         <p style="margin:4px 0 0; font-size:10.5pt; line-height:1.4; color:var(--text-color);">So shading wins you a better price <em>only if you still trade</em>. That is the whole game.</p>
       </div>
     </div>
@@ -1417,7 +1417,7 @@
     </div>
     <div>
       <div class="key-result fragment fade-up" data-fragment-index="1" style="margin:0 0 10px; padding:9px 15px;">
-        <p style="margin:0; font-size:12pt;"><strong>The result.</strong> <span id="da-eqcap">The cards were dealt so the curves cross at <strong>\$8</strong>.</span> Nobody in the room could compute that &mdash; each of you knew exactly one number, and the curves existed only once all of them were pooled.</p>
+        <p style="margin:0; font-size:12pt;"><strong>The result.</strong> <span id="da-eqcap">The cards were dealt so the curves cross at <strong>\$8</strong>.</span> That is the campus burger price from earlier: \(\min LRATC = \$8\). Nobody in the room could compute that &mdash; each of you knew exactly one number, and the curves existed only once all of them were pooled.</p>
       </div>
       <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:9px 15px;">
         <p style="margin:0; font-size:11.5pt; line-height:1.5;"><strong>Shading costs trades, not price.</strong> Buyers who bid under their card and sellers who ask over theirs mostly cancel out &mdash; the crossing barely moves. What falls is the <em>number of trades</em>. Strategic play here reduces quantity, and that lost quantity is a deadweight loss with nobody collecting it.</p>
@@ -1854,12 +1854,12 @@
   /* presenter windows (projector, speaker-view previews) are instructor windows: they never take a seat. SPK = a speaker-view preview, the only place the truthful answer is shown */
   var SPK=/[?&]receiver(&|$)/.test(window.location.search);
   var INSTR=window.location.search.indexOf("instructor")!==-1||SPK||/[?&]presenter(&|=|$)/.test(window.location.search);
-  var ROUNDS=5,TRADE_SECS=[60,45,45,45,45],REVEAL_SECS=20;
+  var ROUNDS=5,ROUND_SECS=60;
   var VID=localStorage.getItem("ch10-da-vid");
   if(!VID){VID="v_"+Math.random().toString(36).slice(2,10);localStorage.setItem("ch10-da-vid",VID);}
   var data={},seat=null,card=null,joins=0,clockAt=null,skips={},live=1,view=null,ph={state:"pre"};
   /* rounds are opened and closed by the instructor (ch10-da-open / ch10-da-close, choice = round), no timer */
-  var opens={},closes={},pend={},appOpen=false;
+  var opens={},closes={},pend={},appOpen=false,autoClosed={};
   var $=function(id){return document.getElementById(id);};
 
   function sf(m,p,b){var o={method:m,headers:{apikey:SK,Authorization:"Bearer "+SK,"Content-Type":"application/json","Cache-Control":"no-cache, no-store"},cache:"no-store"};if(b)o.body=JSON.stringify(b);if(m==="GET"&&p.indexOf("ch10-da-")!==-1)p+=daWin();return (window.__realFetch||fetch)(SU+"/rest/v1/"+p,o);}
@@ -1893,7 +1893,7 @@
     return {submitted:true,bid:mine.v,traded:traded,p:c.p,earned:earned};}
 
   function totalEarned(){
-    var t=0;for(var r=1;r<=ROUNDS;r++){var m=myResult(r);if(m&&m.traded)t+=m.earned;}return t;}
+    var t=0;for(var r=1;r<=ROUNDS;r++){if(!closes[r])continue;var m=myResult(r);if(m&&m.traded)t+=m.earned;}return t;}
 
   function renderPayoff(){
     var el=$("da-payoff");if(!el)return;
@@ -1957,7 +1957,7 @@
     el.style.borderColor=buy?"var(--secondary-color)":"var(--accent-color)";
     el.innerHTML='<p style="margin:0;font-size:10pt;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:'+(buy?"var(--secondary-color)":"var(--accent-color)")+';">Your card &mdash; keep it private</p>'
       +'<p style="margin:3px 0 0;font-size:20pt;font-weight:700;color:var(--primary-color);">'+card.role+'</p>'
-      +'<p style="margin:1px 0 0;font-size:12pt;">'+(buy?"Worth at most":"Costs you at least")+' <strong style="font-size:17pt;">$'+card.v+'</strong></p>'
+      +'<p style="margin:1px 0 0;font-size:12pt;">'+(buy?"A burger is worth at most":"A burger costs you")+' <strong style="font-size:17pt;">$'+card.v+'</strong></p>'
       +(joins>1?'<p style="margin:3px 0 0;font-size:9.5pt;color:var(--muted-color);">'+joins+' in this market</p>':'');
     if(pr)pr.innerHTML=buy
       ? "<strong>Bid</strong> &mdash; the most you will pay. Bidding under $"+card.v+" is allowed."
@@ -2024,7 +2024,7 @@
   function phase(){
     var r=0;for(var k=1;k<=ROUNDS;k++)if(opens[k])r=k;
     if(!r)return {state:"pre"};
-    if(!closes[r])return {state:"trade",r:r,since:opens[r]};
+    if(!closes[r])return {state:"trade",r:r,since:opens[r],left:Math.max(0,ROUND_SECS-Math.floor((Date.now()-opens[r])/1000))};
     return {state:r===ROUNDS?"done":"reveal",r:r};}
 
   function tick(){
@@ -2038,9 +2038,11 @@
     else if(ph.state==="done"){txt="All "+ROUNDS+" rounds complete";pg.style.width="100%";}
     else{
       txt="Round "+ph.r+" of "+ROUNDS+(ph.state==="reveal"?" — the market cleared":" — bidding open");
-      if(ph.state==="trade"){var el=Math.max(0,Math.floor((Date.now()-ph.since)/1000));tt=Math.floor(el/60)+":"+("0"+(el%60)).slice(-2);}
+      if(ph.state==="trade"){tt=Math.floor(ph.left/60)+":"+("0"+(ph.left%60)).slice(-2)+(ph.left?" left":" time is up");}
       pg.style.width=(ph.state==="trade"?(joins?Math.min(100,100*n/joins):0):100).toFixed(1)+"%";}
     lbl.textContent=txt;tm.textContent=tt;
+    /* the projector (never a speaker preview) closes the round when the minute is up; Close round still ends it early */
+    if(INSTR&&!SPK&&ph.state==="trade"&&ph.left<=0&&!autoClosed[ph.r]){autoClosed[ph.r]=1;startLab();}
     if($("da-roundlabel1")){$("da-roundlabel1").textContent=txt;$("da-timer1").textContent=tt;}
     if(INSTR&&$("da-rules")){$("da-rules").style.display=ph.state==="pre"?"block":"none";$("da-market1").style.display=ph.state==="pre"?"none":"block";}
     if(view===null)renderCross();else renderCrossInto("1");
@@ -2081,6 +2083,7 @@
     return null;}
   function sendNumber(v){
     if(INSTR||ph.state!=="trade")return "This round is closed.";
+    if(ph.left<=0)return "Time is up for this round.";
     var e=checkNumber(v);if(e)return e;
     var r=ph.r,buy=card.role==="BUYER",row={role:buy?"B":"S",v:v,vid:VID,t:Date.now()};
     pend[r]=row;localStorage.setItem(votedKey(r),String(v));
@@ -2251,11 +2254,16 @@
         "#da-app th{color:#8c8580;font-weight:600;font-size:13px}"+
         "#da-app td:first-child,#da-app th:first-child{text-align:left}"+
         "#da-app .tot td{font-weight:800;border-bottom:0}"+
-        "#da-app .back{background:none;border:0;color:#8c8580;font-size:13px;text-decoration:underline;padding:0;font-family:inherit}";
+        "#da-app .back{background:none;border:0;color:#8c8580;font-size:13px;text-decoration:underline;padding:0;font-family:inherit}"+
+        /* laptops: card on the left, number box and results on the right */
+        "@media (min-width:900px){#da-app .w{max-width:1060px;display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-items:start;padding:30px 28px 48px}"+
+        "#da-app .top,#da-app .pillrow{grid-column:1/-1}#da-app #da-a-card{grid-column:1;grid-row:3/span 2}#da-app #da-a-act{grid-column:2;grid-row:3}#da-app #da-a-hist{grid-column:2;grid-row:4}"+
+        "#da-app .top{font-size:15px}#da-app .pill{font-size:16px;padding:6px 14px}#da-app .card{padding:24px 26px}#da-app .k{font-size:14px}#da-app .role{font-size:40px}#da-app .val{font-size:72px}#da-app .sub{font-size:19px}"+
+        "#da-app .box{font-size:18px;padding:18px 20px}#da-app .res{font-size:25px}#da-app input{font-size:36px}#da-app button.big{font-size:21px}#da-app .hint{font-size:16px}#da-app table{font-size:17px}}";
       document.head.appendChild(css);
       appEl=document.createElement("div");appEl.id="da-app";
-      appEl.innerHTML='<div class="w"><div class="top"><span>ECON 2316 &middot; classroom market</span><button class="back" id="da-a-back">back to slides</button></div>'
-        +'<div style="margin-top:10px"><span class="pill" id="da-a-pill">Joining&hellip;</span></div>'
+      appEl.innerHTML='<div class="w"><div class="top"><span>ECON 2316 &middot; campus burger market</span><button class="back" id="da-a-back">back to slides</button></div>'
+        +'<div class="pillrow" style="margin-top:10px"><span class="pill" id="da-a-pill">Joining&hellip;</span> <span id="da-a-time" style="font-weight:800;font-size:22px;margin-left:8px;font-family:ui-monospace,Menlo,monospace"></span></div>'
         +'<div id="da-a-card"></div><div id="da-a-act"></div><div id="da-a-hist"></div></div>';
       document.body.appendChild(appEl);
       $("da-a-back").addEventListener("click",function(){appEl.style.display="none";appOpen=false;if(window.Reveal)Reveal.configure({touch:true});renderLobby();});
@@ -2276,15 +2284,18 @@
   function mine(r){var d=data[r]||[];for(var i=0;i<d.length;i++)if(d[i].vid===VID)return d[i];return null;}
   function verdict(r){
     var m=myResult(r),c=clearing(roundRows(r)),buy=card.role==="BUYER",word=buy?"bid":"ask";
-    var mkt=c.q?"The market cleared at <b>"+money(c.p)+"</b> with <b>"+c.q+"</b> trade"+(c.q===1?"":"s")+".":"No bid reached any ask, so nothing traded this round.";
+    var mkt=c.q?"The market cleared at <b>"+money(c.p)+"</b>: <b>"+c.q+"</b> burger"+(c.q===1?"":"s")+" sold.":"No bid reached any ask, so no burger was sold this round.";
     if(!m||!m.submitted)return {cls:"none",head:"Round "+r+": no number from you. $0",body:mkt};
     if(m.traded){
       var gap=buy?card.v-m.bid:m.bid-card.v;
-      return {cls:"ok",head:"&#10003; You "+(buy?"bought":"sold")+" at "+money(m.p)+". You earned "+money(m.earned),
+      return {cls:"ok",head:"&#10003; You "+(buy?"bought":"sold")+" a burger at "+money(m.p)+". You earned "+money(m.earned),
         body:"Your "+word+" was $"+m.bid+" and your card is $"+card.v+": "+(buy?"card &minus; price":"price &minus; card")+" = "+money(m.earned)+". "+mkt
           +(gap>0?" You shaded $"+gap+(buy?" below":" above")+" your card and still traded.":"")};}
     var body;
-    if(!c.q)body=mkt;
+    if(!c.q){
+      var other=buy?c.A:c.B,best=other.length?(buy?other[0]:other[0]):null;
+      body=best===null?(buy?"No shop asked this round, so no burger was sold.":"No student bid this round, so no burger was sold.")
+        :(buy?"Your bid of $"+m.bid+" was below the lowest ask, <b>$"+best+"</b>.":"Your ask of $"+m.bid+" was above the highest bid, <b>$"+best+"</b>.")+" "+mkt;}
     else if(buy?m.bid<c.p:m.bid>c.p){
       var gain=buy?card.v-c.p:c.p-card.v;
       body="Your "+word+" of $"+m.bid+" was "+(buy?"below":"above")+" the "+money(c.p)+" price. "+mkt
@@ -2295,18 +2306,19 @@
     if(!appOpen||!appEl)return;
     var pill=$("da-a-pill");
     pill.className="pill"+(ph.state==="trade"?" open":"");
+    var tme=$("da-a-time");if(tme){tme.textContent=ph.state==="trade"?(ph.left?Math.floor(ph.left/60)+":"+("0"+(ph.left%60)).slice(-2):"time is up"):"";tme.style.color=ph.state==="trade"&&ph.left<=10?"#A85C5C":"#1F3B57";}
     pill.textContent=ph.state==="pre"?"Waiting for round 1":ph.state==="trade"?"Round "+ph.r+" of "+ROUNDS+" is open":ph.state==="reveal"?"Round "+ph.r+" closed: next round soon":"All "+ROUNDS+" rounds done";
     if(!card){setHtml("da-a-card","none",'<div class="box">Joining the market&hellip;</div>');setHtml("da-a-act","none","");setHtml("da-a-hist","none","");return;}
     var buy=card.role==="BUYER",col=buy?"#6B8BA4":"#C47B5A";
     setHtml("da-a-card",card.role+card.v,'<div class="card" style="border-color:'+col+';background:'+(buy?"#eef3f7":"#f8ece6")+'">'
       +'<div class="k" style="color:'+col+'">Your card: keep it private</div>'
-      +'<div class="role" style="color:#1F3B57">'+card.role+'</div>'
+      +'<div class="role" style="color:#1F3B57">'+(buy?"BUYER &middot; student":"SELLER &middot; burger shop")+'</div>'
       +'<div class="val">$'+card.v+'</div>'
-      +'<div class="sub">'+(buy?"The most one unit is worth to you. You earn <b>$"+card.v+" &minus; the price</b> if you buy.":"What one unit costs you. You earn <b>the price &minus; $"+card.v+"</b> if you sell.")+' No trade earns $0.</div></div>');
+      +'<div class="sub">'+(buy?"You are a student. One burger is worth at most $"+card.v+" to you. You earn <b>$"+card.v+" &minus; the price</b> if you buy.":"You run a burger shop. One burger costs you $"+card.v+" to make. You earn <b>the price &minus; $"+card.v+"</b> if you sell.")+' No trade earns $0.</div></div>');
     var my=ph.r?mine(ph.r):null,act="",key=ph.state+"/"+ph.r+"/"+(my?my.v:"")+"/"+editing;
     if(ph.state==="pre")act='<div class="box">You are in. Keep this screen open: when round 1 opens, a box for your number appears here.<div class="hint">Five rounds, same card. Silent: tell nobody your number.</div></div>';
     else if(ph.state==="trade"&&(!my||editing))
-      act='<div class="box"><b>Round '+ph.r+': your '+(buy?"bid":"ask")+'</b><br>'+(buy?"The most you will pay.":"The least you will accept.")
+      act='<div class="box"><b>Round '+ph.r+': your '+(buy?"bid":"ask")+'</b><br>'+(buy?"The most you will pay for a burger.":"The least you will sell a burger for.")
         +'<input id="da-a-in" type="number" inputmode="numeric" pattern="[0-9]*" min="0" max="30" step="1" placeholder="$" value="'+(my?my.v:"")+'">'
         +'<button class="big" id="da-a-send">'+(my?"Change to this number":"Submit")+'</button><div class="err" id="da-a-err"></div>'
         +'<div class="hint">'+(buy?"Any whole number from $0 to $"+card.v+".":"Any whole number from $"+card.v+" to $30.")+'</div></div>';

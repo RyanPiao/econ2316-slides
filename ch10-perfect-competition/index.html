@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3f8562d618535443c21980505e203b3a">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=cafa306d48501ee8402e4bf72fcf624f">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -1491,6 +1491,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
+  var DA_H0=location.hash;   // read before reveal rewrites it
   Reveal.initialize({
     keyboard: { 33: function(){ Reveal.prev(); }, 34: function(){ Reveal.next(); } },
     hash: true,
@@ -1506,6 +1507,25 @@
     minScale: 0.2,
     maxScale: 2.0
   });
+  /* phones held upright get reveal's scroll view: it dropped the #/slide link (the lobby QR opened slide 1)
+     and shrinks the lab to unreadable, so jump to the linked slide and ask for landscape on the lab slides */
+  Reveal.on('ready', function () {
+    if (!(Reveal.isScrollView && Reveal.isScrollView())) return;
+    var id = (DA_H0.match(/^#\/([\w-]+)/) || [])[1], el = id && document.getElementById(id);
+    if (el && Reveal.getCurrentSlide() !== el) setTimeout(function () { el.scrollIntoView({ block: 'start' }); }, 250);
+  });
+  (function () {
+    var b = document.createElement('div');
+    b.id = 'da-rotate'; b.textContent = 'Turn your phone sideways for the lab.';
+    b.style.cssText = 'display:none;position:fixed;top:0;left:0;right:0;z-index:99999;background:#C47B5A;color:#fff;font:600 16px system-ui,-apple-system,sans-serif;padding:11px 14px;text-align:center';
+    document.body.appendChild(b);
+    function paint() {
+      var c = Reveal.getCurrentSlide(), lab = !!c && /^(da-lobby|double-auction)/.test(c.id || '');
+      b.style.display = (lab && innerWidth < 600 && innerWidth < innerHeight) ? 'block' : 'none';
+    }
+    ['hashchange', 'resize', 'orientationchange'].forEach(function (ev) { window.addEventListener(ev, paint); });
+    Reveal.on('slidechanged', paint); Reveal.on('ready', function () { setTimeout(paint, 400); });
+  })();
   // Mark section-divider slides so the CSS hook in styles.css can swap the bg
   Reveal.on('slidechanged', e => {
     const v = document.querySelector('.reveal-viewport') || document.body;

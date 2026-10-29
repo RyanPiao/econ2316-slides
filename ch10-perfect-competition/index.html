@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=e5e6154cce5bec427eeee7bbf52de01b">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3f8562d618535443c21980505e203b3a">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Perfect Competition &mdash; ECON 2316 Ch 10</title>
@@ -1217,7 +1217,7 @@
   <section id="ww2-question">
     <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Which Way? #2 &mdash; One Owner for All Twenty Shops</h2>
     <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
-      <p style="font-size: 15pt; line-height: 1.7;">One chain buys all 20 campus burger shops. Today they sell 3,500 burgers a day at \$8, and \(MC=\$8\). Is selling the 3,500th burger worth it to the chain?</p>
+      <p style="font-size: 15pt; line-height: 1.7;">One chain buys all 20 campus burger shops. Today they sell 3,500 burgers a day at \$8, and \(MC=\$8\). Market demand is \(P^d(Q)=22-0.004Q\). Is selling the 3,500th burger worth it to the chain?</p>
     </div>
     <div class="poll-grid" data-poll-id="ch10-econ2316-ww-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
       <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Yes: MR = \$8 = MC, so it keeps output at 3,500</div>
@@ -1338,6 +1338,10 @@
         <button id="da-start" style="display:none; background:var(--success-color); color:#fff; border:0; border-radius:9px; padding:9px 22px; font-size:13pt; font-weight:700; cursor:pointer;"><i class="fa-solid fa-play"></i> Start lab</button>
         <button id="da-reset" style="display:none; background:#f4f1ed; border:1px solid var(--line-color); border-radius:14px; padding:4px 13px; font-size:10pt; color:var(--muted-color); cursor:pointer;"><i class="fa-solid fa-rotate-left"></i> reset lab</button>
         <span id="da-lobbystatus" style="font-size:11pt; color:var(--muted-color); font-style:italic;"></span>
+      </div>
+      <div id="da-qr" style="display:none; align-items:center; gap:14px; margin-top:10px; background:#fff; border:1px solid var(--line-color); border-radius:10px; padding:8px 12px;">
+        <div id="da-qrcode" style="width:132px; height:132px; flex:none;"></div>
+        <p style="margin:0; font-size:11pt; line-height:1.45;"><strong>Scan to join.</strong><br>Or open ryanpiao.github.io/<br>econ2316-slides &rarr; Ch 10</p>
       </div>
       <div class="misconception" style="padding:9px 15px; margin-top:11px;">
         <p style="margin:0; font-size:11pt; line-height:1.42;"><strong>Nobody here can see the market.</strong> You will know one number. The two curves do not exist anywhere until every one of you has submitted.</p>
@@ -2045,6 +2049,15 @@
     if(INSTR){if(!confirm("Leave instructor mode?"))return;u.searchParams.delete("instructor");}
     else{if(!confirm("Enter instructor mode?\n\nThis reveals Start lab and reset lab."))return;u.searchParams.set("instructor","1");}
     window.location.href=u.toString();});
+
+  /* join QR on the lobby, instructor windows only: it opens the student copy at this slide */
+  var qrb=$("da-qr");
+  if(INSTR&&qrb){
+    var drawQr=function(){var q=window.qrcode(0,"M");q.addData("https://ryanpiao.github.io/econ2316-slides/ch10-perfect-competition/#/da-lobby");q.make();
+      var box=$("da-qrcode");box.innerHTML=q.createSvgTag({cellSize:4,margin:0,scalable:true});var sv=box.querySelector("svg");if(sv){sv.style.width="100%";sv.style.height="100%";sv.style.display="block";}
+      qrb.style.display="flex";};
+    if(window.qrcode)drawQr();
+    else{var qsc=document.createElement("script");qsc.src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js";qsc.onload=drawQr;document.head.appendChild(qsc);}}
 
   var rst=$("da-reset");
   if(INSTR&&rst){rst.style.display="inline-block";

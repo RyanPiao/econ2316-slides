@@ -126,6 +126,9 @@
   // so a voter sees their own vote at once. Fails open: on any error the real
   // fetch runs. Done here, once, instead of editing the loop in ~90 decks.
   var STUDENT_RESULTS_MS = 20000;
+  // Poll.liveFetch (29 Oct 2026): the unthrottled fetch, for a widget whose students must see the room's
+  // state at once (a market game, a turn-based experiment). Ordinary result charts keep the 20 s reuse.
+  var liveFetch = (window.__realFetch || window.fetch).bind(window);
   if (!INSTRUCTOR && !IS_FILE && window.fetch && window.Response &&
       !window.__pollFetchThrottled) {
     window.__pollFetchThrottled = true;
@@ -1835,6 +1838,7 @@
 
   window.Poll = {
     cast:       cast,
+    liveFetch:  function (url, init) { return liveFetch(url, init); },
     deviceId:   deviceId,
     nuid:       nuid,
     sessionKey: sessionKey,

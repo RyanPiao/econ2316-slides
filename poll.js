@@ -1868,7 +1868,59 @@
                   bootstrap: bootstrap, percentile: percentile }
   };
 
+  /* ---------- phone card: a slide scanned from its own QR, on a phone (1 Nov 2026) ---------- */
+  // A room card's QR (data-url ".../#/<slide id>") opened the TITLE slide on a phone, tiny: Reveal 5
+  // turns a narrow window into its scroll view and rewrites the hash before poll.js runs. The
+  // navigation entry still holds the URL as scanned. When it names a slide whose own QR points at
+  // it, and this is a phone, that slide is lifted out of the deck and shown alone, full width, in
+  // phone-sized type. The section element itself moves, so a slide's own script that kept a
+  // reference to it (rd-room-card) and applyArms(), which searches the document, both still work.
+  // Projector, speaker view and ?instructor never take this path; a desktop never does.
+  function phoneCard() {
+    if (INSTRUCTOR) return;
+    var nav = (performance.getEntriesByType && performance.getEntriesByType("navigation")[0]) || {};
+    var m = String(nav.name || location.href).match(/#\/([A-Za-z][\w-]*)/);
+    if (!m) return;
+    var shortSide = Math.min(screen.width || 9999, screen.height || 9999);
+    var phone = window.innerWidth <= 600 ||
+      (window.matchMedia && matchMedia("(pointer: coarse)").matches && shortSide <= 500);
+    if (!phone) return;
+    var sec = document.getElementById(m[1]);
+    if (!sec || sec.tagName !== "SECTION") return;
+    var self = [].some.call(sec.querySelectorAll("[data-url]"), function (el) {
+      return /#\/([\w-]+)$/.test(el.getAttribute("data-url")) &&
+             el.getAttribute("data-url").split("#/").pop() === m[1];
+    });
+    if (!self) return;
+    var css = document.createElement("style");
+    css.textContent =
+      "html.ec-phone-card-on,html.ec-phone-card-on body{overflow:auto!important;height:auto!important;background:#fff!important}" +
+      "html.ec-phone-card-on .reveal{display:none!important}" +
+      ".ec-phone-card{position:relative;z-index:50;max-width:560px;margin:0 auto;padding:18px 18px 48px;" +
+        "font:18px/1.5 system-ui,-apple-system,'Segoe UI',sans-serif;color:#1f2328;background:#fff}" +
+      ".ec-phone-card section{display:block!important;position:static!important;transform:none!important;" +
+        "width:auto!important;height:auto!important;min-height:0!important;padding:0!important;margin:0!important;" +
+        "opacity:1!important;visibility:visible!important;top:auto!important;left:auto!important;text-align:left!important}" +
+      ".ec-phone-card h2{font-size:22px!important;line-height:1.3!important;margin:0 0 14px!important}" +
+      ".ec-phone-card p,.ec-phone-card li,.ec-phone-card td{font-size:18px!important;line-height:1.5!important}" +
+      ".ec-phone-card .arm-label{font-size:13px!important}" +
+      ".ec-phone-card [style*='grid-template-columns']{display:block!important}" +
+      ".ec-phone-card [data-url]{display:none!important}" +
+      ".ec-phone-card [data-url]+p{display:none!important}" +
+      ".ec-phone-card div[style*='padding']{padding:14px 16px!important}" +
+      ".ec-phone-card button{font-size:18px!important;padding:12px 22px!important;min-height:44px}";
+    document.head.appendChild(css);
+    var wrap = document.createElement("div");
+    wrap.className = "ec-phone-card";
+    sec.removeAttribute("hidden"); sec.removeAttribute("aria-hidden");
+    wrap.appendChild(sec);
+    document.body.appendChild(wrap);
+    document.documentElement.classList.add("ec-phone-card-on");
+    window.scrollTo(0, 0);
+  }
+
   function boot() {
+    phoneCard();
     probeP = probeSessionKey();
     syncIdentity(nuid());
     paintChip();

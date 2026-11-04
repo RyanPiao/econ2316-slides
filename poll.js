@@ -1876,22 +1876,38 @@
   // phone-sized type. The section element itself moves, so a slide's own script that kept a
   // reference to it (rd-room-card) and applyArms(), which searches the document, both still work.
   // Projector, speaker view and ?instructor never take this path; a desktop never does.
-  function phoneCard() {
-    if (INSTRUCTOR) return;
+  // 2 Nov 2026 (5200 T12, Ryan on an iPhone): (1) the card was a dead end -- it says "answer on the
+  // next slide" and a phone cannot page; a card can now name that slide with data-phone-next, shown
+  // below it. (2) A reload, or a second scan into the same tab, opened the deck at the title: Reveal
+  // had rewritten the hash, so the reload's navigation entry no longer named the card. The scanned
+  // hash is put back, and a hash change to a card on a phone lifts it too.
+  function phoneCard(url) {
+    if (INSTRUCTOR || document.documentElement.classList.contains("ec-phone-card-on")) return;
     var nav = (performance.getEntriesByType && performance.getEntriesByType("navigation")[0]) || {};
-    var m = String(nav.name || location.href).match(/#\/([A-Za-z][\w-]*)/);
-    if (!m) return;
     var shortSide = Math.min(screen.width || 9999, screen.height || 9999);
     var phone = window.innerWidth <= 600 ||
       (window.matchMedia && matchMedia("(pointer: coarse)").matches && shortSide <= 500);
     if (!phone) return;
-    var sec = document.getElementById(m[1]);
-    if (!sec || sec.tagName !== "SECTION") return;
-    var self = [].some.call(sec.querySelectorAll("[data-url]"), function (el) {
-      return /#\/([\w-]+)$/.test(el.getAttribute("data-url")) &&
-             el.getAttribute("data-url").split("#/").pop() === m[1];
-    });
-    if (!self) return;
+    function card(id) {                      // the section, if it is a card whose own QR points at it
+      var sec = id && document.getElementById(id);
+      if (!sec || sec.tagName !== "SECTION") return null;
+      return [].some.call(sec.querySelectorAll("[data-url]"), function (el) {
+        return /#\/([\w-]+)$/.test(el.getAttribute("data-url")) &&
+               el.getAttribute("data-url").split("#/").pop() === id;
+      }) ? sec : null;
+    }
+    // Reveal keeps rewriting the hash to the title, so a reload's navigation entry no longer names
+    // the card. The card shown in this tab is kept in sessionStorage and used on a reload or Back
+    // only; a fresh visit to the deck opens the deck.
+    var KEY = "ec_phone_card|" + location.pathname;
+    var m = String(url || nav.name || location.href).match(/#\/([A-Za-z][\w-]*)/);
+    var sec = card(m && m[1]);
+    if (!sec && !url && (nav.type === "reload" || nav.type === "back_forward")) {
+      try { sec = card(sessionStorage.getItem(KEY)); } catch (e) {}
+    }
+    if (!sec) return;
+    m = [null, sec.id];
+    try { sessionStorage.setItem(KEY, sec.id); } catch (e) {}
     var css = document.createElement("style");
     css.textContent =
       "html.ec-phone-card-on,html.ec-phone-card-on body{overflow:auto!important;height:auto!important;background:#fff!important}" +
@@ -1908,19 +1924,31 @@
       ".ec-phone-card [data-url]{display:none!important}" +
       ".ec-phone-card [data-url]+p{display:none!important}" +
       ".ec-phone-card div[style*='padding']{padding:14px 16px!important}" +
-      ".ec-phone-card button{font-size:18px!important;padding:12px 22px!important;min-height:44px}";
+      ".ec-phone-card button{font-size:18px!important;padding:12px 22px!important;min-height:44px}" +
+      ".ec-phone-card section+.ec-phone-next{margin:26px 0 12px!important;padding-top:16px!important;border-top:2px solid #d9d4cb;font-weight:700;color:#1F7A5A}";
     document.head.appendChild(css);
     var wrap = document.createElement("div");
     wrap.className = "ec-phone-card";
     sec.removeAttribute("hidden"); sec.removeAttribute("aria-hidden");
     wrap.appendChild(sec);
+    var nextId = sec.getAttribute("data-phone-next"), nxt = nextId && document.getElementById(nextId);
+    if (nxt && nxt.tagName === "SECTION") {
+      var cue = document.createElement("p");
+      cue.className = "ec-phone-next";
+      cue.textContent = "Then answer here \u2193";
+      wrap.appendChild(cue);
+      nxt.removeAttribute("hidden"); nxt.removeAttribute("aria-hidden");
+      wrap.appendChild(nxt);
+    }
     document.body.appendChild(wrap);
     document.documentElement.classList.add("ec-phone-card-on");
+    try { history.replaceState(history.state, "", location.pathname + location.search + "#/" + m[1]); } catch (e) {}
     window.scrollTo(0, 0);
   }
 
   function boot() {
     phoneCard();
+    window.addEventListener("hashchange", function () { phoneCard(location.href); });
     probeP = probeSessionKey();
     syncIdentity(nuid());
     paintChip();

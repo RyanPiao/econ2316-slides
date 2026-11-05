@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=792dc0d7eeb58669b5aeb79fe95b5904">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=26e6a3a501ed1a955b7d7e5c069bafe4">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -1185,30 +1185,28 @@
 
 <section>
 <section id="lerner-segment">
- <h2><i class="fa-solid fa-percent" style="color: var(--secondary-color);"></i> How Much Should Each Segment Be Charged?</h2>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;">
-  <div>
-   <p style="font-size:13pt; line-height:1.45; margin:0 0 8px;">A segmenting monopolist treats each segment as its <strong>own market</strong>, so the <strong>Lerner index</strong> sets the optimal markup per segment:</p>
-   <div class="key-result" style="background:#fef9f3; border-left-color:var(--accent-color); margin:0;"><p style="margin:0; text-align:center; font-size:16pt;">\(\dfrac{P - MC}{P} = -\dfrac{1}{\varepsilon_D}\)</p></div>
-   <p style="font-size:12.5pt; margin:10px 0 6px;">Solve it segment by segment. At the Starbucks optimum:</p>
-   <div style="display:flex; gap:10px;">
-    <div style="flex:1; background:#f0f5f8; border-radius:8px; padding:8px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12.5pt; margin:0;">Commuters: \(\varepsilon_D = -1.327\)</p></div>
-    <div style="flex:1; background:#fef9f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12.5pt; margin:0;">Residents: \(\varepsilon_D = -1.439\)</p></div>
-   </div>
+ <h2><i class="fa-solid fa-percent" style="color: var(--secondary-color);"></i> How Much Should Each Segment Pay?</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start;">
+  <div style="background:#f4f1ed; border-left:3px solid var(--secondary-color); border-radius:8px; padding:12px 18px;">
+   <p style="margin:0 0 2px; font-size:11pt; text-transform:uppercase; letter-spacing:0.05em; color:var(--secondary-color); font-weight:700;">Where the rule comes from</p>
+   <p style="font-size:12.5pt; margin:4px 0;">Segments can&rsquo;t resell to each other, so profit is just a sum of separate markets:</p>
+   <p style="text-align:center; font-size:13.5pt; margin:4px 0;">\(\pi = \sum_i (P_i - MC)\,Q_i(P_i)\)</p>
+   <p style="font-size:12.5pt; margin:4px 0;">Each segment gets its <strong>own</strong> first-order condition:</p>
+   <p style="text-align:center; font-size:13.5pt; margin:4px 0;">\(Q_i + (P_i - MC)\,Q_i' = 0\)</p>
+   <p style="font-size:12.5pt; margin:4px 0;">which rearranges to</p>
+   <div class="key-result" style="margin:6px 0 4px;"><p style="margin:0; text-align:center; font-size:16pt;">\(L_i = \dfrac{P_i - MC}{P_i} = -\dfrac{1}{\varepsilon_{D,i}}\)</p></div>
+   <p style="font-size:12pt; margin:4px 0 0; color:var(--muted-color);">Chapter 11&rsquo;s Lerner rule, run <strong style="color:var(--text-color);">once per segment</strong>.</p>
   </div>
   <div>
-   <p style="font-size:12.5pt; margin:0 0 5px;">Two steps, no algebra tricks. Take the markup, then back out the price with \(P = \dfrac{MC}{1 - L}\):</p>
-   <div style="display:flex; flex-direction:column; gap:5px;">
-    <div style="background:#f0f5f8; border-radius:7px; padding:6px 13px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;">Commuters: \(L_T = \tfrac{1}{1.327} = 0.7534 \Rightarrow P_T = \tfrac{0.90}{0.2466} = \$3.65\)</p></div>
-    <div style="background:#fef9f3; border-radius:7px; padding:6px 13px; border-left:4px solid var(--accent-color);"><p style="font-size:12pt; margin:0;">Residents: \(L_L = \tfrac{1}{1.439} = 0.6949 \Rightarrow P_L = \tfrac{0.90}{0.3051} = \$2.95\)</p></div>
-   </div>
-   <div class="key-result" style="margin-top:7px;"><p style="margin:0; font-size:12pt;">Elasticity alone pins both prices &mdash; <strong>$3.65</strong> and <strong>$2.95</strong>, the same answer as the \(MR = MC\) solve and the two menus. Commuters pay <strong>~24% more</strong>, and \(MC\) was identical for both.</p></div>
+   <p style="font-size:12.5pt; margin:0 0 6px;"><strong>Starbucks</strong> (MC \$0.90). Markup first, then price: \(P = \dfrac{MC}{1 - L}\)</p>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:8px 14px; border-left:4px solid var(--secondary-color); margin-bottom:6px;"><p style="font-size:12.5pt; margin:0;"><strong>Commuters</strong> \(\varepsilon_D = -1.327\): \(L = 0.7534 \Rightarrow P = \tfrac{0.90}{0.2466} = \$3.65\)</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12.5pt; margin:0;"><strong>Residents</strong> \(\varepsilon_D = -1.439\): \(L = 0.6949 \Rightarrow P = \tfrac{0.90}{0.3051} = \$2.95\)</p></div>
+   <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top:8px;"><p style="margin:0; font-size:12.5pt;"><strong>The less elastic segment pays more.</strong> Same coffee, same MC: commuters pay about 24% more because their demand is less sensitive to price. The same \$3.65 and \$2.95 as the MR = MC solve.</p></div>
   </div>
  </div>
- <p style="text-align:center; font-size:11.5pt; margin:11px 0 0; color:var(--muted-color);"><i class="fa-solid fa-circle-down" style="color:var(--accent-color);"></i> &nbsp;Press <strong>&darr;</strong> to try the rule yourself &mdash; same tour, two cities.</p>
 </section>
 
-<section id="you-try-tour">
+<section id="you-try-tour" data-visibility="hidden">
  <h2><i class="fa-solid fa-guitar" style="color: var(--accent-color);"></i> You Try &mdash; Same Tour, Two Cities</h2>
  <div style="background: rgba(196,123,90,0.10); border-left:4px solid var(--accent-color); border-radius:6px; padding:10px 16px; margin:0 0 9px;">
   <p style="margin:0; font-size:13pt; line-height:1.45;">An artist plays back-to-back arena dates. The promoter's <strong>marginal cost per seat is \$60</strong> &mdash; the artist's guarantee eats most of every ticket. Demand differs by market: <strong>Boston</strong> \(\varepsilon_D = -3\) (student-heavy, price-sensitive), <strong>New York</strong> \(\varepsilon_D = -2\) (denser fanbase, higher incomes, out-of-town buyers). Price each date. <span style="color:var(--muted-color); font-size:11pt;">(try it, then press &rarr;)</span></p>
@@ -1227,7 +1225,7 @@
 </section>
 </section>
 
-<section id="cc-12-1">
+<section id="cc-12-1" data-visibility="hidden">
   <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner 12.1 &mdash; Inverse-Elasticity Rule, Per Segment</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center;">
     <div style="background: #f4f1ed; border-left: 3px solid var(--secondary-color); border-radius: var(--box-radius); padding: 14px 20px;">

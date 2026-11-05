@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=2f1d99d524bb3070e860e05a5d9b609c">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=ab7edfa5f60c26f918590fc70b97e314">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -1042,14 +1042,15 @@
 </section>
 
 <section id="pd3-movie">
- <h2><i class="fa-solid fa-film" style="color: var(--danger-color);"></i> Third-Degree &mdash; Movie Tickets (by Age)</h2>
- <div style="width:100%; max-width:780px; margin:4px auto 0;">
-  <div class="video-frame" style="box-shadow:0 3px 14px rgba(0,0,0,0.18);"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch11/movie.mp4" autoplay loop muted playsinline preload="none" title="Movie theater audience of mixed ages"></video></div>
+ <h2><i class="fa-solid fa-ticket" style="color: var(--danger-color);"></i> Third-Degree &mdash; Movie Tickets and Airline Fares</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px;">
+  <div><p style="font-size:11pt; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted-color); margin:0 0 4px; font-weight:700;">Movie tickets &middot; by age</p><div class="video-frame" style="box-shadow:0 3px 14px rgba(0,0,0,0.18); width:74%; margin:0 auto;"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch11/movie.mp4" autoplay loop muted playsinline preload="none" title="Movie theater audience of mixed ages"></video></div><ul style="font-size:12pt; line-height:1.4; margin:6px 0 0;"><li><strong>Trait:</strong> age. Children and seniors pay less than adults.</li><li><strong>Why:</strong> they are more elastic; the discount fills empty seats at MC &asymp; 0.</li><li><strong>Fence:</strong> the ticket is checked at the door.</li></ul></div>
+  <div><p style="font-size:11pt; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted-color); margin:0 0 4px; font-weight:700;">Airline fares &middot; by trip type</p><div class="video-frame" style="box-shadow:0 3px 14px rgba(0,0,0,0.18); width:74%; margin:0 auto;"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch11/alirline_traval.mp4" autoplay loop muted playsinline preload="none" title="Airport departures board"></video></div><ul style="font-size:12pt; line-height:1.4; margin:6px 0 0;"><li><strong>Trait:</strong> leisure (elastic) vs business (inelastic).</li><li><strong>Why:</strong> fares rise near departure (business books late); early and off-peak = leisure.</li><li><strong>Fence:</strong> the ticket must be used by the purchaser.</li></ul></div>
  </div>
- <div style="background:#fdf6c4; border-radius:8px; padding:9px 18px; margin-top:10px; text-align:center;"><p style="font-size:13pt; margin:0; color:#1a1a1a;">Movie theaters charge <strong>different ticket prices for children, adults, and seniors</strong> &mdash; <strong>age</strong> is the observable trait, and the ticket is checked at the door (no resale).</p></div>
+ <div class="key-result fragment fade-up" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>Same recipe both times:</strong> a trait the firm can see that tracks elasticity, plus a fence that stops resale.</p></div>
 </section>
 
-<section id="pd3-airline">
+<section id="pd3-airline" data-visibility="hidden">
  <h2><i class="fa-solid fa-plane" style="color: var(--danger-color);"></i> Third-Degree &mdash; Airline Fares</h2>
  <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:18px; align-items:center;">
   <div class="video-frame" style="box-shadow:0 3px 14px rgba(0,0,0,0.18);"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch11/alirline_traval.mp4" autoplay loop muted playsinline preload="none" title="Airport departures board"></video></div>
@@ -1259,11 +1260,12 @@
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
    <p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Problem.</strong> Spotify&rsquo;s marginal cost is <strong>\$8.40</strong> per subscriber (from Ch 11). Predict each tier&rsquo;s price with the per-segment rule \(P = \dfrac{MC}{1 - 1/|\varepsilon|}\), then compare with the 2025 prices.</p>
   </div>
-  <table class="table-standard" style="width:100%; font-size:12.5pt; margin:0;">
+  <table class="table-standard" style="width:100%; font-size:12pt; margin:0;">
    <thead><tr><th style="text-align:left;">Tier</th><th>Elasticity</th><th>Rule predicts</th><th>Actual</th><th style="text-align:left;">Verdict</th></tr></thead>
-   <tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:6px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Premium</strong></td><td style="padding:6px 10px;">&minus;3.33</td><td style="padding:6px 10px;">8.40 / 0.70 = <strong>\$12.00</strong></td><td style="padding:6px 10px; font-size:14pt;"><strong>\$11.99</strong></td><td style="text-align:left; padding:6px 10px; background:#e3f4ea;"><i class="fa-solid fa-circle-check" style="color:var(--success-color);"></i> <strong>Match.</strong> The rule nails it.</td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:6px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Student</strong></td><td style="padding:6px 10px;">&minus;5.0</td><td style="padding:6px 10px;">8.40 / 0.80 = <strong>\$10.50</strong></td><td style="padding:6px 10px; font-size:14pt;"><strong>\$5.99</strong></td><td style="text-align:left; padding:6px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Below MC.</strong> No elasticity gets under \$8.40: a <strong>loss leader</strong> to win future Premium customers.</td></tr><tr class="fragment fade-up" data-fragment-index="3"><td style="text-align:left; padding:6px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.5</span><br><strong>Family</strong></td><td style="padding:6px 10px;">&minus;1.5</td><td style="padding:6px 10px;">8.40 / 0.33 = <strong>\$25.20</strong></td><td style="padding:6px 10px; font-size:14pt;"><strong>\$19.99</strong></td><td style="text-align:left; padding:6px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Too high.</strong> Near |&epsilon;| = 1 the rule blows up; rivals (Apple Music Family) and \$3.33 per account cap the price.</td></tr></tbody>
+   <tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:4px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Premium</strong></td><td style="padding:4px 10px;">&minus;3.33</td><td style="padding:4px 10px; white-space:nowrap;">8.40 / 0.70 = <strong>\$12.00</strong></td><td style="padding:4px 10px; font-size:14pt;"><strong>\$11.99</strong></td><td style="text-align:left; padding:4px 10px; background:#e3f4ea;"><i class="fa-solid fa-circle-check" style="color:var(--success-color);"></i> <strong>Match.</strong> The rule nails it.</td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:4px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Student</strong></td><td style="padding:4px 10px;">&minus;5.0</td><td style="padding:4px 10px; white-space:nowrap;">8.40 / 0.80 = <strong>\$10.50</strong></td><td style="padding:4px 10px; font-size:14pt;"><strong>\$5.99</strong></td><td style="text-align:left; padding:4px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Below MC.</strong> No elasticity gets under \$8.40: a <strong>loss leader</strong> to win future Premium customers.</td></tr><tr class="fragment fade-up" data-fragment-index="3"><td style="text-align:left; padding:4px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.5</span><br><strong>Family</strong></td><td style="padding:4px 10px;">&minus;1.5</td><td style="padding:4px 10px; white-space:nowrap;">8.40 / 0.33 = <strong>\$25.20</strong></td><td style="padding:4px 10px; font-size:14pt;"><strong>\$19.99</strong></td><td style="text-align:left; padding:4px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Too high.</strong> Near |&epsilon;| = 1 the rule blows up; rivals and \$3.33 per account cap it.</td></tr></tbody>
   </table>
-  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>Takeaway.</strong> The rule fits the tier priced like a plain monopoly. When it misses, the miss tells you what else is going on: investing in future customers (Student) or competition from rivals (Family), the Ch 13 story.</p></div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:8px;"><p style="margin:0; font-size:12.5pt;"><strong>Takeaway.</strong> The rule fits a tier priced like a plain monopoly; a miss points to future customers (Student) or rivals (Family, Ch 13).</p></div>
+  <div class="fragment fade-up" data-fragment-index="5" style="margin-top:0; background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:7px 14px;"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>Theory and Data 12.1 &mdash; the Jan 15, 2026 reset.</strong> Individual \$11.99 &rarr; \$12.99, Student \$5.99 &rarr; \$6.99, Duo \$16.99 &rarr; \$18.99, Family \$19.99 &rarr; \$21.99. If MC stays 70% of list (0.70 &times; \$12.99 = \$9.09), the Lerner index stays <strong>0.30</strong>: that is the assumption showing, not a test of the rule.</p></div>
 </section>
 <section id="walkthrough-12-5" data-visibility="hidden">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.5 &mdash; Family Tier: When the Formula Breaks</h2>
@@ -1298,7 +1300,7 @@
   </div>
 </section>
 
-<section id="td-jan-hike">
+<section id="td-jan-hike" data-visibility="hidden">
   <h2><i class="fa-solid fa-arrow-trend-up" style="color: var(--secondary-color);"></i> Theory and Data 12.1 &mdash; Spotify's Jan 15, 2026 Portfolio Reset</h2>
   <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
     <div>

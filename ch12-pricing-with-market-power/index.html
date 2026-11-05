@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=5b8db97f93d3c819c629ca2f8633b1d7">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=09340ea2e306796554a62e3097f7bdca">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -1265,7 +1265,7 @@
    <p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Problem.</strong> Spotify&rsquo;s marginal cost is <strong>\$8.40</strong> per subscriber (from Ch 11). Predict each tier&rsquo;s price with the per-segment rule \(P = \dfrac{MC}{1 - 1/|\varepsilon|}\), then compare with the 2025 prices.</p>
   </div>
   <table class="table-standard" style="width:100%; font-size:12pt; margin:0;">
-   <thead><tr><th style="text-align:left;">Tier</th><th>Elasticity</th><th>Rule predicts</th><th>Actual</th><th style="text-align:left;">Verdict</th></tr></thead>
+   <thead><tr><th style="text-align:left;">Tier</th><th>Elasticity</th><th>Rule predicts</th><th>Actual</th><th style="text-align:left;">Result</th></tr></thead>
    <tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:4px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Premium</strong></td><td style="padding:4px 10px;">&minus;3.33</td><td style="padding:4px 10px; white-space:nowrap;">8.40 / 0.70 = <strong>\$12.00</strong></td><td style="padding:4px 10px; font-size:14pt;"><strong>\$11.99</strong></td><td style="text-align:left; padding:4px 10px; background:#e3f4ea;"><i class="fa-solid fa-circle-check" style="color:var(--success-color);"></i> <strong>Match.</strong> The rule nails it.</td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:4px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Student</strong></td><td style="padding:4px 10px;">&minus;5.0</td><td style="padding:4px 10px; white-space:nowrap;">8.40 / 0.80 = <strong>\$10.50</strong></td><td style="padding:4px 10px; font-size:14pt;"><strong>\$5.99</strong></td><td style="text-align:left; padding:4px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Below MC.</strong> No elasticity gets under \$8.40: a <strong>loss leader</strong> to win future Premium customers.</td></tr><tr class="fragment fade-up" data-fragment-index="3"><td style="text-align:left; padding:4px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.5</span><br><strong>Family</strong></td><td style="padding:4px 10px;">&minus;1.5</td><td style="padding:4px 10px; white-space:nowrap;">8.40 / 0.33 = <strong>\$25.20</strong></td><td style="padding:4px 10px; font-size:14pt;"><strong>\$19.99</strong></td><td style="text-align:left; padding:4px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Too high.</strong> Near |&epsilon;| = 1 the rule blows up; rivals and \$3.33 per account cap it.</td></tr></tbody>
   </table>
   <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:8px;"><p style="margin:0; font-size:12.5pt;"><strong>Takeaway.</strong> The rule fits a tier priced like a plain monopoly; a miss points to future customers (Student) or rivals (Family, Ch 13).</p></div>
@@ -1406,25 +1406,46 @@
 </section>
 
 <section id="block-pricing-basics">
- <h2><i class="fa-solid fa-layer-group" style="color: var(--secondary-color);"></i> Block Pricing &mdash; When to Use It</h2>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;">
-  <div>
-   <p style="font-size:12.5pt; margin:0 0 9px; color:var(--muted-color);">Two conditions for <strong>block pricing and two-part tariffs</strong>:</p>
-   <div style="background:#f0f5f8; border-radius:8px; padding:11px 16px; border-left:4px solid var(--secondary-color); margin-bottom:11px;"><p style="margin:0; font-size:13pt;"><strong>1.</strong> The firm has <strong>market power</strong> and can <strong>prevent resale</strong>.</p></div>
-   <div style="background:#f0f5f8; border-radius:8px; padding:11px 16px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:13pt;"><strong>2.</strong> Its customers may have <strong>identical or different</strong> demand curves.</p></div>
+ <h2><i class="fa-solid fa-layer-group" style="color: var(--secondary-color);"></i> Block Pricing &mdash; Pay Less per Unit as You Buy More</h2>
+ <div class="key-result" style="margin:0 0 6px;"><p style="margin:0; font-size:12.5pt;"><strong>Block pricing</strong> is the practice of <strong>reducing the price of a good as the customer buys more of it</strong>. It needs (1) <strong>market power</strong> and <strong>no resale</strong>; (2) customers may have <strong>identical or different</strong> demand curves.</p></div>
+ <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:18px; align-items:center;">
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 430 306" style="width:100%; max-width:420px; height:auto; display:block; margin:0 auto; overflow:visible;" font-family="Georgia, 'Times New Roman', serif">
+    <rect x="52" y="91" width="176" height="80" fill="rgba(34,197,94,0.16)"/>
+    <rect x="228" y="118" width="88" height="53" fill="rgba(59,130,246,0.16)"/>
+    <line x1="228" y1="91" x2="228" y2="260" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="316" y1="118" x2="316" y2="260" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="52" y1="91" x2="228" y2="91" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="52" y1="118" x2="316" y2="118" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="52" y1="20" x2="52" y2="260" stroke="#111827" stroke-width="1.5"/>
+    <line x1="52" y1="260" x2="404" y2="260" stroke="#111827" stroke-width="1.5"/>
+    <line x1="52" y1="38" x2="404" y2="144" stroke="#1d4ed8" stroke-width="2.5"/>
+    <text x="390" y="137" font-size="12" font-style="italic" font-weight="700" fill="#1d4ed8">D</text>
+    <line x1="52" y1="171" x2="404" y2="171" stroke="#dc2626" stroke-width="2"/>
+    <text x="407" y="174" font-size="11" font-weight="700" fill="#dc2626">MC</text>
+    <path d="M52,91 L228,91 L228,118 L316,118" fill="none" stroke="#111827" stroke-width="2.5"/>
+    <text x="140" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">$0.19</text>
+    <text x="272" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">$0.16</text>
+    <text x="48" y="42" text-anchor="end" font-size="10" fill="#374151">$0.25</text>
+    <text x="48" y="95" text-anchor="end" font-size="10" fill="#374151">$0.19</text>
+    <text x="48" y="122" text-anchor="end" font-size="10" fill="#374151">$0.16</text>
+    <text x="48" y="175" text-anchor="end" font-size="10" fill="#374151">$0.10</text>
+    <text x="228" y="274" text-anchor="middle" font-size="10" fill="#374151">100</text>
+    <text x="316" y="274" text-anchor="middle" font-size="10" fill="#374151">150</text>
+    <text x="15" y="140" text-anchor="middle" font-size="10.5" fill="#111827" transform="rotate(-90 15 140)">Price ($/flyer)</text>
+    <text x="228" y="293" text-anchor="middle" font-size="10.5" fill="#111827">Quantity of flyers</text>
+   </svg></div>
+  <div style="text-align:center;">
+   <img alt="Online flyer printing price: 100 flyers at 0.19 each, plus 50 more at 0.16 each" src="figures/block_pricing_flyer.png" style="max-width:100%; max-height:220px; object-fit:contain; border:1px solid var(--line-color); border-radius:8px;">
+   <p style="font-size:10.5pt; color:var(--muted-color); margin:5px 0 0;">A real printer: first 100 flyers at \$0.19 each, the next 50 at \$0.16 each.</p>
+   <p style="font-size:11.5pt; line-height:1.4; margin:8px 0 0; text-align:left;">One schedule for everyone, so <strong>no IC constraint</strong> (unlike the &sect;12.3 menus). But it <strong>does</strong> need the demand curve: \$0.19 is \(D\) at 100 flyers, \$0.16 is \(D\) at 150.</p>
   </div>
-  <div>
-   <div class="key-result" style="margin:0 0 14px;"><p style="margin:0; font-size:13pt;"><strong>Block pricing</strong> is the practice of <strong>reducing the price of a good as the customer buys more of it</strong>.</p></div>
-   <div style="background:#fef9f3; border-radius:8px; padding:10px 15px; border-left:4px solid var(--accent-color);">
-    <p style="font-size:12pt; margin:0 0 6px; line-height:1.45;"><strong>What it needs &mdash; and what it doesn't.</strong> One schedule is posted for everyone, so the firm never has to tell buyers <em>apart</em>: there is <strong>no IC constraint</strong> to satisfy, unlike the &sect;12.3 menus.</p>
-    <p style="font-size:12pt; margin:0; line-height:1.45;">But it <strong>does</strong> need the demand curve. On the next slide the two block prices are read straight off \(D\) &mdash; \$0.19 is \(D\) at 100 flyers, \$0.16 is \(D\) at 150.</p>
-   </div>
-   <p style="font-size:11.5pt; line-height:1.4; margin:9px 0 0; color:var(--muted-color);">Block pricing is <strong>second-degree PD on the quantity axis</strong> &mdash; the same ladder the \(k\)-tier explorer climbed in &sect;12.2, now with real posted blocks.</p>
-  </div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="1" style="background:#f4f1ed; border-radius:8px; padding:7px 16px; margin-top:8px;">
+  <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>Was it worth it?</strong> One price (\(MR=MC\)) &rarr; \$0.177, <strong>129</strong> flyers, PS &asymp; <strong>\$10.00</strong>. Two blocks &rarr; <strong>150</strong> flyers, PS = <strong>\$12.00</strong> (<strong>+20%</strong>). Perfect PD would take \$20. <strong>Output <em>rose</em></strong> (129&rarr;150): unlike third-degree PD at Starbucks (cups flat at 685), block pricing moves <em>toward</em> efficiency.</p>
  </div>
 </section>
 
-<section id="block-pricing-figure">
+<section id="block-pricing-figure" data-visibility="hidden">
  <h2><i class="fa-solid fa-layer-group" style="color: var(--secondary-color);"></i> Block Pricing in Action &mdash; Business Flyers</h2>
  <ul style="font-size:12.5pt; line-height:1.35; margin:0 0 6px; padding-left:22px;">
   <li>Varying <strong>unit prices</strong> offered to the <strong>same customer</strong>.</li>
@@ -1469,33 +1490,22 @@
 </section>
 
 <section id="block-pricing-amazon">
- <h2><i class="fa-solid fa-cloud" style="color: var(--secondary-color);"></i> Block Pricing at Cloud Scale &mdash; Amazon S3</h2>
- <div style="display:grid; grid-template-columns:1.08fr 0.92fr; gap:20px; align-items:center;">
-  <div style="text-align:center;"><img alt="Amazon S3 storage pricing tiers: first 50 TB, next 450 TB, over 500 TB at falling per-GB rates" src="figures/block_pricing_amazon.png" style="max-width:100%; max-height:345px; object-fit:contain; border:1px solid var(--line-color); border-radius:8px;"></div>
+ <h2><i class="fa-solid fa-train-subway" style="color: var(--secondary-color);"></i> Block Pricing on the Subway &mdash; New York&rsquo;s OMNY Fare Cap</h2>
+ <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:20px; align-items:center;">
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 560 290" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg"><text x="10" y="22" font-size="16" font-weight="700" fill="#2b2622">Price of each ride in one 7-day window</text><line x1="52" y1="176" x2="540" y2="176" stroke="#e5e0da" stroke-width="1"/><text x="46" y="181" text-anchor="end" font-size="14" fill="#6b645e">$1</text><line x1="52" y1="116" x2="540" y2="116" stroke="#e5e0da" stroke-width="1"/><text x="46" y="121" text-anchor="end" font-size="14" fill="#6b645e">$2</text><line x1="52" y1="56" x2="540" y2="56" stroke="#e5e0da" stroke-width="1"/><text x="46" y="61" text-anchor="end" font-size="14" fill="#6b645e">$3</text><text x="46" y="241" text-anchor="end" font-size="14" fill="#6b645e">$0</text><rect x="60" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><text x="72" y="256" text-anchor="middle" font-size="13" fill="#6b645e">1</text><rect x="90" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="120" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="150" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="180" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><text x="192" y="256" text-anchor="middle" font-size="13" fill="#6b645e">5</text><rect x="210" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="240" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="270" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="300" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><rect x="330" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><text x="342" y="256" text-anchor="middle" font-size="13" fill="#6b645e">10</text><rect x="360" y="56.0" width="24" height="180.0" rx="2" fill="#2E6DB4"/><text x="372" y="256" text-anchor="middle" font-size="13" fill="#6b645e">11</text><rect x="390" y="116.0" width="24" height="120.0" rx="2" fill="#B7791F"/><text x="402" y="256" text-anchor="middle" font-size="13" fill="#6b645e">12</text><rect x="420" y="233" width="24" height="3" rx="2" fill="#1F7A5A"/><text x="432" y="256" text-anchor="middle" font-size="13" fill="#6b645e">13</text><rect x="450" y="233" width="24" height="3" rx="2" fill="#1F7A5A"/><rect x="480" y="233" width="24" height="3" rx="2" fill="#1F7A5A"/><rect x="510" y="233" width="24" height="3" rx="2" fill="#1F7A5A"/><text x="522" y="256" text-anchor="middle" font-size="13" fill="#6b645e">16</text><line x1="52" y1="236" x2="540" y2="236" stroke="#2b2622" stroke-width="1.5"/><text x="296" y="278" text-anchor="middle" font-size="14" fill="#2b2622">ride number this week</text><text x="210" y="46" text-anchor="middle" font-size="16" font-weight="700" fill="#2E6DB4">rides 1&#8211;11: $3.00 each</text><text x="420" y="126" text-anchor="start" font-size="15" font-weight="700" fill="#B7791F">&#8592; 12th: $2.00</text><text x="480" y="220" text-anchor="middle" font-size="16" font-weight="700" fill="#1F7A5A">free</text><text x="480" y="176" text-anchor="middle" font-size="14" fill="#1F7A5A">$35 paid:</text><text x="480" y="194" text-anchor="middle" font-size="14" fill="#1F7A5A">the rest is $0</text></svg></div>
   <div>
-   <p style="font-size:12.5pt; line-height:1.45; margin:0 0 9px;">Amazon S3 storage is a <strong>declining-block tariff</strong> &mdash; the per-GB price falls the more you store:</p>
-   <ul style="font-size:12pt; line-height:1.5; margin:0 0 11px; padding-left:20px;">
-    <li>First 50 TB / month: <strong>$0.023</strong> / GB</li>
-    <li>Next 450 TB / month: <strong>$0.022</strong> / GB</li>
-    <li>Over 500 TB / month: <strong>$0.021</strong> / GB</li>
+   <p style="font-size:12.5pt; line-height:1.45; margin:0 0 8px;">A ride costs <strong>\$3.00</strong>. Once you have paid <strong>\$35</strong> in the seven days that start with your first tap, <strong>every other ride that week is free</strong>.</p>
+   <ul style="font-size:12pt; line-height:1.45; margin:0 0 9px; padding-left:20px;">
+    <li><strong>Market power:</strong> one subway system.</li>
+    <li><strong>No resale:</strong> the cap counts taps on one card or phone.</li>
+    <li>Two blocks: \$3.00 a ride, then <strong>\$0</strong>.</li>
    </ul>
-   <div class="key-result" style="margin:0 0 9px;"><p style="margin:0; font-size:12pt;">Same buyer, a lower unit price as quantity rises &mdash; textbook <strong>block pricing</strong>. Heavy users slide into a cheaper marginal rate, while AWS still earns the high rate on the first, most-valued terabytes.</p></div>
    <div style="background:#fef9f3; border-radius:8px; padding:9px 15px; border-left:4px solid var(--accent-color);">
-    <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>Marginal \(\neq\) average.</strong> Store <strong>1 PB</strong> and the bill is $1,150 + $9,900 + $10,500 = <strong>$21,550</strong>/mo. Your <em>marginal</em> rate is $0.021, but the <em>average</em> you pay is <strong>$0.02155</strong>. A flat $0.023 would cost $23,000, so you save 6.3% &mdash; and that average-minus-marginal wedge is exactly AWS&rsquo;s take. <span style="color:var(--muted-color);">(1 TB = 1,000 GB)</span></p>
+    <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>Marginal &ne; average.</strong> Ride 20 times in a week and you pay \$35: <strong>\$1.75</strong> a ride on average, but your 20th ride cost <strong>\$0</strong>.</p>
    </div>
   </div>
  </div>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:11px;">
-  <div style="background:#f0f5f8; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);">
-   <p style="font-size:11pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 4px;">A 2026 tariff that runs the other way</p>
-   <p style="font-size:11.5pt; margin:0; line-height:1.4;">Frontier <strong>AI APIs</strong> price by <em>context length</em>: cross roughly <strong>200K tokens</strong> in one request and the per-token rate <strong>jumps</strong> &mdash; some vendors double it, others deliberately stay flat. Posted blocks, a threshold, a price change &mdash; but <strong>increasing</strong>, not declining.</p>
-  </div>
-  <div style="background:#fef9f3; border-radius:8px; padding:9px 15px; border-left:4px solid var(--accent-color);">
-   <p style="font-size:11pt; color:var(--accent-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 4px;">Why opposite directions?</p>
-   <p style="font-size:11.5pt; margin:0; line-height:1.4;">S3&rsquo;s falling blocks are <strong>extraction</strong> &mdash; walking one heavy buyer down her own demand curve. The AI surcharge tracks a real <strong>cost</strong>: attention grows faster than context, so a very long request truly costs more per token to serve.</p>
-  </div>
- </div>
- <p style="font-size:11.5pt; margin:9px 2px 0; line-height:1.4;">Same observable &mdash; <em>price varies with quantity</em> &mdash; two different causes. That is the <strong>pink-tax test</strong> from two slides ago, applied to a block tariff.</p>
+ <div class="key-result" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>Why cap?</strong> The MTA keeps the full fare from occasional riders, while heavy riders face a marginal price of \$0 and ride more: output <strong>rises</strong>, as with the flyers. Same buyer, a lower price per ride as rides rise: a declining-block tariff.</p></div>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="div-two-part">

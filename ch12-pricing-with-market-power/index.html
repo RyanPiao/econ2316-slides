@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=26e6a3a501ed1a955b7d7e5c069bafe4">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=0a19e596959e90009aca0c73303cf24e">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -1246,7 +1246,7 @@
   </div>
 </section>
 
-<section id="app-spotify-portfolio">
+<section id="app-spotify-portfolio" data-visibility="hidden">
   <h2><i class="fa-solid fa-sitemap" style="color: var(--secondary-color);"></i> Application 12.1 &mdash; Spotify's Portfolio as Live Third-Degree PD</h2>
   <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 10px 18px; margin-bottom: 10px;">
     <p style="font-size: 12.5pt; line-height: 1.5; margin: 0;">Five distinct prices for functionally the same library &mdash; each segment with a <strong>different elasticity</strong>, a <strong>different anti-arbitrage technology</strong>, and a <strong>different observed Lerner index.</strong> Spotify's Q4 2025 blended global ARPU of &euro;4.70 (~\$5.10/mo) sits far below the 2025 US Individual list of \$11.99 &mdash; a wedge driven by exactly this multi-segment cross-subsidization. (Both figures are Q4 2025, so they are period-matched; today's list is \$12.99.)</p>
@@ -1258,38 +1258,17 @@
 </section>
 
 <section id="walkthrough-12-4">
-  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.4 &mdash; Student vs Premium via Inverse Elasticity</h2>
-  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
-    <p style="margin: 0; font-size: 12pt; line-height: 1.5;">
-      <strong>Problem.</strong> Ch 11&ndash;locked \(MC = \$8.40\). Premium&rsquo;s elasticity is <em>derived</em> from Ch 11: \(L = 0.30 \Rightarrow \varepsilon_P = -1/L = -3.33\). Students are the <strong>more elastic</strong> group &mdash; that is why they get the discount &mdash; so take \(\varepsilon_S = -5.0\). Predict each price by \(P_i^{\ast} = MC/(1 + 1/\varepsilon_{D,i})\) and compare to the <strong>2025</strong> ladder (\$5.99, \$11.99).
-    </p>
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthroughs 12.4 &amp; 12.5 &mdash; Spotify&rsquo;s Tiers</h2>
+  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
+   <p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Problem.</strong> Spotify&rsquo;s marginal cost is <strong>\$8.40</strong> per subscriber (from Ch 11). Predict each tier&rsquo;s price with the per-segment rule \(P = \dfrac{MC}{1 - 1/|\varepsilon|}\), then compare with the 2025 prices.</p>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Predict</p>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
-        <strong>Premium:</strong> \(P_P^{\ast} = 8.40/(1 - 1/3.33) = 8.40/0.6997 = \$12.00\).
-      </p>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.55; margin: 8px 0 0;">
-        <strong>Student:</strong> \(P_S^{\ast} = 8.40/(1 - 1/5.0) = 8.40/0.8 = \$10.50\) &mdash; more elastic, so a <em>lower</em> price, as the rule requires.
-      </p>
-    </div>
-    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Compare to actual</p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.55; margin: 6px 0 0;">
-        Premium: predicted \$12.00 vs actual \$11.99 &mdash; match within \$0.01 ✓.
-      </p>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.55; margin: 8px 0 0;">
-        Student: predicted \$10.50 vs actual \$5.99 &mdash; and the actual sits <em>below</em> the \$8.40 MC. Implied Lerner \(L_S = (5.99 - 8.40)/5.99 = -0.40\) &mdash; <strong>negative</strong>.
-      </p>
-    </div>
-  </div>
-  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 12px; padding: 9px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> \(P^{\ast} = MC\cdot\frac{|\varepsilon|}{|\varepsilon|-1}\) falls toward \(MC\) as \(|\varepsilon|\) grows, so <strong>\$8.40 is the rule&rsquo;s floor &mdash; <em>no</em> elasticity predicts \$5.99.</strong> A price below \(MC\) is not a static monopoly price: Student is a <strong>loss leader</strong> for post-graduation value.</p>
-      <p style="margin: 7px 0 0; font-size: 11.5pt;"><strong>The 2026 hike, same lens.</strong> At \$12.99, \(L = 0.353 \Rightarrow \varepsilon_P = -2.83\): raising price <em>claims</em> demand grew less elastic &mdash; checkable against churn. <span style="color:var(--muted-color);">(TD 12.1.)</span></p>
-  </div>
+  <table class="table-standard" style="width:100%; font-size:12.5pt; margin:0;">
+   <thead><tr><th style="text-align:left;">Tier</th><th>Elasticity</th><th>Rule predicts</th><th>Actual</th><th style="text-align:left;">Verdict</th></tr></thead>
+   <tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:6px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Premium</strong></td><td style="padding:6px 10px;">&minus;3.33</td><td style="padding:6px 10px;">8.40 / 0.70 = <strong>\$12.00</strong></td><td style="padding:6px 10px; font-size:14pt;"><strong>\$11.99</strong></td><td style="text-align:left; padding:6px 10px; background:#e3f4ea;"><i class="fa-solid fa-circle-check" style="color:var(--success-color);"></i> <strong>Match.</strong> The rule nails it.</td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:6px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.4</span><br><strong>Student</strong></td><td style="padding:6px 10px;">&minus;5.0</td><td style="padding:6px 10px;">8.40 / 0.80 = <strong>\$10.50</strong></td><td style="padding:6px 10px; font-size:14pt;"><strong>\$5.99</strong></td><td style="text-align:left; padding:6px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Below MC.</strong> No elasticity gets under \$8.40: a <strong>loss leader</strong> to win future Premium customers.</td></tr><tr class="fragment fade-up" data-fragment-index="3"><td style="text-align:left; padding:6px 10px;"><span style="font-size:10pt; color:var(--muted-color);">W12.5</span><br><strong>Family</strong></td><td style="padding:6px 10px;">&minus;1.5</td><td style="padding:6px 10px;">8.40 / 0.33 = <strong>\$25.20</strong></td><td style="padding:6px 10px; font-size:14pt;"><strong>\$19.99</strong></td><td style="text-align:left; padding:6px 10px; background:#fde8e4;"><i class="fa-solid fa-circle-xmark" style="color:var(--danger-color);"></i> <strong>Too high.</strong> Near |&epsilon;| = 1 the rule blows up; rivals (Apple Music Family) and \$3.33 per account cap the price.</td></tr></tbody>
+  </table>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>Takeaway.</strong> The rule fits the tier priced like a plain monopoly. When it misses, the miss tells you what else is going on: investing in future customers (Student) or competition from rivals (Family), the Ch 13 story.</p></div>
 </section>
-<section id="walkthrough-12-5">
+<section id="walkthrough-12-5" data-visibility="hidden">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.5 &mdash; Family Tier: When the Formula Breaks</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
     <p style="margin: 0; font-size: 12pt; line-height: 1.5;">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3de71291c8b6f54a4c8da863e34f7265">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=662e99c26118e2bfce8c5572025f006e">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -679,27 +679,28 @@
 </section>
 
 <section id="second-degree">
-  <h2><i class="fa-solid fa-list-ul" style="color: var(--accent-color);"></i> Can't Tell You Apart? Make You Choose</h2>
-  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
-    <div>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">The firm knows the <em>distribution</em> of types but can't observe any individual's type &mdash; and can't just ask (everyone would claim the cheap type). Its only tool: a <strong>menu</strong> designed so each type's own best choice <em>reveals</em> it. Pricing becomes <strong>mechanism design.</strong></p>
-      <div style="background: #ecfdf5; border-left: 4px solid var(--success-color); border-radius: 6px; padding: 9px 14px; margin-bottom: 7px;">
-        <p style="margin: 0; font-size: 12pt;"><strong>Individual rationality (IR):</strong> each type's chosen package gives non-negative surplus, so it participates. <em>&ldquo;Is this worth buying at all?&rdquo;</em></p>
-      </div>
-      <div style="background: #f0f5f8; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 9px 14px;">
-        <p style="margin: 0; font-size: 12pt;"><strong>Incentive compatibility (IC):</strong> each type prefers its assigned package to any other on the menu. <em>&ldquo;Would I rather have the one meant for somebody else?&rdquo;</em></p>
-      </div>
-      <p style="font-size: 12pt; line-height: 1.5; margin-top: 8px;">Maximize profit subject to IR + IC for all types &mdash; the <strong>screening menu</strong> (Mussa-Rosen 1978; Maskin-Riley 1984). Two classic forms: <strong>versioning</strong> (quality tiers) and <strong>quantity discounts.</strong></p>
+  <h2><i class="fa-solid fa-list-ul" style="color: var(--accent-color);"></i> Second-Degree PD &mdash; Can&rsquo;t Tell You Apart? Make You Choose</h2>
+  <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:18px; align-items:start;">
+   <div style="text-align:center;">
+    <img alt="Two versions of the same double burger: a plain double with pickles and onion, and a deluxe double with cheese, lettuce and tomato" src="figures/burger-versions.png" style="max-width:100%; max-height:250px; object-fit:contain; border-radius:8px;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:2px;"><p style="margin:0; font-size:12pt; font-weight:700; color:var(--secondary-color);">Plain double</p><p style="margin:0; font-size:12pt; font-weight:700; color:var(--accent-color);">Deluxe double</p></div>
+    <p style="font-size:11pt; color:var(--muted-color); margin:3px 0 0;">Same two patties. The deluxe adds cheese, lettuce and tomato, and costs more.</p>
+   </div>
+   <div style="display:flex; flex-direction:column; gap:8px;">
+    <p style="font-size:13pt; line-height:1.45; margin:0;">The firm knows buyers differ but <strong>can&rsquo;t see who is who</strong>, and asking fails: everyone claims to be the cheap type. So it posts a <strong>menu</strong> and lets each buyer pick. <strong>Your choice reveals your type.</strong></p>
+    <div class="fragment fade-up" data-fragment-index="1" style="display:flex; flex-direction:column; gap:8px;">
+     <div style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:6px; padding:7px 14px;"><p style="margin:0; font-size:12pt;"><strong>Worth buying?</strong> (individual rationality) Each type&rsquo;s own pick leaves it surplus &ge; 0, so it buys.</p></div>
+     <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:6px; padding:7px 14px;"><p style="margin:0; font-size:12pt;"><strong>Want someone else&rsquo;s?</strong> (incentive compatibility) Each type likes its own pick best: the topping lover takes the deluxe, the rest take the plain.</p></div>
     </div>
-    <div style="text-align: center;">
-      <img alt="Second-degree price discrimination via versioning: a low-quality and a high-quality version priced so each consumer type self-selects, with the information rent left to the high type shown above the high-quality package" class="figure" src="figures/figure-12-4-second-degree-versioning.png" style="max-height: 400px; margin: 0 auto;">
-      <p style="font-size: 11pt; color: var(--muted-color); margin: 6px 0 0;">Fig 12.4 &mdash; two quality tiers; the high type self-selects up.</p>
-      <div style="background:#f8f6f3; border-radius:6px; padding:7px 13px; margin-top:8px; text-align:left;"><p style="margin:0; font-size:11.5pt; line-height:1.4;">The figure is the <strong>quality</strong> axis, worked later in <strong>Walkthrough 12.2</strong>. <strong>Walkthrough 12.3</strong> runs the identical logic on the <strong>quantity</strong> axis. One idea, two axes &mdash; and every example between here and there is one or the other.</p></div>
-    </div>
+   </div>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="2" style="margin-top:8px;">
+   <p style="font-size:11pt; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted-color); margin:0 0 4px; font-weight:700;">Ways to build the menu</p>
+   <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;"><div style="background:#fdf6c4; border-radius:8px; padding:7px 12px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:12pt; line-height:1.3;"><strong>Versioning</strong> <span style='font-size:10.5pt; color:var(--accent-color); font-weight:700;'>&larr; we start here</span><br><span style="color:var(--muted-color); font-size:11pt;">tiers of one product</span></p></div><div style="background:#f8f6f3; border-radius:8px; padding:7px 12px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12pt; line-height:1.3;"><strong>Quantity discounts</strong><br><span style="color:var(--muted-color); font-size:11pt;">cheaper per unit in bulk</span></p></div><div style="background:#f8f6f3; border-radius:8px; padding:7px 12px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:12pt; line-height:1.3;"><strong>Two-part tariffs</strong><br><span style="color:var(--muted-color); font-size:11pt;">entry fee + per-use price</span></p></div><div style="background:#f8f6f3; border-radius:8px; padding:7px 12px; border-left:4px solid #7C3A5F;"><p style="margin:0; font-size:12pt; line-height:1.3;"><strong>Bundling</strong><br><span style="color:var(--muted-color); font-size:11pt;">sell items together</span></p></div></div>
   </div>
 </section>
 
-<section id="pd-second">
+<section id="pd-second" data-visibility="hidden">
  <h2><i class="fa-solid fa-layer-group" style="color: var(--success-color);"></i> Second-Degree &mdash; Build a Menu, Let Buyers Sort Themselves</h2>
  <p style="font-size: 13pt; color: var(--muted-color); margin: 2px 0 10px;">The firm can&rsquo;t tell who you are &mdash; so it designs options and lets you reveal your type by choosing.</p>
  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
@@ -718,13 +719,20 @@
 
 <section>
 <section id="versioning-overview">
- <h2><i class="fa-solid fa-clone" style="color: var(--secondary-color);"></i> Versioning</h2>
- <p style="font-size:13.5pt; line-height:1.45; margin:2px 0 12px;"><strong>Versioning</strong> &mdash; a pricing strategy in which a firm offers <strong>different product options</strong> designed to attract <strong>different types of consumers</strong>.</p>
- <div style="background:#f8f6f3; border-radius:8px; padding:10px 16px; border-left:4px solid var(--secondary-color); margin-bottom:10px;"><p style="font-size:13pt; margin:0;"><i class="fa-solid fa-plane-departure" style="color:var(--secondary-color);"></i> <strong>Common example:</strong> air travel &mdash; the same plane sells <strong>leisure</strong> and <strong>business</strong> fares, fenced apart by advance-purchase and stay rules.</p></div>
- <p style="font-size:13pt; line-height:1.45; margin:0 0 10px;">Versioning <strong>does not</strong> require a cost difference &mdash; the marginal costs of the versions <strong>need not be equal</strong>.</p>
- <div class="key-result" style="margin-top:0;"><p style="margin:0; font-size:12.5pt;"><strong>The only requirement:</strong> the <strong>markup must be higher</strong> for the segment with the <strong>less elastic demand</strong> &mdash; business travelers (inelastic) carry the higher markup; leisure travelers (elastic, price-sensitive) pay less.</p></div>
+ <h2><i class="fa-solid fa-clone" style="color: var(--secondary-color);"></i> Versioning &mdash; Buyers Self-Select</h2>
+ <p style="font-size:13pt; line-height:1.45; margin:2px 0 10px;"><strong>Versioning:</strong> the firm offers <strong>different versions</strong> of one product, each designed for a <strong>different type of buyer</strong>. Each buyer picks the version best for them, and the pick reveals their type.</p>
+ <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:16px; align-items:center;">
+  <div style="text-align:center;">
+   <img alt="Spotify Premium tiers — Individual $12.99, Duo $18.99, Family $21.99 — versioning by household size" src="figures/spotify_pd_versioning.png" style="max-width:100%; max-height:230px; object-fit:contain;">
+  </div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+   <div style="background:#fdf6c4; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 14px;"><p style="font-size:12pt; margin:0;"><strong>Spotify:</strong> Individual (\$12.99), Duo (\$18.99, 2 accounts), Family (\$21.99, up to 6). Households <strong>sort themselves by size</strong>; the cheaper tiers are capped (one account, same address) so bigger households pay more.</p></div>
+   <div style="background:#f8f6f3; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="font-size:12pt; margin:0;"><i class="fa-solid fa-plane-departure" style="color:var(--secondary-color);"></i> <strong>Air travel:</strong> the same plane sells <strong>leisure</strong> and <strong>business</strong> fares, fenced apart by advance-purchase and stay rules.</p></div>
+  </div>
+ </div>
+ <div class="key-result" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>No cost difference needed.</strong> The versions can cost the same to make. The only requirement: the <strong>less elastic</strong> group pays the <strong>higher markup</strong> (business travelers, big households); the elastic group pays less.</p></div>
 </section>
-<section id="pd2-versioning">
+<section id="pd2-versioning" data-visibility="hidden">
  <h2><i class="fa-solid fa-sliders" style="color: var(--accent-color);"></i> Versioning &mdash; Buyers Self-Select</h2>
  <div class="key-result" style="margin-top:0;"><p>Offer a <strong>menu of versions</strong> and let each buyer <strong>voluntarily pick the one best for them</strong> &mdash; revealing their type. The firm prices by the <strong>version chosen</strong>, not by who you are. To make buyers split, firms widen the gap between tiers &mdash; sometimes <strong>intentionally limiting</strong> the cheaper one (the &ldquo;damaged-goods&rdquo; idea: stripped Basic Economy, a deliberately crippled chip).</p></div>
  <div style="text-align:center; margin-top:10px;">
@@ -733,7 +741,7 @@
  <div style="background:#fdf6c4; border-left:4px solid var(--success-color); border-radius:8px; padding:9px 18px; margin-top:10px;"><p style="font-size:12.5pt; margin:0;"><strong>Spotify is textbook versioning:</strong> <strong>Individual</strong> ($12.99), <strong>Duo</strong> ($18.99 / 2 accounts), <strong>Family</strong> ($21.99 / up to 6 accounts). Households <strong>self-select by size</strong>, and the cheaper tiers are deliberately capped (one account, same-address rules) so higher-value households pay more.</p></div>
 </section>
 
-<section id="pd2-netflix">
+<section id="pd2-netflix" data-visibility="hidden">
  <h2><i class="fa-solid fa-chart-area" style="color: var(--secondary-color);"></i> Self-Sorting Captures the Entire Demand Curve</h2>
  <div style="position:relative; width:100%; max-width:980px; margin:0 auto;">
   <img alt="A demand curve — inelastic high-WTP buyers at the top, elastic low-WTP buyers at the bottom" src="figures/fig-netflix-curve.png" style="width:100%; display:block;">
@@ -745,36 +753,20 @@
 
 <section id="spotify-ic">
  <h2><i class="fa-solid fa-users" style="color: var(--secondary-color);"></i> Versioning in Action &mdash; Duo vs Family</h2>
- <p style="font-size:12.5pt; margin:2px 0 6px;">Two tiers from the menu on the last slide. Assume these <strong>monthly</strong> willingness-to-pay values:</p>
- <table class="table-standard" style="width:70%; margin:0 auto 8px;">
-  <thead><tr><th>Monthly WTP</th><th>Duo (2 accounts)</th><th>Family (up to 6)</th></tr></thead>
-  <tbody>
-   <tr><td><strong>Couple</strong></td><td>\$24.00</td><td>\$26.00</td></tr>
-   <tr><td><strong>Household of five</strong></td><td>\$28.00</td><td>\$38.00</td></tr>
-  </tbody>
- </table>
- <p style="font-size:12.5pt; margin:0 0 6px;">Spotify's <strong>actual</strong> prices today: Duo <strong>\$18.99</strong>, Family <strong>\$21.99</strong>. <span style="color:var(--muted-color); font-size:11pt;">(press &rarr;)</span></p>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-  <div class="fragment" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;"><strong>Couple &rarr; Duo.</strong> Surplus \$24.00 &minus; \$18.99 = <strong>\$5.01</strong>; Family would leave only \$4.01.</p></div>
-  <div class="fragment" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:9px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12pt; margin:0;"><strong>Household of five &rarr; Family.</strong> Surplus \$38.00 &minus; \$21.99 = <strong>\$16.01</strong>; Duo would leave only \$9.01.</p></div>
- </div>
- <div class="key-result fragment" data-fragment-index="3" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;">Each household picks the tier <em>built for it</em> &mdash; the menu is <strong>incentive compatible</strong> <i class="fa-solid fa-check" style="color:var(--success-color);"></i> Note nobody checked a birth certificate: the <strong>household chose.</strong></p></div>
+ <div style="background:#fdf6c4; border-radius:8px; padding:7px 16px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:13pt;"><strong>The rule:</strong> each household buys the tier that leaves it the <strong>most surplus</strong> (WTP &minus; price). Spotify can&rsquo;t see household size; it only sets the prices.</p></div>
+ <div style="display:flex; gap:14px; justify-content:center; margin:8px 0 0;"><div style="border:2px solid var(--secondary-color); border-radius:10px; padding:5px 16px; background:#fff; text-align:center;"><div style="font-size:11pt; color:var(--muted-color); letter-spacing:0.04em; text-transform:uppercase;">Duo &middot; 2 accounts</div><div style="font-size:19pt; font-weight:700; color:var(--secondary-color);">\$18.99</div></div><div style="border:2px solid var(--secondary-color); border-radius:10px; padding:5px 16px; background:#fff; text-align:center;"><div style="font-size:11pt; color:var(--muted-color); letter-spacing:0.04em; text-transform:uppercase;">Family &middot; up to 6</div><div style="font-size:19pt; font-weight:700; color:var(--secondary-color);">\$21.99</div></div><div style="align-self:center; font-size:11pt; color:var(--muted-color); max-width:220px;">Spotify&rsquo;s actual prices. Monthly WTPs are assumed.</div></div>
+ <table class="table-standard" style="width:100%; margin:8px 0 0; font-size:12.5pt;"><thead><tr><th style="text-align:left; padding:6px 10px;">Surplus = WTP &minus; price</th><th style="padding:6px 10px;">Duo</th><th style="padding:6px 10px;">Family</th></tr></thead><tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:6px 10px;"><i class="fa-solid fa-user-group" style="color:var(--secondary-color); margin-right:6px;"></i><strong>Couple</strong><br><span style="font-size:11pt; color:var(--muted-color);">WTP: Duo \$24.00 &middot; Family \$26.00</span></td><td style="padding:6px 10px; background:#e3f4ea; border:3px solid var(--success-color); border-radius:6px;"><span style="color:var(--muted-color); font-size:11.5pt;">\$24.00 &minus; \$18.99 =</span> <strong style="font-size:15pt;">\$5.01</strong><i class="fa-solid fa-circle-check" style="color:var(--success-color); margin-left:6px;"></i></td><td style="padding:6px 10px; opacity:0.75;"><span style="color:var(--muted-color); font-size:11.5pt;">\$26.00 &minus; \$21.99 =</span> <span style="font-size:14pt;">\$4.01</span></td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:6px 10px;"><i class="fa-solid fa-people-roof" style="color:var(--secondary-color); margin-right:6px;"></i><strong>Household of five</strong><br><span style="font-size:11pt; color:var(--muted-color);">WTP: Duo \$28.00 &middot; Family \$38.00</span></td><td style="padding:6px 10px; opacity:0.75;"><span style="color:var(--muted-color); font-size:11.5pt;">\$28.00 &minus; \$18.99 =</span> <span style="font-size:14pt;">\$9.01</span></td><td style="padding:6px 10px; background:#e3f4ea; border:3px solid var(--success-color); border-radius:6px;"><span style="color:var(--muted-color); font-size:11.5pt;">\$38.00 &minus; \$21.99 =</span> <strong style="font-size:15pt;">\$16.01</strong><i class="fa-solid fa-circle-check" style="color:var(--success-color); margin-left:6px;"></i></td></tr></tbody></table>
+ <div class="key-result fragment" data-fragment-index="3" style="margin-top:10px;"><p style="margin:0; font-size:13pt;"><i class="fa-solid fa-check" style="color:var(--success-color);"></i> Each household picks the tier <strong>built for it</strong>: the menu is <strong>incentive compatible (IC)</strong>. Nobody checked who lives at home; <strong>the household chose.</strong></p></div>
 </section>
 <section id="spotify-not-ic">
  <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Versioning &mdash; When IC Fails</h2>
- <p style="font-size:12.5pt; margin:2px 0 6px;">Same households, same WTP. Now Spotify gets greedy and prices Family at <strong>\$29.99</strong> (up from \$21.99); Duo stays <strong>\$18.99</strong>. <span style="color:var(--muted-color); font-size:11pt;">(press &rarr;)</span></p>
- <table class="table-standard" style="width:70%; margin:0 auto 8px;">
-  <thead><tr><th>Monthly WTP</th><th>Duo (2 accounts)</th><th>Family (up to 6)</th></tr></thead>
-  <tbody>
-   <tr><td><strong>Couple</strong></td><td>\$24.00</td><td>\$26.00</td></tr>
-   <tr><td><strong>Household of five</strong></td><td>\$28.00</td><td>\$38.00</td></tr>
-  </tbody>
- </table>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-  <div class="fragment" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;"><strong>Couple &rarr; Duo</strong> (unchanged): surplus \$5.01. Family would now be <strong>&minus;\$3.99</strong> &mdash; worse than not subscribing.</p></div>
-  <div class="fragment" data-fragment-index="2" style="background:#fdf2f0; border-radius:8px; padding:9px 14px; border-left:4px solid var(--danger-color);"><p style="font-size:12pt; margin:0;"><strong>Household of five &rarr; Duo</strong> now: Duo surplus <strong>\$9.01</strong> beats Family's \$8.01. Five people share two accounts.</p></div>
+ <div style="background:#fdf6c4; border-radius:8px; padding:7px 16px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:13pt;"><strong>The rule:</strong> each household buys the tier that leaves it the <strong>most surplus</strong> (WTP &minus; price). Same households, same WTPs. Spotify gets greedy and raises Family.</p></div>
+ <div style="display:flex; gap:14px; justify-content:center; margin:8px 0 0;"><div style="border:2px solid var(--secondary-color); border-radius:10px; padding:5px 16px; background:#fff; text-align:center;"><div style="font-size:11pt; color:var(--muted-color); letter-spacing:0.04em; text-transform:uppercase;">Duo &middot; 2 accounts</div><div style="font-size:19pt; font-weight:700; color:var(--secondary-color);">\$18.99</div></div><div style="border:2px solid var(--danger-color); border-radius:10px; padding:5px 16px; background:#fff; text-align:center;"><div style="font-size:11pt; color:var(--muted-color); letter-spacing:0.04em; text-transform:uppercase;">Family &middot; up to 6</div><div style="font-size:19pt; font-weight:700; color:var(--danger-color);"><span style="text-decoration:line-through; color:var(--muted-color); font-size:12pt; margin-right:6px;">\$21.99</span>\$29.99</div></div></div>
+ <table class="table-standard" style="width:100%; margin:8px 0 0; font-size:12.5pt;"><thead><tr><th style="text-align:left; padding:6px 10px;">Surplus = WTP &minus; price</th><th style="padding:6px 10px;">Duo</th><th style="padding:6px 10px;">Family</th></tr></thead><tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:6px 10px;"><i class="fa-solid fa-user-group" style="color:var(--secondary-color); margin-right:6px;"></i><strong>Couple</strong><br><span style="font-size:11pt; color:var(--muted-color);">WTP: Duo \$24.00 &middot; Family \$26.00</span></td><td style="padding:6px 10px; background:#e3f4ea; border:3px solid var(--success-color); border-radius:6px;"><span style="color:var(--muted-color); font-size:11.5pt;">\$24.00 &minus; \$18.99 =</span> <strong style="font-size:15pt;">\$5.01</strong><i class="fa-solid fa-circle-check" style="color:var(--success-color); margin-left:6px;"></i></td><td style="padding:6px 10px; opacity:0.75;"><span style="color:var(--muted-color); font-size:11.5pt;">\$26.00 &minus; \$29.99 =</span> <span style="font-size:14pt; color:var(--danger-color);">&minus;\$3.99</span></td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:6px 10px;"><i class="fa-solid fa-people-roof" style="color:var(--secondary-color); margin-right:6px;"></i><strong>Household of five</strong><br><span style="font-size:11pt; color:var(--muted-color);">WTP: Duo \$28.00 &middot; Family \$38.00</span></td><td style="padding:6px 10px; background:#fde8e4; border:3px solid var(--danger-color); border-radius:6px;"><span style="color:var(--muted-color); font-size:11.5pt;">\$28.00 &minus; \$18.99 =</span> <strong style="font-size:15pt;">\$9.01</strong><i class="fa-solid fa-circle-exclamation" style="color:var(--danger-color); margin-left:6px;"></i></td><td style="padding:6px 10px; opacity:0.75;"><span style="color:var(--muted-color); font-size:11.5pt;">\$38.00 &minus; \$29.99 =</span> <span style="font-size:14pt;">\$8.01</span></td></tr></tbody></table>
+ <div class="fragment fade-up" data-fragment-index="3" style="display:grid; grid-template-columns:1.25fr 1fr; gap:12px; margin-top:10px;">
+  <div class="misconception" style="margin:0; padding:8px 16px;"><p style="margin:0; font-size:12.5pt;">Both households buy <strong>Duo</strong>. Family <strong>never sells</strong>: price the top tier too high and the big household <strong>defects down.</strong></p></div>
+  <div style="background:#f0f5f8; border-radius:8px; padding:8px 16px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12.5pt;"><strong>IC for the household of five:</strong><br>\$38.00 &minus; P<sub>F</sub> &ge; \$9.01 &rArr; <strong>P<sub>F</sub> &le; \$28.99</strong></p></div>
  </div>
- <div class="misconception fragment" data-fragment-index="3" style="margin-top:10px; padding:9px 16px;"><p style="margin:0; font-size:12.5pt;">Both households buy <strong>Duo</strong> &mdash; the Family tier <strong>never sells.</strong> The menu is <strong>not incentive compatible</strong>: overprice the high version and the high-value household <em>defects downward.</em> Family has to stay under <strong>\$28.99</strong> to survive.</p></div>
 </section>
 <section id="pd2-stripped">
  <h2><i class="fa-solid fa-train" style="color: var(--accent-color);"></i> The &ldquo;Stripped&rdquo; Economy &mdash; Damaged Goods</h2>
@@ -800,54 +792,62 @@
 </section>
 
 <section id="walkthrough-12-2">
-  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.2 &mdash; Standard vs Deluxe Edition</h2>
-  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 8px;">
-    <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">
-      <strong>Problem.</strong> A studio ships one game in two editions: <strong>Standard</strong>, and <strong>Deluxe</strong> (skins, season pass, early access). The extras are digital, so \(MC = 0\) for either edition. Two equally common buyers, types unobservable. What menu \((P_{Std}, P_{Dlx})\) maximizes profit?
-    </p>
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.2 &mdash; GTA VI: Standard vs Ultimate</h2>
+  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
+    <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>Background.</strong> Rockstar sells <em>Grand Theft Auto VI</em> (out 19 Nov 2026) in two editions: <strong>Standard \$79.99</strong> and <strong>Ultimate \$99.99</strong> (extra vehicles, weapons, outfits). The extras are digital, so \(MC = 0\) for either edition.</p>
+    <p style="margin: 4px 0 0; font-size: 11.5pt; line-height: 1.45;"><strong>Problem.</strong> Two equally common buyers, types unobservable. What menu \((P_{Std}, P_{Ult})\) maximizes profit? <span style="color:var(--muted-color);">(The values are made up; round prices to \$80 and \$100.)</span></p>
   </div>
-  <div style="display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 16px; align-items: start;">
+  <div style="display: grid; grid-template-columns: 0.36fr 0.64fr 1.2fr; gap: 14px; align-items: start;">
+    <div style="text-align:center;">
+      <img alt="Grand Theft Auto VI Ultimate Edition cover art" src="figures/gtavi-ultimate-cover.jpg" style="max-width:100%; max-height:205px; object-fit:contain; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.18);">
+      <p style="font-size:9pt; color:var(--muted-color); margin:2px 0 0;">Image: Rockstar Games</p>
+    </div>
     <div>
       <table class="table-standard" style="font-size: 12pt; width: 100%;">
-        <thead><tr><th>Willingness to pay</th><th>Standard</th><th>Deluxe</th></tr></thead>
+        <thead><tr><th>WTP</th><th>Std</th><th>Ult</th></tr></thead>
         <tbody>
-          <tr><td><strong>Casual gamer</strong></td><td>\$40</td><td>\$50</td></tr>
-          <tr><td><strong>Superfan</strong></td><td>\$60</td><td>\$110</td></tr>
+          <tr><td><strong>Casual fan</strong></td><td>\$80</td><td>\$85</td></tr>
+          <tr><td><strong>Superfan</strong></td><td>\$100</td><td>\$120</td></tr>
         </tbody>
       </table>
-      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height:1.4;">The casual gamer barely values the extras (\$40&rarr;\$50). The superfan wants them badly (\$60&rarr;\$110). <em>That gap is what makes screening possible.</em></p>
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px; line-height:1.4;">The casual fan barely values the extras (+\$5). The superfan wants them (+\$20). <em>That gap is what makes screening possible.</em></p>
     </div>
     <div>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.45; margin: 0;">
-        <strong>1. Price the Standard.</strong> Ask: <em>what is the most the casual gamer will pay?</em> \$40 &mdash; take all of it. \(P_{Std} = \$40\). <span style="color:var(--muted-color);">(the low type's IR)</span>
-      </p>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">
-        <strong>2. Price the Deluxe.</strong> Careful &mdash; the superfan could just buy the Standard and pocket \$60 &minus; \$40 = <strong>\$20</strong>. So the Deluxe must leave them at least \$20: \(110 - P_{Dlx} \geq 20\), so \(P_{Dlx} = \$90\). <span style="color:var(--muted-color);">(the high type's IC)</span>
-      </p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">
-        <strong>3. Profit.</strong> \$40 + \$90 = <strong>\$130</strong> per pair of buyers.
-      </p>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;">
-        <strong>4. Compare to one edition.</strong> Best single-edition play is Deluxe at \$110, superfan only &mdash; \$110. (Deluxe at \$50 to both earns just \$100.) <strong>The menu wins by \$20.</strong>
-      </p>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.45; margin: 0;"><strong>1. Price the Standard.</strong> The most the casual fan will pay is \$80, so take all of it: \(P_{Std} = \$80\). <span style="color:var(--muted-color);">(the low type&rsquo;s IR)</span></p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;"><strong>2. Price the Ultimate.</strong> The superfan could buy the Standard and keep \$100 &minus; \$80 = <strong>\$20</strong>. So the Ultimate must leave \$20 too: \(120 - P_{Ult} \geq 20\), so \(P_{Ult} = \$100\). <span style="color:var(--muted-color);">(the high type&rsquo;s IC)</span></p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;"><strong>3. Profit.</strong> \$80 + \$100 = <strong>\$180</strong> per pair of buyers.</p>
+      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.45; margin: 7px 0 0;"><strong>4. Compare to one edition.</strong> Best single-edition play is Ultimate at \$85 to both: \$170. (Ultimate at \$120 to the superfan only: \$120.) <strong>The menu wins by \$10.</strong></p>
     </div>
   </div>
-  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 10px; padding: 9px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>The \$20 is the information rent.</strong> Perfect PD would take \$40 + \$110 = \$150. The menu gets \$130, because to stop the superfan buying down the studio must <em>let them keep</em> \$20. That is the standing price of not being able to tell your customers apart &mdash; and the superfan is paid it for volunteering the truth.</p>
+  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 10px; padding: 8px 16px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>The \$20 is the information rent.</strong> Perfect PD would take \$80 + \$120 = \$200. The menu gets \$180, because to stop the superfan buying down, the studio must <em>let them keep</em> \$20. And the casual fan gets the Standard though the Ultimate costs \$0 more to make: the distortion at the bottom.</p>
   </div>
 </section>
 
 <section>
 <section id="qd-overview">
- <h2><i class="fa-solid fa-tags" style="color: var(--secondary-color);"></i> Quantity Discounts</h2>
- <p style="font-size: 13.5pt; line-height: 1.45; margin: 2px 0 12px;">Firms often use <strong>quantity discounts</strong> to price-discriminate &mdash; a <strong>lower per-unit price</strong> for buyers who purchase larger quantities. It is the workhorse of second-degree PD.</p>
- <div style="display:flex; flex-direction:column; gap:9px;">
-  <div style="background:#f8f6f3; border-radius:8px; padding:10px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13pt; margin:0;">It is <strong>indirect PD</strong>: the firm posts the menu and each consumer group <strong>self-selects</strong> the package meant for it &mdash; the price offered to a group must be the one that group <em>chooses</em>.</p></div>
-  <div style="background:#f8f6f3; border-radius:8px; padding:10px 16px; border-left:4px solid var(--accent-color);"><p style="font-size:13pt; margin:0;">It rides on <strong>incentive compatibility (IC)</strong>: the deal aimed at one type must be the one that type actually prefers &mdash; no buyer profitably grabs another type's package.</p></div>
-  <div style="background:#fff7ed; border:1.5px solid var(--accent-color); border-radius:8px; padding:10px 16px;"><p style="font-size:13pt; margin:0;"><strong>The catch:</strong> discount <strong>too steeply</strong> on the large quantity and you <strong>cannibalize</strong> &mdash; the low-demand buyer abandons the small package and grabs the bulk deal meant for the high-demand buyer. IC breaks. <em>We are about to watch this happen on purpose.</em></p></div>
+ <h2><i class="fa-solid fa-tags" style="color: var(--secondary-color);"></i> Quantity Discounts &mdash; Buy in Bulk, Pay Less per Unit</h2>
+ <div style="display:grid; grid-template-columns:0.95fr 1.05fr; gap:18px; align-items:center;">
+  <div style="text-align:center;">
+   <img alt="Costco 50-bag box of Lay's vs a single Star Market bag" src="figures/layes_pd.png" style="max-width:100%; max-height:150px; object-fit:contain; border-radius:8px; border:1px solid #e5e5e5; box-shadow:0 2px 10px rgba(0,0,0,0.12);">
+   <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-top:6px;">
+    <div style="background:#eef3f8; border-radius:6px; padding:4px 6px;"><p style="font-size:10.5pt; margin:0; line-height:1.25;">Costco 50-pack<br><strong style="color:var(--secondary-color);">\$0.46 / bag</strong></p></div>
+    <div style="background:#fef9f3; border-radius:6px; padding:4px 6px;"><p style="font-size:10.5pt; margin:0; line-height:1.25;">2 for \$1<br><strong style="color:var(--accent-color);">\$0.50 / bag</strong></p></div>
+    <div style="background:#fbeaea; border-radius:6px; padding:4px 6px;"><p style="font-size:10.5pt; margin:0; line-height:1.25;">Single bag<br><strong style="color:#b91c1c;">\$0.59 / bag</strong></p></div>
+   </div>
+  </div>
+  <div>
+   <p style="font-size:13pt; line-height:1.45; margin:0 0 8px;">A <strong>lower price per unit</strong> for buyers who take <strong>more</strong>. The store can&rsquo;t tell a light snacker from a heavy one, so it prints a <strong>menu</strong> on the bag (&ldquo;2/\$1 or 59&cent; ea.&rdquo;) and lets each shopper <strong>pick</strong>.</p>
+   <p style="font-size:12.5pt; line-height:1.45; margin:0; color:var(--muted-color);">Second-degree PD again: the price you pay depends on the <strong style="color:var(--text-color);">package you choose</strong>, not on who you are.</p>
+  </div>
  </div>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px;">
+  <div class="fragment fade-up" data-fragment-index="1"><div class="mathjax_ignore tex2jax_ignore"><svg class="mathjax_ignore" viewBox="0 0 560 192" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F7A5A"/></marker><marker id="ah-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B23A3A"/></marker></defs><rect x="0" y="0" width="560" height="190" rx="12" fill="#eef7f1" stroke="#1F7A5A" stroke-width="2"/><text x="20" y="30" font-size="19" font-weight="700" fill="#1F7A5A">Incentive compatible: each buyer takes its own pack</text><circle cx="38" cy="62" r="11" fill="#2E6DB4"/><path d="M21,92 q17,-26 34,0 z" fill="#2E6DB4"/><text x="66" y="74" font-size="18" font-weight="700" fill="#2b2622">Light buyer</text><text x="66" y="95" font-size="15" fill="#8a8178">wants a little</text><circle cx="38" cy="138" r="11" fill="#2E6DB4"/><path d="M21,168 q17,-26 34,0 z" fill="#2E6DB4"/><text x="66" y="150" font-size="18" font-weight="700" fill="#2b2622">Heavy buyer</text><text x="66" y="171" font-size="15" fill="#8a8178">wants a lot</text><g><rect x="380" y="48" width="160" height="56" rx="9" fill="#fdf6c4" stroke="#B7791F" stroke-width="2"/><text x="460.0" y="73.0" text-anchor="middle" font-size="18" font-weight="700" fill="#2b2622">Small pack</text><text x="460.0" y="93.0" text-anchor="middle" font-size="14" fill="#8a8178">higher price per unit</text></g><g><rect x="380" y="124" width="160" height="56" rx="9" fill="#fdf6c4" stroke="#B7791F" stroke-width="2"/><text x="460.0" y="149.0" text-anchor="middle" font-size="18" font-weight="700" fill="#2b2622">Bulk pack</text><text x="460.0" y="169.0" text-anchor="middle" font-size="14" fill="#8a8178">lower per unit</text></g><path d="M190,74 C282.0,74 282.0,76 374,76" fill="none" stroke="#1F7A5A" stroke-width="4" marker-end="url(#ah-g)"/><path d="M190,150 C282.0,150 282.0,152 374,152" fill="none" stroke="#1F7A5A" stroke-width="4" marker-end="url(#ah-g)"/><text x="282" y="64" text-anchor="middle" font-size="22" fill="#1F7A5A">&#10003;</text><text x="282" y="140" text-anchor="middle" font-size="22" fill="#1F7A5A">&#10003;</text></svg></div></div>
+  <div class="fragment fade-up" data-fragment-index="2"><div class="mathjax_ignore tex2jax_ignore"><svg class="mathjax_ignore" viewBox="0 0 560 192" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1F7A5A"/></marker><marker id="ah-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B23A3A"/></marker></defs><rect x="0" y="0" width="560" height="190" rx="12" fill="#fbeeec" stroke="#B23A3A" stroke-width="2"/><text x="20" y="30" font-size="19" font-weight="700" fill="#B23A3A">Cannibalized: the light buyer grabs the bulk deal</text><circle cx="38" cy="62" r="11" fill="#2E6DB4"/><path d="M21,92 q17,-26 34,0 z" fill="#2E6DB4"/><text x="66" y="74" font-size="18" font-weight="700" fill="#2b2622">Light buyer</text><text x="66" y="95" font-size="15" fill="#8a8178">wants a little</text><circle cx="38" cy="138" r="11" fill="#2E6DB4"/><path d="M21,168 q17,-26 34,0 z" fill="#2E6DB4"/><text x="66" y="150" font-size="18" font-weight="700" fill="#2b2622">Heavy buyer</text><text x="66" y="171" font-size="15" fill="#8a8178">wants a lot</text><g opacity="0.35"><rect x="380" y="48" width="160" height="56" rx="9" fill="#fdf6c4" stroke="#B7791F" stroke-width="2"/><text x="460.0" y="73.0" text-anchor="middle" font-size="18" font-weight="700" fill="#2b2622">Small pack</text><text x="460.0" y="93.0" text-anchor="middle" font-size="14" fill="#8a8178">nobody buys it</text></g><g><rect x="380" y="124" width="160" height="56" rx="9" fill="#fdf6c4" stroke="#B7791F" stroke-width="2"/><text x="460.0" y="149.0" text-anchor="middle" font-size="18" font-weight="700" fill="#2b2622">Bulk pack</text><text x="460.0" y="169.0" text-anchor="middle" font-size="14" fill="#8a8178">discount too deep</text></g><path d="M190,74 C282.0,74 282.0,145 374,145" fill="none" stroke="#B23A3A" stroke-width="4" stroke-dasharray="8 6" marker-end="url(#ah-r)"/><path d="M190,150 C282.0,150 282.0,158 374,158" fill="none" stroke="#1F7A5A" stroke-width="4" marker-end="url(#ah-g)"/><text x="232" y="62" text-anchor="middle" font-size="16" font-weight="700" fill="#B23A3A">jumps to bulk</text></svg></div></div>
+ </div>
+ <div class="key-result fragment" data-fragment-index="3" style="margin-top:8px;"><p style="margin:0; font-size:12.5pt;"><strong>The catch:</strong> discount the bulk pack <strong>too steeply</strong> and the store <strong>cannibalizes</strong> its own small pack: IC breaks. <em>Next: real numbers.</em></p></div>
 </section>
-<section id="pd2-bulk">
+<section id="pd2-bulk" data-visibility="hidden">
  <h2><i class="fa-solid fa-boxes-stacked" style="color: var(--secondary-color);"></i> Quantity Discounts &mdash; Buy in Bulk, Pay Less per Unit</h2>
  <div style="text-align:center;">
   <img alt="Costco 50-bag box of Lay's vs a single Star Market bag" src="figures/layes_pd.png" style="max-width:100%; max-height:306px; object-fit:contain; border-radius:8px; border:1px solid #e5e5e5; box-shadow:0 2px 10px rgba(0,0,0,0.12);">
@@ -873,21 +873,13 @@
    <p style="font-size:12pt; margin:0; line-height:1.45;">Snacks all week. \(P = 0.70 - 0.10Q\) &mdash; flat, because bag two is nearly as good as bag one.</p>
   </div>
  </div>
- <div style="display:grid; grid-template-columns:1.25fr 1fr; gap:16px; margin-top:11px; align-items:start;">
-  <div>
-   <table class="table-standard" style="font-size:11.5pt; width:100%;">
-    <thead><tr><th>Total value of&hellip;</th><th>1 bag</th><th>2 bags</th><th>2nd bag alone</th></tr></thead>
-    <tbody>
-     <tr><td><strong>Occasional</strong></td><td>\$0.815</td><td>\$1.180</td><td>\$0.365</td></tr>
-     <tr><td><strong>Obsessed</strong></td><td>\$0.650</td><td>\$1.200</td><td>\$0.550</td></tr>
-    </tbody>
-   </table>
-   <p style="font-size:11pt; color:var(--muted-color); margin:6px 2px 0; line-height:1.4;">Areas under each demand curve. Note the occasional buyer values <em>one</em> bag more than the obsessed buyer does &mdash; they differ in how fast value <strong>falls off</strong>, not in how much they like chips.</p>
-  </div>
-  <div class="key-result" style="margin:0;">
-   <p style="margin:0; font-size:12pt; line-height:1.45;">If it could tell them apart, the firm would charge each their full value. It can&rsquo;t &mdash; so it posts <strong>one menu</strong> and lets them sort themselves. The question is whether they sort the way the firm intends. <strong>That is incentive compatibility</strong>, and it is not automatic.</p>
-  </div>
-  <div class="fragment fade-up" style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:7px 14px; margin-top:8px;"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Occasional</strong> keeps 22.5&cent; with one bag, 18&cent; with two &rarr; buys <strong>one</strong>. <strong>Obsessed</strong> keeps 6&cent; with one, 20&cent; with two &rarr; buys <strong>two</strong>. Each picks its own package.</p></div>
+ <div style="margin-top:10px;">
+  <p style="font-size:12.5pt; margin:0 0 4px;"><strong>Which package does each pick?</strong> Not &ldquo;is it worth the price?&rdquo; but <strong>&ldquo;which leaves me more?&rdquo;</strong> <span style="color:var(--muted-color); font-size:11pt;">(values = areas under each demand curve)</span></p>
+  <table class="table-standard" style="width:100%; font-size:12pt; margin:0;">
+   <thead><tr><th style="text-align:left;">Surplus = value &minus; price</th><th>1 bag &middot; \$0.59</th><th>2 bags &middot; \$1.00</th><th>Extra-bag test: +41&cent; for bag 2</th></tr></thead>
+   <tbody><tr class="fragment fade-up" data-fragment-index="1"><td style="text-align:left; padding:6px 10px; border-left:4px solid var(--secondary-color);"><strong>Occasional</strong></td><td style="padding:6px 10px; background:#e3f4ea; border:3px solid var(--success-color);"><span style="color:var(--muted-color); font-size:11pt;">\$0.815 &minus; \$0.59 =</span> <strong style="font-size:15pt;">22.5&cent;</strong> <i class="fa-solid fa-circle-check" style="color:var(--success-color);"></i></td><td style="padding:6px 10px; opacity:0.75;"><span style="color:var(--muted-color); font-size:11pt;">\$1.180 &minus; \$1.00 =</span> <span style="font-size:14pt;">18&cent;</span></td><td style="padding:6px 10px; background:#fde8e4;">2nd bag worth <strong>36.5&cent;</strong> &lt; costs <strong>41&cent;</strong><br><strong style="color:var(--danger-color);">&rarr; stop at 1</strong></td></tr><tr class="fragment fade-up" data-fragment-index="2"><td style="text-align:left; padding:6px 10px; border-left:4px solid var(--accent-color);"><strong>Obsessed</strong></td><td style="padding:6px 10px; opacity:0.75;"><span style="color:var(--muted-color); font-size:11pt;">\$0.650 &minus; \$0.59 =</span> <span style="font-size:14pt;">6&cent;</span></td><td style="padding:6px 10px; background:#e3f4ea; border:3px solid var(--success-color);"><span style="color:var(--muted-color); font-size:11pt;">\$1.200 &minus; \$1.00 =</span> <strong style="font-size:15pt;">20&cent;</strong> <i class="fa-solid fa-circle-check" style="color:var(--success-color);"></i></td><td style="padding:6px 10px; background:#e3f4ea;">2nd bag worth <strong>55&cent;</strong> &gt; costs <strong>41&cent;</strong><br><strong style="color:var(--success-color);">&rarr; take 2</strong></td></tr></tbody>
+  </table>
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top:8px;"><p style="margin:0; font-size:12.5pt;">Two bags <em>are</em> worth more than \$1.00 to the occasional buyer, but one bag leaves <strong>more</strong>. Each type picks its own package: the menu is <strong>incentive compatible</strong>, and that is not automatic.</p></div>
  </div>
 </section>
 <section id="qd-ic">

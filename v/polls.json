@@ -40,6 +40,7 @@
   "ch10-econ2316-ww-2": "10-3",
   "ch11-econ2316-poll-1": "11-2",
   "ch11-econ2316-poll-apple": "11-1",
+  "ch12-econ2316-poll-choice-trap": "12-2",
   "ch12-econ2316-poll-student-price": "12-1",
   "ch13-econ2316-poll-2": "13p2-1",
   "ch13p1-econ2316-poll-1": "13p1-1",
@@ -92,6 +93,10 @@
   "12-1": [
    "ch12-pricing-with-market-power",
    "ch12-econ2316-poll-student-price"
+  ],
+  "12-2": [
+   "ch12-pricing-with-market-power",
+   "ch12-econ2316-poll-choice-trap"
   ],
   "13p1-1": [
    "ch13-part1-monopolistic-competition",

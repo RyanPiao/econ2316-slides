@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=e07ae5de97ff5cab1ea58acb76dfba59">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=0383bd9949e2c69659e817a4a9f2067e">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -1744,114 +1744,24 @@
 <section id="walkthrough-12-6">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.6 &mdash; The Unlimited Pass (Homogeneous)</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 10px; display:flex; gap:14px; align-items:center;">
-    <p style="margin: 0; font-size: 12pt; line-height: 1.5;">
-      <strong>Problem.</strong> <strong>Bluebikes</strong> sells a <strong>\$30.50 monthly pass</strong> and charges members <em>nothing</em> per classic ride. A representative member has inverse demand \(p = 7 - 0.6q\) (rides per month), and each extra ride costs about <strong>\(MC = \$1\)</strong> (rebalancing trucks, repairs, wear). Find the optimal two-part tariff \((F, p)\) and compare it with a per-ride price and with free rides.
-    </p>
+    <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Problem.</strong> <strong>Bluebikes</strong> sells a <strong>\$30.50 monthly pass</strong> and charges members <em>nothing</em> per classic ride. A representative member has inverse demand \(p = 6.10 - 0.61q\) (rides per month), and one more ride costs Bluebikes about nothing: <strong>\(MC = 0\)</strong>. Compare the best two-part tariff \((F, p)\) with a per-ride price alone.</p>
     <img alt="A full Bluebikes dock on a Boston street" src="figures/bluebike.jpeg" style="flex:0 0 150px; width:150px; height:78px; object-fit:cover; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.18);">
   </div>
-  <div style="display:grid; grid-template-columns: 1.55fr 1fr; gap: 16px; align-items: start;">
-    <div class="wt126" style="background:#fbfaf8; border:1px solid var(--line-color); border-radius:10px; padding:8px 10px 6px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px;">
-        <div class="wt126-tabs" role="tablist" aria-label="Pricing plan">
-          <button data-plan="two" class="on">Two-part: \$1 + fee</button>
-          <button data-plan="ride">Per ride only</button>
-          <button data-plan="free">Free rides + pass</button>
-        </div>
-        <div class="wt126-tabs" role="tablist" aria-label="View">
-          <button data-view="one" class="on">One member</button>
-          <button data-view="mkt">Market</button>
-        </div>
-      </div>
-      <svg viewBox="0 0 520 290" width="100%" style="max-height:222px; display:block;" role="img" aria-label="Demand for rides with marginal cost, showing the selected pricing plan">
-        <g class="wt126-plot"></g>
-      </svg>
-      <p class="wt126-read" style="margin:2px 4px 0; font-size:10.5pt; line-height:1.45; color:var(--text-color);"></p>
-    </div>
-    <div>
-      <table class="wt126-table" style="width:100%; border-collapse:collapse; font-size:11pt; margin-top:8px;">
-        <thead><tr><th style="text-align:left">per member</th><th>two-part</th><th>per ride</th><th>free rides</th></tr></thead>
-        <tbody>
-          <tr><td>price / ride</td><td>\$1</td><td>\$4</td><td>\$0</td></tr>
-          <tr><td>rides</td><td>10</td><td>5</td><td>11.7</td></tr>
-          <tr><td>fee</td><td>\$30</td><td>&mdash;</td><td>\$40.83</td></tr>
-          <tr class="hi"><td>profit</td><td><b>\$30</b></td><td>\$15</td><td>\$29.17</td></tr>
-          <tr><td>lost surplus</td><td>\$0</td><td>\$7.50</td><td>\$0.83</td></tr>
-        </tbody>
+  <div style="display:grid; grid-template-columns: 1fr 1fr 1.05fr; gap: 14px; align-items:start;">
+    <div><p style="font-size:11.5pt; font-weight:700; color:var(--success-color); margin:0 0 2px; text-align:center;">Two-part: \$0 a ride + a pass</p><div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 300 222" style="width:100%; display:block;"><line x1="34.0" y1="186" x2="292.5" y2="186" stroke="#8C8580" stroke-width="1.4"/><line x1="34.0" y1="186" x2="34.0" y2="7.800000000000011" stroke="#8C8580" stroke-width="1.4"/><line x1="34.0" y1="21.30000000000001" x2="269.0" y2="186" stroke="#2D2D2D" stroke-width="2.2"/><text x="29.0" y="25.30000000000001" font-size="12" fill="#6B645E" text-anchor="end">$6.10</text><text x="269.0" y="201" font-size="12" fill="#6B645E" text-anchor="middle">10</text><text x="292.5" y="216" font-size="12" fill="#6B645E" text-anchor="end">rides / month</text><text x="62.2" y="24.0" font-size="12.5" fill="#2D2D2D">demand</text><g class="fragment" data-fragment-index="1"><polygon points="34.0,21.3 34.0,186.0 269.0,186.0" fill="#6A8E6B" fill-opacity="0.45"/><text x="95.1" y="142.8" font-size="13.5" font-weight="700" fill="#3f5f40" text-anchor="middle">pass = $30.50</text><circle cx="269.0" cy="186" r="4.5" fill="#2D2D2D"/></g></svg></div></div>
+    <div><p style="font-size:11.5pt; font-weight:700; color:var(--accent-color); margin:0 0 2px; text-align:center;">Per ride only</p><div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 300 222" style="width:100%; display:block;"><line x1="34.0" y1="186" x2="292.5" y2="186" stroke="#8C8580" stroke-width="1.4"/><line x1="34.0" y1="186" x2="34.0" y2="7.800000000000011" stroke="#8C8580" stroke-width="1.4"/><line x1="34.0" y1="21.30000000000001" x2="269.0" y2="186" stroke="#2D2D2D" stroke-width="2.2"/><text x="29.0" y="25.30000000000001" font-size="12" fill="#6B645E" text-anchor="end">$6.10</text><text x="269.0" y="201" font-size="12" fill="#6B645E" text-anchor="middle">10</text><text x="292.5" y="216" font-size="12" fill="#6B645E" text-anchor="end">rides / month</text><text x="62.2" y="24.0" font-size="12.5" fill="#2D2D2D">demand</text><g class="fragment" data-fragment-index="2"><line x1="34.0" y1="21.30000000000001" x2="151.5" y2="186" stroke="#C47B5A" stroke-width="1.8" stroke-dasharray="5 4"/><text x="115.075" y="122.55" font-size="12" font-weight="700" fill="#C47B5A" text-anchor="start">MR</text><polygon points="34.0,21.3 34.0,103.7 151.5,103.7" fill="#6B8BA4" fill-opacity="0.40"/><polygon points="34.0,103.7 34.0,186.0 151.5,186.0 151.5,103.7" fill="#6A8E6B" fill-opacity="0.45"/><polygon points="151.5,103.7 151.5,186.0 269.0,186.0" fill="#A85C5C" fill-opacity="0.40"/><circle cx="151.5" cy="103.65" r="4.5" fill="#2D2D2D"/><text x="29.0" y="107.65" font-size="12" fill="#6B645E" text-anchor="end">$3.05</text><text x="151.5" y="201" font-size="12" fill="#6B645E" text-anchor="middle">5</text><text x="78.65" y="173.85" font-size="13" font-weight="700" fill="#3f5f40" text-anchor="middle">profit $15.25</text><text x="64.55" y="86.1" font-size="12" font-weight="700" fill="#3d5a72" text-anchor="middle">CS $7.63</text><text x="186.75" y="171.15" font-size="12" font-weight="700" fill="#A85C5C" text-anchor="middle">lost $7.63</text></g></svg></div></div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>1 &middot; Two-part.</strong> \(p^{\ast} = MC = 0\): the member rides 10 times. The pass takes the whole triangle: \(F^{\ast} = \tfrac12(10)(6.10) = \mathbf{\$30.50}\), exactly the real price.</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>2 &middot; Per ride.</strong> \(MR = 6.10 - 1.22q = 0\) at \(q = 5\), so \(p = \$3.05\). Profit \$15.25; the member keeps \$7.63 and \$7.63 of rides never happen.</p></div>
+      <table class="fragment fade-up" data-fragment-index="3" style="width:100%; border-collapse:collapse; font-size:11pt; margin:0;">
+        <tr><td style="padding:2px 6px; color:var(--muted-color); border-bottom:1px solid var(--line-color);">per member</td><td style="padding:2px 6px; text-align:right; font-weight:700; color:var(--success-color); border-bottom:1px solid var(--line-color);">two-part</td><td style="padding:2px 6px; text-align:right; font-weight:700; color:var(--accent-color); border-bottom:1px solid var(--line-color);">per ride</td></tr>
+        <tr><td style="padding:2px 6px; border-bottom:1px solid var(--line-color);">rides</td><td style="padding:2px 6px; text-align:right; border-bottom:1px solid var(--line-color);">10</td><td style="padding:2px 6px; text-align:right; border-bottom:1px solid var(--line-color);">5</td></tr>
+        <tr><td style="padding:2px 6px; border-bottom:1px solid var(--line-color);">profit</td><td style="padding:2px 6px; text-align:right; font-weight:700; border-bottom:1px solid var(--line-color);">\$30.50</td><td style="padding:2px 6px; text-align:right; border-bottom:1px solid var(--line-color);">\$15.25</td></tr>
+        <tr><td style="padding:2px 6px;">lost surplus</td><td style="padding:2px 6px; text-align:right;">\$0</td><td style="padding:2px 6px; text-align:right;">\$7.63</td></tr>
       </table>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size:11.5pt; line-height:1.45; margin:8px 2px 0;">
-        <strong>Two-part:</strong> \(p^{\ast} = MC = \$1\), \(q = 10\), \(F^{\ast} = \tfrac12(10)(6) = \mathbf{\$30}\), close to the real \$30.50.
-      </p>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size:11.5pt; line-height:1.45; margin:6px 2px 0;">
-        <strong>Per ride:</strong> \(MR = 7 - 1.2q = 1\) gives \(q = 5\), \(p = \$4\): half the profit, and \$7.50 of rides never happen.
-      </p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size:11.5pt; line-height:1.45; margin:6px 2px 0;">
-        <strong>Free rides:</strong> riders take 11.7 rides worth less than \$1 each, which costs \$0.83. That is small, so a flat pass is nearly optimal.
-      </p>
     </div>
   </div>
-  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 8px; padding: 8px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Price each ride at MC to make the pie as big as possible, and collect it with the fee. When MC is small, charging \$0 per ride gives up very little, which is why most unlimited plans charge only for the pass.</p>
-  </div>
-  <style>
-    .wt126-tabs { display:inline-flex; border:1px solid var(--line-color); border-radius:7px; overflow:hidden; }
-    .wt126-tabs button { font:inherit; font-size:10.5pt; padding:4px 10px; border:0; background:#fff; color:var(--text-color); cursor:pointer; }
-    .wt126-tabs button + button { border-left:1px solid var(--line-color); }
-    .wt126-tabs button.on { background:var(--secondary-color); color:#fff; }
-    .reveal .wt126-table th, .reveal .wt126-table td { padding:2px 6px; border-bottom:1px solid var(--line-color); text-align:right; font-size:10.5pt; line-height:1.3; background:transparent; color:var(--text-color); }
-    .reveal .wt126-table td:first-child { text-align:left; color:var(--muted-color); }
-    .reveal .wt126-table th { font-size:10pt; color:var(--muted-color); font-weight:600; background:transparent; }
-    .reveal .wt126-table tr.hi td { background:rgba(106,142,107,0.10); }
-    .reveal .wt126-table td.sel, .reveal .wt126-table th.sel { background:rgba(107,139,164,0.14); }
-  </style>
-  <script>
-  (function(){
-    var root = document.currentScript.closest('section');
-    var g = root.querySelector('.wt126-plot'), read = root.querySelector('.wt126-read');
-    var plan = 'two', view = 'one', N = 20000;
-    var X0 = 52, X1 = 500, Y0 = 250, Y1 = 14, QMAX = 12.5, PMAX = 7.6;
-    function x(q){ return X0 + (X1 - X0) * q / QMAX; }
-    function y(p){ return Y0 - (Y0 - Y1) * p / PMAX; }
-    function poly(pts, fill, op){ return '<polygon points="' + pts.map(function(a){return x(a[0]) + ',' + y(a[1]);}).join(' ') + '" fill="' + fill + '" fill-opacity="' + op + '"/>'; }
-    function txt(q, p, s, col, anchor, size){ return '<text x="' + x(q) + '" y="' + y(p) + '" fill="' + col + '" font-size="' + (size || 16) + '" text-anchor="' + (anchor || 'middle') + '">' + s + '</text>'; }
-    var C = { cs:'#6B8BA4', pi:'#6A8E6B', dwl:'#A85C5C', d:'#2D2D2D', mc:'#C47B5A', mut:'#8C8580' };
-    var PLAN = {
-      two:  { p:1, q:10,   fee:30,    pi:30,    cs:0,   dwl:0,    note:'Price each ride at MC = $1: the member rides 10 times, and the whole green triangle ($30) comes back as the fee.' },
-      ride: { p:4, q:5,    fee:0,     pi:15,    cs:7.5, dwl:7.5,  note:'Per-ride price only: MR = MC at 5 rides and $4. Profit is the green rectangle ($15), the member keeps the blue triangle ($7.50), and the red triangle ($7.50) is lost.' },
-      free: { p:0, q:35/3, fee:40.83, pi:29.17, cs:0,   dwl:0.83, note:'Free rides: the member rides 11.7 times, and the pass can take the whole area under demand ($40.83). But rides past 10 are worth less than the $1 they cost: the red sliver ($0.83) is lost.' }
-    };
-    function fmt(v){ return v.toLocaleString('en-US', {maximumFractionDigits:0}); }
-    function draw(){
-      var s = PLAN[plan], m = view === 'mkt' ? N : 1, h = '';
-      // axes
-      h += '<line x1="' + X0 + '" y1="' + Y0 + '" x2="' + X1 + '" y2="' + Y0 + '" stroke="' + C.mut + '"/>';
-      h += '<line x1="' + X0 + '" y1="' + Y0 + '" x2="' + X0 + '" y2="' + Y1 + '" stroke="' + C.mut + '"/>';
-      [0, 5, 10].forEach(function(q){ h += txt(q, -0.55, view === 'mkt' ? fmt(q * N / 1000) + 'k' : q, C.mut, 'middle', 15); });
-      [1, 4, 7].forEach(function(p){ h += '<text x="' + (X0 - 6) + '" y="' + (y(p) + 4) + '" fill="' + C.mut + '" font-size="15" text-anchor="end">$' + p + '</text>'; });
-      h += txt(QMAX - 0.1, -1.15, view === 'mkt' ? 'rides / month (all members)' : 'rides / month', C.mut, 'end', 15);
-      // areas
-      if (plan === 'two') h += poly([[0,7],[0,1],[10,1]], C.pi, 0.45);
-      if (plan === 'ride') { h += poly([[0,7],[0,4],[5,4]], C.cs, 0.40); h += poly([[0,4],[0,1],[5,1],[5,4]], C.pi, 0.45); h += poly([[5,4],[5,1],[10,1]], C.dwl, 0.40); }
-      if (plan === 'free') { h += poly([[0,7],[0,1],[10,1]], C.pi, 0.45); h += poly([[0,1],[0,0],[35/3,0],[10,1]], C.pi, 0.25); h += poly([[10,1],[35/3,0],[10,0]], C.dwl, 0.55); }
-      // curves
-      h += '<line x1="' + x(0) + '" y1="' + y(7) + '" x2="' + x(35/3) + '" y2="' + y(0) + '" stroke="' + C.d + '" stroke-width="2.2"/>';
-      h += '<line x1="' + X0 + '" y1="' + y(1) + '" x2="' + X1 + '" y2="' + y(1) + '" stroke="' + C.mc + '" stroke-width="2" stroke-dasharray="6 4"/>';
-      h += txt(1.3, 6.6, view === 'mkt' ? 'market demand' : 'demand', C.d, 'start', 16);
-      h += txt(12.2, 1.25, 'MC = $1', C.mc, 'end', 16);
-      // chosen point
-      h += '<circle cx="' + x(s.q) + '" cy="' + y(s.p) + '" r="4.5" fill="' + C.d + '"/>';
-      h += '<line x1="' + x(s.q) + '" y1="' + y(s.p) + '" x2="' + x(s.q) + '" y2="' + Y0 + '" stroke="' + C.mut + '" stroke-dasharray="3 3"/>';
-      g.innerHTML = h;
-      var tot = view === 'mkt' ? ' Across ' + fmt(N) + ' members (stylized), profit is $' + fmt(s.pi * N) + ' a month.' : '';
-      read.textContent = s.note + tot;
-      root.querySelectorAll('.wt126-table th, .wt126-table td').forEach(function(c){ c.classList.remove('sel'); });
-      var col = {two:1, ride:2, free:3}[plan];
-      root.querySelectorAll('.wt126-table tr').forEach(function(r){ if (r.children[col]) r.children[col].classList.add('sel'); });
-    }
-    root.querySelectorAll('[data-plan]').forEach(function(b){ b.addEventListener('click', function(e){ e.stopPropagation(); plan = b.dataset.plan; root.querySelectorAll('[data-plan]').forEach(function(o){ o.classList.toggle('on', o === b); }); draw(); }); });
-    root.querySelectorAll('[data-view]').forEach(function(b){ b.addEventListener('click', function(e){ e.stopPropagation(); view = b.dataset.view; root.querySelectorAll('[data-view]').forEach(function(o){ o.classList.toggle('on', o === b); }); draw(); }); });
-    draw();
-  })();
-  </script>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 8px; padding: 8px 16px;"><p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> When one more ride costs nothing, price rides at zero to make the pie as big as possible, and collect it with the pass: twice the profit of a per-ride price, and no lost rides. That is why unlimited plans charge only for the pass.</p></div>
 </section>
 
 <section id="two-part-tariff-hetero" data-visibility="hidden">
@@ -1899,34 +1809,38 @@
  <div class="key-result" style="max-width:1060px; margin:12px auto 0;"><p style="margin:0; font-size:12pt;">Charge whichever is larger: serve <strong>everyone at fee A</strong> for \(2A\), or <strong>exclude the low type</strong> and charge \(B\). The firm compares \(2A\) vs \(B\).</p></div>
 </section>
 
+<section>
 <section id="walkthrough-12-7">
-  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.7 &mdash; Planet Fitness or Equinox?</h2>
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.7 &mdash; Keep Everyone: Planet Fitness</h2>
+  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
+    <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Problem.</strong> A gym is a two-part tariff: a monthly fee plus a price per visit. One fee has to serve <strong>casual</strong> and <strong>heavy</strong> members. In 2024 <strong>Planet Fitness</strong> raised its Classic fee from \$10 to \$15, its first increase since 1998. <strong>Model:</strong> heavy user A, \(q_A = 10 - p\); casual user B, \(q_B = 6 - p\); one of each; \(MC = 0\).</p>
+  </div>
+  <div style="display:grid; grid-template-columns: 1.1fr 1fr; gap: 16px; align-items: start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 470 262" style="width:100%; max-height:300px; display:block;"><line x1="44.0" y1="222.0" x2="455.0" y2="222.0" stroke="#8C8580"/><line x1="44.0" y1="222.0" x2="44.0" y2="15.962264150943383" stroke="#8C8580"/><text x="193.45454545454547" y="238.0" font-size="13" fill="#8C8580" text-anchor="middle">4</text><text x="268.1818181818182" y="238.0" font-size="13" fill="#8C8580" text-anchor="middle">6</text><text x="342.90909090909093" y="238.0" font-size="13" fill="#8C8580" text-anchor="middle">8</text><text x="417.6363636363636" y="238.0" font-size="13" fill="#8C8580" text-anchor="middle">10</text><text x="38.0" y="186.37735849056605" font-size="13" fill="#8C8580" text-anchor="end">$2</text><text x="38.0" y="107.13207547169812" font-size="13" fill="#8C8580" text-anchor="end">$6</text><text x="38.0" y="27.88679245283018" font-size="13" fill="#8C8580" text-anchor="end">$10</text><text x="455.0" y="254.0" font-size="13" fill="#8C8580" text-anchor="end">visits / month</text><g class="fragment" data-fragment-index="1"><polygon points="44.0,103.1 44.0,182.4 193.5,182.4" fill="#6A8E6B" fill-opacity="0.5"/><text x="92.57272727272728" y="167.5188679245283" font-size="13.5" font-weight="700" fill="#3f5f40" text-anchor="middle">fee $8</text></g><g class="fragment" data-fragment-index="2"><polygon points="44.0,182.4 44.0,222.0 342.9,222.0 342.9,182.4" fill="#C47B5A" fill-opacity="0.28"/><line x1="44.0" y1="182.37735849056605" x2="455.0" y2="182.37735849056605" stroke="#C47B5A" stroke-width="1.8" stroke-dasharray="5 4"/><text x="451.2636363636364" y="176.43396226415095" font-size="13" font-weight="700" fill="#C47B5A" text-anchor="end">p = $2</text><text x="141.14545454545456" y="207.14150943396226" font-size="13" font-weight="700" fill="#8a4f35" text-anchor="middle">visits: (8 + 4) &#215; $2 = $24</text></g><line x1="44.0" y1="23.88679245283018" x2="417.6363636363636" y2="222.0" stroke="#2D2D2D" stroke-width="2.2"/><line x1="44.0" y1="103.13207547169812" x2="268.1818181818182" y2="222.0" stroke="#6B8BA4" stroke-width="2.2"/><text x="253.23636363636362" y="120.9622641509434" font-size="13.5" fill="#2D2D2D">heavy user A</text><text x="85.1" y="100.16037735849056" font-size="13.5" fill="#6B8BA4">casual B</text></svg></div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>1 &middot; The fee is capped by B.</strong> To keep the casual member, the fee can be no more than B&rsquo;s surplus: \(F = (6-p)^2/2\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>2 &middot; Profit per pair</strong> = two fees + visits: \((6-p)^2 + p(16-2p) = 36 + 4p - p^2\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>3 &middot; Best price:</strong> \(4 - 2p = 0\), so \(p^{\ast} = \$2\), \(F^{\ast} = \$8\), profit \(= 2(8) + 24 = \mathbf{\$40}\).</p></div>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 8px; padding: 8px 16px;"><p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Keeping everyone means a fee the casual member will pay, plus a margin on the heavy member&rsquo;s use. Notice \(p^{\ast} = \$2 &gt; MC = 0\): with different members, CC 12.2&rsquo;s \(p = MC\) no longer holds.</p></div>
+</section>
+
+<section id="walkthrough-12-7b">
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.7 &mdash; Heavy Users Only: Peloton</h2>
+  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
+    <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>The other choice.</strong> <strong>Peloton</strong> All-Access costs about <strong>\$50 a month</strong>, on top of the bike, and every class is free to take. It is built for people who ride a lot; casual exercisers never sign up. Same model: A, \(q_A = 10 - p\); B, \(q_B = 6 - p\); \(MC = 0\).</p>
+  </div>
   <div style="display:grid; grid-template-columns: 1fr 1.05fr; gap: 16px; align-items: start;">
-    <div>
-      <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 14px; margin: 0 0 8px;">
-        <p style="margin: 0; font-size: 11.5pt; line-height: 1.5;">
-          <strong>Two gyms, one problem.</strong> A gym is a two-part tariff: a monthly fee, and about \$0 per visit. In 2024 <strong>Planet Fitness</strong> raised its Classic fee from \$10 to \$15, its first increase since 1998, after testing \$12.99 and \$15. <strong>Equinox</strong> charges about \$300 a month and launched a \$40,000-a-year program with a waitlist. One fee has to serve both casual and heavy users. <strong>Keep everyone, or only the heavy users?</strong>
-        </p>
-      </div>
-      <p style="margin: 0 0 6px; font-size: 11.5pt; line-height: 1.5;">
-        <strong>Model.</strong> Heavy user A: \(q_A = 10 - p\). Casual user B: \(q_B = 6 - p\). One of each, \(MC = 0\).
-      </p>
-      <div style="background:#f0f5f8; border-radius:8px; padding:7px 14px; border-left:4px solid var(--secondary-color); margin-bottom:6px;">
-        <p class="fragment fade-up" data-fragment-index="1" style="font-size: 11.5pt; line-height: 1.5; margin: 0;">
-          <strong>I. Keep both</strong> (Planet Fitness). The fee is capped by B's surplus, \(F = (6-p)^2/2\). Profit per pair \(= (6-p)^2 + p(16-2p)\), so \(p^{\ast} = 2\), \(F^{\ast} = 8\), \(\pi = \mathbf{\$40}\).
-        </p>
-        <p class="fragment fade-up" data-fragment-index="2" style="font-size: 11.5pt; line-height: 1.5; margin: 6px 0 0;">
-          <strong>II. Only heavy users</strong> (Equinox). \(p = 0\), \(F = CS_A(0) = 10^2/2 = 50\). B walks away, \(\pi = \mathbf{\$50}\).
-        </p>
-      </div>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 11.5pt; line-height: 1.5; margin: 0;">
-        <strong>\$50 &gt; \$40: exclude.</strong> But it flips once casual users are about 62% of the market. Each gym is picking its spot given the members it faces.
-      </p>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>1 &middot; Heavy users only.</strong> Set \(p = 0\) and take A&rsquo;s whole surplus: \(F = 10^2/2 = \$50\). B walks away. Profit \(= \mathbf{\$50}\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>2 &middot; Compare:</strong> \$50 beats Planet Fitness&rsquo;s \$40. With one casual member per heavy one, <strong>exclude</strong>.</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong>3 &middot; It flips.</strong> Once casual members are more than about <strong>62%</strong> of the market, keeping everyone wins. Drag the slider.</p></div>
     </div>
     <div class="wt127" style="background:#fbfaf8; border:1px solid var(--line-color); border-radius:10px; padding:8px 10px 6px;">
       <div class="wt127-tabs" role="tablist" aria-label="Strategy">
-        <button data-s="inc" class="on">I. Keep both: \$2 + \$8</button>
-        <button data-s="exc">II. Heavy users only: \$0 + \$50</button>
+        <button data-s="inc">I. Keep both: \$2 + \$8</button>
+        <button data-s="exc" class="on">II. Heavy users only: \$0 + \$50</button>
       </div>
       <svg viewBox="0 0 470 250" width="100%" style="max-height:215px; display:block;" role="img" aria-label="Demand of heavy user A and casual user B with the selected strategy shaded"><g class="wt127-plot"></g></svg>
       <div style="display:flex; align-items:center; gap:8px; font-size:10.5pt; color:var(--text-color); margin:2px 4px 0;">
@@ -1937,9 +1851,7 @@
       <p class="wt127-read" style="margin:3px 4px 0; font-size:10.5pt; line-height:1.4;"></p>
     </div>
   </div>
-  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 8px; padding: 8px 16px;">
-    <p style="margin: 0; font-size: 11.5pt;"><strong>Takeaway.</strong> Coverage versus extraction. And notice what broke: keeping both sets \(p^{\ast} = 2\) with \(MC = 0\), so CC 12.2's \(p = MC\) fails. A fee capped by the casual user is a blunt tool, so the firm takes a margin on the heavy user's visits instead. \(p = MC\) needs identical customers, which is why it returns in Strategy II.</p>
-  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 8px; padding: 8px 16px;"><p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> Coverage versus extraction. Planet Fitness&rsquo;s members are mostly casual, so it keeps everyone; Peloton sells to heavy riders and takes their whole surplus. With only one type served, \(p = MC = 0\) is back.</p></div>
   <style>
     .wt127-tabs { display:inline-flex; border:1px solid var(--line-color); border-radius:7px; overflow:hidden; margin-bottom:2px; }
     .wt127-tabs button { font:inherit; font-size:10.5pt; padding:4px 10px; border:0; background:#fff; color:var(--text-color); cursor:pointer; }
@@ -1951,40 +1863,40 @@
     var root = document.currentScript.closest('section');
     var g = root.querySelector('.wt127-plot'), read = root.querySelector('.wt127-read');
     var kIn = root.querySelector('.wt127-k'), kOut = root.querySelector('.wt127-kv');
-    var s = 'inc';
+    var s = 'exc';
     var X0 = 44, X1 = 455, Y0 = 222, Y1 = 12, QM = 11, PM = 10.6;
     function x(q){ return X0 + (X1 - X0) * q / QM; }
     function y(p){ return Y0 - (Y0 - Y1) * p / PM; }
     function poly(pts, fill, op){ return '<polygon points="' + pts.map(function(a){ return x(a[0]) + ',' + y(a[1]); }).join(' ') + '" fill="' + fill + '" fill-opacity="' + op + '"/>'; }
-    function t(q, p, str, col, a, sz){ return '<text x="' + x(q) + '" y="' + y(p) + '" fill="' + col + '" font-size="' + (sz || 12) + '" text-anchor="' + (a || 'middle') + '">' + str + '</text>'; }
+    function t(q, p, str, col, a, sz){ return '<text x="' + x(q) + '" y="' + y(p) + '" fill="' + col + '" font-size="' + (sz || 16) + '" text-anchor="' + (a || 'middle') + '">' + str + '</text>'; }
     var C = { a:'#2D2D2D', b:'#6B8BA4', fee:'#6A8E6B', use:'#C47B5A', mut:'#8C8580' };
     function draw(){
       var h = '';
       h += '<line x1="' + X0 + '" y1="' + Y0 + '" x2="' + X1 + '" y2="' + Y0 + '" stroke="' + C.mut + '"/>';
       h += '<line x1="' + X0 + '" y1="' + Y0 + '" x2="' + X0 + '" y2="' + Y1 + '" stroke="' + C.mut + '"/>';
-      [0, 4, 6, 8, 10].forEach(function(q){ h += t(q, -0.75, q, C.mut, 'middle', 11); });
-      [2, 6, 10].forEach(function(p){ h += '<text x="' + (X0 - 6) + '" y="' + (y(p) + 4) + '" fill="' + C.mut + '" font-size="11" text-anchor="end">$' + p + '</text>'; });
-      h += t(QM - 0.05, -1.25, 'visits / month', C.mut, 'end', 11);
+      [0, 4, 6, 8, 10].forEach(function(q){ h += t(q, -0.75, q, C.mut, 'middle', 15); });
+      [2, 6, 10].forEach(function(p){ h += '<text x="' + (X0 - 6) + '" y="' + (y(p) + 4) + '" fill="' + C.mut + '" font-size="15" text-anchor="end">$' + p + '</text>'; });
+      h += t(QM - 0.05, -1.25, 'visits / month', C.mut, 'end', 15);
       if (s === 'inc') {
         h += poly([[0,6],[0,2],[4,2]], C.fee, 0.5);
         h += poly([[0,2],[0,0],[8,0],[8,2]], C.use, 0.28);
         h += '<line x1="' + X0 + '" y1="' + y(2) + '" x2="' + X1 + '" y2="' + y(2) + '" stroke="' + C.use + '" stroke-width="1.6" stroke-dasharray="5 4"/>';
-        h += t(10.9, 2.25, 'p = $2', C.use, 'end', 11);
-        h += t(1.25, 2.9, 'fee $8', C.fee, 'middle', 11);
+        h += t(10.9, 2.25, 'p = $2', C.use, 'end', 15);
+        h += t(1.25, 2.9, 'fee $8', C.fee, 'middle', 15);
       } else {
         h += poly([[0,10],[0,0],[10,0]], C.fee, 0.45);
-        h += t(2.6, 2.6, 'fee $50 = all of A', C.fee, 'middle', 12);
+        h += t(2.6, 2.6, 'fee $50 = all of A', C.fee, 'middle', 16);
       }
       h += '<line x1="' + x(0) + '" y1="' + y(10) + '" x2="' + x(10) + '" y2="' + y(0) + '" stroke="' + C.a + '" stroke-width="2.2"/>';
       h += '<line x1="' + x(0) + '" y1="' + y(6) + '" x2="' + x(6) + '" y2="' + y(0) + '" stroke="' + C.b + '" stroke-width="2.2"' + (s === 'exc' ? ' stroke-dasharray="4 4" stroke-opacity="0.55"' : '') + '/>';
-      h += t(5.6, 5.1, 'heavy user A', C.a, 'start', 12);
-      h += t(1.1, 6.15, 'casual B' + (s === 'exc' ? ' (walks away)' : ''), C.b, 'start', 12);
+      h += t(5.6, 5.1, 'heavy user A', C.a, 'start', 16);
+      h += t(1.1, 6.15, 'casual B' + (s === 'exc' ? ' (walks away)' : ''), C.b, 'start', 16);
       g.innerHTML = h;
       var share = +kIn.value / 100, k = share / (1 - share);
       var inc = 2 * (9 * k * k + 18 * k + 13) / (k + 1), exc = 50, pinc = 4 / (1 + k);
       kOut.textContent = Math.round(share * 100) + '%';
       read.innerHTML = 'Per heavy user: <b>keep both</b> earns $' + inc.toFixed(1) + ' (p = $' + pinc.toFixed(2) + ') vs <b>heavy only</b> $50. '
-        + (inc > exc ? '<b style="color:#6A8E6B">Keep everyone wins</b>: casual users are the mass market (Planet Fitness).' : '<b style="color:#A85C5C">Excluding wins</b>: the casual users are too few to be worth a low fee (Equinox).');
+        + (inc > exc ? '<b style="color:#6A8E6B">Keep everyone wins</b>: casual users are the mass market (Planet Fitness).' : '<b style="color:#A85C5C">Excluding wins</b>: the casual users are too few to be worth a low fee (Peloton).');
     }
     root.querySelectorAll('[data-s]').forEach(function(b){ b.addEventListener('click', function(e){ e.stopPropagation(); s = b.dataset.s; root.querySelectorAll('[data-s]').forEach(function(o){ o.classList.toggle('on', o === b); }); draw(); }); });
     kIn.addEventListener('input', draw);
@@ -1992,6 +1904,7 @@
     draw();
   })();
   </script>
+</section>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="div-bundling">
@@ -2004,12 +1917,12 @@
 <section id="bundling-overview">
  <h2><i class="fa-solid fa-box" style="color: var(--secondary-color);"></i> Bundling</h2>
  <p style="font-size:13.5pt; line-height:1.45; margin:2px 0 12px;"><strong>Bundling</strong> &mdash; a pricing strategy in which a firm sells two or more products together at a <strong>single price</strong>.</p>
- <p style="font-size:12pt; font-weight:700; color:var(--secondary-color); margin:0 0 6px; text-transform:uppercase; letter-spacing:0.5px;">When to use it</p>
+ <p class="fragment fade-up" data-fragment-index="1" style="font-size:12pt; font-weight:700; color:var(--secondary-color); margin:0 0 6px; text-transform:uppercase; letter-spacing:0.5px;">When to use it</p>
  <div style="display:flex; flex-direction:column; gap:8px;">
-  <div style="background:#f8f6f3; border-radius:8px; padding:9px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13pt; margin:0;"><strong>1.</strong> The firm has <strong>market power</strong> and can <strong>prevent resale</strong>.</p></div>
-  <div style="background:#f8f6f3; border-radius:8px; padding:9px 16px; border-left:4px solid var(--accent-color);"><p style="font-size:13pt; margin:0;"><strong>2.</strong> Consumers' demand for the second product is <strong>negatively correlated</strong> with their demand for the first.</p></div>
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:9px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13pt; margin:0;"><strong>1.</strong> The firm has <strong>market power</strong> and can <strong>prevent resale</strong>.</p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:9px 16px; border-left:4px solid var(--accent-color);"><p style="font-size:13pt; margin:0;"><strong>2.</strong> Consumers' demand for the second product is <strong>negatively correlated</strong> with their demand for the first.</p></div>
  </div>
- <div class="key-result" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;"><strong>Everyday example:</strong> Disney+, Hulu and HBO Max sold together for <strong>\$21.99 a month</strong> (with ads). Bought one at a time, Disney+ is \$12.49 and HBO Max is \$10.99: just two of the three already cost more than the whole bundle.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;"><strong>Everyday example:</strong> Disney+, Hulu and HBO Max sold together for <strong>\$21.99 a month</strong> (with ads). Bought one at a time, Disney+ is \$12.49 and HBO Max is \$10.99: just two of the three already cost more than the whole bundle.</p></div>
 </section>
 <section id="bundle-pos">
  <h2><i class="fa-solid fa-arrow-trend-up" style="color: var(--secondary-color);"></i> Bundling &mdash; Positively Correlated Demand</h2>
@@ -2023,10 +1936,10 @@
   </tbody>
  </table>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-  <div style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;"><strong>Sell separately:</strong> \$12 Netflix + \$8 HBO Max, both buy both &rarr; <strong>\$40</strong> total. <span style="color:var(--muted-color);">(\$18 for Netflix or \$12 for HBO Max would lose Madison.)</span></p></div>
-  <div style="background:#fef9f3; border-radius:8px; padding:9px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12pt; margin:0;"><strong>Bundle:</strong> \$20 bundle, both buy &rarr; <strong>\$40</strong> total. <span style="color:var(--muted-color);">(\$30 sells only to Dakota.)</span></p></div>
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;"><strong>Sell separately:</strong> \$12 Netflix + \$8 HBO Max, both buy both &rarr; <strong>\$40</strong> total. <span style="color:var(--muted-color);">(\$18 for Netflix or \$12 for HBO Max would lose Madison.)</span></p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:9px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12pt; margin:0;"><strong>Bundle:</strong> \$20 bundle, both buy &rarr; <strong>\$40</strong> total. <span style="color:var(--muted-color);">(\$30 sells only to Dakota.)</span></p></div>
  </div>
- <div class="key-result" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>No benefit to bundling when valuations are positively correlated</strong> &mdash; the bundle values (\$20 and \$30) are just as spread out as the parts, so one price captures no extra surplus.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>No benefit to bundling when valuations are positively correlated</strong> &mdash; the bundle values (\$20 and \$30) are just as spread out as the parts, so one price captures no extra surplus.</p></div>
 </section>
 <section id="bundle-neg">
  <h2><i class="fa-solid fa-arrow-trend-down" style="color: var(--accent-color);"></i> Bundling &mdash; Negatively Correlated Demand</h2>
@@ -2040,10 +1953,10 @@
   </tbody>
  </table>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-  <div style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;"><strong>Sell separately:</strong> \$12 Netflix + \$8 HBO Max &rarr; <strong>\$40</strong> total &mdash; <strong>identical to the positive-correlation case.</strong> So the entire difference shows up on the bundle side.</p></div>
-  <div style="background:#ecfdf5; border-radius:8px; padding:9px 14px; border-left:4px solid var(--success-color);"><p style="font-size:12pt; margin:0;"><strong>Bundle:</strong> \$24 bundle, both buy &rarr; <strong>\$48</strong> total <span style="color:var(--success-color); font-weight:700;">(+\$8)</span>.</p></div>
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12pt; margin:0;"><strong>Sell separately:</strong> \$12 Netflix + \$8 HBO Max &rarr; <strong>\$40</strong> total &mdash; <strong>identical to the positive-correlation case.</strong> So the entire difference shows up on the bundle side.</p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#ecfdf5; border-radius:8px; padding:9px 14px; border-left:4px solid var(--success-color);"><p style="font-size:12pt; margin:0;"><strong>Bundle:</strong> \$24 bundle, both buy &rarr; <strong>\$48</strong> total <span style="color:var(--success-color); font-weight:700;">(+\$8)</span>.</p></div>
  </div>
- <div class="key-result" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>Bundling raises revenue \$40 &rarr; \$48</strong> with negative correlation: it <strong>compresses the spread</strong> in total WTP (both value the bundle at \$24&ndash;\$26), so a single price captures more.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top:10px;"><p style="margin:0; font-size:12.5pt;"><strong>Bundling raises revenue \$40 &rarr; \$48</strong> with negative correlation: it <strong>compresses the spread</strong> in total WTP (both value the bundle at \$24&ndash;\$26), so a single price captures more.</p></div>
 </section>
 </section>
 <section id="bundle-mixed">

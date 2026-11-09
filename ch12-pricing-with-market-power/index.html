@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=0383bd9949e2c69659e817a4a9f2067e">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3b3d476ef628a10a3733885af8d883b7">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Pricing with Market Power &mdash; ECON 2316 Ch 12</title>
@@ -2026,7 +2026,7 @@
 
 
 <section id="walkthrough-12-8">
-  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.8 &mdash; Pure Bundling, Negatively-Correlated WTP</h2>
+  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 12.8 &mdash; Pure Bundling: Word and Excel</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
     <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;">
       <strong>Problem.</strong> Word (W) and Excel (E), \(MC = 0\). Two equal types &mdash; A: \((v^W, v^E) = (80, 10)\); B: \((10, 80)\). Compare separate sale vs pure bundling.
@@ -2049,17 +2049,22 @@
       <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">
         <strong>Pure bundle:</strong> \(P = 90\) &mdash; both value the bundle at \$90, both buy. Revenue \(= \$180\).
       </p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">
-        <strong>Correlation:</strong> \(\text{Cov}(v^W, v^E) = \tfrac12(800) + \tfrac12(800) - 45\cdot45 = 800 - 2025 = -1225 &lt; 0\) ✓.
-      </p>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">
-        Bundle \$180 \(&gt;\) separate \$160 &mdash; a <strong>12.5%</strong> lift, entirely from the negative correlation.
+      <div class="fragment fade-up" data-fragment-index="3" style="margin:6px 0 0;">
+        <p style="font-size:11.5pt; line-height:1.4; margin:0 0 3px;"><strong>Spread, as in CC 12.3:</strong> Word is worth \$80 or \$10, average \$45, each \$35 away, so Var \(= 35^2 = 1{,}225\). Excel the same.</p>
+        <table style="width:100%; border-collapse:collapse; margin:0;">
+          <tr><td style="padding:2px 8px; font-size:11.5pt;">Var(Word) + Var(Excel)</td><td style="padding:2px 8px; font-size:11.5pt;">1,225 + 1,225</td></tr>
+          <tr style="border-top:1px solid var(--line-color);"><td style="padding:2px 8px; font-size:11.5pt;">2 &times; Cov</td><td style="padding:2px 8px; font-size:11.5pt;"><strong>&minus;2,450</strong></td></tr>
+          <tr style="border-top:1px solid var(--line-color);"><td style="padding:2px 8px; font-size:11.5pt;">Var(bundle)</td><td style="padding:2px 8px; font-size:11.5pt;"><strong>0</strong>: both bundles worth \$90</td></tr>
+        </table>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.45; margin: 6px 0 0;">
+        One bundle price sits at the <strong>lower</strong> value. Here both values are \$90, so \$90 leaves <strong>\$0</strong> on the table &rarr; <strong>\$180</strong> vs \$160 separately, a 12.5% lift.
       </p>
     </div>
   </div>
   <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 10px; padding: 9px 16px;">
     <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> The bundle compresses both types' WTP to a common \$90, so one price captures both. Microsoft's Office bundle survives because writers and analysts have negatively correlated WTPs &mdash; neither pays \$80 for the other's app, but both pay \$90 for the package. Same logic: Disney+/Hulu, the fast-food meal deal.</p>
-    <p style="margin: 7px 0 0; font-size: 11.5pt; line-height:1.45;"><strong>Would mixed bundling do better here? No &mdash; it ties at \$180.</strong> Both types value the bundle at exactly \$90, so one price already takes every available dollar and standalones have nothing left to catch. Mixed only pulls ahead when bundle values <em>differ</em> &mdash; the three-buyer case in &sect;12.6.</p>
+    <p style="margin: 7px 0 0; font-size: 11.5pt; line-height:1.45;"><strong>Would mixed bundling do better here? No &mdash; it ties at \$180.</strong> Both types value the bundle at exactly \$90, so one price already takes every available dollar and standalones have nothing left to catch. Mixed only pulls ahead when bundle values <em>differ</em> &mdash; the McDonald&rsquo;s case.</p>
   </div>
 </section>
 
@@ -2069,7 +2074,7 @@
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
     <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 12px 18px;">
       <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin: 0;"><i class="fa-solid fa-tv"></i> Crawford-Yurukoglu (2012, <em>AER</em>)</p>
-      <p style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">Across 33 metro markets, bundling channels into tiers (vs &agrave;-la-carte) reduces consumer surplus ~5% on average &mdash; but total-welfare effects range \(-1.7\%\) to \(+6.0\%\), because tiering keeps niche networks alive that wouldn't survive standalone.</p>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">Across 33 metro markets, bundling channels into tiers (vs selling each channel separately) reduces consumer surplus ~5% on average &mdash; but total-welfare effects range \(-1.7\%\) to \(+6.0\%\), because tiering keeps niche networks alive that wouldn't survive standalone.</p>
       <p style="font-size: 11.5pt; line-height: 1.45; margin: 8px 0 0; color: var(--muted-color);">Bundling welfare is <strong>empirically mixed</strong> &mdash; sign depends on industry demand and supply structure.</p>
     </div>
     <div style="background: #f4f1ed; border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 12px 18px;">

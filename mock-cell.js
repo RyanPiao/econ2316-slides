@@ -17,7 +17,11 @@
               data-img-height="220" (px), data-lines="1-3,9-14" (colab: type only these lines of the
               cell, 1-based; each run left out shows as one grey "... N lines not shown" line, so a long
               cell's figure fits; Live still runs the whole cell), data-live="off", data-step-notes="line 1 | line 2"
-              (one plain-text speaker-view line per click; reveal reads data-notes on the shown fragment).
+              (one plain-text speaker-view line per click; reveal reads data-notes on the shown fragment),
+              data-frag-start="0" (the cell's clicks take fragment indices 0, 1, ... and every other fragment
+              on the slide at or after that index moves back by the number of clicks, so a figure or a
+              line placed after the cell plays after the run; without it the cell's clicks come after every
+              fragment reveal has already numbered, which is every authored fragment on the slide).
    per-click notes  <aside class="notes" data-sv="1" data-click="1">...</aside> (and data-click="2", "3")
               inside the .mock div: a full speaker-view note for that click, in the house format. The
               slide's own aside is click 0. Each one is moved into its click's fragment, where reveal's
@@ -143,8 +147,16 @@
 
   function addSteps(m, st) {
     var notes = (m.getAttribute('data-step-notes') || '').split('|').map(function (s) { return s.trim(); });
+    var fs = m.getAttribute('data-frag-start'), start = (fs === null || fs === '') ? null : +fs;
+    var sec = start === null ? null : m.closest('section');
+    if (sec) [].slice.call(sec.querySelectorAll('.fragment[data-fragment-index]')).forEach(function (o) {
+      if (o.classList.contains('mk-step')) return;
+      var j = +o.getAttribute('data-fragment-index');
+      if (j >= start) o.setAttribute('data-fragment-index', j + st.steps.length);
+    });
     st.steps.forEach(function (s, i) {
       var f = el('span', 'fragment mk-step'); f.setAttribute('data-mk', s);
+      if (start !== null) f.setAttribute('data-fragment-index', start + i);
       if (st.notes[i + 1]) f.appendChild(st.notes[i + 1]);
       else if (notes[i]) f.setAttribute('data-notes', notes[i]);
       m.appendChild(f);

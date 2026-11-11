@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=82a1f603240f2f3554121896f426d7be">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f9ed31f39886f3f66fcb05c64f341c8c">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Monopolistic Competition &mdash; ECON 2316 Ch 13 (Part 1)</title>
@@ -96,79 +96,90 @@
   </div>
 </section>
 
-<section id="bridge">
-  <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color: var(--secondary-color);"></i> Where Ch 13 Sits on the Spectrum</h2>
-  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 4px 0 14px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.10);">
-    <div style="background: #eef6ef; padding: 11px 10px; text-align: center; border-bottom: 5px solid var(--success-color);"><p style="font-size: 12.5pt; font-weight: 700; color: var(--success-color); margin:0;">Perfect competition</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">many &middot; identical &middot; \(P=MC\)</p></div>
-    <div style="background: #f7f1ea; padding: 11px 10px; text-align: center; border-bottom: 5px solid var(--accent-color);"><p style="font-size: 12.5pt; font-weight: 700; color: var(--accent-color); margin:0;">Monopolistic competition</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">many &middot; differentiated &middot; <strong>Part 1</strong></p></div>
-    <div style="background: #f3eef6; padding: 11px 10px; text-align: center; border-bottom: 5px solid #7C3A5F;"><p style="font-size: 12.5pt; font-weight: 700; color: #7C3A5F; margin:0;">Oligopoly</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">few &middot; strategic &middot; <strong>Part 2</strong></p></div>
-    <div style="background: #fdf2f0; padding: 11px 10px; text-align: center; border-bottom: 5px solid var(--danger-color);"><p style="font-size: 12.5pt; font-weight: 700; color: var(--danger-color); margin:0;">Monopoly (Ch 11)</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">one &middot; \(L=-1/\varepsilon\)</p></div>
+<section id="mc-spectrum">
+ <h2><i class="fa-solid fa-scale-unbalanced-flip" style="color: var(--secondary-color);"></i> Market Structure Analysis &mdash; Four Structures</h2>
+ <div class="fragment fade-up" data-fragment-index="1" style="position:relative; height:26px; border-radius:13px; margin:8px 0 10px; background:linear-gradient(90deg, #3f9c5a 0%, #b8a33a 50%, #c0503f 100%);">
+  <span style="position:absolute; left:14px; top:3px; font-size:11.5pt; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45);">0%</span>
+  <span style="position:absolute; left:50%; top:3px; transform:translateX(-50%); font-size:11.5pt; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45); letter-spacing:0.08em;">MARKET POWER &rarr;</span>
+  <span style="position:absolute; right:14px; top:3px; font-size:11.5pt; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45);">100%</span>
+ </div>
+ <div style="position:relative;">
+  <div class="fragment fade-up" data-fragment-index="1" style="position:absolute; left:4%; right:0; top:7px; height:3px; background:var(--line-color);"><div style="position:absolute; right:-2px; top:-6px; width:0; height:0; border-left:12px solid var(--line-color); border-top:7.5px solid transparent; border-bottom:7.5px solid transparent;"></div></div>
+  <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; position:relative;">
+  <div class="fragment fade-up" data-fragment-index="2" style="text-align:center;">
+   <div style="width:16px; height:16px; border-radius:50%; background:var(--success-color); margin:0 auto 7px; box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--success-color);"></div>
+   <div style="background:#ecfdf5; border-radius:10px; border-left:4px solid var(--success-color); padding:8px 10px 7px; text-align:left;">
+    <img alt="An Iowa cornfield: every farm sells the same corn" src="figures/corn_iowa.jpg" style="width:100%; height:92px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+    <p style="font-size:13pt; font-weight:700; color:var(--success-color); margin:6px 0 1px; line-height:1.2;">Perfect Competition</p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 4px;">Ch 10</p>
+    <p style="font-size:11.5pt; line-height:1.5; margin:0;"><i class="fa-solid fa-users" style="width:18px; color:var(--success-color);"></i> Firms: <strong>many</strong><br><i class="fa-solid fa-box" style="width:18px; color:var(--success-color);"></i> Product: <strong>identical</strong><br><i class="fa-solid fa-door-closed" style="width:18px; color:var(--success-color);"></i> Barriers: <strong>none</strong></p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:4px 0 0;">corn, wheat</p>
+   </div>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 20px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 12.5pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 6px;">Chs 11&ndash;12 &mdash; one firm</p>
-      <p style="font-size: 13pt; margin: 0;">A single price-maker, markup pinned by its <em>own</em> elasticity: \(L = (P-MC)/P = -1/\varepsilon_D\). No rival to worry about.</p>
-    </div>
-    <div style="background: #fef9f3; border-radius: 10px; padding: 14px 20px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 12.5pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 6px;">Ch 13 &mdash; many firms, free entry</p>
-      <p style="font-size: 13pt; margin: 0;">Each firm keeps a <em>sliver</em> of that power from differentiation &mdash; but free entry competes the profit away. <strong>Today: the left half of the gap.</strong></p>
-    </div>
+  <div class="fragment fade-up" data-fragment-index="3" style="text-align:center;">
+   <div style="width:16px; height:16px; border-radius:50%; background:var(--accent-color); margin:0 auto 7px; box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--accent-color);"></div>
+   <div style="background:#fef9f3; border-radius:10px; border-left:4px solid var(--accent-color); padding:8px 10px 7px; text-align:left;">
+    <img alt="Baristas behind the counter of an independent coffee shop" src="figures/coffee2-poster.jpg" style="width:100%; height:92px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+    <p style="font-size:13pt; font-weight:700; color:var(--accent-color); margin:6px 0 1px; line-height:1.2;">Monopolistic Competition</p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 4px;">Ch 13 &middot; Part 1</p>
+    <p style="font-size:11.5pt; line-height:1.5; margin:0;"><i class="fa-solid fa-users" style="width:18px; color:var(--accent-color);"></i> Firms: <strong>many</strong><br><i class="fa-solid fa-box" style="width:18px; color:var(--accent-color);"></i> Product: <strong>differentiated</strong><br><i class="fa-solid fa-door-closed" style="width:18px; color:var(--accent-color);"></i> Barriers: <strong>none</strong></p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:4px 0 0;">coffee shops, burger places</p>
+   </div>
   </div>
-  <div class="key-result" style="margin-top: 13px;">
-    <p style="margin: 0; font-size: 12.5pt;">Part 1 fills the slot just <strong>right of perfect competition</strong>: keep the crowd and free entry, add differentiation. Part 2 fills the slot just <strong>left of monopoly</strong>: a few firms who must watch each other. Over <strong>90%</strong> of what you buy lives in today's slot.</p>
+  <div class="fragment fade-up" data-fragment-index="4" style="text-align:center;">
+   <div style="width:16px; height:16px; border-radius:50%; background:var(--secondary-color); margin:0 auto 7px; box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--secondary-color);"></div>
+   <div style="background:#f0f5f8; border-radius:10px; border-left:4px solid var(--secondary-color); padding:8px 10px 7px; text-align:left;">
+    <img alt="A Coke can and a Pepsi can towering over a city skyline" src="figures/coke_vs_pepsi.webp" style="width:100%; height:92px; object-fit:cover; object-position:center top; border-radius:6px; display:block;">
+    <p style="font-size:13pt; font-weight:700; color:var(--secondary-color); margin:6px 0 1px; line-height:1.2;">Oligopoly</p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 4px;">Ch 13 &middot; Part 2</p>
+    <p style="font-size:11.5pt; line-height:1.5; margin:0;"><i class="fa-solid fa-users" style="width:18px; color:var(--secondary-color);"></i> Firms: <strong>few</strong><br><i class="fa-solid fa-box" style="width:18px; color:var(--secondary-color);"></i> Product: <strong>differentiated or identical</strong><br><i class="fa-solid fa-door-closed" style="width:18px; color:var(--secondary-color);"></i> Barriers: <strong>some</strong></p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:4px 0 0;">soda, airlines, phones</p>
+   </div>
   </div>
-</section>
-
-<section id="opener">
-  <h2><i class="fa-solid fa-store" style="color: var(--accent-color);"></i> Two Everyday Markets, One Structure</h2>
-  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: start;">
-    <div style="display: flex; flex-direction: column; gap: 12px;">
-      <div style="background: #f8f6f3; border-radius: 8px; padding: 12px 16px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 13pt; margin: 0;"><strong>Coffee.</strong> One Cambridge block: three coffee shops, a sandwich franchise, and an empty storefront where a fourth just closed. None a monopoly, none a price-taker &mdash; each keeps a loyal core and charges a little above cost.</p></div>
-      <div style="background: #f8f6f3; border-radius: 8px; padding: 12px 16px; border-left: 4px solid var(--accent-color);"><p style="font-size: 13pt; margin: 0;"><strong>Beer.</strong> 9,578 US craft breweries in 2025 &mdash; yet 481 closures against 300 openings, a second straight year closures outnumbered openings. Anchor Brewing (est. 1896) closed in July 2023.</p></div>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-      <div class="stat-card accent"><p class="num">9,578</p><p class="lbl">US craft breweries (2025)</p></div>
-      <div class="stat-card rose"><p class="num">481</p><p class="lbl">closed in 2025</p></div>
-      <div class="stat-card sage"><p class="num">300</p><p class="lbl">opened in 2025</p></div>
-      <div class="stat-card"><p class="num">&minus;181</p><p class="lbl">openings &minus; closures (2nd year negative)</p></div>
-    </div>
+  <div class="fragment fade-up" data-fragment-index="5" style="text-align:center;">
+   <div style="width:16px; height:16px; border-radius:50%; background:var(--muted-color); margin:0 auto 7px; box-shadow:0 0 0 3px #fff, 0 0 0 5px var(--muted-color);"></div>
+   <div style="background:#f8f6f3; border-radius:10px; border-left:4px solid var(--muted-color); padding:8px 10px 7px; text-align:left;">
+    <img alt="Aerial view of a water treatment plant: one water company serves the town" src="figures/water_company-poster.jpg" style="width:100%; height:92px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+    <p style="font-size:13pt; font-weight:700; color:var(--muted-color); margin:6px 0 1px; line-height:1.2;">Monopoly</p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 4px;">Ch 11</p>
+    <p style="font-size:11.5pt; line-height:1.5; margin:0;"><i class="fa-solid fa-users" style="width:18px; color:var(--muted-color);"></i> Firms: <strong>one</strong><br><i class="fa-solid fa-box" style="width:18px; color:var(--muted-color);"></i> Product: <strong>unique</strong><br><i class="fa-solid fa-door-closed" style="width:18px; color:var(--muted-color);"></i> Barriers: <strong>many</strong></p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:4px 0 0;">tap water, the power lines</p>
+   </div>
   </div>
-  <div class="key-result" style="margin-top: 12px;">
-    <p style="margin: 0; font-size: 13pt;">Coffee and beer are both <strong>monopolistic competition</strong>: many differentiated firms with free entry and exit. Differentiation lets each charge \(P > MC\); free entry competes that profit away toward <strong>zero economic profit</strong> in the long run &mdash; the slot just right of perfect competition that Part 1 makes precise.</p>
   </div>
-</section>
-
-<section>
-<section id="rideshare-illusion">
-  <p style="font-size: 12pt; color: var(--accent-color); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px;">Case Study &middot; Reading Market Structure in the Wild</p>
-  <h2 style="margin-top: 0;"><i class="fa-solid fa-mobile-screen-button" style="color: var(--secondary-color);"></i> The High-Tech Illusion</h2>
-  <div style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:16px 0 12px;">
-    <div style="background:var(--secondary-color); color:#fff; border-radius:50%; width:160px; height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; box-shadow:0 3px 12px rgba(0,0,0,0.18);"><i class="fa-solid fa-car" style="font-size:27pt; margin-bottom:8px;"></i><p style="font-size:13pt; line-height:1.2; color:#fff; margin:0;">Anyone<br>with a car</p></div>
-    <div style="display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-arrow-right-long" style="font-size:20pt; color:var(--muted-color);"></i><i class="fa-solid fa-mobile-screen" style="font-size:42pt; color:var(--primary-color);"></i><i class="fa-solid fa-arrow-left-long" style="font-size:20pt; color:var(--muted-color);"></i></div>
-    <div style="background:var(--accent-color); color:#fff; border-radius:50%; width:160px; height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; box-shadow:0 3px 12px rgba(0,0,0,0.18);"><i class="fa-solid fa-person-walking" style="font-size:27pt; margin-bottom:8px;"></i><p style="font-size:13pt; line-height:1.2; color:#fff; margin:0;">Anyone<br>needing a ride</p></div>
+  <div class="fragment fade-up" data-fragment-index="6" style="position:absolute; top:-6px; bottom:-6px; left:calc((100% - 42px)/4 + 14px - 7px); width:calc((100% - 42px)/2 + 14px + 14px); border:2.5px dashed var(--accent-color); border-radius:12px; pointer-events:none;"></div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="1" style="margin:14px 0 0;">
+  <div style="position:relative; height:26px; border-radius:13px; background:linear-gradient(90deg, #3f9c5a 0%, #b8a33a 50%, #c0503f 100%);">
+   <span style="position:absolute; left:14px; top:3px; font-size:11.5pt; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45);">100%</span>
+   <span style="position:absolute; left:50%; top:3px; transform:translateX(-50%); font-size:11.5pt; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45); letter-spacing:0.08em;">COMPETITION</span>
+   <span style="position:absolute; right:14px; top:3px; font-size:11.5pt; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,0.45);">0%</span>
   </div>
-  <div class="key-result"><p style="margin:0;">At first glance <strong>Uber and Lyft look like textbook perfect competition</strong> &mdash; many drivers, many riders, low barriers, an app neutrally matching supply and demand. Before we build monopolistic competition, a warning: a market can <em>look</em> like a benchmark and behave like something else entirely. Look closer.</p></div>
-</section>
+  <div style="display:flex; justify-content:space-between; font-size:11.5pt; font-weight:700; margin:3px 6px 0;"><span style="color:var(--success-color);">&larr; Low prices</span><span style="color:var(--danger-color);">High prices &rarr;</span></div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="6" style="margin:8px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>Most of what we buy every day comes from the middle.</strong> Middle-left: coffee shops, restaurants, hair salons, apps. The US has over 1 million restaurant locations, and more than 7 in 10 are single-unit businesses. Middle-right: phones, airlines, soda. Four airlines fly about 70% of US domestic air travel.</p></div>
 </section>
 
 <section id="hook-allbirds">
-  <h2><i class="fa-solid fa-shoe-prints" style="color: var(--accent-color);"></i> The Hook: Allbirds, $4.1B &rarr; $39M</h2>
-  <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; align-items: center;">
-    <div>
-      <p style="font-size: 13.5pt; margin-bottom: 12px;">In 2021 Allbirds was Silicon Valley's darling &mdash; wool sneakers, sugarcane soles, a carbon-neutral story. At IPO it was worth <strong>$4.1 billion</strong>, more than Under Armour.</p>
-      <div style="display: flex; flex-direction: column; gap: 7px;">
-        <div style="background: #fdf2f0; border-radius: 8px; padding: 9px 16px; border-left: 4px solid var(--danger-color);"><p style="font-size: 12.5pt; margin:0;">A differentiated product in an <strong>easy-to-enter</strong> market is a magnet for imitators &mdash; Hoka, On Running, and dozens more copied the playbook.</p></div>
-        <div style="background: #fdf2f0; border-radius: 8px; padding: 9px 16px; border-left: 4px solid var(--danger-color);"><p style="font-size: 12.5pt; margin:0;">Revenue collapsed <strong>$298M &rarr; $152M</strong>; every full-price US store closed.</p></div>
-        <div style="background: #fdf2f0; border-radius: 8px; padding: 9px 16px; border-left: 4px solid var(--danger-color);"><p style="font-size: 12.5pt; margin:0;">2026: sold for <strong>$39 million</strong> &mdash; a <strong>99% decline.</strong></p></div>
-      </div>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 12px; padding: 22px; text-align: center;">
-      <p style="font-size: 13pt; color: var(--muted-color); font-style: italic; margin-bottom: 10px;">This is not a story about bad management.</p>
-      <p style="font-size: 17pt; color: var(--primary-color); font-weight: 700; line-height: 1.35;">It is a textbook prediction, rendered in real time.</p>
-      <div style="width: 40px; height: 3px; background: var(--accent-color); margin: 14px auto;"></div>
-      <p style="font-size: 12.5pt; color: var(--muted-color);">Short-run profit attracts entry; entry competes economic profit to zero. By the end of Part 1 you will derive exactly why &mdash; as a calculus condition.</p>
-    </div>
+ <h2><i class="fa-solid fa-shoe-prints" style="color: var(--accent-color);"></i> The Hook: Allbirds, \$4.1B &rarr; \$39M</h2>
+ <p style="font-size:13pt; margin:4px 0 10px;">A sneaker that was <strong>different</strong>: merino wool on top, a sugarcane sole, a carbon-neutral story, \$95 a pair. What was that difference worth?</p>
+ <div style="display:grid; grid-template-columns:1.45fr 1fr; gap:22px; align-items:end;">
+  <div style="display:flex; flex-direction:column; gap:8px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#ecfdf5; border-radius:8px; padding:8px 14px; border-left:4px solid var(--success-color);"><p style="font-size:12.5pt; line-height:1.42; margin:0;"><strong>Nov 2021 &middot; the difference pays.</strong> IPO at \$15 a share; the first day closes at \$28.64. Market value about <strong>\$4.1 billion</strong>.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--accent-color);"><p style="font-size:12.5pt; line-height:1.42; margin:0;"><strong>The barrier is easy to copy.</strong> Anyone can buy wool and sugarcane. Amazon&rsquo;s \$45 &ldquo;Galen&rdquo; wool sneaker looked &ldquo;strikingly similar&rdquo; to the \$95 Wool Runner (2019), and On and Hoka won the comfort buyer.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f0f5f8; border-radius:8px; padding:8px 14px; border-left:4px solid var(--secondary-color);"><p style="font-size:12.5pt; line-height:1.42; margin:0;"><strong>Demand leaks away.</strong> Revenue \$297.8M in 2022 &rarr; \$152.5M in 2025. Every full-price US store closed by early 2026.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#f8f6f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--muted-color);"><p style="font-size:12.5pt; line-height:1.42; margin:0;"><strong>Mar 2026 &middot; sold.</strong> The brand and its assets go to American Exchange Group for <strong>\$39 million</strong>, under 1% of the 2021 value.</p></div>
   </div>
+  <div style="background:#f8f6f3; border-radius:10px; padding:10px 16px 8px; border-left:4px solid var(--muted-color);">
+   <p style="font-size:11pt; color:var(--muted-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 6px; text-align:center;">Allbirds&rsquo; value, to scale</p>
+   <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:end; height:250px; border-bottom:2px solid var(--line-color);">
+    <div class="fragment fade-up" data-fragment-index="1" style="text-align:center;"><p style="font-size:15pt; font-weight:800; color:var(--success-color); margin:0 0 4px;">\$4.1B</p><div style="height:205px; background:var(--success-color); border-radius:6px 6px 0 0;"></div></div>
+    <div class="fragment fade-up" data-fragment-index="4" style="text-align:center;"><p style="font-size:15pt; font-weight:800; color:var(--danger-color); margin:0 0 4px;">\$39M</p><div style="height:2px; background:var(--danger-color);"></div></div>
+   </div>
+   <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; text-align:center; font-size:11pt; color:var(--muted-color); margin-top:4px;"><span>Nov 2021</span><span>Mar 2026</span></div>
+  </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:11px 0 0; padding:9px 16px;"><p style="margin:0; font-size:13pt;"><strong>Allbirds was different. Why didn&rsquo;t the difference protect its profit?</strong> Differentiation can work like an entry barrier, but this one was easy to break. Walkthrough 13.1 answers it with the model.</p></div>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="divider-define">
@@ -178,224 +189,174 @@
 </section>
 
 <section id="definition">
-  <h2><i class="fa-solid fa-store" style="color: var(--secondary-color);"></i> The Name Captures a Tension</h2>
-  <div style="background: #eef3f6; border-radius: 10px; padding: 14px 24px; border-left: 5px solid var(--secondary-color); margin-bottom: 14px;">
-    <p style="font-size: 11pt; letter-spacing: 1.5px; text-transform: uppercase; color: var(--secondary-color); font-weight: 700; margin-bottom: 4px;">Definition</p>
-    <p style="font-size: 14.5pt; margin:0;"><strong>Monopolistic competition</strong> &mdash; a market in which (a) <strong>many firms</strong> produce <strong>differentiated</strong> products that are close but <em>not</em> perfect substitutes, (b) <strong>entry and exit are free</strong> in the long run, and (c) each firm has market power over <em>its own variety</em>.</p>
+ <h2><i class="fa-solid fa-burger" style="color: var(--secondary-color);"></i> What Is Monopolistic Competition &mdash; Sam&rsquo;s Burgers</h2>
+ <p style="font-size:13pt; margin:4px 0 10px;">Sam&rsquo;s Burgers again: the same burger street, three ways. Watch the demand curve one shop faces:</p>
+ <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#ecfdf5; border-radius:10px; border-left:4px solid var(--success-color); padding:9px 12px;">
+   <p style="font-size:11pt; font-weight:700; color:var(--success-color); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 5px;">Ch 9&ndash;10 &middot; Perfect competition</p>
+   <img alt="A grid of about 50 identical burger storefronts within three miles, Sam&rsquo;s shop highlighted" src="figures/burger_3_miles.webp" style="width:100%; height:150px; object-fit:cover; border-radius:6px; display:block;">
+   <div style="display:flex; gap:8px; align-items:center; margin-top:7px;"><div class="mathjax_ignore tex2jax_ignore" style="flex:0 0 96px;"><svg viewBox="0 0 104 72" style="width:96px; display:block;"><line x1="14" y1="6" x2="14" y2="58" stroke="#8C8580" stroke-width="1.3"/><line x1="14" y1="58" x2="100" y2="58" stroke="#8C8580" stroke-width="1.3"/><text x="2" y="15" font-size="13" fill="#6B645E">P</text><text x="90" y="71" font-size="13" fill="#6B645E">Q</text><line x1="14" y1="32" x2="98" y2="32" stroke="#6A8E6B" stroke-width="2.6"/></svg></div><p style="font-size:11.5pt; line-height:1.4; margin:0;">Sam is one of about <strong>50</strong> shops within 3 miles selling the <strong>same</strong> basic cheeseburger. A price taker: <strong>flat</strong> demand.</p></div>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-    <div style="background: #eef6ef; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--success-color);">
-      <p style="font-size: 13pt; margin:0;"><strong>&ldquo;Competition&rdquo;</strong> &mdash; many firms chase the same customers, and new entrants join freely. This pins long-run profit at zero.</p>
-    </div>
-    <div style="background: #f7f1ea; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 13pt; margin:0;"><strong>&ldquo;Monopolistic&rdquo;</strong> &mdash; each firm's product is a little different, giving it a <em>sliver</em> of power: raise price and lose <em>some</em>, not <em>every</em>, customer.</p>
-    </div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:10px; border-left:4px solid var(--muted-color); padding:9px 12px;">
+   <p style="font-size:11pt; font-weight:700; color:var(--muted-color); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 5px;">Ch 11 &middot; One shop differentiates</p>
+   <img alt="The same grid of identical burger storefronts with one differentiated kitchen standing out" src="figures/burger_map.webp" style="width:100%; height:150px; object-fit:cover; border-radius:6px; display:block;">
+   <div style="display:flex; gap:8px; align-items:center; margin-top:7px;"><div class="mathjax_ignore tex2jax_ignore" style="flex:0 0 96px;"><svg viewBox="0 0 104 72" style="width:96px; display:block;"><line x1="14" y1="6" x2="14" y2="58" stroke="#8C8580" stroke-width="1.3"/><line x1="14" y1="58" x2="100" y2="58" stroke="#8C8580" stroke-width="1.3"/><text x="2" y="15" font-size="13" fill="#6B645E">P</text><text x="90" y="71" font-size="13" fill="#6B645E">Q</text><line x1="18" y1="8" x2="70" y2="56" stroke="#8C8580" stroke-width="2.6"/></svg></div><p style="font-size:11.5pt; line-height:1.4; margin:0;">Fifty near-identical joints, until <strong>one</strong> differentiates. That shop wins a local monopoly: a <strong>steep</strong> demand of its own.</p></div>
   </div>
-  <p style="font-size: 12pt; color: var(--muted-color); margin-top: 12px; text-align: center;">The whole structure is in the name. &ldquo;Monopolistic&rdquo; describes the firm's <em>demand curve</em> (downward-sloping); &ldquo;competition&rdquo; describes the <em>market</em> (crowded, free entry).</p>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#fef9f3; border-radius:10px; border-left:4px solid var(--accent-color); padding:9px 12px; box-shadow:0 0 0 2px var(--accent-color);">
+   <p style="font-size:11pt; font-weight:700; color:var(--accent-color); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 5px;">Ch 13 &middot; Monopolistic competition</p>
+   <img alt="Google Maps results for best burger in Boston: many burger places, each a little different" src="figures/different_burger.webp" style="width:100%; height:150px; object-fit:cover; border-radius:6px; display:block;">
+   <div style="display:flex; gap:8px; align-items:center; margin-top:7px;"><div class="mathjax_ignore tex2jax_ignore" style="flex:0 0 96px;"><svg viewBox="0 0 104 72" style="width:96px; display:block;"><line x1="14" y1="6" x2="14" y2="58" stroke="#8C8580" stroke-width="1.3"/><line x1="14" y1="58" x2="100" y2="58" stroke="#8C8580" stroke-width="1.3"/><text x="2" y="15" font-size="13" fill="#6B645E">P</text><text x="90" y="71" font-size="13" fill="#6B645E">Q</text><line x1="16" y1="18" x2="98" y2="50" stroke="#C47B5A" stroke-width="2.6"/></svg></div><p style="font-size:11.5pt; line-height:1.4; margin:0;"><strong>Every</strong> shop differentiates a little, and entry stays <strong>free</strong>. Sam&rsquo;s demand slopes down; raise the price and he loses <strong>some</strong> customers, not all.</p></div>
+  </div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="4" style="background:#f0f5f8; border-radius:10px; padding:11px 20px; border-left:4px solid var(--secondary-color); margin-top:12px;">
+  <p style="font-size:13.5pt; margin:0 0 6px;"><strong>Monopolistic competition:</strong> many firms sell <strong>differentiated</strong> products (close substitutes, not perfect ones), and entry and exit are <strong>free</strong>.</p>
+  <p style="font-size:12pt; margin:0; color:var(--text-color);"><strong style="color:var(--accent-color);">&ldquo;Monopolistic&rdquo;</strong> = Sam&rsquo;s <em>own</em> demand slopes down. <strong style="color:var(--success-color);">&ldquo;Competition&rdquo;</strong> = many rivals and an open door, so long-run profit goes to zero.</p>
+ </div>
 </section>
 
-<section id="four-characteristics">
-  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Four Defining Characteristics</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 14pt; font-weight: 700; color: var(--secondary-color); margin-bottom: 3px;">1. Many sellers</p>
-      <p style="font-size: 12.5pt; margin:0;">A large number of firms, each with a <strong>small share</strong>. No one sets the market price.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 14pt; font-weight: 700; color: var(--accent-color); margin-bottom: 3px;">2. Differentiated products</p>
-      <p style="font-size: 12.5pt; margin:0;">Close substitutes, <strong>not perfect</strong> ones. The feature that separates this from perfect competition.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--success-color);">
-      <p style="font-size: 14pt; font-weight: 700; color: var(--success-color); margin-bottom: 3px;">3. Free entry &amp; exit</p>
-      <p style="font-size: 12.5pt; margin:0;">No patents or capital walls. A new oven fires up in a vacant storefront within months.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--danger-color);">
-      <p style="font-size: 14pt; font-weight: 700; color: var(--danger-color); margin-bottom: 3px;">4. Independent decisions</p>
-      <p style="font-size: 12.5pt; margin:0;">Too many rivals to track &mdash; no firm reacts to any single competitor. Unlike <em>oligopoly</em> (Part 2).</p>
-    </div>
+<section id="mc-free-entry">
+ <h2><i class="fa-solid fa-door-open" style="color: var(--success-color);"></i> Why Entry Is Free &mdash; Anyone Can Open a Burger Place</h2>
+ <div style="display:grid; grid-template-columns:1.2fr 1fr; gap:20px; align-items:start; margin-top:6px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:4px solid var(--secondary-color);"><p style="font-size:12.5pt; font-weight:700; color:var(--secondary-color); margin:0 0 2px;">1. Many sellers</p><p style="font-size:11.5pt; line-height:1.4; margin:0;">About 50 burger places within 3 miles of campus. None sets the market price.</p></div>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:4px solid var(--accent-color);"><p style="font-size:12.5pt; font-weight:700; color:var(--accent-color); margin:0 0 2px;">2. Differentiated</p><p style="font-size:11.5pt; line-height:1.4; margin:0;">Sam&rsquo;s smash burger is not Moonshine 152&rsquo;s \$20&ndash;30 plate: close substitutes, not perfect ones.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:4px solid var(--success-color);"><p style="font-size:12.5pt; font-weight:700; color:var(--success-color); margin:0 0 2px;">3. Free entry &amp; exit</p><p style="font-size:11.5pt; line-height:1.4; margin:0;">Lease a storefront, rent a griddle (\$50 a day in Sam&rsquo;s Ch 9 costs), hire cooks. Closing is just as easy.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:4px solid var(--secondary-color);"><p style="font-size:12.5pt; font-weight:700; color:var(--secondary-color); margin:0 0 2px;">4. Independent decisions</p><p style="font-size:11.5pt; line-height:1.4; margin:0;">Sam runs a special; the other 49 do not call a meeting. No strategy needed (that is oligopoly, Part 2).</p></div>
   </div>
-  <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 13px; text-align: center;">#2 (differentiation) is the boundary with <strong>perfect competition</strong>; #4 (independence) is the boundary with <strong>oligopoly</strong>. Those two lines define the slot.</p>
-  <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; &ldquo;many sellers&rdquo; does not by itself mean perfect competition</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">Ch 10 needed many sellers <em>and</em> an identical product. Drop only the second and you land here: the count of firms is unchanged, but each faces a downward-sloping perceived demand. On an exam, never infer \(P = MR\) from firm count alone &mdash; check whether the product is homogeneous.</p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="display:grid; grid-template-columns:1.05fr 1fr; gap:10px; align-items:end;">
+   <div style="text-align:center;"><img alt="A fanned stack of grand-opening flyers for new burger places, Shake Shack and Five Guys among them" src="figures/evenmore_burger.webp" style="width:100%; max-height:232px; object-fit:contain; display:block; margin:0 auto;"><p style="font-size:10.5pt; color:var(--muted-color); margin:3px 0 0;">Entry: grand openings</p></div>
+   <div style="text-align:center;"><img alt="A Burger King store-closing notice taped to the door" src="figures/burgerking.png" style="width:100%; max-height:180px; object-fit:contain; border-radius:6px; display:block; margin:0 auto;"><p style="font-size:10.5pt; color:var(--muted-color); margin:3px 0 0;">Exit: a closing notice</p></div>
+  </div>
+ </div>
+ <div class="fragment fade-up" data-fragment-index="4" style="background:#fef9f3; border-radius:8px; padding:9px 16px; border-left:4px solid var(--accent-color); margin-top:12px;"><p style="font-size:12.5pt; line-height:1.45; margin:0;"><strong>Differentiation is a soft entry barrier.</strong> Sam&rsquo;s edge is a recipe, a look and a name. A recipe that is a list of ingredients cannot be copyrighted, so nothing stops the next shop from copying his smash patty. A soft barrier slows entry; it does not stop it.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:9px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12.5pt;">Differentiation buys Sam a <strong>downward-sloping demand curve</strong>, not a wall. Free entry is the force that will take his profit away.</p></div>
 </section>
 
-<section>
-<section id="char-many-sellers-pizza">
-  <h2><i class="fa-solid fa-pizza-slice" style="color: var(--secondary-color);"></i> #1 Many Sellers &mdash; Pizza Near Campus</h2>
-  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: center;">
-    <div>
-      <p style="font-size: 14pt; margin-bottom: 12px;">Search <strong>&ldquo;pizza near Northeastern&rdquo;</strong> on Google Maps. You&rsquo;ll find roughly <strong>50 options</strong> within a six-mile radius.</p>
-      <div class="key-result"><p style="margin:0;">No single shop dominates. Each competes for the same pool of hungry students, but <strong>none controls enough of the market to set the price.</strong></p></div>
-      <p style="font-size: 13pt; color: var(--muted-color); margin-top: 12px;">That&rsquo;s &ldquo;many sellers&rdquo; &mdash; the trait MC shares with perfect competition. Yet each storefront is visibly its <em>own</em> product (characteristic #2 is next).</p>
-    </div>
-    <div style="text-align: center;">
-      <img alt="A long row of visually distinct storefronts — many small firms selling similar but differentiated products" src="figures/ch12-many-firms.webp" style="max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 14px rgba(0,0,0,0.16);">
-    </div>
-  </div>
-</section>
-</section>
-
-<section>
-<section id="char-differentiated">
-  <h2><i class="fa-solid fa-fingerprint" style="color: var(--accent-color);"></i> #2 Differentiated &mdash; the Key Twist</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 4px;">
-    <div style="background: #eef6ef; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--success-color);">
-      <p style="font-size: 11.5pt; letter-spacing: 1px; text-transform: uppercase; color: var(--success-color); font-weight: 700; margin-bottom: 5px;">Homogeneous (Ch 10)</p>
-      <p style="font-size: 13pt; margin:0;">A bushel of wheat from one farm is <strong>identical</strong> to the next. The firm is a price-taker: demand is <strong>flat</strong>, \(P = MR\).</p>
-    </div>
-    <div style="background: #f7f1ea; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 11.5pt; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-color); font-weight: 700; margin-bottom: 5px;">Differentiated (Ch 13)</p>
-      <p style="font-size: 13pt; margin:0;">Ciao's wood-fired margherita is <em>not</em> Sal's NY slice. A few regulars stay even if Ciao raises price &mdash; demand <strong>slopes down</strong>, \(P > MR\).</p>
-    </div>
-  </div>
-  <div class="key-result" style="margin-top: 14px;"><p style="margin:0;">Each firm's product is a <strong>close substitute</strong> for its rivals' &mdash; but not a <em>perfect</em> one. That single fact bends the firm's <strong>perceived demand</strong> \(P_i^{d}(q_i)\) downward. Everything in &sect;13.2 follows from it.</p></div>
-  <p style="font-size: 12pt; color: var(--muted-color); margin-top: 10px; text-align:center;"><strong>Notation:</strong> we write firm \(i\)'s own demand as \(P_i^{d}(q_i)\) &mdash; the price it can charge as a function of <em>its</em> output, holding the rest of the market fixed.</p>
-</section>
-</section>
-
-<section id="char-entry-independent">
-  <h2><i class="fa-solid fa-door-open" style="color: var(--success-color);"></i> #3 Free Entry &amp; #4 Independence</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 4px;">
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--success-color);">
-      <p style="font-size: 14pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;">#3 Free entry &amp; exit</p>
-      <p style="font-size: 12.5pt; margin: 0 0 7px;">No patents, licenses, or massive capital walls.</p>
-      <p style="font-size: 12.5pt; margin:0;"><strong>Entry:</strong> ~300 new craft breweries opened in 2025.<br><strong>Exit:</strong> Allbirds closed every full-price store. This is the force that drives profit to zero (&sect;13.2 long run).</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--danger-color);">
-      <p style="font-size: 14pt; font-weight: 700; color: var(--danger-color); margin-bottom: 5px;">#4 Independent decisions</p>
-      <p style="font-size: 12.5pt; margin: 0 0 7px;">Each firm is small enough that its choices barely register with rivals.</p>
-      <p style="font-size: 12.5pt; margin:0;">When one shop runs a special, the other 99 do <em>not</em> hold an emergency meeting. <strong>No strategic interaction</strong> &mdash; the math stays tractable.</p>
-    </div>
-  </div>
-  <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 13px; text-align: center;">Contrast #4 with <strong>oligopoly</strong> (Part 2), where a few firms watch each other's every move &mdash; and we need game theory.</p>
-</section>
-
-<section id="misconception-define">
-  <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Heads Up &mdash; What &ldquo;Monopolistic&rdquo; Actually Modifies</h2>
-  <div style="background: #fdf2f0; border-radius: 10px; padding: 16px 24px; border-left: 5px solid var(--danger-color); margin-bottom: 14px;">
-    <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--danger-color); font-weight: 700; margin-bottom: 5px;">The myth</p>
-    <p style="font-size: 14.5pt; margin:0;">&ldquo;Monopolistic competition means the market is <em>partly a monopoly</em>.&rdquo;</p>
-  </div>
-  <div style="background: #eef6ef; border-radius: 10px; padding: 16px 24px; border-left: 5px solid var(--success-color);">
-    <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--success-color); font-weight: 700; margin-bottom: 5px;">The reality</p>
-    <p style="font-size: 14pt; margin:0;">Every firm has a <strong>tiny monopoly over its own specific variety</strong> &mdash; no one else sells the <em>exact</em> same cup as Ciao. But the market is <strong>fiercely competitive</strong> because close substitutes are everywhere. &ldquo;Monopolistic&rdquo; describes the firm's <em>perceived demand curve</em>, not the market's structure.</p>
-  </div>
-</section>
-
-
-<section>
 <section id="how-differentiate">
-  <h2><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-color);"></i> How Do Firms Differentiate?</h2>
-  <p style="font-size: 13pt; margin-bottom: 12px;">If you can't win on price, you win on <strong>everything else</strong>. Six levers a monopolistically competitive firm pulls to carve out a niche:</p>
-  <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;">
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 8px; text-align: center; border-top: 4px solid var(--secondary-color);"><i class="fa-solid fa-location-dot" style="font-size: 21pt; color: var(--secondary-color);"></i><p style="font-size: 12pt; font-weight: 700; margin-top: 7px;">Location</p></div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 8px; text-align: center; border-top: 4px solid var(--accent-color);"><i class="fa-solid fa-trademark" style="font-size: 21pt; color: var(--accent-color);"></i><p style="font-size: 12pt; font-weight: 700; margin-top: 7px;">Branding</p></div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 8px; text-align: center; border-top: 4px solid var(--success-color);"><i class="fa-solid fa-box-open" style="font-size: 21pt; color: var(--success-color);"></i><p style="font-size: 12pt; font-weight: 700; margin-top: 7px;">Packaging</p></div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 8px; text-align: center; border-top: 4px solid #7C3A5F;"><i class="fa-solid fa-gem" style="font-size: 21pt; color: #7C3A5F;"></i><p style="font-size: 12pt; font-weight: 700; margin-top: 7px;">Quality</p></div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 8px; text-align: center; border-top: 4px solid #2e8b57;"><i class="fa-solid fa-bell-concierge" style="font-size: 21pt; color: #2e8b57;"></i><p style="font-size: 12pt; font-weight: 700; margin-top: 7px;">Service</p></div>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 8px; text-align: center; border-top: 4px solid var(--danger-color);"><i class="fa-solid fa-bullhorn" style="font-size: 21pt; color: var(--danger-color);"></i><p style="font-size: 12pt; font-weight: 700; margin-top: 7px;">Advertising</p></div>
+ <h2><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--secondary-color);"></i> How Firms Differentiate &mdash; A Quick Recap</h2>
+ <p style="font-size:13pt; margin:0 0 10px;">Four ways we have already seen a firm make its product <strong>not quite the same</strong> as its rivals&rsquo;. One example each from <strong>Sam&rsquo;s Burgers</strong> and an <strong>Airbnb listing</strong>:</p>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px 14px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 15px;">
+   <p style="font-size:13pt; font-weight:700; margin:0 0 3px; color:var(--secondary-color);"><i class="fa-solid fa-location-dot"></i> Location</p>
+   <p style="font-size:12pt; margin:0; line-height:1.4;"><i class="fa-solid fa-burger" style="color:var(--accent-color); width:1.2em;"></i> Across the street from the dorms.<br><i class="fa-brands fa-airbnb" style="color:var(--danger-color); width:1.2em;"></i> A five-minute walk to Fenway.</p>
   </div>
-  <div class="key-result" style="margin-top: 14px;"><p style="margin:0;">Each lever shifts perceived demand <strong>out</strong> and makes it <strong>less elastic</strong> &mdash; a bit more market power, a bit more markup. Press <strong>&darr;</strong> for four of them in the wild.</p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:8px 15px;">
+   <p style="font-size:13pt; font-weight:700; margin:0 0 3px; color:var(--success-color);"><i class="fa-solid fa-gem"></i> Quality &amp; features</p>
+   <p style="font-size:12pt; margin:0; line-height:1.4;"><i class="fa-solid fa-burger" style="color:var(--accent-color); width:1.2em;"></i> Beef ground fresh every morning.<br><i class="fa-brands fa-airbnb" style="color:var(--danger-color); width:1.2em;"></i> A full kitchen and free parking.</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:8px 15px;">
+   <p style="font-size:13pt; font-weight:700; margin:0 0 3px; color:var(--accent-color);"><i class="fa-solid fa-trademark"></i> Branding</p>
+   <p style="font-size:12pt; margin:0; line-height:1.4;"><i class="fa-solid fa-burger" style="color:var(--accent-color); width:1.2em;"></i> A name and logo students recognize.<br><i class="fa-brands fa-airbnb" style="color:var(--danger-color); width:1.2em;"></i> A Superhost badge and a 4.9&#9733; rating.</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="4" style="background:#f8f6f3; border-left:4px solid var(--muted-color); border-radius:8px; padding:8px 15px;">
+   <p style="font-size:13pt; font-weight:700; margin:0 0 3px; color:var(--muted-color);"><i class="fa-solid fa-bell-concierge"></i> Service</p>
+   <p style="font-size:12pt; margin:0; line-height:1.4;"><i class="fa-solid fa-burger" style="color:var(--accent-color); width:1.2em;"></i> Late-night delivery.<br><i class="fa-brands fa-airbnb" style="color:var(--danger-color); width:1.2em;"></i> The host replies within an hour; self check-in.</p>
+  </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:10px 0 0; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.4;">All four do the same thing: buyers see <strong>fewer close substitutes</strong>, so the firm&rsquo;s demand is <strong>less elastic</strong> and it can price above marginal cost.</p></div>
+ <div class="fragment fade-up" data-fragment-index="6" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:9px 16px; margin-top:10px;"><p style="font-size:13pt; margin:0; line-height:1.4;"><i class="fa-solid fa-bullhorn" style="color:var(--accent-color);"></i> <strong>New: advertising.</strong> The burger and the apartment do not change at all. The ad changes what buyers <em>know</em> about them, or how they <em>feel</em> about them.</p></div>
 </section>
 
-<section id="diff-location">
-  <h2><i class="fa-solid fa-location-dot" style="color: var(--secondary-color);"></i> Superior Location</h2>
-  <div style="text-align: center; margin-bottom: 8px;">
-    <img alt="Same Starbucks Grande: $3.65 at a captive transit-station store vs $2.95 in the suburbs" src="figures/pd_starbucks.webp" style="max-width: 100%; max-height: 410px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 14px rgba(0,0,0,0.16);">
-  </div>
-  <div class="key-result"><p style="margin:0;">Identical Grande coffee: <strong>$3.65</strong> at a captive transit-station store vs <strong>$2.95</strong> in the suburbs. A captive audience makes demand <strong>less elastic</strong> &rarr; a bigger markup. Location <em>is</em> differentiation.</p></div>
+<section>
+<section id="mc-poll-ads">
+ <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; How Many Ads Do You See a Day?</h2>
+ <div style="background:#f8f6f3; border-radius:8px; padding:10px 18px; border-left:4px solid var(--secondary-color);">
+  <p style="font-size:13pt; margin:0 0 8px;">Count every ad a typical American runs into in one day:</p>
+  <div style="display:flex; justify-content:center; gap:6px;"><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-tv" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">TV &amp; streaming</span></span><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-mobile-screen-button" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">social feeds</span></span><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-globe" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">websites</span></span><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-podcast" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">radio &amp; podcasts</span></span><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-sign-hanging" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">billboards</span></span><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-bus" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">buses &amp; trains</span></span><span style="display:inline-flex; flex-direction:column; align-items:center; width:92px;"><i class="fa-solid fa-newspaper" style="font-size:20pt; color:var(--secondary-color);"></i><span style="font-size:11pt; color:var(--muted-color); margin-top:3px;">print</span></span></div>
+ </div>
+ <p style="font-size:14pt; line-height:1.5; margin:12px 0 0;"><strong>About how many ads does a typical person actually see in a day?</strong></p>
+ <div class="poll-grid" data-poll-id="ch13-econ2316-poll-ads-per-day" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; font-size: 13.5pt;">
+  <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Fewer than 100</div>
+  <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) 100 to 500</div>
+  <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) 500 to 2,000</div>
+  <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) More than 2,000</div>
+ </div>
+ <p style="text-align: center; margin-top: 12px;"><span class="timer-badge" style="display:inline-block; background:#f0f5f8; color:var(--secondary-color); padding:6px 14px; border-radius:16px; font-size:12pt; font-weight:600;"><i class="fa-solid fa-clock" style="margin-right:6px;"></i>60 sec to vote</span> &nbsp; <span style="font-size:12pt; color:var(--muted-color);">then &darr; for the answer</span></p>
 </section>
 
-<section id="diff-branding">
-  <h2><i class="fa-solid fa-trademark" style="color: var(--accent-color);"></i> Branding &amp; Switching Costs</h2>
-  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
-    <div>
-      <p style="font-size: 13pt; margin-bottom: 9px;"><strong>Brand equity</strong> is the power of a name to bend demand and blunt price sensitivity &mdash; Interbrand values Apple's brand alone near <strong>$470B</strong> (2025).</p>
-      <div style="background: #eef3f6; border-radius: 10px; padding: 12px 18px; border-left: 5px solid var(--secondary-color); margin-bottom: 9px;">
-        <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--secondary-color); font-weight: 700; margin-bottom: 4px;">Definition</p>
-        <p style="font-size: 12.5pt; margin:0;"><strong>Switching costs</strong> &mdash; the time, money, and effort to move to a rival's product. Higher switching costs &rarr; less elastic demand &rarr; more market power.</p>
-      </div>
-      <p style="font-size: 12.5pt; margin:0;">Embed in Apple's ecosystem &mdash; iPhone, iCloud, Watch, Family Sharing &mdash; and each device raises your switching cost. A loyal customer won't jump for a small price gap. The curve steepens.</p>
-    </div>
-    <div style="text-align: center;">
-      <img alt="Brand-equity bubbles: Apple, Google, Microsoft, Amazon, NVIDIA" src="figures/fig-brand-equity.png" style="max-width: 100%; max-height: 400px; object-fit: contain;">
-    </div>
-  </div>
-</section>
-
-
-<section id="diff-quality">
-  <h2><i class="fa-solid fa-gem" style="color: #7C3A5F;"></i> Quality &amp; Craftsmanship</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 4px;">
-    <div style="background: #eef3f6; border-radius: 10px; padding: 15px 18px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 13.5pt; font-weight: 700; color: var(--secondary-color); margin-bottom: 5px;">Market Basket</p>
-      <p style="font-size: 12.5pt; margin:0;">Competes on <strong>price</strong> &mdash; about <strong>15% below</strong> average.</p>
-    </div>
-    <div style="background: #f7f1ea; border-radius: 10px; padding: 15px 18px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 13.5pt; font-weight: 700; color: var(--accent-color); margin-bottom: 5px;">Trader Joe's</p>
-      <p style="font-size: 12.5pt; margin:0;">~<strong>4,000 items</strong>, <strong>80% private-label</strong> exclusives you can't get elsewhere.</p>
-    </div>
-    <div style="background: #eef6ef; border-radius: 10px; padding: 15px 18px; border-left: 4px solid var(--success-color);">
-      <p style="font-size: 13.5pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;">Whole Foods</p>
-      <p style="font-size: 12.5pt; margin:0;"><strong>Organic</strong> certification and premium presentation.</p>
-    </div>
-  </div>
-  <div class="key-result" style="margin-top: 14px;"><p style="margin:0;">All three sell groceries. <strong>None sells the same product.</strong> Each carved a different niche &mdash; a different perceived demand curve &mdash; on the same shelf. Bespoke tailoring vs off-the-rack is the same story in clothing.</p></div>
-</section>
-
-
-<section id="diff-advertising">
-  <h2><i class="fa-solid fa-bullhorn" style="color: var(--danger-color);"></i> Advertising</h2>
-  <p style="font-size: 12.5pt; text-align: center; color: var(--muted-color); margin-bottom: 10px;">Two faces, two effects on the perceived demand curve</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-    <div style="background: #eef6ef; border-radius: 10px; padding: 15px 22px; border-left: 4px solid var(--success-color);">
-      <p style="font-size: 13.5pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;">Informational</p>
-      <p style="font-size: 12pt; margin:0;"><strong>Function:</strong> reduces search costs.<br><strong>Effect:</strong> more informed buyers &rarr; <em>more</em> elastic demand, <em>more</em> competition. &ldquo;CRM software, $45/mo &mdash; click here.&rdquo;</p>
-    </div>
-    <div style="background: #fdf2f0; border-radius: 10px; padding: 15px 22px; border-left: 4px solid var(--danger-color);">
-      <p style="font-size: 13.5pt; font-weight: 700; color: var(--danger-color); margin-bottom: 5px;">Persuasive</p>
-      <p style="font-size: 12pt; margin:0;"><strong>Function:</strong> alters preferences / builds loyalty.<br><strong>Effect:</strong> <em>less</em> elastic demand, a steeper markup &mdash; a new phone when the old one works fine.</p>
-    </div>
-  </div>
-  <div class="key-result" style="margin-top: 13px;"><p style="margin:0;">Same ad budget, opposite effects on elasticity. The empirical question &mdash; does advertising inform or persuade? &mdash; has a surprisingly clean answer in the reading (§13.2's advertising discussion).</p></div>
-</section>
-
-
-<section id="diff-ad-signal">
-  <h2><i class="fa-solid fa-certificate" style="color: var(--accent-color);"></i> Advertising as a Signal of Quality</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 20px; align-items: center;">
-    <div>
-      <p style="font-size: 13pt; margin-bottom: 8px;">A Super Bowl ad can carry <strong>almost no information</strong> &mdash; yet the <strong>willingness to spend</strong> is itself the signal.</p>
-      <div class="key-result"><p style="margin:0;">Ads drive <strong>trials</strong>; quality drives <strong>repeat purchases</strong>. Only a firm expecting repeat buyers can recover an expensive ad &mdash; so the spend is credible <em>because a low-quality firm couldn't justify it.</em> <strong>The spend, not the content, is the message</strong> (Nelson).</p></div>
-    </div>
-    <div style="text-align: center;">
-      <img alt="Cost of a 30-second Super Bowl ad rising over time to roughly $7-8 million" src="figures/30s_ad.png" style="max-width: 100%; max-height: 330px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.12);">
-      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px;">A 30-second Super Bowl ad now runs ~$8M &mdash; justified only if the product brings buyers back.</p>
-    </div>
-  </div>
+<section data-poll-results="ch13-econ2316-poll-ads-per-day" id="mc-poll-ads-reveal" style="display: flex; flex-direction: column;">
+ <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Hundreds a Day, Not Thousands</h2>
+ <div class="poll-results-chart" data-poll-id="ch13-econ2316-poll-ads-per-day" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 80px; margin: 0 60px;"></div>
+ <div class="mathjax_ignore tex2jax_ignore" style="margin-top:8px;">
+ <svg viewBox="0 0 760 205" width="100%" style="max-height:205px; display:block;">
+  <text x="300" y="14" text-anchor="start" style="font-size:13px; fill:var(--muted-color);">ads per day, one scale for every bar</text>
+  <g class="fragment fade-up" data-fragment-index="1">
+   <text x="290" y="41" text-anchor="end" style="font-size:14px; font-weight:700; fill:var(--success-color);">Noticed (Media Dynamics, 2014)</text>
+   <rect x="300" y="27" width="6" height="19" rx="2" style="fill:var(--success-color);"/>
+   <text x="313" y="42" style="font-size:14px; font-weight:700; fill:var(--success-color);">153</text>
+   <text x="290" y="71" text-anchor="end" style="font-size:14px; font-weight:700; fill:var(--secondary-color);">Seen (Media Dynamics, 2014)</text>
+   <rect x="300" y="57" width="14.5" height="19" rx="2" style="fill:var(--secondary-color);"/>
+   <text x="321" y="72" style="font-size:14px; font-weight:700; fill:var(--secondary-color);">362</text>
+   <text x="290" y="101" text-anchor="end" style="font-size:14px; fill:#4A4F57;">Most found by someone trying (BBC, 2024)</text>
+   <rect x="300" y="87" width="20.5" height="19" rx="2" style="fill:#4A4F57;"/>
+   <text x="327" y="102" style="font-size:14px; fill:#4A4F57;">512</text>
+  </g>
+  <g class="fragment fade-up" data-fragment-index="2">
+   <line x1="10" y1="118" x2="750" y2="118" style="stroke:var(--line-color); stroke-dasharray:4 4;"/>
+   <text x="290" y="146" text-anchor="end" style="font-size:14px; fill:var(--danger-color);">&ldquo;Up to 5,000&rdquo; (Yankelovich, 2005&ndash;07)</text>
+   <rect x="300" y="132" width="200" height="19" rx="2" style="fill:none; stroke:var(--danger-color); stroke-width:2; stroke-dasharray:6 3;"/>
+   <text x="507" y="147" style="font-size:14px; fill:var(--danger-color);">5,000</text>
+   <text x="290" y="176" text-anchor="end" style="font-size:14px; fill:var(--danger-color);">&ldquo;4,000&ndash;10,000&rdquo; (repeated online)</text>
+   <rect x="300" y="162" width="400" height="19" rx="2" style="fill:none; stroke:var(--danger-color); stroke-width:2; stroke-dasharray:6 3;"/>
+   <text x="707" y="177" style="font-size:14px; fill:var(--danger-color);">10,000</text>
+   <text x="500" y="200" text-anchor="middle" style="font-size:13px; font-style:italic; fill:var(--danger-color);">dashed = never measured</text>
+  </g>
+ </svg>
+ </div>
+ <p class="fragment fade-up" data-fragment-index="2" style="font-size:11.5pt; margin:4px 0 0; line-height:1.4; color:#4A4F57;"><strong>Where the big number came from:</strong> a 1960s marketer multiplied hours of TV and radio by ads per hour, about 1,500 a day for a <em>family of four</em>. Later estimates counted every logo, and the figure grew each time it was repeated.</p>
+ <div class="key-result fragment fade-up" data-fragment-index="3" style="margin:10px 0 0; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.4;"><strong>Ads are plentiful; attention is scarce.</strong> Only about 150 ads a day get noticed, so firms compete for <strong>attention</strong>, and a slot where millions are truly watching is worth a lot.</p></div>
 </section>
 </section>
 
 <section>
-<section id="poll-1">
-  <h2><i class="fa-solid fa-square-poll-vertical" style="color: var(--accent-color);"></i> Poll &mdash; Why Is the Ad a Credible Signal?</h2>
-  <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; border-left: 4px solid var(--secondary-color);">
-    <p style="font-size: 14pt; margin:0;">A startup pays <strong>$8 million</strong> for one Super Bowl ad. In Nelson's framework, why does that <em>credibly</em> signal quality to consumers?</p>
-  </div>
-  <div class="poll-grid" data-poll-id="ch13p1-econ2316-poll-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
-    <div class="poll-option" data-choice="A" style="background: #e3f2fd; border: 2px solid #3b82f6; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>A.</strong> It proves the firm is large and well-funded</p></div>
-    <div class="poll-option" data-choice="B" style="background: #e8f5e9; border: 2px solid #22c55e; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>B.</strong> Only a firm expecting repeat buyers can recover $8M &mdash; a bad product can't</p></div>
-    <div class="poll-option" data-choice="C" style="background: #fff7ed; border: 2px solid #f97316; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>C.</strong> The ad directly lowers the firm's marginal cost</p></div>
-    <div class="poll-option" data-choice="D" style="background: #f5e9f7; border: 2px solid #a855f7; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>D.</strong> Super Bowl ads are pre-screened for quality by the network</p></div>
-  </div>
-  <p style="font-size: 12.5pt; color: var(--muted-color); text-align: center; margin-top: 14px; font-style: italic;">Click your answer. Press <strong>&darr;</strong> for results.</p>
+<section id="mc-poll-superbowl">
+ <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; Why Pay \$8 Million for 30 Seconds?</h2>
+ <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+  <div class="stat-card" style="padding:10px 12px;"><p class="num" style="font-size:22pt;">125.6M</p><p class="lbl" style="font-size:11pt; margin-top:4px;">U.S. viewers, Super Bowl LX (Feb 2026)</p></div>
+  <div class="stat-card accent" style="padding:10px 12px;"><p class="num" style="font-size:22pt;">\$8M</p><p class="lbl" style="font-size:11pt; margin-top:4px;">average price of one 30-second spot</p></div>
+  <div class="stat-card sage" style="padding:10px 12px;"><p class="num" style="font-size:22pt;">2 spots</p><p class="lbl" style="font-size:11pt; margin-top:4px;">bought by Genspark, an AI startup just over two years old</p></div>
+ </div>
+ <p style="font-size:14pt; line-height:1.5; margin:12px 0 0;"><strong>Why would a young startup pay about \$8 million for 30 seconds of airtime?</strong></p>
+ <div class="poll-grid" data-poll-id="ch13-econ2316-poll-superbowl" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; font-size: 13.5pt;">
+  <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) To tell millions of people the product exists and what it does</div>
+  <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Spending that much shows the firm is confident buyers will come back</div>
+  <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) To build loyalty, so buyers care less about price</div>
+  <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) The founders want fame and attention</div>
+ </div>
+ <p style="text-align: center; margin-top: 12px;"><span class="timer-badge" style="display:inline-block; background:#f0f5f8; color:var(--secondary-color); padding:6px 14px; border-radius:16px; font-size:12pt; font-weight:600;"><i class="fa-solid fa-clock" style="margin-right:6px;"></i>60 sec to vote</span> &nbsp; <span style="font-size:12pt; color:var(--muted-color);">then &darr; for the answer</span></p>
 </section>
-<section id="poll-1-reveal">
-  <h2><i class="fa-solid fa-chart-column" style="color: var(--accent-color);"></i> Poll Results</h2>
-  <div class="poll-results-chart" data-poll-id="ch13p1-econ2316-poll-1" style="display: flex; align-items: flex-end; justify-content: space-around; height: 200px; margin: 20px 0 40px 0; border-bottom: 2px solid #ddd; padding: 0 40px;"></div>
-  <div style="background: #ecfdf5; border-radius: 10px; padding: 16px 22px; border-left: 4px solid var(--success-color); margin-top: 12px;">
-    <p style="font-size: 14pt; margin:0;"><strong>Answer: B.</strong> The ad is credible because the cost is only <em>recoverable</em> through repeat purchases &mdash; which a low-quality product can't generate. The signal is in what the firm is <strong>willing to risk.</strong></p>
-    <p style="font-size: 12pt; margin-top: 8px; color: var(--muted-color);"><strong>A</strong> conflates deep pockets with quality; <strong>C/D</strong> describe mechanisms that don't exist.</p>
+
+<section data-poll-results="ch13-econ2316-poll-superbowl" id="mc-poll-superbowl-reveal" style="display: flex; flex-direction: column;">
+ <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: A, B, C &mdash; Two Views of Advertising</h2>
+ <div class="poll-results-chart" data-poll-id="ch13-econ2316-poll-superbowl" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 70px; margin: 0 60px;"></div>
+ <div style="display:grid; grid-template-columns:1.45fr 1fr; gap:14px; align-items:center; margin-top:8px;">
+  <div>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:7px 14px;"><p style="font-size:11.5pt; margin:0; line-height:1.4;"><strong style="color:var(--success-color);">View 1: ads inform (A).</strong> Buyers learn what exists and what it costs, so they compare. Demand gets <strong>more elastic</strong>; prices fall. Eyeglasses cost about <strong>25% more</strong> in states that banned ads (Benham, 1972).</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:7px 14px; margin-top:8px;"><p style="font-size:11.5pt; margin:0; line-height:1.4;"><strong style="color:var(--secondary-color);">The spend is the signal (B).</strong> The ad can say almost nothing. Ads win first-time buyers; only a good product brings them back. Only a firm expecting repeat buyers can earn back \$8M (Nelson, 1974).</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:7px 14px; margin-top:8px;"><p style="font-size:11.5pt; margin:0; line-height:1.4;"><strong style="color:var(--accent-color);">View 2: ads persuade (C).</strong> Loyal buyers see rivals as worse substitutes. Demand gets <strong>less elastic</strong>, so the markup rises: \(L = -1/\varepsilon\).</p></div>
   </div>
+  <div class="mathjax_ignore tex2jax_ignore">
+  <svg viewBox="0 0 360 270" width="100%" style="max-height:270px; display:block;">
+   <line x1="40" y1="250" x2="345" y2="250" style="stroke:#4A4F57; stroke-width:1.5;"/>
+   <line x1="40" y1="250" x2="40" y2="12" style="stroke:#4A4F57; stroke-width:1.5;"/>
+   <text x="30" y="22" text-anchor="end" style="font-size:14px; font-weight:700; fill:#4A4F57;">P</text>
+   <text x="345" y="267" text-anchor="end" style="font-size:14px; font-weight:700; fill:#4A4F57;">Q</text>
+   <line x1="80" y1="50" x2="260" y2="230" style="stroke:var(--muted-color); stroke-width:2.5;"/>
+   <text x="250" y="244" text-anchor="end" style="font-size:14px; fill:var(--muted-color);">D before</text>
+   <circle cx="150" cy="120" r="4" style="fill:#4A4F57;"/>
+   <g class="fragment fade-up" data-fragment-index="1">
+    <line x1="45" y1="88" x2="335" y2="177" style="stroke:var(--success-color); stroke-width:3;"/>
+    <text x="294" y="200" text-anchor="start" style="font-size:14px; font-weight:700; fill:var(--success-color);">inform:</text><text x="294" y="216" text-anchor="start" style="font-size:14px; font-weight:700; fill:var(--success-color);">flatter</text>
+   </g>
+   <g class="fragment fade-up" data-fragment-index="3">
+    <line x1="205" y1="22" x2="290" y2="235" style="stroke:var(--accent-color); stroke-width:3;"/>
+    <text x="214" y="30" text-anchor="start" style="font-size:14px; font-weight:700; fill:var(--accent-color);">persuade: steeper,</text>
+    <text x="226" y="47" text-anchor="start" style="font-size:14px; font-weight:700; fill:var(--accent-color);">shifted out</text>
+   </g>
+  </svg>
+  </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:10px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.4;">Which view wins is an <strong>empirical</strong> question, and both buy the same scarce thing: <strong>attention</strong>. D is not a business reason. And a signal is not proof: FTX ran a Super Bowl ad in Feb 2022 and was <strong>bankrupt</strong> by Nov 2022.</p></div>
 </section>
 </section>
 
@@ -435,14 +396,795 @@
   <div class="key-result"><p style="margin:0;">The neutral invisible hand recedes left to right: <strong>the more a firm differentiates, the more it sets its own price.</strong> Monopolistic competition is the honest right-hand column &mdash; a genuine sliver of power that free entry keeps thin.</p></div>
 </section>
 
-
 <section class="section-divider" data-state="is-section-divider" id="divider-shortrun">
   <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; LO 3</p>
   <h1>Short-Run Profit Maximization</h1>
-  <p class="subtitle">A price-maker on its own perceived demand &mdash; the Ch 11 rule, \(MR_i = MC\)</p>
+  <p class="subtitle">One Airbnb host sets its own nightly price: \(MR = MC\), then read profit off ATC</p>
 </section>
 
-<section id="price-setter">
+<section id="mc-host-setup">
+  <h2><i class="fa-solid fa-house-chimney" style="color: var(--secondary-color);"></i> One Airbnb Host &mdash; A Price-Setter With Many Rivals</h2>
+  <div style="display:grid; grid-template-columns: 0.9fr 1.1fr; gap:18px; align-items:start;">
+    <div>
+      <div style="background:#f8f6f3; border-radius:10px; padding:11px 16px; border-left:4px solid var(--secondary-color);">
+        <p style="font-size:11pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">The listing</p>
+        <p style="font-size:14pt; font-weight:700; margin:0;">Jordan&rsquo;s private room</p>
+        <p style="font-size:12.5pt; margin:3px 0 6px;"><span style="color:var(--accent-color);">&#9733;</span> 4.9 &middot; Superhost</p>
+        <p style="font-size:12pt; margin:0; line-height:1.5;">Queen bed, desk, fast Wi-Fi<br>Self check-in, free parking<br>Spotless, quick replies</p>
+      </div>
+      <div style="background:#f8f6f3; border-radius:10px; padding:9px 16px; border-left:4px solid var(--line-color); margin-top:9px;">
+        <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>The rivals:</strong> dozens of similar rooms nearby, about <span style="color:var(--accent-color);">&#9733;</span> 4.7, no extras.</p>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>1 &middot; Differentiated.</strong> Stars, the Superhost badge (a 4.8+ rating, at least 10 stays, under 1% cancellations, 90% of messages answered within 24 hours), a nicer room, extras. No two listings are the same.</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>2 &middot; Its own downward-sloping demand.</strong> Raise the nightly price by \$20 and some guests book a similar room instead, but not all. Jordan <strong>sets</strong> the price.</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>3 &middot; Many sellers, easy entry.</strong> Anyone with a spare room can list it in an afternoon, and leave just as fast. A profit will not stay private for long.</p></div>
+    </div>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="4" style="background:#f8f6f3; border-radius:8px; padding:8px 16px; border-left:4px solid var(--accent-color); margin-top:10px;">
+    <p style="font-size:11pt; color:var(--accent-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 3px;">The model &middot; per month &middot; \(Q\) = nights booked (at most 30)</p>
+    <p style="font-size:12.5pt; margin:0; line-height:1.55;"><strong>Demand</strong> after the upgrade: \(P = 420 - 10Q\) &nbsp;&middot;&nbsp; <strong>Fixed cost</strong> \$1,200 (the room&rsquo;s share of rent, furniture, insurance)<br>
+    <strong>Marginal cost</strong> \(MC = 30 + 6Q\) (cleaning and supplies, plus wear and Jordan&rsquo;s time) &nbsp;&middot;&nbsp; \(ATC = \dfrac{1200}{Q} + 30 + 3Q\)</p>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:3px 0 0;">Stylized numbers, chosen to keep the arithmetic clean.</p>
+  </div>
+</section>
+
+<section id="mc-host-shortrun">
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> Short Run &mdash; Better Service Earns Economic Profit</h2>
+  <div style="display:grid; grid-template-columns: 1.12fr 1fr; gap:16px; align-items:start;">
+    <div>
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:392px; display:block;" role="img" aria-label="Jordan's demand, marginal revenue, marginal cost and average total cost, with the profit rectangle"><g class="hg-plot"></g></svg></div>
+      <div class="fragment fade-up" data-fragment-index="5" style="margin:2px 6px 0;">
+        <div style="display:flex; align-items:center; gap:8px; font-size:11pt;">
+          <label style="white-space:nowrap;">Try it: Jordan&rsquo;s rating</label>
+          <input class="hs-r" type="range" min="4.7" max="4.9" step="0.02" value="4.9" style="flex:1;">
+          <span class="hs-rv" style="width:4.2em; text-align:right; font-weight:700;">4.90</span>
+        </div>
+        <p class="hs-read" style="margin:2px 0 0; font-size:10.5pt; line-height:1.35;"></p>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">1 &middot; Demand:</strong> \(P = 420 - 10Q\). The upgrade and the reviews put Jordan&rsquo;s demand high.</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#8b5cf6;">2 &middot; Marginal revenue:</strong> \(MR = 420 - 20Q\), twice as steep. To fill one more night, Jordan cuts the price on every night.</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong><span style="color:#dc2626;">3 &middot; MC</span> and ATC:</strong> \(MC = 30 + 6Q\) cuts the U-shaped ATC at its bottom: 20 nights, \$150.</p></div>
+      <div class="fragment fade-up" data-fragment-index="4" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>4 &middot; MR = MC:</strong> \(420 - 20Q = 30 + 6Q\), so \(Q^{*} = 15\) nights. Go up to demand: \(P^{*} = \$270\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="5" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>5 &middot; Profit:</strong> \(ATC(15) = 80 + 30 + 45 = \$155\). \((270 - 155) \times 15 = \mathbf{\$1{,}725}\) a month of <em>economic</em> profit.</p></div>
+    </div>
+  </div>
+  <script>
+(function(){
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var PM = 450;
+  var X0 = 66, X1 = 478, Y0 = 340, Y1 = 26, QM = 30;
+  var C = { D:'#2563eb', MR:'#8b5cf6', MC:'#dc2626', ATC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function curve(f, q0, q1, st){
+    var pts = [];
+    for (var i = 0; i <= 160; i++) { var q = q0 + (q1 - q0) * i / 160, p = f(q); if (p <= PM && p >= 0) pts.push(f1(X(q)) + ',' + f1(Y(p))); }
+    return '<polyline fill="none" points="' + pts.join(' ') + '" ' + st + '/>';
+  }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="6" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 13, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 18, lab || ('' + q), col || C.AX, 'middle', 13, 1); }
+  function axes(){
+    return L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"')
+      + T(X0 - 4, Y1 - 14, 'Price per night ($)', C.AX, 'start', 13)
+      + T(X1 + 6, Y0 + 38, 'Nights booked per month, Q', C.AX, 'end', 13)
+      + T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+  }
+  function qticks(skip){ var h = ''; [10, 20, 30].forEach(function(q){ if (!skip || skip.every(function(s){ return Math.abs(s - q) > 2.2; })) h += qtick(q, C.MU); }); return h; }
+  function atc(q){ return 1200 / q + 30 + 3 * q; }
+  function mc(q){ return 30 + 6 * q; }
+  function lineD(a, b, col, extra){ return curve(function(q){ return a - b * q; }, 0, 30, 'stroke="' + col + '" stroke-width="2.4"' + (extra || '')); }
+  function lineMR(a, b, extra){ return curve(function(q){ return a - 2 * b * q; }, 0, 30, 'stroke="' + C.MR + '" stroke-width="2" stroke-dasharray="6 3"' + (extra || '')); }
+  function curveATC(){ return curve(atc, 2, 30, 'stroke="' + C.ATC + '" stroke-width="2.4"'); }
+  function lineMC(){ return curve(mc, 0, 30, 'stroke="' + C.MC + '" stroke-width="2.2"'); }
+  function labD(a, b, txt, col){ var q = Math.min(30, (a - 22) / b), p = a - b * q; return T(X(q) + 6, Y(p) - 4, txt, col, 'start', 15, 1); }
+  function labMR(a, b, txt){ var q = Math.min(30, a / (2 * b)); return T(X(q) + 4, Y0 - 8, txt, C.MR, 'start', 15, 1); }
+  function labRight(p, txt, col){ return T(X1 + 6, Y(p) + 5, txt, col, 'start', 15, 1); }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+  function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+  function money2(v){ return '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  var rIn = root.querySelector('.hs-r'), rOut = root.querySelector('.hs-rv'), read = root.querySelector('.hs-read');
+  ['keydown', 'pointerdown', 'mousedown', 'touchstart', 'click'].forEach(function(ev){ rIn.addEventListener(ev, function(e){ e.stopPropagation(); }); });
+  rIn.addEventListener('input', draw);
+  function onStep(){ draw(); }
+  function draw(){
+    var s = step(), r = +rIn.value, t = (4.9 - r) / 0.2;
+    var a = 420 - 150 * t, b = 10 - t, q = (a - 30) / (2 * b + 6), P = a - b * q, A = atc(q), pr = (P - A) * q;
+    if (Math.abs(pr) < 0.5) pr = 0;
+    var h = axes(), skip = [];
+    if (s >= 4) skip.push(q);
+    if (s >= 3) skip.push(20);
+    h += qticks(skip);
+    if (s >= 5 && pr > 0) {
+      h += '<rect x="' + f1(X0) + '" y="' + f1(Y(P)) + '" width="' + f1(X(q) - X0) + '" height="' + f1(Y(A) - Y(P)) + '" fill="rgba(34,197,94,0.28)" stroke="' + C.G + '" stroke-width="1"/>';
+    }
+    if (s >= 3) { h += curveATC() + lineMC() + labRight(atc(30) + 6, 'ATC', C.ATC) + labRight(mc(30), 'MC', C.MC);
+      h += ring(20, 150, C.ATC) + qtick(20, C.ATC) + T(X(20) + 9, Y(150) + 20, 'min ATC $150', C.ATC, 'start', 13); }
+    if (s >= 1) h += lineD(a, b, C.D) + labD(a, b, 'D', C.D);
+    if (s >= 2) h += lineMR(a, b) + labMR(a, b, 'MR');
+    if (s >= 4) {
+      h += guide(q, P) + dot(q, mc(q), C.MR) + dot(q, P, C.D) + qtick(q, '#111827', (Math.abs(q - Math.round(q)) < 0.05 ? Math.round(q) : q.toFixed(1)));
+      h += T(X(q) + 22, Y(mc(q)) + 18, 'MR = MC', C.MR, 'start', 13, 1);
+      h += ptick(Math.round(P), C.D);
+    }
+    if (s >= 5) {
+      if (pr > 0) {
+        h += L(X0, Y(A), X(q), Y(A), 'stroke="' + C.ATC + '" stroke-width="1.2" stroke-dasharray="4 3"') + dot(q, A, C.ATC, 3.5);
+        if (P - A > 22) h += ptick(Math.round(A), C.ATC);
+        h += T(X0 + 6, Y(A) - 10, 'profit ' + money(pr), '#15803d', 'start', 14, 1);
+      }
+    }
+    g.innerHTML = h;
+    rOut.textContent = r.toFixed(2) + ' ★';
+    read.innerHTML = pr > 0
+      ? 'Q* = ' + (Math.abs(q - Math.round(q)) < 0.05 ? Math.round(q) : q.toFixed(1)) + ' nights, P* = ' + money2(P).replace('.00', '') + ', ATC = ' + money2(A).replace('.00', '') + ': <b style="color:#15803d">profit ' + (pr < 1000 ? money2(pr) : money(pr)) + ' a month</b>'
+      : 'Same service as the rivals: Q* = 10, P* = ATC = $180, <b style="color:#A85C5C">economic profit $0</b>';
+  }
+
+  new MutationObserver(function(){ onStep(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  onStep();
+})();
+</script>
+</section>
+
+<section>
+<section id="poll-2">
+  <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; Jordan Earns Profit. What Happens Next?</h2>
+  <div style="background:#f8f6f3; border-radius:8px; padding:11px 18px; border-left:4px solid var(--secondary-color);">
+    <p style="font-size:14pt; margin:0; line-height:1.45;">Jordan&rsquo;s upgraded room earns <strong>\$1,725 a month</strong> in economic profit. Anyone can list a room, and anyone can buy a desk and a self check-in lock. <strong>What does the model predict over the next year?</strong></p>
+  </div>
+  <div class="poll-grid" data-poll-id="ch13-econ2316-poll-host-profit" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; font-size: 13.5pt;">
+    <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) The profit lasts: 4.9 stars is Jordan&rsquo;s own brand</div>
+    <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Rivals copy the upgrade and new rooms list; Jordan&rsquo;s demand shifts left until economic profit is \$0</div>
+    <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Jordan should raise the price further and earn even more</div>
+    <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Airbnb&rsquo;s fees will take the profit</div>
+  </div>
+  <p style="text-align: center; margin-top: 14px; font-size:12pt; color:var(--muted-color);">60 seconds to vote &middot; then press &darr; for the results</p>
+</section>
+
+<section data-poll-results="ch13-econ2316-poll-host-profit" id="poll-2-reveal" style="display: flex; flex-direction: column;">
+  <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Copying and Entry Erase the Profit</h2>
+  <div class="poll-results-chart" data-poll-id="ch13-econ2316-poll-host-profit" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 110px; margin: 0 60px;"></div>
+  <div style="background:#ecfdf5; border-radius:8px; padding:11px 18px; border-left:4px solid var(--success-color); margin-top:12px;">
+    <p style="font-size:13.5pt; margin:0; line-height:1.45;">Economic profit is a signal. Each rival that copies the desk and the self check-in, and each new room that lists, takes a few of Jordan&rsquo;s guests. Jordan&rsquo;s demand shifts <strong>left</strong> and gets <strong>flatter</strong>, until \(P = ATC\).</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:9px 18px; border-left:4px solid var(--danger-color); margin-top:10px;">
+    <p style="font-size:12.5pt; margin:0; line-height:1.45;"><strong>Not A:</strong> stars are differentiation, not a barrier; rivals can earn stars too. <strong>Not C:</strong> Jordan is already at \(MR = MC\); a higher price earns less. <strong>Not D:</strong> fees are a cost of doing business; they do not explain why the profit disappears.</p>
+  </div>
+</section>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="divider-longrun">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; LO 4</p>
+  <h1>Long Run &mdash; Entry Erases the Profit</h1>
+  <p class="subtitle">Other hosts copy the upgrade until the host&rsquo;s demand just touches ATC</p>
+</section>
+
+<section id="mc-host-longrun">
+  <h2><i class="fa-solid fa-right-left" style="color: var(--secondary-color);"></i> Long Run &mdash; Rivals Copy, Profit Goes to Zero</h2>
+  <div style="display:grid; grid-template-columns: 1.12fr 1fr; gap:16px; align-items:start;">
+    <div>
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:392px; display:block;" role="img" aria-label="Jordan's demand shifting left and flatter until it is tangent to average total cost"><g class="hg-plot"></g></svg></div>
+      <div style="margin:2px 6px 0;">
+        <div style="display:flex; align-items:center; gap:8px; font-size:11pt;">
+          <label style="white-space:nowrap;">Rivals who copied the upgrade</label>
+          <input class="hl-k" type="range" min="0" max="100" step="5" value="0" style="flex:1;">
+          <span class="hl-kv" style="width:3em; text-align:right; font-weight:700;">0%</span>
+        </div>
+        <p class="hl-read" style="margin:2px 0 0; font-size:10.5pt; line-height:1.35;"></p>
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <p style="margin:0; font-size:11pt; color:var(--muted-color); line-height:1.4;"><strong>Start:</strong> only Jordan has the upgrade: 15 nights at \$270, profit \$1,725 (dotted \(D_0\) from here on).</p>
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>1 &middot; Copying and entry.</strong> Each copycat or new room takes some of Jordan&rsquo;s guests: demand shifts <strong>left</strong> and gets <strong>flatter</strong>. Halfway: 12.6 nights, \$225.30, profit \$784.50.</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>2 &middot; Entry stops at the tangency.</strong> \(D_1: P = 270 - 9Q\) just touches ATC at 10 nights: \(P = ATC = \$180\). Profit \$0.</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>3 &middot; Still MR = MC.</strong> \(MR_1 = 270 - 18Q\) meets \(MC = 30 + 6Q\) at the same 10 nights, both \$90. The best Jordan can do now is break even.</p></div>
+      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:0; padding:7px 13px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Zero economic profit is not failure.</strong> \$180 a night still pays the rent share, the cleaning and a normal return on Jordan&rsquo;s time: as much as the next-best use. Only the <em>extra</em> profit is gone.</p></div>
+    </div>
+  </div>
+  <script>
+(function(){
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var PM = 450;
+  var X0 = 66, X1 = 478, Y0 = 340, Y1 = 26, QM = 30;
+  var C = { D:'#2563eb', MR:'#8b5cf6', MC:'#dc2626', ATC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function curve(f, q0, q1, st){
+    var pts = [];
+    for (var i = 0; i <= 160; i++) { var q = q0 + (q1 - q0) * i / 160, p = f(q); if (p <= PM && p >= 0) pts.push(f1(X(q)) + ',' + f1(Y(p))); }
+    return '<polyline fill="none" points="' + pts.join(' ') + '" ' + st + '/>';
+  }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="6" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 13, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 18, lab || ('' + q), col || C.AX, 'middle', 13, 1); }
+  function axes(){
+    return L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"')
+      + T(X0 - 4, Y1 - 14, 'Price per night ($)', C.AX, 'start', 13)
+      + T(X1 + 6, Y0 + 38, 'Nights booked per month, Q', C.AX, 'end', 13)
+      + T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+  }
+  function qticks(skip){ var h = ''; [10, 20, 30].forEach(function(q){ if (!skip || skip.every(function(s){ return Math.abs(s - q) > 2.2; })) h += qtick(q, C.MU); }); return h; }
+  function atc(q){ return 1200 / q + 30 + 3 * q; }
+  function mc(q){ return 30 + 6 * q; }
+  function lineD(a, b, col, extra){ return curve(function(q){ return a - b * q; }, 0, 30, 'stroke="' + col + '" stroke-width="2.4"' + (extra || '')); }
+  function lineMR(a, b, extra){ return curve(function(q){ return a - 2 * b * q; }, 0, 30, 'stroke="' + C.MR + '" stroke-width="2" stroke-dasharray="6 3"' + (extra || '')); }
+  function curveATC(){ return curve(atc, 2, 30, 'stroke="' + C.ATC + '" stroke-width="2.4"'); }
+  function lineMC(){ return curve(mc, 0, 30, 'stroke="' + C.MC + '" stroke-width="2.2"'); }
+  function labD(a, b, txt, col){ var q = Math.min(30, (a - 22) / b), p = a - b * q; return T(X(q) + 6, Y(p) - 4, txt, col, 'start', 15, 1); }
+  function labMR(a, b, txt){ var q = Math.min(30, a / (2 * b)); return T(X(q) + 4, Y0 - 8, txt, C.MR, 'start', 15, 1); }
+  function labRight(p, txt, col){ return T(X1 + 6, Y(p) + 5, txt, col, 'start', 15, 1); }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+  function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+  function money2(v){ return '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  var kIn = root.querySelector('.hl-k'), kOut = root.querySelector('.hl-kv'), read = root.querySelector('.hl-read');
+  var T_OF = [0, 0.5, 1, 1, 1], lastS = -1;
+  ['keydown', 'pointerdown', 'mousedown', 'touchstart', 'click'].forEach(function(ev){ kIn.addEventListener(ev, function(e){ e.stopPropagation(); }); });
+  kIn.addEventListener('input', draw);
+  function onStep(){ var s = step(); if (s !== lastS) { lastS = s; kIn.value = Math.round(100 * T_OF[Math.min(s, 4)]); } draw(); }
+  function draw(){
+    var s = step(), t = +kIn.value / 100;
+    var a = 420 - 150 * t, b = 10 - t, q = (a - 30) / (2 * b + 6), P = a - b * q, A = atc(q), pr = (P - A) * q;
+    if (Math.abs(pr) < 0.5) pr = 0;
+    var end = t > 0.999, h = axes();
+    h += qticks([q]);
+    if (pr > 0) h += '<rect x="' + f1(X0) + '" y="' + f1(Y(P)) + '" width="' + f1(X(q) - X0) + '" height="' + f1(Y(A) - Y(P)) + '" fill="rgba(34,197,94,0.28)" stroke="' + C.G + '" stroke-width="1"/>';
+    h += curveATC() + lineMC() + labRight(atc(30) + 6, 'ATC', C.ATC) + labRight(mc(30), 'MC', C.MC);
+    if (t > 0.001) h += lineD(420, 10, '#93a8d8', ' stroke-dasharray="3 4"') + labD(420, 10, sub('D', '0'), '#7f95c7');
+    h += lineD(a, b, C.D) + labD(a, b, end ? sub('D', '1') : 'D', C.D);
+    h += lineMR(a, b) + labMR(a, b, end ? sub('MR', '1') : 'MR');
+    h += guide(q, P) + dot(q, mc(q), C.MR) + dot(q, P, C.D) + qtick(q, '#111827', (Math.abs(q - Math.round(q)) < 0.05 ? Math.round(q) : q.toFixed(1)));
+    if (pr > 0) {
+      h += L(X0, Y(A), X(q), Y(A), 'stroke="' + C.ATC + '" stroke-width="1.2" stroke-dasharray="4 3"') + dot(q, A, C.ATC, 3.5);
+      h += ptick(Math.round(P), C.D);
+      if (P - A > 22) h += ptick(Math.round(A), C.ATC);
+      if (P - A > 20) h += T(X0 + 6, Y(A) - 10, 'profit ' + (pr < 1000 ? money2(pr) : money(pr)), '#15803d', 'start', 14, 1);
+    } else {
+      h += ring(q, P, C.ATC) + ptick(180, '#111827', 'P = ATC = $180');
+      h += T(X(q) + 10, Y(P) - 12, 'tangency: profit $0', '#111827', 'start', 13, 1);
+    }
+    if (end && s >= 3) { h += ptick(90, C.MR, '$90') + T(X(q) + 24, Y(mc(q)) + 18, sub('MR', '1') + ' = MC', C.MR, 'start', 13, 1); }
+    g.innerHTML = h;
+    kOut.textContent = Math.round(t * 100) + '%';
+    read.innerHTML = pr > 0
+      ? 'Q* = ' + (Math.abs(q - Math.round(q)) < 0.05 ? Math.round(q) : q.toFixed(1)) + ' nights, P* = ' + money2(P).replace('.00', '') + ': <b style="color:#15803d">profit ' + (pr < 1000 ? money2(pr) : money(pr)) + '</b>'
+      : 'Q* = 10 nights, P* = ATC = $180: <b style="color:#A85C5C">economic profit $0</b>. Entry stops.';
+  }
+
+  new MutationObserver(function(){ onStep(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  onStep();
+})();
+</script>
+</section>
+
+<section id="mc-host-evidence">
+  <h2><i class="fa-solid fa-magnifying-glass-chart" style="color: var(--secondary-color);"></i> Evidence &mdash; Entry Competes Away the Gains</h2>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start;">
+    <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:8px 14px; border-left:4px solid var(--secondary-color);">
+      <p style="font-size:11pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 2px;">Uber drivers after a fare increase</p>
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 400 152" style="width:100%; max-height:152px; display:block;" role="img" aria-label="Sketch: driver hourly earnings jump after a fare increase and return to the old level after about 8 weeks">
+  <line x1="40" y1="16" x2="40" y2="118" stroke="#374151" stroke-width="1.3"/><line x1="40" y1="118" x2="388" y2="118" stroke="#374151" stroke-width="1.3"/>
+  <text x="44" y="14" font-size="12" fill="#374151">Driver earnings per hour</text>
+  <text x="388" y="149" font-size="12" fill="#374151" text-anchor="end">weeks after the fare increase</text>
+  <line x1="40" y1="88" x2="388" y2="88" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="384" y="82" font-size="12" fill="#8C8580" text-anchor="end">before</text>
+  <polyline fill="none" stroke="#2563eb" stroke-width="2.6" points="40,88 110,88 110,40 140,48 170,60 200,72 230,81 260,86 290,88 388,88"/>
+  <line x1="110" y1="118" x2="110" y2="30" stroke="#C47B5A" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <text x="114" y="32" font-size="12" font-weight="700" fill="#a2603f">fare up</text>
+  <text x="110" y="134" font-size="12" fill="#374151" text-anchor="middle">0</text>
+  <text x="290" y="134" font-size="12" fill="#374151" text-anchor="middle">8</text>
+  <text x="196" y="108" font-size="12" font-weight="700" fill="#2563eb" text-anchor="middle">more drivers log on</text>
+</svg></div>
+      <p style="font-size:11.5pt; margin:4px 0 0; line-height:1.4;">Each trip pays more, so hourly earnings jump. Then drivers work more hours: a 10% fare rise cuts the share of time with a passenger by about 7%. <strong>After about 8 weeks, hourly earnings are back where they started.</strong></p>
+      <p style="font-size:10.5pt; color:var(--muted-color); margin:3px 0 0;">Sketch of the result. Hall, Horton &amp; Knoepfle, NBER WP 30883 (2023): 36 US cities, 2014&ndash;2017.</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--accent-color);">
+      <p style="font-size:11pt; color:var(--accent-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 2px;">Airbnb hosts as listings poured in</p>
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 400 150" style="width:100%; max-height:150px; display:block;" role="img" aria-label="US short-term rental listing growth: 22.1 percent in 2022, 14.4 percent in 2023, 6.8 percent in 2024"><text x="10" y="14" font-size="12" fill="#374151">US listings, growth over the year before</text><line x1="10" y1="122" x2="390" y2="122" stroke="#374151" stroke-width="1.3"/><rect x="50" y="34.0" width="70" height="88.0" fill="#C47B5A"/><text x="85" y="28.0" font-size="13" font-weight="700" fill="#374151" text-anchor="middle">+22.1%</text><text x="85" y="140" font-size="12" fill="#374151" text-anchor="middle">2022</text><rect x="170" y="64.7" width="70" height="57.3" fill="#C47B5A"/><text x="205" y="58.7" font-size="13" font-weight="700" fill="#374151" text-anchor="middle">+14.4%</text><text x="205" y="140" font-size="12" fill="#374151" text-anchor="middle">2023</text><rect x="290" y="94.9" width="70" height="27.1" fill="#6A8E6B"/><text x="325" y="88.9" font-size="13" font-weight="700" fill="#374151" text-anchor="middle">+6.8%</text><text x="325" y="140" font-size="12" fill="#374151" text-anchor="middle">2024</text></svg></div>
+      <p style="font-size:11.5pt; margin:4px 0 0; line-height:1.4;">In 2023, available nights grew <strong>12.8%</strong> but booked nights only <strong>6.7%</strong>: occupancy fell to 54.8% and revenue per available night fell 4.9%. <strong>Then entry slowed.</strong></p>
+      <p style="font-size:10.5pt; color:var(--muted-color); margin:3px 0 0;">AirDNA, 2024 Outlook (Dec 2023) and 2025 investment report (Jan 2025).</p>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin:10px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>So what do drivers take home?</strong> Not much. A study for the City of Seattle put net pay at about <strong>\$9.73 an hour</strong> after car costs (pre-2020 data), below the city&rsquo;s \$16.39 minimum wage; an Uber- and Lyft-funded study said \$23.25. Either way, a higher fare does not raise it for long: <strong>entry competes the gain away.</strong></p></div>
+</section>
+
+<section id="cc-13-1">
+  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner &mdash; Tangency as a Calculus Condition</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
+    <div>
+      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">At the long-run free-entry equilibrium output \(q^{\ast}\), <strong>two equations</strong> hold:</p>
+      <div class="key-result" style="margin: 6px 0;">
+        <p style="margin: 0 0 4px; font-size: 13pt; text-align:center;">\(P^{d}(q^{\ast}) = ATC(q^{\ast})\) <span style="color: var(--muted-color); font-size: 11pt;">(matched value)</span></p>
+        <p style="margin: 0; font-size: 13pt; text-align:center;">\(\dfrac{dP^{d}}{dq}\Big|_{q^{\ast}} = \dfrac{dATC}{dq}\Big|_{q^{\ast}}\) <span style="color: var(--muted-color); font-size: 11pt;">(matched slope)</span></p>
+      </div>
+      <p style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;"><strong>Why matched slopes?</strong> At the entry margin, perceived demand cannot <em>cross</em> ATC &mdash; a crossing would leave a range of outputs with \(P^{d} > ATC\) (positive profit), inviting more entry. It can only <em>touch</em>. Tangent curves share a slope.</p>
+    </div>
+    <div>
+      <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color); margin-bottom: 9px;">
+        <p style="font-size: 12pt; margin:0;"><strong>The decisive contrast.</strong> In <em>perfect</em> competition the firm's demand is flat, so it is tangent to ATC at its <strong>minimum</strong>, where \(dATC/dq = 0\). There \(P = MC = \min ATC\).</p>
+      </div>
+      <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
+        <p style="font-size: 12pt; margin:0;">In monopolistic competition \(dP^{d}/dq < 0\), so the matched slope is <strong>negative</strong> &mdash; tangency lands on the <em>falling</em> branch of ATC, <strong>left</strong> of \(\min ATC\). That gap is the excess capacity, derived in one line.</p>
+      </div>
+      <p style="font-size: 11.5pt; color: var(--muted-color); margin: 9px 0 0; line-height: 1.4;">Combine with \(MR_i = MC\): since \(MR_i < P^{d} = ATC\), we get \(MC < ATC\) and \(P > MC\). The markup and the excess capacity fall out of the same two equations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="divider-excess">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; LO 5</p>
+  <h1>Excess Capacity &amp; the Markup</h1>
+  <p class="subtitle">Zero profit, yet empty nights and a price above MC: the price of variety</p>
+</section>
+
+<section id="excess-capacity">
+  <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color: var(--secondary-color);"></i> Excess Capacity &mdash; Jordan&rsquo;s Empty Nights</h2>
+  <div style="display:grid; grid-template-columns: 1.12fr 1fr; gap:16px; align-items:start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:400px; display:block;" role="img" aria-label="Long-run tangency at 10 nights, left of the minimum of average total cost at 20 nights"><g class="hg-plot"></g></svg></div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>1 &middot; Cheapest scale.</strong> ATC is lowest at <strong>20 nights</strong>, \$150 a night, where MC crosses it.</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>2 &middot; Long run.</strong> Jordan books <strong>10 nights</strong> at \$180, on the falling side of the U.</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>3 &middot; Excess capacity:</strong> 20 &minus; 10 = <strong>10 nights a month</strong> Jordan could fill at a lower average cost, about one night in three of the month.</p></div>
+      <div class="fragment fade-up" data-fragment-index="4" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>4 &middot; Why not fill them?</strong> More nights means a lower price on every night: past 10 nights \(MR_1\) is below MC. A downward-sloping demand can only touch the U on its falling side.</p></div>
+      <p class="fragment fade-up" data-fragment-index="4" style="margin:0; font-size:10.5pt; color:var(--muted-color); line-height:1.4;">Check: slope of \(D_1\) is \(-9\); slope of ATC at 10 is \(-1200/10^2 + 3 = -9\). Same slope, so they touch.</p>
+    </div>
+  </div>
+  <div class="misconception fragment fade-up" data-fragment-index="5" style="margin: 9px 0 0; padding: 8px 16px;"><p style="margin:0; font-size:11.5pt; line-height:1.45;"><strong style="color:var(--danger-color);">Heads up:</strong> excess capacity does not mean a failing host. Jordan covers every cost. The market simply has more, smaller, half-empty listings than cost alone would choose: the price of having many different rooms.</p></div>
+  <script>
+(function(){
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var PM = 300;
+  var X0 = 66, X1 = 478, Y0 = 340, Y1 = 26, QM = 30;
+  var C = { D:'#2563eb', MR:'#8b5cf6', MC:'#dc2626', ATC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function curve(f, q0, q1, st){
+    var pts = [];
+    for (var i = 0; i <= 160; i++) { var q = q0 + (q1 - q0) * i / 160, p = f(q); if (p <= PM && p >= 0) pts.push(f1(X(q)) + ',' + f1(Y(p))); }
+    return '<polyline fill="none" points="' + pts.join(' ') + '" ' + st + '/>';
+  }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="6" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 13, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 18, lab || ('' + q), col || C.AX, 'middle', 13, 1); }
+  function axes(){
+    return L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"')
+      + T(X0 - 4, Y1 - 14, 'Price per night ($)', C.AX, 'start', 13)
+      + T(X1 + 6, Y0 + 38, 'Nights booked per month, Q', C.AX, 'end', 13)
+      + T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+  }
+  function qticks(skip){ var h = ''; [10, 20, 30].forEach(function(q){ if (!skip || skip.every(function(s){ return Math.abs(s - q) > 2.2; })) h += qtick(q, C.MU); }); return h; }
+  function atc(q){ return 1200 / q + 30 + 3 * q; }
+  function mc(q){ return 30 + 6 * q; }
+  function lineD(a, b, col, extra){ return curve(function(q){ return a - b * q; }, 0, 30, 'stroke="' + col + '" stroke-width="2.4"' + (extra || '')); }
+  function lineMR(a, b, extra){ return curve(function(q){ return a - 2 * b * q; }, 0, 30, 'stroke="' + C.MR + '" stroke-width="2" stroke-dasharray="6 3"' + (extra || '')); }
+  function curveATC(){ return curve(atc, 2, 30, 'stroke="' + C.ATC + '" stroke-width="2.4"'); }
+  function lineMC(){ return curve(mc, 0, 30, 'stroke="' + C.MC + '" stroke-width="2.2"'); }
+  function labD(a, b, txt, col){ var q = Math.min(30, (a - 22) / b), p = a - b * q; return T(X(q) + 6, Y(p) - 4, txt, col, 'start', 15, 1); }
+  function labMR(a, b, txt){ var q = Math.min(30, a / (2 * b)); return T(X(q) + 4, Y0 - 8, txt, C.MR, 'start', 15, 1); }
+  function labRight(p, txt, col){ return T(X1 + 6, Y(p) + 5, txt, col, 'start', 15, 1); }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+  function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+  function money2(v){ return '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  function onStep(){ draw(); }
+  function draw(){
+    var s = step(), h = axes();
+    var skip = []; if (s >= 1) skip.push(20); if (s >= 2) skip.push(10);
+    h += qticks(skip);
+    h += curveATC() + lineMC() + labRight(atc(30) + 6, 'ATC', C.ATC) + labRight(mc(30), 'MC', C.MC);
+    h += lineD(270, 9, C.D) + labD(270, 9, sub('D', '1'), C.D);
+    if (s >= 4) h += lineMR(270, 9) + labMR(270, 9, sub('MR', '1')) + dot(10, 90, C.MR) + T(X(10) + 24, Y(90) + 18, sub('MR', '1') + ' = MC', C.MR, 'start', 13, 1) + ptick(90, C.MR);
+    if (s >= 1) h += guide(20, 150) + ring(20, 150, C.ATC) + qtick(20, '#111827') + ptick(150, C.ATC) + T(X(20) + 8, Y(150) + 22, 'lowest ATC', C.ATC, 'start', 13, 1);
+    if (s >= 2) h += guide(10, 180) + dot(10, 180, C.D) + qtick(10, '#111827') + ptick(180, C.D) + T(X(10) + 10, Y(180) - 12, 'long run: tangency', '#111827', 'start', 13, 1);
+    if (s >= 3) {
+      var yb = Y(45);
+      h += L(X(10), yb, X(20), yb, 'stroke="#C47B5A" stroke-width="2.4" marker-start="url(#hx-arr)" marker-end="url(#hx-arr)"');
+      h += T(X(16), yb - 8, 'excess capacity', '#a2603f', 'middle', 13, 1);
+    }
+    g.innerHTML = '<defs><marker id="hx-arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C47B5A"/></marker></defs>' + h;
+  }
+
+  new MutationObserver(function(){ onStep(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  onStep();
+})();
+</script>
+</section>
+
+<section id="markup">
+  <h2><i class="fa-solid fa-tag" style="color: var(--secondary-color);"></i> The Markup &mdash; P Above MC, Yet Zero Profit</h2>
+  <div style="display:grid; grid-template-columns: 1.12fr 1fr; gap:16px; align-items:start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:400px; display:block;" role="img" aria-label="Long-run equilibrium: price 180 above marginal cost 90 at 10 nights, with the deadweight-loss triangle"><g class="hg-plot"></g></svg></div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>1 &middot; MR = MC:</strong> \(270 - 18Q = 30 + 6Q\) at 10 nights, so \(MC = \$90\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>2 &middot; Price from \(D_1\):</strong> \$180. <strong>Markup \$90</strong>. Lerner: \((180 - 90)/180 = 0.5 = 1/|\varepsilon|\), with \(\varepsilon = -2\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>3 &middot; Yet profit is \$0:</strong> \(P = ATC = \$180\). Markup compares price with <em>marginal</em> cost; profit compares it with <em>average</em> cost.</p></div>
+      <div class="fragment fade-up" data-fragment-index="4" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>4 &middot; Lost bookings:</strong> guests who value a night between \$90 and \$180 do not book. Triangle: \(\tfrac12 \times (180 - 90) \times (16 - 10) = \$270\) a month.</p></div>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:9px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.45;"><strong>Markup and empty nights are what variety costs.</strong> Jordan&rsquo;s room is not the next room over; guests pay a little more, and book a little less, for the room that fits them.</p></div>
+  <script>
+(function(){
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var PM = 300;
+  var X0 = 66, X1 = 478, Y0 = 340, Y1 = 26, QM = 30;
+  var C = { D:'#2563eb', MR:'#8b5cf6', MC:'#dc2626', ATC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function curve(f, q0, q1, st){
+    var pts = [];
+    for (var i = 0; i <= 160; i++) { var q = q0 + (q1 - q0) * i / 160, p = f(q); if (p <= PM && p >= 0) pts.push(f1(X(q)) + ',' + f1(Y(p))); }
+    return '<polyline fill="none" points="' + pts.join(' ') + '" ' + st + '/>';
+  }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="6" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 13, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 18, lab || ('' + q), col || C.AX, 'middle', 13, 1); }
+  function axes(){
+    return L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"')
+      + T(X0 - 4, Y1 - 14, 'Price per night ($)', C.AX, 'start', 13)
+      + T(X1 + 6, Y0 + 38, 'Nights booked per month, Q', C.AX, 'end', 13)
+      + T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+  }
+  function qticks(skip){ var h = ''; [10, 20, 30].forEach(function(q){ if (!skip || skip.every(function(s){ return Math.abs(s - q) > 2.2; })) h += qtick(q, C.MU); }); return h; }
+  function atc(q){ return 1200 / q + 30 + 3 * q; }
+  function mc(q){ return 30 + 6 * q; }
+  function lineD(a, b, col, extra){ return curve(function(q){ return a - b * q; }, 0, 30, 'stroke="' + col + '" stroke-width="2.4"' + (extra || '')); }
+  function lineMR(a, b, extra){ return curve(function(q){ return a - 2 * b * q; }, 0, 30, 'stroke="' + C.MR + '" stroke-width="2" stroke-dasharray="6 3"' + (extra || '')); }
+  function curveATC(){ return curve(atc, 2, 30, 'stroke="' + C.ATC + '" stroke-width="2.4"'); }
+  function lineMC(){ return curve(mc, 0, 30, 'stroke="' + C.MC + '" stroke-width="2.2"'); }
+  function labD(a, b, txt, col){ var q = Math.min(30, (a - 22) / b), p = a - b * q; return T(X(q) + 6, Y(p) - 4, txt, col, 'start', 15, 1); }
+  function labMR(a, b, txt){ var q = Math.min(30, a / (2 * b)); return T(X(q) + 4, Y0 - 8, txt, C.MR, 'start', 15, 1); }
+  function labRight(p, txt, col){ return T(X1 + 6, Y(p) + 5, txt, col, 'start', 15, 1); }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+  function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+  function money2(v){ return '$' + v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+  function onStep(){ draw(); }
+  function draw(){
+    var s = step(), h = axes();
+    var skip = []; if (s >= 1) skip.push(10); if (s >= 4) skip.push(16);
+    h += qticks(skip);
+    if (s >= 4) h += '<polygon points="' + f1(X(10)) + ',' + f1(Y(180)) + ' ' + f1(X(10)) + ',' + f1(Y(90)) + ' ' + f1(X(16)) + ',' + f1(Y(126)) + '" fill="rgba(168,92,92,0.32)" stroke="#A85C5C" stroke-width="1"/>';
+    h += curveATC() + lineMC() + labRight(atc(30) + 6, 'ATC', C.ATC) + labRight(mc(30), 'MC', C.MC);
+    h += lineD(270, 9, C.D) + labD(270, 9, sub('D', '1'), C.D) + lineMR(270, 9) + labMR(270, 9, sub('MR', '1'));
+    if (s >= 1) h += guide(10, 90) + dot(10, 90, C.MR) + qtick(10, '#111827') + ptick(90, C.MR) + T(X(10) + 24, Y(90) + 18, sub('MR', '1') + ' = MC', C.MR, 'start', 13, 1);
+    if (s >= 2) {
+      h += guide(10, 180) + dot(10, 180, C.D) + ptick(180, C.D);
+      var xb = X(10) - 14;
+      h += L(xb, Y(180) + 3, xb, Y(90) - 3, 'stroke="#C47B5A" stroke-width="2.4" marker-start="url(#hm-arr)" marker-end="url(#hm-arr)"');
+      h += T(xb - 8, (Y(180) + Y(90)) / 2 + 5, 'markup $90', '#a2603f', 'end', 13, 1);
+    }
+    if (s >= 3) h += ring(10, 180, C.ATC) + T(X(10) + 10, Y(180) - 12, 'P = ATC: profit $0', '#111827', 'start', 13, 1);
+    if (s >= 4) h += dot(16, 126, '#A85C5C', 3.5) + qtick(16, '#A85C5C') + T(X(12.4), Y(132) + 5, '$270', '#7d3f3f', 'middle', 12, 1);
+    g.innerHTML = '<defs><marker id="hm-arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#C47B5A"/></marker></defs>' + h;
+  }
+
+  new MutationObserver(function(){ onStep(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  onStep();
+})();
+</script>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="divider-action">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; Wrap-up</p>
+  <h1>Monopolistic Competition in Action</h1>
+  <p class="subtitle">The cycle, everywhere you look &mdash; then on to oligopoly</p>
+</section>
+
+<section id="walkthrough-13-1">
+ <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 13.1 &mdash; Allbirds, From Profit to Zero</h2>
+ <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 8px;">
+  <p style="margin:0; font-size:12pt; line-height:1.45;"><strong>Problem.</strong> Stylized numbers, not Allbirds&rsquo; books: \(Q\) in thousand pairs a month, \(P\) in \$ a pair. Cost \(C = 1{,}600 + 20Q + 0.25Q^2\), so \(MC = 20 + 0.5Q\). Before copycats, Allbirds&rsquo; demand is \(P = 145 - Q\); after they enter, \(P = 100 - 0.75Q\). Find \(Q\), \(P\) and profit in each.</p>
+ </div>
+ <div style="display:grid; grid-template-columns:1.42fr 1fr; gap:16px; align-items:start;">
+  <div><div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 610 342" style="width:100%; height:auto; display:block;"><defs><marker id="wa-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#C47B5A"/></marker><marker id="wa-tick" viewBox="0 0 4 12" refX="2" refY="6" markerWidth="4" markerHeight="12" orient="auto"><path d="M2,0 L2,12" stroke="#6B8BA4" stroke-width="2"/></marker></defs><text x="150" y="16" text-anchor="middle" font-size="13" font-weight="700" fill="#2D2D2D">Short run: before copycats</text><line x1="40" y1="26.0" x2="40" y2="292" stroke="#8C8580" stroke-width="1.4"/><line x1="40" y1="292" x2="282" y2="292" stroke="#8C8580" stroke-width="1.4"/><text x="34" y="36.0" text-anchor="end" font-size="13" font-weight="700" fill="#6B645E">P</text><text x="284" y="297" font-size="13" font-weight="700" fill="#6B645E">Q</text><polyline points="65.0,46.2 68.5,71.3 72.1,90.7 75.6,106.1 79.2,118.6 82.7,128.9 86.3,137.4 89.8,144.7 93.4,150.9 96.9,156.2 100.5,160.9 104.0,164.9 107.6,168.4 111.1,171.5 114.7,174.3 118.2,176.7 121.8,178.8 125.3,180.7 128.9,182.4 132.4,184.0 136.0,185.3 139.5,186.5 143.1,187.6 146.6,188.5 150.2,189.3 153.7,190.1 157.3,190.7 160.8,191.3 164.4,191.8 167.9,192.2 171.5,192.6 175.0,192.9 178.6,193.2 182.1,193.4 185.7,193.5 189.2,193.6 192.8,193.7 196.3,193.7 199.9,193.7 203.4,193.7 207.0,193.7 210.5,193.6 214.1,193.5 217.6,193.3 221.2,193.2 224.7,193.0 228.3,192.8 231.8,192.6 235.4,192.3 238.9,192.1 242.5,191.8 246.0,191.5 249.6,191.2 253.1,190.9 256.7,190.5 260.2,190.2 263.8,189.8 267.3,189.5 270.9,189.1 274.4,188.7 278.0,188.3" fill="none" stroke="#6B8BA4" stroke-width="2.4"/><text x="276.0" y="205.29166666666666" text-anchor="end" font-size="13" font-weight="700" fill="#6B8BA4">ATC</text><line x1="40.0" y1="259.2" x2="278.0" y2="161.0" stroke="#A85C5C" stroke-width="2.4"/><text x="276.0" y="153.0" text-anchor="end" font-size="13" font-weight="700" fill="#A85C5C">MC</text><g class="fragment" data-fragment-index="1"><line x1="40.0" y1="54.6" x2="278.0" y2="251.1" stroke="#2D2D2D" stroke-width="2.6"/><text x="274.0333333333333" y="239.8" text-anchor="end" font-size="13" font-weight="700" fill="#2D2D2D">D</text><line x1="40.0" y1="54.6" x2="183.8" y2="292.0" stroke="#6B645E" stroke-width="2" stroke-dasharray="6 4"/><text x="178.83333333333334" y="272.4" font-size="13" font-weight="700" fill="#6B645E">MR</text><line x1="139.2" y1="136.4" x2="139.2" y2="292" stroke="#8C8580" stroke-dasharray="3 3"/><line x1="40" y1="136.4" x2="139.2" y2="136.4" stroke="#8C8580" stroke-dasharray="3 3"/><circle cx="139.2" cy="218.3" r="4" fill="#A85C5C"/><circle cx="139.2" cy="136.4" r="4.5" fill="#2D2D2D"/><text x="35" y="140.4" text-anchor="end" font-size="12.5" fill="#2D2D2D">95</text><text x="139.2" y="307" text-anchor="middle" font-size="12.5" fill="#2D2D2D">50</text></g><g class="fragment" data-fragment-index="2"><rect x="40" y="136.4" width="99.2" height="49.9" fill="#6A8E6B" fill-opacity="0.40"/><text x="35" y="190.4" text-anchor="end" font-size="12.5" fill="#6B8BA4">64.50</text><text x="89.6" y="165.0" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2f4a30">profit</text></g><text x="460" y="16" text-anchor="middle" font-size="13" font-weight="700" fill="#2D2D2D">Long run: after copycats</text><line x1="350" y1="26.0" x2="350" y2="292" stroke="#8C8580" stroke-width="1.4"/><line x1="350" y1="292" x2="592" y2="292" stroke="#8C8580" stroke-width="1.4"/><text x="344" y="36.0" text-anchor="end" font-size="13" font-weight="700" fill="#6B645E">P</text><text x="594" y="297" font-size="13" font-weight="700" fill="#6B645E">Q</text><polyline points="375.0,46.2 378.5,71.3 382.1,90.7 385.6,106.1 389.2,118.6 392.7,128.9 396.3,137.4 399.8,144.7 403.4,150.9 406.9,156.2 410.5,160.9 414.0,164.9 417.6,168.4 421.1,171.5 424.7,174.3 428.2,176.7 431.8,178.8 435.3,180.7 438.9,182.4 442.4,184.0 446.0,185.3 449.5,186.5 453.1,187.6 456.6,188.5 460.2,189.3 463.7,190.1 467.3,190.7 470.8,191.3 474.4,191.8 477.9,192.2 481.5,192.6 485.0,192.9 488.6,193.2 492.1,193.4 495.7,193.5 499.2,193.6 502.8,193.7 506.3,193.7 509.9,193.7 513.4,193.7 517.0,193.7 520.5,193.6 524.1,193.5 527.6,193.3 531.2,193.2 534.7,193.0 538.3,192.8 541.8,192.6 545.4,192.3 548.9,192.1 552.5,191.8 556.0,191.5 559.6,191.2 563.1,190.9 566.7,190.5 570.2,190.2 573.8,189.8 577.3,189.5 580.9,189.1 584.4,188.7 588.0,188.3" fill="none" stroke="#6B8BA4" stroke-width="2.4"/><text x="586.0" y="205.29166666666666" text-anchor="end" font-size="13" font-weight="700" fill="#6B8BA4">ATC</text><line x1="350.0" y1="259.2" x2="588.0" y2="161.0" stroke="#A85C5C" stroke-width="2.4"/><text x="586.0" y="153.0" text-anchor="end" font-size="13" font-weight="700" fill="#A85C5C">MC</text><g class="fragment" data-fragment-index="3"><line x1="350.0" y1="54.6" x2="588.0" y2="251.1" stroke="#BDB6AF" stroke-width="2" stroke-dasharray="5 4"/><text x="409.5" y="95.7" font-size="12.5" fill="#8C8580">old D</text><line x1="350.0" y1="128.2" x2="588.0" y2="275.6" stroke="#2D2D2D" stroke-width="2.6"/><text x="586.0166666666667" y="242.9" text-anchor="end" font-size="13" font-weight="700" fill="#2D2D2D">new D</text><line x1="350.0" y1="128.2" x2="482.3" y2="292.0" stroke="#6B645E" stroke-width="2" stroke-dasharray="6 4"/><text x="476.93333333333334" y="275.6" font-size="13" font-weight="700" fill="#6B645E">MR</text><path d="M429.3,115.2 L401.6,154.4" stroke="#C47B5A" stroke-width="2" marker-end="url(#wa-arr)"/></g><g class="fragment" data-fragment-index="4"><line x1="429.3" y1="177.4" x2="429.3" y2="292" stroke="#8C8580" stroke-dasharray="3 3"/><line x1="350" y1="177.4" x2="429.3" y2="177.4" stroke="#8C8580" stroke-dasharray="3 3"/><circle cx="429.3" cy="177.4" r="5.5" fill="#C47B5A" stroke="#fff" stroke-width="1.5"/><line x1="433.3" y1="172.5" x2="480.9" y2="82.4" stroke="#C47B5A" stroke-width="1.2"/><text x="476.9" y="75.8" font-size="13" font-weight="700" fill="#C47B5A">P = ATC = $70</text><text x="345" y="181.4" text-anchor="end" font-size="12.5" fill="#2D2D2D">70</text><text x="429.3" y="307" text-anchor="middle" font-size="12.5" fill="#2D2D2D">40</text></g><g class="fragment" data-fragment-index="5"><circle cx="429.3" cy="226.5" r="4" fill="#A85C5C"/><text x="345" y="230.5" text-anchor="end" font-size="12.5" fill="#A85C5C">40</text><line x1="508.7" y1="193.8" x2="508.7" y2="292" stroke="#6B8BA4" stroke-dasharray="3 3"/><text x="508.7" y="307" text-anchor="middle" font-size="12.5" fill="#6B8BA4">80</text><line x1="429.3" y1="320" x2="508.7" y2="320" stroke="#6B8BA4" stroke-width="1.6" marker-start="url(#wa-tick)" marker-end="url(#wa-tick)"/><text x="469.0" y="337" text-anchor="middle" font-size="13" font-weight="700" fill="#6B8BA4">excess capacity</text></g></svg></div></div>
+  <div style="background:#f8f6f3; border-radius:8px; padding:6px 14px 9px; border-left:4px solid var(--secondary-color);">
+<p class="fragment fade-up" data-fragment-index="1" style="font-size:11.5pt; line-height:1.45; margin:2px 0 0;"><strong>1 &middot; Short run.</strong> \(MR = 145 - 2Q = 20 + 0.5Q\) gives \(Q = 50\), \(P = \$95\): the Wool Runner price.</p>
+<p class="fragment fade-up" data-fragment-index="2" style="font-size:11.5pt; line-height:1.45; margin:7px 0 0;"><strong>2 &middot; Profit.</strong> \(ATC(50) = 32 + 20 + 12.50 = \$64.50\). Profit \(= (95 - 64.50) \times 50 = \$1{,}525\)K, about \$1.5M a month.</p>
+<p class="fragment fade-up" data-fragment-index="3" style="font-size:11.5pt; line-height:1.45; margin:7px 0 0;"><strong>3 &middot; Copycats enter.</strong> Amazon&rsquo;s \$45 lookalike, On, Hoka. Demand shifts <strong>left</strong> and gets <strong>flatter</strong>: elasticity at the optimum \(-1.9 \to -2.33\).</p>
+<p class="fragment fade-up" data-fragment-index="4" style="font-size:11.5pt; line-height:1.45; margin:7px 0 0;"><strong>4 &middot; Long run.</strong> \(MR = 100 - 1.5Q = 20 + 0.5Q\) gives \(Q = 40\), \(P = \$70 = ATC(40)\). Demand just touches ATC: <strong>profit \(= 0\)</strong>.</p>
+<p class="fragment fade-up" data-fragment-index="5" style="font-size:11.5pt; line-height:1.45; margin:7px 0 0;"><strong>5 &middot; Still \(P &gt; MC\)</strong> (\$70 vs \$40), and 40 &lt; 80, the bottom of ATC: excess capacity. One more copycat pushes demand <em>below</em> ATC: losses, then exit. Allbirds went there and sold for \$39M.</p>
+  </div>
+ </div>
+</section>
+
+<section id="summary">
+  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Chapter 13, Part 1 &mdash; The Five Results</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="margin: 0; font-size: 11.5pt;"><strong>The structure.</strong> Many firms, differentiated products, free entry, independent decisions. Differentiation is the boundary with perfect competition; independence is the boundary with oligopoly.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
+      <p style="margin: 0; font-size: 11.5pt;"><strong>Short run.</strong> Differentiation bends demand down, so \(MR_i &lt; P\). The firm maximizes at \(MR_i = MC\) and prices off \(P^{d}\), leaving \(P > MC\) &mdash; the Ch 11 rule on the firm's own perceived demand.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--success-color);">
+      <p style="margin: 0; font-size: 11.5pt;"><strong>Long run.</strong> Free entry drives economic profit to zero at the <strong>Chamberlin tangency</strong>: matched value \(P^{d} = ATC\) <em>and</em> matched slope \(dP^{d}/dq = dATC/dq\).</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--danger-color);">
+      <p style="margin: 0; font-size: 11.5pt;"><strong>Excess capacity.</strong> A downward line tangent to a U must touch on the falling branch, so \(q^{\ast} &lt; q_{\min ATC}\) &mdash; excess capacity <em>and</em> a persistent markup, together.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
+      <p style="margin: 0; font-size: 11.5pt;"><strong>The trade-off.</strong> Firms differentiate on location, branding, packaging, quality, service, and advertising. The markup and the idle capacity are the price of variety &mdash; net welfare is ambiguous (Spence; Dixit&ndash;Stiglitz; Mankiw&ndash;Whinston).</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 11px;">
+    <p style="margin: 0; font-size: 12pt;"><strong>One spine.</strong> Zero economic profit, a positive markup, and excess capacity all hold <em>at the same point</em>. They feel contradictory only until you see that one downward-sloping curve tangent to one U-shaped curve forces all three at once.</p>
+  </div>
+</section>
+
+<section class="section-divider" data-state="is-section-divider" id="qa">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Chapter 13, Part 1 &mdash; complete</p>
+  <h1>Questions?</h1>
+  <p class="subtitle">Next: Chapter 13, Part 2 &mdash; Oligopoly. Drop characteristic #4, independence. Make a few firms watch each other and you get strategic interaction: Cournot, Bertrand, Stackelberg, and the cartel bound.</p>
+</section>
+
+<section data-visibility="hidden" id="bridge">
+  <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color: var(--secondary-color);"></i> Where Ch 13 Sits on the Spectrum</h2>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 4px 0 14px; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.10);">
+    <div style="background: #eef6ef; padding: 11px 10px; text-align: center; border-bottom: 5px solid var(--success-color);"><p style="font-size: 12.5pt; font-weight: 700; color: var(--success-color); margin:0;">Perfect competition</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">many &middot; identical &middot; \(P=MC\)</p></div>
+    <div style="background: #f7f1ea; padding: 11px 10px; text-align: center; border-bottom: 5px solid var(--accent-color);"><p style="font-size: 12.5pt; font-weight: 700; color: var(--accent-color); margin:0;">Monopolistic competition</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">many &middot; differentiated &middot; <strong>Part 1</strong></p></div>
+    <div style="background: #f3eef6; padding: 11px 10px; text-align: center; border-bottom: 5px solid #7C3A5F;"><p style="font-size: 12.5pt; font-weight: 700; color: #7C3A5F; margin:0;">Oligopoly</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">few &middot; strategic &middot; <strong>Part 2</strong></p></div>
+    <div style="background: #fdf2f0; padding: 11px 10px; text-align: center; border-bottom: 5px solid var(--danger-color);"><p style="font-size: 12.5pt; font-weight: 700; color: var(--danger-color); margin:0;">Monopoly (Ch 11)</p><p style="font-size: 10.5pt; color: var(--muted-color); margin:0;">one &middot; \(L=-1/\varepsilon\)</p></div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 20px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 12.5pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 6px;">Chs 11&ndash;12 &mdash; one firm</p>
+      <p style="font-size: 13pt; margin: 0;">A single price-maker, markup pinned by its <em>own</em> elasticity: \(L = (P-MC)/P = -1/\varepsilon_D\). No rival to worry about.</p>
+    </div>
+    <div style="background: #fef9f3; border-radius: 10px; padding: 14px 20px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 12.5pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 6px;">Ch 13 &mdash; many firms, free entry</p>
+      <p style="font-size: 13pt; margin: 0;">Each firm keeps a <em>sliver</em> of that power from differentiation &mdash; but free entry competes the profit away. <strong>Today: the left half of the gap.</strong></p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 13px;">
+    <p style="margin: 0; font-size: 12.5pt;">Part 1 fills the slot just <strong>right of perfect competition</strong>: keep the crowd and free entry, add differentiation. Part 2 fills the slot just <strong>left of monopoly</strong>: a few firms who must watch each other. Over <strong>90%</strong> of what you buy lives in today's slot.</p>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="opener">
+  <h2><i class="fa-solid fa-store" style="color: var(--accent-color);"></i> Two Everyday Markets, One Structure</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <div style="background: #f8f6f3; border-radius: 8px; padding: 12px 16px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 13pt; margin: 0;"><strong>Coffee.</strong> One Cambridge block: three coffee shops, a sandwich franchise, and an empty storefront where a fourth just closed. None a monopoly, none a price-taker &mdash; each keeps a loyal core and charges a little above cost.</p></div>
+      <div style="background: #f8f6f3; border-radius: 8px; padding: 12px 16px; border-left: 4px solid var(--accent-color);"><p style="font-size: 13pt; margin: 0;"><strong>Beer.</strong> 9,578 US craft breweries in 2025 &mdash; yet 481 closures against 300 openings, a second straight year closures outnumbered openings. Anchor Brewing (est. 1896) closed in July 2023.</p></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div class="stat-card accent"><p class="num">9,578</p><p class="lbl">US craft breweries (2025)</p></div>
+      <div class="stat-card rose"><p class="num">481</p><p class="lbl">closed in 2025</p></div>
+      <div class="stat-card sage"><p class="num">300</p><p class="lbl">opened in 2025</p></div>
+      <div class="stat-card"><p class="num">&minus;181</p><p class="lbl">openings &minus; closures (2nd year negative)</p></div>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 12px;">
+    <p style="margin: 0; font-size: 13pt;">Coffee and beer are both <strong>monopolistic competition</strong>: many differentiated firms with free entry and exit. Differentiation lets each charge \(P > MC\); free entry competes that profit away toward <strong>zero economic profit</strong> in the long run &mdash; the slot just right of perfect competition that Part 1 makes precise.</p>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="rideshare-illusion">
+  <p style="font-size: 12pt; color: var(--accent-color); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px;">Case Study &middot; Reading Market Structure in the Wild</p>
+  <h2 style="margin-top: 0;"><i class="fa-solid fa-mobile-screen-button" style="color: var(--secondary-color);"></i> The High-Tech Illusion</h2>
+  <div style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin:16px 0 12px;">
+    <div style="background:var(--secondary-color); color:#fff; border-radius:50%; width:160px; height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; box-shadow:0 3px 12px rgba(0,0,0,0.18);"><i class="fa-solid fa-car" style="font-size:27pt; margin-bottom:8px;"></i><p style="font-size:13pt; line-height:1.2; color:#fff; margin:0;">Anyone<br>with a car</p></div>
+    <div style="display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-arrow-right-long" style="font-size:20pt; color:var(--muted-color);"></i><i class="fa-solid fa-mobile-screen" style="font-size:42pt; color:var(--primary-color);"></i><i class="fa-solid fa-arrow-left-long" style="font-size:20pt; color:var(--muted-color);"></i></div>
+    <div style="background:var(--accent-color); color:#fff; border-radius:50%; width:160px; height:160px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto; box-shadow:0 3px 12px rgba(0,0,0,0.18);"><i class="fa-solid fa-person-walking" style="font-size:27pt; margin-bottom:8px;"></i><p style="font-size:13pt; line-height:1.2; color:#fff; margin:0;">Anyone<br>needing a ride</p></div>
+  </div>
+  <div class="key-result"><p style="margin:0;">At first glance <strong>Uber and Lyft look like textbook perfect competition</strong> &mdash; many drivers, many riders, low barriers, an app neutrally matching supply and demand. Before we build monopolistic competition, a warning: a market can <em>look</em> like a benchmark and behave like something else entirely. Look closer.</p></div>
+</section>
+
+<section data-visibility="hidden" id="four-characteristics">
+  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Four Defining Characteristics</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px;">
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--secondary-color); margin-bottom: 3px;">1. Many sellers</p>
+      <p style="font-size: 12.5pt; margin:0;">A large number of firms, each with a <strong>small share</strong>. No one sets the market price.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--accent-color); margin-bottom: 3px;">2. Differentiated products</p>
+      <p style="font-size: 12.5pt; margin:0;">Close substitutes, <strong>not perfect</strong> ones. The feature that separates this from perfect competition.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--success-color); margin-bottom: 3px;">3. Free entry &amp; exit</p>
+      <p style="font-size: 12.5pt; margin:0;">No patents or capital walls. A new oven fires up in a vacant storefront within months.</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 13px 20px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--danger-color); margin-bottom: 3px;">4. Independent decisions</p>
+      <p style="font-size: 12.5pt; margin:0;">Too many rivals to track &mdash; no firm reacts to any single competitor. Unlike <em>oligopoly</em> (Part 2).</p>
+    </div>
+  </div>
+  <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 13px; text-align: center;">#2 (differentiation) is the boundary with <strong>perfect competition</strong>; #4 (independence) is the boundary with <strong>oligopoly</strong>. Those two lines define the slot.</p>
+  <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; &ldquo;many sellers&rdquo; does not by itself mean perfect competition</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">Ch 10 needed many sellers <em>and</em> an identical product. Drop only the second and you land here: the count of firms is unchanged, but each faces a downward-sloping perceived demand. On an exam, never infer \(P = MR\) from firm count alone &mdash; check whether the product is homogeneous.</p></div>
+</section>
+
+<section data-visibility="hidden" id="char-many-sellers-pizza">
+  <h2><i class="fa-solid fa-pizza-slice" style="color: var(--secondary-color);"></i> #1 Many Sellers &mdash; Pizza Near Campus</h2>
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: center;">
+    <div>
+      <p style="font-size: 14pt; margin-bottom: 12px;">Search <strong>&ldquo;pizza near Northeastern&rdquo;</strong> on Google Maps. You&rsquo;ll find roughly <strong>50 options</strong> within a six-mile radius.</p>
+      <div class="key-result"><p style="margin:0;">No single shop dominates. Each competes for the same pool of hungry students, but <strong>none controls enough of the market to set the price.</strong></p></div>
+      <p style="font-size: 13pt; color: var(--muted-color); margin-top: 12px;">That&rsquo;s &ldquo;many sellers&rdquo; &mdash; the trait MC shares with perfect competition. Yet each storefront is visibly its <em>own</em> product (characteristic #2 is next).</p>
+    </div>
+    <div style="text-align: center;">
+      <img alt="A long row of visually distinct storefronts — many small firms selling similar but differentiated products" src="figures/ch12-many-firms.webp" style="max-width: 100%; max-height: 420px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 14px rgba(0,0,0,0.16);">
+    </div>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="char-differentiated">
+  <h2><i class="fa-solid fa-fingerprint" style="color: var(--accent-color);"></i> #2 Differentiated &mdash; the Key Twist</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 4px;">
+    <div style="background: #eef6ef; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 11.5pt; letter-spacing: 1px; text-transform: uppercase; color: var(--success-color); font-weight: 700; margin-bottom: 5px;">Homogeneous (Ch 10)</p>
+      <p style="font-size: 13pt; margin:0;">A bushel of wheat from one farm is <strong>identical</strong> to the next. The firm is a price-taker: demand is <strong>flat</strong>, \(P = MR\).</p>
+    </div>
+    <div style="background: #f7f1ea; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 11.5pt; letter-spacing: 1px; text-transform: uppercase; color: var(--accent-color); font-weight: 700; margin-bottom: 5px;">Differentiated (Ch 13)</p>
+      <p style="font-size: 13pt; margin:0;">Ciao's wood-fired margherita is <em>not</em> Sal's NY slice. A few regulars stay even if Ciao raises price &mdash; demand <strong>slopes down</strong>, \(P > MR\).</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;"><p style="margin:0;">Each firm's product is a <strong>close substitute</strong> for its rivals' &mdash; but not a <em>perfect</em> one. That single fact bends the firm's <strong>perceived demand</strong> \(P_i^{d}(q_i)\) downward. Everything in &sect;13.2 follows from it.</p></div>
+  <p style="font-size: 12pt; color: var(--muted-color); margin-top: 10px; text-align:center;"><strong>Notation:</strong> we write firm \(i\)'s own demand as \(P_i^{d}(q_i)\) &mdash; the price it can charge as a function of <em>its</em> output, holding the rest of the market fixed.</p>
+</section>
+
+<section data-visibility="hidden" id="char-entry-independent">
+  <h2><i class="fa-solid fa-door-open" style="color: var(--success-color);"></i> #3 Free Entry &amp; #4 Independence</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 4px;">
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;">#3 Free entry &amp; exit</p>
+      <p style="font-size: 12.5pt; margin: 0 0 7px;">No patents, licenses, or massive capital walls.</p>
+      <p style="font-size: 12.5pt; margin:0;"><strong>Entry:</strong> ~300 new craft breweries opened in 2025.<br><strong>Exit:</strong> Allbirds closed every full-price store. This is the force that drives profit to zero (&sect;13.2 long run).</p>
+    </div>
+    <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 14pt; font-weight: 700; color: var(--danger-color); margin-bottom: 5px;">#4 Independent decisions</p>
+      <p style="font-size: 12.5pt; margin: 0 0 7px;">Each firm is small enough that its choices barely register with rivals.</p>
+      <p style="font-size: 12.5pt; margin:0;">When one shop runs a special, the other 99 do <em>not</em> hold an emergency meeting. <strong>No strategic interaction</strong> &mdash; the math stays tractable.</p>
+    </div>
+  </div>
+  <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 13px; text-align: center;">Contrast #4 with <strong>oligopoly</strong> (Part 2), where a few firms watch each other's every move &mdash; and we need game theory.</p>
+</section>
+
+<section data-visibility="hidden" id="misconception-define">
+  <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Heads Up &mdash; What &ldquo;Monopolistic&rdquo; Actually Modifies</h2>
+  <div style="background: #fdf2f0; border-radius: 10px; padding: 16px 24px; border-left: 5px solid var(--danger-color); margin-bottom: 14px;">
+    <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--danger-color); font-weight: 700; margin-bottom: 5px;">The myth</p>
+    <p style="font-size: 14.5pt; margin:0;">&ldquo;Monopolistic competition means the market is <em>partly a monopoly</em>.&rdquo;</p>
+  </div>
+  <div style="background: #eef6ef; border-radius: 10px; padding: 16px 24px; border-left: 5px solid var(--success-color);">
+    <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--success-color); font-weight: 700; margin-bottom: 5px;">The reality</p>
+    <p style="font-size: 14pt; margin:0;">Every firm has a <strong>tiny monopoly over its own specific variety</strong> &mdash; no one else sells the <em>exact</em> same cup as Ciao. But the market is <strong>fiercely competitive</strong> because close substitutes are everywhere. &ldquo;Monopolistic&rdquo; describes the firm's <em>perceived demand curve</em>, not the market's structure.</p>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="diff-location">
+  <h2><i class="fa-solid fa-location-dot" style="color: var(--secondary-color);"></i> Superior Location</h2>
+  <div style="text-align: center; margin-bottom: 8px;">
+    <img alt="Same Starbucks Grande: $3.65 at a captive transit-station store vs $2.95 in the suburbs" src="figures/pd_starbucks.webp" style="max-width: 100%; max-height: 410px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 14px rgba(0,0,0,0.16);">
+  </div>
+  <div class="key-result"><p style="margin:0;">Identical Grande coffee: <strong>$3.65</strong> at a captive transit-station store vs <strong>$2.95</strong> in the suburbs. A captive audience makes demand <strong>less elastic</strong> &rarr; a bigger markup. Location <em>is</em> differentiation.</p></div>
+</section>
+
+<section data-visibility="hidden" id="diff-branding">
+  <h2><i class="fa-solid fa-trademark" style="color: var(--accent-color);"></i> Branding &amp; Switching Costs</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
+    <div>
+      <p style="font-size: 13pt; margin-bottom: 9px;"><strong>Brand equity</strong> is the power of a name to bend demand and blunt price sensitivity &mdash; Interbrand values Apple's brand alone near <strong>$470B</strong> (2025).</p>
+      <div style="background: #eef3f6; border-radius: 10px; padding: 12px 18px; border-left: 5px solid var(--secondary-color); margin-bottom: 9px;">
+        <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--secondary-color); font-weight: 700; margin-bottom: 4px;">Definition</p>
+        <p style="font-size: 12.5pt; margin:0;"><strong>Switching costs</strong> &mdash; the time, money, and effort to move to a rival's product. Higher switching costs &rarr; less elastic demand &rarr; more market power.</p>
+      </div>
+      <p style="font-size: 12.5pt; margin:0;">Embed in Apple's ecosystem &mdash; iPhone, iCloud, Watch, Family Sharing &mdash; and each device raises your switching cost. A loyal customer won't jump for a small price gap. The curve steepens.</p>
+    </div>
+    <div style="text-align: center;">
+      <img alt="Brand-equity bubbles: Apple, Google, Microsoft, Amazon, NVIDIA" src="figures/fig-brand-equity.png" style="max-width: 100%; max-height: 400px; object-fit: contain;">
+    </div>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="diff-quality">
+  <h2><i class="fa-solid fa-gem" style="color: #7C3A5F;"></i> Quality &amp; Craftsmanship</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 4px;">
+    <div style="background: #eef3f6; border-radius: 10px; padding: 15px 18px; border-left: 4px solid var(--secondary-color);">
+      <p style="font-size: 13.5pt; font-weight: 700; color: var(--secondary-color); margin-bottom: 5px;">Market Basket</p>
+      <p style="font-size: 12.5pt; margin:0;">Competes on <strong>price</strong> &mdash; about <strong>15% below</strong> average.</p>
+    </div>
+    <div style="background: #f7f1ea; border-radius: 10px; padding: 15px 18px; border-left: 4px solid var(--accent-color);">
+      <p style="font-size: 13.5pt; font-weight: 700; color: var(--accent-color); margin-bottom: 5px;">Trader Joe's</p>
+      <p style="font-size: 12.5pt; margin:0;">~<strong>4,000 items</strong>, <strong>80% private-label</strong> exclusives you can't get elsewhere.</p>
+    </div>
+    <div style="background: #eef6ef; border-radius: 10px; padding: 15px 18px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 13.5pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;">Whole Foods</p>
+      <p style="font-size: 12.5pt; margin:0;"><strong>Organic</strong> certification and premium presentation.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 14px;"><p style="margin:0;">All three sell groceries. <strong>None sells the same product.</strong> Each carved a different niche &mdash; a different perceived demand curve &mdash; on the same shelf. Bespoke tailoring vs off-the-rack is the same story in clothing.</p></div>
+</section>
+
+<section data-visibility="hidden" id="diff-advertising">
+  <h2><i class="fa-solid fa-bullhorn" style="color: var(--danger-color);"></i> Advertising</h2>
+  <p style="font-size: 12.5pt; text-align: center; color: var(--muted-color); margin-bottom: 10px;">Two faces, two effects on the perceived demand curve</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
+    <div style="background: #eef6ef; border-radius: 10px; padding: 15px 22px; border-left: 4px solid var(--success-color);">
+      <p style="font-size: 13.5pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;">Informational</p>
+      <p style="font-size: 12pt; margin:0;"><strong>Function:</strong> reduces search costs.<br><strong>Effect:</strong> more informed buyers &rarr; <em>more</em> elastic demand, <em>more</em> competition. &ldquo;CRM software, $45/mo &mdash; click here.&rdquo;</p>
+    </div>
+    <div style="background: #fdf2f0; border-radius: 10px; padding: 15px 22px; border-left: 4px solid var(--danger-color);">
+      <p style="font-size: 13.5pt; font-weight: 700; color: var(--danger-color); margin-bottom: 5px;">Persuasive</p>
+      <p style="font-size: 12pt; margin:0;"><strong>Function:</strong> alters preferences / builds loyalty.<br><strong>Effect:</strong> <em>less</em> elastic demand, a steeper markup &mdash; a new phone when the old one works fine.</p>
+    </div>
+  </div>
+  <div class="key-result" style="margin-top: 13px;"><p style="margin:0;">Same ad budget, opposite effects on elasticity. The empirical question &mdash; does advertising inform or persuade? &mdash; has a surprisingly clean answer in the reading (§13.2's advertising discussion).</p></div>
+</section>
+
+<section data-visibility="hidden" id="diff-ad-signal">
+  <h2><i class="fa-solid fa-certificate" style="color: var(--accent-color);"></i> Advertising as a Signal of Quality</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 20px; align-items: center;">
+    <div>
+      <p style="font-size: 13pt; margin-bottom: 8px;">A Super Bowl ad can carry <strong>almost no information</strong> &mdash; yet the <strong>willingness to spend</strong> is itself the signal.</p>
+      <div class="key-result"><p style="margin:0;">Ads drive <strong>trials</strong>; quality drives <strong>repeat purchases</strong>. Only a firm expecting repeat buyers can recover an expensive ad &mdash; so the spend is credible <em>because a low-quality firm couldn't justify it.</em> <strong>The spend, not the content, is the message</strong> (Nelson).</p></div>
+    </div>
+    <div style="text-align: center;">
+      <img alt="Cost of a 30-second Super Bowl ad rising over time to roughly $7-8 million" src="figures/30s_ad.png" style="max-width: 100%; max-height: 330px; object-fit: contain; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.12);">
+      <p style="font-size: 11pt; color: var(--muted-color); margin-top: 6px;">A 30-second Super Bowl ad now runs ~$8M &mdash; justified only if the product brings buyers back.</p>
+    </div>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="poll-1">
+  <h2><i class="fa-solid fa-square-poll-vertical" style="color: var(--accent-color);"></i> Poll &mdash; Why Is the Ad a Credible Signal?</h2>
+  <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; border-left: 4px solid var(--secondary-color);">
+    <p style="font-size: 14pt; margin:0;">A startup pays <strong>$8 million</strong> for one Super Bowl ad. In Nelson's framework, why does that <em>credibly</em> signal quality to consumers?</p>
+  </div>
+  <div class="poll-grid" data-poll-id="ch13p1-econ2316-poll-1" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
+    <div class="poll-option" data-choice="A" style="background: #e3f2fd; border: 2px solid #3b82f6; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>A.</strong> It proves the firm is large and well-funded</p></div>
+    <div class="poll-option" data-choice="B" style="background: #e8f5e9; border: 2px solid #22c55e; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>B.</strong> Only a firm expecting repeat buyers can recover $8M &mdash; a bad product can't</p></div>
+    <div class="poll-option" data-choice="C" style="background: #fff7ed; border: 2px solid #f97316; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>C.</strong> The ad directly lowers the firm's marginal cost</p></div>
+    <div class="poll-option" data-choice="D" style="background: #f5e9f7; border: 2px solid #a855f7; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>D.</strong> Super Bowl ads are pre-screened for quality by the network</p></div>
+  </div>
+  <p style="font-size: 12.5pt; color: var(--muted-color); text-align: center; margin-top: 14px; font-style: italic;">Click your answer. Press <strong>&darr;</strong> for results.</p>
+</section>
+
+<section data-visibility="hidden" id="poll-1-reveal">
+  <h2><i class="fa-solid fa-chart-column" style="color: var(--accent-color);"></i> Poll Results</h2>
+  <div class="poll-results-chart" data-poll-id="ch13p1-econ2316-poll-1" style="display: flex; align-items: flex-end; justify-content: space-around; height: 200px; margin: 20px 0 40px 0; border-bottom: 2px solid #ddd; padding: 0 40px;"></div>
+  <div style="background: #ecfdf5; border-radius: 10px; padding: 16px 22px; border-left: 4px solid var(--success-color); margin-top: 12px;">
+    <p style="font-size: 14pt; margin:0;"><strong>Answer: B.</strong> The ad is credible because the cost is only <em>recoverable</em> through repeat purchases &mdash; which a low-quality product can't generate. The signal is in what the firm is <strong>willing to risk.</strong></p>
+    <p style="font-size: 12pt; margin-top: 8px; color: var(--muted-color);"><strong>A</strong> conflates deep pockets with quality; <strong>C/D</strong> describe mechanisms that don't exist.</p>
+  </div>
+</section>
+
+<section data-visibility="hidden" id="price-setter">
   <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> The Firm Is a Price-Setter, Not a Price-Taker</h2>
   <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
     <div>
@@ -459,7 +1201,7 @@
   <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; monopolistic competition is not &ldquo;a bit of monopoly&rdquo; in the market</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">The monopoly is over the firm&rsquo;s <em>own variety</em>, not over the market. Market concentration is low, entry is free, and the markup is thin &mdash; but it is genuinely positive. Both halves of the name are literally true, at different levels.</p></div>
 </section>
 
-<section id="mrmc-rule">
+<section data-visibility="hidden" id="mrmc-rule">
   <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> The Rule: \(MR_i(q_i) = MC(q_i)\), so \(P > MC\)</h2>
   <div style="display: grid; grid-template-columns: 0.80fr 1.20fr; gap: 16px; align-items: start;">
 
@@ -493,37 +1235,7 @@
   </div>
 </section>
 
-<section>
-<section id="poll-2">
-  <h2><i class="fa-solid fa-square-poll-vertical" style="color: var(--accent-color);"></i> Poll &mdash; What Happens Next?</h2>
-  <div style="background: #f8f6f3; border-radius: 10px; padding: 14px 20px; margin-bottom: 14px; border-left: 4px solid var(--secondary-color);">
-    <p style="font-size: 14pt; margin:0;">A campus coffee shop earns <strong>$250/day in economic profit</strong> on a differentiated cold brew. Entry barriers are low. What does the model predict over the next year?</p>
-  </div>
-  <div class="poll-grid" data-poll-id="ch13p1-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
-    <div class="poll-option" data-choice="A" style="background: #e3f2fd; border: 2px solid #3b82f6; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>A.</strong> Profit grows &mdash; its brand gives it lasting market power</p></div>
-    <div class="poll-option" data-choice="B" style="background: #e8f5e9; border: 2px solid #22c55e; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>B.</strong> New shops enter, each firm's perceived demand shifts left, profit &rarr; $0</p></div>
-    <div class="poll-option" data-choice="C" style="background: #fff7ed; border: 2px solid #f97316; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>C.</strong> Profit stays positive forever &mdash; the product is differentiated</p></div>
-    <div class="poll-option" data-choice="D" style="background: #f5e9f7; border: 2px solid #a855f7; border-radius: 8px; padding: 14px 18px; cursor: pointer;"><p style="font-size: 13pt; margin:0;"><strong>D.</strong> It should just raise price to capture more profit now</p></div>
-  </div>
-  <p style="font-size: 12.5pt; color: var(--muted-color); text-align: center; margin-top: 14px; font-style: italic;">Click your answer. Press <strong>&darr;</strong> for results.</p>
-</section>
-<section id="poll-2-reveal">
-  <h2><i class="fa-solid fa-chart-column" style="color: var(--accent-color);"></i> Poll Results</h2>
-  <div class="poll-results-chart" data-poll-id="ch13p1-econ2316-poll-2" style="display: flex; align-items: flex-end; justify-content: space-around; height: 200px; margin: 20px 0 40px 0; border-bottom: 2px solid #ddd; padding: 0 40px;"></div>
-  <div style="background: #ecfdf5; border-radius: 10px; padding: 16px 22px; border-left: 4px solid var(--success-color); margin-top: 12px;">
-    <p style="font-size: 14pt; margin:0;"><strong>Answer: B.</strong> Positive economic profit attracts entry. Each new differentiated rival steals a few customers, shifting the incumbent's perceived demand <strong>left and flatter</strong> until \(P = ATC\) and profit hits zero.</p>
-    <p style="font-size: 12pt; margin-top: 8px; color: var(--muted-color);"><strong>C</strong> is the trap: differentiation gives a downward demand curve, <em>not</em> immunity from entry. That's the whole point of the long-run tangency.</p>
-  </div>
-</section>
-</section>
-
-<section class="section-divider" data-state="is-section-divider" id="divider-longrun">
-  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; LO 4</p>
-  <h1>Long-Run Equilibrium &mdash; the Chamberlin Tangency</h1>
-  <p class="subtitle">Free entry pulls every firm to the point where perceived demand kisses ATC</p>
-</section>
-
-<section id="entry-exit">
+<section data-visibility="hidden" id="entry-exit">
   <h2><i class="fa-solid fa-right-left" style="color: var(--secondary-color);"></i> Entry Erodes Profit, Exit Erases Loss</h2>
   <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 20px; align-items: center;">
     <div>
@@ -542,7 +1254,7 @@
   </div>
 </section>
 
-<section id="tangency">
+<section data-visibility="hidden" id="tangency">
   <h2><i class="fa-solid fa-circle-dot" style="color: var(--accent-color);"></i> The Tangency Condition &mdash; Two Things at Once</h2>
   <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 20px; align-items: center;">
     <div style="text-align: center;">
@@ -561,30 +1273,7 @@
   <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; the tangency is not at minimum ATC</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">That is the perfect-competition long-run result, and it cannot happen here. Perceived demand slopes <em>down</em>; a downward line tangent to a U touches on the falling branch, strictly left of \(\min ATC\). If your diagram shows tangency at the bottom of the U, you have drawn a flat demand curve by accident.</p></div>
 </section>
 
-<section id="cc-13-1">
-  <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Calculus Corner &mdash; Tangency as a Calculus Condition</h2>
-  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start;">
-    <div>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 6px;">At the long-run free-entry equilibrium output \(q^{\ast}\), <strong>two equations</strong> hold:</p>
-      <div class="key-result" style="margin: 6px 0;">
-        <p style="margin: 0 0 4px; font-size: 13pt; text-align:center;">\(P^{d}(q^{\ast}) = ATC(q^{\ast})\) <span style="color: var(--muted-color); font-size: 11pt;">(matched value)</span></p>
-        <p style="margin: 0; font-size: 13pt; text-align:center;">\(\dfrac{dP^{d}}{dq}\Big|_{q^{\ast}} = \dfrac{dATC}{dq}\Big|_{q^{\ast}}\) <span style="color: var(--muted-color); font-size: 11pt;">(matched slope)</span></p>
-      </div>
-      <p style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;"><strong>Why matched slopes?</strong> At the entry margin, perceived demand cannot <em>cross</em> ATC &mdash; a crossing would leave a range of outputs with \(P^{d} > ATC\) (positive profit), inviting more entry. It can only <em>touch</em>. Tangent curves share a slope.</p>
-    </div>
-    <div>
-      <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color); margin-bottom: 9px;">
-        <p style="font-size: 12pt; margin:0;"><strong>The decisive contrast.</strong> In <em>perfect</em> competition the firm's demand is flat, so it is tangent to ATC at its <strong>minimum</strong>, where \(dATC/dq = 0\). There \(P = MC = \min ATC\).</p>
-      </div>
-      <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
-        <p style="font-size: 12pt; margin:0;">In monopolistic competition \(dP^{d}/dq < 0\), so the matched slope is <strong>negative</strong> &mdash; tangency lands on the <em>falling</em> branch of ATC, <strong>left</strong> of \(\min ATC\). That gap is the excess capacity, derived in one line.</p>
-      </div>
-      <p style="font-size: 11.5pt; color: var(--muted-color); margin: 9px 0 0; line-height: 1.4;">Combine with \(MR_i = MC\): since \(MR_i < P^{d} = ATC\), we get \(MC < ATC\) and \(P > MC\). The markup and the excess capacity fall out of the same two equations.</p>
-    </div>
-  </div>
-</section>
-
-<section id="misconception-zeroprofit">
+<section data-visibility="hidden" id="misconception-zeroprofit">
   <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Heads Up &mdash; Zero Economic Profit Is Not Breaking Even</h2>
   <div style="background: #fdf2f0; border-radius: 10px; padding: 15px 24px; border-left: 5px solid var(--danger-color); margin-bottom: 13px;">
     <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--danger-color); font-weight: 700; margin-bottom: 4px;">The myth</p>
@@ -596,30 +1285,7 @@
   </div>
 </section>
 
-<section id="walkthrough-13-1">
-  <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 13.1 &mdash; Coffee Shop, Short Run to Long Run</h2>
-  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
-    <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Problem.</strong> An independent coffee shop on Northeastern&rsquo;s campus has SR perceived demand \(P = 8 - 0.05q\) (lattes/day) and SR cost \(C(q) = 30 + 3.5q\). Find SR \((q_s, P_s, \pi_s)\). In the long run, entry shifts demand to \(P^{d}_l = 8 - 0.108q\) with LR \(ATC = \$4.20\) at the LR optimum. Verify the tangency and find the excess capacity.</p>
-  </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-    <div style="background: #f0f5f8; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Short run</p>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">\(\pi = (8 - 0.05q)q - (30 + 3.5q) = 4.5q - 0.05q^2 - 30\).</p>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">FOC \(4.5 - 0.10q = 0 \Rightarrow q_s = 45\), \(P_s = \$5.75\). \(\pi_s = \$71.25\)/day, \(L_s = (5.75-3.5)/5.75 = 0.391\).</p>
-    </div>
-    <div style="background: #fef9f3; border-radius: 8px; padding: 11px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 11pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin: 0;">Long run &amp; check</p>
-      <p class="fragment fade-up" data-fragment-index="3" style="font-size: 12pt; line-height: 1.5; margin: 6px 0 0;">\(\$71.25\)/day \(\approx \$26{,}000\)/yr of profit pulls in an entrant; perceived demand falls to \(P^{d}_l = 8 - 0.108q\).</p>
-      <p class="fragment fade-up" data-fragment-index="4" style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">Set \(P^{d}_l = ATC\): \(4.20 = 8 - 0.108q^{\ast} \Rightarrow q^{\ast} \approx 35\), \(P^{\ast} = \$4.20\). \(L_l = 0.70/4.20 = 0.167\).</p>
-      <p class="fragment fade-up" data-fragment-index="5" style="font-size: 12pt; line-height: 1.5; margin: 7px 0 0;">Min efficient scale \(\approx 50\) lattes/day; the shop runs at 35 &mdash; about <strong>30% excess capacity.</strong></p>
-    </div>
-  </div>
-  <div class="key-result fragment fade-up" data-fragment-index="6" style="margin-top: 11px; padding: 9px 16px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> The LR tangency shows both Chamberlin features: \(P > MC\) (markup, \(L_l = 0.167\)) <em>and</em> output below efficient scale (35 vs 50). Both arise because perceived demand slopes down &mdash; the shop keeps a monopoly core competition cannot fully erode.</p>
-  </div>
-</section>
-
-<section id="app-brewery">
+<section data-visibility="hidden" id="app-brewery">
   <h2><i class="fa-solid fa-beer-mug-empty" style="color: var(--secondary-color);"></i> Application: The Craft-Brewery Contraction in Real Time</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
     <div style="display: flex; flex-direction: column; gap: 9px;">
@@ -633,49 +1299,7 @@
   </div>
 </section>
 
-<section class="section-divider" data-state="is-section-divider" id="divider-excess">
-  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; LO 5</p>
-  <h1>Excess Capacity &amp; the Cost of Variety</h1>
-  <p class="subtitle">Zero profit, but not efficient &mdash; and that is the price of having choices</p>
-</section>
-
-<section id="excess-capacity">
-  <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color: var(--secondary-color);"></i> The Excess-Capacity Theorem</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-    <div>
-      <div style="background: #eef3f6; border-radius: 8px; padding: 12px 18px; border-left: 5px solid var(--secondary-color); margin-bottom: 10px;">
-        <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--secondary-color); font-weight: 700; margin-bottom: 4px;">Theorem</p>
-        <p style="font-size: 13pt; margin:0;">At the Chamberlin long-run tangency, <strong>\(P > MC\)</strong> (a positive markup persists) <strong>and</strong> firm output is below minimum efficient scale, <strong>\(q^{\ast} < q_{\min ATC}\)</strong> (excess capacity).</p>
-      </div>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin:0;">Both follow from one fact: perceived demand is <strong>downward-sloping</strong> at the equilibrium. A downward line tangent to a U-shaped ATC <em>must</em> touch on the falling branch &mdash; geometrically unavoidable, as the Calculus Corner showed.</p>
-    </div>
-    <div style="text-align: center;">
-      <img alt="Excess capacity: tangency output sits left of minimum-ATC output, with a positive markup P > MC" src="figures/fig-excess-capacity.png" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 8px; box-shadow: 0 3px 14px rgba(0,0,0,0.14);">
-    </div>
-  </div>
-  <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; excess capacity does not mean idle machines or a failing firm</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">It means the firm produces at a scale where ATC is still falling &mdash; it <em>could</em> lower average cost by expanding, but selling more requires cutting price on every unit, which is not worth it. Every shop is busy; the industry simply runs more, smaller producers than cost minimization alone would pick.</p></div>
-</section>
-
-
-<section id="markup">
-  <h2><i class="fa-solid fa-tag" style="color: var(--secondary-color);"></i> The Markup: \(P > MC\)</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center;">
-    <div>
-      <div style="background: #eef3f6; border-radius: 10px; padding: 14px 22px; border-left: 5px solid var(--secondary-color); margin-bottom: 11px;">
-        <p style="font-size: 11pt; letter-spacing: 1px; text-transform: uppercase; color: var(--secondary-color); font-weight: 700; margin-bottom: 4px;">Definition</p>
-        <p style="font-size: 14pt; margin:0;"><strong>Markup</strong> \(= P - MC > 0\) in monopolistic competition; the Lerner index \(L = (P-MC)/P\) stays positive.</p>
-      </div>
-      <p style="font-size: 13pt;">A positive markup means some transactions that would benefit <em>both</em> buyer and seller never happen &mdash; a customer who values a cup between \(MC\) and \(P\) walks away. That is the allocative inefficiency.</p>
-      <p style="font-size: 12pt; color: var(--muted-color); margin-top: 9px;">Contrast: perfect competition drives \(P = MC\), so no such gap exists.</p>
-    </div>
-    <div style="text-align: center;">
-      <img alt="The markup over marginal cost in monopolistic competition" src="figures/ch12-markup.png" style="max-width: 100%; max-height: 400px; object-fit: contain; border-radius: 10px; box-shadow: 0 3px 14px rgba(0,0,0,0.16);">
-    </div>
-  </div>
-  <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; \(P > MC\) does not imply positive economic profit</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">Markup compares price with <em>marginal</em> cost; profit compares price with <em>average total</em> cost. At the long-run tangency \(P = ATC\) (zero profit) while \(P > MC\) (positive markup) &mdash; simultaneously. Students routinely convert a markup into a profit; the tangency diagram is the counterexample.</p></div>
-</section>
-
-<section id="variety-tradeoff">
+<section data-visibility="hidden" id="variety-tradeoff">
   <h2><i class="fa-solid fa-scale-balanced" style="color: var(--accent-color);"></i> Is It Inefficient? Variety vs. Efficiency</h2>
   <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 22px; align-items: center;">
     <div>
@@ -690,8 +1314,7 @@
   <div class="misconception" style="margin: 12px 0 0;"><p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up &mdash; &ldquo;inefficient&rdquo; here is a narrower claim than it sounds</p><p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.5;">Relative to the \(P = MC\), \(\min ATC\) benchmark, monopolistic competition <em>is</em> allocatively and productively inefficient. But that benchmark offers one product. The welfare comparison against a world with less variety is genuinely ambiguous &mdash; Spence and Dixit&ndash;Stiglitz show entry can be either excessive or insufficient.</p></div>
 </section>
 
-
-<section id="think-single-app">
+<section data-visibility="hidden" id="think-single-app">
   <h2><i class="fa-solid fa-lightbulb" style="color: var(--accent-color);"></i> Think Like an Economist</h2>
   <div style="background: #f7f1ea; border-radius: 12px; padding: 22px 30px; border-left: 5px solid var(--accent-color);">
     <p style="font-size: 15pt; margin-bottom: 12px;">Suppose the government mandated a <strong>single, standardized note-taking app</strong> for all phones &mdash; one app, maximum efficiency, lowest possible cost per user.</p>
@@ -700,13 +1323,7 @@
   <p style="font-size: 12.5pt; color: var(--muted-color); margin-top: 14px; text-align: center;">Efficiency would rise &mdash; but variety, experimentation, and the match to different users' needs would vanish. That trade-off <em>is</em> monopolistic competition. (60-second turn-and-talk.)</p>
 </section>
 
-<section class="section-divider" data-state="is-section-divider" id="divider-action">
-  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;13.2 &middot; Wrap-up</p>
-  <h1>Monopolistic Competition in Action</h1>
-  <p class="subtitle">The cycle, everywhere you look &mdash; then on to oligopoly</p>
-</section>
-
-<section id="four-structures">
+<section data-visibility="hidden" id="four-structures">
   <h2><i class="fa-solid fa-table-cells" style="color: var(--accent-color);"></i> The Four Structures, Side by Side</h2>
   <table style="width: 100%; border-collapse: collapse; font-size: 11.5pt; margin-top: 4px;">
     <thead>
@@ -731,35 +1348,6 @@
 </section>
 
 
-<section id="summary">
-  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Chapter 13, Part 1 &mdash; The Five Results</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="margin: 0; font-size: 11.5pt;"><strong>The structure.</strong> Many firms, differentiated products, free entry, independent decisions. Differentiation is the boundary with perfect competition; independence is the boundary with oligopoly.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 11.5pt;"><strong>Short run.</strong> Differentiation bends demand down, so \(MR_i &lt; P\). The firm maximizes at \(MR_i = MC\) and prices off \(P^{d}\), leaving \(P > MC\) &mdash; the Ch 11 rule on the firm's own perceived demand.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--success-color);">
-      <p style="margin: 0; font-size: 11.5pt;"><strong>Long run.</strong> Free entry drives economic profit to zero at the <strong>Chamberlin tangency</strong>: matched value \(P^{d} = ATC\) <em>and</em> matched slope \(dP^{d}/dq = dATC/dq\).</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--danger-color);">
-      <p style="margin: 0; font-size: 11.5pt;"><strong>Excess capacity.</strong> A downward line tangent to a U must touch on the falling branch, so \(q^{\ast} &lt; q_{\min ATC}\) &mdash; excess capacity <em>and</em> a persistent markup, together.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="margin: 0; font-size: 11.5pt;"><strong>The trade-off.</strong> Firms differentiate on location, branding, packaging, quality, service, and advertising. The markup and the idle capacity are the price of variety &mdash; net welfare is ambiguous (Spence; Dixit&ndash;Stiglitz; Mankiw&ndash;Whinston).</p>
-    </div>
-  </div>
-  <div class="key-result" style="margin-top: 11px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>One spine.</strong> Zero economic profit, a positive markup, and excess capacity all hold <em>at the same point</em>. They feel contradictory only until you see that one downward-sloping curve tangent to one U-shaped curve forces all three at once.</p>
-  </div>
-</section>
-
-<section class="section-divider" data-state="is-section-divider" id="qa">
-  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Chapter 13, Part 1 &mdash; complete</p>
-  <h1>Questions?</h1>
-  <p class="subtitle">Next: Chapter 13, Part 2 &mdash; Oligopoly. Drop characteristic #4, independence. Make a few firms watch each other and you get strategic interaction: Cournot, Bertrand, Stackelberg, and the cartel bound.</p>
-</section>
 
 
 </div>

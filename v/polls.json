@@ -45,8 +45,10 @@
   "ch12-econ2316-poll-student-price": "12-1",
   "ch12-econ2316-poll-uber-pricing": "12-4",
   "ch13-econ2316-poll-2": "13p2-1",
-  "ch13p1-econ2316-poll-1": "13p1-1",
-  "ch13p1-econ2316-poll-2": "13p1-2",
+  "ch13-econ2316-poll-ads-per-day": "13p1-1",
+  "ch13-econ2316-poll-host-profit": "13p1-3",
+  "ch13-econ2316-poll-superbowl": "13p1-2",
+  "ch13p1-econ2316-poll-1": "13p1-4",
   "ch14-econ2316-poll-3": "14-1",
   "ch15-econ2316-poll-1": "15-1",
   "ch15-econ2316-poll-2": "15-2",
@@ -110,11 +112,19 @@
   ],
   "13p1-1": [
    "ch13-part1-monopolistic-competition",
-   "ch13p1-econ2316-poll-1"
+   "ch13-econ2316-poll-ads-per-day"
   ],
   "13p1-2": [
    "ch13-part1-monopolistic-competition",
-   "ch13p1-econ2316-poll-2"
+   "ch13-econ2316-poll-superbowl"
+  ],
+  "13p1-3": [
+   "ch13-part1-monopolistic-competition",
+   "ch13-econ2316-poll-host-profit"
+  ],
+  "13p1-4": [
+   "ch13-part1-monopolistic-competition",
+   "ch13p1-econ2316-poll-1"
   ],
   "13p2-1": [
    "ch13-part2-oligopoly",

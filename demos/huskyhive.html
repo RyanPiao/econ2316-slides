@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>HuskyHive Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a mock app window (left) beside the economist's control desk (right); stacks on phones. Hexagon = hive cells. */
+:root{
+  --bg:#eef1f4; --panel:#ffffff; --ink:#1d2430; --muted:#5d6675; --line:#d6dbe3;
+  --hive:#d98a1c; --hive-soft:#fbefdc; --slate:#22303f; --good:#2f8a57; --bad:#b84a3c; --blue:#3567b5;
+  --f-display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --f-body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12161c; --panel:#1b222b; --ink:#e7ebf0; --muted:#9aa4b2; --line:#2c3642;
+  --hive:#f0a43a; --hive-soft:#2e2414; --slate:#0c1117; --good:#4cb67a; --bad:#e0705f; --blue:#78a2e6; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#12161c; --panel:#1b222b; --ink:#e7ebf0; --muted:#9aa4b2; --line:#2c3642;
+  --hive:#f0a43a; --hive-soft:#2e2414; --slate:#0c1117; --good:#4cb67a; --bad:#e0705f; --blue:#78a2e6; color-scheme:dark }
+*{box-sizing:border-box}
+img{max-width:100%}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.45;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:18px 28px}
+.wrap{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.05fr 0.95fr; gap:18px}
+@media (max-width:900px){ .wrap{grid-template-columns:1fr} }
+.note{max-width:1180px; margin:0 auto 12px; font-size:13px; color:var(--muted)}
+.note b{color:var(--ink)}
+.app{background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden; min-width:0}
+.bar{background:var(--slate); color:#fff; display:flex; align-items:center; gap:12px; padding:12px 16px}
+.logo{display:flex; align-items:center; gap:9px; font-family:var(--f-display); font-weight:800; font-size:22px; letter-spacing:-.01em}
+.logo svg{flex:none}
+.bar .online{margin-left:auto; font-family:var(--f-mono); font-size:13px; background:rgba(255,255,255,.1); padding:4px 10px; border-radius:999px}
+.dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:#5fd38d; margin-right:6px; vertical-align:middle}
+.dot.off{background:#e0705f}
+.stats{display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--line)}
+@media (max-width:520px){ .stats{grid-template-columns:repeat(2,1fr)} }
+.stat{padding:12px 14px; border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .k{font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted)}
+.stat .v{font-family:var(--f-mono); font-weight:700; font-size:20px; font-variant-numeric:tabular-nums}
+.body{display:grid; grid-template-columns:1fr 1fr; gap:0}
+@media (max-width:520px){ .body{grid-template-columns:1fr} }
+.col{padding:14px 16px; min-width:0}
+.col + .col{border-left:1px solid var(--line)}
+h3{font-family:var(--f-display); font-size:16px; margin:0 0 8px; font-weight:600}
+.chat{display:flex; flex-direction:column; gap:8px; min-height:200px}
+.msg{padding:8px 11px; border-radius:10px; font-size:14px; max-width:95%}
+.msg.me{align-self:flex-end; background:var(--hive-soft); border:1px solid var(--line)}
+.msg.bot{background:var(--bg); border:1px solid var(--line)}
+.msg .src{display:block; margin-top:4px; font-size:12px; color:var(--muted)}
+.ask{display:flex; gap:6px; margin-top:10px; flex-wrap:wrap}
+.ask button{font:inherit; font-size:13px; padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:var(--panel); color:var(--ink); cursor:pointer}
+.ask button:hover,.ask button:focus-visible{border-color:var(--hive); outline:none}
+.groups{display:flex; flex-direction:column; gap:7px}
+.group{display:flex; justify-content:space-between; gap:8px; align-items:center; padding:8px 10px; border:1px solid var(--line); border-radius:9px; font-size:14px}
+.group .n{font-family:var(--f-mono); font-size:12px; color:var(--muted); white-space:nowrap}
+.empty{font-size:14px; color:var(--muted); padding:10px; border:1px dashed var(--line); border-radius:9px}
+.hexes{display:flex; flex-wrap:wrap; gap:3px; margin-top:10px}
+.hex{width:12px; height:13px; clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%); background:var(--line)}
+.hex.on{background:var(--hive)}
+.cap{font-size:12px; color:var(--muted); margin-top:4px}
+.desk{display:flex; flex-direction:column; gap:14px; min-width:0}
+.card{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px 16px}
+.card h2{font-family:var(--f-display); font-weight:800; font-size:19px; margin:0 0 4px; text-wrap:balance}
+.card p{margin:0 0 8px; color:var(--muted); font-size:14px}
+label{display:flex; justify-content:space-between; font-weight:600; font-size:14px; margin-top:10px}
+label span{font-family:var(--f-mono); font-variant-numeric:tabular-nums}
+input[type=range]{width:100%; accent-color:var(--hive)}
+.verdict{margin-top:10px; padding:10px 12px; border-radius:10px; font-size:15px; border:1px solid var(--line)}
+.verdict.join{background:color-mix(in srgb, var(--good) 12%, var(--panel)); border-color:var(--good)}
+.verdict.pass{background:color-mix(in srgb, var(--bad) 10%, var(--panel)); border-color:var(--bad)}
+.formula{font-family:var(--f-mono); font-size:13px; color:var(--muted); margin-top:4px}
+.btns{display:grid; grid-template-columns:1fr; gap:7px; margin-top:8px}
+.btns button{font:inherit; font-weight:600; font-size:14px; text-align:left; padding:9px 12px; border-radius:10px; border:1px solid var(--line); background:var(--bg); color:var(--ink); cursor:pointer}
+.btns button:hover,.btns button:focus-visible{border-color:var(--hive); outline:none}
+.btns small{display:block; font-weight:400; color:var(--muted)}
+canvas{width:100%; height:auto; display:block; max-width:100%}
+.legend{display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:var(--muted); margin-top:4px}
+.sw{display:inline-block; width:14px; height:3px; vertical-align:middle; margin-right:5px}
+.status{font-size:14px; min-height:21px; margin-top:6px}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<p class="note"><b>Classroom demo.</b> HuskyHive is the made-up start-up from ECON 2316 Chapter 12, not a real app. Drag <b>Huskies on the app</b> and watch every part of the product get better: that is a network good.</p>
+
+<div class="wrap">
+  <section class="app" aria-label="HuskyHive app mock">
+    <div class="bar">
+      <div class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><polygon points="14,2 25,8 25,20 14,26 3,20 3,8" fill="#f0a43a"/><polygon points="14,8 19,11 19,17 14,20 9,17 9,11" fill="#22303f"/></svg>
+        HuskyHive
+      </div>
+      <span class="online" id="online"><span class="dot" id="dot"></span><span id="onlineTxt">0 Huskies online</span></span>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="k">Huskies on the app</div><div class="v" id="sN">0</div></div>
+      <div class="stat"><div class="k">Q&amp;A library</div><div class="v" id="sQ">0</div></div>
+      <div class="stat"><div class="k">Study groups open</div><div class="v" id="sG">0</div></div>
+      <div class="stat"><div class="k">Wait for a partner</div><div class="v" id="sW">never</div></div>
+    </div>
+    <div class="body">
+      <div class="col">
+        <h3>Ask the AI tutor</h3>
+        <div class="chat" id="chat" aria-live="polite"></div>
+        <div class="ask">
+          <button type="button" id="q1">What is a network good?</button>
+          <button type="button" id="q2">Help with the tipping point</button>
+          <button type="button" id="q3">Anyone studying Ch 12 tonight?</button>
+        </div>
+      </div>
+      <div class="col">
+        <h3>Study groups near you</h3>
+        <div class="groups" id="groups"></div>
+        <div class="hexes" id="hexes" aria-hidden="true"></div>
+        <div class="cap">Each cell = 100 Huskies. Filled cells are on the app.</div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="desk">
+    <div class="card">
+      <h2>Would you join at this price?</h2>
+      <p>Your value depends on how eager you are <em>and</em> on how many others are on the app.</p>
+      <label for="n">Huskies on the app, N <span id="nOut">2,000</span></label>
+      <input type="range" id="n" min="0" max="10000" step="100" value="2000">
+      <label for="x">Your eagerness rank, x <span id="xOut">2,000th</span></label>
+      <input type="range" id="x" min="0" max="10000" step="100" value="2000">
+      <label for="p">Price per month <span id="pOut">$8</span></label>
+      <input type="range" id="p" min="0" max="15" step="0.5" value="8">
+      <div class="formula" id="formula"></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+    <div class="card">
+      <h2>Launch it: does it tip?</h2>
+      <p>Each round, a Husky joins if the last one in values the app above the price, and leaves if below.</p>
+      <canvas id="chart" width="560" height="300" aria-label="Network demand curve with the price line, tipping point b and stable point d"></canvas>
+      <div class="legend"><span><span class="sw" style="background:var(--hive)"></span>network demand: what the last Husky to join will pay</span><span><span class="sw" style="background:var(--blue)"></span>price</span></div>
+      <div class="btns">
+        <button type="button" id="run0">Charge $8 on day one<small>Start at 0 Huskies</small></button>
+        <button type="button" id="run1">Start with 1,500, charge $8<small>Just below the tipping point b</small></button>
+        <button type="button" id="run2">Give it away to 2,500, then charge $8<small>Just past b</small></button>
+      </div>
+      <div class="status" id="status" aria-live="polite"></div>
+    </div>
+  </aside>
+</div>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const fmt=n=>Math.round(n).toLocaleString('en-US');
+  const money=v=>'$'+(Math.round(v*100)/100).toFixed(v%1?2:0);
+  const css=name=>getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const value=(N,x)=>Math.max(0,5*(N/1000)*(1-(x/1000)/10));      // 5N(1 - x/10), N and x in thousands
+  const lastValue=N=>value(N,N);                                    // the last Husky to join
+  let N=2000, anim=null;
+
+  const hexes=$('hexes'); for(let i=0;i<100;i++){const h=document.createElement('div'); h.className='hex'; hexes.appendChild(h);}
+
+  const groupNames=['ECON 2316 · Ch 12 pricing','ECON 2316 · problem set 6','CS 2500 · fundamentals','MATH 1342 · Calc 2 review','CHEM 1211 · exam 3','PHYS 1151 · lab report','ECON 1116 · elasticity','DS 3000 · pandas help'];
+  function render(){
+    const k=N/1000;
+    $('sN').textContent=fmt(N);
+    $('onlineTxt').textContent=fmt(N*0.12)+' Huskies online';
+    $('dot').className='dot'+(N<100?' off':'');
+    $('sQ').textContent=fmt(N*3.2);
+    const groups=Math.floor(N/250);
+    $('sG').textContent=fmt(groups);
+    $('sW').textContent=N<100?'never':(N<1000?Math.round(60*1000/N)+' min':Math.max(1,Math.round(120000/N/10))+' min');
+    [...hexes.children].forEach((h,i)=>h.classList.toggle('on',i<Math.round(N/100)));
+    const g=$('groups'); g.innerHTML='';
+    if(groups===0){ g.innerHTML='<div class="empty">No study groups yet. Invite a friend to start one.</div>'; }
+    else groupNames.slice(0,Math.min(groupNames.length,groups)).forEach((nm,i)=>{
+      const d=document.createElement('div'); d.className='group';
+      d.innerHTML='<span>'+nm+'</span><span class="n">'+Math.max(2,Math.round(3+k*1.4-i*.4))+' Huskies</span>'; g.appendChild(d);});
+    const x=+$('x').value, p=+$('p').value;
+    $('nOut').textContent=fmt(N); $('xOut').textContent=x===0?'most eager':fmt(x)+'th'; $('pOut').textContent=money(p);
+    const v=value(N,x);
+    $('formula').textContent='Your value = 5 × '+(N/1000).toFixed(1)+' × (1 − '+(x/1000).toFixed(1)+'/10) = '+money(v)+' a month';
+    const vd=$('verdict');
+    if(v>=p){ vd.className='verdict join'; vd.innerHTML='<b>You join.</b> HuskyHive is worth '+money(v)+' to you and costs '+money(p)+'.'; }
+    else { vd.className='verdict pass'; vd.innerHTML='<b>You pass.</b> HuskyHive is worth only '+money(v)+' to you at '+money(p)+'. More Huskies would change that.'; }
+    draw(p);
+  }
+
+  function answer(kind){
+    const k=N/1000, chat=$('chat');
+    const me=document.createElement('div'); me.className='msg me';
+    const bot=document.createElement('div'); bot.className='msg bot';
+    const Q={1:'What is a network good?',2:'Help with the tipping point',3:'Anyone studying Ch 12 tonight?'}[kind];
+    me.textContent=Q;
+    let a, src;
+    if(N<300){ a=kind===3?'Nobody is online for Ch 12 right now.':'I have not seen enough questions on this course yet, so here is a generic answer from the textbook.'; src='Based on '+fmt(N*3.2)+' answered questions';}
+    else if(N<3000){ a=kind===1?'A good whose value grows with the number of users. Example: this app. More Huskies, more answers, better groups.':kind===2?'Point b is where the last user values the app at exactly the price. Below it, users leave; above it, they join.':'A few Huskies are around: '+Math.max(2,Math.round(k*3))+' in ECON 2316 tonight.'; src='Based on '+fmt(N*3.2)+' answered questions from Huskies';}
+    else { a=kind===1?'A network good: each new Husky makes it better for everyone. Here are 3 worked problems other ECON 2316 students rated most helpful.':kind===2?'At $8, b = 2,000 and d = 8,000. Students who asked this also asked about Facebook campus by campus. Want the 2-minute version?':Math.round(k*4)+' Huskies in ECON 2316 are on now. 2 groups meet at 7 pm in Snell. Join one?'; src='Based on '+fmt(N*3.2)+' answered questions from Huskies in your courses';}
+    bot.innerHTML=a+'<span class="src">'+src+'</span>';
+    chat.appendChild(me); chat.appendChild(bot);
+    while(chat.children.length>4) chat.removeChild(chat.firstChild);
+  }
+  $('q1').onclick=()=>answer(1); $('q2').onclick=()=>answer(2); $('q3').onclick=()=>answer(3);
+
+  const cv=$('chart'), cx=cv.getContext('2d');
+  function draw(p){
+    const W=cv.width,H=cv.height,L=46,R=16,T=14,B=36, PM=14;
+    const X=n=>L+(W-L-R)*n/10000, Y=v=>T+(H-T-B)*(1-v/PM);
+    cx.clearRect(0,0,W,H);
+    cx.fillStyle=css('--panel'); cx.fillRect(0,0,W,H);
+    cx.strokeStyle=css('--muted'); cx.lineWidth=1.2; cx.beginPath(); cx.moveTo(L,T); cx.lineTo(L,H-B); cx.lineTo(W-R,H-B); cx.stroke();
+    cx.fillStyle=css('--muted'); cx.font='12px '+css('--f-mono');
+    cx.textAlign='right'; [0,4,8,12].forEach(v=>{cx.fillText('$'+v,L-6,Y(v)+4);});
+    cx.textAlign='center'; [0,2000,5000,8000,10000].forEach(n=>{cx.fillText(n===0?'0':(n/1000)+'k',X(n),H-B+16);});
+    cx.fillText('Huskies on the app',(L+W-R)/2,H-4);
+    cx.strokeStyle=css('--hive'); cx.lineWidth=3; cx.beginPath();
+    for(let n=0;n<=10000;n+=50){const y=Y(lastValue(n)); n?cx.lineTo(X(n),y):cx.moveTo(X(n),y);} cx.stroke();
+    cx.strokeStyle=css('--blue'); cx.lineWidth=2; cx.setLineDash([6,4]); cx.beginPath(); cx.moveTo(L,Y(p)); cx.lineTo(W-R,Y(p)); cx.stroke(); cx.setLineDash([]);
+    const disc=25-2*p;
+    if(disc>=0){ const r=Math.sqrt(disc); [[5-r,'b'],[5+r,'d']].forEach(([n,lab])=>{ if(n<0||n>10)return; cx.fillStyle=css('--ink'); cx.beginPath(); cx.arc(X(n*1000),Y(p),4.5,0,7); cx.fill(); cx.textAlign='center'; cx.font='bold 13px '+css('--f-body'); cx.fillText(lab,X(n*1000),Y(p)-10); }); }
+    cx.fillStyle=css('--bad'); cx.beginPath(); cx.arc(X(N),Y(lastValue(N)),6.5,0,7); cx.fill();
+    cx.fillStyle=css('--ink'); cx.textAlign='left'; cx.font='12px '+css('--f-mono');
+    const lx=Math.min(X(N)+9,W-R-110); cx.fillText('now: '+fmt(N),lx,Math.min(H-B-6,Y(lastValue(N))+20));
+  }
+
+  function run(start){
+    if(anim) cancelAnimationFrame(anim);
+    $('p').value=8; N=start; $('n').value=N; render();
+    let steps=0; const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const tick=()=>{
+      const p=+$('p').value, gap=lastValue(N)-p;
+      const nn=Math.max(0,Math.min(10000,N+gap*90));
+      const done=Math.abs(nn-N)<4||steps>400;
+      N=nn; steps++; $('n').value=Math.round(N/100)*100; render();
+      if(done||reduce){
+        N=reduce?(start<2000?0:8000):Math.round(N/100)*100; $('n').value=N; render();
+        const end=Math.round(N/100)*100;
+        $('status').innerHTML=end<100?'<b style="color:var(--bad)">Stuck at 0.</b> Below b nobody values it at $8, so the network empties: a vicious cycle.':'<b style="color:var(--good)">Settles at '+fmt(end)+' (d).</b> Past b each new Husky makes it worth more: a virtuous cycle. Revenue: '+fmt(end*8)+' dollars a month.';
+        anim=null; return; }
+      anim=requestAnimationFrame(tick);
+    };
+    $('status').textContent='Running…'; tick();
+  }
+  $('run0').onclick=()=>run(0); $('run1').onclick=()=>run(1500); $('run2').onclick=()=>run(2500);
+
+  $('n').oninput=e=>{ if(anim){cancelAnimationFrame(anim);anim=null;} N=+e.target.value; render(); };
+  $('x').oninput=render; $('p').oninput=render;
+  answer(2); render();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
+})();
+</script>
+</body>
+</html>

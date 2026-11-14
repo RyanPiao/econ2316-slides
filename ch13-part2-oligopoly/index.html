@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=d03d37fc9f92386aa8bc7fa779bc82af">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=3e3a1f98890494bdbe46ec198d622d32">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Oligopoly &mdash; ECON 2316 Ch 13 (Part 2)</title>
@@ -130,47 +130,86 @@
 </section>
 
 <section id="opener">
-  <h2><i class="fa-solid fa-users" style="color: var(--accent-color);"></i> Three Oligopolies, One Question</h2>
-  <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: start;">
-    <div style="display: flex; flex-direction: column; gap: 8px;">
-      <div style="background: #f8f6f3; border-radius: 8px; padding: 9px 15px; border-left: 4px solid var(--secondary-color);"><p style="font-size: 12.5pt; margin: 0;"><strong>Oil.</strong> OPEC+ &mdash; a handful of national producers plus a US-shale fringe. When Saudi cuts output, rivals respond; in April 2026 eight members began unwinding a 1.65 mb/d cut. A first-mover commitment game (&sect;13.6).</p></div>
-      <div style="background: #f8f6f3; border-radius: 8px; padding: 9px 15px; border-left: 4px solid var(--accent-color);"><p style="font-size: 12.5pt; margin: 0;"><strong>Pharma.</strong> Wegovy vs Zepbound &mdash; two firms at \$1,349 and \$1,086/mo holding four-figure markups because the drugs differ, not because they collude (&sect;13.5).</p></div>
-      <div style="background: #f8f6f3; border-radius: 8px; padding: 9px 15px; border-left: 4px solid var(--success-color);"><p style="font-size: 12.5pt; margin: 0;"><strong>Streaming.</strong> Four paid platforms cluster within a dollar. Perfect competition would drive price to the \$8.40 royalty cost; monopoly would push to \$11.99 at \(L = 0.30\). They do <em>neither.</em></p></div>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-      <div class="stat-card accent"><p class="num">\$11.99</p><p class="lbl">Spotify (290M subs)</p></div>
-      <div class="stat-card"><p class="num">\$10.99</p><p class="lbl">Apple Music</p></div>
-      <div class="stat-card sage"><p class="num">\$11.99</p><p class="lbl">Amazon (\$10.99 Prime)</p></div>
-      <div class="stat-card rose"><p class="num">\$10.99</p><p class="lbl">YouTube Music (Q4 2025)</p></div>
-    </div>
+ <h2><i class="fa-solid fa-music" style="color: var(--secondary-color);"></i> Music Streaming &mdash; Four Firms, Four \$1 Raises</h2>
+ <div style="display:grid; grid-template-columns: 2.05fr 1fr; gap:16px; align-items:start;">
+  <div class="mathjax_ignore tex2jax_ignore" style="background:#f8f6f3; border-radius:10px; border-left:4px solid var(--muted-color); padding:8px 6px 2px 4px;">
+   <svg viewBox="0 0 760 360" style="width:100%; max-height:400px; display:block;" role="img" aria-label="Step chart of four music-streaming prices in 2026, each rising by one dollar">
+   <line x1="70" y1="268.3" x2="584" y2="268.3" stroke="#D5CEC7" stroke-width="1" stroke-dasharray="2 4"/>
+   <text x="62" y="272.3" text-anchor="end" font-size="15" fill="#4A4F57" font-weight="700">$10.99</text>
+   <line x1="70" y1="166.9" x2="584" y2="166.9" stroke="#D5CEC7" stroke-width="1" stroke-dasharray="2 4"/>
+   <text x="62" y="170.9" text-anchor="end" font-size="15" fill="#4A4F57" font-weight="700">$11.99</text>
+   <line x1="70" y1="65.4" x2="584" y2="65.4" stroke="#D5CEC7" stroke-width="1" stroke-dasharray="2 4"/>
+   <text x="62" y="69.4" text-anchor="end" font-size="15" fill="#4A4F57" font-weight="700">$12.99</text>
+   <line x1="70" y1="28" x2="70" y2="318" stroke="#374151" stroke-width="1.4"/><line x1="70" y1="318" x2="588" y2="318" stroke="#374151" stroke-width="1.4"/>
+   <text x="72.0" y="338" font-size="14" fill="#8C8580">Jan</text>
+   <text x="121.0" y="338" font-size="14" fill="#8C8580">Feb</text>
+   <text x="169.9" y="338" font-size="14" fill="#8C8580">Mar</text>
+   <text x="218.9" y="338" font-size="14" fill="#8C8580">Apr</text>
+   <text x="267.8" y="338" font-size="14" fill="#8C8580">May</text>
+   <text x="316.8" y="338" font-size="14" fill="#8C8580">Jun</text>
+   <text x="365.7" y="338" font-size="14" fill="#8C8580">Jul</text>
+   <text x="414.7" y="338" font-size="14" fill="#8C8580">Aug</text>
+   <text x="463.6" y="338" font-size="14" fill="#8C8580">Sep</text>
+   <text x="512.6" y="338" font-size="14" fill="#8C8580">Oct</text>
+   <text x="561.5" y="338" font-size="14" fill="#8C8580">Nov</text>
+   <text x="588" y="358" text-anchor="end" font-size="14" fill="#8C8580">2026 &#183; US individual plan, per month</text>
+   <line x1="70" y1="159.9" x2="93.0" y2="159.9" stroke="#6A8E6B" stroke-width="3.2"/>
+   <line x1="93.0" y1="159.9" x2="584" y2="159.9" stroke="#6A8E6B" stroke-width="1.4" stroke-dasharray="2 4" opacity="0.55"/>
+   <line x1="70" y1="173.9" x2="122.4" y2="173.9" stroke="#6B8BA4" stroke-width="3.2"/>
+   <line x1="122.4" y1="173.9" x2="584" y2="173.9" stroke="#6B8BA4" stroke-width="1.4" stroke-dasharray="2 4" opacity="0.55"/>
+   <line x1="70" y1="261.3" x2="231.5" y2="261.3" stroke="#A85C5C" stroke-width="3.2"/>
+   <line x1="231.5" y1="261.3" x2="584" y2="261.3" stroke="#A85C5C" stroke-width="1.4" stroke-dasharray="2 4" opacity="0.55"/>
+   <line x1="70" y1="275.3" x2="389.7" y2="275.3" stroke="#C47B5A" stroke-width="3.2"/>
+   <line x1="389.7" y1="275.3" x2="584" y2="275.3" stroke="#C47B5A" stroke-width="1.4" stroke-dasharray="2 4" opacity="0.55"/>
+   <g class="fragment fade-up" data-fragment-index="1"><line x1="93.0" y1="159.9" x2="93.0" y2="58.4" stroke="#6A8E6B" stroke-width="3.2"/><line x1="93.0" y1="58.4" x2="584" y2="58.4" stroke="#6A8E6B" stroke-width="3.2"/><circle cx="93.0" cy="58.4" r="4.5" fill="#6A8E6B"/><rect x="80.4" y="29.0" width="92" height="21" rx="10" fill="#fff" stroke="#6A8E6B" stroke-width="1.2"/><text x="89.4" y="45.0" font-size="14" font-weight="700" fill="#6A8E6B">+$1 &#183; Jan 15</text><text x="592" y="59.4" font-size="14" font-weight="700" fill="#6A8E6B">Spotify</text></g>
+   <g class="fragment fade-up" data-fragment-index="2"><line x1="122.4" y1="173.9" x2="122.4" y2="72.4" stroke="#6B8BA4" stroke-width="3.2"/><line x1="122.4" y1="72.4" x2="584" y2="72.4" stroke="#6B8BA4" stroke-width="3.2"/><circle cx="122.4" cy="72.4" r="4.5" fill="#6B8BA4"/><rect x="130.4" y="107.1" width="114" height="21" rx="10" fill="#fff" stroke="#6B8BA4" stroke-width="1.2"/><text x="139.4" y="123.1" font-size="14" font-weight="700" fill="#6B8BA4">+$1 &#183; early Feb</text><text x="592" y="81.4" font-size="14" font-weight="700" fill="#6B8BA4">Amazon</text></g>
+   <g class="fragment fade-up" data-fragment-index="3"><line x1="231.5" y1="261.3" x2="231.5" y2="159.9" stroke="#A85C5C" stroke-width="3.2"/><line x1="231.5" y1="159.9" x2="584" y2="159.9" stroke="#A85C5C" stroke-width="3.2"/><circle cx="231.5" cy="159.9" r="4.5" fill="#A85C5C"/><rect x="239.5" y="208.6" width="92" height="21" rx="10" fill="#fff" stroke="#A85C5C" stroke-width="1.2"/><text x="248.5" y="224.6" font-size="14" font-weight="700" fill="#A85C5C">+$1 &#183; Apr 10</text><text x="592" y="160.9" font-size="14" font-weight="700" fill="#A85C5C">YouTube Music</text></g>
+   <g class="fragment fade-up" data-fragment-index="4"><line x1="389.7" y1="275.3" x2="389.7" y2="173.9" stroke="#C47B5A" stroke-width="3.2"/><line x1="389.7" y1="173.9" x2="584" y2="173.9" stroke="#C47B5A" stroke-width="3.2"/><circle cx="389.7" cy="173.9" r="4.5" fill="#C47B5A"/><rect x="397.7" y="208.6" width="92" height="21" rx="10" fill="#fff" stroke="#C47B5A" stroke-width="1.2"/><text x="406.7" y="224.6" font-size="14" font-weight="700" fill="#C47B5A">+$1 &#183; Jul 17</text><text x="592" y="182.9" font-size="14" font-weight="700" fill="#C47B5A">Apple Music</text></g>
+   <g class="fragment fade-up" data-fragment-index="5"><rect x="387.7" y="53.4" width="196.3" height="125.4" rx="8" fill="none" stroke="#C47B5A" stroke-width="2" stroke-dasharray="6 4"/><text x="486.8" y="47.4" text-anchor="middle" font-size="15" font-weight="700" fill="#C47B5A">all four within $1</text></g>
+   </svg>
   </div>
-  <div class="key-result" style="margin-top: 12px;">
-    <p style="margin: 0; font-size: 12.5pt;">All three are <strong>oligopolies</strong> &mdash; a handful of firms whose pricing turns on what rivals do. Oil previews sequential moves (Stackelberg, &sect;13.6); the GLP-1 duopoly previews differentiated price competition (&sect;13.5); streaming is the running anchor. None sits at the competitive floor or the monopoly ceiling &mdash; Part 2 is the toolkit for that &ldquo;third place.&rdquo;</p>
+  <div style="display:flex; flex-direction:column; gap:9px;">
+   <div style="background:#f0f5f8; border-radius:8px; padding:9px 14px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12.5pt; line-height:1.45;">Four companies sell most paid music streams in the US. Watch what happens to their prices in one year.</p></div>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#ecfdf5; border-radius:8px; padding:8px 14px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Spotify</strong> goes first: \$11.99 &rarr; \$12.99.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:8px 14px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Amazon</strong> matches within weeks.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--danger-color);"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>YouTube Music</strong> follows: \$10.99 &rarr; \$11.99.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#fef9f3; border-radius:8px; padding:8px 14px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Apple Music</strong> makes it four.</p></div>
+   <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:0; padding:9px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>A few firms, and each one watches the others.</strong> Not the competitive price, not the monopoly price. That middle ground is <strong>oligopoly</strong>.</p></div>
   </div>
+ </div>
+ <p class="fragment fade-up" data-fragment-index="5" style="font-size:11pt; color:var(--muted-color); margin:8px 0 0;">Amazon: price without Prime (\$11.99 with Prime). Apple named &ldquo;rising licensing costs&rdquo;, a cost every streamer shares.</p>
 </section>
 
 <section>
 <section id="why-exist">
- <h2><i class="fa-solid fa-dungeon" style="color: var(--accent-color);"></i> Why Do Oligopolies Exist?</h2>
- <p style="font-size: 12.5pt; text-align: center; margin: 0 0 10px; color: var(--muted-color);">The same <strong>barriers to entry</strong> from Ch 11 (Monopoly) &mdash; but here they leave a <em>handful</em> of survivors, not one.</p>
- <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
-  <div style="background: #f0f5f8; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--secondary-color);">
-   <p style="font-size: 12.5pt; font-weight: 700; color: var(--secondary-color); margin-bottom: 5px;"><i class="fa-solid fa-industry"></i> Economies of scale</p>
-   <p style="font-size: 12pt;">Airlines, autos, chips: minimum efficient scale is <strong>billions in fixed cost</strong>. A new airline must match Delta&rsquo;s entire route network first.</p>
+ <h2><i class="fa-solid fa-dungeon" style="color: var(--secondary-color);"></i> Why Only a Few Firms? &mdash; Barriers to Entry</h2>
+ <p style="font-size:12.5pt; margin:0 0 10px; color:#4A4F57;">The barriers from Ch 11 (Monopoly), but here they leave a <strong>handful</strong> of firms instead of one.</p>
+ <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:10px; border-left:4px solid var(--secondary-color); padding:9px 12px;">
+   <div style="width:100%; aspect-ratio:490/165; border-radius:6px; background:#fff url(figures/oligopolies-poster.webp) no-repeat; background-size:352.65% auto; background-position:49.6% 100%;"></div>
+   <p style="font-size:13pt; font-weight:700; color:var(--secondary-color); margin:7px 0 3px;"><i class="fa-solid fa-plane"></i> Economies of scale</p>
+   <p style="font-size:11.5pt; line-height:1.45; margin:0;">A national airline needs planes, gates and crews in every city before it sells one ticket. Four airlines fly about <strong>70%</strong> of US domestic travel.</p>
   </div>
-  <div style="background: #f7f1ea; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--accent-color);">
-   <p style="font-size: 12.5pt; font-weight: 700; color: var(--accent-color); margin-bottom: 5px;"><i class="fa-solid fa-diagram-project"></i> Network &amp; switching costs</p>
-   <p style="font-size: 12pt;">Only three big cloud providers &mdash; <strong>AWS, Azure, Google Cloud</strong> &mdash; because firms embed their systems and can&rsquo;t easily switch.</p>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:10px; border-left:4px solid var(--accent-color); padding:9px 12px;">
+   <div style="width:100%; aspect-ratio:490/165; border-radius:6px; background:#fff url(figures/oligopolies-poster.webp) no-repeat; background-size:352.65% auto; background-position:99.5% 100%;"></div>
+   <p style="font-size:13pt; font-weight:700; color:var(--accent-color); margin:7px 0 3px;"><i class="fa-solid fa-tower-cell"></i> Government licenses</p>
+   <p style="font-size:11.5pt; line-height:1.45; margin:0;">A phone network needs spectrum licensed by the FCC. EchoStar tried to be the fourth national carrier, then sold its spectrum to AT&amp;T for <strong>\$23 billion</strong>.</p>
   </div>
-  <div style="background: #eef6ef; border-radius: 10px; padding: 14px 18px; border-left: 4px solid var(--success-color);">
-   <p style="font-size: 12.5pt; font-weight: 700; color: var(--success-color); margin-bottom: 5px;"><i class="fa-solid fa-certificate"></i> Patents &amp; brand</p>
-   <p style="font-size: 12pt;">Proprietary technology and brand loyalty wall off the market. Apple moves; <strong>Samsung must react</strong> &mdash; not a no-name startup.</p>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:10px; border-left:4px solid var(--success-color); padding:9px 12px;">
+   <div style="width:100%; aspect-ratio:490/165; border-radius:6px; background:#fff; display:flex; align-items:center; justify-content:center; gap:16px;"><span style="font-size:19pt; font-weight:800; color:#1f3f7a; font-style:italic;">Gillette</span><span style="font-size:19pt; font-weight:800; color:#2f6b3a;">Schick</span></div>
+   <p style="font-size:13pt; font-weight:700; color:var(--success-color); margin:7px 0 3px;"><i class="fa-solid fa-certificate"></i> Patents &amp; brand</p>
+   <p style="font-size:11.5pt; line-height:1.45; margin:0;">Gillette spent <strong>\$750 million</strong> on the 3-blade Mach3, covered by at least <strong>35</strong> patents. Only Gillette blades fit a Gillette handle.</p>
   </div>
  </div>
- <div class="key-result" style="margin-top: 16px;"><p>High barriers &rarr; few firms &rarr; each is large enough to matter &rarr; <strong>strategic interdependence</strong>. The structure is built by the same forces that build monopoly &mdash; they just stop one step short.</p></div>
- <p style="font-size: 11.5pt; color: var(--accent-color); text-align: center; margin-top: 10px; font-style: italic;">&darr; One live case per barrier &mdash; TJ Maxx (scale), streaming (switching costs), Gillette razors (patents &amp; brand)</p>
+ <div class="fragment fade-up" data-fragment-index="4" style="display:flex; align-items:center; justify-content:center; gap:10px; margin:14px 0 0; font-size:12.5pt; font-weight:700;">
+  <span style="background:#f8f6f3; border-radius:16px; padding:5px 14px;">High barriers</span><i class="fa-solid fa-arrow-right" style="color:var(--muted-color);"></i>
+  <span style="background:#f8f6f3; border-radius:16px; padding:5px 14px;">Few firms</span><i class="fa-solid fa-arrow-right" style="color:var(--muted-color);"></i>
+  <span style="background:#f8f6f3; border-radius:16px; padding:5px 14px;">Each big enough to matter</span><i class="fa-solid fa-arrow-right" style="color:var(--muted-color);"></i>
+  <span style="background:#fef9f3; border-radius:16px; padding:5px 14px; color:var(--accent-color);">Every move gets an answer</span>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:10px 0 0; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;">The forces that build a monopoly, stopped one step short. With a few big firms, <strong>my profit depends on your choice</strong>.</p></div>
 </section>
-<section id="razor-oligopoly">
+<section id="razor-oligopoly" data-visibility="hidden">
  <p style="font-size:10.5pt; letter-spacing:2px; text-transform:uppercase; color:var(--success-color); font-weight:700; margin:0 0 3px;">Barrier 3 &middot; Patents &amp; Brand</p>
  <h2><i class="fa-solid fa-scissors" style="color: var(--accent-color);"></i> A Textbook Oligopoly: The Razor Aisle</h2>
  <div style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 20px; align-items: center;">
@@ -198,55 +237,97 @@
 </section>
 
 <section id="oligopoly-def">
-  <h2><i class="fa-solid fa-chess" style="color: var(--accent-color);"></i> Oligopoly: Your Best Move Depends on Theirs</h2>
-  <p style="font-size: 13pt; line-height: 1.5; margin: 0 0 10px;">
-    An <strong>oligopoly</strong> is a market with a small number of firms whose payoffs depend on each other's choices. Each firm optimizes <em>conditional on a conjecture</em> about what rivals will do &mdash; and the three classic models differ only in <em>what each firm holds fixed.</em>
-  </p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
-    <div class="conj-card" style="border-left: 4px solid var(--secondary-color);">
-      <p class="nm" style="color: var(--secondary-color);">Cournot</p>
-      <p style="font-size: 12.5pt; margin: 0;">Firms pick <strong>quantities</strong> simultaneously; each takes rivals' \(q\) as fixed. (§13.3)</p>
-    </div>
-    <div class="conj-card" style="border-left: 4px solid var(--accent-color);">
-      <p class="nm" style="color: var(--accent-color);">Bertrand</p>
-      <p style="font-size: 12.5pt; margin: 0;">Firms pick <strong>prices</strong> simultaneously; each takes rivals' \(P\) as fixed. (§13.4&ndash;13.5)</p>
-    </div>
-    <div class="conj-card" style="border-left: 4px solid var(--success-color);">
-      <p class="nm" style="color: var(--success-color);">Stackelberg</p>
-      <p style="font-size: 12.5pt; margin: 0;">One firm <strong>moves first</strong> and commits; the follower observes and responds. (§13.6)</p>
-    </div>
+ <h2><i class="fa-solid fa-chess" style="color: var(--secondary-color);"></i> Oligopoly &mdash; Your Best Move Depends on Theirs</h2>
+ <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:16px; align-items:center;">
+  <div style="background:#f0f5f8; border-radius:8px; padding:10px 16px; border-left:4px solid var(--secondary-color);">
+   <p style="margin:0; font-size:13pt; line-height:1.5;">An <strong>oligopoly</strong> is a market with a few firms, each big enough that its choice moves the others&rsquo; profits. So each firm picks its best move <em>given what it expects the others to do</em>.</p>
   </div>
-  <div class="key-result" style="margin-top: 13px;">
-    <p style="margin: 0;">Each conjecture yields a different equilibrium markup. Empirical IO matches each industry to the model that fits its strategic structure &mdash; quantity competition for capacity-constrained commodities, price competition for differentiated goods, sequential moves where one player can commit visibly first.</p>
+  <div style="position:relative;">
+   <img alt="A row of boba drinks from different Boston shops, including a Kung Fu Tea cup" src="figures/boba-tea-banner.webp" style="width:100%; height:128px; object-fit:cover; object-position:center 40%; border-radius:8px; display:block;">
+   <p style="font-size:10.5pt; color:var(--muted-color); margin:3px 0 0; text-align:center;">The running case: <strong>Boston boba</strong>, Kung Fu Tea vs Husky Boba</p>
   </div>
+ </div>
+ <p style="font-size:12.5pt; margin:12px 0 6px; color:#4A4F57;">Three classic models. The firms are the same; only the <strong>choice</strong> they compete on changes.</p>
+ <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:10px; border-left:4px solid var(--secondary-color); padding:10px 14px;">
+   <p style="font-size:10.5pt; letter-spacing:.06em; color:var(--muted-color); margin:0;">QUANTITY</p>
+   <p style="font-size:14pt; font-weight:700; color:var(--secondary-color); margin:0 0 4px;"><i class="fa-solid fa-boxes-stacked"></i> Cournot</p>
+   <p style="font-size:12pt; line-height:1.45; margin:0;">Both pick <strong>how much to make</strong>, at the same time. The total sets the price.</p>
+   <p style="font-size:11.5pt; line-height:1.4; margin:6px 0 0; color:#4A4F57;"><i class="fa-solid fa-mug-hot" style="color:var(--accent-color);"></i> Boba: how many cups?</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:10px; border-left:4px solid var(--accent-color); padding:10px 14px;">
+   <p style="font-size:10.5pt; letter-spacing:.06em; color:var(--muted-color); margin:0;">PRICE</p>
+   <p style="font-size:14pt; font-weight:700; color:var(--accent-color); margin:0 0 4px;"><i class="fa-solid fa-tag"></i> Bertrand</p>
+   <p style="font-size:12pt; line-height:1.45; margin:0;">Both post <strong>a price</strong>, at the same time. Buyers go to the cheaper one.</p>
+   <p style="font-size:11.5pt; line-height:1.4; margin:6px 0 0; color:#4A4F57;"><i class="fa-solid fa-mug-hot" style="color:var(--accent-color);"></i> Boba: what price per cup?</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:10px; border-left:4px solid var(--success-color); padding:10px 14px;">
+   <p style="font-size:10.5pt; letter-spacing:.06em; color:var(--muted-color); margin:0;">TIMING</p>
+   <p style="font-size:14pt; font-weight:700; color:var(--success-color); margin:0 0 4px;"><i class="fa-solid fa-forward-step"></i> Stackelberg</p>
+   <p style="font-size:12pt; line-height:1.45; margin:0;">One firm <strong>moves first</strong> and commits. The other sees it, then answers.</p>
+   <p style="font-size:11.5pt; line-height:1.4; margin:6px 0 0; color:#4A4F57;"><i class="fa-solid fa-mug-hot" style="color:var(--accent-color);"></i> Boba: Kung Fu Tea commits first</p>
+  </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:12px 0 0; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;">Same demand, same \$1 cost per cup in every model. Change only the choice, and boba buyers pay a <strong>different price</strong> each time.</p></div>
 </section>
 
 <section id="boba-setup">
-  <h2><i class="fa-solid fa-mug-hot" style="color: var(--accent-color);"></i> Recap Monopoly: The Boston Boba Market</h2>
-  <div style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 22px; align-items: center;">
-    <div>
-      <p style="font-size: 14pt; line-height: 1.5; margin: 0 0 10px;"><strong>Kung Fu Tea</strong>, a major international chain, locks up the Greater-Boston bubble-tea market with prime storefronts. For now it is the <em>only</em> seller &mdash; a <strong>monopoly</strong>.</p>
-      <div style="display: flex; flex-direction: column; gap: 8px;">
-        <div style="background:#f0f5f8; border-radius:8px; padding:10px 16px; border-left:4px solid var(--secondary-color);">
-          <p style="font-size:14pt; margin:0;"><strong>Inverse market demand:</strong> &nbsp; \(P = 19.99 - 0.03\,Q\)</p>
-        </div>
-        <div style="background:#f0f5f8; border-radius:8px; padding:10px 16px; border-left:4px solid var(--secondary-color);">
-          <p style="font-size:14pt; margin:0;"><strong>Marginal cost:</strong> &nbsp; \(MC = \$1\) per cup (same for every firm)</p>
-        </div>
-      </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
-        <div style="background:#f8f6f3; border-radius:8px; padding:9px 14px;"><p style="font-size:12.5pt; margin:0;"><strong>Choke price \(\$19.99\).</strong> Above it, quantity demanded is zero.</p></div>
-        <div style="background:#f8f6f3; border-radius:8px; padding:9px 14px;"><p style="font-size:12.5pt; margin:0;"><strong>Slope \(0.03\).</strong> Sensitive to quantity, but not extremely so.</p></div>
-      </div>
-      <div class="discussion-prompt" style="margin-top:11px;">
-        <p style="margin:0;"><span class="bloom-level">Recall</span> &mdash; a monopolist sets \(MR = MC\), then reads the price up on the demand curve (Ch 11). We solve Kung Fu Tea's monopoly next &mdash; then a rival shows up.</p>
-      </div>
-    </div>
-    <div style="text-align:center;">
-      <img alt="Map of Kung Fu Tea locations across Greater Boston — the established chain's footprint" src="figures/kongfutea_map.webp" style="max-width:100%; max-height:380px; object-fit:contain; border-radius:10px; box-shadow:0 3px 14px rgba(0,0,0,0.14);">
-      <p style="font-size:10.5pt; color:var(--muted-color); margin-top:5px;">Kung Fu Tea's Greater-Boston footprint &mdash; the only boba chain in the market&hellip; for now.</p>
-    </div>
+ <h2><i class="fa-solid fa-mug-hot" style="color: var(--secondary-color);"></i> Kung Fu Tea Alone &mdash; The Monopoly Benchmark</h2>
+ <div style="display:grid; grid-template-columns:1.12fr 1fr; gap:16px; align-items:start;">
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 540 400" style="width:100%; max-height:420px; display:block;" role="img" aria-label="Boba market demand, marginal revenue and marginal cost, with Kung Fu Tea's monopoly profit"><g class="bs-plot"></g></svg></div>
+  <div style="display:flex; flex-direction:column; gap:7px;">
+   <div style="display:flex; align-items:center; gap:10px; background:#f8f6f3; border-radius:8px; padding:6px 12px; border-left:4px solid var(--muted-color);"><img alt="Kung Fu Tea storefront" src="figures/kongfu_shop.webp" style="height:46px; border-radius:5px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;">Kung Fu Tea is the only boba chain in Greater Boston. Every cup costs it \(MC = \$1\).</p></div>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">1 &middot; Demand:</strong> \(P = 19.99 - 0.03Q\). Above \$19.99 nobody buys.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#8b5cf6;">2 &middot; Marginal revenue:</strong> \(MR = 19.99 - 0.06Q\), twice as steep.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#dc2626;">3 &middot; Marginal cost:</strong> \(MC = \$1\), flat.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>4 &middot; MR = MC:</strong> \(19.99 - 0.06Q = 1\), so \(Q^{*} = 316.5\) cups. Up to demand: \(P^{*} = \$10.50\).</p></div>
+   <div class="fragment fade-up" data-fragment-index="5" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>5 &middot; Profit:</strong> \((10.50 - 1) \times 316.5 \approx \mathbf{\$3{,}005}\).</p></div>
+   <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:0; padding:8px 14px;"><p style="margin:0; font-size:12pt; line-height:1.4;">\$3,005 is the most this market can pay. Every model that follows splits or shrinks it.</p></div>
   </div>
+ </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section'), g=root.querySelector('.bs-plot');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){ // c: {X0,X1,Y0,Y1,XM,YM}
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="11" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.5+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var k=Kit({X0:66,X1:500,Y0:340,Y1:34,XM:700,YM:21}), X=k.X, Y=k.Y;
+  var C={D:'#2563eb',MR:'#8b5cf6',MC:'#dc2626',G:'#15803d',AX:'#374151',MU:'#8C8580'};
+  var Qm=316.5, Pm=10.495;
+  function draw(){
+    var s=step(root), h='';
+    h+=k.L(66,24,66,340,'stroke="'+C.AX+'" stroke-width="1.4"')+k.L(66,340,508,340,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=k.T(70,18,'Price per cup ($)',C.AX,'start',14)+k.T(508,382,'Cups, Q',C.AX,'end',14)+k.T(60,358,'0',C.AX,'end',13);
+    [200,400,600].forEach(function(q){ if(s<4||Math.abs(q-Qm)>60) h+=k.T(X(q),358,''+q,C.MU,'middle',13); });
+    if(s>=5) h+='<rect x="'+k.f1(X(0))+'" y="'+k.f1(Y(Pm))+'" width="'+k.f1(X(Qm)-X(0))+'" height="'+k.f1(Y(1)-Y(Pm))+'" fill="rgba(34,197,94,0.26)" stroke="'+C.G+'" stroke-width="1"/>'+k.T(X(Qm/2),Y(5.6),'profit $3,005',C.G,'middle',16,1);
+    if(s>=3) h+=k.seg(0,1,690,1,'stroke="'+C.MC+'" stroke-width="2.4"')+k.T(X(690),Y(1)-8,'MC = $1',C.MC,'end',14,1)+k.T(60,Y(1)+5,'$1',C.MC,'end',13,1);
+    if(s>=1) h+=k.seg(0,19.99,666.33,0,'stroke="'+C.D+'" stroke-width="2.6"')+k.T(X(560)+6,Y(3.19)-6,'D',C.D,'start',16,1)+k.T(60,Y(19.99)+5,'$19.99',C.D,'end',13,1);
+    if(s>=2) h+=k.seg(0,19.99,333.17,0,'stroke="'+C.MR+'" stroke-width="2.2" stroke-dasharray="7 4"')+k.T(X(205)+6,Y(7.69),'MR',C.MR,'start',16,1);
+    if(s>=4){ h+=k.guide(Qm,Pm)+k.dot(Qm,1,C.MR)+k.dot(Qm,Pm,C.D,5.5)+k.T(X(Qm),358,'316.5','#111827','middle',13,1)+k.T(60,Y(Pm)+5,'$10.50','#111827','end',13,1)+k.T(X(Qm)+12,Y(1)-9,'MR = MC',C.MR,'start',13,1)+k.T(X(Qm)+10,Y(Pm)-8,'monopoly',C.D,'start',13,1); }
+    g.innerHTML=h;
+  }
+  new MutationObserver(draw).observe(root,{subtree:true,attributes:true,attributeFilter:['class']}); draw();
+})();
+ </script>
 </section>
 
 
@@ -257,31 +338,247 @@
 </section>
 
 <section id="boba-entry">
-  <h2><i class="fa-solid fa-hand-fist" style="color: var(--accent-color);"></i> Then a Competitor Enters &mdash; Competing on Quantity</h2>
-  <p style="font-size:14pt; line-height:1.5; margin:0 0 14px;">A rival &mdash; <strong>Husky Boba</strong> &mdash; opens across Greater Boston. Two firms, same \(MC = \$1\), <strong>one shared demand curve</strong>. Seeing \(\$3{,}005\) on the table, the entrant wants a piece.</p>
-  <div style="display:grid; grid-template-columns:0.62fr 1fr; gap:24px; align-items:start;">
-    <div style="display:flex; flex-direction:column;">
-      <img alt="Greater-Boston map showing Kung Fu Tea storefronts alongside Husky Boba locations — two chains now serving the same market" src="figures/kongfu_vs_husky.webp" style="width:100%; max-height:345px; object-fit:contain; border-radius:10px;">
-      <p style="font-size:11pt; color:var(--muted-color); text-align:center; margin:6px 0 0;">Two chains, one Boston market &mdash; every cup either sells adds to the same total \(Q\).</p>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:16px;">
-      <div style="background:#f0f5f8; border-radius:8px; padding:17px 21px; border-left:4px solid var(--secondary-color);">
-        <p style="font-size:14.5pt; line-height:1.5; margin:0;"><strong>Neither shop posts the market price.</strong> Each decides only <em>how many cups to brew</em>. Their joint output \(Q = q_K + q_H\) is what sets the one price both then receive.</p>
-      </div>
-      <div style="background:#fef9f3; border-radius:8px; padding:17px 21px; border-left:4px solid var(--accent-color);">
-        <p style="font-size:14.5pt; line-height:1.5; margin:0;"><strong>So the choice is a quantity &mdash; and its payoff depends on the rival's.</strong> Brew too much between them and the price collapses; too little and they leave money on the table. Neither can decide alone.</p>
-      </div>
-      <div style="background:#f8f6f3; border-radius:8px; padding:17px 21px; border-left:3px solid var(--danger-color);">
-        <p style="font-size:14.5pt; line-height:1.5; margin:0;"><strong>The question for &sect;13.3:</strong> if each firm picks its quantity taking the other's as given, where does the market settle &mdash; and how much of that \(\$3{,}005\) survives?</p>
-      </div>
-    </div>
+ <h2><i class="fa-solid fa-store" style="color: var(--secondary-color);"></i> Husky Boba Enters &mdash; Each Shop Picks Its Cups</h2>
+ <div style="display:grid; grid-template-columns:0.78fr 1fr; gap:20px; align-items:start;">
+  <div>
+   <img alt="Greater Boston map with Kung Fu Tea stores and new Husky Boba stores side by side" src="figures/kongfu_vs_husky.webp" style="width:100%; max-height:400px; object-fit:contain; border-radius:10px; display:block;">
+   <p style="font-size:10.5pt; color:var(--muted-color); text-align:center; margin:4px 0 0;">Two chains, one Boston market.</p>
   </div>
-  <div class="key-result" style="margin-top:13px; padding:11px 18px;">
-    <p style="margin:0; font-size:13.5pt; line-height:1.5;">That is <strong>Cournot competition</strong> &mdash; rivals choosing quantities simultaneously, with the market price falling out of the total. It is the first of the strategic models, and it starts next. <span style="color:var(--muted-color);">Price competition instead of quantity is &sect;13.4 (Bertrand).</span></p>
+  <div style="display:flex; flex-direction:column; gap:9px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Husky Boba</strong> sees the \$3,005 and opens shops. Same \$1 cost per cup, same customers: <strong>one demand curve</strong> for both.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:12.5pt; line-height:1.45;">Each shop decides <strong>how many cups to make</strong>. Together they set one price: \(P = 19.99 - 0.03\,(q_K + q_H)\).</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#fef9f3; border-radius:8px; padding:9px 15px; border-left:4px solid var(--accent-color);">
+    <p style="margin:0 0 5px; font-size:12.5pt; line-height:1.45;">Suppose Husky makes 100 cups and Kung Fu Tea keeps its 316.5:</p>
+    <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:center; text-align:center;">
+     <div style="background:#fff; border-radius:6px; padding:5px;"><p style="margin:0; font-size:11pt; color:var(--muted-color);">alone</p><p style="margin:0; font-size:13pt; font-weight:700;">\$10.50 &middot; \$3,005</p></div>
+     <i class="fa-solid fa-arrow-right" style="color:var(--accent-color);"></i>
+     <div style="background:#fff; border-radius:6px; padding:5px;"><p style="margin:0; font-size:11pt; color:var(--muted-color);">Q = 416.5</p><p style="margin:0; font-size:13pt; font-weight:700; color:var(--danger-color);">\$7.50 &middot; \$2,056</p></div>
+    </div>
+    <p style="margin:5px 0 0; font-size:11.5pt; line-height:1.4; color:#4A4F57;">Husky&rsquo;s cups push down the price Kung Fu Tea gets on <em>every</em> cup.</p>
+   </div>
+   <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:0; padding:9px 15px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Cournot competition</strong> (Cournot, 1838): firms choose quantities at the same time, each taking the other&rsquo;s as given. So how many cups should Kung Fu Tea make now?</p></div>
   </div>
+ </div>
 </section>
 
-<section id="cournot-intro">
+<section id="boba-best-response">
+ <h2><i class="fa-solid fa-bullseye" style="color: var(--secondary-color);"></i> Kung Fu Tea&rsquo;s Best Response &mdash; Its Reaction Curve</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:start;">
+  <div>
+   <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 330" style="width:100%; max-height:300px; display:block;" role="img" aria-label="Kung Fu Tea's residual demand when Husky makes 300 cups, with residual marginal revenue and marginal cost"><g class="br-res"></g></svg></div>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:6px 12px; border-left:4px solid var(--secondary-color); margin-top:4px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>1 &middot; Residual demand:</strong> Husky&rsquo;s cups come off the top. \(P = (19.99 - 0.03\,q_H) - 0.03\,q_K\).</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:6px 12px; border-left:4px solid var(--accent-color); margin-top:6px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>2 &middot; MR = MC on that slice:</strong> \(19.99 - 0.03\,q_H - 0.06\,q_K = 1\). With \(q_H = 300\): \(q_K = 166.5\).</p></div>
+  </div>
+  <div>
+   <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 330" style="width:100%; max-height:300px; display:block;" role="img" aria-label="Kung Fu Tea's reaction curve: its best output for each Husky output"><g class="br-rc"></g></svg></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:6px 12px; border-left:4px solid #dc2626; margin-top:4px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>3 &middot; Solve for any \(q_H\):</strong> \(\;q_K = 316.5 - 0.5\,q_H\), Kung Fu Tea&rsquo;s <strong>reaction curve</strong>.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#f8f6f3; border-radius:8px; padding:6px 12px; border-left:4px solid #dc2626; margin-top:6px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>4 &middot; Read it:</strong> Husky 0 &rarr; 316.5 (monopoly) &middot; 100 &rarr; 266.5 &middot; 300 &rarr; 166.5</p></div>
+  </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:8px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.4;">For every extra cup Husky makes, Kung Fu Tea&rsquo;s best plan is to make <strong>half a cup less</strong>.</p></div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){ // c: {X0,X1,Y0,Y1,XM,YM}
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="11" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.5+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var C={D:'#2563eb',MR:'#8b5cf6',MC:'#dc2626',K:'#dc2626',H:'#2563eb',AX:'#374151',MU:'#8C8580',GR:'#9ca3af'};
+  // left: price vs q_K
+  var a=Kit({X0:62,X1:500,Y0:280,Y1:30,XM:700,YM:21});
+  // right: q_K horizontal 0-680, q_H vertical 0-400 (shared convention with Group C)
+  var b=Kit({X0:62,X1:500,Y0:280,Y1:30,XM:680,YM:400});
+  var gl=root.querySelector('.br-res'), gr=root.querySelector('.br-rc');
+  function axesL(){ var h=a.L(62,22,62,280,'stroke="'+C.AX+'" stroke-width="1.4"')+a.L(62,280,506,280,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=a.T(66,16,'Price per cup ($)',C.AX,'start',14)+a.T(506,318,'Kung Fu Tea cups, '+a.sub('q','K'),C.AX,'end',14)+a.T(56,296,'0',C.AX,'end',13);
+    [200,400,600].forEach(function(q){ h+=a.T(a.X(q),296,''+q,C.MU,'middle',13); }); return h; }
+  function axesR(){ var h=b.L(62,22,62,280,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(62,280,506,280,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(66,16,'Husky cups, '+b.sub('q','H'),C.AX,'start',14)+b.T(506,318,'Kung Fu Tea cups, '+b.sub('q','K'),C.AX,'end',14)+b.T(56,296,'0',C.AX,'end',13);
+    [200,400,600].forEach(function(q){ h+=b.T(b.X(q),296,''+q,C.MU,'middle',13); });
+    [100,200,300,400].forEach(function(q){ h+=b.T(56,b.Y(q)+5,''+q,C.MU,'end',13); }); return h; }
+  function draw(){
+    var s=step(root), L=axesL(), R=axesR();
+    // left panel
+    L+=a.seg(0,19.99,666.33,0,'stroke="'+C.GR+'" stroke-width="2" stroke-dasharray="5 4"')+a.T(a.X(250),a.Y(12.49)-8,'market demand (Husky makes 0)',C.MU,'start',13);
+    if(s>=1){ L+=a.seg(0,10.99,366.33,0,'stroke="'+C.D+'" stroke-width="2.6"')+a.T(a.X(250)+8,a.Y(3.49)-6,'residual D',C.D,'start',14,1);
+      L+=a.arrow(a.X(40),a.Y(18.79)+4,a.X(40),a.Y(9.79)-4,'#C47B5A',2.2)+a.T(a.X(300),a.Y(18.6),'Husky makes 300:',C.AX,'start',13,1)+a.T(a.X(300),a.Y(18.6)+17,'demand drops 0.03 &#215; 300 = $9',C.AX,'start',13);
+      L+=a.T(56,a.Y(10.99)+5,'$10.99',C.D,'end',13,1); }
+    if(s>=2){ L+=a.seg(0,10.99,183.17,0,'stroke="'+C.MR+'" stroke-width="2.2" stroke-dasharray="7 4"')+a.T(a.X(110),a.Y(5.0),'MR',C.MR,'start',14,1);
+      L+=a.seg(0,1,690,1,'stroke="'+C.MC+'" stroke-width="2.2"')+a.T(a.X(690),a.Y(1)-7,'MC = $1',C.MC,'end',13,1);
+      L+=a.guide(166.5,5.995)+a.dot(166.5,1,C.MR)+a.dot(166.5,5.995,C.D)+a.tag(a.X(166.5)+10,a.Y(5.995)-6,'166.5 cups','#111827','start',13); }
+    // right panel
+    if(s>=3){ R+=b.seg(316.5,0,116.5,400,'stroke="'+C.K+'" stroke-width="2.8"')+b.T(b.X(150),b.Y(385),'Kung Fu Tea&#8217;s best response',C.K,'start',14,1);
+      R+=b.guide(166.5,300)+b.dot(166.5,300,C.K,5.5)+b.tag(b.X(166.5)+10,b.Y(300)+5,'Husky 300 &#8594; 166.5','#111827','start',13);
+      R+=b.dot(316.5,0,C.K,5.5)+b.tag(b.X(316.5)+10,b.Y(0)-10,'Husky 0 &#8594; 316.5','#111827','start',13); }
+    if(s>=4){ R+=b.guide(266.5,100)+b.dot(266.5,100,C.K,5.5)+b.tag(b.X(266.5)+10,b.Y(100)-3,'100 &#8594; 266.5','#111827','start',13);
+      R+=b.T(b.X(330),b.Y(240),b.sub('q','K',' = 316.5 &#8722; 0.5 '+b.sub('q','H')),C.K,'start',16,1); }
+    gl.innerHTML=L; gr.innerHTML=R;
+  }
+  new MutationObserver(draw).observe(root,{subtree:true,attributes:true,attributeFilter:['class']}); draw();
+})();
+ </script>
+</section>
+
+<section id="boba-cournot-nash">
+ <h2><i class="fa-solid fa-circle-nodes" style="color: var(--secondary-color);"></i> Where They Meet &mdash; The Cournot&ndash;Nash Equilibrium</h2>
+ <style>
+  #boba-cournot-nash .bn-s{width:100%; margin:2px 0 0;}
+  #boba-cournot-nash .bn-k::-webkit-slider-thumb{background:#dc2626;} #boba-cournot-nash .bn-k::-moz-range-thumb{background:#dc2626;}
+  #boba-cournot-nash .bn-h::-webkit-slider-thumb{background:#2563eb;} #boba-cournot-nash .bn-h::-moz-range-thumb{background:#2563eb;}
+  #boba-cournot-nash .bn-pre{font-family:var(--body-font);font-size:10.5pt;font-weight:600;padding:3px 11px;border-radius:14px;border:1.5px solid var(--line-color);background:#f8f6f3;color:var(--text-color);cursor:pointer;}
+  #boba-cournot-nash .bn-pre.active{background:var(--secondary-color);color:#fff;border-color:var(--secondary-color);}
+ </style>
+ <div style="display:grid; grid-template-columns:0.95fr 1.05fr; gap:16px; align-items:start;">
+  <div style="display:flex; flex-direction:column; gap:7px;">
+   <div style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid #dc2626;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#dc2626;">Kung Fu Tea:</strong> \(q_K = 316.5 - 0.5\,q_H\)</p></div>
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid #2563eb;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">Husky</strong>, same costs, same steps: \(q_H = 316.5 - 0.5\,q_K\)</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Solve both:</strong> \(q_K = 316.5 - 0.5(316.5 - 0.5\,q_K)\), so \(0.75\,q_K = 158.25\) and \(q_K = q_H = \mathbf{211}\).</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;">\(Q = 422\), \(P = 19.99 - 0.03(422) = \mathbf{\$7.33}\). Profit \((7.33 - 1) \times 211 \approx \mathbf{\$1{,}336}\) each.</p></div>
+   <div class="key-result fragment fade-up" data-fragment-index="3" style="margin:0; padding:8px 14px;"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Cournot&ndash;Nash equilibrium:</strong> a mutual best response. Each firm&rsquo;s cups are its best reply to the other&rsquo;s, so <strong>neither wants to change</strong>.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:6px 12px;">
+    <div class="bn-badge" style="font-size:11pt; font-weight:700; text-align:center; padding:4px 8px; border-radius:6px; margin:0 0 5px; line-height:1.3;"></div>
+    <label style="display:block; font-size:10.5pt; font-weight:600; color:#4b5563;">Kung Fu Tea cups <span class="bn-kr" style="color:#dc2626; font-weight:700;">211</span></label>
+    <input type="range" class="iv-slider bn-s bn-k" min="0" max="400" step="0.25" value="211">
+    <label style="display:block; font-size:10.5pt; font-weight:600; color:#4b5563; margin-top:4px;">Husky cups <span class="bn-hr" style="color:#2563eb; font-weight:700;">211</span></label>
+    <input type="range" class="iv-slider bn-s bn-h" min="0" max="400" step="0.25" value="211">
+    <div style="display:flex; gap:7px; justify-content:center; margin-top:6px;"><button class="bn-pre" data-k="211" data-h="211">C: 211, 211</button><button class="bn-pre" data-k="158.25" data-h="158.25">Cartel: 158.25 each</button></div>
+   </div>
+  </div>
+  <div>
+   <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 380" style="width:100%; max-height:400px; display:block;" role="img" aria-label="Both best-response curves crossing at 211 cups each"><g class="bn-plot"></g></svg></div>
+   <p class="bn-read fragment fade-up" data-fragment-index="4" style="font-size:11pt; line-height:1.45; margin:2px 0 0; text-align:center;"></p>
+  </div>
+ </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section'), g=root.querySelector('.bn-plot');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){ // c: {X0,X1,Y0,Y1,XM,YM}
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="11" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.5+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var C={K:'#dc2626',H:'#2563eb',N:'#15803d',CT:'#C47B5A',AX:'#374151',MU:'#8C8580'};
+  var b=Kit({X0:64,X1:500,Y0:330,Y1:30,XM:680,YM:400}), X=b.X, Y=b.Y;
+  function br(x){ return Math.max(0,(18.99-0.03*x)/0.06); }
+  function axes(){ var h=b.L(64,22,64,330,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(64,330,506,330,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(68,16,'Husky cups, '+b.sub('q','H'),C.AX,'start',14)+b.T(506,368,'Kung Fu Tea cups, '+b.sub('q','K'),C.AX,'end',14)+b.T(58,346,'0',C.AX,'end',13);
+    [100,200,300,400,500,600].forEach(function(q){ if(q<=680) h+=b.T(X(q),346,''+q,C.MU,'middle',13); });
+    [100,200,300,400].forEach(function(q){ h+=b.T(58,Y(q)+5,''+q,C.MU,'end',13); }); return h; }
+  function lineK(){ return b.seg(316.5,0,116.5,400,'stroke="'+C.K+'" stroke-width="2.8"')+b.T(X(138),Y(392),'Kung Fu Tea&#8217;s best response',C.K,'start',13,1); }
+  function lineH(){ var xe=Math.min(633,680); return b.seg(0,316.5,xe,316.5-0.5*xe,'stroke="'+C.H+'" stroke-width="2.8"')+b.T(X(470),Y(92),'Husky&#8217;s best response',C.H,'start',13,1); }
+  function cpt(){ return b.guide(211,211,'#15803d')+'<circle cx="'+b.f1(X(211))+'" cy="'+b.f1(Y(211))+'" r="7" fill="'+C.N+'" stroke="#fff" stroke-width="2"/>'+b.tag(X(211)+12,Y(211)-10,'C (211, 211)',C.N,'start',13); }
+
+  var sK=root.querySelector('.bn-k'), sH=root.querySelector('.bn-h'), rK=root.querySelector('.bn-kr'), rH=root.querySelector('.bn-hr');
+  var badge=root.querySelector('.bn-badge'), read=root.querySelector('.bn-read'), pres=root.querySelectorAll('.bn-pre');
+  [sK,sH].forEach(function(el){ ['keydown','pointerdown','mousedown','touchstart','click'].forEach(function(ev){ el.addEventListener(ev,function(e){ e.stopPropagation(); }); }); el.addEventListener('input',draw); });
+  pres.forEach(function(bt){ bt.addEventListener('click',function(e){ e.stopPropagation(); sK.value=bt.dataset.k; sH.value=bt.dataset.h; draw(); }); });
+  function q(v){ if(Math.abs(v-Math.round(v))<0.01) return ''+Math.round(v); if(Math.abs(v*4-Math.round(v*4))<0.001) return v.toFixed(2).replace(/0$/,''); return v.toFixed(1); }
+  function money(v){ return '$'+Math.round(v).toLocaleString('en-US'); }
+  function draw(){
+    var s=step(root), h=axes()+lineK();
+    if(s>=1) h+=lineH();
+    if(s>=2) h+=cpt();
+    if(s>=4){
+      var k=+sK.value, hh=+sH.value, P=Math.max(0,19.99-0.03*(k+hh)), bk=br(hh), bh=br(k);
+      var onK=Math.abs(k-bk)<1, onH=Math.abs(hh-bh)<1;
+      if(!onK) h+=b.arrow(X(k),Y(hh),X(bk),Y(hh),C.K,2.2,1)+b.ring(bk,hh,C.K);
+      if(!onH) h+=b.arrow(X(k),Y(hh),X(k),Y(bh),C.H,2.2,1)+b.ring(k,bh,C.H);
+      h+='<circle cx="'+b.f1(X(k))+'" cy="'+b.f1(Y(hh))+'" r="5.5" fill="#111827"/>';
+      rK.textContent=q(k); rH.textContent=q(hh);
+      var pk=(P-1)*k, ph=(P-1)*hh, Pk=Math.max(0,19.99-0.03*(bk+hh)), Ph=Math.max(0,19.99-0.03*(k+bh));
+      if(onK&&onH){ badge.innerHTML='<i class="fa-solid fa-circle-check"></i> Mutual best response: neither firm wants to change.'; badge.style.background='#ecfdf5'; badge.style.color='#15803d'; }
+      else { var w=[]; if(!onK) w.push('<span style="color:#dc2626">Kung Fu Tea</span> would '+(bk>k?'raise':'cut')+' to '+q(bk)); if(!onH) w.push('<span style="color:#2563eb">Husky</span> would '+(bh>hh?'raise':'cut')+' to '+q(bh));
+        badge.innerHTML='<i class="fa-solid fa-arrows-left-right"></i> '+w.join('; '); badge.style.background='#fef9f3'; badge.style.color='#9a5a3c'; }
+      read.innerHTML='Price <strong>$'+(P+1e-6).toFixed(2)+'</strong> &middot; <span style="color:#dc2626">Kung Fu Tea '+money(pk)+'</span>'+(onK?'':' (best reply '+money((Pk-1)*bk)+')')+' &middot; <span style="color:#2563eb">Husky '+money(ph)+'</span>'+(onH?'':' (best reply '+money((Ph-1)*bh)+')');
+      pres.forEach(function(bt){ bt.classList.toggle('active', +bt.dataset.k===k && +bt.dataset.h===hh); });
+    }
+    g.innerHTML=h;
+  }
+  new MutationObserver(draw).observe(root,{subtree:true,attributes:true,attributeFilter:['class']}); draw();
+})();
+ </script>
+</section>
+
+<section>
+<section id="boba-poll-cartel">
+ <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; Will the Boba Cartel Hold?</h2>
+ <div style="display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center; background:#f8f6f3; border-radius:8px; padding:10px 18px; border-left:4px solid var(--secondary-color);">
+  <i class="fa-solid fa-handshake" style="font-size:30pt; color:var(--secondary-color);"></i>
+  <p style="font-size:13pt; line-height:1.5; margin:0;">Kung Fu Tea and Husky shake hands: each makes <strong>158.25</strong> cups, half the monopoly output. The price goes back to <strong>\$10.50</strong>, and each shop earns <strong>\$1,503</strong> instead of \$1,336.</p>
+ </div>
+ <p style="font-size:14pt; line-height:1.5; margin:12px 0 0;"><strong>Will the deal hold?</strong></p>
+ <div class="poll-grid" data-poll-id="ch13p2-econ2316-poll-cartel" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; font-size: 13pt;">
+  <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Yes: both earn more than at Cournot, so neither wants to break it.</div>
+  <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) No: each can earn more by making extra cups while the other sticks to 158.25.</div>
+  <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Yes: extra cups lower the price for both, so cheating can&rsquo;t pay.</div>
+  <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) No: Husky will cut its price to \$1 and take the whole market.</div>
+ </div>
+ <p style="text-align: center; margin-top: 12px;"><span class="timer-badge" style="display:inline-block; background:#f0f5f8; color:var(--secondary-color); padding:6px 14px; border-radius:16px; font-size:12pt; font-weight:600;"><i class="fa-solid fa-clock" style="margin-right:6px;"></i>60 sec to vote</span> &nbsp; <span style="font-size:12pt; color:var(--muted-color);">then &darr; for the answer</span></p>
+</section>
+
+<section data-poll-results="ch13p2-econ2316-poll-cartel" id="boba-poll-cartel-reveal" style="display: flex; flex-direction: column;">
+ <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Each Shop Gains by Cheating</h2>
+ <div class="poll-results-chart" data-poll-id="ch13p2-econ2316-poll-cartel" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 80px; margin: 0 60px;"></div>
+ <div class="mathjax_ignore tex2jax_ignore" style="margin-top:8px;">
+ <svg viewBox="0 0 900 190" width="100%" style="max-height:200px; display:block;">
+  <text x="430" y="14" style="font-size:13px; fill:var(--muted-color);">Kung Fu Tea&#8217;s profit, one scale for every bar</text>
+  <g class="fragment fade-up" data-fragment-index="1">
+   <text x="420" y="44" text-anchor="end" style="font-size:15px; font-weight:700; fill:var(--secondary-color);">Both keep the deal (158.25 each)</text>
+   <rect x="430" y="28" width="330.7" height="22" rx="3" style="fill:var(--secondary-color);"/>
+   <text x="768.7" y="45" style="font-size:15px; font-weight:700; fill:var(--secondary-color);">$1,503</text>
+   <text x="420" y="84" text-anchor="end" style="font-size:15px; font-weight:700; fill:#dc2626;">Kung Fu Tea cheats to 237.4, Husky keeps 158.25</text>
+   <rect x="430" y="68" width="371.8" height="22" rx="3" style="fill:#dc2626;"/>
+   <text x="809.8" y="85" style="font-size:15px; font-weight:700; fill:#dc2626;">$1,690</text>
+   <text x="420" y="106" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">(price falls to $8.12; Husky drops to $1,127)</text>
+  </g>
+  <g class="fragment fade-up" data-fragment-index="2">
+   <text x="420" y="146" text-anchor="end" style="font-size:15px; font-weight:700; fill:#15803d;">Both cheat: they slide to Cournot, 211 each</text>
+   <rect x="430" y="130" width="293.9" height="22" rx="3" style="fill:#15803d;"/>
+   <text x="731.9" y="147" style="font-size:15px; font-weight:700; fill:#15803d;">$1,336</text>
+  </g>
+ </svg>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="3" style="margin:8px 0 0; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Keeping the deal is never a shop&rsquo;s best reply.</strong> Each one cheats, and both end up at \$1,336, less than the deal paid. A, C and D miss this: the price does fall (C), but the extra cups more than make up for it.</p></div>
+</section>
+</section>
+
+
+<section id="cournot-intro" data-visibility="hidden">
   <h2><i class="fa-solid fa-industry" style="color: var(--accent-color);"></i> Cournot: Compete by Choosing Quantity</h2>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;">
     <div>
@@ -304,7 +601,7 @@
   </div>
 </section>
 
-<section id="cournot-model-setup">
+<section id="cournot-model-setup" data-visibility="hidden">
   <h2><i class="fa-solid fa-pen-ruler" style="color: var(--secondary-color);"></i> Setting Up the Cournot Model</h2>
   <div style="background: rgba(107,139,164,0.12); border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 11px 18px; margin: 0 0 13px;">
     <p style="margin: 0; font-size: 13pt; line-height: 1.5;"><strong>The model Ch 11 promised.</strong> In the same 1838 book that gave us the monopolist's \(MR = MC\), Cournot asked a harder question: what if there are <em>two</em> sellers? His example was two owners of mineral springs, each deciding how much water to bottle. It was the first <strong>equilibrium</strong> concept in economics &mdash; a resting point where neither party wants to move &mdash; written down 112 years before Nash generalised it (Ch 14).</p>
@@ -329,7 +626,7 @@
   </div>
 </section>
 
-<section id="cournot-residual">
+<section id="cournot-residual" data-visibility="hidden">
   <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color: var(--accent-color);"></i> Residual Demand: Firm 1's Slice</h2>
   <p style="font-size:13.5pt; line-height:1.55; margin:0 0 12px;">Firm 1 can't control \(q_2\). So it treats firm 2's output as <em>fixed</em> and asks: what demand is left for me? Re-group market demand around \(q_1\):</p>
   <div class="fragment fade-up" data-fragment-index="1" style="text-align:center; margin:14px 0;">
@@ -347,7 +644,7 @@
 </section>
 
 
-<section id="cp-bestresponse">
+<section id="cp-bestresponse" data-visibility="hidden">
   <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Step 2 &mdash; Coke's Reaction Curve</h2>
   <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:20px; align-items:center;">
     <div>
@@ -368,7 +665,7 @@
   </div>
 </section>
 
-<section id="cp-nash">
+<section id="cp-nash" data-visibility="hidden">
   <h2><i class="fa-solid fa-circle-nodes" style="color: var(--accent-color);"></i> Step 3 &mdash; The Cournot&ndash;Nash Equilibrium</h2>
   <style>
     #cn-c::-webkit-slider-thumb{background:#d81f26;} #cn-c::-moz-range-thumb{background:#d81f26;}
@@ -414,7 +711,7 @@
 </style>
 
 <section>
-<section id="walkthrough-13-2">
+<section id="walkthrough-13-2" data-visibility="hidden">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 13.2 &mdash; Cournot Duopoly: The Boston Boba Market</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 11px 18px; margin: 0 0 12px;">
     <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;"><strong>Back to boba.</strong> <strong>Kung Fu Tea</strong> \((K)\) and <strong>Husky Boba</strong> \((H)\) compete on quantity. Market \(P = 19.99 - 0.03\,Q\) with \(Q = q_K + q_H\), each \(MC = \$1\). No shortcuts &mdash; derive <em>both</em> best responses, then solve them together.</p>
@@ -460,51 +757,68 @@
 </section>
 
 <section id="walkthrough-13-2b">
-  <h2><i class="fa-solid fa-scale-balanced" style="color: var(--accent-color);"></i> Walkthrough 13.2, cont. &mdash; Why the Cartel Won't Hold</h2>
-  <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 10px 18px; margin: 0 0 11px;">
-    <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;">Rivalry landed them at \(211\) each. They <em>could</em> have split the monopoly instead &mdash; \(158.25\) each, and a bigger payout. So why doesn't that hold?</p>
+ <h2><i class="fa-solid fa-scale-balanced" style="color: var(--secondary-color);"></i> Why the Cartel Won&rsquo;t Hold &mdash; and Why Cartels Try</h2>
+ <div style="display:grid; grid-template-columns:1.05fr 1fr; gap:16px; align-items:start;">
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 380" style="width:100%; max-height:420px; display:block;" role="img" aria-label="From the cartel point, Kung Fu Tea moves to 237.4 cups, Husky answers, and the two zigzag to the Cournot point"><g class="wc-plot"></g></svg></div>
+  <div style="display:flex; flex-direction:column; gap:7px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>The cartel point (158.25, 158.25)</strong> sits on <em>neither</em> reaction curve.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid #dc2626;"><p style="margin:0; font-size:11.5pt; line-height:1.4;">Hold Husky at 158.25: Kung Fu Tea&rsquo;s best reply is <strong>237.4</strong> cups, \$1,690 instead of \$1,503.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid #2563eb;"><p style="margin:0; font-size:11.5pt; line-height:1.4;">Husky answers with 197.8, Kung Fu Tea answers back&hellip; they zigzag to <strong>C (211, 211)</strong>, where neither wants to move.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>So why try?</strong> The prize: \$1,503 vs \$1,336 each. A cartel can last only if cheaters get punished later, when the game repeats (Ch 14).</p></div>
+   <div class="fragment fade-up" data-fragment-index="5" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--muted-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><i class="fa-solid fa-oil-well" style="color:var(--muted-color);"></i> <strong>OPEC+</strong> sets output quotas for oil producers. In early 2026 Kazakhstan kept pumping above its quota, and on May 1, 2026 the UAE left OPEC and OPEC+ to pump more.</p></div>
+   <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:0; padding:8px 14px;"><p style="margin:0; font-size:12pt; line-height:1.4;">Every member wants the high price, and every member wants to sell more at it.</p></div>
   </div>
-  <div style="display: grid; grid-template-columns: 1fr 1.12fr; gap: 18px; align-items: start;">
-    <div>
-      <table class="table-standard w132-cmp fragment fade-up" data-fragment-index="1" style="width: 100%; margin: 0;">
-        <thead>
-          <tr>
-            <th style="text-align: left;"></th>
-            <th>Monopoly <span style="font-weight: 400; color: var(--muted-color);">(1 firm)</span></th>
-            <th>Cartel <span style="font-weight: 400; color: var(--muted-color);">(2, split)</span></th>
-            <th>Cournot <span style="font-weight: 400; color: var(--muted-color);">(2, rivalry)</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="text-align: left;"><strong>Price</strong></td>
-            <td>\(\$10.50\)</td>
-            <td>\(\$10.50\)</td>
-            <td><strong>\(\$7.33\)</strong></td>
-          </tr>
-          <tr>
-            <td style="text-align: left;"><strong>Quantity</strong></td>
-            <td>\(316.5\)</td>
-            <td>\(316.5\) <span style="color: var(--muted-color);">(\(158.25\) ea.)</span></td>
-            <td><strong>\(422\)</strong> <span style="color: var(--muted-color);">(\(211\) ea.)</span></td>
-          </tr>
-          <tr>
-            <td style="text-align: left;"><strong>Profit</strong></td>
-            <td>\(\$3{,}005\)</td>
-            <td>\(\$3{,}005\) <span style="color: var(--muted-color);">(\(\$1{,}503\) ea.)</span></td>
-            <td><strong>\(\$2{,}671\)</strong> <span style="color: var(--muted-color);">(\(\$1{,}336\) ea.)</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="fragment fade-up" data-fragment-index="2" style="font-size: 12pt; line-height: 1.45; margin: 10px 0 0;">A cartel <em>is</em> the monopoly &mdash; same \(P\), same \(Q\); only the split differs. Each firm would earn \(\$1{,}503\) instead of \(\$1{,}336\).</p>
-      <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 10px; padding: 10px 16px;">
-        <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>But look where the cartel sits.</strong> \((158.25,\,158.25)\) is on <em>neither</em> best-response curve. Hold \(q_H\) at \(158.25\) and Kung Fu Tea's best reply is \(237.4\), not \(158.25\) &mdash; so it defects, and so does Husky. Only \((211,211)\) is a mutual best response.</p>
-      </div>
-    </div>
-    <div style="text-align: center;">
-      <img class="figure fragment fade-up" data-fragment-index="3" alt="Best-response curves on the boba market: the Cournot-Nash point at (211, 211) lies on both curves, while the cartel split at (158.25, 158.25) lies on neither, with an arrow showing Kung Fu Tea's profitable deviation to 237.4" src="figures/fig-boba-br-cartel.webp" style="max-width: 100%; max-height: 415px; object-fit: contain;">
-    </div>
-  </div>
+ </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section'), g=root.querySelector('.wc-plot');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){ // c: {X0,X1,Y0,Y1,XM,YM}
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="11" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.5+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var C={K:'#dc2626',H:'#2563eb',N:'#15803d',CT:'#C47B5A',AX:'#374151',MU:'#8C8580'};
+  var b=Kit({X0:64,X1:500,Y0:330,Y1:30,XM:400,YM:400}), X=b.X, Y=b.Y;
+  function br(x){ return Math.max(0,(18.99-0.03*x)/0.06); }
+  function axes(){ var h=b.L(64,22,64,330,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(64,330,506,330,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(68,16,'Husky cups, '+b.sub('q','H'),C.AX,'start',14)+b.T(506,368,'Kung Fu Tea cups, '+b.sub('q','K'),C.AX,'end',14)+b.T(58,346,'0',C.AX,'end',13);
+    [100,200,300,400,500,600].forEach(function(q){ if(q<=400) h+=b.T(X(q),346,''+q,C.MU,'middle',13); });
+    [100,200,300,400].forEach(function(q){ h+=b.T(58,Y(q)+5,''+q,C.MU,'end',13); }); return h; }
+  function lineK(){ return b.seg(316.5,0,116.5,400,'stroke="'+C.K+'" stroke-width="2.8"')+b.T(X(138),Y(392),'Kung Fu Tea&#8217;s best response',C.K,'start',13,1); }
+  function lineH(){ var xe=Math.min(633,400); return b.seg(0,316.5,xe,316.5-0.5*xe,'stroke="'+C.H+'" stroke-width="2.8"')+b.T(X(398),Y(92),'Husky&#8217;s best response',C.H,'end',13,1); }
+  function cpt(){ return b.guide(211,211,'#15803d')+'<circle cx="'+b.f1(X(211))+'" cy="'+b.f1(Y(211))+'" r="7" fill="'+C.N+'" stroke="#fff" stroke-width="2"/>'+b.tag(X(211)-12,Y(211)-14,'C (211, 211)',C.N,'end',13); }
+
+  function diamond(a,c2,col){ var x=X(a), y=Y(c2), r=8; return '<path d="M'+x+','+(y-r)+' L'+(x+r)+','+y+' L'+x+','+(y+r)+' L'+(x-r)+','+y+' Z" fill="'+col+'" stroke="#fff" stroke-width="1.5"/>'; }
+  function draw(){
+    var s=step(root), h=axes()+lineK()+lineH()+cpt();
+    if(s>=1) h+=b.guide(158.25,158.25,'#C47B5A')+diamond(158.25,158.25,C.CT)+b.tag(X(158.25)-14,Y(158.25)+5,'cartel (158.25, 158.25)',C.CT,'end',13);
+    if(s>=2) h+=b.arrow(X(158.25)+8,Y(158.25),X(237.375),Y(158.25),C.K,2.6)+b.dot(237.375,158.25,C.K,5)+b.tag(X(237.375)+10,Y(158.25)+20,'237.4',C.K,'start',13);
+    if(s>=3){ var k=237.375, hh=158.25, pts=[], i;
+      for(i=0;i<6;i++){ var nh=br(k); pts.push([k,hh,k,nh,C.H]); hh=nh; var nk=br(hh); pts.push([k,hh,nk,hh,C.K]); k=nk; }
+      pts.forEach(function(p,j){ h+=b.arrow(X(p[0]),Y(p[1]),X(p[2]),Y(p[3]),p[4],j===0?2.6:1.6); });
+      h+=b.tag(X(237.375)+10,Y(197.8)+2,'197.8',C.H,'start',13); }
+    g.innerHTML=h;
+  }
+  new MutationObserver(draw).observe(root,{subtree:true,attributes:true,attributeFilter:['class']}); draw();
+})();
+ </script>
 </section>
 </section>
 
@@ -691,27 +1005,146 @@
 </style>
 
 <section id="bertrand-intro">
-  <h2><i class="fa-solid fa-tags" style="color: var(--accent-color);"></i> Bertrand Competition</h2>
-  <div style="display:grid; grid-template-columns:1.5fr 0.5fr; gap:24px; align-items:center;">
+  <h2><i class="fa-solid fa-tags" style="color: var(--secondary-color);"></i> Bertrand on Boba &mdash; Undercut by a Penny</h2>
+  <p style="font-size:12pt; line-height:1.45; margin:0 0 8px;">Same two shops, same drink, same \(P = 19.99 - 0.03Q\) and \(MC = \$1\). Now each shop <strong>posts a price</strong>, and every customer buys from the <strong>cheaper</strong> shop. A tie splits the market.</p>
+  <div style="display:grid; grid-template-columns: 1.02fr 1fr; gap:16px; align-items:start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 380" style="width:100%; max-height:380px; display:block;" role="img" aria-label="Boba demand and marginal cost, with the profit rectangle shrinking as the shops undercut each other down to one dollar"><g class="hg-plot"></g></svg></div>
     <div>
-      <ul style="margin:0;">
-        <li style="font-size:15.4pt; line-height:1.5; margin-bottom:15px;"><strong style="color:#dc2626;">Bertrand competition:</strong> two (or more) firms compete on <strong>price</strong> to sell the <strong>same good</strong>.</li>
-        <li style="font-size:15.4pt; line-height:1.5; margin-bottom:15px;">Firms set their prices <strong>simultaneously</strong>.</li>
-        <li style="font-size:15.4pt; line-height:1.5;">Consumers are indifferent between the brands and <strong style="color:#6d28d9;">always buy from the seller with the lowest price</strong>.</li>
-      </ul>
-      <div class="key-result" style="margin-top:16px;">
-        <p style="margin:0; font-size:13.2pt;">That last assumption is the engine: undercut your rival by a single penny and you capture the <strong>entire</strong> market &mdash; so each firm always has a reason to cut price.</p>
-      </div>
-    </div>
-    <div style="text-align:center;">
-      <img alt="Portrait of Joseph Bertrand, French mathematician" src="figures/bertrand.webp" style="max-width:100%; max-height:330px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
-      <p style="font-size:11.7pt; font-weight:700; color:var(--text-color); margin:7px 0 0; letter-spacing:.03em;">JOSEPH BERTRAND</p>
-      <p style="font-size:10.6pt; color:var(--muted-color); margin:1px 0 0;">1822&ndash;1890</p>
+      <style>.bz-tbl{width:100%; border-collapse:collapse; font-size:11.5pt; line-height:1.3;}.bz-tbl th{font-size:10.5pt; color:var(--muted-color); font-weight:700; text-align:left; padding:3px 6px; border-bottom:2px solid var(--line-color);}.bz-tbl td{padding:5px 6px; border-bottom:1px solid #ebe6e0;} .bz-tbl .k{color:#991b1b; font-weight:700;} .bz-tbl .h{color:#1e40af; font-weight:700;} .bz-tbl tr.fragment:not(.visible) td{border-color:transparent;}</style><table class="bz-tbl"><tr><th>Kung Fu Tea</th><th>Husky</th><th>Who sells</th><th>Profit</th></tr><tr><td>\$10.50</td><td>\$10.50</td><td>158 + 158 cups</td><td>\$1,503 each</td></tr><tr class="fragment fade-up" data-fragment-index="1"><td>\$10.50</td><td><span class="h">\$10.49</span></td><td><span class="h">Husky, all 317</span></td><td><span class="h">\$3,005</span> vs \$0</td></tr><tr class="fragment fade-up" data-fragment-index="2"><td><span class="k">\$10.48</span></td><td>\$10.49</td><td><span class="k">KFT, all 317</span></td><td><span class="k">\$3,005</span></td></tr><tr class="fragment fade-up" data-fragment-index="3"><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td><td>&hellip;</td></tr><tr class="fragment fade-up" data-fragment-index="3"><td><span class="k">\$5.00</span></td><td>\$5.01</td><td><span class="k">KFT, 500</span></td><td><span class="k">\$1,999</span></td></tr><tr class="fragment fade-up" data-fragment-index="3"><td>\$2.01</td><td><span class="h">\$2.00</span></td><td><span class="h">Husky, 600</span></td><td><span class="h">\$600</span></td></tr><tr class="fragment fade-up" data-fragment-index="4" style="background:#ecfdf5;"><td><strong>\$1.00</strong></td><td><strong>\$1.00</strong></td><td>317 + 317</td><td><strong>\$0 each</strong></td></tr></table>
+      <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:10px 0 0; padding:8px 14px;"><p style="margin:0; font-size:12pt; line-height:1.4;">A one-cent cut takes the <strong>whole</strong> market, so the cutting stops only at \(P = MC = \$1\).</p></div>
     </div>
   </div>
+  <script>
+(function(){
+  var X0 = 62, X1 = 488, Y0 = 336, Y1 = 30, QM = 700, PM = 21, MK = 'bi';
+
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var C = { K:'#dc2626', H:'#2563eb', D:'#374151', MC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580', OK:'#6A8E6B', NO:'#A85C5C' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 7) + '" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2.4"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 14, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 19, lab || ('' + q), col || C.AX, 'middle', 14, 1); }
+  function poly(pts, st){ return '<polyline fill="none" points="' + pts.map(function(p){ return f1(X(p[0])) + ',' + f1(Y(p[1])); }).join(' ') + '" ' + st + '/>'; }
+  function arrow(q1, p1, q2, p2, col){ return L(X(q1), Y(p1), X(q2), Y(p2), 'stroke="' + col + '" stroke-width="2.4" marker-end="url(#' + MK + '-' + col.slice(1) + ')"'); }
+  function markers(cols){ return '<defs>' + cols.map(function(c){ return '<marker id="' + MK + '-' + c.slice(1) + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="' + c + '"/></marker>'; }).join('') + '</defs>'; }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+
+  function Qd(p){ return (19.99 - p) / 0.03; }
+  function rect(q0, q1, p, fill, st){ return '<rect x="' + f1(X(q0)) + '" y="' + f1(Y(p)) + '" width="' + f1(X(q1) - X(q0)) + '" height="' + f1(Y(1) - Y(p)) + '" fill="' + fill + '" ' + (st || '') + '/>'; }
+  var BL = 'rgba(220,38,38,0.20)', RD = 'rgba(37,99,235,0.22)';
+  function draw(){
+    var s = step(), h = markers([C.MU, C.G]);
+    h += L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"');
+    h += T(X0 - 4, Y1 - 14, 'Price per cup ($)', C.AX, 'start', 13) + T(X1 + 6, Y0 + 38, 'Cups, Q', C.AX, 'end', 13) + T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+    // profit rectangle
+    if (s === 0) h += rect(0, 158.25, 10.5, BL) + rect(158.25, 316.5, 10.5, RD) + L(X(158.25), Y(10.5), X(158.25), Y(1), 'stroke="#fff" stroke-width="2"');
+    if (s === 1) h += rect(0, 316.5, 10.49, RD);
+    if (s === 2) h += rect(0, 316.5, 10.48, BL);
+    if (s === 3) h += rect(0, 316.5, 10.5, 'none', 'stroke="' + C.MU + '" stroke-width="1.2" stroke-dasharray="4 3"') + rect(0, Qd(5), 5, BL);
+    // demand and MC
+    h += poly([[0, 19.99], [666.3, 0]], 'stroke="' + C.D + '" stroke-width="2.4"') + T(X(560), Y(3.2) - 6, 'D', C.D, 'start', 15, 1);
+    h += L(X0, Y(1), X1, Y(1), 'stroke="' + C.MC + '" stroke-width="2.2"') + T(X1 + 4, Y(1) + 5, 'MC', C.MC, 'start', 14, 1);
+    h += ptick(1, C.MC, '$1') + ptick(19.99, C.D, '$19.99');
+    if (s <= 2) {
+      h += guide(316.5, 10.5) + dot(316.5, 10.5, '#111827') + ptick(10.5, '#111827', '$10.50') + qtick(317, '#111827');
+      if (s === 0) { h += qtick(158, C.MU) + T(X(79), Y(6), 'KFT', '#991b1b', 'middle', 14, 1) + T(X(237), Y(6), 'Husky', '#1e40af', 'middle', 14, 1) + T(X(158), Y(3.4), '$1,503 each', '#111827', 'middle', 14, 1); }
+      if (s === 1) h += T(X(158), Y(6), 'Husky $10.49', '#1e40af', 'middle', 14, 1) + T(X(158), Y(3.4), 'all 317 cups: $3,005', '#1e40af', 'middle', 14, 1);
+      if (s === 2) h += T(X(158), Y(6), 'KFT $10.48', '#991b1b', 'middle', 14, 1) + T(X(158), Y(3.4), 'all 317 cups: $3,005', '#991b1b', 'middle', 14, 1);
+    }
+    if (s === 3) {
+      h += arrow(330, 10.2, 480, 5.6, C.MU);
+      h += guide(Qd(5), 5) + dot(Qd(5), 5, '#111827') + ptick(5, '#111827', '$5') + qtick(500, '#111827');
+      h += dot(Qd(2), 2, C.MU, 3.5) + T(X(Qd(2)) + 8, Y(2) - 7, '$2', C.MU, 'start', 13, 1);
+      h += T(X(150), Y(3), 'KFT $5: $1,999', '#991b1b', 'middle', 14, 1);
+    }
+    if (s >= 4) {
+      h += guide(633, 1) + ring(633, 1, C.G) + qtick(633, '#15803d');
+      h += T(X(165), Y(4.2), 'P = MC = $1', '#15803d', 'middle', 15, 1) + T(X(165), Y(4.2) + 19, 'Q = 633, profit $0', '#15803d', 'middle', 14, 1);
+      h += ptick(10.5, C.MU, '$10.50') + L(X(316.5), Y(10.5), X(316.5), Y0, 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"') + dot(316.5, 10.5, C.MU, 3.5);
+    }
+    g.innerHTML = h;
+  }
+
+  new MutationObserver(function(){ draw(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  draw();
+})();
+</script>
 </section>
 
-<section id="bertrand-walmart-cut">
+<section id="bertrand-elimination">
+  <h2><i class="fa-solid fa-circle-nodes" style="color: var(--secondary-color);"></i> Bertrand Equilibrium &mdash; Rule Out the Rest</h2>
+  <p style="font-size:12pt; line-height:1.45; margin:0 0 8px;">An equilibrium is a pair of prices where <strong>neither shop wants to change</strong>: each price is the best reply to the other. Test the candidates one at a time.</p>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:372px; display:block;" role="img" aria-label="Price plane with Kung Fu Tea's price on the vertical axis and Husky's on the horizontal; candidates A, B and C are ruled out and the best replies cross only at one dollar each"><g class="hg-plot"></g></svg></div>
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>A &middot; Unequal, both above \$1</strong> (KFT \$8, Husky \$6): KFT sells nothing. Cutting to \$5.99 wins the market. <span style="color:var(--danger-color); font-weight:700;">&#x2717;</span></p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>B &middot; Equal, above \$1</strong> (\$8, \$8): each sells half. One cent lower sells to everyone and nearly doubles profit. <span style="color:var(--danger-color); font-weight:700;">&#x2717;</span></p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--line-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>C &middot; One at \$1</strong> (KFT \$1, Husky \$6): KFT earns \$0 on every cup. Raising to \$5.99 earns \$2,329. <span style="color:var(--danger-color); font-weight:700;">&#x2717;</span></p></div>
+      <div class="fragment fade-up" data-fragment-index="4" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>D &middot; Both at \$1:</strong> raise and you sell nothing, still \$0. Cut and you lose money on every cup. Neither wants to change. <span style="color:var(--success-color); font-weight:700;">&#x2713;</span></p></div>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:8px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>\((P_K, P_H) = (\$1, \$1)\)</strong>: 633 cups, \$0 profit. Two firms reach the competitive outcome. With the same two shops, Cournot gave \$7.33.</p></div>
+  <script>
+(function(){
+  var X0 = 62, X1 = 470, Y0 = 340, Y1 = 30, QM = 12, PM = 12, MK = 'be';
+
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var C = { K:'#dc2626', H:'#2563eb', D:'#374151', MC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580', OK:'#6A8E6B', NO:'#A85C5C' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 7) + '" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2.4"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 14, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 19, lab || ('' + q), col || C.AX, 'middle', 14, 1); }
+  function poly(pts, st){ return '<polyline fill="none" points="' + pts.map(function(p){ return f1(X(p[0])) + ',' + f1(Y(p[1])); }).join(' ') + '" ' + st + '/>'; }
+  function arrow(q1, p1, q2, p2, col){ return L(X(q1), Y(p1), X(q2), Y(p2), 'stroke="' + col + '" stroke-width="2.4" marker-end="url(#' + MK + '-' + col.slice(1) + ')"'); }
+  function markers(cols){ return '<defs>' + cols.map(function(c){ return '<marker id="' + MK + '-' + c.slice(1) + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="' + c + '"/></marker>'; }).join('') + '</defs>'; }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+
+  function lab(q, p, txt, col, dx, dy){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="11" fill="#fff" stroke="' + col + '" stroke-width="2"/>' + T(X(q), Y(p) + 5, txt, col, 'middle', 14, 1); }
+  function cross(q, p){ return T(X(q) + 14, Y(p) - 8, '&#x2717;', C.NO, 'start', 15, 1); }
+  function draw(){
+    var s = step(), h = markers([C.K, C.H]);
+    h += L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"');
+    h += T(X0 - 4, Y1 - 14, "Kung Fu Tea's price, P_K", '#991b1b', 'start', 13, 1) + T(X1 + 6, Y0 + 38, "Husky's price, P_H", '#1e40af', 'end', 13, 1);
+    h += T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+    [1, 6, 10.5].forEach(function(v){ var t = v === 10.5 ? '$10.50' : '$' + v; h += ptick(v, C.MU, t) + qtick(v, C.MU, t); });
+    h += L(X(0), Y(0), X(12), Y(12), 'stroke="' + C.GU + '" stroke-width="1.2" stroke-dasharray="6 4"'); if (s < 4) h += T(X(11.4), Y(11.4) + 20, 'equal prices', C.MU, 'end', 14);
+    var dim = s >= 4 ? ' opacity="0.45"' : '';
+    if (s >= 1) { h += '<g' + dim + '>' + arrow(6, 7.6, 6, 6.25, C.K) + lab(6, 8, 'A', C.NO) + (s >= 4 ? cross(6, 8) : '') + '</g>'; }
+    if (s >= 2) { h += '<g' + dim + '>' + arrow(8, 7.6, 8, 6.5, C.K) + lab(8, 8, 'B', C.NO) + T(X(8) + 8, Y(6.9), '1&#162; lower', C.K, 'start', 13, 1) + (s >= 4 ? cross(8, 8) : '') + '</g>'; }
+    if (s >= 3) { h += '<g' + dim + '>' + arrow(6, 1.4, 6, 5.6, C.K) + lab(6, 1, 'C', C.NO) + T(X(6) + 8, Y(3.6), 'raise to $5.99', C.K, 'start', 13, 1) + (s >= 4 ? cross(6, 1) : '') + '</g>'; }
+    if (s >= 4) {
+      h += poly([[0, 1], [1.18, 1], [10.68, 10.5], [12, 10.5]], 'stroke="' + C.K + '" stroke-width="3" stroke-linejoin="round"');
+      h += poly([[1, 0], [1, 1.18], [10.5, 10.68], [10.5, 12]], 'stroke="' + C.H + '" stroke-width="3" stroke-linejoin="round"');
+      h += T(X(7.9), Y(5.2), "KFT's best reply", '#991b1b', 'start', 14, 1) + T(X(4.2), Y(6.2), "Husky's best reply", '#1e40af', 'end', 14, 1);
+      h += ring(1, 1, C.G, 9) + T(X(1) + 16, Y(1) + 21, 'D: $1, $1', '#15803d', 'start', 15, 1);
+    }
+    g.innerHTML = h;
+  }
+
+  new MutationObserver(function(){ draw(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  draw();
+})();
+</script>
+</section>
+
+
+<section id="bertrand-walmart-cut" data-visibility="hidden">
   <h2><i class="fa-solid fa-fire" style="color:#dc2626;"></i> Walmart Undercuts: \(MC \lt P_W \lt P_T\)</h2>
   <div class="bz-wrap"><div class="bz-grid">
     <div class="bz-card">
@@ -743,7 +1176,7 @@
   .rd-case.split{border-left:5px solid #f59e0b; background:rgba(245,158,11,.10);}
   .rd-case.zero{border-left:5px solid #dc2626; background:rgba(220,38,38,.07);}
 </style>
-<section id="bertrand-nash-pmc">
+<section id="bertrand-nash-pmc" data-visibility="hidden">
   <h2><i class="fa-solid fa-circle-nodes" style="color: var(--accent-color);"></i> Nash Equilibrium with Reaction Curves</h2>
   <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:22px; align-items:center;">
     <div>
@@ -764,25 +1197,24 @@
 </section>
 
 <section id="bertrand-too-good">
-  <h2><i class="fa-solid fa-circle-question" style="color: var(--accent-color);"></i> Too Good to Be True? \(P = MC\) with Two Firms</h2>
-  <div style="display:grid; grid-template-columns:1fr 1.1fr; gap:24px; align-items:center;">
-    <div>
-      <p style="font-size:13.8pt; line-height:1.55; margin:0 0 12px;">A fully <strong>competitive</strong> outcome from just <strong>two</strong> firms? That should feel suspicious.</p>
-      <p class="fragment fade-up" data-fragment-index="1" style="font-size:14.8pt; font-weight:800; color:#6d28d9; margin:0 0 12px;">So what's wrong?</p>
-      <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:9px; padding:12px 18px; border-left:4px solid var(--accent-color);">
-        <p style="font-size:13.2pt; line-height:1.5; margin:0;">The model assumes the goods are <strong>perfect substitutes</strong>. But Walmart and Target aren't next to each other &mdash; they sit <strong>9 miles apart</strong>.</p>
-        <p style="font-size:13.2pt; line-height:1.5; margin:8px 0 0;">Location is a form of <strong>product differentiation</strong>. <span style="color:var(--accent-color); font-weight:700;">&rarr; §13.5</span></p>
-      </div>
+  <h2><i class="fa-solid fa-circle-question" style="color: var(--secondary-color);"></i> The Bertrand Paradox &mdash; Three Assumptions</h2>
+  <p style="font-size:12pt; line-height:1.45; margin:0 0 9px;">Two shops and \(P = MC = \$1\)? Real boba is not a dollar: a Kung Fu Milk Tea on Beacon Street lists at <strong>\$6.29</strong>. So at least one of the three assumptions fails.</p>
+  <div style="display:grid; grid-template-columns: 1.35fr 0.65fr; gap:16px; align-items:start;">
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>1 &middot; Identical drinks?</strong> Buyers pick Kung Fu Tea for its taste and its name, or pick the shop on their walk. A one-cent cut wins some buyers, not all, so price stays above \$1. <span style="color:var(--accent-color); font-weight:700;">&rarr; differentiated Bertrand, next</span></p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>2 &middot; Unlimited capacity?</strong> Say Husky can brew only 200 cups. With Husky at \$1, KFT charges \$5 and still sells 300 cups to buyers Husky cannot serve: \$1,199, not \$0. Build capacity first, then set prices, and you get the Cournot outcome. <span style="color:var(--accent-color); font-weight:700;">&rarr; &sect;13.7</span></p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>3 &middot; One shot?</strong> The two shops face each other every day. Both holding \$10.50 earns \$1,503 each, every day. A one-cent cut earns about \$3,005 once, then a price war at \$0. Repeated play can hold the price up. <span style="color:var(--accent-color); font-weight:700;">&rarr; Ch 14</span></p></div>
     </div>
     <div style="text-align:center;">
-      <img class="figure" alt="Google Maps route between a Target and a Walmart Supercenter, 9.2 miles / 13 minutes apart" src="figures/googlemap.webp" style="max-width:100%; max-height:360px; border-radius:10px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
-      <p style="font-size:11.1pt; color:var(--muted-color); margin:4px 0 0;">Target &harr; Walmart: 9.2 mi, ~13 min apart &mdash; not the same &ldquo;store.&rdquo;</p>
+      <img alt="Map of Greater Boston with Kung Fu Tea and Husky Boba shops in different neighborhoods" src="figures/kongfu_vs_husky.webp" style="max-width:100%; max-height:292px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.14);">
+      <p style="font-size:10.5pt; line-height:1.35; color:var(--muted-color); margin:4px 0 0;">The two chains&rsquo; shops sit in different neighborhoods. A different location is a different product.</p>
     </div>
   </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:9px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.4;">Use the paradox as a checklist: when two real firms price above cost, ask <strong>which assumption fails</strong>.</p></div>
 </section>
 
 
-<section id="walkthrough-13-4">
+<section id="walkthrough-13-4" data-visibility="hidden">
   <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 13.4 &mdash; Bertrand by Elimination: The Boba Price War</h2>
   <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 9px 16px; margin: 0 0 10px;">
     <p style="margin: 0; font-size: 12pt; line-height: 1.5;"><strong>Back to boba &mdash; now on price.</strong> <strong>Kung Fu Tea</strong> \((K)\) and <strong>Husky Boba</strong> \((H)\) sell the identical drink, same market \(P = 19.99 - 0.03\,Q\), \(MC = \$1\). They post prices <em>simultaneously</em>; the lower price takes the whole market (ties split). Find the Bertrand-Nash.</p>
@@ -815,7 +1247,7 @@
   </div>
 </section>
 
-<section id="bertrand-assumptions">
+<section id="bertrand-assumptions" data-visibility="hidden">
   <h2><i class="fa-solid fa-triangle-exclamation" style="color: var(--danger-color);"></i> Heads Up 13.3 &mdash; The Paradox Needs All Three Assumptions</h2>
   <p style="font-size: 12.5pt; color: var(--muted-color); margin: 0 0 10px;">The empirical fact that few-firm markets show large markups doesn't refute Bertrand &mdash; it refutes its three assumptions in pure form. Each fails somewhere:</p>
   <div style="display: flex; flex-direction: column; gap: 9px;">
@@ -841,35 +1273,67 @@
 </section>
 
 <section id="db-setup">
-  <h2><i class="fa-solid fa-mug-hot" style="color: var(--accent-color);"></i> Differentiated Boba: Kung Fu Tea Advertises</h2>
-  <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:22px; align-items:center;">
-    <div>
-      <p style="font-size:12pt; line-height:1.5; margin:0 0 10px;">In the <em>homogeneous</em> price war (W13.4), <strong style="color:#2563eb;">Kung Fu Tea</strong> and <strong style="color:#dc2626;">Husky Boba</strong> were trapped at \(P = MC = \$1\), earning \(\$0\). Now Kung Fu Tea runs a <strong>viral campaign</strong> &mdash; customers see the two shops as <strong>different</strong>. Demand is now <strong>differentiated</strong>, depending on <em>both</em> prices:</p>
-      <div style="background:#eff4fb; border-radius:8px; padding:9px 15px; border-left:4px solid #2563eb; margin-bottom:8px;">
-        <p style="margin:0; font-size:13pt;"><strong style="color:#2563eb;">Kung Fu Tea:</strong> &nbsp;\(q_K = 700 - 100\,P_K + 50\,P_H\)</p>
-      </div>
-      <div style="background:#fdf0f0; border-radius:8px; padding:9px 15px; border-left:4px solid #dc2626;">
-        <p style="margin:0; font-size:13pt;"><strong style="color:#dc2626;">Husky Boba:</strong> &nbsp;\(q_H = 450 - 100\,P_H + 50\,P_K\)</p>
-      </div>
-      <p style="font-size:11pt; line-height:1.45; margin:10px 0 0; color:var(--muted-color);">A \(\$1\) cut now loses only \(100\) cups to the rival &mdash; <em>not</em> the whole market. Each shop keeps \(MC = \$1\).</p>
-    </div>
-    <div style="background:#f8f6f3; border-radius:10px; padding:14px 20px;">
-      <p style="font-size:11pt; color:var(--accent-color); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin:0 0 9px;"><i class="fa-solid fa-list-ol"></i> Our four questions</p>
-      <ol style="margin:0; padding-left:22px; font-size:12.5pt; line-height:1.85;">
-        <li>Derive each shop's <strong>best-response (reaction) curve</strong>.</li>
-        <li>What happens to each shop's optimal <strong>price</strong>?</li>
-        <li>What happens to each shop's optimal <strong>output</strong>?</li>
-        <li>Draw the reaction curves and find the <strong>equilibrium</strong>.</li>
-      </ol>
+  <h2><i class="fa-solid fa-mug-hot" style="color: var(--secondary-color);"></i> Differentiated Boba &mdash; Kung Fu Tea Advertises</h2>
+  <p style="font-size:12pt; line-height:1.45; margin:0 0 7px;">A viral campaign makes some buyers prefer Kung Fu Tea. Each shop now has its <strong>own</strong> demand, and a \$1 cut adds 100 cups, only 50 of them taken from the rival:</p>
+  <div style="display:flex; gap:10px; margin:0 0 8px;">
+    <div style="flex:1; background:#fef9f3; border-radius:8px; padding:5px 12px; border-left:4px solid var(--accent-color); font-size:12pt;"><strong style="color:#dc2626;">KFT:</strong> \(q_K = 700 - 100P_K + 50P_H\)</div>
+    <div style="flex:1; background:#f0f5f8; border-radius:8px; padding:5px 12px; border-left:4px solid var(--secondary-color); font-size:12pt;"><strong style="color:#2563eb;">Husky:</strong> \(q_H = 450 - 100P_H + 50P_K\)</div>
+  </div>
+  <div style="display:grid; grid-template-columns: 1fr 1.05fr; gap:16px; align-items:start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:318px; display:block;" role="img" aria-label="Upward-sloping best-reply lines in the price plane, crossing at five dollars for Kung Fu Tea and four dollars for Husky"><g class="hg-plot"></g></svg></div>
+    <div style="display:flex; flex-direction:column; gap:6px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#fef9f3; border-radius:8px; padding:7px 13px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#dc2626;">1 &middot; KFT:</strong> \(\pi_K = (P_K - 1)(700 - 100P_K + 50P_H)\). Set \(\partial \pi_K / \partial P_K = 800 - 200P_K + 50P_H = 0\), so \(P_K = 4 + 0.25P_H\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 13px; border-left:4px solid var(--secondary-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">2 &middot; Husky:</strong> \(\pi_H = (P_H - 1)(450 - 100P_H + 50P_K)\). Set \(\partial \pi_H / \partial P_H = 550 - 200P_H + 50P_K = 0\), so \(P_H = 2.75 + 0.25P_K\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#ecfdf5; border-radius:8px; padding:7px 13px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>3 &middot; Solve:</strong> \(P_K = 4 + 0.25(2.75 + 0.25P_K)\) gives \(P_K = \$5\), \(P_H = \$4\). Cups 400 and 300; profit <strong>\$1,600</strong> and <strong>\$900</strong>.</p></div>
     </div>
   </div>
-  <div style="margin-top:13px; text-align:center;">
-    <img class="figure" alt="A lineup of many different bubble-tea brands and flavors lined up on steps" src="figures/boba-tea-banner.webp" style="max-width:100%; width:auto; max-height:188px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.14);">
-    <p style="font-size:10pt; color:var(--muted-color); margin:4px 0 0;">Real boba is <strong>differentiated</strong> &mdash; dozens of brands, each with regulars. That brand loyalty is exactly what lets Kung Fu Tea and Husky price <em>above</em> \(MC\).</p>
-  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:8px 0 0; padding:7px 16px;"><p style="margin:0; font-size:12pt; line-height:1.4;">The best replies slope <strong>up</strong>: if Husky raises its price, KFT raises its price too. A small difference between the drinks lifts both prices well above \$1.</p><p style="margin:3px 0 0; font-size:10.5pt; color:var(--muted-color);">This demand system is separate from \(P = 19.99 - 0.03Q\), so these numbers stay off the welfare ladder.</p></div>
+  <script>
+(function(){
+  var X0 = 62, X1 = 470, Y0 = 340, Y1 = 30, QM = 8, PM = 8, MK = 'ds';
+
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var C = { K:'#dc2626', H:'#2563eb', D:'#374151', MC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580', OK:'#6A8E6B', NO:'#A85C5C' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 7) + '" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2.4"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 14, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 19, lab || ('' + q), col || C.AX, 'middle', 14, 1); }
+  function poly(pts, st){ return '<polyline fill="none" points="' + pts.map(function(p){ return f1(X(p[0])) + ',' + f1(Y(p[1])); }).join(' ') + '" ' + st + '/>'; }
+  function arrow(q1, p1, q2, p2, col){ return L(X(q1), Y(p1), X(q2), Y(p2), 'stroke="' + col + '" stroke-width="2.4" marker-end="url(#' + MK + '-' + col.slice(1) + ')"'); }
+  function markers(cols){ return '<defs>' + cols.map(function(c){ return '<marker id="' + MK + '-' + c.slice(1) + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="' + c + '"/></marker>'; }).join('') + '</defs>'; }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+
+  function draw(){
+    var s = step(), h = markers([C.MU]);
+    h += L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"');
+    h += T(X0 - 4, Y1 - 14, "Kung Fu Tea's price, P_K", '#991b1b', 'start', 14, 1) + T(X1 + 6, Y0 + 38, "Husky's price, P_H", '#1e40af', 'end', 14, 1);
+    h += T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 13);
+    var sk = s >= 3 ? [4, 5] : [];
+    [2, 4, 6, 8].forEach(function(v){ if (sk.indexOf(v) < 0) h += qtick(v, C.MU, '$' + v); });
+    [2, 4, 6, 8].forEach(function(v){ if (sk.indexOf(v) < 0) h += ptick(v, C.MU, '$' + v); });
+    h += dot(1, 1, C.MU, 4) + T(X(0.25), Y(1) + 21, 'price war $1, $1', C.MU, 'start', 14, 1);
+    if (s >= 1) h += poly([[0, 4], [8, 6]], 'stroke="' + C.K + '" stroke-width="3"') + T(X(7.9), Y(6) - 12, "KFT's best reply", '#991b1b', 'end', 14, 1) + T(X(0.15), Y(4) - 10, '$4', '#991b1b', 'start', 14, 1);
+    if (s >= 2) h += poly([[2.75, 0], [4.75, 8]], 'stroke="' + C.H + '" stroke-width="3"') + T(X(4.75) + 8, Y(7.6), "Husky's best reply", '#1e40af', 'start', 14, 1) + T(X(2.75) + 6, Y(0.25) - 2, '$2.75', '#1e40af', 'start', 14, 1);
+    if (s >= 3) h += guide(4, 5) + ring(4, 5, C.G, 8) + ptick(5, '#991b1b', '$5') + qtick(4, '#1e40af', '$4') + T(X(4) + 14, Y(5) + 22, '$5, $4', '#15803d', 'start', 14, 1);
+    if (s >= 4) h += arrow(1, 1.3, 1, 3.9, C.MU) + T(X(1) + 7, Y(3.3), 'KFT: $4.25', C.MU, 'start', 14, 1);
+    g.innerHTML = h;
+  }
+
+  new MutationObserver(function(){ draw(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  draw();
+})();
+</script>
 </section>
 
-<section id="db-derive">
+<section id="db-derive" data-visibility="hidden">
   <h2><i class="fa-solid fa-square-root-variable" style="color: var(--secondary-color);"></i> Solve the Reaction Curves</h2>
   <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
     <div style="background:#eff4fb; border-radius:8px; padding:10px 15px; border-left:4px solid #2563eb;">
@@ -909,27 +1373,84 @@
   .db-preset.active{background:var(--secondary-color);color:#fff;border-color:var(--secondary-color);}
 </style>
 <section id="db-interactive">
-  <h2><i class="fa-solid fa-sliders" style="color: var(--accent-color);"></i> Explore: Reaction Curves &amp; the Nash</h2>
-  <div class="iv-card" style="padding:8px 16px 9px;">
-    <div style="display:grid; grid-template-columns:0.86fr 1.14fr; gap:18px; align-items:center;">
-      <div>
-        <div id="db-badge" style="font-size:10.5pt; font-weight:700; text-align:center; padding:5px 10px; border-radius:7px; margin:0 0 9px; min-height:34px; display:flex; align-items:center; justify-content:center; gap:5px;"></div>
-        <label class="iv-label">Kung Fu Tea price, <span style="color:#2563eb;">P<sub>K</sub></span> <span class="iv-readout" id="db-kRead" style="color:#2563eb;">$5.00</span></label>
-        <input type="range" class="iv-slider" id="db-k" min="1" max="8" step="0.25" value="5">
-        <label class="iv-label" style="margin-top:9px;">Husky Boba price, <span style="color:#dc2626;">P<sub>H</sub></span> <span class="iv-readout" id="db-hRead" style="color:#dc2626;">$4.00</span></label>
-        <input type="range" class="iv-slider" id="db-h" min="1" max="8" step="0.25" value="4">
-        <div id="db-read" style="font-size:10pt; line-height:1.55; margin:10px 0 8px;"></div>
-        <div style="display:flex; gap:7px; justify-content:center;">
-          <button class="db-preset" data-k="5" data-h="4"><i class="fa-solid fa-circle-nodes"></i> Nash $5, $4</button>
-          <button class="db-preset" data-k="1" data-h="1"><i class="fa-solid fa-equals"></i> Homogeneous $1, $1</button>
-        </div>
+  <h2><i class="fa-solid fa-sliders" style="color: var(--secondary-color);"></i> Explore &mdash; Drag Either Boba Price</h2>
+  <style>#db-interactive .dbx-k::-webkit-slider-thumb{background:#dc2626;} #db-interactive .dbx-k::-moz-range-thumb{background:#dc2626;}#db-interactive .dbx-h::-webkit-slider-thumb{background:#2563eb;} #db-interactive .dbx-h::-moz-range-thumb{background:#2563eb;}#db-interactive .dbx-preset{font-family:var(--body-font);font-size:11pt;font-weight:600;padding:4px 12px;border-radius:14px;border:1.5px solid var(--line-color);background:#f8f6f3;color:var(--text-color);cursor:pointer;}#db-interactive .dbx-preset.on{background:var(--secondary-color);color:#fff;border-color:var(--secondary-color);}#db-interactive .dbx-lab{display:block;font-size:12pt;font-weight:600;color:#4b5563;margin:0 0 4px;}</style>
+  <div style="display:grid; grid-template-columns: 0.82fr 1.18fr; gap:18px; align-items:center;">
+    <div>
+      <div class="dbx-badge" style="font-size:12pt; font-weight:700; text-align:center; padding:7px 10px; border-radius:8px; margin:0 0 12px; min-height:46px; display:flex; align-items:center; justify-content:center; gap:6px; line-height:1.3;"></div>
+      <label class="dbx-lab">Kung Fu Tea&rsquo;s price <span class="dbx-kr" style="color:#991b1b; margin-left:6px;"></span></label>
+      <input type="range" class="iv-slider dbx-k" min="1" max="8" step="0.25" value="1">
+      <label class="dbx-lab" style="margin-top:12px;">Husky&rsquo;s price <span class="dbx-hr" style="color:#1e40af; margin-left:6px;"></span></label>
+      <input type="range" class="iv-slider dbx-h" min="1" max="8" step="0.25" value="1">
+      <div class="dbx-read" style="font-size:12pt; line-height:1.5; margin:12px 0 10px;"></div>
+      <div style="display:flex; gap:8px; justify-content:center;">
+        <button class="dbx-preset" data-k="1" data-h="1">Price war $1, $1</button>
+        <button class="dbx-preset" data-k="5" data-h="4">$5, $4</button>
       </div>
-      <div style="text-align:center;">
-        <svg id="db-svg" viewBox="0 0 470 400" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:300px; display:block;"></svg>
-      </div>
+      <p style="font-size:11pt; line-height:1.4; color:var(--muted-color); margin:12px 0 0;">Arrows point to each shop&rsquo;s best price, holding the other&rsquo;s fixed. They vanish only where the best replies cross.</p>
     </div>
-    <p class="iv-cap" style="margin:6px 0 0;">Drag a price. <strong style="color:#2563eb;">Blue</strong>/<strong style="color:#dc2626;">red</strong> arrows show where each shop would move its price to raise profit &mdash; both vanish <em>only</em> at the Nash \((P_K, P_H) = (\$5, \$4)\), where the upward-sloping reaction curves cross.</p>
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 392" style="width:100%; max-height:420px; display:block;" role="img" aria-label="Explorer: the two upward-sloping best-reply lines with arrows showing each shop's better price"><g class="hg-plot"></g></svg></div>
   </div>
+  <script>
+(function(){
+  var X0 = 58, X1 = 456, Y0 = 344, Y1 = 30, QM = 8, PM = 8, MK = 'dx';
+
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.hg-plot');
+  var C = { K:'#dc2626', H:'#2563eb', D:'#374151', MC:'#1f2937', G:'#16a34a', AX:'#374151', GU:'#9ca3af', MU:'#8C8580', OK:'#6A8E6B', NO:'#A85C5C' };
+  function X(q){ return X0 + (X1 - X0) * q / QM; }
+  function Y(p){ return Y0 - (Y0 - Y1) * p / PM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 14) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(base, s){ return base + '<tspan font-size="11" dy="3">' + s + '</tspan>'; }
+  function dot(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 4.5) + '" fill="' + (col || '#111827') + '"/>'; }
+  function ring(q, p, col, r){ return '<circle cx="' + f1(X(q)) + '" cy="' + f1(Y(p)) + '" r="' + (r || 7) + '" fill="#fff" stroke="' + (col || '#111827') + '" stroke-width="2.4"/>'; }
+  function guide(q, p){ var st = 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="4 3"'; return L(X(q), Y(p), X(q), Y0, st) + L(X0, Y(p), X(q), Y(p), st); }
+  function ptick(p, col, lab){ return T(X0 - 6, Y(p) + 5, lab || ('$' + p), col || C.AX, 'end', 14, 1); }
+  function qtick(q, col, lab){ return T(X(q), Y0 + 19, lab || ('' + q), col || C.AX, 'middle', 14, 1); }
+  function poly(pts, st){ return '<polyline fill="none" points="' + pts.map(function(p){ return f1(X(p[0])) + ',' + f1(Y(p[1])); }).join(' ') + '" ' + st + '/>'; }
+  function arrow(q1, p1, q2, p2, col){ return L(X(q1), Y(p1), X(q2), Y(p2), 'stroke="' + col + '" stroke-width="2.4" marker-end="url(#' + MK + '-' + col.slice(1) + ')"'); }
+  function markers(cols){ return '<defs>' + cols.map(function(c){ return '<marker id="' + MK + '-' + c.slice(1) + '" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="' + c + '"/></marker>'; }).join('') + '</defs>'; }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+
+  var kS = root.querySelector('.dbx-k'), hS = root.querySelector('.dbx-h');
+  var kR = root.querySelector('.dbx-kr'), hR = root.querySelector('.dbx-hr');
+  var badge = root.querySelector('.dbx-badge'), read = root.querySelector('.dbx-read');
+  var presets = root.querySelectorAll('.dbx-preset');
+  function qK(pk, ph){ return Math.max(0, 700 - 100 * pk + 50 * ph); }
+  function qH(pk, ph){ return Math.max(0, 450 - 100 * ph + 50 * pk); }
+  function brK(ph){ return Math.min(8, Math.max(1, 4 + 0.25 * ph)); }
+  function brH(pk){ return Math.min(8, Math.max(1, 2.75 + 0.25 * pk)); }
+  function money(v){ return '$' + Math.round(v).toLocaleString('en-US'); }
+  [kS, hS].forEach(function(el){ ['keydown', 'pointerdown', 'mousedown', 'touchstart', 'click'].forEach(function(ev){ el.addEventListener(ev, function(e){ e.stopPropagation(); }); }); el.addEventListener('input', draw); });
+  presets.forEach(function(bt){ bt.addEventListener('click', function(e){ e.stopPropagation(); kS.value = bt.dataset.k; hS.value = bt.dataset.h; draw(); }); });
+  function draw(){
+    var pk = +kS.value, ph = +hS.value, bk = brK(ph), bh = brH(pk);
+    var onK = Math.abs(pk - bk) < 0.13, onH = Math.abs(ph - bh) < 0.13;
+    kR.textContent = '$' + pk.toFixed(2); hR.textContent = '$' + ph.toFixed(2);
+    var h = markers([C.K, C.H]);
+    h += L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 6, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"');
+    h += T(X0 - 4, Y1 - 14, "Kung Fu Tea's price, P_K", '#991b1b', 'start', 14, 1) + T(X1 + 6, Y0 + 40, "Husky's price, P_H", '#1e40af', 'end', 14, 1) + T(X0 - 6, Y0 + 19, '0', C.AX, 'end', 14);
+    [2, 4, 6, 8].forEach(function(v){ h += qtick(v, C.MU, '$' + v) + ptick(v, C.MU, '$' + v); });
+    h += poly([[0, 4], [8, 6]], 'stroke="' + C.K + '" stroke-width="3"') + T(X(7.9), Y(6) - 12, "KFT's best reply", '#991b1b', 'end', 14, 1);
+    h += poly([[2.75, 0], [4.75, 8]], 'stroke="' + C.H + '" stroke-width="3"') + T(X(4.75) + 8, Y(7.7), "Husky's best reply", '#1e40af', 'start', 14, 1);
+    h += L(X(ph), Y(pk), X(ph), Y0, 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="3 3"') + L(X0, Y(pk), X(ph), Y(pk), 'stroke="' + C.GU + '" stroke-width="1" stroke-dasharray="3 3"');
+    if (!onK) h += arrow(ph, pk, ph, bk - (bk > pk ? 0.2 : -0.2), C.K) + ring(ph, bk, C.K, 6);
+    if (!onH) h += arrow(ph, pk, bh - (bh > ph ? 0.2 : -0.2), pk, C.H) + ring(bh, pk, C.H, 6);
+    h += dot(ph, pk, '#111827', 5.5);
+    if (onK && onH) h += ring(4, 5, C.G, 11).replace('fill="#fff"', 'fill="none"') + T(X(4) + 16, Y(5) + 24, '$5, $4', '#15803d', 'start', 15, 1);
+    g.innerHTML = h;
+    if (onK && onH) { badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> Neither shop wants to change its price.'; badge.style.background = '#ecfdf5'; badge.style.color = '#3f6b40'; }
+    else { var t = []; if (!onK) t.push('<span style="color:#991b1b;">KFT</span> would ' + (bk > pk ? 'raise' : 'cut') + ' to $' + bk.toFixed(2)); if (!onH) t.push('<span style="color:#1e40af;">Husky</span> would ' + (bh > ph ? 'raise' : 'cut') + ' to $' + bh.toFixed(2)); badge.innerHTML = t.join('; '); badge.style.background = '#fef9f3'; badge.style.color = '#7a4a33'; }
+    read.innerHTML = '<div style="color:#991b1b;">KFT: ' + Math.round(qK(pk, ph)) + ' cups, profit <strong>' + money((pk - 1) * qK(pk, ph)) + '</strong></div><div style="color:#1e40af;">Husky: ' + Math.round(qH(pk, ph)) + ' cups, profit <strong>' + money((ph - 1) * qH(pk, ph)) + '</strong></div>';
+    presets.forEach(function(bt){ bt.classList.toggle('on', +bt.dataset.k === pk && +bt.dataset.h === ph); });
+  }
+
+  new MutationObserver(function(){ draw(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  draw();
+})();
+</script>
 </section>
 
 <section id="cc-13-3">
@@ -1044,22 +1565,120 @@
 </section>
 
 <section id="stk-setup">
-  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Sequential, Not Simultaneous</h2>
-  <p style="font-size:14.1pt; line-height:1.5; margin:0 0 9px;">So far, firms with market power chose output or price <strong>simultaneously</strong>. In reality a firm may move <em>before</em> or <em>after</em> observing a rival's choice &mdash; that's <strong>Stackelberg competition</strong>: an oligopoly where firms produce <strong>sequentially</strong>.</p>
-  <div style="background:#f8f6f3; border-radius:10px; padding:13px 22px; border-left:4px solid var(--secondary-color);">
-    <p style="font-size:12.4pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin:0 0 7px;">Model assumptions &mdash; Stackelberg with identical goods</p>
-    <ol style="margin:0; padding-left:22px; font-size:14.1pt; line-height:1.75;">
-      <li>The market has only a <strong>small number</strong> of firms.</li>
-      <li>Firms make <strong>identical</strong> products.</li>
-      <li>Firms compete by choosing a <strong>quantity</strong> to produce.</li>
-      <li>All goods sell at the market price, set by the <strong>sum of quantities</strong> produced by all firms.</li>
-      <li>Firms do <strong>not</strong> choose simultaneously: <strong>one firm chooses quantity first</strong>; the next firm observes it and then chooses its own.</li>
-    </ol>
+  <h2><i class="fa-solid fa-chess" style="color: var(--secondary-color);"></i> Stackelberg &mdash; One Shop Commits First</h2>
+  <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 16px; margin:0 0 10px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;">Same boba market as Cournot: \(P = 19.99 - 0.03\,Q\), \(MC = \$1\), and each shop picks how many cups. <strong>One change: the timing.</strong></p></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+    <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-left:4px solid var(--line-color); border-radius:8px; padding:9px 14px;">
+      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:700; color:var(--secondary-color);"><i class="fa-solid fa-equals" style="margin-right:5px;"></i>Cournot: both choose at the same time</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin:0 0 6px;">
+        <img alt="Kung Fu Tea storefront" src="figures/kongfu_shop.webp" style="height:112px; border-radius:7px; box-shadow:0 1px 6px rgba(0,0,0,.15);">
+        <span style="font-size:11pt; color:var(--muted-color); text-align:center; line-height:1.3;">same<br>moment</span>
+        <img alt="Husky Boba storefront" src="figures/husky_boba_shop.webp" style="height:112px; border-radius:7px; box-shadow:0 1px 6px rgba(0,0,0,.15);">
+      </div>
+      <p style="margin:0; font-size:11.5pt; line-height:1.4;">Each shop guesses the other&rsquo;s cups. Result: <strong>211 cups each</strong>, \(P = \$7.33\).</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:9px 14px;">
+      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:700; color:var(--accent-color);"><i class="fa-solid fa-forward-step" style="margin-right:5px;"></i>Stackelberg: Kung Fu Tea moves first</p>
+      <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin:0 0 6px;">
+        <div style="text-align:center;"><img alt="Kung Fu Tea storefront" src="figures/kongfu_shop.webp" style="height:112px; border-radius:7px; box-shadow:0 1px 6px rgba(0,0,0,.15); border:3px solid #dc2626;"></div>
+        <span style="font-size:11pt; color:var(--muted-color); text-align:center; line-height:1.3;"><i class="fa-solid fa-arrow-right-long" style="font-size:18pt; color:var(--accent-color);"></i><br>then</span>
+        <div style="text-align:center;"><img alt="Husky Boba storefront" src="figures/husky_boba_shop.webp" style="height:112px; border-radius:7px; box-shadow:0 1px 6px rgba(0,0,0,.15); border:3px solid #2563eb;"></div>
+      </div>
+      <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#dc2626;">Kung Fu Tea</strong> opens its stores and hires first: cups it cannot take back. <strong style="color:#2563eb;">Husky</strong> sees \(q_K\), then picks \(q_H\).</p>
+    </div>
   </div>
+  <div class="fragment fade-up" data-fragment-index="3" style="display:flex; align-items:stretch; justify-content:center; gap:8px; margin:10px 0 0;">
+    <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; flex:1; padding:7px 12px;"><p style="margin:0; font-size:11.5pt; line-height:1.35;"><strong>1 &middot; Husky&rsquo;s reaction curve slopes down.</strong> More Kung Fu Tea cups, fewer Husky cups.</p></div>
+    <div style="display:flex; align-items:center; font-size:20pt; color:var(--line-color);">&rarr;</div>
+    <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; flex:1; padding:7px 12px;"><p style="margin:0; font-size:11.5pt; line-height:1.35;"><strong>2 &middot; So Kung Fu Tea commits to many cups</strong>, before Husky decides.</p></div>
+    <div style="display:flex; align-items:center; font-size:20pt; color:var(--line-color);">&rarr;</div>
+    <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; flex:1; padding:7px 12px;"><p style="margin:0; font-size:11.5pt; line-height:1.35;"><strong>3 &middot; Husky backs off</strong> and makes fewer cups. The leader keeps the gap.</p></div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:10px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.4;">Moving first pays only if the commitment sticks: built stores, not a promise. To solve it, start with the <strong>last</strong> mover &mdash; work backward.</p></div>
+</section>
+
+<section id="stk-solve">
+  <h2><i class="fa-solid fa-backward" style="color: var(--secondary-color);"></i> Stackelberg on Boba &mdash; Solve It Backward</h2>
+  <div style="display:grid; grid-template-columns:1.05fr 1fr; gap:16px; align-items:start;">
+    <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 404" style="width:100%; max-height:430px; display:block;" role="img" aria-label="Reaction-curve diagram: Kung Fu Tea cups on the horizontal axis, Husky cups on the vertical axis; Husky's reaction curve, the leader's choice of 316.5 and the Stackelberg point (316.5, 158.25) next to the Cournot point (211, 211)"><g class="sk-plot"></g></svg></div>
+    <div style="display:flex; flex-direction:column; gap:7px;">
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:7px 13px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">1 &middot; Husky&rsquo;s reply first.</strong> It moves last, so solve it first: \(q_H = 316.5 - 0.5\,q_K\), the same reaction curve as in Cournot.</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:7px 13px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#dc2626;">2 &middot; Kung Fu Tea plugs that in.</strong> \(P = 19.99 - 0.03\,(q_K + 316.5 - 0.5\,q_K) = 10.495 - 0.015\,q_K\). MR = MC: \(10.495 - 0.03\,q_K = 1\), so \(q_K = 316.5\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:7px 13px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">3 &middot; Husky answers.</strong> \(q_H = 316.5 - 0.5\,(316.5) = 158.25\) cups, half the leader.</p></div>
+      <div class="fragment fade-up" data-fragment-index="4" style="background:#f8f6f3; border-left:4px solid var(--line-color); border-radius:8px; padding:7px 13px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>4 &middot; Price.</strong> \(Q = 474.75\), so \(P = 19.99 - 0.03\,(474.75) = \$5.75\). Profit: Kung Fu Tea \$1,503, Husky \$751.</p></div>
+      <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:0; padding:8px 14px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;">The leader makes the <strong>monopoly amount</strong>; the follower makes half. Kung Fu Tea earns \$1,503 against \$1,336 in Cournot: <strong>moving first pays.</strong></p></div>
+    </div>
+  </div>
+  <script>
+(function(){
+  var root = document.currentScript.closest('section');
+  var g = root.querySelector('.sk-plot');
+  var X0 = 66, X1 = 492, Y0 = 352, Y1 = 30, QXM = 680, QYM = 400;
+  var C = { K:'#dc2626', H:'#2563eb', AX:'#374151', GU:'#9ca3af', MU:'#8C8580', S:'#111827', G:'#6A8E6B' };
+  function X(q){ return X0 + (X1 - X0) * q / QXM; }
+  function Y(q){ return Y0 - (Y0 - Y1) * q / QYM; }
+  function f1(v){ return (+v).toFixed(1); }
+  function L(x1, y1, x2, y2, st){ return '<line x1="' + f1(x1) + '" y1="' + f1(y1) + '" x2="' + f1(x2) + '" y2="' + f1(y2) + '" ' + st + '/>'; }
+  function T(x, y, s, col, anc, sz, bold){ return '<text x="' + f1(x) + '" y="' + f1(y) + '" fill="' + col + '" font-size="' + (sz || 13) + '" text-anchor="' + (anc || 'start') + '"' + (bold ? ' font-weight="700"' : '') + '>' + s + '</text>'; }
+  function sub(b, s){ return b + '<tspan font-size="10" dy="3">' + s + '</tspan><tspan dy="-3"></tspan>'; }
+  function dot(qk, qh, col, r){ return '<circle cx="' + f1(X(qk)) + '" cy="' + f1(Y(qh)) + '" r="' + (r || 5) + '" fill="' + col + '"/>'; }
+  function ring(qk, qh, col){ return '<circle cx="' + f1(X(qk)) + '" cy="' + f1(Y(qh)) + '" r="6" fill="#fff" stroke="' + col + '" stroke-width="2"/>'; }
+  function guideV(qk, qh, col){ return L(X(qk), Y(qh), X(qk), Y0, 'stroke="' + (col || C.GU) + '" stroke-width="1.2" stroke-dasharray="4 3"'); }
+  function guideH(qk, qh, col){ return L(X0, Y(qh), X(qk), Y(qh), 'stroke="' + (col || C.GU) + '" stroke-width="1.2" stroke-dasharray="4 3"'); }
+  function xt(q, lab, col){ return T(X(q), Y0 + 18, lab, col || C.AX, 'middle', 12.5, 1); }
+  function yt(q, lab, col){ return T(X0 - 6, Y(q) + 4.5, lab, col || C.AX, 'end', 12.5, 1); }
+  function arrow(x1, y1, x2, y2, col){
+    var d = Math.hypot(x2 - x1, y2 - y1), ux = (x2 - x1) / d, uy = (y2 - y1) / d; x2 -= ux * 8; y2 -= uy * 8;
+    var a = Math.atan2(y2 - y1, x2 - x1), h = 8;
+    return L(x1, y1, x2, y2, 'stroke="' + col + '" stroke-width="2"') + '<path d="M' + f1(x2 + ux * 2) + ',' + f1(y2 + uy * 2) + ' L' + f1(x2 - h * Math.cos(a - 0.45)) + ',' + f1(y2 - h * Math.sin(a - 0.45)) + ' L' + f1(x2 - h * Math.cos(a + 0.45)) + ',' + f1(y2 - h * Math.sin(a + 0.45)) + ' Z" fill="' + col + '"/>';
+  }
+  function axes(){
+    return L(X0, Y1 - 8, X0, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"') + L(X0, Y0, X1 + 8, Y0, 'stroke="' + C.AX + '" stroke-width="1.4"')
+      + T(X0 - 4, Y1 - 14, sub('Husky cups, q', 'H'), C.H, 'start', 13, 1)
+      + T(X1 + 8, Y0 + 40, sub('Kung Fu Tea cups, q', 'K'), C.K, 'end', 13, 1)
+      + T(X0 - 6, Y0 + 18, '0', C.AX, 'end', 12.5);
+  }
+  function step(){ var seen = {}, n = 0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k = f.getAttribute('data-fragment-index'); if (!seen[k]) { seen[k] = 1; n++; } }); return n; }
+  function draw(){
+    var s = step(), h = axes();
+    if (s >= 1) {
+      // Kung Fu Tea's simultaneous-move curve, faint, for reference
+      h += L(X(316.5), Y(0), X(316.5 - 0.5 * 400), Y(400), 'stroke="#d1a3a3" stroke-width="1.6" stroke-dasharray="6 4"');
+      h += T(X(130) + 6, Y(392), sub('BR', 'K') + ' (Cournot)', '#b07c7c', 'start', 11.5);
+      h += ring(211, 211, C.MU) + T(X(211) - 12, Y(211) + 22, 'C (211, 211)', C.MU, 'end', 12.5, 1);
+      // Husky's reaction curve
+      h += L(X(0), Y(316.5), X(633), Y(0), 'stroke="' + C.H + '" stroke-width="2.6"');
+      h += T(X(520) + 4, Y(316.5 - 0.5 * 520) - 8, sub('BR', 'H'), C.H, 'start', 14, 1);
+      h += dot(0, 316.5, C.H, 4) + yt(316.5, '316.5', C.H);
+      h += xt(633, '633', C.H);
+    }
+    if (s >= 2) {
+      h += L(X(316.5), Y(0), X(316.5), Y(372), 'stroke="' + C.K + '" stroke-width="1.6" stroke-dasharray="6 3"');
+      h += T(X(316.5) + 6, Y(372) + 4, 'leader picks 316.5', C.K, 'start', 12, 1);
+      h += xt(316.5, '316.5', C.K);
+      if (s < 3) h += xt(211, '211', C.MU);
+    }
+    if (s >= 3) {
+      h += guideH(316.5, 158.25) + dot(316.5, 158.25, C.S, 6) + yt(158.25, '158.25', C.H);
+      h += T(X(316.5) + 12, Y(158.25) - 12, 'S (316.5, 158.25)', C.S, 'start', 12.5, 1);
+      h += xt(211, '211', C.MU) + yt(211, '211', C.MU);
+    }
+    if (s >= 4) {
+      h += arrow(X(211) + 10, Y(211) - 8, X(316.5) + 3, Y(158.25) - 15, C.G);
+      h += T(X(470), Y(240), 'Stackelberg: Q = 474.75', C.S, 'middle', 13, 1) + T(X(470), Y(240) + 17, 'P = $5.75', C.S, 'middle', 13, 1);
+      h += T(X(110), Y(95), 'Cournot: Q = 422', C.MU, 'middle', 12.5) + T(X(110), Y(95) + 16, 'P = $7.33', C.MU, 'middle', 12.5);
+    }
+    g.innerHTML = h;
+  }
+  new MutationObserver(function(){ draw(); }).observe(root, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  draw();
+})();
+</script>
 </section>
 
 
-<section id="stk-firstmover">
+
+<section id="stk-firstmover" data-visibility="hidden">
   <h2><i class="fa-solid fa-trophy" style="color: var(--accent-color);"></i> Why Moving First Pays</h2>
   <style>
     .fm-row{display:flex; align-items:stretch; justify-content:center; gap:8px; margin-top:6px;}
@@ -1103,7 +1722,7 @@
   .sb-shot{border-radius:9px; overflow:hidden; box-shadow:0 1px 7px rgba(0,0,0,.14); line-height:0;}
 </style>
 
-<section id="stk-boba-market">
+<section id="stk-boba-market" data-visibility="hidden">
   <h2><i class="fa-solid fa-chess" style="color: var(--accent-color);"></i> Boston Boba: Leader vs Follower</h2>
   <div class="sb-wrap">
     <div style="background:#f0f5f8; border-radius:8px; padding:10px 18px; border-left:4px solid var(--secondary-color); margin:0 0 14px;">
@@ -1127,7 +1746,7 @@
   </div>
 </section>
 
-<section id="stk-follower-br">
+<section id="stk-follower-br" data-visibility="hidden">
   <h2><i class="fa-solid fa-reply" style="color: var(--accent-color);"></i> The Follower: Husky Boba's Best Response</h2>
   <div class="sb-wrap">
     <p style="font-size:11.9pt; color:var(--muted-color); text-align:center; margin:0;">Solve <strong>backwards</strong> &mdash; the follower moves second, so we work it out first. <span style="color:#dc2626;">K = Kung Fu Tea (leader)</span>, <span style="color:#2563eb;">H = Husky Boba (follower)</span>.</p>
@@ -1146,7 +1765,7 @@
   </div>
 </section>
 
-<section id="stk-leader-strategy">
+<section id="stk-leader-strategy" data-visibility="hidden">
   <h2><i class="fa-solid fa-chess-king" style="color: var(--accent-color);"></i> The Leader's Strategy</h2>
   <div class="sb-wrap"><div style="display:grid; grid-template-columns:1.06fr 0.94fr; gap:24px; align-items:center;">
     <div class="sb-card">
@@ -1162,7 +1781,7 @@
   </div></div>
 </section>
 
-<section id="stk-equilibrium">
+<section id="stk-equilibrium" data-visibility="hidden">
   <h2><i class="fa-solid fa-flag-checkered" style="color: var(--accent-color);"></i> The Stackelberg Equilibrium</h2>
   <div style="display:grid; grid-template-columns:1fr 0.95fr; gap:20px; align-items:center;">
     <div>
@@ -1275,7 +1894,7 @@
 <section class="section-divider" data-state="is-section-divider" id="div-welfare">
   <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">§13.7</p>
   <h1>Capacity &amp; the Welfare Ranking</h1>
-  <p class="subtitle">The Kreps-Scheinkman bridge &mdash; then line up all five regimes on one ruler</p>
+  <p class="subtitle">Who wins and who loses: line up the boba regimes on one ladder</p>
 </section>
 
 <section id="walkthrough-13-7">
@@ -1300,33 +1919,68 @@
 
 <section>
   <section id="poll-2-question">
-    <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; Who Gives Consumers the Lower Price?</h2>
-    <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px;">
-      <p style="font-size: 15pt; line-height: 1.7;">
-        Same demand \(P = 100 - Q\), same \(MC = \$20\), same two firms. In one market they play <strong>Cournot</strong> (simultaneous quantities); in another, <strong>Stackelberg</strong> (one commits first). Which market gives <strong>consumers the lower price?</strong>
-      </p>
-    </div>
-    <div class="poll-grid" data-poll-id="ch13-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: 14pt;">
-      <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Cournot &mdash; simultaneous is more competitive</div>
-      <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Stackelberg &mdash; the leader expands output</div>
-      <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Same price &mdash; same firms and costs</div>
-      <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 14px 20px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) Depends on who the leader is</div>
-    </div>
-    <p style="text-align: center; margin-top: 14px;"><span class="timer-badge"><i class="fa-solid fa-clock"></i> 45 sec to vote</span></p>
-  </section>
-  <section data-poll-results="ch13-econ2316-poll-2" id="poll-2-reveal" style="display: flex; flex-direction: column;">
-    <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Stackelberg, \(\$40 &lt; \$46.67\)</h2>
-    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
-      <div class="poll-results-chart" data-poll-id="ch13-econ2316-poll-2" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 130px; margin: 12px 60px;"></div>
-      <div style="padding: 14px 50px 0;">
-        <p style="font-size: 15pt; line-height: 1.7;">The leader commits to a <em>large</em> output (\(q_1 = 40\)); the follower retreats (\(q_2 = 20\)). Total \(Q = 60 &gt; 53.33\), so \(P\) falls to \(\$40\).</p>
-        <div style="background: #fef2f2; border-left: 4px solid var(--danger-color); padding: 14px 22px; border-radius: 8px; margin: 14px 0;">
-          <p style="font-size: 14pt; margin: 0;"><strong>Trap A:</strong> &ldquo;simultaneous = more competitive&rdquo; is wrong here. The first-mover advantage is an <em>output-expansion</em> commitment &mdash; great for the leader and for consumers, bad for the follower (\(\$400 &lt; \$711\)). Sequential timing lowers price <em>and</em> raises consumer surplus.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <h2><i class="fa-solid fa-chart-bar" style="color: var(--accent-color);"></i> Poll &mdash; Which Gives Boba Buyers the Lower Price?</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+    <div style="background:#f8f6f3; border-left:4px solid var(--line-color); border-radius:8px; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Market 1 &middot; Cournot.</strong> Kung Fu Tea and Husky pick their cups <strong>at the same time</strong>.</p></div>
+    <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:9px 16px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Market 2 &middot; Stackelberg.</strong> Kung Fu Tea <strong>commits first</strong>; Husky sees it, then picks.</p></div>
+  </div>
+  <p style="font-size:12pt; color:var(--muted-color); margin:8px 0 0;">Same demand \(P = 19.99 - 0.03\,Q\), same \(MC = \$1\), same two shops.</p>
+  <p style="font-size:14pt; line-height:1.5; margin:6px 0 0;"><strong>Which market gives boba buyers the lower price, and why?</strong></p>
+  <div class="poll-grid" data-poll-id="ch13p2-econ2316-poll-2" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; font-size: 13pt;">
+    <div class="poll-option" data-choice="A" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">A) Cournot &mdash; choosing at the same time, neither shop can grab the market</div>
+    <div class="poll-option" data-choice="B" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">B) Stackelberg &mdash; Kung Fu Tea adds more cups than Husky cuts</div>
+    <div class="poll-option" data-choice="C" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">C) Same price &mdash; Husky&rsquo;s cut exactly cancels Kung Fu Tea&rsquo;s extra cups</div>
+    <div class="poll-option" data-choice="D" style="background: #f0f5f8; padding: 11px 18px; border-radius: 8px; cursor: pointer; transition: all 0.2s; border: 3px solid transparent;">D) It depends on which shop leads</div>
+  </div>
+  <p style="text-align: center; margin-top: 12px;"><span class="timer-badge" style="display:inline-block; background:#f0f5f8; color:var(--secondary-color); padding:6px 14px; border-radius:16px; font-size:12pt; font-weight:600;"><i class="fa-solid fa-clock" style="margin-right:6px;"></i>45 sec to vote</span> &nbsp; <span style="font-size:12pt; color:var(--muted-color);">then &darr; for the answer</span></p>
 </section>
+  <section data-poll-results="ch13p2-econ2316-poll-2" id="poll-2-reveal" style="display: flex; flex-direction: column;">
+  <h2><i class="fa-solid fa-check-circle" style="color: var(--success-color);"></i> Answer: B &mdash; Stackelberg, \$5.75 Beats \$7.33</h2>
+  <div class="poll-results-chart" data-poll-id="ch13p2-econ2316-poll-2" style="display: flex; gap: 20px; align-items: flex-end; justify-content: center; height: 80px; margin: 0 60px;"></div>
+  <div class="mathjax_ignore tex2jax_ignore" style="margin-top:6px;">
+  <svg viewBox="0 0 900 150" width="100%" style="max-height:150px; display:block;">
+    <text x="190" y="14" style="font-size:12px; fill:var(--muted-color);">cups per day, one scale (1 px = 1 cup)</text>
+    <g class="fragment fade-up" data-fragment-index="1">
+      <text x="180" y="48" text-anchor="end" style="font-size:14px; font-weight:700; fill:#374151;">Cournot</text>
+      <rect x="190" y="30" width="211" height="26" rx="2" style="fill:#dc2626;"/>
+      <text x="295.5" y="48" text-anchor="middle" style="font-size:13px; font-weight:700; fill:#fff;">K 211</text>
+      <rect x="401" y="30" width="211" height="26" rx="2" style="fill:#2563eb;"/>
+      <text x="506.5" y="48" text-anchor="middle" style="font-size:13px; font-weight:700; fill:#fff;">H 211</text>
+      <text x="622" y="48" style="font-size:14px; font-weight:700; fill:#374151;">Q = 422 &rarr; $7.33</text>
+    </g>
+    <g class="fragment fade-up" data-fragment-index="2">
+      <text x="180" y="96" text-anchor="end" style="font-size:14px; font-weight:700; fill:#374151;">Stackelberg</text>
+      <rect x="190" y="78" width="316.5" height="26" rx="2" style="fill:#dc2626;"/>
+      <text x="348" y="96" text-anchor="middle" style="font-size:13px; font-weight:700; fill:#fff;">K 316.5</text>
+      <rect x="506.5" y="78" width="158.25" height="26" rx="2" style="fill:#2563eb;"/>
+      <text x="585.6" y="96" text-anchor="middle" style="font-size:13px; font-weight:700; fill:#fff;">H 158.25</text>
+      <text x="675" y="96" style="font-size:14px; font-weight:700; fill:#111827;">Q = 474.75 &rarr; $5.75</text>
+      <line x1="612" y1="60" x2="612" y2="134" style="stroke:#6A8E6B; stroke-width:1.5; stroke-dasharray:4 3;"/>
+      <line x1="664.75" y1="108" x2="664.75" y2="134" style="stroke:#6A8E6B; stroke-width:1.5; stroke-dasharray:4 3;"/>
+      <text x="638" y="146" text-anchor="middle" style="font-size:12.5px; font-weight:700; fill:#4d7a4e;">+52.75 cups</text>
+      <text x="400" y="128" text-anchor="middle" style="font-size:12.5px; fill:#374151;">K adds 105.5, H cuts only 52.75</text>
+    </g>
+  </svg>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="3" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:6px;">
+    <div style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:7px 12px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#dc2626;">Kung Fu Tea</strong> gains: \$1,336 &rarr; \$1,503.</p></div>
+    <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:7px 12px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong style="color:#2563eb;">Husky</strong> loses: \$1,336 &rarr; \$751.</p></div>
+    <div style="background:#ecfdf5; border-left:4px solid var(--success-color); border-radius:8px; padding:7px 12px;"><p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Buyers</strong> pay \$1.58 less a cup.</p></div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:10px 0 0; padding:8px 16px;"><p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Trap A:</strong> choosing at the same time is <em>not</em> more competitive here. The leader&rsquo;s big commitment adds cups, so the price falls &mdash; to the same \$5.75 that <strong>three</strong> Cournot shops would give.</p></div>
+</section>
+</section>
+
+<section id="boba-ladder">
+  <h2><i class="fa-solid fa-ranking-star" style="color: var(--secondary-color);"></i> The Boba Ladder &mdash; Who Gets the \$6,010?</h2>
+  <p style="font-size:12.5pt; line-height:1.45; margin:0 0 6px;">At \(P = MC = \$1\), boba creates \$6,010 a day of total surplus. Each set of rules splits the <strong>same pie</strong> among buyers, shops, and loss.</p>
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 900 312" width="100%" style="max-height:330px; display:block;"><defs><pattern id="bl-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#f3e3e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#A85C5C" stroke-width="2.4"/></pattern></defs><g transform="translate(250,6)"><rect x="0" y="0" width="16" height="13" style="fill:#6A8E6B;"/><text x="22" y="11" style="font-size:12.5px; fill:#374151;">consumer surplus</text><rect x="160" y="0" width="16" height="13" style="fill:#C47B5A;"/><text x="182" y="11" style="font-size:12.5px; fill:#374151;">shops&rsquo; profit</text><rect x="300" y="0" width="16" height="13" style="fill:url(#bl-hatch); stroke:#A85C5C;"/><text x="322" y="11" style="font-size:12.5px; fill:#374151;">deadweight loss</text><text x="640" y="11" text-anchor="end" style="font-size:12.5px; fill:var(--muted-color);">every bar = $6,010</text></g><g class="fragment fade-up" data-fragment-index="1"><text x="238" y="53" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Monopoly / cartel</text><text x="238" y="70" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$10.50 &middot; 316.5 cups</text><g transform="translate(250,36)"><rect x="0.0" y="0" width="160.0" height="38" style="fill:#6A8E6B;"/><text x="80.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$1,503</text><rect x="160.0" y="0" width="320.0" height="38" style="fill:#C47B5A;"/><text x="320.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$3,005</text><rect x="480.0" y="0" width="160.0" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="560.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$1,503</text></g></g><g class="fragment fade-up" data-fragment-index="2"><text x="238" y="121" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Cournot, 2 shops</text><text x="238" y="138" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$7.33 &middot; 422 cups</text><g transform="translate(250,104)"><rect x="0.0" y="0" width="284.4" height="38" style="fill:#6A8E6B;"/><text x="142.2" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,671</text><rect x="284.4" y="0" width="284.4" height="38" style="fill:#C47B5A;"/><text x="426.7" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,671</text><rect x="568.9" y="0" width="71.1" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="604.4" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$668</text></g></g><g class="fragment fade-up" data-fragment-index="3"><text x="238" y="189" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Stackelberg</text><text x="238" y="206" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$5.75 &middot; 474.75 cups</text><g transform="translate(250,172)"><rect x="0.0" y="0" width="360.0" height="38" style="fill:#6A8E6B;"/><text x="180.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$3,381</text><rect x="360.0" y="0" width="240.0" height="38" style="fill:#C47B5A;"/><text x="480.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,254</text><rect x="600.0" y="0" width="40.0" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="620.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$376</text></g></g><g class="fragment fade-up" data-fragment-index="4"><text x="238" y="257" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Bertrand</text><text x="238" y="274" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$1 &middot; 633 cups</text><g transform="translate(250,240)"><rect x="0.0" y="0" width="640.0" height="38" style="fill:#6A8E6B;"/><text x="320.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$6,010</text></g></g></svg></div>
+  <div class="fragment fade-up" data-fragment-index="5" style="display:grid; grid-template-columns:1.5fr 1fr; gap:12px; margin-top:6px;">
+    <div class="key-result" style="margin:0; padding:8px 14px;"><p style="margin:0; font-size:12pt; line-height:1.4;">Down the ladder the price falls, buyers keep more, and the deadweight loss shrinks to zero. Profit is biggest at the top &mdash; which is why shops <strong>try</strong> to collude.</p></div>
+    <div style="background:#f8f6f3; border-left:4px solid var(--line-color); border-radius:8px; padding:7px 12px;"><p style="margin:0; font-size:11pt; line-height:1.4;"><strong>Not on this ladder:</strong> differentiated Bertrand (\$5 and \$4; profit \$1,600 and \$900) uses its own demand, so it does not share this \$6,010.</p></div>
+  </div>
+</section>
+
 
 <section>
 <section id="contestable">
@@ -1351,7 +2005,7 @@
 </section>
 </section>
 
-<section id="walkthrough-13-8">
+<section id="walkthrough-13-8" data-visibility="hidden">
   <h2><i class="fa-solid fa-ranking-star" style="color: var(--accent-color);"></i> Walkthrough 13.8 &mdash; Welfare Across Five Regimes</h2>
   <p style="font-size: 12pt; color: var(--muted-color); margin: 0 0 8px;">All on the locked calibration \(P = 100 - Q\), \(MC = \$20\), \(TS^{PC} = \$3{,}200\). The chapter's payoff table.</p>
   <table class="table-standard">
@@ -1372,18 +2026,35 @@
 
 <section>
 <section id="hhi-snapshot">
-  <h2><i class="fa-solid fa-chart-pie" style="color: var(--secondary-color);"></i> Measuring Concentration: The HHI &mdash; and Its Limits</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 18px; align-items: start;">
-    <div>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 7px;">The <strong>Herfindahl-Hirschman Index</strong> sums squared market shares: \(\text{HHI} = \sum_i s_i^2\) (shares in %, range 0&ndash;10,000). \(N\) equal firms give \(\text{HHI} = 10{,}000/N\); a monopoly is \(10{,}000\).</p>
-      <p style="font-size: 12.5pt; line-height: 1.5; margin: 0 0 7px;">It's the antitrust agencies' first-pass screen for merger review &mdash; higher HHI flags more concentration.</p>
-      <div class="misconception" style="margin: 0;">
-        <p style="margin: 0; font-size: 11.5pt; line-height: 1.45;"><strong>But concentration is not conduct.</strong> §13.5 showed two differentiated firms can hold \(L = 0.300\) while five homogeneous Cournot firms hold less &mdash; and Bertrand reaches \(L = 0\) with just two. HHI is a proxy, not a verdict. The strategic structure (this chapter) is what actually sets the markup.</p>
-      </div>
+  <h2><i class="fa-solid fa-chart-pie" style="color: var(--secondary-color);"></i> Measuring Concentration &mdash; The HHI and Its Limits</h2>
+  <div style="display:grid; grid-template-columns:1fr 1.1fr; gap:16px; align-items:start;">
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:8px 14px;"><p style="margin:0; font-size:13pt; line-height:1.45;">The <strong>Herfindahl-Hirschman Index</strong> adds up squared market shares (in %): \(\text{HHI} = \sum_i s_i^2\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-left:4px solid var(--line-color); border-radius:8px; padding:8px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.5;">One shop: \(100^2 = 10{,}000\).<br>Two equal shops: \(50^2 + 50^2 = 5{,}000\).<br>Boba Stackelberg, \(\tfrac{2}{3}\) and \(\tfrac{1}{3}\): \(66.7^2 + 33.3^2 \approx 5{,}556\).</p></div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-left:4px solid var(--accent-color); border-radius:8px; padding:8px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>How regulators use it.</strong> Under the 2023 U.S. Merger Guidelines, a merger that leaves the HHI above <strong>1,800</strong> and raises it by more than <strong>100</strong> is presumed to harm competition.</p><div class="mathjax_ignore tex2jax_ignore" style="margin-top:6px;"><svg viewBox="0 0 520 84" width="100%" style="display:block;">
+          <rect x="20" y="34" width="86.4" height="14" style="fill:#ecfdf5;"/><rect x="106.4" y="34" width="393.6" height="14" style="fill:#f7e7e7;"/>
+          <line x1="20" y1="48" x2="500" y2="48" style="stroke:#374151; stroke-width:1.4;"/>
+          <line x1="106.4" y1="26" x2="106.4" y2="56" style="stroke:#A85C5C; stroke-width:2;"/>
+          <text x="106.4" y="20" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#A85C5C;">1,800</text>
+          <text x="20" y="70" text-anchor="middle" style="font-size:13px; fill:#374151;">0</text>
+          <text x="500" y="70" text-anchor="middle" style="font-size:13px; fill:#374151;">10,000</text>
+          <text x="303" y="78" text-anchor="middle" style="font-size:13px; fill:#A85C5C;">highly concentrated</text>
+          <circle cx="260" cy="41" r="5" style="fill:#374151;"/><text x="252" y="22" text-anchor="end" style="font-size:13px; fill:#374151;">two equal: 5,000</text>
+          <circle cx="286.7" cy="41" r="5" style="fill:#6B8BA4;"/><text x="295" y="22" text-anchor="start" style="font-size:13px; fill:#6B8BA4;">Stackelberg 5,556</text>
+          <circle cx="500" cy="41" r="5" style="fill:#A85C5C;"/>
+        </svg></div></div>
     </div>
-    <div style="text-align: center;">
-      <img class="figure" alt="Herfindahl-Hirschman Index snapshot across industries, illustrating the spread from unconcentrated to highly concentrated markets" src="figures/figure-13-7-hhi-industry-snapshot.webp" style="max-height: 320px;">
-      <p style="font-size: 10.5pt; color: var(--muted-color); margin-top: 4px;">HHI across industries &mdash; a screening tool, not a measure of market power itself.</p>
+    <div>
+      <table class="table-standard fragment fade-up" data-fragment-index="3" style="width:100%; margin:0;">
+        <thead><tr><th style="padding:6px 10px; font-size:12.5pt;">Two boba shops</th><th style="padding:6px 10px; font-size:12.5pt;">Shares</th><th style="padding:6px 10px; font-size:12.5pt;">HHI</th><th style="padding:6px 10px; font-size:12.5pt;">Price</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:6px 10px; font-size:12.5pt;">Cournot</td><td style="padding:6px 10px; font-size:12.5pt;">50 / 50</td><td style="padding:6px 10px; font-size:12.5pt;">5,000</td><td style="padding:6px 10px; font-size:12.5pt;"><strong>\$7.33</strong></td></tr>
+          <tr><td style="padding:6px 10px; font-size:12.5pt;">Stackelberg</td><td style="padding:6px 10px; font-size:12.5pt;">67 / 33</td><td style="padding:6px 10px; font-size:12.5pt;">5,556</td><td style="padding:6px 10px; font-size:12.5pt;"><strong>\$5.75</strong></td></tr>
+          <tr><td style="padding:6px 10px; font-size:12.5pt;">Bertrand</td><td style="padding:6px 10px; font-size:12.5pt;">50 / 50</td><td style="padding:6px 10px; font-size:12.5pt;">5,000</td><td style="padding:6px 10px; font-size:12.5pt;"><strong>\$1</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="misconception fragment fade-up" data-fragment-index="4" style="margin:12px 0 0;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Concentration is not conduct.</strong> Same HHI, prices of \$7.33 and \$1. The <em>higher</em> HHI has a lower price than Cournot. Bertrand reaches \(P = MC\) with just two shops.</p></div>
+      <div class="key-result fragment fade-up" data-fragment-index="5" style="margin:10px 0 0; padding:8px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.4;">The HHI is a first screen. The models &mdash; what firms choose, and when &mdash; explain the price.</p></div>
     </div>
   </div>
 </section>
@@ -1408,30 +2079,21 @@
 </section>
 
 <section id="summary">
-  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Chapter 13 &mdash; The Six Results</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Chamberlin LR tangency (§13.2).</strong> Free entry of differentiated firms &rarr; perceived demand tangent to ATC: \(P &gt; MC\) <em>and</em> excess capacity, together.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Cournot \(N\)-firm (§13.3).</strong> \(q^{\ast} = \tfrac{a-c}{(N+1)b}\), \(P^{\ast} = \tfrac{a+Nc}{N+1}\), \(L^{\ast} = \tfrac{4}{5+N}\); \(L \to 0\) as \(N \to \infty\).</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Bertrand paradox (§13.4).</strong> Homogeneous + unlimited capacity + one shot &rarr; \(P = MC\) with just two firms.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Differentiated Bertrand (§13.5).</strong> \(P^{\ast} = \tfrac{\alpha + \beta c}{2\beta - \gamma}\); finite markup for any \(\gamma &lt; \beta\). Explains the streaming cluster.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Stackelberg (§13.6).</strong> Leader \(\tfrac{a-c}{2b}\), follower \(\tfrac{a-c}{4b}\); \(\pi_1 = 2\pi_2\). Output up, price down vs Cournot.</p>
-    </div>
-    <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Kreps-Scheinkman (§13.7).</strong> Capacity-then-price replicates Cournot &mdash; the paradox is a teaching case; real capacity-bound markets play Cournot.</p>
+  <h2><i class="fa-solid fa-list-check" style="color: var(--accent-color);"></i> Chapter 13 &mdash; The Results</h2>
+  <div class="fragment fade-up" data-fragment-index="1">
+    <p style="margin:0 0 6px; font-size:13pt; font-weight:700; color:var(--secondary-color);">Part 1 &middot; Monopolistic competition (Jordan&rsquo;s Airbnb)</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+      <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:9px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Tangency.</strong> Entry pushes demand down until it just touches ATC: 10 nights at \$180, zero economic profit.</p></div>
+      <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:9px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Excess capacity.</strong> 10 nights booked; ATC is lowest at 20.</p></div>
+      <div style="background:#f0f5f8; border-left:4px solid var(--secondary-color); border-radius:8px; padding:9px 14px;"><p style="margin:0; font-size:12.5pt; line-height:1.45;"><strong>Markup.</strong> Price \$180, marginal cost \$90: the price of variety.</p></div>
     </div>
   </div>
-  <div class="key-result" style="margin-top: 12px;">
-    <p style="margin: 0; font-size: 12.5pt;"><strong>One spine.</strong> Welfare ranks \(TS^{PC} &gt; TS^{Bdiff} &gt; TS^{S} &gt; TS^{C} &gt; TS^{M}\); Lerner ranks the reverse. Every model is a point between the competitive floor and the cartel ceiling, selected by strategic structure.</p>
+  <div class="fragment fade-up" data-fragment-index="2" style="margin-top:16px;">
+    <p style="margin:0 0 6px; font-size:13pt; font-weight:700; color:var(--accent-color);">Part 2 &middot; Oligopoly: the boba ladder (\(P = 19.99 - 0.03\,Q\), \(MC = \$1\))</p>
+    <div style="display:flex; align-items:stretch; gap:6px;"><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #A85C5C; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#A85C5C;">\$10.50</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Monopoly / cartel</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">cartel won&rsquo;t hold: each wants 237.4 cups</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #C47B5A; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#C47B5A;">\$7.33</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Cournot</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">add shops: \$4.80 at 4, \$2.73 at 10</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #6B8BA4; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#6B8BA4;">\$5.75</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Stackelberg</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">leader 316.5, follower 158.25</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #6A8E6B; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#6A8E6B;">\$1</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Bertrand</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">two shops reach P = MC</p></div></div>
+    <p style="margin:8px 0 0; font-size:12pt; color:var(--muted-color);">Differentiated drinks (Kung Fu Tea advertises): \$5 and \$4, a markup that lasts even with price competition.</p>
   </div>
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin:16px 0 0; padding:10px 16px;"><p style="margin:0; font-size:13pt; line-height:1.4;">The number of firms is not the whole story. <strong>What</strong> they choose (cups or price), <strong>when</strong> they choose, and <strong>how different</strong> the drinks are set the price.</p></div>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="qa">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=20e18713e8b3d8bd359d02396d251235">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=e61206f01c05a93f1f63260caa8969f5">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -59,6 +59,18 @@
     .gm-hl{position:absolute; inset:0; background:rgba(240,222,120,0.62); z-index:0;}
     .gmtx .gm-colh .gm-hl, .gmtx .gm-rowh .gm-hl{inset:-2px -5px; border-radius:5px;}
     .gm-ring{position:absolute; inset:-6px -9px; border:3px solid #E0A329; border-radius:50%; z-index:3; pointer-events:none;}
+/* payoff matrices, house table style (dark strategy headers, as Walkthrough 14.1 and the Ch 13 tables) */
+.gmtx.pm{font-size:16pt;}
+.reveal .gmtx.pm tr{background:transparent !important;}
+.reveal .gmtx.pm td{background:transparent !important; border:0 !important; box-shadow:none !important;}
+.reveal .gmtx.pm .gm-top{color:var(--muted-color); font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding-bottom:6px;}
+.reveal .gmtx.pm .gm-side{color:var(--muted-color); font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding-right:10px;}
+.reveal .gmtx.pm .gm-colh{background:#2D2D2D !important; color:#fff; padding:8px 18px; font-size:13pt; text-align:center;}
+.reveal .gmtx.pm .gm-rowh{background:#2D2D2D !important; color:#fff; padding:8px 16px; font-size:13pt; text-align:center;}
+.reveal .gmtx.pm .gm-cell{background:#fff !important; border:1px solid #cfcac2 !important; padding:11px 26px; font-size:18pt; min-width:96px;}
+.gmtx.pm .gm-me{color:#0d8a74;} .gmtx.pm .gm-pair{color:#b00d59;}
+.gmtx.pm .gm-colh .gm-hl, .gmtx.pm .gm-rowh .gm-hl{inset:0; border-radius:0; background:rgba(240,200,60,0.5);}
+
     /* You-try payoff matrix (ytm) — namespaced copy of the 1116 .pm system to avoid clashing with this deck's .pm */
     .ytm{border-collapse:separate; border-spacing:7px; margin:4px auto 0;}
     .ytm th, .ytm td{padding:10px 14px; border-radius:8px; text-align:center;}
@@ -520,37 +532,31 @@
 <section id="outcome-matrix">
  <h2><i class="fa-solid fa-table-cells-large" style="color: var(--secondary-color);"></i> Outcome Matrix</h2>
  <div class="key-result" style="margin-bottom:14px;"><p style="margin:0;"><strong>Outcome matrix:</strong> a table that records every possible result of the game &mdash; the marbles for the <strong>row player</strong> and the <strong>column player</strong> at each combination of choices. Far easier to absorb than four sentences.</p></div>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; justify-items:center;">
-  <div style="text-align:center;">
-   <table style="border-collapse:collapse; margin:0 auto; font-size:14pt;">
-    <tr><td></td><td></td><td colspan="2" style="text-align:center; padding-bottom:5px; color:var(--muted-color); font-weight:700;">My Pair</td></tr>
-    <tr><td></td><td></td><td style="text-align:center; padding:0 20px 5px; font-weight:700;">Betray</td><td style="text-align:center; padding:0 20px 5px; font-weight:700;">Trust</td></tr>
-    <tr><td rowspan="2" style="font-weight:700; padding-right:10px; color:var(--muted-color);">Me</td><td style="text-align:right; padding-right:10px; font-weight:700;">Betray</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">1</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">5</td></tr>
-    <tr><td style="text-align:right; padding-right:10px; font-weight:700;">Trust</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">0</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">3</td></tr>
-   </table>
-   <p style="font-size:13pt; font-weight:700; margin-top:10px;">My Marbles</p>
-  </div>
-  <div style="text-align:center;">
-   <table style="border-collapse:collapse; margin:0 auto; font-size:14pt;">
-    <tr><td></td><td></td><td colspan="2" style="text-align:center; padding-bottom:5px; color:var(--muted-color); font-weight:700;">My Pair</td></tr>
-    <tr><td></td><td></td><td style="text-align:center; padding:0 20px 5px; font-weight:700;">Betray</td><td style="text-align:center; padding:0 20px 5px; font-weight:700;">Trust</td></tr>
-    <tr><td rowspan="2" style="font-weight:700; padding-right:10px; color:var(--muted-color);">Me</td><td style="text-align:right; padding-right:10px; font-weight:700;">Betray</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">1</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">0</td></tr>
-    <tr><td style="text-align:right; padding-right:10px; font-weight:700;">Trust</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">5</td><td style="border:2.5px solid #2D2D2D; padding:15px 28px; text-align:center; font-weight:800;">3</td></tr>
-   </table>
-   <p style="font-size:13pt; font-weight:700; margin-top:10px;">Pair&rsquo;s Marbles</p>
-  </div>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; justify-items:center; margin-top:8px;">
+  <div style="text-align:center;"><table class="gmtx pm">
+<tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
+<tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td><td class="gm-cell"><span class="gm-me">1</span></td><td class="gm-cell"><span class="gm-me">5</span></td></tr>
+<tr><td class="gm-rowh">Trust</td><td class="gm-cell"><span class="gm-me">0</span></td><td class="gm-cell"><span class="gm-me">3</span></td></tr>
+</table><p style="font-size:13.5pt; font-weight:700; margin-top:10px; color:#0d8a74;">My marbles</p></div>
+  <div style="text-align:center;"><table class="gmtx pm">
+<tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
+<tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td><td class="gm-cell"><span class="gm-pair">1</span></td><td class="gm-cell"><span class="gm-pair">0</span></td></tr>
+<tr><td class="gm-rowh">Trust</td><td class="gm-cell"><span class="gm-pair">5</span></td><td class="gm-cell"><span class="gm-pair">3</span></td></tr>
+</table><p style="font-size:13.5pt; font-weight:700; margin-top:10px; color:#b00d59;">My pair&rsquo;s marbles</p></div>
  </div>
 </section>
 
 <section id="outcome-matrix-merge">
  <h2><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> A More Compact Representation</h2>
  <p style="font-size:13pt; text-align:center; color:var(--muted-color); margin:0 0 6px;">Superimpose the two tables &mdash; <b style="color:#11a890;">my marbles</b> first, <b style="color:#d1106a;">my pair&rsquo;s marbles</b> second:</p>
- <table style="border-collapse:collapse; margin:6px auto 0; font-size:17pt;">
-  <tr><td></td><td></td><td colspan="2" style="text-align:center; padding-bottom:6px; color:#d1106a; font-weight:800;">My Pair</td></tr>
-  <tr><td></td><td></td><td style="text-align:center; padding:0 34px 6px; color:#d1106a; font-weight:700;">Betray</td><td style="text-align:center; padding:0 34px 6px; color:#d1106a; font-weight:700;">Trust</td></tr>
-  <tr><td rowspan="2" style="color:#11a890; font-weight:800; padding-right:14px;">Me</td><td style="text-align:right; color:#11a890; font-weight:700; padding-right:14px;">Betray</td><td style="border:3px solid #2D2D2D; padding:20px 36px; text-align:center;"><b style="color:#11a890;">1</b> , <b style="color:#d1106a;">1</b></td><td style="border:3px solid #2D2D2D; padding:20px 36px; text-align:center;"><b style="color:#11a890;">5</b> , <b style="color:#d1106a;">0</b></td></tr>
-  <tr><td style="text-align:right; color:#11a890; font-weight:700; padding-right:14px;">Trust</td><td style="border:3px solid #2D2D2D; padding:20px 36px; text-align:center;"><b style="color:#11a890;">0</b> , <b style="color:#d1106a;">5</b></td><td style="border:3px solid #2D2D2D; padding:20px 36px; text-align:center;"><b style="color:#11a890;">3</b> , <b style="color:#d1106a;">3</b></td></tr>
- </table>
+ <div style="text-align:center; margin-top:10px;"><table class="gmtx pm" style="font-size:19pt;">
+<tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
+<tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td><td class="gm-cell"><span class="gm-me">1</span><span class="gm-sep">,</span><span class="gm-pair">1</span></td><td class="gm-cell"><span class="gm-me">5</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td></tr>
+<tr><td class="gm-rowh">Trust</td><td class="gm-cell"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">3</span></td></tr>
+</table></div>
  <p style="font-size:12pt; text-align:center; margin-top:14px;"><b style="color:#11a890;">1st number</b> = row player (my marbles) &nbsp;&bull;&nbsp; <b style="color:#d1106a;">2nd number</b> = column player (my pair&rsquo;s marbles)</p>
 </section>
 
@@ -564,7 +570,7 @@
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; justify-items:center; align-items:start;">
   <div style="text-align:center;">
    <p style="font-size:12.5pt; font-weight:700; margin:0 0 6px;">If my pair plays <span style="color:#d1106a;">Betray</span>&hellip;</p>
-   <table class="gmtx">
+   <table class="gmtx pm">
     <tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
     <tr><td></td><td></td><td class="gm-colh">Betray<span class="gm-hl fragment" data-fragment-index="1"></span></td><td class="gm-colh">Trust</td></tr>
     <tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td>
@@ -578,7 +584,7 @@
   </div>
   <div class="fragment" data-fragment-index="3" style="text-align:center;">
    <p style="font-size:12.5pt; font-weight:700; margin:0 0 6px;">If my pair plays <span style="color:#d1106a;">Trust</span>&hellip;</p>
-   <table class="gmtx">
+   <table class="gmtx pm">
     <tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
     <tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust<span class="gm-hl fragment" data-fragment-index="4"></span></td></tr>
     <tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td>
@@ -602,7 +608,7 @@
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; justify-items:center; align-items:start;">
   <div style="text-align:center;">
    <p style="font-size:12.5pt; font-weight:700; margin:0 0 6px;">If <span style="color:#11a890;">I play Betray</span> (top row)&hellip;</p>
-   <table class="gmtx" style="font-size:15pt;">
+   <table class="gmtx pm" style="font-size:15pt;">
     <tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
     <tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
     <tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray<span class="gm-hl fragment" data-fragment-index="1"></span></td>
@@ -616,7 +622,7 @@
   </div>
   <div class="fragment" data-fragment-index="3" style="text-align:center;">
    <p style="font-size:12.5pt; font-weight:700; margin:0 0 6px;">If <span style="color:#11a890;">I play Trust</span> (bottom row)&hellip;</p>
-   <table class="gmtx" style="font-size:15pt;">
+   <table class="gmtx pm" style="font-size:15pt;">
     <tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
     <tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
     <tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td>
@@ -657,7 +663,7 @@
    </div>
   </div>
   <div style="text-align:center;">
-   <table class="gmtx" style="font-size:16pt;">
+   <table class="gmtx pm" style="font-size:16pt;">
     <tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
     <tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
     <tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td>
@@ -738,17 +744,12 @@
   <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Two boba shops, same demand \(P = 19.99 - 0.03Q\), \(MC = \$1\). Each makes either <strong>Restrict</strong> (158 cups) or <strong>Flood</strong> (211 cups). Cell \(=\) (<span style="color:var(--accent-color); font-weight:700;">Kung Fu Tea</span>, <span style="color:var(--secondary-color); font-weight:700;">Husky Boba</span>) profit.</p>
   <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:24px; align-items:center;">
    <div style="text-align:center;">
-    <table style="border-collapse:separate; border-spacing:0; margin:0 auto; font-size:12pt;">
-     <tr><td></td><td></td><td colspan="2" style="text-align:center; padding-bottom:3px; font-weight:700; color:var(--secondary-color);">Husky Boba</td></tr>
-     <tr><td></td><td></td><td style="text-align:center; font-weight:700; color:var(--secondary-color); padding:0 12px 5px;">Restrict</td><td style="text-align:center; font-weight:700; color:var(--secondary-color); padding:0 12px 5px;">Flood</td></tr>
-     <tr><td rowspan="2" style="text-align:center; padding-right:6px; vertical-align:middle; font-weight:700; color:var(--accent-color); writing-mode:vertical-rl; transform:rotate(180deg);">Kung Fu Tea</td>
-      <td style="font-weight:700; color:var(--accent-color); padding-right:8px;">Restrict</td>
-      <td style="border:2.5px solid #2D2D2D; padding:11px 16px; text-align:center; line-height:1.35;"><span style="color:var(--accent-color); font-weight:700;">$1,503</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,503</span></td>
-      <td style="border:2.5px solid #2D2D2D; padding:11px 16px; text-align:center; line-height:1.35;"><span style="color:var(--accent-color); font-weight:700;">$1,251</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,671</span></td></tr>
-     <tr><td style="font-weight:700; color:var(--accent-color); padding-right:8px;">Flood</td>
-      <td style="border:2.5px solid #2D2D2D; padding:11px 16px; text-align:center; line-height:1.35; position:relative;"><span style="color:var(--accent-color); font-weight:700;">$1,671</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,251</span><span class="fragment" data-fragment-index="1" style="position:absolute; inset:3px; border:3px solid #D9534F; border-radius:6px;"></span></td>
-      <td style="border:2.5px solid #2D2D2D; padding:11px 16px; text-align:center; line-height:1.35; position:relative;"><span style="color:var(--accent-color); font-weight:700;">$1,336</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,336</span><span class="fragment" data-fragment-index="1" style="position:absolute; inset:3px; border:3px solid #D9534F; border-radius:6px;"></span><span class="fragment" data-fragment-index="2" style="position:absolute; inset:0; background:rgba(106,142,107,0.32);"></span></td></tr>
-    </table>
+    <table class="gmtx pm" style="font-size:15pt;">
+<tr><td></td><td></td><td colspan="2" class="gm-top">Husky Boba</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Restrict</td><td class="gm-colh">Flood</td></tr>
+<tr><td rowspan="2" class="gm-side" style="writing-mode:vertical-rl; transform:rotate(180deg);">Kung Fu Tea</td><td class="gm-rowh">Restrict</td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,503</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,503</span></td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,251</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,671</span></td></tr>
+<tr><td class="gm-rowh">Flood</td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,671</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,251</span><span class="fragment" data-fragment-index="1" style="position:absolute; inset:3px; border:3px solid #D9534F; border-radius:6px;"></span></td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,336</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,336</span><span class="fragment" data-fragment-index="1" style="position:absolute; inset:3px; border:3px solid #D9534F; border-radius:6px;"></span><span class="fragment" data-fragment-index="2" style="position:absolute; inset:0; background:rgba(106,142,107,0.32);"></span></td></tr>
+</table>
    </div>
    <div style="display:flex; flex-direction:column; gap:10px;">
     <div class="fragment" data-fragment-index="1" style="background:#fef9f3; border-radius:9px; padding:10px 16px; border-left:4px solid var(--accent-color);">
@@ -817,23 +818,22 @@
 </section>
 
 <section id="pd-pareto">
- <h2><i class="fa-solid fa-handcuffs" style="color:var(--danger-color);"></i> Pareto Improvement, But Not Individually Stable</h2>
- <div style="position:relative; width:700px; margin:34px auto 0;">
-  <div class="fragment fade-in" data-fragment-index="1" style="position:absolute; left:40%; top:-32px; transform:translateX(-50%); text-align:center; z-index:6;">
-   <span style="background:#C9302C; color:#fff; font-weight:800; font-size:11pt; padding:3px 11px; border-radius:6px; white-space:nowrap;">Stable (Nash), not ideal</span>
-   <div style="line-height:0; margin-top:1px;"><i class="fa-solid fa-arrow-down-long" style="color:#C9302C; font-size:18pt;"></i></div>
-  </div>
-  <div style="position:relative;">
-   <img src="figures/pd_game.png" alt="Prisoner's dilemma matrix: confess vs silence, with sentences" style="width:100%; display:block; border-radius:6px;">
-   <div class="fragment fade-in" data-fragment-index="1" style="position:absolute; left:20.5%; top:31%; width:39%; height:33%; border:3px solid #D9534F; border-radius:5px; box-sizing:border-box;"></div>
-   <div class="fragment fade-in" data-fragment-index="2" style="position:absolute; left:60%; top:64.5%; width:39%; height:34%; border:3px solid #E0A329; border-radius:5px; box-sizing:border-box;"></div>
-  </div>
-  <div class="fragment fade-in" data-fragment-index="2" style="position:absolute; right:-8px; bottom:-48px; text-align:center; z-index:6;">
-   <div style="line-height:0; margin-bottom:1px;"><i class="fa-solid fa-arrow-up-long" style="color:#C99320; font-size:18pt;"></i></div>
-   <span style="background:#C99320; color:#fff; font-weight:800; font-size:11pt; padding:3px 11px; border-radius:6px; white-space:nowrap;">Pareto efficient, not stable</span>
+ <h2><i class="fa-solid fa-scale-unbalanced" style="color:var(--danger-color);"></i> Why Trap 1 Holds: Nash Is Not Pareto-Efficient</h2>
+ <p style="font-size:13pt; color:var(--muted-color); margin:0 0 12px;">The Squid Game numbers again. Cell = (me, my pair).</p>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center;">
+  <div style="text-align:center;"><table class="gmtx pm" style="font-size:19pt;">
+<tr><td></td><td></td><td colspan="2" class="gm-top">My Pair</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Betray</td><td class="gm-colh">Trust</td></tr>
+<tr><td rowspan="2" class="gm-side">Me</td><td class="gm-rowh">Betray</td><td class="gm-cell"><span style="position:relative; display:inline-block;"><span class="gm-me">1</span><span class="gm-sep">,</span><span class="gm-pair">1</span><span class="gm-ring fragment" data-fragment-index="1" style="border-color:#C9302C;"></span></span></td><td class="gm-cell"><span class="gm-me">5</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td></tr>
+<tr><td class="gm-rowh">Trust</td><td class="gm-cell"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell"><span style="position:relative; display:inline-block;"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">3</span><span class="gm-ring fragment" data-fragment-index="2" style="border-color:#E0A329;"></span></span></td></tr>
+</table></div>
+  <div style="display:flex; flex-direction:column; gap:10px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="border-radius:10px; padding:11px 16px; border-left:4px solid #C9302C; background:#fdf2f0;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#C9302C;">Nash equilibrium &mdash; stable</p><p style="margin:0; font-size:13pt; line-height:1.5;">At (Betray, Betray) = (1, 1), switching alone pays 0 &lt; 1. Nobody moves.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="border-radius:10px; padding:11px 16px; border-left:4px solid #E0A329; background:#fdf8ec;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#B7791F;">Pareto improvement</p><p style="margin:0; font-size:13pt; line-height:1.5;">Moving to (Trust, Trust) = (3, 3) makes <strong>both</strong> better off and nobody worse off.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="border-radius:10px; padding:11px 16px; border-left:4px solid var(--secondary-color); background:#eef3f6;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--secondary-color);">But not individually stable</p><p style="margin:0; font-size:13pt; line-height:1.5;">At (3, 3), betraying alone pays 5 &gt; 3, so each wants to switch.</p></div>
   </div>
  </div>
- <div class="key-result" style="margin-top:58px;"><p style="margin:0;">Both <strong>confessing (2, 2)</strong> is the Nash equilibrium &mdash; stable, but both go to jail. Both <strong>staying silent (1, 1)</strong> is better for <em>both</em> (a Pareto improvement) &mdash; yet each is tempted to defect, so it won&rsquo;t hold on its own.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:14px;"><p style="margin:0; font-size:13pt;"><strong>Nash</strong> asks: can anyone gain <em>alone</em>? <strong>Pareto</strong> asks: can someone gain <em>without hurting anyone</em>? In a prisoner&rsquo;s dilemma the answers differ.</p></div>
 </section>
 
 <section id="pd-examples">

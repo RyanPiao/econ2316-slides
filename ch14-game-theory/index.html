@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=626177c7bdf6ff9fea46c4e542c60aa4">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=b6bbd159af46774e3fbf8f30dd2a39f5">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -226,16 +226,21 @@
 </section>
 
 <section id="pd-attack-peace">
- <h2><i class="fa-solid fa-land-mine-on" style="color: var(--danger-color);"></i> Prisoner&rsquo;s Dilemma: Attack or Peace?</h2>
- <p style="font-size:12pt; text-align:center; color:var(--muted-color); margin:0 0 8px;">With both superpowers now armed, some US leaders pushed for a <strong>preemptive strike</strong>. Attack first &mdash; or keep the peace?</p>
- <div style="display:grid; grid-template-columns:1fr 1.02fr 0.72fr; gap:16px; align-items:center;">
-  <div class="fragment fade-up" data-fragment-index="1" style="text-align:center;"><img src="figures/newspaper2.webp" alt="Attack? Or Peace? — Navy Secretary Matthews urges the US to become 'Aggressors for Peace'" style="max-width:100%; max-height:346px; object-fit:contain;"></div>
-  <div class="fragment fade-up" data-fragment-index="2" style="position:relative; max-width:430px; margin:0 auto; aspect-ratio:1904/1076; background:#0d1b2a url('figures/weapon-poster.jpg') center/cover no-repeat; border-radius:8px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+ <h2><i class="fa-solid fa-land-mine-on" style="color: var(--danger-color);"></i> Attack First, or Keep the Peace?</h2>
+ <p style="font-size:13.5pt; text-align:center; color:var(--muted-color); margin:0 0 12px;">Both superpowers now have the bomb. Some US leaders push for a <strong>preemptive strike</strong>.</p>
+ <div style="display:grid; grid-template-columns:0.85fr 1.35fr 0.85fr; gap:18px; align-items:center;">
+  <div class="fragment fade-up" data-fragment-index="2" style="text-align:center; height:300px; display:flex; align-items:center; justify-content:center;"><img src="figures/newspaper2.webp" alt="Attack? Or Peace? &mdash; Navy Secretary Matthews urges the US to become 'Aggressors for Peace'" style="max-width:100%; max-height:300px; object-fit:contain; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.2);"></div>
+  <div class="fragment fade-in" data-fragment-index="1" style="text-align:center; height:300px; display:flex; align-items:center; justify-content:center;"><div style="position:relative; width:100%; aspect-ratio:1904/1076; background:#0d1b2a url('figures/weapon-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.35);">
    <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/weapon.mp4" poster="figures/weapon-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
-  </div>
-  <div class="fragment fade-up" data-fragment-index="3" style="text-align:center;"><img src="figures/von_neuman.png" alt="von Neumann: 'why not bomb them today?'" style="max-width:100%; max-height:346px; object-fit:contain;"></div>
+  </div></div>
+  <div class="fragment fade-up" data-fragment-index="3" style="text-align:center; height:300px; display:flex; align-items:center; justify-content:center;"><img src="figures/von_neuman.png" alt="von Neumann: 'why not bomb them today?'" style="max-width:100%; max-height:300px; object-fit:contain; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.2);"></div>
  </div>
- 
+ <div style="display:grid; grid-template-columns:0.85fr 1.35fr 0.85fr; gap:18px; margin-top:6px; text-align:center;">
+  <p class="fragment fade-up" data-fragment-index="2" style="font-size:12pt; color:var(--muted-color); margin:0;">&ldquo;Aggressors for peace,&rdquo; 1950</p>
+  <p class="fragment fade-in" data-fragment-index="1" style="font-size:12pt; color:var(--muted-color); margin:0;">The weapon itself</p>
+  <p class="fragment fade-up" data-fragment-index="3" style="font-size:12pt; color:var(--muted-color); margin:0;">John von Neumann (attributed)</p>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:10px; padding:8px 16px;"><p style="margin:0; font-size:13pt;">Strike first, or wait? Neither side struck. <strong>Both kept building</strong>, until each had tens of thousands of warheads.</p></div>
 </section>
 
 <section data-visibility="hidden" id="opener">
@@ -271,37 +276,49 @@
  <div style="background:#eef3f6; border-radius:12px; padding:14px 22px; border-left:5px solid var(--secondary-color);">
   <p style="font-size:14pt; margin:0; line-height:1.45;">The study of <strong style="color:var(--secondary-color);">strategic decision-making</strong> &mdash; when multiple players each act in their own best interest and their outcomes <strong>depend on the actions of others</strong>.</p>
  </div>
- <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; align-items:start; max-width:1060px; margin:13px auto 0;">
+ <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px; align-items:start; max-width:1100px; margin:13px auto 0;">
   <div class="fragment fade-up" data-fragment-index="1" style="text-align:center;">
-   <img alt="Castle Romeo, a 1954 US hydrogen-bomb test: a mushroom cloud over the Pacific" src="figures/castle_romeo.jpg" style="width:100%; height:250px; object-fit:cover; object-position:center 30%; border-radius:12px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
+   <img alt="Castle Romeo, a 1954 US hydrogen-bomb test: a mushroom cloud over the Pacific" src="figures/castle_romeo.jpg" style="width:100%; height:205px; object-fit:cover; object-position:center 30%; border-radius:12px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
    <p style="font-size:11.5pt; color:var(--muted-color); font-style:italic; margin-top:6px;">The arms race: build more? Depends on what the <em>other side</em> builds.</p>
   </div>
   <div class="fragment fade-up" data-fragment-index="2" style="text-align:center;">
-   <img alt="A tennis player serving across the net to a distant opponent &mdash; server vs returner, a strategic interaction" src="figures/tennis.jpg" style="width:100%; height:250px; object-fit:cover; border-radius:12px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
-   <p style="font-size:11.5pt; color:var(--muted-color); font-style:italic; margin-top:6px;">A tennis serve: aim where the returner <em>won&rsquo;t</em> guess.</p>
+   <div style="height:205px; border-radius:12px; background:#f8f6f3; box-shadow:0 3px 14px rgba(0,0,0,0.12); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:8px;">
+    <div style="display:flex; align-items:center; gap:10px;"><img src="figures/ai_openai.png" alt="OpenAI logo" style="height:46px;"><span style="font-weight:800; color:var(--muted-color);">vs</span><img src="figures/ai_anthropic.png" alt="Anthropic logo" style="height:16px;"></div>
+    <svg viewBox="0 0 220 110" style="width:88%; height:110px;" aria-label="Diminishing returns: each extra dollar of compute adds less">
+     <line x1="22" y1="92" x2="212" y2="92" stroke="#2D2D2D" stroke-width="1.6"/><line x1="22" y1="8" x2="22" y2="92" stroke="#2D2D2D" stroke-width="1.6"/>
+     <path d="M22 92 C 50 40, 90 26, 205 18" fill="none" stroke="#7c3aed" stroke-width="3"/>
+     <text x="117" y="106" text-anchor="middle" font-size="11" fill="#6B645E">compute spending &rarr;</text>
+     <text x="27" y="14" font-size="11" fill="#6B645E">capability</text>
+    </svg>
+   </div>
+   <p style="font-size:11.5pt; color:var(--muted-color); font-style:italic; margin-top:6px;">OpenAI vs Anthropic: each extra dollar of compute adds less. Keep investing, or stop? Depends on the <em>rival&rsquo;s</em> spending.</p>
   </div>
   <div class="fragment fade-up" data-fragment-index="3" style="text-align:center;">
-   <img alt="A blue Pepsi can and a red Coca-Cola can dueling with fencing swords &mdash; oligopoly rivalry" src="figures/Coke-vs-Pepsi.jpeg" style="width:100%; height:250px; object-fit:contain; border-radius:12px;">
+   <img alt="A tennis player serving across the net to a distant opponent &mdash; server vs returner, a strategic interaction" src="figures/tennis.jpg" style="width:100%; height:205px; object-fit:cover; border-radius:12px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
+   <p style="font-size:11.5pt; color:var(--muted-color); font-style:italic; margin-top:6px;">A tennis serve: aim where the returner <em>won&rsquo;t</em> guess.</p>
+  </div>
+  <div class="fragment fade-up" data-fragment-index="4" style="text-align:center;">
+   <img alt="A blue Pepsi can and a red Coca-Cola can dueling with fencing swords &mdash; oligopoly rivalry" src="figures/Coke-vs-Pepsi.jpeg" style="width:100%; height:205px; object-fit:contain; border-radius:12px;">
    <p style="font-size:11.5pt; color:var(--muted-color); font-style:italic; margin-top:6px;">Coke vs Pepsi: each price set with one eye on the other.</p>
   </div>
  </div>
- <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:11px;"><p style="margin:0;">Same logic in all three: your payoff depends on the <strong>other player&rsquo;s</strong> choice, so your best move must anticipate it.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top:11px;"><p style="margin:0;">Same logic in all four: your payoff depends on the <strong>other player&rsquo;s</strong> choice, so your best move must anticipate it.</p></div>
 </section>
 
 <section id="gt-not-strategic">
  <h2><i class="fa-solid fa-ban" style="color: var(--danger-color);"></i> What Is <em>Not</em> a Strategic Situation?</h2>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:center; margin-bottom:5px;">
-  <p style="font-size:13.5pt; font-weight:700; color:var(--primary-color); margin:0;">Perfect Competition</p>
-  <p style="font-size:13.5pt; font-weight:700; color:var(--primary-color); margin:0;">Monopoly</p>
+  <p style="font-size:13.5pt; font-weight:700; color:var(--primary-color); margin:0;">Perfect Competition <span style="font-size:11pt; font-weight:700; color:#fff; background:var(--secondary-color); border-radius:10px; padding:1px 9px; margin-left:4px;">Ch 10</span></p>
+  <p style="font-size:13.5pt; font-weight:700; color:var(--primary-color); margin:0;">Monopoly <span style="font-size:11pt; font-weight:700; color:#fff; background:var(--danger-color); border-radius:10px; padding:1px 9px; margin-left:4px;">Ch 11</span></p>
  </div>
- <div style="position:relative; max-width:1120px; margin:0 auto; aspect-ratio:1870/520; background:#0d1b2a url('figures/notstrat-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.3);">
+ <div style="position:relative; max-width:1020px; margin:0 auto; aspect-ratio:1870/520; background:#0d1b2a url('figures/notstrat-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.3);">
   <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/not_strategic.mp4" poster="figures/notstrat-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
  </div>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:center; margin-top:5px;">
   <p style="font-size:12.5pt; font-weight:700; color:var(--secondary-color); margin:0;">Price <em>Taker</em> &mdash; too small to matter</p>
   <p style="font-size:12.5pt; font-weight:700; color:var(--danger-color); margin:0;">Price <em>Maker</em> &mdash; no rivals to watch</p>
  </div>
- <div class="key-result" style="margin-top:10px;"><p style="margin:0;">Neither extreme is strategic: the perfect competitor can&rsquo;t move the price, and the monopolist has no one to react to. <strong>Only oligopoly &mdash; a few firms watching each other &mdash; is a game.</strong></p></div>
+ <div class="key-result" style="margin-top:10px;"><p style="margin:0;">Neither extreme is strategic: the perfect competitor can&rsquo;t move the price, and the monopolist has no one to react to. <strong>Only oligopoly (Ch 13) &mdash; a few firms watching each other &mdash; is a game.</strong></p></div>
 </section>
 
 <section>
@@ -339,6 +356,7 @@
 
     <div style="background: #f3effc; border-radius: 12px; padding: 14px 17px; border-left: 5px solid #7c3aed; display: flex; flex-direction: column;">
       <p style="font-size: 15pt; font-weight: 700; color: #7c3aed; margin: 0 0 8px;"><i class="fa-solid fa-bullseye"></i>&nbsp; Optimization</p>
+      <div style="border-radius:9px; overflow:hidden; box-shadow:0 3px 12px rgba(0,0,0,0.2); margin:0 0 9px; height:118px;"><img src="figures/opt_sam_compute.jpg" alt="Sam at his desk working out the costs of his burger shop" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center 35%;"></div>
       <p style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 8px;">Maximize <strong>your</strong> objective within <strong>your</strong> constraints; <strong>ignore other agents.</strong></p>
       <p style="font-size: 11pt; color: var(--muted-color); margin: 0;"><i class="fa-solid fa-angle-right" style="color:#7c3aed;"></i>&nbsp; Consumers max utility; firms max profit</p>
       <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.09); min-height: 72px;">
@@ -349,6 +367,7 @@
 
     <div class="fragment fade-up" data-fragment-index="1" style="background: #f8f6f3; border-radius: 12px; padding: 14px 17px; border-left: 5px solid var(--secondary-color); display: flex; flex-direction: column;">
       <p style="font-size: 15pt; font-weight: 700; color: var(--secondary-color); margin: 0 0 8px;"><i class="fa-solid fa-users-line"></i>&nbsp; Equilibrium</p>
+      <div style="border-radius:9px; overflow:hidden; box-shadow:0 3px 12px rgba(0,0,0,0.2); margin:0 0 9px; height:118px;"><img src="figures/eq_corn_iowa.jpg" alt="An Iowa corn field: one of thousands of price-taking farms" style="display:block; width:100%; height:100%; object-fit:cover;"></div>
       <p style="font-size: 11.5pt; line-height: 1.5; margin: 0 0 8px;"><strong>So many agents</strong> that none moves the outcome, so <strong>nobody reacts to you.</strong></p>
       <p style="font-size: 11pt; color: var(--muted-color); margin: 0;"><i class="fa-solid fa-angle-right" style="color:var(--secondary-color);"></i>&nbsp; Price-takers in perfect competition (Ch 10)</p>
       <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.09); min-height: 72px;">
@@ -359,8 +378,8 @@
 
     <div class="fragment fade-up" data-fragment-index="2" style="background: #fef2f2; border-radius: 12px; padding: 14px 17px; border-left: 5px solid var(--accent-color); display: flex; flex-direction: column;">
       <p style="font-size: 15pt; font-weight: 700; color: var(--accent-color); margin: 0 0 8px;"><i class="fa-solid fa-chess"></i>&nbsp; Game theory <span style="font-size:10pt; color:var(--muted-color); font-weight:600;">&mdash; this chapter</span></p>
-      <div class="video-frame" style="border-radius: 9px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.20); margin-bottom: 9px;">
-        <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/chess.mp4" poster="figures/chess-poster.jpg" autoplay loop muted playsinline preload="none" title="A chess game in progress &mdash; strategic interaction between two players" style="display: block; width: 100%; height: 104px; object-fit: cover;"></video>
+      <div class="video-frame" style="border-radius:9px; overflow:hidden; box-shadow:0 3px 12px rgba(0,0,0,0.2); margin:0 0 9px; height:118px; background:#0d1b2a url('figures/chess-poster.jpg') center/cover no-repeat;">
+        <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/chess.mp4" poster="figures/chess-poster.jpg" autoplay loop muted playsinline preload="none" title="A chess game in progress" style="display:block; width:100%; height:100%; object-fit:cover; object-position:center;"></video>
       </div>
       <p style="font-size: 11.5pt; line-height: 1.5; margin: 0;">A <strong>few</strong> players, each best-responding to the others.</p>
       <div style="margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(0,0,0,0.09); min-height: 72px;">
@@ -410,11 +429,11 @@
  <h2><i class="fa-solid fa-list-check" style="color: var(--secondary-color);"></i> A Normal-Form Game: Three Ingredients</h2>
  <div style="display:grid; grid-template-columns:0.62fr 1fr 1fr; gap:10px 14px; align-items:stretch;">
   <div></div>
-  <div style="text-align:center;"><p style="font-size:13.5pt; font-weight:800; color:var(--danger-color); margin:0 0 5px;"><i class="fa-solid fa-radiation"></i> The arms race</p><img src="figures/nuclear_stockpiles.png" alt="US and USSR nuclear stockpiles, 1945 to 2006: both rise to tens of thousands of warheads" style="height:150px; max-width:100%; object-fit:contain; background:#fff; border-radius:8px;"></div>
+  <div style="text-align:center;"><p style="font-size:13.5pt; font-weight:800; color:var(--danger-color); margin:0 0 5px;"><i class="fa-solid fa-radiation"></i> The arms race</p><div style="display:flex; gap:6px; justify-content:center; height:150px;"><img src="figures/arms_ussr_parade.jpg" alt="Soviet missiles on parade in Red Square, Moscow" style="height:150px; width:48%; object-fit:cover; border-radius:8px;"><img src="figures/arms_us_jupiter.jpg" alt="A US Jupiter missile on its launch pad" style="height:150px; width:48%; object-fit:cover; border-radius:8px;"></div></div>
   <div style="text-align:center;"><p style="font-size:13.5pt; font-weight:800; color:var(--success-color); margin:0 0 5px;"><i class="fa-solid fa-futbol"></i> A penalty kick</p><div style="position:relative; height:150px; aspect-ratio:1914/1080; margin:0 auto; background:#0d1b2a url('figures/foodball-poster.jpg') center/cover no-repeat; border-radius:8px; overflow:hidden;"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/foodball.mp4" poster="figures/foodball-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video></div></div>
   <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:8px 10px;"><p style="font-size:12pt; font-weight:700; color:var(--secondary-color); margin:0;">PLAYERS</p><p style="font-size:11.5pt; margin:2px 0 0;">\(\{1, \ldots, n\}\)</p></div>
   <div class="fragment fade-up" data-fragment-index="1" style="background:#fdf2f0; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">The US and the USSR</div>
-  <div class="fragment fade-up" data-fragment-index="1" style="background:#eef6ef; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">The kicker and the keeper</div>
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#eef6ef; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">The kicker and the goalie</div>
   <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:8px 10px;"><p style="font-size:12pt; font-weight:700; color:var(--accent-color); margin:0;">STRATEGIES</p><p style="font-size:11.5pt; margin:2px 0 0;">\(S_i\)</p></div>
   <div class="fragment fade-up" data-fragment-index="2" style="background:#fdf2f0; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">Build more bombs, or stop</div>
   <div class="fragment fade-up" data-fragment-index="2" style="background:#eef6ef; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">Kick left or right; dive left or right</div>
@@ -422,23 +441,22 @@
   <div class="fragment fade-up" data-fragment-index="3" style="background:#fdf2f0; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">Safety and cost, which depend on <em>&nbsp;both&nbsp;</em> choices</div>
   <div class="fragment fade-up" data-fragment-index="3" style="background:#eef6ef; border-radius:8px; padding:8px 12px; font-size:13pt; display:flex; align-items:center;">Goal or save, which depends on <em>&nbsp;both&nbsp;</em> choices</div>
  </div>
- <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:11px; padding:8px 16px;"><p style="margin:0; font-size:12pt;">Choices are <strong>simultaneous</strong>: nobody sees another&rsquo;s first. A <strong>payoff matrix</strong> lists every combination: row = player 1, column = player 2, cell = \((u_1, u_2)\). <strong>Never play a strictly dominated strategy</strong>, one that pays less whatever the rival does.</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:11px; padding:8px 16px;"><p style="margin:0; font-size:13pt;">Choices are <strong>simultaneous</strong>: nobody sees the other&rsquo;s choice first.</p></div>
 </section>
 
 
 <section id="gt-simul-seq">
  <h2><i class="fa-solid fa-arrows-split-up-and-left" style="color: var(--accent-color);"></i> Simultaneous-Move vs. Sequential-Move</h2>
- <div style="position:relative; max-width:760px; margin:0 auto 10px; aspect-ratio:1832/508; background:#0d1b2a url('figures/game2-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.25);">
-  <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/game2.mp4" poster="figures/game2-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
- </div>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:4px;">
   <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:12px; padding:12px 18px; border-left:5px solid var(--secondary-color);">
+   <div style="position:relative; width:100%; aspect-ratio:916/440; overflow:hidden; border-radius:9px; margin:0 0 10px; background:#0d1b2a;"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/game2.mp4" poster="figures/game2-poster.jpg" autoplay muted loop playsinline preload="none" style="position:absolute; top:0; left:0; width:200%; height:100%; object-fit:cover;"></video></div>
    <p style="font-size:14.5pt; font-weight:700; color:var(--secondary-color); margin:0 0 5px;"><i class="fa-solid fa-basketball"></i>&nbsp; Simultaneous</p>
    <p style="font-size:12.5pt; margin:0 0 4px;">Both choose <strong>without seeing</strong> the other&rsquo;s choice.</p>
    <p style="font-size:12pt; color:var(--muted-color); margin:0;">Solve with a <strong>payoff matrix</strong> (&sect;14.1&ndash;14.3).</p>
    <p class="fragment fade-up" data-fragment-index="2" style="font-size:12.5pt; margin:8px 0 0; padding-top:7px; border-top:1px solid rgba(0,0,0,0.1);"><i class="fa-solid fa-briefcase" style="color:var(--secondary-color);"></i>&nbsp; Coke and Pepsi set this summer&rsquo;s prices before either sees the other&rsquo;s.</p>
   </div>
   <div class="fragment fade-up" data-fragment-index="3" style="background:#fef2f2; border-radius:12px; padding:12px 18px; border-left:5px solid var(--accent-color);">
+   <div style="position:relative; width:100%; aspect-ratio:916/440; overflow:hidden; border-radius:9px; margin:0 0 10px; background:#0d1b2a;"><video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/game2.mp4" poster="figures/game2-poster.jpg" autoplay muted loop playsinline preload="none" style="position:absolute; top:0; left:-100%; width:200%; height:100%; object-fit:cover;"></video></div>
    <p style="font-size:14.5pt; font-weight:700; color:var(--accent-color); margin:0 0 5px;"><i class="fa-solid fa-chess"></i>&nbsp; Sequential</p>
    <p style="font-size:12.5pt; margin:0 0 4px;">One moves first; the next <strong>sees it</strong>, then moves.</p>
    <p style="font-size:12pt; color:var(--muted-color); margin:0;">Solve with a <strong>game tree</strong> (&sect;14.4).</p>
@@ -786,22 +804,24 @@
 </section>
 
 <section id="nash-headsup">
-  <h2><i class="fa-solid fa-circle-exclamation" style="color: var(--danger-color);"></i> Nash \(\neq\) Efficient, and Nash \(\neq\) Unique</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start;">
-    <div class="misconception" style="margin: 0;">
-      <p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 14.1 &mdash; two traps</p>
-      <p style="margin: 6px 0 0; font-size: 12.5pt; line-height: 1.5;"><strong>Trap 1:</strong> &ldquo;Nash = best joint outcome.&rdquo; No: in the PD, \((D,D)\) is the unique NE <em>and</em> Pareto-dominated by \((C,C)\).</p>
-      <p style="margin: 8px 0 0; font-size: 12.5pt; line-height: 1.5;"><strong>Trap 2:</strong> &ldquo;A game has one equilibrium.&rdquo; No: BoS has two pure NE. Picking one takes a <strong>focal point</strong> (Schelling 1960): custom, talk, or a salient payoff.</p>
-    </div>
-    <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 13px 18px;">
-      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-rotate-left"></i> Recall from Principles &mdash; 1116 &sect;13.3</p>
-      <p style="margin: 0; font-size: 12.5pt; line-height: 1.5;">Nash equilibrium: each player best-responds; nobody wants to deviate alone (John Nash, Nobel 1994).</p>
-      <p style="margin: 8px 0 0; font-size: 12.5pt; line-height: 1.5;">Gas-station price war: \((\text{Low}, \text{Low})\) is Nash. New here: best response as a formal correspondence, and iterated elimination to search.</p>
-    </div>
+ <h2><i class="fa-solid fa-circle-exclamation" style="color: var(--danger-color);"></i> Nash \(\neq\) Efficient, and Nash \(\neq\) Unique</h2>
+ <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+  <div>
+   <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 8px; padding: 14px 20px; margin-bottom: 12px;">
+    <p style="margin: 0 0 6px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-rotate-left"></i> Recall from Principles &mdash; 1116 &sect;13.3</p>
+    <p style="margin: 0; font-size: 13pt; line-height: 1.55;">Nash equilibrium: each player best-responds; <strong>nobody wants to deviate alone</strong> (John Nash, Nobel 1994).</p>
+   </div>
+   <p class="fragment fade-up" data-fragment-index="3" style="font-size: 13pt; line-height: 1.55; margin: 0;">New in this course: best response as a formal correspondence, and iterated elimination to search for equilibria (G 31).</p>
   </div>
-  <div class="key-result" style="margin-top: 11px;">
-    <p style="margin: 0; font-size: 12pt;"><strong>Why Nash still predicts:</strong> by watching rivals and adjusting, markets <strong>converge on Nash</strong>. It is <strong>self-enforcing</strong>: stable, not efficient.</p>
+  <div class="misconception" style="margin: 0;">
+   <p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 14.1 &mdash; two traps</p>
+   <p class="fragment fade-up" data-fragment-index="1" style="margin: 8px 0 0; font-size: 13pt; line-height: 1.55;"><strong>Trap 1:</strong> &ldquo;Nash = best joint outcome.&rdquo; No: in the PD, \((D,D)\) is the unique NE <em>and</em> Pareto-dominated by \((C,C)\). Squid Game ends at 1 marble each, not 3.</p>
+   <p class="fragment fade-up" data-fragment-index="2" style="margin: 10px 0 0; font-size: 13pt; line-height: 1.55;"><strong>Trap 2:</strong> &ldquo;A game has one equilibrium.&rdquo; No: Battle of the Sexes has two pure NE. Picking one takes a <strong>focal point</strong> (Schelling 1960): custom, talk, or a salient payoff.</p>
   </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top: 14px;">
+  <p style="margin: 0; font-size: 13pt;"><strong>Why Nash still predicts:</strong> by watching rivals and adjusting, players <strong>converge on Nash</strong>. It is <strong>self-enforcing</strong>: stable, not efficient.</p>
+ </div>
 </section>
 
 <section id="pd-pareto">

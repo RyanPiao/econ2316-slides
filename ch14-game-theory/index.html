@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6f5ebd87aa09dad65d37ad08f66edbc4">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=265261abc91f399acd0920816b770fbf">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -141,7 +141,7 @@
     </div>
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--accent-color);">
       <p style="font-size: 18pt; font-weight: 700; color: var(--accent-color);">2</p>
-      <p style="font-size: 14pt;"><strong>Tell</strong> a cooperation problem (the prisoner&rsquo;s dilemma) from a coordination problem with several equilibria.</p>
+      <p style="font-size: 14pt;"><strong>Tell</strong> a cooperation problem (the prisoner&rsquo;s dilemma) from a coordination problem with several equilibria, and explain why players mix when no pure equilibrium exists.</p>
     </div>
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--secondary-color);">
       <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">3</p>
@@ -912,7 +912,7 @@
  <div style="background:#eef5ef; border-radius:10px; padding:11px 17px; border-left:4px solid var(--success-color);">
   <p style="font-size:13pt; margin:0 0 5px;"><strong>3. Play it again &mdash; and be able to see cheating</strong></p>
   <p style="font-size:11.5pt; line-height:1.45; margin:0;">Repetition only disciplines players who can <em>detect</em> defection. That is why cartels invest in monitoring, and why the same transparency can cut both ways: the price app in the gas-station opener made undercutting instant and killed the truce.</p>
-  <p style="font-size:10.5pt; color:var(--muted-color); margin:6px 0 0;"><i class="fa-solid fa-arrow-left-long"></i> OPEC+ (seen earlier); formalised as grim trigger in &sect;14.5.</p>
+  <p style="font-size:10.5pt; color:var(--muted-color); margin:6px 0 0;"><i class="fa-solid fa-arrow-left-long"></i> OPEC+ comes back with repeated games, formalized as grim trigger in &sect;14.5.</p>
  </div>
 
  <div style="background:#f7f1ea; border-radius:10px; padding:11px 17px; border-left:4px solid var(--accent-color);">
@@ -1000,7 +1000,7 @@
      <p style="font-size:14pt; margin:0; line-height:1.5;">Exactly the same rules &mdash; whole number <strong>1&ndash;100</strong>, closest to <strong style="color:#7c3aed;">&#8532;</strong> of the class average takes the <strong>$5</strong>. The <em>only</em> thing that changed: everyone in this room has now seen the ladder and last round&rsquo;s histogram.</p>
     </div>
     <div style="background:#fef9f3; border-radius:10px; padding:11px 18px; border-left:4px solid var(--accent-color);">
-     <p style="font-size:12pt; margin:0; line-height:1.45;">The payoffs did not move. The strategies did not move. <strong>Beliefs</strong> moved &mdash; and beliefs are an input to equilibrium.<br><span style="color:var(--accent-color); font-weight:700;">That is escape routes 3 and 4 running at once:</span> <strong>repetition</strong> (you get a second round) and <strong>education</strong> (I just taught you the ladder). And I am about to add the third &mdash; I will walk the room and <em>advise</em> you. Watch what a leader does to a belief.</p>
+     <p style="font-size:12pt; margin:0; line-height:1.45;">The payoffs did not move. The strategies did not move. <strong>Beliefs</strong> moved &mdash; and beliefs are an input to equilibrium.<br><span style="color:var(--accent-color); font-weight:700;">Two things changed at once:</span> <strong>repetition</strong> (you get a second round, escape route 3) and <strong>education</strong> (I just taught you the ladder). And I am about to add the third &mdash; I will walk the room and <em>advise</em> you. Watch what a leader does to a belief.</p>
     </div>
    </div>
    <div style="text-align:center; background:#fbfaf7; border-radius:14px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,0.08); border:1px solid #ece9e2;">
@@ -1079,6 +1079,423 @@
   <p style="margin: 0; font-size: 12pt;"><strong>Takeaway.</strong> IESDS never deletes a Nash equilibrium, so every NE survives the process. When a <em>single</em> profile survives &mdash; as here &mdash; it must be the unique NE. For <em>strict</em> dominance, the order you eliminate in never changes the answer.</p>
  </div>
 </section>
+<section class="section-divider" data-state="is-section-divider" id="coordination-divider">
+ <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Beyond the Prisoner&rsquo;s Dilemma</p>
+ <h1 style="font-size: 40pt; color: var(--primary-color); margin-bottom: 16px;">Coordination Games</h1>
+ <p style="font-size: 18pt; color: var(--muted-color); font-style: italic;">When your best move is to match the other player &mdash; or to do the opposite</p>
+</section>
+
+<section id="coord-3x3">
+ <h2><i class="fa-solid fa-truck" style="color: var(--accent-color);"></i> Three Spots, Two Food Trucks: Find Every Equilibrium</h2>
+ <div style="display:grid; grid-template-columns:0.86fr 1.14fr; gap:22px; align-items:start;">
+  <div>
+   <p style="font-size:12.5pt; margin:0 0 8px;">Two food trucks each pick a spot for Friday lunch. <strong>Same spot:</strong> they split the crowd. <strong>Different spots:</strong> each keeps its own crowd. Payoffs are profit in hundreds of dollars.</p>
+   <p style="font-size:12pt; margin:0 0 6px; font-weight:700; color:var(--accent-color);">The check method</p>
+   <p class="fragment" data-fragment-index="1" style="font-size:12pt; margin:0 0 4px;"><i class="fa-solid fa-check" style="color:#2563eb;"></i> Each <strong>column</strong>: check Truck A&rsquo;s best payoff.</p>
+   <p class="fragment" data-fragment-index="2" style="font-size:12pt; margin:0 0 4px;"><i class="fa-solid fa-check" style="color:#C47B5A;"></i> Each <strong>row</strong>: check Truck B&rsquo;s best payoff.</p>
+   <p class="fragment" data-fragment-index="3" style="font-size:12pt; margin:0 0 8px;"><strong>Two checks in one cell = a Nash equilibrium.</strong> Here: (Fenway, Seaport) and (Seaport, Fenway).</p>
+   <div class="fragment" data-fragment-index="4" style="background:#f7f1ea; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color);">
+    <p style="font-size:12pt; margin:0;"><strong>Two equilibria, ranked oppositely:</strong> each truck wants the Fenway one. Nash tells us <em>where</em> they can end up, not <em>which</em> one happens. Back Bay is never a best reply.</p>
+   </div>
+  </div>
+  <div>
+   <table class="ytm" style="border-spacing:5px; margin:0 auto;">
+    <tr><td class="corner"></td><td class="corner"></td><th colspan="3" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Truck B</th></tr>
+    <tr><td class="corner"></td><td class="corner"></td><th class="colh" style="font-size:11.5pt; padding:8px 10px;">Fenway</th><th class="colh" style="font-size:11.5pt; padding:8px 10px;">Seaport</th><th class="colh" style="font-size:11.5pt; padding:8px 10px;">Back Bay</th></tr>
+<tr><th rowspan="3" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">Truck A</th><th class="rowh" style="font-size:11.5pt; padding:8px 10px;">Fenway</th><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">3</span>, <span class="them">3</span></td><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">8</span><i class="fa-solid fa-check fragment" data-fragment-index="1" style="color:#2563eb; font-size:10pt; margin-left:3px;"></i>, <span class="them">6</span><i class="fa-solid fa-check fragment" data-fragment-index="2" style="color:#C47B5A; font-size:10pt; margin-left:3px;"></i><span class="nash-step fragment" data-fragment-index="3"></span><span class="ne-badge fragment" data-fragment-index="3" style="top:4px; right:4px;">NE</span></td><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">8</span><i class="fa-solid fa-check fragment" data-fragment-index="1" style="color:#2563eb; font-size:10pt; margin-left:3px;"></i>, <span class="them">3</span></td></tr>
+<tr><th class="rowh" style="font-size:11.5pt; padding:8px 10px;">Seaport</th><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">6</span><i class="fa-solid fa-check fragment" data-fragment-index="1" style="color:#2563eb; font-size:10pt; margin-left:3px;"></i>, <span class="them">8</span><i class="fa-solid fa-check fragment" data-fragment-index="2" style="color:#C47B5A; font-size:10pt; margin-left:3px;"></i><span class="nash-step fragment" data-fragment-index="3"></span><span class="ne-badge fragment" data-fragment-index="3" style="top:4px; right:4px;">NE</span></td><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">2</span>, <span class="them">2</span></td><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">6</span>, <span class="them">3</span></td></tr>
+<tr><th class="rowh" style="font-size:11.5pt; padding:8px 10px;">Back Bay</th><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">3</span>, <span class="them">8</span><i class="fa-solid fa-check fragment" data-fragment-index="2" style="color:#C47B5A; font-size:10pt; margin-left:3px;"></i></td><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">3</span>, <span class="them">6</span></td><td class="cell" style="min-width:104px; font-size:12.5pt; padding:9px 10px;"><span class="you">1</span>, <span class="them">1</span></td></tr>
+   </table>
+   <p style="font-size:10.5pt; color:var(--muted-color); text-align:center; margin:8px 0 0;">Truck A&rsquo;s payoff first (blue), Truck B&rsquo;s second.</p>
+  </div>
+ </div>
+</section>
+
+<section id="coop-vs-coord">
+ <h2><i class="fa-solid fa-code-compare" style="color: var(--secondary-color);"></i> Two Different Problems: Cooperation vs. Coordination</h2>
+ <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Everything up to here has been a <strong style="color:var(--text-color);">cooperation</strong> problem. Most of what follows is a <strong style="color:var(--text-color);">coordination</strong> problem. They are not degrees of the same difficulty &mdash; they fail in opposite ways, and they need opposite remedies.</p>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch;">
+  <div style="background:#fdf2f0; border-radius:10px; padding:12px 17px; border-left:4px solid var(--danger-color);">
+   <p style="font-size:13pt; font-weight:800; color:var(--danger-color); margin:0 0 7px;"><i class="fa-solid fa-handshake-slash"></i>&nbsp; Cooperation problem</p>
+   <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 8px; letter-spacing:0.5px;">PRISONER&rsquo;S DILEMMA &middot; CARTELS &middot; AD WARS</p>
+   <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Interests conflict.</strong> What is best for you is bad for both of you.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>One equilibrium &mdash; and it is the bad one.</strong> No ambiguity about the prediction.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">You <em>know</em> what you should do. You cannot get there.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Talk is cheap.</strong> A promise changes no payoff, so it changes nothing.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">Deviating is <strong style="color:var(--danger-color);">tempting</strong> &mdash; that is the whole problem.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Fix:</strong> change the payoffs, repeat the game, or impose a rule.</p>
+  </div>
+  <div style="background:#eef6ef; border-radius:10px; padding:12px 17px; border-left:4px solid var(--success-color);">
+   <p style="font-size:13pt; font-weight:800; color:var(--success-color); margin:0 0 7px;"><i class="fa-solid fa-handshake-angle"></i>&nbsp; Coordination problem</p>
+   <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 8px; letter-spacing:0.5px;">WHERE TO MEET &middot; WHICH SIDE TO DRIVE ON &middot; CHICKEN</p>
+   <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Interests mostly align.</strong> You both just want to match &mdash; or deliberately mis-match.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Several equilibria &mdash; all stable.</strong> The theory cannot tell you which.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">You would <em>happily</em> play your part. You do not know which part.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Talk works.</strong> One sentence &mdash; &ldquo;Hayden, 3pm&rdquo; &mdash; ends the problem.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">Deviating is <strong style="color:var(--success-color);">costly</strong> &mdash; once matched, nobody wants to move.</p>
+    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Fix:</strong> a focal point, a convention, a signal &mdash; or a law.</p>
+  </div>
+ </div>
+ <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;"><strong>The diagnostic: ask what actually goes wrong.</strong> If everyone can name the right outcome and still cannot reach it, you have a <em>cooperation</em> problem. If everyone would gladly play their part but nobody knows which part is theirs, you have a <em>coordination</em> problem. <strong>Cheap talk is the test</strong> &mdash; useless in the first, decisive in the second.</p></div>
+</section>
+
+
+<section id="coord-pure">
+ <h2><i class="fa-solid fa-mug-hot" style="color: var(--accent-color);"></i> Pure Coordination: Where Do We Meet?</h2>
+ <div style="display:grid; grid-template-columns:1.04fr 0.96fr; gap:24px; align-items:start;">
+  <div>
+   <p style="font-size:12.5pt; margin-bottom:9px;"><strong>Pure coordination game:</strong> it doesn&rsquo;t matter <em>which</em> strategy the players pick &mdash; only that they pick the <strong>same</strong> one. No conflict of interest.</p>
+   <p style="font-size:12.5pt; margin-bottom:9px;">You agreed to meet a classmate at Dunkin to study &mdash; but never swapped phone numbers. There are <strong>two Dunkin locations near campus.</strong></p>
+   <p style="font-size:12.5pt; margin-bottom:11px;"><strong style="color:var(--accent-color);">Which one do you walk to?</strong></p>
+   <div style="background:#f7f1ea; border-radius:10px; padding:11px 18px; border-left:4px solid var(--secondary-color);">
+    <p style="font-size:12pt; margin:0 0 5px; font-weight:700;">Two pure-strategy Nash equilibria:</p>
+    <p class="fragment" data-fragment-index="1" style="font-size:12pt; margin:0 0 3px 4px;">&bull;&nbsp; (Hayden, Hayden)</p>
+    <p class="fragment" data-fragment-index="2" style="font-size:12pt; margin:0 0 0 4px;">&bull;&nbsp; (Shillman, Shillman)</p>
+   </div>
+   <p style="font-size:11pt; color:var(--muted-color); margin-top:11px;">You both just want to <em>match.</em> The hard part is agreeing <em>which</em> &mdash; without talking. A shared landmark or habit (a <strong>focal point</strong>) usually breaks the tie.</p>
+  </div>
+  <div>
+   <img src="figures/map.png" alt="Map: two Dunkin locations near Northeastern University, one by Hayden Hall and one by Shillman Hall" style="width:100%; max-height:236px; object-fit:contain; border-radius:8px; border:1px solid #e6e1d9;">
+   <table class="ytm" style="border-spacing:5px; margin-top:12px;">
+    <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Classmate</th></tr>
+    <tr><td class="corner"></td><td class="corner"></td><th class="colh">Hayden</th><th class="colh">Shillman</th></tr>
+    <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">You</th>
+     <th class="rowh">Hayden</th>
+     <td class="cell"><span class="you">1</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="1"></span><span class="ne-badge fragment" data-fragment-index="1" style="top:5px; right:5px;">NE</span></td>
+     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td></tr>
+    <tr><th class="rowh">Shillman</th>
+     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td>
+     <td class="cell"><span class="you">1</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="2"></span><span class="ne-badge fragment" data-fragment-index="2" style="top:5px; right:5px;">NE</span></td></tr>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section id="coord-bos">
+ <h2><i class="fa-solid fa-people-arrows" style="color: var(--accent-color);"></i> Battle of the Sexes: Coordination With Conflict</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;">
+  <div style="display:flex; flex-direction:column;">
+   <p style="font-size:12.5pt; margin:0 0 9px;">Now the players <strong>still want to match</strong> &mdash; but they <strong>disagree on which</strong> outcome. A coordination game <em>with</em> a conflict of interest.</p>
+   <p style="font-size:12.5pt; margin:0 0 9px;">You and a friend will spend Saturday <strong>together</strong>, but never settled the plan. You&rsquo;d rather hit <strong>Six Flags</strong>; your friend would rather go <strong>hiking.</strong> Both of you prefer <em>being together</em> over going alone.</p>
+   <p style="font-size:11pt; color:var(--muted-color); margin:0 0 11px;">Both beat going alone, so each is stable &mdash; but the two of you <strong>rank them oppositely.</strong> Coordinating is no longer enough; <em>which</em> equilibrium becomes a bargaining problem (who commits, arrives first, or makes it a habit).</p>
+   <img src="figures/6flagvshiking.webp" alt="Battle of the Sexes: one friend prefers Six Flags, the other prefers hiking, but both prefer being together" style="width:100%; max-height:250px; object-fit:contain; border-radius:8px; border:1px solid #e6e1d9; margin-top:auto;">
+  </div>
+  <div style="display:flex; flex-direction:column; justify-content:center; gap:16px;">
+   <table class="ytm" style="border-spacing:5px; margin:0 auto;">
+    <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Friend</th></tr>
+    <tr><td class="corner"></td><td class="corner"></td><th class="colh">Six Flags</th><th class="colh">Hiking</th></tr>
+    <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">You</th>
+     <th class="rowh">Six Flags</th>
+     <td class="cell"><span class="you">2</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="1"></span><span class="ne-badge fragment" data-fragment-index="1" style="top:5px; right:5px;">NE</span></td>
+     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td></tr>
+    <tr><th class="rowh">Hiking</th>
+     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td>
+     <td class="cell"><span class="you">1</span>, <span class="them">2</span><span class="nash-step fragment" data-fragment-index="2"></span><span class="ne-badge fragment" data-fragment-index="2" style="top:5px; right:5px;">NE</span></td></tr>
+   </table>
+   <div style="background:#f7f1ea; border-radius:10px; padding:11px 18px; border-left:4px solid var(--secondary-color);">
+    <p style="font-size:12.5pt; margin:0 0 6px; font-weight:700; color:var(--accent-color);">Where do you each show up?</p>
+    <p style="font-size:12pt; margin:0 0 5px; font-weight:700;">Two pure-strategy Nash equilibria:</p>
+    <p class="fragment" data-fragment-index="1" style="font-size:12pt; margin:0 0 3px 4px;">&bull;&nbsp; (Six Flags, Six Flags) &mdash; you happier</p>
+    <p class="fragment" data-fragment-index="2" style="font-size:12pt; margin:0 0 0 4px;">&bull;&nbsp; (Hiking, Hiking) &mdash; friend happier</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="chicken-anti">
+ <h2><i class="fa-solid fa-car-burst" style="color: var(--danger-color);"></i> Chicken: The Anti-Coordination Game</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center;">
+  <div>
+   <p style="font-size:12.5pt; margin:0 0 10px; line-height:1.5;">Two cars race straight at each other. <strong>Swerve</strong> and you are the &ldquo;chicken&rdquo;; go <strong>Straight</strong> and hold your nerve.</p>
+   <div style="text-align:center;">
+    <img src="figures/chiken.webp" alt="Two chickens riding bicycles straight at each other &mdash; the game of Chicken" style="max-width:88%; max-height:212px; object-fit:contain;">
+   </div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#f7f1ea; border-radius:10px; padding:10px 16px; border-left:4px solid var(--accent-color); margin-top:12px;">
+    <p style="font-size:11.5pt; margin:0; line-height:1.45;">Coordination games reward <em>matching</em>. This one rewards <strong style="color:var(--accent-color);">mis-matching</strong> &mdash; each wants to be the tough one while the other yields. And there is <strong>no dominant strategy</strong>: your best move is whatever your rival is <em>not</em> doing.</p>
+   </div>
+  </div>
+  <div>
+   <div class="fragment fade-in" data-fragment-index="1">
+    <table class="ytm" style="border-spacing:5px;">
+     <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Column</th></tr>
+     <tr><td class="corner"></td><td class="corner"></td><th class="colh">Swerve</th><th class="colh">Straight</th></tr>
+     <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">Row</th>
+      <th class="rowh">Swerve</th>
+      <td class="cell"><span class="you">0</span>, <span class="them">0</span></td>
+      <td class="cell"><span class="you">&minus;1</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="4"></span><span class="ne-badge fragment" data-fragment-index="4" style="top:5px; right:5px;">NE</span></td></tr>
+     <tr><th class="rowh">Straight</th>
+      <td class="cell"><span class="you">1</span>, <span class="them">&minus;1</span><span class="nash-step fragment" data-fragment-index="3"></span><span class="ne-badge fragment" data-fragment-index="3" style="top:5px; right:5px;">NE</span></td>
+      <td class="cell" style="background:#fdeaea;"><span class="you">&minus;2</span>, <span class="them">&minus;2</span></td></tr>
+    </table>
+    <p style="font-size:10pt; color:var(--muted-color); text-align:center; margin:7px 0 0;"><span style="color:#2563eb; font-weight:700;">Row</span> first &middot; <span style="color:var(--accent-color); font-weight:700;">Column</span> second &middot; <span style="color:#B03A3A; font-weight:700;">pink</span> = the crash</p>
+   </div>
+   <div class="fragment fade-up" data-fragment-index="5" style="background:#eef3f6; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color); margin-top:11px;">
+    <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>Two equilibria, both off-diagonal</strong> &mdash; (Straight, Swerve) and (Swerve, Straight). Theory cannot say which. Nerve and credibility decide it, and if <em>both</em> chase their own, they land in the pink cell.</p>
+   </div>
+   <div class="fragment fade-up" data-fragment-index="6" style="background:#eef6ef; border-radius:10px; padding:10px 15px; border-left:4px solid var(--success-color); margin-top:9px;">
+    <p style="font-size:11pt; margin:0; line-height:1.45;"><strong>Real Chicken &mdash; SAG-AFTRA, 2024&ndash;25:</strong> actors demanded AI-consent protections; studios held out. After <strong>11 months</strong> of mutual loss the studios swerved &mdash; July 2025: a <strong>15.17% raise + AI guardrails.</strong></p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="pd-vs-chicken">
+ <h2><i class="fa-solid fa-scale-balanced" style="color:var(--secondary-color);"></i> Diagnostic Comparison: Two Architectures of Conflict</h2>
+ <table class="cmp">
+  <tr>
+   <th class="rl"></th>
+   <th>Prisoner&rsquo;s Dilemma</th>
+   <th>Game of Chicken</th>
+  </tr>
+  <tr>
+   <td class="rl">Core mechanic</td>
+   <td>Temptation to betray</td>
+   <td>Test of endurance</td>
+  </tr>
+  <tr>
+   <td class="rl">Dominant strategy?</td>
+   <td class="hot">Yes &mdash; always defect</td>
+   <td class="hot">No &mdash; depends on the opponent</td>
+  </tr>
+  <tr>
+   <td class="rl">Winning tactic</td>
+   <td class="hot">Follow the math</td>
+   <td class="hot">Weaponize credibility</td>
+  </tr>
+  <tr>
+   <td class="rl">Worst-case scenario</td>
+   <td>Sub-optimal stability</td>
+   <td>Catastrophic mutual destruction</td>
+  </tr>
+  <tr>
+   <td class="rl">Real-world example</td>
+   <td>The Cola Wars (Coke vs. Pepsi)</td>
+   <td>SAG-AFTRA strike</td>
+  </tr>
+ </table>
+ <div class="key-result" style="margin-top:16px;"><p>Same surface &mdash; two players, two choices &mdash; but <strong>opposite engines.</strong> A Prisoner&rsquo;s Dilemma is solved by <strong>changing the payoffs</strong>; a game of Chicken is solved by <strong>changing what your rival believes.</strong></p></div>
+</section>
+
+
+<section class="section-divider" data-state="is-section-divider" id="social-divider">
+ <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Game Theory Is Everywhere</p>
+ <h1 style="font-size: 40pt; color: var(--primary-color); margin-bottom: 16px;">Modeling Social Interactions</h1>
+ <p style="font-size: 18pt; color: var(--muted-color); font-style: italic;">The same games that explain cartels run on the sidewalk outside</p>
+</section>
+
+<section id="social-crosswalk">
+ <h2><i class="fa-solid fa-person-walking" style="color:var(--secondary-color);"></i> A Social Problem: Who Gets to Pass First?</h2>
+ <div style="position:relative; max-width:780px; margin:0 auto; aspect-ratio:16/9; background:#0d1b2a url('figures/cross1-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.3);">
+  <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/cross1.mp4?v=2" poster="figures/cross1-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
+ </div>
+ <div class="key-result" style="margin-top:12px;"><p>A car meets a wave of students at the crosswalk. Both can&rsquo;t go at once &mdash; and if they do, disaster. Each side would rather the <em>other</em> wait. It&rsquo;s a coordination game with no referee &mdash; played thousands of times a day.</p></div>
+</section>
+
+<section id="social-equilibria">
+ <h2><i class="fa-solid fa-traffic-light" style="color:var(--danger-color);"></i> Multiple Equilibria: Efficiency</h2>
+ <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:24px; align-items:center;">
+  <div>
+   <p style="font-size:12.5pt; margin-bottom:9px;">Model it: <strong style="color:#2563eb;">Students</strong> and <strong style="color:var(--accent-color);">Cars</strong> each choose <strong>Pass</strong> or <strong>Yield</strong>.</p>
+   <p style="font-size:12.5pt; margin-bottom:7px;">Both Pass &rarr; a <strong style="color:var(--danger-color);">crash</strong> (&minus;100, &minus;100). Both Yield &rarr; an awkward standstill (&minus;3, &minus;3).</p>
+   <p style="font-size:12.5pt;">The <strong>two Nash equilibria</strong> sit on the off-diagonal &mdash; one passes, one yields. Both are <strong>Pareto efficient</strong>: you can&rsquo;t help one side without hurting the other.</p>
+  </div>
+  <div>
+   <table class="ytm" style="border-spacing:5px;">
+    <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Cars</th></tr>
+    <tr><td class="corner"></td><td class="corner"></td><th class="colh">Pass</th><th class="colh">Yield</th></tr>
+    <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">Students</th>
+     <th class="rowh">Pass</th>
+     <td class="cell"><span class="you">&minus;100</span>, <span class="them">&minus;100</span></td>
+     <td class="cell nash"><span class="you">1</span>, <span class="them">&minus;2</span><span class="ne-badge" style="top:5px; right:5px;">NE</span></td></tr>
+    <tr><th class="rowh">Yield</th>
+     <td class="cell nash"><span class="you">&minus;1</span>, <span class="them">5</span><span class="ne-badge" style="top:5px; right:5px;">NE</span></td>
+     <td class="cell"><span class="you">&minus;3</span>, <span class="them">&minus;3</span></td></tr>
+   </table>
+   <p style="font-size:10pt; color:var(--muted-color); text-align:center; margin-top:8px;"><span style="color:#2563eb; font-weight:700;">Students</span> payoff first &middot; <span style="color:var(--accent-color); font-weight:700;">Cars</span> second</p>
+  </div>
+ </div>
+   <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;"><strong>But the two equilibria are not equal.</strong> <em>Cars pass</em> \((-1, 5)\) creates more total value &mdash; and dumps the cost on the people on foot. <em>Students pass</em> \((1, -2)\) protects the pedestrian and produces less in total. Pareto efficiency cannot choose between them: <strong>which one we settle on is a question of fairness, not only efficiency.</strong></p></div>
+</section>
+
+<section id="social-fairness">
+ <h2><i class="fa-solid fa-video" style="color:var(--accent-color);"></i> Watch It Happen &mdash; Nobody Reads the Matrix</h2>
+ <div style="position:relative; max-width:780px; margin:0 auto; aspect-ratio:16/9; background:#0d1b2a url('figures/cross2-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.3);">
+  <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/cross2.mp4?v=2" poster="figures/cross2-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
+ </div>
+ <div class="key-result" style="margin-top:12px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">Nobody at that crossing solved a game. They read a <strong>convention</strong> &mdash; and it resolved in about two seconds, for free. That is what the next slide is about.</p></div>
+</section>
+
+<section id="social-institutions">
+ <h2><i class="fa-solid fa-gavel" style="color:var(--secondary-color);"></i> Institutions Select the Equilibrium</h2>
+ <div style="display:grid; grid-template-columns:1.25fr 0.75fr; gap:24px; align-items:center;">
+  <div>
+   <div style="background:#eef3f6; border-radius:10px; padding:11px 17px; border-left:4px solid var(--secondary-color); margin-bottom:10px;">
+    <p style="font-size:12.5pt; margin:0; line-height:1.45;">When several equilibria are all stable and all efficient, theory goes quiet. Something outside the game has to <strong>pick one and make the choice common knowledge</strong> &mdash; so two strangers never have to negotiate at the curb.</p>
+   </div>
+   <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-bottom:10px;">
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Law.</strong> Right of way at a crosswalk.</p></div>
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Convention.</strong> Which side of the road you drive on.</p></div>
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Norm.</strong> Queueing; who speaks next on a call.</p></div>
+    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Standard.</strong> USB-C, time zones, the width of a rail.</p></div>
+   </div>
+   <div style="background:#eef6ef; border-radius:10px; padding:11px 17px; border-left:4px solid var(--success-color);">
+    <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>And here is why they are cheap.</strong> In a coordination game an institution never has to fight anyone&rsquo;s incentives &mdash; once you believe everyone else drives on the right, driving on the right is <em>your</em> best reply. It only has to be <strong>known</strong>, not enforced. Contrast &sect;14.5: holding a cartel together means fighting every member&rsquo;s incentive every day, which is why it needs monitoring, punishment, and still falls apart.</p>
+   </div>
+  </div>
+  <div style="text-align:center;">
+   <img src="figures/left_turn_yeild.png" alt="Left Turn Yield on Green traffic sign" style="max-width:100%; max-height:210px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.2));">
+   <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin-top:9px; line-height:1.4;">A tiny institution, doing exactly one job: making it common knowledge who goes first.</p>
+  </div>
+ </div>
+ <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">Notice which equilibrium the law picked: <strong>the pedestrian one</strong> &mdash; the fairer and safer of the two, not the one with the larger total payoff. Selecting an equilibrium is never a purely technical act; it embeds a judgement about who should bear the cost.</p></div>
+</section>
+
+
+
+
+<section class="section-divider" data-state="is-section-divider" id="div-mixed-nash">
+  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;14.3</p>
+  <h1>Mixed-Strategy Nash Equilibrium</h1>
+  <p class="subtitle">When no pure profile is stable &mdash; randomize, and make your rival indifferent</p>
+</section>
+
+
+<section id="penalty-kick">
+  <h2><i class="fa-solid fa-futbol" style="color: var(--secondary-color);"></i> Penalty Kick</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 22px; align-items: center;">
+    <div style="text-align:center;">
+      <img class="figure" alt="Penalty kick — Argentina vs France, 2022 World Cup final shootout" src="figures/final_kick.webp" style="max-width:100%; max-height:340px; border-radius:10px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
+    </div>
+    <div style="text-align:center;">
+      <img class="figure" alt="Match result — Argentina 3-3 France, penalties 4-2 (2022 World Cup final)" src="figures/result.png" style="max-width:100%; max-height:340px; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
+    </div>
+  </div>
+  <div class="key-result" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;">A penalty shootout is a <strong>mixed-strategy game</strong>: the kicker can&rsquo;t commit to one side (the goalie would learn it), and the goalie can&rsquo;t either. Each must keep the other <em>guessing</em>.</p></div>
+</section>
+
+<section id="mixed-matrix">
+  <h2><i class="fa-solid fa-futbol" style="color: var(--accent-color);"></i> Some Games Have No Pure Equilibrium</h2>
+  <div style="display:grid; grid-template-columns:1.02fr 0.98fr; gap:24px; align-items:center;">
+    <div style="text-align:center;">
+      <img class="figure" alt="Four-panel penalty-kick diagram: kicker and goalie each choosing left or right" src="figures/mix_kick.png" style="max-width:100%; max-height:330px; object-fit:contain;">
+      <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin-top:8px;">Kicker picks a side; goalie picks a side. <strong>Same side &rarr; saved. Different &rarr; goal.</strong></p>
+    </div>
+    <div>
+      <table style="border-collapse:collapse; margin:0 auto 9px;">
+        <tr><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;"></th><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;">Goalie: Left</th><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;">Goalie: Right</th></tr>
+        <tr><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;" style="text-align:left;">Kicker: Left</th><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;">0, 1 <span style="color:var(--success-color); font-weight:800;">&#10003;</span></td><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;"><span style="color:var(--success-color); font-weight:800;">&#10003;</span> 1, 0</td></tr>
+        <tr><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;" style="text-align:left;">Kicker: Right</th><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;"><span style="color:var(--success-color); font-weight:800;">&#10003;</span> 1, 0</td><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;">0, 1 <span style="color:var(--success-color); font-weight:800;">&#10003;</span></td></tr>
+      </table>
+      <p style="font-size:10.5pt; color:var(--muted-color); text-align:center; margin:0 0 11px;">Cell \(=\) (kicker, goalie) &middot; <span style="color:var(--success-color); font-weight:800;">&#10003;</span> marks that player&rsquo;s best response</p>
+      <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:9px; padding:10px 16px; border-left:4px solid var(--secondary-color); margin-bottom:9px;">
+       <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>Run the tick test.</strong> A pure-strategy equilibrium is a cell where <em>both</em> players are best-responding &mdash; a cell with two ticks.</p>
+      </div>
+      <div class="fragment fade-up" data-fragment-index="2" style="background:#fdeceb; border-radius:9px; padding:10px 16px; border-left:4px solid var(--danger-color); margin-bottom:9px;">
+       <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>There isn&rsquo;t one.</strong> Every cell has exactly one tick. Whoever is being matched wants to move &mdash; and once they move, the other wants to follow. <strong>No pure-strategy Nash equilibrium exists.</strong></p>
+      </div>
+      <div class="fragment fade-up" data-fragment-index="3" style="background:#f3effc; border-radius:9px; padding:10px 16px; border-left:4px solid #7c3aed;">
+       <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong style="color:#7c3aed;">So enlarge the strategy set.</strong> A <strong>mixed strategy</strong> is a <em>probability distribution</em> over your pure strategies &mdash; you commit to the <strong>odds</strong>, not the action. Nash&rsquo;s theorem guarantees an equilibrium once you allow these.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mixed-two-questions">
+  <h2><i class="fa-solid fa-dice" style="color: var(--accent-color);"></i> Mixing Asks You Two Different Questions</h2>
+  <div style="display:grid; grid-template-columns:1.08fr 0.92fr; gap:24px; align-items:center;">
+    <div>
+     <p style="font-size:12pt; margin:0 0 10px; line-height:1.45;">Neither player can commit to a side &mdash; the rival would learn it and exploit it. So each of you must settle <strong>two things at the same moment</strong>, and they are easy to confuse:</p>
+     <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:9px; padding:11px 16px; border-left:4px solid var(--secondary-color); margin-bottom:10px;">
+      <p style="font-size:11.5pt; margin:0; line-height:1.45;"><span style="display:inline-block; background:var(--secondary-color); color:#fff; font-size:9pt; font-weight:800; border-radius:4px; padding:1px 7px; margin-right:6px;">BELIEF</span><strong>What will <em>they</em> do?</strong><br>You cannot know. So you carry a probability about someone else&rsquo;s behaviour: the goalie dives Left with chance \(q\).</p>
+     </div>
+     <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:9px; padding:11px 16px; border-left:4px solid var(--accent-color); margin-bottom:10px;">
+      <p style="font-size:11.5pt; margin:0; line-height:1.45;"><span style="display:inline-block; background:var(--accent-color); color:#fff; font-size:9pt; font-weight:800; border-radius:4px; padding:1px 7px; margin-right:6px;">CHOICE</span><strong>What should <em>I</em> do?</strong><br>Your answer is not Left or Right. It is a number: kick Left with chance \(p\).</p>
+     </div>
+     <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:9px; padding:10px 16px; border-left:4px solid var(--muted-color);">
+      <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>And here is the knot.</strong> Your best \(p\) depends on your belief about \(q\). Their best \(q\) depends on their belief about \(p\). You choose <em>simultaneously</em>, so neither belief can be checked before you commit.</p>
+     </div>
+    </div>
+    <div style="text-align:center;">
+     <div style="position:relative; width:100%; max-width:340px; height:246px; margin:0 auto;">
+      <svg viewBox="0 0 340 246" style="position:absolute; inset:0; width:100%; height:100%;">
+       <defs><marker id="mq-ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#8C8580"/></marker></defs>
+       <path d="M 172 60 C 258 60 259 122 259 160" fill="none" stroke="#8C8580" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mq-ar)"/>
+       <path d="M 168 196 C 82 196 81 134 81 96" fill="none" stroke="#8C8580" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mq-ar)"/>
+      </svg>
+      <div style="position:absolute; left:6px; top:14px; width:166px; box-sizing:border-box; background:#fef9f3; border:2px solid #C47B5A; border-radius:10px; padding:9px 0; text-align:center;">
+       <p style="margin:0; font-size:12.5pt; font-weight:800; color:#C47B5A; line-height:1.2;">Kicker</p>
+       <p style="margin:2px 0 0; font-size:12pt; color:var(--text-color); line-height:1.2;">chooses \(p\)</p>
+      </div>
+      <div style="position:absolute; right:6px; bottom:14px; width:166px; box-sizing:border-box; background:#eef3f6; border:2px solid #6B8BA4; border-radius:10px; padding:9px 0; text-align:center;">
+       <p style="margin:0; font-size:12.5pt; font-weight:800; color:#6B8BA4; line-height:1.2;">Goalie</p>
+       <p style="margin:2px 0 0; font-size:12pt; color:var(--text-color); line-height:1.2;">chooses \(q\)</p>
+      </div>
+      <p style="position:absolute; right:2px; top:104px; width:78px; margin:0; font-size:10pt; font-style:italic; color:var(--muted-color); line-height:1.3; text-align:left;">needs a belief about \(q\)</p>
+      <p style="position:absolute; left:2px; top:104px; width:78px; margin:0; font-size:10pt; font-style:italic; color:var(--muted-color); line-height:1.3; text-align:right;">needs a belief about \(p\)</p>
+     </div>
+     <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin-top:4px;">Each needs the other&rsquo;s number before choosing their own.</p>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">So &ldquo;equilibrium&rdquo; cannot mean <em>guess right</em>. It is a pair \((p^{\ast}, q^{\ast})\) at which neither wants to shift weight &mdash; and the only way nobody wants to shift is if <strong>each player&rsquo;s mix leaves the other completely indifferent</strong>. You do not randomise to confuse yourself; you randomise to remove their ability to exploit you.</p></div>
+</section>
+
+<section id="mixed-fifty">
+  <h2><i class="fa-solid fa-calculator" style="color: var(--accent-color);"></i> Mixed Strategies &mdash; The Goalie&rsquo;s Best Response</h2>
+  <div style="display:grid; grid-template-columns:0.82fr 1.18fr; gap:18px; align-items:center; margin-bottom:10px;">
+    <div style="text-align:center;">
+      <p style="font-size: 10.5pt; font-weight: 700; color: var(--primary-color); margin: 0 0 5px; letter-spacing:0.04em;">PAYOFF MATRIX &mdash; (kicker, <span style="color:var(--secondary-color);">goalie</span>)</p>
+      <table style="border-collapse:collapse; margin:0 auto; font-size:11.5pt;">
+        <tr><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8;"></th><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt;">Goalie: L</th><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt;">Goalie: R</th></tr>
+        <tr><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt; text-align:left;">Kicker: L</th><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">0, <strong style="color:var(--secondary-color);">1</strong></td><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">1, <strong style="color:var(--secondary-color);">0</strong></td></tr>
+        <tr><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt; text-align:left;">Kicker: R</th><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">1, <strong style="color:var(--secondary-color);">0</strong></td><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">0, <strong style="color:var(--secondary-color);">1</strong></td></tr>
+      </table>
+    </div>
+    <div style="background:#f3effc; border-radius:12px; padding:13px 20px; border-left:5px solid #7c3aed;">
+      <p style="margin:0 0 6px; font-size:12pt; line-height:1.45;">The <span style="color:var(--secondary-color); font-weight:700;">goalie</span> earns <strong>1</strong> for a save (she dives the kicker&rsquo;s way) and <strong>0</strong> otherwise. Her expected payoff is a <strong>weighted average</strong> over the kicker&rsquo;s mix (Left with prob \(p\)):</p>
+      <p style="margin:4px 0 0; font-size:13pt; text-align:center;">\(E[\text{dive Left}] = p(1) + (1-p)(0) = p\)</p>
+      <p style="margin:4px 0 0; font-size:13pt; text-align:center;">\(E[\text{dive Right}] = p(0) + (1-p)(1) = 1-p\)</p>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: stretch;">
+    <div class="fragment fade-up" data-fragment-index="1" style="background:#fef9f3; border-radius:12px; padding:12px 16px; border-left:5px solid var(--accent-color); display:flex; flex-direction:column;">
+      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:800; color:var(--primary-color);">Kicker: 80% Left</p>
+      <p style="margin:0; font-size:11.5pt; line-height:1.6;">Dive Left: 0.8(1)+0.2(0) = <strong style="color:var(--accent-color);">0.80</strong><br>Dive Right: 0.8(0)+0.2(1) = <strong>0.20</strong></p>
+      <p style="margin:8px 0 0; font-size:12pt;"><i class="fa-solid fa-arrow-right" style="color:var(--accent-color);"></i> Best response: <strong>dive LEFT</strong>.</p>
+      <p style="margin:auto 0 0; padding-top:8px; font-size:11.5pt; font-weight:800; color:var(--danger-color);"><i class="fa-solid fa-xmark"></i> Kicker should switch to Right</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:12px; padding:12px 16px; border-left:5px solid var(--accent-color); display:flex; flex-direction:column;">
+      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:800; color:var(--primary-color);">Kicker: 20% Left</p>
+      <p style="margin:0; font-size:11.5pt; line-height:1.6;">Dive Left: 0.2(1)+0.8(0) = <strong>0.20</strong><br>Dive Right: 0.2(0)+0.8(1) = <strong style="color:var(--accent-color);">0.80</strong></p>
+      <p style="margin:8px 0 0; font-size:12pt;"><i class="fa-solid fa-arrow-right" style="color:var(--accent-color);"></i> Best response: <strong>dive RIGHT</strong>.</p>
+      <p style="margin:auto 0 0; padding-top:8px; font-size:11.5pt; font-weight:800; color:var(--danger-color);"><i class="fa-solid fa-xmark"></i> Kicker should switch to Left</p>
+    </div>
+    <div class="fragment fade-up" data-fragment-index="3" style="background:#eef5ef; border-radius:12px; padding:12px 16px; border-left:5px solid var(--success-color); display:flex; flex-direction:column;">
+      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:800; color:var(--primary-color);">Kicker: 50% Left</p>
+      <p style="margin:0; font-size:11.5pt; line-height:1.6;">Dive Left: 0.5(1)+0.5(0) = <strong>0.50</strong><br>Dive Right: 0.5(0)+0.5(1) = <strong>0.50</strong></p>
+      <p style="margin:8px 0 0; font-size:12pt;"><i class="fa-solid fa-equals" style="color:var(--success-color);"></i> Goalie <strong>indifferent</strong>.</p>
+      <p style="margin:auto 0 0; padding-top:8px; font-size:11.5pt; font-weight:800; color:var(--success-color);"><i class="fa-solid fa-circle-check"></i> Nash equilibrium</p>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;">Only at <strong style="color:#7c3aed;">50/50</strong> is the goalie indifferent, so the kicker can&rsquo;t be exploited &mdash; that is the <strong>mixed-strategy Nash equilibrium</strong>. Any predictable mix lets the goalie pick a pure best response, which the kicker would then want to deviate from. (With <em>asymmetrical</em> payoffs, the equilibrium mix shifts away from 50/50.)</p></div>
+</section>
+
+<section id="td-penalty-kicks">
+  <h2><i class="fa-solid fa-futbol" style="color: var(--secondary-color);"></i> Does Anyone Actually Mix? &mdash; Penalty Kicks</h2>
+  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
+    <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 13px 18px;">
+      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-database"></i> Theory and Data 14.1 &mdash; Chiappori-Levitt-Groseclose (2002, <em>AER</em>)</p>
+      <p style="margin: 0; font-size: 12pt; line-height: 1.5;">A penalty kick is stylized matching pennies: kicker picks a corner, goalie picks a corner; same corner favors the goalie. The mixed-NE prediction: <strong>scoring probability is equal across the kicker's choices</strong> (else shift weight).</p>
+      <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.5;">French + Italian top divisions, 1995&ndash;2000: Left and Right scoring rates were <strong>76% vs 76%</strong> &mdash; statistically indistinguishable, exactly the indifference condition. Replicated in tennis serves (Walker-Wooders 2001) and Spanish soccer (Palacios-Huerta 2003).</p>
+    </div>
+    <div>
+      <div class="misconception" style="margin: 0 0 10px;">
+        <p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 14.2 &mdash; a pure NE may not exist, but a mixed one always does</p>
+        <p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.45;">Nash's 1950 theorem: <em>every</em> finite game has at least one Nash equilibrium (possibly mixed). Can't find a pure NE? Look for one where the players randomize.</p>
+      </div>
+      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0; color: var(--muted-color);"><strong>The counterpoint:</strong> Kovash-Levitt (2009) find MLB pitchers and NFL play-callers <em>deviate</em> from minimax &mdash; too many fastballs, too few passes. When the action space is large and cognitive load high, players fall into predictable patterns. Mixed-NE holds for penalty kicks and tennis, not for baseball.</p>
+    </div>
+  </div>
+</section>
 
 <section class="section-divider" data-state="is-section-divider" id="rg-divider">
  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;14.5</p>
@@ -1111,7 +1528,7 @@
   </div>
  </div>
  <div class="key-result" style="margin-top:11px; padding:9px 16px;">
-  <p style="margin:0; font-size:12pt;"><strong>A one-shot game gives you neither.</strong> There is no &ldquo;later&rdquo; in which to hand out a reward or withhold one, so the only thing disciplining you is the payoff in front of you &mdash; and in a prisoner&rsquo;s dilemma that always says defect. <strong>Repetition changes no payoff in the matrix; it hands each player a carrot and a stick.</strong> Whether they are strong enough to hold the truce depends on how much you value tomorrow &mdash; the discount factor \(\delta\), next.</p>
+  <p style="margin:0; font-size:12pt;"><strong>A one-shot game gives you neither.</strong> There is no &ldquo;later&rdquo; in which to hand out a reward or withhold one, so the only thing disciplining you is the payoff in front of you &mdash; and in a prisoner&rsquo;s dilemma that always says defect. <strong>Repetition changes no payoff in the matrix; it hands each player a carrot and a stick.</strong> Whether they are strong enough to hold the truce depends on how much you value tomorrow &mdash; the discount factor \(\delta\).</p>
  </div>
 </section>
 
@@ -1183,18 +1600,18 @@
    </table>
   </div>
   <div style="display:flex; flex-direction:column; gap:9px;">
-   <div class="fragment fade-up" data-fragment-index="1" style="background:#fdeceb; border-radius:8px; padding:9px 15px; border-left:4px solid var(--danger-color);">
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#fdeceb; border-radius:8px; padding:7px 14px; border-left:4px solid var(--danger-color);">
     <p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Round 2 (the last play):</strong> nothing comes after, so no future punishment can deter anyone. Defect dominates &mdash; \(T &gt; R\) against a cooperator, \(P &gt; S\) against a defector &rarr; <strong>\((1,1)\).</strong></p>
    </div>
-   <div class="fragment fade-up" data-fragment-index="2" style="background:#fdeceb; border-radius:8px; padding:9px 15px; border-left:4px solid var(--danger-color);">
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#fdeceb; border-radius:8px; padding:7px 14px; border-left:4px solid var(--danger-color);">
     <p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Round 1:</strong> both already know Round 2 will be \((D,D)\) no matter what &mdash; cooperating now buys <em>no</em> future goodwill. So Defect again &rarr; <strong>(Defect, Defect) = \((1,1)\).</strong></p>
    </div>
-   <div class="fragment fade-up" data-fragment-index="3" style="background:#f7f1ea; border-radius:8px; padding:9px 15px; border-left:4px solid var(--accent-color);">
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#f7f1ea; border-radius:8px; padding:7px 14px; border-left:4px solid var(--accent-color);">
     <p style="margin:0; font-size:12pt; line-height:1.4;"><strong>Defect in <em>both</em> rounds</strong> &mdash; total \((2,2)\), not the \((6,6)\) of cooperating twice.</p>
    </div>
   </div>
  </div>
- <div class="fragment fade-up" data-fragment-index="4" style="margin-top:11px;">
+ <div class="fragment fade-up" data-fragment-index="4" style="margin-top:6px;">
   <p style="font-size:11.5pt; margin:0 0 6px;"><strong>You have seen this. Economists call it the <span style="color:var(--danger-color);">lame-duck</span> or <span style="color:var(--danger-color);">endgame</span> effect</strong> &mdash; wherever the last round becomes visible, cooperation thins out:</p>
   <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:9px;">
    <div style="background:#f8f6f3; border-radius:8px; padding:8px 12px; border-left:3px solid var(--danger-color);"><p style="font-size:10.5pt; font-weight:800; color:var(--danger-color); margin:0 0 2px;"><i class="fa-solid fa-landmark"></i>&nbsp; Lame-duck official</p><p style="font-size:10.5pt; line-height:1.35; margin:0;">Term-limited, nothing left to be re-elected to &mdash; promises to voters get cheap.</p></div>
@@ -1202,9 +1619,8 @@
    <div style="background:#f8f6f3; border-radius:8px; padding:8px 12px; border-left:3px solid var(--danger-color);"><p style="font-size:10.5pt; font-weight:800; color:var(--danger-color); margin:0 0 2px;"><i class="fa-solid fa-user-clock"></i>&nbsp; Final quarter before retirement</p><p style="font-size:10.5pt; line-height:1.35; margin:0;">A reputation you spent 30 years building stops paying next month.</p></div>
    <div style="background:#f8f6f3; border-radius:8px; padding:8px 12px; border-left:3px solid var(--danger-color);"><p style="font-size:10.5pt; font-weight:800; color:var(--danger-color); margin:0 0 2px;"><i class="fa-solid fa-store-slash"></i>&nbsp; Closing-down sale</p><p style="font-size:10.5pt; line-height:1.35; margin:0;">The shop that will not be there to honour the warranty.</p></div>
   </div>
-  <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin:7px 0 0;">Careful: the theory says defect from round <em>one</em>. Real people cooperate until the end is in sight, then collapse &mdash; unravelling from the back.</p>
  </div>
- <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">A <strong>known last round poisons every round before it.</strong> By backward induction the finite game unravels to all-Defect &mdash; <strong>no matter how many rounds</strong> (Selten&rsquo;s chain-store paradox). So how can cooperation <em>ever</em> survive? <strong>Remove the known endpoint.</strong> &rarr;</p></div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top:6px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">A <strong>known last round poisons every round before it</strong>, however many rounds. So how can cooperation survive? <strong>Remove the known endpoint.</strong> &rarr;</p></div>
 </section>
 
 <section id="irpd-noend">
@@ -1239,7 +1655,7 @@
 <section id="irpd-discount">
  <h2><i class="fa-solid fa-hourglass-half" style="color: var(--secondary-color);"></i> Discounting the Future</h2>
  <p style="font-size:12.5pt; margin:2px 0 10px;">Future payoffs are worth less today &mdash; impatience plus positive interest rates. Discount each period ahead by a factor \(\delta\), with \(0 < \delta < 1\):</p>
- <p style="font-size:15pt; text-align:center; margin:4px 0 12px;">\(\$1\text{ next period} \;=\; \$\delta\text{ today}\)</p>
+ <p style="font-size:15pt; text-align:center; margin:2px 0 8px;">\(\$1\text{ next period} \;=\; \$\delta\text{ today}\)</p>
  <div style="background:#f3effc; border-radius:9px; padding:9px 16px; border-left:4px solid #7c3aed; margin:0 0 12px;">
   <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong style="color:#7c3aed;">\(\delta\) is doing two jobs at once.</strong> If the game also <em>survives</em> each round with probability \(p\), and money earns interest \(r\), the two fold into a single number: \(\delta = \dfrac{p}{1+r}\). So \(\delta\) measures <strong>patience and survival together</strong> &mdash; a firm that expects to fold soon behaves exactly like an impatient one.</p>
  </div>
@@ -1247,15 +1663,15 @@
   <div style="background:#eef6ef; border-radius:10px; padding:12px 18px; border-left:4px solid var(--success-color);">
    <p style="font-size:12pt; margin:0 0 4px; font-weight:700; color:var(--success-color);">\(\delta\) high (e.g. 0.8) &mdash; patient</p>
    <p style="font-size:12pt; margin:0;">A future dollar is worth ~80&cent; now. The players value tomorrow almost as much as today &rarr; a permanent punishment <strong>stings</strong> &rarr; cooperation easier.</p>
-    <img src="figures/d08.png" alt="A dollar next period is worth about $0.80 today (patient, delta = 0.8)" style="width:100%; height:auto; display:block; margin:9px auto 0;">
+    <img src="figures/d08.png" alt="A dollar next period is worth about $0.80 today (patient, delta = 0.8)" style="max-width:100%; max-height:74px; width:auto; display:block; margin:7px auto 0;">
   </div>
   <div style="background:#fdeceb; border-radius:10px; padding:12px 18px; border-left:4px solid var(--danger-color);">
    <p style="font-size:12pt; margin:0 0 4px; font-weight:700; color:var(--danger-color);">\(\delta\) low (e.g. 0.2) &mdash; impatient</p>
    <p style="font-size:12pt; margin:0;">A future dollar is worth ~20&cent; now (high interest, near bankruptcy). The future barely counts &rarr; grab the defection payoff <strong>now.</strong></p>
-    <img src="figures/d02.png" alt="A dollar next period is worth only about $0.20 today (impatient, delta = 0.2)" style="width:100%; height:auto; display:block; margin:9px auto 0;">
+    <img src="figures/d02.png" alt="A dollar next period is worth only about $0.20 today (impatient, delta = 0.2)" style="max-width:100%; max-height:74px; width:auto; display:block; margin:7px auto 0;">
   </div>
  </div>
- <div class="key-result" style="margin-top:13px;"><p style="margin:0; font-size:12pt;">Patience is the whole story: the higher \(\delta\), the more a forever-punishment outweighs a one-time gain. Keep \(\delta = 0.8\) and \(\delta = 0.2\) in mind &mdash; in two slides we find the exact cutoff between them.</p></div>
+ <div class="key-result" style="margin-top:13px;"><p style="margin:0; font-size:12pt;">Patience is the whole story: the higher \(\delta\), the more a forever-punishment outweighs a one-time gain. The exact cutoff comes a few slides on.</p></div>
 </section>
 
 <section id="irpd-grim">
@@ -1485,7 +1901,7 @@
 
 <section id="algo-collusion">
  <h2><i class="fa-solid fa-robot" style="color: var(--secondary-color);"></i> Algorithmic Collusion: When the Code Coordinates</h2>
- <div style="background: #eef3f6; border-radius: 10px; padding: 11px 18px; border-left: 4px solid var(--secondary-color); margin-bottom: 11px;">
+ <div style="background: #eef3f6; border-radius: 10px; padding: 9px 18px; border-left: 4px solid var(--secondary-color); margin-bottom: 6px;">
   <p style="font-size: 12.5pt; margin:0; line-height:1.45;"><strong>Algorithmic collusion:</strong> pricing algorithms sustain above-competitive prices with <em>no</em> human agreement. Everything &sect;14.5 needs is present &mdash; the game repeats constantly, defection is detected instantly, and retaliation is automatic. Nobody has to intend a cartel for one to appear.</p>
  </div>
  <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:22px; align-items:center;">
@@ -1511,7 +1927,7 @@
   </div>
   </div>
  </div>
- <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">Lysine needed secret meetings; the turbine triopoly needed a calendar. <strong>This needs neither.</strong> So which should the law test &mdash; whether firms <em>communicated</em>, or whether the <em>outcome</em> looks like coordination? Every tool we have for detecting cartels was built to find the first thing.</p></div>
+ <div class="key-result" style="margin-top:5px; padding:8px 16px;"><p style="margin:0; font-size:12pt;">Lysine needed secret meetings. <strong>This needs none.</strong> So which should the law test &mdash; whether firms <em>communicated</em>, or whether the <em>outcome</em> looks like coordination? Every tool we have for detecting cartels was built to find the first thing.</p></div>
 </section>
 
 <section id="td-algo-folk">
@@ -1571,7 +1987,7 @@
 
  <section id="strat-tft">
   <h2><i class="fa-solid fa-trophy" style="color:var(--accent-color);"></i> The Winner: Tit for Tat <span style="font-size:15pt; color:var(--muted-color); font-weight:400;">&mdash; four lines of FORTRAN</span></h2>
-  <div style="font-size:12.5pt; line-height:1.5; margin-bottom:12px;">
+  <div style="font-size:12pt; line-height:1.4; margin-bottom:6px;">
    <p style="margin-bottom:6px;">&bull; Submitted by <strong>Anatol Rapoport</strong> (Toronto) &mdash; the <strong>shortest entry in the field</strong>, four lines of FORTRAN. It won the first tournament with the highest average score (<strong>504</strong>), and won the rematch against 62 rivals built to beat it.</p>
    <p style="margin-bottom:3px;">&bull; The rule:</p>
    <p style="margin:0 0 2px 26px;">&ndash; <strong>Cooperate</strong> on the first round.</p>
@@ -1585,9 +2001,9 @@
     <tr><td class="lbl">Other</td><td class="c">C<span class="pf"> (3)</span></td><td class="d">D<span class="pf"> (5)</span></td><td class="c">C<span class="pf"> (0)</span></td><td class="c">C<span class="pf"> (3)</span></td><td class="c">C<span class="pf"> (3)</span></td><td class="c">C<span class="pf"> (3)</span></td><td class="d">D<span class="pf"> (5)</span></td><td class="c">C<span class="pf"> (0)</span></td><td class="c">C<span class="pf"> (3)</span></td><td class="tot fragment" data-fragment-index="2">25</td></tr>
    </table>
   </div>
-  <p style="font-size:10.5pt; color:var(--muted-color); text-align:center; margin-top:8px;">It <strong>mirrors</strong> the opponent: a defect is answered once (red), then it forgives and returns to cooperating.</p>
+  <p style="font-size:10.5pt; color:var(--muted-color); text-align:center; margin-top:3px;">It <strong>mirrors</strong> the opponent: a defect is answered once (red), then it forgives and returns to cooperating.</p>
   <div class="fragment fade-up" data-fragment-index="3" style="background:#f3effc; border-radius:9px; padding:10px 16px; border-left:4px solid #7c3aed; margin-top:11px;">
-  <p style="font-size:12pt; margin:0; line-height:1.45;"><strong style="color:#7c3aed;">Nobody won &mdash; and that is the point.</strong> \(25\) each. Tit for Tat <em>cannot</em> beat anyone: it never defects first, so it can only match a rival or fall one defection behind. <strong>It never won a single pairing in either tournament</strong> &mdash; and won both. <br><span style="color:var(--muted-color);">Benchmark: two unbroken cooperators take \(3\times 9 = 27\) each, so those defections cost <em>both</em> players 2. And the top eight strategies were all &ldquo;nice&rdquo; &mdash; never the first to defect. <strong>Press &darr; for one that tried to be cleverer.</strong></span></p>
+  <p style="font-size:12pt; margin:0; line-height:1.45;"><strong style="color:#7c3aed;">Nobody won &mdash; and that is the point.</strong> \(25\) each. Tit for Tat <em>cannot</em> beat anyone: it never defects first, so it can only match a rival or fall one defection behind. <strong>It never won a single pairing in either tournament</strong> &mdash; and won both. <br><span style="color:var(--muted-color);">Two unbroken cooperators take \(3\times 9 = 27\) each. The top eight strategies were all &ldquo;nice&rdquo;: never the first to defect.</span></p>
  </div>
  </section>
 
@@ -1656,414 +2072,6 @@
   </table>
   <p style="font-size:10pt; color:var(--muted-color); text-align:center; margin-top:4px;"><strong>Permanent war:</strong> both retaliate forever &mdash; cooperation collapses.</p>
  </div>
-</section>
-<section class="section-divider" data-state="is-section-divider" id="coordination-divider">
- <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Beyond the Prisoner&rsquo;s Dilemma</p>
- <h1 style="font-size: 40pt; color: var(--primary-color); margin-bottom: 16px;">Coordination Games</h1>
- <p style="font-size: 18pt; color: var(--muted-color); font-style: italic;">When your best move is to match the other player &mdash; or to do the opposite</p>
-</section>
-
-<section id="coop-vs-coord">
- <h2><i class="fa-solid fa-code-compare" style="color: var(--secondary-color);"></i> Two Different Problems: Cooperation vs. Coordination</h2>
- <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Everything up to here has been a <strong style="color:var(--text-color);">cooperation</strong> problem. Most of what follows is a <strong style="color:var(--text-color);">coordination</strong> problem. They are not degrees of the same difficulty &mdash; they fail in opposite ways, and they need opposite remedies.</p>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch;">
-  <div style="background:#fdf2f0; border-radius:10px; padding:12px 17px; border-left:4px solid var(--danger-color);">
-   <p style="font-size:13pt; font-weight:800; color:var(--danger-color); margin:0 0 7px;"><i class="fa-solid fa-handshake-slash"></i>&nbsp; Cooperation problem</p>
-   <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 8px; letter-spacing:0.5px;">PRISONER&rsquo;S DILEMMA &middot; CARTELS &middot; AD WARS</p>
-   <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Interests conflict.</strong> What is best for you is bad for both of you.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>One equilibrium &mdash; and it is the bad one.</strong> No ambiguity about the prediction.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">You <em>know</em> what you should do. You cannot get there.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Talk is cheap.</strong> A promise changes no payoff, so it changes nothing.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">Deviating is <strong style="color:var(--danger-color);">tempting</strong> &mdash; that is the whole problem.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Fix:</strong> change the payoffs, repeat the game, or impose a rule.</p>
-  </div>
-  <div style="background:#eef6ef; border-radius:10px; padding:12px 17px; border-left:4px solid var(--success-color);">
-   <p style="font-size:13pt; font-weight:800; color:var(--success-color); margin:0 0 7px;"><i class="fa-solid fa-handshake-angle"></i>&nbsp; Coordination problem</p>
-   <p style="font-size:10.5pt; color:var(--muted-color); margin:0 0 8px; letter-spacing:0.5px;">WHERE TO MEET &middot; WHICH SIDE TO DRIVE ON &middot; CHICKEN</p>
-   <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Interests mostly align.</strong> You both just want to match &mdash; or deliberately mis-match.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Several equilibria &mdash; all stable.</strong> The theory cannot tell you which.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">You would <em>happily</em> play your part. You do not know which part.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Talk works.</strong> One sentence &mdash; &ldquo;Hayden, 3pm&rdquo; &mdash; ends the problem.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;">Deviating is <strong style="color:var(--success-color);">costly</strong> &mdash; once matched, nobody wants to move.</p>
-    <p style="font-size:11.5pt; margin:0 0 6px; line-height:1.4;"><strong>Fix:</strong> a focal point, a convention, a signal &mdash; or a law.</p>
-  </div>
- </div>
- <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;"><strong>The diagnostic: ask what actually goes wrong.</strong> If everyone can name the right outcome and still cannot reach it, you have a <em>cooperation</em> problem. If everyone would gladly play their part but nobody knows which part is theirs, you have a <em>coordination</em> problem. <strong>Cheap talk is the test</strong> &mdash; useless in the first, decisive in the second.</p></div>
-</section>
-
-
-<section id="coord-pure">
- <h2><i class="fa-solid fa-mug-hot" style="color: var(--accent-color);"></i> Pure Coordination: Where Do We Meet?</h2>
- <div style="display:grid; grid-template-columns:1.04fr 0.96fr; gap:24px; align-items:start;">
-  <div>
-   <p style="font-size:12.5pt; margin-bottom:9px;"><strong>Pure coordination game:</strong> it doesn&rsquo;t matter <em>which</em> strategy the players pick &mdash; only that they pick the <strong>same</strong> one. No conflict of interest.</p>
-   <p style="font-size:12.5pt; margin-bottom:9px;">You agreed to meet a classmate at Dunkin to study &mdash; but never swapped phone numbers. There are <strong>two Dunkin locations near campus.</strong></p>
-   <p style="font-size:12.5pt; margin-bottom:11px;"><strong style="color:var(--accent-color);">Which one do you walk to?</strong></p>
-   <div style="background:#f7f1ea; border-radius:10px; padding:11px 18px; border-left:4px solid var(--secondary-color);">
-    <p style="font-size:12pt; margin:0 0 5px; font-weight:700;">Two pure-strategy Nash equilibria:</p>
-    <p class="fragment" data-fragment-index="1" style="font-size:12pt; margin:0 0 3px 4px;">&bull;&nbsp; (Hayden, Hayden)</p>
-    <p class="fragment" data-fragment-index="2" style="font-size:12pt; margin:0 0 0 4px;">&bull;&nbsp; (Shillman, Shillman)</p>
-   </div>
-   <p style="font-size:11pt; color:var(--muted-color); margin-top:11px;">You both just want to <em>match.</em> The hard part is agreeing <em>which</em> &mdash; without talking. A shared landmark or habit (a <strong>focal point</strong>) usually breaks the tie.</p>
-  </div>
-  <div>
-   <img src="figures/map.png" alt="Map: two Dunkin locations near Northeastern University, one by Hayden Hall and one by Shillman Hall" style="width:100%; max-height:236px; object-fit:contain; border-radius:8px; border:1px solid #e6e1d9;">
-   <table class="ytm" style="border-spacing:5px; margin-top:12px;">
-    <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Classmate</th></tr>
-    <tr><td class="corner"></td><td class="corner"></td><th class="colh">Hayden</th><th class="colh">Shillman</th></tr>
-    <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">You</th>
-     <th class="rowh">Hayden</th>
-     <td class="cell"><span class="you">1</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="1"></span><span class="ne-badge fragment" data-fragment-index="1" style="top:5px; right:5px;">NE</span></td>
-     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td></tr>
-    <tr><th class="rowh">Shillman</th>
-     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td>
-     <td class="cell"><span class="you">1</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="2"></span><span class="ne-badge fragment" data-fragment-index="2" style="top:5px; right:5px;">NE</span></td></tr>
-   </table>
-  </div>
- </div>
-</section>
-
-<section id="coord-bos">
- <h2><i class="fa-solid fa-people-arrows" style="color: var(--accent-color);"></i> Battle of the Sexes: Coordination With Conflict</h2>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;">
-  <div style="display:flex; flex-direction:column;">
-   <p style="font-size:12.5pt; margin:0 0 9px;">Now the players <strong>still want to match</strong> &mdash; but they <strong>disagree on which</strong> outcome. A coordination game <em>with</em> a conflict of interest.</p>
-   <p style="font-size:12.5pt; margin:0 0 9px;">You and a friend will spend Saturday <strong>together</strong>, but never settled the plan. You&rsquo;d rather hit <strong>Six Flags</strong>; your friend would rather go <strong>hiking.</strong> Both of you prefer <em>being together</em> over going alone.</p>
-   <p style="font-size:11pt; color:var(--muted-color); margin:0 0 11px;">Both beat going alone, so each is stable &mdash; but the two of you <strong>rank them oppositely.</strong> Coordinating is no longer enough; <em>which</em> equilibrium becomes a bargaining problem (who commits, arrives first, or makes it a habit).</p>
-   <img src="figures/6flagvshiking.webp" alt="Battle of the Sexes: one friend prefers Six Flags, the other prefers hiking, but both prefer being together" style="width:100%; max-height:250px; object-fit:contain; border-radius:8px; border:1px solid #e6e1d9; margin-top:auto;">
-  </div>
-  <div style="display:flex; flex-direction:column; justify-content:center; gap:16px;">
-   <table class="ytm" style="border-spacing:5px; margin:0 auto;">
-    <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Friend</th></tr>
-    <tr><td class="corner"></td><td class="corner"></td><th class="colh">Six Flags</th><th class="colh">Hiking</th></tr>
-    <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">You</th>
-     <th class="rowh">Six Flags</th>
-     <td class="cell"><span class="you">2</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="1"></span><span class="ne-badge fragment" data-fragment-index="1" style="top:5px; right:5px;">NE</span></td>
-     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td></tr>
-    <tr><th class="rowh">Hiking</th>
-     <td class="cell"><span class="you">0</span>, <span class="them">0</span></td>
-     <td class="cell"><span class="you">1</span>, <span class="them">2</span><span class="nash-step fragment" data-fragment-index="2"></span><span class="ne-badge fragment" data-fragment-index="2" style="top:5px; right:5px;">NE</span></td></tr>
-   </table>
-   <div style="background:#f7f1ea; border-radius:10px; padding:11px 18px; border-left:4px solid var(--secondary-color);">
-    <p style="font-size:12.5pt; margin:0 0 6px; font-weight:700; color:var(--accent-color);">Where do you each show up?</p>
-    <p style="font-size:12pt; margin:0 0 5px; font-weight:700;">Two pure-strategy Nash equilibria:</p>
-    <p class="fragment" data-fragment-index="1" style="font-size:12pt; margin:0 0 3px 4px;">&bull;&nbsp; (Six Flags, Six Flags) &mdash; you happier</p>
-    <p class="fragment" data-fragment-index="2" style="font-size:12pt; margin:0 0 0 4px;">&bull;&nbsp; (Hiking, Hiking) &mdash; friend happier</p>
-   </div>
-  </div>
- </div>
-</section>
-
-<section id="chicken-anti">
- <h2><i class="fa-solid fa-car-burst" style="color: var(--danger-color);"></i> Chicken: The Anti-Coordination Game</h2>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center;">
-  <div>
-   <p style="font-size:12.5pt; margin:0 0 10px; line-height:1.5;">Two cars race straight at each other. <strong>Swerve</strong> and you are the &ldquo;chicken&rdquo;; go <strong>Straight</strong> and hold your nerve.</p>
-   <div style="text-align:center;">
-    <img src="figures/chiken.webp" alt="Two chickens riding bicycles straight at each other &mdash; the game of Chicken" style="max-width:88%; max-height:212px; object-fit:contain;">
-   </div>
-   <div class="fragment fade-up" data-fragment-index="2" style="background:#f7f1ea; border-radius:10px; padding:10px 16px; border-left:4px solid var(--accent-color); margin-top:12px;">
-    <p style="font-size:11.5pt; margin:0; line-height:1.45;">Coordination games reward <em>matching</em>. This one rewards <strong style="color:var(--accent-color);">mis-matching</strong> &mdash; each wants to be the tough one while the other yields. And there is <strong>no dominant strategy</strong>: your best move is whatever your rival is <em>not</em> doing.</p>
-   </div>
-  </div>
-  <div>
-   <div class="fragment fade-in" data-fragment-index="1">
-    <table class="ytm" style="border-spacing:5px;">
-     <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Column</th></tr>
-     <tr><td class="corner"></td><td class="corner"></td><th class="colh">Swerve</th><th class="colh">Straight</th></tr>
-     <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">Row</th>
-      <th class="rowh">Swerve</th>
-      <td class="cell"><span class="you">0</span>, <span class="them">0</span></td>
-      <td class="cell"><span class="you">&minus;1</span>, <span class="them">1</span><span class="nash-step fragment" data-fragment-index="4"></span><span class="ne-badge fragment" data-fragment-index="4" style="top:5px; right:5px;">NE</span></td></tr>
-     <tr><th class="rowh">Straight</th>
-      <td class="cell"><span class="you">1</span>, <span class="them">&minus;1</span><span class="nash-step fragment" data-fragment-index="3"></span><span class="ne-badge fragment" data-fragment-index="3" style="top:5px; right:5px;">NE</span></td>
-      <td class="cell" style="background:#fdeaea;"><span class="you">&minus;2</span>, <span class="them">&minus;2</span></td></tr>
-    </table>
-    <p style="font-size:10pt; color:var(--muted-color); text-align:center; margin:7px 0 0;"><span style="color:#2563eb; font-weight:700;">Row</span> first &middot; <span style="color:var(--accent-color); font-weight:700;">Column</span> second &middot; <span style="color:#B03A3A; font-weight:700;">pink</span> = the crash</p>
-   </div>
-   <div class="fragment fade-up" data-fragment-index="5" style="background:#eef3f6; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color); margin-top:11px;">
-    <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>Two equilibria, both off-diagonal</strong> &mdash; (Straight, Swerve) and (Swerve, Straight). Theory cannot say which. Nerve and credibility decide it, and if <em>both</em> chase their own, they land in the pink cell.</p>
-   </div>
-   <div class="fragment fade-up" data-fragment-index="6" style="background:#eef6ef; border-radius:10px; padding:10px 15px; border-left:4px solid var(--success-color); margin-top:9px;">
-    <p style="font-size:11pt; margin:0; line-height:1.45;"><strong>Real Chicken &mdash; SAG-AFTRA, 2024&ndash;25:</strong> actors demanded AI-consent protections; studios held out. After <strong>11 months</strong> of mutual loss the studios swerved &mdash; July 2025: a <strong>15.17% raise + AI guardrails.</strong></p>
-   </div>
-  </div>
- </div>
-</section>
-
-
-<section id="chicken-commitment">
- <h2><i class="fa-solid fa-handcuffs" style="color: var(--accent-color);"></i> Weaponizing Credibility: Throw Away the Wheel</h2>
- <p style="font-size:12.5pt; margin-bottom:12px;">In Chicken your best move depends entirely on what your opponent <em>believes</em> you&rsquo;ll do. So don&rsquo;t try to out-nerve them &mdash; <strong>change what they believe is possible.</strong></p>
- <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch;">
-  <div style="background:#fdf2f0; border-radius:10px; padding:14px 20px; border-left:4px solid var(--danger-color);">
-   <p style="font-size:12.5pt; font-weight:800; margin:0 0 6px; color:var(--danger-color);">The binding mechanism</p>
-   <p style="font-size:12pt; margin:0;">Visibly, <strong>irreversibly destroy your own ability to swerve</strong> &mdash; rip out the steering wheel and toss it out the window, where your rival can see it go.</p>
-  </div>
-  <div style="background:#eef6ef; border-radius:10px; padding:14px 20px; border-left:4px solid var(--success-color);">
-   <p style="font-size:12.5pt; font-weight:800; margin:0 0 6px; color:var(--success-color);">Why it works</p>
-   <p style="font-size:12pt; margin:0;">A rational rival who sees you <em>can&rsquo;t</em> swerve must swerve themselves. You&rsquo;ve <strong>transferred 100% of the burden of avoidance</strong> onto them.</p>
-  </div>
- </div>
- <div class="key-result" style="margin-top:16px;"><p><strong>Fewer options can make you stronger.</strong> A credible, irreversible commitment collapses Chicken&rsquo;s two equilibria down to the one <em>you</em> want. Burning bridges, a union strike fund, a &ldquo;no-negotiation&rdquo; law, a doomsday device &mdash; all work the same way. <span style="color:var(--muted-color);">(Schelling, <em>The Strategy of Conflict,</em> 1960.)</span></p></div>
-</section>
-
-<section id="pd-vs-chicken">
- <h2><i class="fa-solid fa-scale-balanced" style="color:var(--secondary-color);"></i> Diagnostic Comparison: Two Architectures of Conflict</h2>
- <table class="cmp">
-  <tr>
-   <th class="rl"></th>
-   <th>Prisoner&rsquo;s Dilemma</th>
-   <th>Game of Chicken</th>
-  </tr>
-  <tr>
-   <td class="rl">Core mechanic</td>
-   <td>Temptation to betray</td>
-   <td>Test of endurance</td>
-  </tr>
-  <tr>
-   <td class="rl">Dominant strategy?</td>
-   <td class="hot">Yes &mdash; always defect</td>
-   <td class="hot">No &mdash; depends on the opponent</td>
-  </tr>
-  <tr>
-   <td class="rl">Winning tactic</td>
-   <td class="hot">Follow the math</td>
-   <td class="hot">Weaponize credibility</td>
-  </tr>
-  <tr>
-   <td class="rl">Worst-case scenario</td>
-   <td>Sub-optimal stability</td>
-   <td>Catastrophic mutual destruction</td>
-  </tr>
-  <tr>
-   <td class="rl">Real-world example</td>
-   <td>The Cola Wars (Coke vs. Pepsi)</td>
-   <td>SAG-AFTRA strike</td>
-  </tr>
- </table>
- <div class="key-result" style="margin-top:16px;"><p>Same surface &mdash; two players, two choices &mdash; but <strong>opposite engines.</strong> A Prisoner&rsquo;s Dilemma is solved by <strong>changing the payoffs</strong>; a game of Chicken is solved by <strong>changing what your rival believes.</strong></p></div>
-</section>
-
-
-<section class="section-divider" data-state="is-section-divider" id="social-divider">
- <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Game Theory Is Everywhere</p>
- <h1 style="font-size: 40pt; color: var(--primary-color); margin-bottom: 16px;">Modeling Social Interactions</h1>
- <p style="font-size: 18pt; color: var(--muted-color); font-style: italic;">The same games that explain cartels run on the sidewalk outside</p>
-</section>
-
-<section id="social-crosswalk">
- <h2><i class="fa-solid fa-person-walking" style="color:var(--secondary-color);"></i> A Social Problem: Who Gets to Pass First?</h2>
- <div style="position:relative; max-width:780px; margin:0 auto; aspect-ratio:16/9; background:#0d1b2a url('figures/cross1-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.3);">
-  <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/cross1.mp4?v=2" poster="figures/cross1-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
- </div>
- <div class="key-result" style="margin-top:12px;"><p>A car meets a wave of students at the crosswalk. Both can&rsquo;t go at once &mdash; and if they do, disaster. Each side would rather the <em>other</em> wait. It&rsquo;s a coordination game with no referee &mdash; played thousands of times a day.</p></div>
-</section>
-
-<section id="social-equilibria">
- <h2><i class="fa-solid fa-traffic-light" style="color:var(--danger-color);"></i> Multiple Equilibria: Efficiency</h2>
- <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:24px; align-items:center;">
-  <div>
-   <p style="font-size:12.5pt; margin-bottom:9px;">Model it: <strong style="color:#2563eb;">Students</strong> and <strong style="color:var(--accent-color);">Cars</strong> each choose <strong>Pass</strong> or <strong>Yield</strong>.</p>
-   <p style="font-size:12.5pt; margin-bottom:7px;">Both Pass &rarr; a <strong style="color:var(--danger-color);">crash</strong> (&minus;100, &minus;100). Both Yield &rarr; an awkward standstill (&minus;3, &minus;3).</p>
-   <p style="font-size:12.5pt;">The <strong>two Nash equilibria</strong> sit on the off-diagonal &mdash; one passes, one yields. Both are <strong>Pareto efficient</strong>: you can&rsquo;t help one side without hurting the other.</p>
-  </div>
-  <div>
-   <table class="ytm" style="border-spacing:5px;">
-    <tr><td class="corner"></td><td class="corner"></td><th colspan="2" style="background:transparent; border:none; color:var(--accent-color); font-size:11.5pt; padding-bottom:2px;">Cars</th></tr>
-    <tr><td class="corner"></td><td class="corner"></td><th class="colh">Pass</th><th class="colh">Yield</th></tr>
-    <tr><th rowspan="2" style="background:transparent; border:none; color:#2563eb; font-size:11.5pt; writing-mode:vertical-rl; transform:rotate(180deg); padding:0 2px;">Students</th>
-     <th class="rowh">Pass</th>
-     <td class="cell"><span class="you">&minus;100</span>, <span class="them">&minus;100</span></td>
-     <td class="cell nash"><span class="you">1</span>, <span class="them">&minus;2</span><span class="ne-badge" style="top:5px; right:5px;">NE</span></td></tr>
-    <tr><th class="rowh">Yield</th>
-     <td class="cell nash"><span class="you">&minus;1</span>, <span class="them">5</span><span class="ne-badge" style="top:5px; right:5px;">NE</span></td>
-     <td class="cell"><span class="you">&minus;3</span>, <span class="them">&minus;3</span></td></tr>
-   </table>
-   <p style="font-size:10pt; color:var(--muted-color); text-align:center; margin-top:8px;"><span style="color:#2563eb; font-weight:700;">Students</span> payoff first &middot; <span style="color:var(--accent-color); font-weight:700;">Cars</span> second</p>
-  </div>
- </div>
-   <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;"><strong>But the two equilibria are not equal.</strong> <em>Cars pass</em> \((-1, 5)\) creates more total value &mdash; and dumps the cost on the people on foot. <em>Students pass</em> \((1, -2)\) protects the pedestrian and produces less in total. Pareto efficiency cannot choose between them: <strong>which one we settle on is a question of fairness, not only efficiency.</strong></p></div>
-</section>
-
-<section id="social-fairness">
- <h2><i class="fa-solid fa-video" style="color:var(--accent-color);"></i> Watch It Happen &mdash; Nobody Reads the Matrix</h2>
- <div style="position:relative; max-width:780px; margin:0 auto; aspect-ratio:16/9; background:#0d1b2a url('figures/cross2-poster.jpg') center/cover no-repeat; border-radius:10px; overflow:hidden; box-shadow:0 3px 14px rgba(0,0,0,0.3);">
-  <video data-src="https://pub-fa3318ef831f4dbaa4ee4bef1dc209b6.r2.dev/lectures/ch13/cross2.mp4?v=2" poster="figures/cross2-poster.jpg" autoplay muted loop playsinline preload="none" style="display:block; width:100%; height:100%; object-fit:cover;"></video>
- </div>
- <div class="key-result" style="margin-top:12px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">Nobody at that crossing solved a game. They read a <strong>convention</strong> &mdash; and it resolved in about two seconds, for free. That is what the next slide is about.</p></div>
-</section>
-
-<section id="social-institutions">
- <h2><i class="fa-solid fa-gavel" style="color:var(--secondary-color);"></i> Institutions Select the Equilibrium</h2>
- <div style="display:grid; grid-template-columns:1.25fr 0.75fr; gap:24px; align-items:center;">
-  <div>
-   <div style="background:#eef3f6; border-radius:10px; padding:11px 17px; border-left:4px solid var(--secondary-color); margin-bottom:10px;">
-    <p style="font-size:12.5pt; margin:0; line-height:1.45;">When several equilibria are all stable and all efficient, theory goes quiet. Something outside the game has to <strong>pick one and make the choice common knowledge</strong> &mdash; so two strangers never have to negotiate at the kerb.</p>
-   </div>
-   <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-bottom:10px;">
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Law.</strong> Right of way at a crosswalk.</p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Convention.</strong> Which side of the road you drive on.</p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Norm.</strong> Queueing; who speaks next on a call.</p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 13px; border-left:3px solid var(--secondary-color);"><p style="font-size:11pt; margin:0; line-height:1.4;"><strong>Standard.</strong> USB-C, time zones, the width of a rail.</p></div>
-   </div>
-   <div style="background:#eef6ef; border-radius:10px; padding:11px 17px; border-left:4px solid var(--success-color);">
-    <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>And here is why they are cheap.</strong> In a coordination game an institution never has to fight anyone&rsquo;s incentives &mdash; once you believe everyone else drives on the right, driving on the right is <em>your</em> best reply. It only has to be <strong>known</strong>, not enforced. Contrast &sect;14.5: holding a cartel together means fighting every member&rsquo;s incentive every day, which is why it needs monitoring, punishment, and still falls apart.</p>
-   </div>
-  </div>
-  <div style="text-align:center;">
-   <img src="figures/left_turn_yeild.png" alt="Left Turn Yield on Green traffic sign" style="max-width:100%; max-height:210px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.2));">
-   <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin-top:9px; line-height:1.4;">A tiny institution, doing exactly one job: making it common knowledge who goes first.</p>
-  </div>
- </div>
- <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">Notice which equilibrium the law picked: <strong>the pedestrian one</strong> &mdash; the fairer and safer of the two, not the one with the larger total payoff. Selecting an equilibrium is never a purely technical act; it embeds a judgement about who should bear the cost.</p></div>
-</section>
-
-
-
-
-<section data-visibility="hidden" class="section-divider" data-state="is-section-divider" id="div-mixed-nash">
-  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">&sect;14.3</p>
-  <h1>Mixed-Strategy Nash Equilibrium</h1>
-  <p class="subtitle">When no pure profile is stable &mdash; randomize, and make your rival indifferent</p>
-</section>
-
-
-<section data-visibility="hidden" id="penalty-kick">
-  <h2><i class="fa-solid fa-futbol" style="color: var(--secondary-color);"></i> Penalty Kick</h2>
-  <div style="display: grid; grid-template-columns: 1fr 1.05fr; gap: 22px; align-items: center;">
-    <div style="text-align:center;">
-      <img class="figure" alt="Penalty kick — Argentina vs France, 2022 World Cup final shootout" src="figures/final_kick.webp" style="max-width:100%; max-height:340px; border-radius:10px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
-    </div>
-    <div style="text-align:center;">
-      <img class="figure" alt="Match result — Argentina 3-3 France, penalties 4-2 (2022 World Cup final)" src="figures/result.png" style="max-width:100%; max-height:340px; border-radius:10px; box-shadow:0 2px 12px rgba(0,0,0,0.10);">
-    </div>
-  </div>
-  <div class="key-result" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;">A penalty shootout is a <strong>mixed-strategy game</strong>: the kicker can&rsquo;t commit to one side (the goalie would learn it), and the goalie can&rsquo;t either. Each must keep the other <em>guessing</em>.</p></div>
-</section>
-
-<section data-visibility="hidden" id="mixed-matrix">
-  <h2><i class="fa-solid fa-futbol" style="color: var(--accent-color);"></i> Some Games Have No Pure Equilibrium</h2>
-  <div style="display:grid; grid-template-columns:1.02fr 0.98fr; gap:24px; align-items:center;">
-    <div style="text-align:center;">
-      <img class="figure" alt="Four-panel penalty-kick diagram: kicker and goalie each choosing left or right" src="figures/mix_kick.png" style="max-width:100%; max-height:330px; object-fit:contain;">
-      <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin-top:8px;">Kicker picks a side; goalie picks a side. <strong>Same side &rarr; saved. Different &rarr; goal.</strong></p>
-    </div>
-    <div>
-      <table style="border-collapse:collapse; margin:0 auto 9px;">
-        <tr><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;"></th><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;">Goalie: Left</th><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;">Goalie: Right</th></tr>
-        <tr><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;" style="text-align:left;">Kicker: Left</th><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;">0, 1 <span style="color:var(--success-color); font-weight:800;">&#10003;</span></td><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;"><span style="color:var(--success-color); font-weight:800;">&#10003;</span> 1, 0</td></tr>
-        <tr><th style="border:1.5px solid var(--line-color); padding:9px 13px; background:#f0f5f8; color:var(--text-color); font-size:11.5pt;" style="text-align:left;">Kicker: Right</th><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;"><span style="color:var(--success-color); font-weight:800;">&#10003;</span> 1, 0</td><td style="border:1.5px solid var(--line-color); padding:13px 16px; text-align:center; font-size:13pt;">0, 1 <span style="color:var(--success-color); font-weight:800;">&#10003;</span></td></tr>
-      </table>
-      <p style="font-size:10.5pt; color:var(--muted-color); text-align:center; margin:0 0 11px;">Cell \(=\) (kicker, goalie) &middot; <span style="color:var(--success-color); font-weight:800;">&#10003;</span> marks that player&rsquo;s best response</p>
-      <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:9px; padding:10px 16px; border-left:4px solid var(--secondary-color); margin-bottom:9px;">
-       <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>Run the tick test.</strong> A pure-strategy equilibrium is a cell where <em>both</em> players are best-responding &mdash; a cell with two ticks.</p>
-      </div>
-      <div class="fragment fade-up" data-fragment-index="2" style="background:#fdeceb; border-radius:9px; padding:10px 16px; border-left:4px solid var(--danger-color); margin-bottom:9px;">
-       <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>There isn&rsquo;t one.</strong> Every cell has exactly one tick. Whoever is being matched wants to move &mdash; and once they move, the other wants to follow. <strong>No pure-strategy Nash equilibrium exists.</strong></p>
-      </div>
-      <div class="fragment fade-up" data-fragment-index="3" style="background:#f3effc; border-radius:9px; padding:10px 16px; border-left:4px solid #7c3aed;">
-       <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong style="color:#7c3aed;">So enlarge the strategy set.</strong> A <strong>mixed strategy</strong> is a <em>probability distribution</em> over your pure strategies &mdash; you commit to the <strong>odds</strong>, not the action. Nash&rsquo;s theorem guarantees an equilibrium once you allow these.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-visibility="hidden" id="mixed-two-questions">
-  <h2><i class="fa-solid fa-dice" style="color: var(--accent-color);"></i> Mixing Asks You Two Different Questions</h2>
-  <div style="display:grid; grid-template-columns:1.08fr 0.92fr; gap:24px; align-items:center;">
-    <div>
-     <p style="font-size:12pt; margin:0 0 10px; line-height:1.45;">Neither player can commit to a side &mdash; the rival would learn it and exploit it. So each of you must settle <strong>two things at the same moment</strong>, and they are easy to confuse:</p>
-     <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:9px; padding:11px 16px; border-left:4px solid var(--secondary-color); margin-bottom:10px;">
-      <p style="font-size:11.5pt; margin:0; line-height:1.45;"><span style="display:inline-block; background:var(--secondary-color); color:#fff; font-size:9pt; font-weight:800; border-radius:4px; padding:1px 7px; margin-right:6px;">BELIEF</span><strong>What will <em>they</em> do?</strong><br>You cannot know. So you carry a probability about someone else&rsquo;s behaviour: the goalie dives Left with chance \(q\).</p>
-     </div>
-     <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:9px; padding:11px 16px; border-left:4px solid var(--accent-color); margin-bottom:10px;">
-      <p style="font-size:11.5pt; margin:0; line-height:1.45;"><span style="display:inline-block; background:var(--accent-color); color:#fff; font-size:9pt; font-weight:800; border-radius:4px; padding:1px 7px; margin-right:6px;">CHOICE</span><strong>What should <em>I</em> do?</strong><br>Your answer is not Left or Right. It is a number: kick Left with chance \(p\).</p>
-     </div>
-     <div class="fragment fade-up" data-fragment-index="3" style="background:#f8f6f3; border-radius:9px; padding:10px 16px; border-left:4px solid var(--muted-color);">
-      <p style="font-size:11.5pt; margin:0; line-height:1.45;"><strong>And here is the knot.</strong> Your best \(p\) depends on your belief about \(q\). Their best \(q\) depends on their belief about \(p\). You choose <em>simultaneously</em>, so neither belief can be checked before you commit.</p>
-     </div>
-    </div>
-    <div style="text-align:center;">
-     <div style="position:relative; width:100%; max-width:340px; height:246px; margin:0 auto;">
-      <svg viewBox="0 0 340 246" style="position:absolute; inset:0; width:100%; height:100%;">
-       <defs><marker id="mq-ar" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#8C8580"/></marker></defs>
-       <path d="M 172 60 C 258 60 259 122 259 160" fill="none" stroke="#8C8580" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mq-ar)"/>
-       <path d="M 168 196 C 82 196 81 134 81 96" fill="none" stroke="#8C8580" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mq-ar)"/>
-      </svg>
-      <div style="position:absolute; left:6px; top:14px; width:166px; box-sizing:border-box; background:#fef9f3; border:2px solid #C47B5A; border-radius:10px; padding:9px 0; text-align:center;">
-       <p style="margin:0; font-size:12.5pt; font-weight:800; color:#C47B5A; line-height:1.2;">Kicker</p>
-       <p style="margin:2px 0 0; font-size:12pt; color:var(--text-color); line-height:1.2;">chooses \(p\)</p>
-      </div>
-      <div style="position:absolute; right:6px; bottom:14px; width:166px; box-sizing:border-box; background:#eef3f6; border:2px solid #6B8BA4; border-radius:10px; padding:9px 0; text-align:center;">
-       <p style="margin:0; font-size:12.5pt; font-weight:800; color:#6B8BA4; line-height:1.2;">Goalie</p>
-       <p style="margin:2px 0 0; font-size:12pt; color:var(--text-color); line-height:1.2;">chooses \(q\)</p>
-      </div>
-      <p style="position:absolute; right:2px; top:104px; width:78px; margin:0; font-size:10pt; font-style:italic; color:var(--muted-color); line-height:1.3; text-align:left;">needs a belief about \(q\)</p>
-      <p style="position:absolute; left:2px; top:104px; width:78px; margin:0; font-size:10pt; font-style:italic; color:var(--muted-color); line-height:1.3; text-align:right;">needs a belief about \(p\)</p>
-     </div>
-     <p style="font-size:10.5pt; color:var(--muted-color); font-style:italic; margin-top:4px;">Each needs the other&rsquo;s number before choosing their own.</p>
-    </div>
-  </div>
-  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:12pt;">So &ldquo;equilibrium&rdquo; cannot mean <em>guess right</em>. It is a pair \((p^{\ast}, q^{\ast})\) at which neither wants to shift weight &mdash; and the only way nobody wants to shift is if <strong>each player&rsquo;s mix leaves the other completely indifferent</strong>. You do not randomise to confuse yourself; you randomise to remove their ability to exploit you.</p></div>
-</section>
-
-<section data-visibility="hidden" id="mixed-fifty">
-  <h2><i class="fa-solid fa-calculator" style="color: var(--accent-color);"></i> Mixed Strategies &mdash; The Goalie&rsquo;s Best Response</h2>
-  <div style="display:grid; grid-template-columns:0.82fr 1.18fr; gap:18px; align-items:center; margin-bottom:10px;">
-    <div style="text-align:center;">
-      <p style="font-size: 10.5pt; font-weight: 700; color: var(--primary-color); margin: 0 0 5px; letter-spacing:0.04em;">PAYOFF MATRIX &mdash; (kicker, <span style="color:var(--secondary-color);">goalie</span>)</p>
-      <table style="border-collapse:collapse; margin:0 auto; font-size:11.5pt;">
-        <tr><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8;"></th><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt;">Goalie: L</th><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt;">Goalie: R</th></tr>
-        <tr><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt; text-align:left;">Kicker: L</th><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">0, <strong style="color:var(--secondary-color);">1</strong></td><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">1, <strong style="color:var(--secondary-color);">0</strong></td></tr>
-        <tr><th style="border:1.5px solid var(--line-color); padding:6px 9px; background:#f0f5f8; color:var(--text-color); font-size:10.5pt; text-align:left;">Kicker: R</th><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">1, <strong style="color:var(--secondary-color);">0</strong></td><td style="border:1.5px solid var(--line-color); padding:8px 12px; text-align:center;">0, <strong style="color:var(--secondary-color);">1</strong></td></tr>
-      </table>
-    </div>
-    <div style="background:#f3effc; border-radius:12px; padding:13px 20px; border-left:5px solid #7c3aed;">
-      <p style="margin:0 0 6px; font-size:12pt; line-height:1.45;">The <span style="color:var(--secondary-color); font-weight:700;">goalie</span> earns <strong>1</strong> for a save (she dives the kicker&rsquo;s way) and <strong>0</strong> otherwise. Her expected payoff is a <strong>weighted average</strong> over the kicker&rsquo;s mix (Left with prob \(p\)):</p>
-      <p style="margin:4px 0 0; font-size:13pt; text-align:center;">\(E[\text{dive Left}] = p(1) + (1-p)(0) = p\)</p>
-      <p style="margin:4px 0 0; font-size:13pt; text-align:center;">\(E[\text{dive Right}] = p(0) + (1-p)(1) = 1-p\)</p>
-    </div>
-  </div>
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: stretch;">
-    <div class="fragment fade-up" data-fragment-index="1" style="background:#fef9f3; border-radius:12px; padding:12px 16px; border-left:5px solid var(--accent-color); display:flex; flex-direction:column;">
-      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:800; color:var(--primary-color);">Kicker: 80% Left</p>
-      <p style="margin:0; font-size:11.5pt; line-height:1.6;">Dive Left: 0.8(1)+0.2(0) = <strong style="color:var(--accent-color);">0.80</strong><br>Dive Right: 0.8(0)+0.2(1) = <strong>0.20</strong></p>
-      <p style="margin:8px 0 0; font-size:12pt;"><i class="fa-solid fa-arrow-right" style="color:var(--accent-color);"></i> Best response: <strong>dive LEFT</strong>.</p>
-      <p style="margin:auto 0 0; padding-top:8px; font-size:11.5pt; font-weight:800; color:var(--danger-color);"><i class="fa-solid fa-xmark"></i> Kicker should switch to Right</p>
-    </div>
-    <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:12px; padding:12px 16px; border-left:5px solid var(--accent-color); display:flex; flex-direction:column;">
-      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:800; color:var(--primary-color);">Kicker: 20% Left</p>
-      <p style="margin:0; font-size:11.5pt; line-height:1.6;">Dive Left: 0.2(1)+0.8(0) = <strong>0.20</strong><br>Dive Right: 0.2(0)+0.8(1) = <strong style="color:var(--accent-color);">0.80</strong></p>
-      <p style="margin:8px 0 0; font-size:12pt;"><i class="fa-solid fa-arrow-right" style="color:var(--accent-color);"></i> Best response: <strong>dive RIGHT</strong>.</p>
-      <p style="margin:auto 0 0; padding-top:8px; font-size:11.5pt; font-weight:800; color:var(--danger-color);"><i class="fa-solid fa-xmark"></i> Kicker should switch to Left</p>
-    </div>
-    <div class="fragment fade-up" data-fragment-index="3" style="background:#eef5ef; border-radius:12px; padding:12px 16px; border-left:5px solid var(--success-color); display:flex; flex-direction:column;">
-      <p style="margin:0 0 6px; font-size:12.5pt; font-weight:800; color:var(--primary-color);">Kicker: 50% Left</p>
-      <p style="margin:0; font-size:11.5pt; line-height:1.6;">Dive Left: 0.5(1)+0.5(0) = <strong>0.50</strong><br>Dive Right: 0.5(0)+0.5(1) = <strong>0.50</strong></p>
-      <p style="margin:8px 0 0; font-size:12pt;"><i class="fa-solid fa-equals" style="color:var(--success-color);"></i> Goalie <strong>indifferent</strong>.</p>
-      <p style="margin:auto 0 0; padding-top:8px; font-size:11.5pt; font-weight:800; color:var(--success-color);"><i class="fa-solid fa-circle-check"></i> Nash equilibrium</p>
-    </div>
-  </div>
-  <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;">Only at <strong style="color:#7c3aed;">50/50</strong> is the goalie indifferent, so the kicker can&rsquo;t be exploited &mdash; that is the <strong>mixed-strategy Nash equilibrium</strong>. Any predictable mix lets the goalie pick a pure best response, which the kicker would then want to deviate from. (With <em>asymmetrical</em> payoffs, the equilibrium mix shifts away from 50/50.)</p></div>
-</section>
-
-<section data-visibility="hidden" id="td-penalty-kicks">
-  <h2><i class="fa-solid fa-futbol" style="color: var(--secondary-color);"></i> Does Anyone Actually Mix? &mdash; Penalty Kicks</h2>
-  <div style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 18px; align-items: start;">
-    <div style="background: #eef2f0; border-left: 4px solid var(--secondary-color); border-radius: 6px; padding: 13px 18px;">
-      <p style="margin: 0 0 5px; font-size: 11pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-database"></i> Theory and Data 14.1 &mdash; Chiappori-Levitt-Groseclose (2002, <em>AER</em>)</p>
-      <p style="margin: 0; font-size: 12pt; line-height: 1.5;">A penalty kick is stylized matching pennies: kicker picks a corner, goalie picks a corner; same corner favors the goalie. The mixed-NE prediction: <strong>scoring probability is equal across the kicker's choices</strong> (else shift weight).</p>
-      <p style="margin: 8px 0 0; font-size: 12pt; line-height: 1.5;">French + Italian top divisions, 1995&ndash;2000: Left and Right scoring rates were <strong>76% vs 76%</strong> &mdash; statistically indistinguishable, exactly the indifference condition. Replicated in tennis serves (Walker-Wooders 2001) and Spanish soccer (Palacios-Huerta 2003).</p>
-    </div>
-    <div>
-      <div class="misconception" style="margin: 0 0 10px;">
-        <p style="margin: 0; font-size: 11pt; color: var(--danger-color); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;"><i class="fa-solid fa-triangle-exclamation"></i> Heads Up 14.2 &mdash; a pure NE may not exist, but a mixed one always does</p>
-        <p style="margin: 6px 0 0; font-size: 12pt; line-height: 1.45;">Nash's 1950 theorem: <em>every</em> finite game has at least one Nash equilibrium (possibly mixed). Can't find a pure NE? Solve the indifference condition for the mixed one.</p>
-      </div>
-      <p style="font-size: 11.5pt; line-height: 1.45; margin: 0; color: var(--muted-color);"><strong>The counterpoint:</strong> Kovash-Levitt (2009) find MLB pitchers and NFL play-callers <em>deviate</em> from minimax &mdash; too many fastballs, too few passes. When the action space is large and cognitive load high, players fall into predictable patterns. Mixed-NE holds for penalty kicks and tennis, not for baseball.</p>
-    </div>
-  </div>
 </section>
 
 <section class="section-divider" data-state="is-section-divider" id="div-sequential">
@@ -2344,10 +2352,10 @@
  <h2><i class="fa-solid fa-money-bill-trend-up" style="color:var(--accent-color);"></i> Strategic Investment: Making the Threat Credible</h2>
  <div style="display:grid; grid-template-columns:1.35fr 0.65fr; gap:18px; align-items:center;">
   <div style="text-align:center;">
-   <img class="figure" alt="Three-stage strategic-investment game: OpenAI invests first, which deters CloseAI from entering" src="figures/fig-game-tree-invest.png" style="max-width:100%; max-height:372px; object-fit:contain;">
+   <img class="figure" alt="Three-stage strategic-investment game: OpenAI invests first, which deters CloseAI from entering" src="figures/fig-game-tree-invest.png" style="max-width:100%; max-height:340px; object-fit:contain;">
   </div>
   <div>
-   <img src="figures/openaiinvestment.png" alt="OpenAI Startup Fund — Investment Thesis Map" style="width:100%; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15); margin-bottom:6px;">
+   <img src="figures/openaiinvestment.png" alt="OpenAI Startup Fund — Investment Thesis Map" style="max-width:100%; max-height:150px; width:auto; display:block; margin:0 auto 4px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">
    <p style="font-size:10pt; color:var(--muted-color); text-align:center; margin-bottom:10px;">OpenAI&rsquo;s <strong>Startup Fund</strong> &mdash; investing around its models to raise barriers.</p>
    <div style="background:#fdf6ec; border-radius:8px; padding:9px 14px; border-left:4px solid #B8860B; margin-bottom:7px;">
     <p style="font-size:11pt; margin:0;">Add a first move: <strong style="color:var(--accent-color);">OpenAI invests &minus;$2B.</strong> Now winning a price war is cheap, so <strong>fighting pays ($5B &gt; $3B)</strong> &mdash; the threat is <strong>credible.</strong></p>
@@ -2357,7 +2365,24 @@
    </div>
   </div>
  </div>
- <div class="key-result" style="margin-top:10px;"><p style="margin:0;">An investment that&rsquo;s <em>never even used</em> still wins &mdash; by changing what the rival <strong>believes</strong> OpenAI will do. That&rsquo;s <strong>strategic investment / entry deterrence:</strong> the same credible-commitment logic as the Dixit game (&sect;14.4), now with capacity on the line.</p></div>
+ <div class="key-result" style="margin-top:6px;"><p style="margin:0;">An investment that&rsquo;s <em>never even used</em> still wins &mdash; by changing what the rival <strong>believes</strong> OpenAI will do. That&rsquo;s <strong>strategic investment / entry deterrence:</strong> the same credible-commitment logic as the Dixit game (&sect;14.4), now with capacity on the line.</p></div>
+</section>
+
+
+<section id="chicken-commitment">
+ <h2><i class="fa-solid fa-handcuffs" style="color: var(--accent-color);"></i> Weaponizing Credibility: Throw Away the Wheel</h2>
+ <p style="font-size:12.5pt; margin-bottom:12px;">In Chicken your best move depends entirely on what your opponent <em>believes</em> you&rsquo;ll do. So don&rsquo;t try to out-nerve them &mdash; <strong>change what they believe is possible.</strong></p>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch;">
+  <div style="background:#fdf2f0; border-radius:10px; padding:14px 20px; border-left:4px solid var(--danger-color);">
+   <p style="font-size:12.5pt; font-weight:800; margin:0 0 6px; color:var(--danger-color);">The binding mechanism</p>
+   <p style="font-size:12pt; margin:0;">Visibly, <strong>irreversibly destroy your own ability to swerve</strong> &mdash; rip out the steering wheel and toss it out the window, where your rival can see it go.</p>
+  </div>
+  <div style="background:#eef6ef; border-radius:10px; padding:14px 20px; border-left:4px solid var(--success-color);">
+   <p style="font-size:12.5pt; font-weight:800; margin:0 0 6px; color:var(--success-color);">Why it works</p>
+   <p style="font-size:12pt; margin:0;">A rational rival who sees you <em>can&rsquo;t</em> swerve must swerve themselves. You&rsquo;ve <strong>transferred 100% of the burden of avoidance</strong> onto them.</p>
+  </div>
+ </div>
+ <div class="key-result" style="margin-top:16px;"><p><strong>Fewer options can make you stronger.</strong> A credible, irreversible commitment collapses Chicken&rsquo;s two equilibria down to the one <em>you</em> want. Burning bridges, a union strike fund, a &ldquo;no-negotiation&rdquo; law, a doomsday device &mdash; all work the same way. <span style="color:var(--muted-color);">(Schelling, <em>The Strategy of Conflict,</em> 1960.)</span></p></div>
 </section>
 
 <section id="stackelberg">
@@ -2479,7 +2504,7 @@
       <p style="margin: 0; font-size: 12pt;"><strong>Nash equilibrium (&sect;14.1&ndash;14.2).</strong> A profile where no one deviates unilaterally. The PD shows it need not be efficient; BoS shows it need not be unique. IESDS is a sound search.</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Coordination games.</strong> Several equilibria (where to meet, which side of the road). Talk helps here, because interests mostly line up.</p>
+      <p style="margin: 0; font-size: 12pt;"><strong>Coordination and mixing (&sect;14.2&ndash;14.3).</strong> Several equilibria (where to meet), or none in pure strategies (penalty kicks), where players randomize.</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
       <p style="margin: 0; font-size: 12pt;"><strong>SPNE (&sect;14.4).</strong> Backward induction on the tree rules out non-credible threats. A threat to fight an entrant is believed only if fighting pays when the time comes.</p>

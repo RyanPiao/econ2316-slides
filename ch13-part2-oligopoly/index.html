@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=4f6b997e607bcbf5e4e47c2f40bcebe8">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=ab7116b9bc4957759f20729f2633f31a">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Oligopoly &mdash; ECON 2316 Ch 13 (Part 2)</title>
@@ -76,7 +76,7 @@
 <section id="learning-objectives" style="padding: 40px 50px;">
   <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Learning Objectives</h2>
   <p style="font-size: 13pt; color: var(--muted-color); margin-bottom: 14px;">
-    By the end of class today, you will be able to&hellip;
+    By the end of this part, you will be able to&hellip;
   </p>
   <div style="display: flex; flex-direction: column; gap: 9px;">
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--secondary-color);">
@@ -97,7 +97,7 @@
     </div>
     <div style="display: grid; grid-template-columns: 60px 1fr; align-items: center; background: #f8f6f3; border-radius: 8px; padding: 11px 18px; border-left: 4px solid var(--secondary-color);">
       <p style="font-size: 18pt; font-weight: 700; color: var(--secondary-color);">5</p>
-      <p style="font-size: 14pt;"><strong>Solve</strong> Stackelberg by backward induction and <strong>rank</strong> all five regimes on welfare.</p>
+      <p style="font-size: 14pt;"><strong>Rank</strong> the regimes on welfare: who gains and who loses as competition gets tougher.</p>
     </div>
   </div>
 </section>
@@ -360,6 +360,299 @@
   </div>
  </div>
 </section>
+
+<section id="cournot-profit">
+  <h2><i class="fa-solid fa-coins" style="color: var(--secondary-color);"></i> Each Firm&rsquo;s Profit Depends on the Other</h2>
+  <p style="font-size:13.5pt; line-height:1.45; margin:0 0 9px;">Inverse demand on joint output: \(\;P = a - bQ = a - b(q_1 + q_2)\).</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start;">
+    <div style="background:#f0f5f8; border-radius:8px; padding:11px 16px; border-left:4px solid var(--secondary-color);">
+      <p style="font-size:12pt; color:var(--secondary-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 6px;">Firm 1</p>
+      <p style="font-size:13.5pt; margin:0 0 6px;">\(\pi_1 = q_1\,(P - c) = \underbrace{q_1 P}_{TR} - \underbrace{q_1 c}_{TC}\)</p>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size:13.5pt; margin:0;">Substitute \(P\): &nbsp; \(\pi_1 = q_1\big(a - b(q_1 + q_2) - c\big)\)</p>
+    </div>
+    <div style="background:#fef9f3; border-radius:8px; padding:11px 16px; border-left:4px solid var(--accent-color);">
+      <p style="font-size:12pt; color:var(--accent-color); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 6px;">Firm 2</p>
+      <p style="font-size:13.5pt; margin:0 0 6px;">\(\pi_2 = q_2\,(P - c)\)</p>
+      <p class="fragment fade-up" data-fragment-index="2" style="font-size:13.5pt; margin:0;">Substitute \(P\): &nbsp; \(\pi_2 = q_2\big(a - b(q_1 + q_2) - c\big)\)</p>
+    </div>
+  </div>
+  <div class="key-result fragment fade-up" data-fragment-index="3" style="margin-top:12px;">
+    <p style="margin:0;">Each \(\pi_i\) contains the <em>other</em> firm&rsquo;s quantity. Firm 1&rsquo;s best output depends on \(q_2\); firm 2&rsquo;s depends on \(q_1\). That is <strong>strategic interdependence</strong>.</p>
+  </div>
+</section>
+
+<section id="cournot-plants">
+  <h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> Choosing Quantity Starts with Plant Size</h2>
+  <div style="text-align:center; margin-top:2px;">
+    <img alt="Coca-Cola (Needham) and Pepsi bottling plants in the Boston area: aerial maps and storefronts" src="figures/compete_quantity.webp" style="max-width:100%; max-height:352px; object-fit:contain; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.12);">
+  </div>
+  <div class="key-result" style="margin-top:10px;">
+    <p style="margin:0; font-size:12.5pt; line-height:1.45;">Competing on quantity begins with one big bet: <strong>how large a plant to build</strong>. <strong style="color:#d81f26;">Coca-Cola</strong> (Needham) and <strong style="color:#004b93;">Pepsi</strong> each sized a Boston-area bottling plant, a long-run <em>capacity</em> choice that sets how much each can ship. That capacity <em>is</em> the Cournot quantity choice.</p>
+  </div>
+</section>
+
+<section id="cournot-cokepepsi-setup">
+  <h2><i class="fa-solid fa-bottle-water" style="color: var(--secondary-color);"></i> Worked Example &mdash; Coke vs Pepsi in Boston</h2>
+  <div style="display:grid; grid-template-columns:1.18fr 0.82fr; gap:22px; align-items:center;">
+    <div>
+      <p style="font-size:13.5pt; line-height:1.5; margin:0 0 9px;"><strong>Boston&rsquo;s soft-drink market</strong>, roughly <strong>650,000 people</strong> in <strong>about 280,000 households</strong>, is served by just two sellers: <strong style="color:#d81f26;">Coca-Cola</strong> and <strong style="color:#004b93;">Pepsi</strong>. They <strong>compete on quantity</strong>: how many cases to ship each week.</p>
+      <div style="display:flex; flex-direction:column; gap:7px;">
+        <div style="background:#f0f5f8; border-radius:8px; padding:9px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13.5pt; margin:0;">Both have a constant <strong>\(MC = AC = \$6\)</strong> per case <span style="color:var(--muted-color); font-size:12pt;">(a case = 24 cans)</span>.</p></div>
+        <div style="background:#f0f5f8; border-radius:8px; padding:9px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13.5pt; margin:0;">Market inverse demand: \(\;P = 18 - 0.2\,Q\), &nbsp; \(Q = \color{#d81f26}{q_C} + \color{#004b93}{q_P}\) &nbsp;<span style="color:var(--muted-color); font-size:12pt;">(\(Q\) in 000s of cases a week; C = Coke, P = Pepsi)</span></p></div>
+      </div>
+      <div class="key-result" style="margin-top:10px;">
+        <p style="margin:0; font-size:13.5pt; text-align:center;">\(P = 18 - 0.2\,\color{#d81f26}{q_C} - 0.2\,\color{#004b93}{q_P}\)</p>
+      </div>
+      <p style="font-size:12.5pt; color:var(--muted-color); margin:9px 0 0;">Over the next slides: each firm&rsquo;s <strong>residual demand</strong> &rarr; its <strong>best response</strong> &rarr; the <strong>Nash equilibrium</strong>. <strong style="color:#d81f26;">Coke&rsquo;s reaction is red</strong>, <strong style="color:#004b93;">Pepsi&rsquo;s is blue</strong>.</p>
+    </div>
+    <div style="text-align:center;">
+      <img alt="Coca-Cola and Pepsi cans in front of the Boston skyline: the two-firm soft-drink market" src="figures/coke_vs_pepsi.webp" style="max-width:100%; max-height:415px; object-fit:contain; border-radius:10px; box-shadow:0 3px 14px rgba(0,0,0,0.14);">
+    </div>
+  </div>
+</section>
+
+<section id="cp-residual">
+  <h2><i class="fa-solid fa-arrows-left-right-to-line" style="color: var(--secondary-color);"></i> Step 1 &mdash; Coke&rsquo;s Residual Demand</h2>
+  <p style="font-size:13.5pt; line-height:1.55; margin:0 0 12px;">Coke can&rsquo;t control Pepsi. It takes Pepsi&rsquo;s output \(\color{#004b93}{q_P}\) as <em>given</em> and asks: what demand is left for me? Group market demand around \(\color{#d81f26}{q_C}\):</p>
+  <div class="fragment fade-up" data-fragment-index="1" style="text-align:center; margin:14px 0;">
+    <p style="font-size:15pt; margin:0;">\[ P = \underbrace{(18 - 0.2\,\color{#004b93}{q_P})}_{\text{intercept}} - 0.2\,\color{#d81f26}{q_C} \]</p>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:stretch; margin-top:12px;">
+    <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:14px 19px; border-left:4px solid #d81f26;">
+      <p style="font-size:13.5pt; line-height:1.5; margin:0 0 7px;"><strong style="color:#d81f26;">Try it.</strong> Suppose <strong style="color:#004b93;">Pepsi</strong> ships \(\color{#004b93}{q_P} = 10\) (thousand cases). What line does Coke face?</p>
+      <p class="fragment fade-up" data-fragment-index="3" style="font-size:14pt; text-align:center; margin:9px 0 0;">\(P = 18 - 0.2(10) - 0.2\,\color{#d81f26}{q_C} = 16 - 0.2\,\color{#d81f26}{q_C}\)</p>
+    </div>
+    <div class="key-result fragment fade-up" data-fragment-index="4" style="margin:0; padding:14px 19px;">
+      <p style="margin:0; font-size:13.5pt; line-height:1.55;">Same slope \((-0.2)\); the intercept drops \(18 \to 16\) as Pepsi fills part of the market. On this leftover line Coke is just a <strong>monopolist on its own residual demand</strong>, so it sets \(MR = MC\). That is Step 2.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cp-bestresponse">
+  <h2><i class="fa-solid fa-bullseye" style="color: var(--secondary-color);"></i> Step 2 &mdash; Coke&rsquo;s Reaction Curve</h2>
+  <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:20px; align-items:center;">
+    <div>
+      <p style="font-size:12pt; line-height:1.4; margin:0 0 5px;">On its residual demand, Coke&rsquo;s \(MR\) doubles the \(\color{#d81f26}{q_C}\) slope: \(\color{#d81f26}{MR_{\text{Coke}}} = (18 - 0.2\,\color{#004b93}{q_P}) - 0.4\,\color{#d81f26}{q_C}\). Set \(MR = MC = 6\):</p>
+      <p style="font-size:12pt; text-align:center; margin:0 0 6px;">\(18 - 0.2\,\color{#004b93}{q_P} - 0.4\,\color{#d81f26}{q_C} = 6\)</p>
+      <div class="key-result" style="margin:0 0 10px; border-left-color:#d81f26;">
+        <p style="margin:0; font-size:13.5pt; text-align:center;"><strong style="color:#d81f26;">\(\color{#d81f26}{q_C} = 30 - 0.5\,\color{#004b93}{q_P}\)</strong> &nbsp;<span style="font-size:11pt; color:var(--muted-color);">Coke&rsquo;s reaction curve</span></p>
+      </div>
+      <p style="font-size:12pt; line-height:1.4; margin:0 0 5px;">Graph <strong style="color:#d81f26;">Coke&rsquo;s</strong> best output as a reaction to Pepsi&rsquo;s output:</p>
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <div class="fragment fade-up" data-fragment-index="1" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid #d81f26;"><p style="font-size:12pt; margin:0;">if <strong style="color:#004b93;">Pepsi</strong> produces <strong>40</strong> &rarr; Coke&rsquo;s best response is <strong style="color:#d81f26;">10</strong></p></div>
+        <div class="fragment fade-up" data-fragment-index="2" style="background:#f8f6f3; border-radius:8px; padding:7px 14px; border-left:4px solid #d81f26;"><p style="font-size:12pt; margin:0;">if <strong style="color:#004b93;">Pepsi</strong> produces <strong>20</strong> &rarr; Coke&rsquo;s best response is <strong style="color:#d81f26;">20</strong></p></div>
+      </div>
+    </div>
+    <div class="mathjax_ignore tex2jax_ignore" style="text-align:center;">
+      <svg viewBox="0 0 520 372" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:380px; display:block;" role="img" aria-label="Coke's reaction curve: Coke's best output for each Pepsi output, falling from 30 to 0 as Pepsi goes from 0 to 60"><g class="cpb-plot"></g></svg>
+    </div>
+  </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="13" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.52+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var C={C:'#d81f26',P:'#004b93',N:'#15803d',AX:'#374151',MU:'#8C8580'};
+  var b=Kit({X0:64,X1:496,Y0:322,Y1:34,XM:64,YM:64}), X=b.X, Y=b.Y;
+  function axes(){ var h=b.L(64,24,64,322,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(64,322,506,322,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(70,18,'Coke&#8217;s output, '+b.sub('q','C'),C.AX,'start',15)+b.T(506,362,'Pepsi&#8217;s output, '+b.sub('q','P')+' (000s of cases)',C.AX,'end',15)+b.T(58,340,'0',C.AX,'end',14);
+    [20,40,60].forEach(function(q){ h+=b.T(X(q),340,''+q,C.MU,'middle',14); h+=b.T(56,Y(q)+5,''+q,C.MU,'end',14); }); return h; }
+  function cokeLine(){ return b.seg(0,30,60,0,'stroke="'+C.C+'" stroke-width="2.8"'); }
+  function pepsiLine(){ return b.seg(0,60,30,0,'stroke="'+C.P+'" stroke-width="2.8"'); }
+
+  var g=root.querySelector('.cpb-plot');
+  function draw(){ var s=step(root), h=axes()+cokeLine()+b.T(X(3),Y(33.5),'Coke&#8217;s reaction curve',C.C,'start',15,1);
+    if(s>=1) h+=b.guide(40,10,'#cbb0b0')+b.dot(40,10,C.C,5.5)+b.tag(X(40)+10,Y(10)-12,'Pepsi 40 &#8594; Coke 10','#111827','start',14);
+    if(s>=2) h+=b.guide(20,20,'#cbb0b0')+b.dot(20,20,C.C,5.5)+b.tag(X(20)+10,Y(20)-12,'Pepsi 20 &#8594; Coke 20','#111827','start',14);
+    g.innerHTML=h; }
+  new MutationObserver(draw).observe(root,{subtree:true,attributes:true,attributeFilter:['class']}); draw();
+})();
+ </script>
+</section>
+
+<section id="cp-pepsi-br">
+  <h2><i class="fa-solid fa-bullseye" style="color: var(--secondary-color);"></i> Pepsi&rsquo;s Reaction Curve</h2>
+  <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:20px; align-items:center;">
+    <div>
+      <p style="font-size:12pt; line-height:1.4; margin:0 0 6px;">By symmetry, set \(\color{#004b93}{MR_{\text{Pepsi}}} = MC\) and solve for \(\color{#004b93}{q_P}\):</p>
+      <div class="key-result" style="margin:0 0 10px; border-left-color:#004b93;">
+        <p style="margin:0; font-size:13.5pt; text-align:center;"><strong style="color:#004b93;">\(\color{#004b93}{q_P} = 30 - 0.5\,\color{#d81f26}{q_C}\)</strong> &nbsp;<span style="font-size:11pt; color:var(--muted-color);">Pepsi&rsquo;s reaction curve</span></p>
+      </div>
+      <p style="font-size:12pt; line-height:1.4; margin:0 0 5px;">Graph <strong style="color:#004b93;">Pepsi&rsquo;s</strong> best output as a reaction to Coke&rsquo;s output, on the <strong>same axes</strong>:</p>
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <div class="fragment fade-up" data-fragment-index="1" style="background:#f0f5f8; border-radius:8px; padding:7px 14px; border-left:4px solid #004b93;"><p style="font-size:12pt; margin:0;">if <strong style="color:#d81f26;">Coke</strong> produces <strong>40</strong> &rarr; Pepsi&rsquo;s best response is <strong style="color:#004b93;">10</strong></p></div>
+        <div class="fragment fade-up" data-fragment-index="2" style="background:#f0f5f8; border-radius:8px; padding:7px 14px; border-left:4px solid #004b93;"><p style="font-size:12pt; margin:0;">if <strong style="color:#d81f26;">Coke</strong> produces <strong>20</strong> &rarr; Pepsi&rsquo;s best response is <strong style="color:#004b93;">20</strong></p></div>
+      </div>
+    </div>
+    <div class="mathjax_ignore tex2jax_ignore" style="text-align:center;">
+      <svg viewBox="0 0 520 372" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:380px; display:block;" role="img" aria-label="Pepsi's reaction curve on the same axes: a steep line from 60 on Coke's axis to 30 on Pepsi's axis"><g class="cpp-plot"></g></svg>
+    </div>
+  </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="13" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.52+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var C={C:'#d81f26',P:'#004b93',N:'#15803d',AX:'#374151',MU:'#8C8580'};
+  var b=Kit({X0:64,X1:496,Y0:322,Y1:34,XM:64,YM:64}), X=b.X, Y=b.Y;
+  function axes(){ var h=b.L(64,24,64,322,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(64,322,506,322,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(70,18,'Coke&#8217;s output, '+b.sub('q','C'),C.AX,'start',15)+b.T(506,362,'Pepsi&#8217;s output, '+b.sub('q','P')+' (000s of cases)',C.AX,'end',15)+b.T(58,340,'0',C.AX,'end',14);
+    [20,40,60].forEach(function(q){ h+=b.T(X(q),340,''+q,C.MU,'middle',14); h+=b.T(56,Y(q)+5,''+q,C.MU,'end',14); }); return h; }
+  function cokeLine(){ return b.seg(0,30,60,0,'stroke="'+C.C+'" stroke-width="2.8"'); }
+  function pepsiLine(){ return b.seg(0,60,30,0,'stroke="'+C.P+'" stroke-width="2.8"'); }
+
+  var g=root.querySelector('.cpp-plot');
+  function draw(){ var s=step(root), h=axes()+pepsiLine()+b.T(X(24),Y(13),'Pepsi&#8217;s reaction curve',C.P,'start',15,1);
+    if(s>=1) h+=b.guide(10,40,'#aebccd')+b.dot(10,40,C.P,5.5)+b.tag(X(10)+12,Y(40)-8,'Coke 40 &#8594; Pepsi 10','#111827','start',14);
+    if(s>=2) h+=b.guide(20,20,'#aebccd')+b.dot(20,20,C.P,5.5)+b.tag(X(20)+12,Y(20)-8,'Coke 20 &#8594; Pepsi 20','#111827','start',14);
+    g.innerHTML=h; }
+  new MutationObserver(draw).observe(root,{subtree:true,attributes:true,attributeFilter:['class']}); draw();
+})();
+ </script>
+</section>
+
+<section id="cp-nash">
+  <h2><i class="fa-solid fa-circle-nodes" style="color: var(--secondary-color);"></i> Step 3 &mdash; The Cournot&ndash;Nash Equilibrium</h2>
+  <style>
+    #cp-nash .cn-c::-webkit-slider-thumb{background:#d81f26;} #cp-nash .cn-c::-moz-range-thumb{background:#d81f26;}
+    #cp-nash .cn-p::-webkit-slider-thumb{background:#004b93;} #cp-nash .cn-p::-moz-range-thumb{background:#004b93;}
+    #cp-nash .cn-pre{font-family:var(--body-font);font-size:10.5pt;font-weight:600;padding:3px 11px;border-radius:14px;border:1.5px solid var(--line-color);background:#f8f6f3;color:var(--text-color);cursor:pointer;transition:all .15s;}
+    #cp-nash .cn-pre:hover{border-color:var(--secondary-color);}
+    #cp-nash .cn-pre.active{background:var(--secondary-color);color:#fff;border-color:var(--secondary-color);}
+  </style>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center; margin:0 0 8px;">
+    <p style="font-size:11.5pt; line-height:1.4; margin:0;">Solve both best responses at once: substitute Pepsi&rsquo;s into Coke&rsquo;s, \(\color{#d81f26}{q_C} = 30 - 0.5(30 - 0.5\,\color{#d81f26}{q_C})\), so \(\color{#d81f26}{q_C} = \color{#004b93}{q_P} = \mathbf{20}\).</p>
+    <div class="key-result" style="margin:0; padding:7px 14px;">
+      <p style="margin:0; font-size:11.5pt;">\(Q = 40\), \(P = 18 - 0.2(40) = \$10\) a case, profit each \(= (P - MC)\,q = 4 \times 20 = \mathbf{\$80}\)k a week.</p>
+    </div>
+  </div>
+  <div class="iv-card" style="padding:8px 16px 9px;">
+    <div style="display:grid; grid-template-columns:0.86fr 1.14fr; gap:18px; align-items:center;">
+      <div>
+        <div class="cn-badge" style="font-size:11pt; font-weight:700; text-align:center; padding:5px 10px; border-radius:7px; margin:0 0 8px; line-height:1.3; min-height:34px; display:flex; align-items:center; justify-content:center; gap:5px;"></div>
+        <label class="iv-label">Coke&rsquo;s output, <span style="color:#d81f26;">q<sub>C</sub></span> <span class="iv-readout cn-cr" style="color:#d81f26;">20</span></label>
+        <input type="range" class="iv-slider cn-c" min="0" max="40" step="1" value="20">
+        <label class="iv-label" style="margin-top:8px;">Pepsi&rsquo;s output, <span style="color:#004b93;">q<sub>P</sub></span> <span class="iv-readout cn-pr" style="color:#004b93;">20</span></label>
+        <input type="range" class="iv-slider cn-p" min="0" max="40" step="1" value="20">
+        <div class="cn-read" style="font-size:11pt; line-height:1.5; margin:8px 0 8px;"></div>
+        <div style="display:flex; gap:7px; justify-content:center;">
+          <button class="cn-pre" data-c="20" data-p="20"><i class="fa-solid fa-circle-nodes"></i> Nash 20, 20</button>
+          <button class="cn-pre" data-c="15" data-p="15"><i class="fa-solid fa-handshake"></i> Cartel 15, 15</button>
+        </div>
+      </div>
+      <div class="mathjax_ignore tex2jax_ignore" style="text-align:center;">
+        <svg viewBox="0 0 520 372" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:318px; display:block;" role="img" aria-label="Both reaction curves crossing at 20 thousand cases each, with arrows showing where each firm would move"><g class="cn-plot"></g></svg>
+      </div>
+    </div>
+    <p class="iv-cap" style="margin:4px 0 0; font-size:11pt;">Drag a slider off the Nash. <strong style="color:#d81f26;">Red</strong> and <strong style="color:#004b93;">blue</strong> arrows show where each firm would move its output to raise its own profit; they vanish <em>only</em> at (20, 20).</p>
+  </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="13" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.52+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var C={C:'#d81f26',P:'#004b93',N:'#15803d',AX:'#374151',MU:'#8C8580'};
+  var b=Kit({X0:64,X1:496,Y0:322,Y1:34,XM:64,YM:64}), X=b.X, Y=b.Y;
+  function axes(){ var h=b.L(64,24,64,322,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(64,322,506,322,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(70,18,'Coke&#8217;s output, '+b.sub('q','C'),C.AX,'start',15)+b.T(506,362,'Pepsi&#8217;s output, '+b.sub('q','P')+' (000s of cases)',C.AX,'end',15)+b.T(58,340,'0',C.AX,'end',14);
+    [20,40,60].forEach(function(q){ h+=b.T(X(q),340,''+q,C.MU,'middle',14); h+=b.T(56,Y(q)+5,''+q,C.MU,'end',14); }); return h; }
+  function cokeLine(){ return b.seg(0,30,60,0,'stroke="'+C.C+'" stroke-width="2.8"'); }
+  function pepsiLine(){ return b.seg(0,60,30,0,'stroke="'+C.P+'" stroke-width="2.8"'); }
+
+  var g=root.querySelector('.cn-plot');
+  var sC=root.querySelector('.cn-c'), sP=root.querySelector('.cn-p'), rC=root.querySelector('.cn-cr'), rP=root.querySelector('.cn-pr');
+  var badge=root.querySelector('.cn-badge'), read=root.querySelector('.cn-read'), pres=root.querySelectorAll('.cn-pre');
+  function price(qc,qp){ return Math.max(0,18-0.2*(qc+qp)); }
+  function brC(qp){ return Math.max(0,30-0.5*qp); } function brP(qc){ return Math.max(0,30-0.5*qc); }
+  [sC,sP].forEach(function(el){ ['keydown','pointerdown','mousedown','touchstart','click'].forEach(function(ev){ el.addEventListener(ev,function(e){ e.stopPropagation(); }); });
+    el.addEventListener('input',draw); ['change','pointerup'].forEach(function(ev){ el.addEventListener(ev,function(){ el.blur(); }); }); });
+  pres.forEach(function(bt){ bt.addEventListener('click',function(e){ e.stopPropagation(); sC.value=bt.dataset.c; sP.value=bt.dataset.p; draw(); bt.blur(); }); });
+  function q(v){ return (Math.abs(v-Math.round(v))<0.01)? ''+Math.round(v) : v.toFixed(1); }
+  function k$(v){ return (v<0?'&minus;$':'$')+Math.abs(v).toFixed(0)+'k'; }
+  function draw(){
+    var qc=+sC.value, qp=+sP.value, P=price(qc,qp), bc=brC(qp), bp=brP(qc);
+    var onC=Math.abs(qc-bc)<0.6, onP=Math.abs(qp-bp)<0.6;
+    var h=axes()+cokeLine()+pepsiLine()+b.T(X(40),Y(14.5),'Coke',C.C,'start',15,1)+b.T(X(8),Y(54),'Pepsi',C.P,'start',15,1);
+    h+=b.L(X(qp),Y(qc),X(qp),Y(0),'stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"')+b.L(X(0),Y(qc),X(qp),Y(qc),'stroke="#9ca3af" stroke-width="1" stroke-dasharray="3 3"');
+    if(!onC) h+=b.arrow(X(qp),Y(qc),X(qp),Y(bc),C.C,2.2,1)+b.ring(qp,bc,C.C);
+    if(!onP) h+=b.arrow(X(qp),Y(qc),X(bp),Y(qc),C.P,2.2,1)+b.ring(bp,qc,C.P);
+    h+='<circle cx="'+b.f1(X(qp))+'" cy="'+b.f1(Y(qc))+'" r="5.5" fill="#111827"/>';
+    if(onC&&onP) h+='<circle cx="'+b.f1(X(20))+'" cy="'+b.f1(Y(20))+'" r="11" fill="none" stroke="'+C.N+'" stroke-width="2.5"/>'+b.tag(X(20)+16,Y(20)-14,'Nash (20, 20)',C.N,'start',14);
+    g.innerHTML=h; rC.textContent=qc; rP.textContent=qp;
+    var pc=(P-6)*qc, pp=(P-6)*qp, Pc=price(bc,qp), Pp=price(qc,bp);
+    if(onC&&onP){ badge.innerHTML='<i class="fa-solid fa-circle-check"></i> Mutual best response: neither firm wants to change.'; badge.style.background='#ecfdf5'; badge.style.color='#15803d'; }
+    else { var w=[]; if(!onC) w.push('<span style="color:#d81f26">Coke</span> would '+(bc>qc?'raise':'cut')+' to '+q(bc)); if(!onP) w.push('<span style="color:#004b93">Pepsi</span> would '+(bp>qp?'raise':'cut')+' to '+q(bp));
+      badge.innerHTML='<i class="fa-solid fa-arrows-left-right"></i> Not a Nash: '+w.join('; '); badge.style.background='#fef9f3'; badge.style.color='#9a5a3c'; }
+    read.innerHTML='<div>Price <strong>$'+P.toFixed(2)+'</strong> a case &middot; total Q = '+(qc+qp)+'</div>'+
+      '<div style="color:#d81f26;">Coke: profit <strong>'+k$(pc)+'</strong>'+(onC?'':' <span style="color:#6B645E;">(best reply '+k$((Pc-6)*bc)+' at '+q(bc)+')</span>')+'</div>'+
+      '<div style="color:#004b93;">Pepsi: profit <strong>'+k$(pp)+'</strong>'+(onP?'':' <span style="color:#6B645E;">(best reply '+k$((Pp-6)*bp)+' at '+q(bp)+')</span>')+'</div>';
+    pres.forEach(function(bt){ bt.classList.toggle('active', +bt.dataset.c===qc && +bt.dataset.p===qp); });
+  }
+  draw();
+})();
+ </script>
+</section>
+
 
 <section id="boba-best-response">
  <h2><i class="fa-solid fa-bullseye" style="color: var(--secondary-color);"></i> Kung Fu Tea&rsquo;s Best Response &mdash; Its Reaction Curve</h2>
@@ -644,63 +937,9 @@
 </section>
 
 
-<section id="cp-bestresponse" data-visibility="hidden">
-  <h2><i class="fa-solid fa-bullseye" style="color: var(--accent-color);"></i> Step 2 &mdash; Coke's Reaction Curve</h2>
-  <div style="display:grid; grid-template-columns:0.92fr 1.08fr; gap:20px; align-items:center;">
-    <div>
-      <p style="font-size:12pt; line-height:1.4; margin:0 0 5px;">On its residual demand, Coke's \(MR\) doubles the \(\color{#d81f26}{q_C}\) slope: \(\color{#d81f26}{MR_{\text{Coke}}} = (18 - 0.2\,\color{#004b93}{q_P}) - 0.4\,\color{#d81f26}{q_C}\). Set \(MR = MC = 6\):</p>
-      <p style="font-size:12pt; text-align:center; margin:0 0 6px;">\(18 - 0.2\,\color{#004b93}{q_P} - 0.4\,\color{#d81f26}{q_C} = 6\)</p>
-      <div class="key-result" style="margin:0 0 10px; border-left-color:#d81f26;">
-        <p style="margin:0; font-size:13.5pt; text-align:center;"><strong style="color:#d81f26;">\(\color{#d81f26}{q_C} = 30 - 0.5\,\color{#004b93}{q_P}\)</strong> &nbsp;<span style="font-size:11pt; color:var(--muted-color);">Coke's reaction curve</span></p>
-      </div>
-      <p style="font-size:12pt; line-height:1.4; margin:0 0 5px;">Graph <strong style="color:#d81f26;">Coke's</strong> best output as a reaction to Pepsi's output:</p>
-      <div style="display:flex; flex-direction:column; gap:5px;">
-        <div class="fragment fade-up" data-fragment-index="1" style="background:#fdecec; border-radius:8px; padding:7px 14px;"><p style="font-size:12pt; margin:0;">if <strong style="color:#004b93;">Pepsi</strong> produces <strong>40</strong> &rarr; Coke's best response is <strong style="color:#d81f26;">10</strong></p></div>
-        <div class="fragment fade-up" data-fragment-index="2" style="background:#fdecec; border-radius:8px; padding:7px 14px;"><p style="font-size:12pt; margin:0;">if <strong style="color:#004b93;">Pepsi</strong> produces <strong>20</strong> &rarr; Coke's best response is <strong style="color:#d81f26;">20</strong></p></div>
-      </div>
-    </div>
-    <div style="text-align:center;">
-      <svg id="rc-coke" viewBox="0 0 470 410" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:392px; display:block;"></svg>
-    </div>
-  </div>
-</section>
 
-<section id="cp-nash" data-visibility="hidden">
-  <h2><i class="fa-solid fa-circle-nodes" style="color: var(--accent-color);"></i> Step 3 &mdash; The Cournot&ndash;Nash Equilibrium</h2>
-  <style>
-    #cn-c::-webkit-slider-thumb{background:#d81f26;} #cn-c::-moz-range-thumb{background:#d81f26;}
-    #cn-p::-webkit-slider-thumb{background:#004b93;} #cn-p::-moz-range-thumb{background:#004b93;}
-    .cn-preset{font-family:var(--body-font);font-size:10pt;font-weight:600;padding:3px 11px;border-radius:14px;border:1.5px solid var(--line-color);background:#f8f6f3;color:var(--text-color);cursor:pointer;transition:all .15s;}
-    .cn-preset:hover{border-color:var(--secondary-color);}
-    .cn-preset.active{background:var(--secondary-color);color:#fff;border-color:var(--secondary-color);}
-  </style>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:center; margin:0 0 8px;">
-    <p style="font-size:11.5pt; line-height:1.4; margin:0;">Solve both best responses at once &mdash; substitute Pepsi's into Coke's: \(\color{#d81f26}{q_C} = 30 - 0.5(30 - 0.5\,\color{#d81f26}{q_C}) \Rightarrow \color{#d81f26}{q_C} = \color{#004b93}{q_P} = \mathbf{20}\).</p>
-    <div class="key-result" style="margin:0; padding:7px 14px;">
-      <p style="margin:0; font-size:11.5pt;">\(Q = 40\), \(P = \$10\)/case, profit each \(= (P-MC)\,q = \mathbf{\$80}\)k/wk.</p>
-    </div>
-  </div>
-  <div class="iv-card" style="padding:8px 16px 9px;">
-    <div style="display:grid; grid-template-columns:0.86fr 1.14fr; gap:18px; align-items:center;">
-      <div>
-        <div id="cn-badge" style="font-size:10.5pt; font-weight:700; text-align:center; padding:5px 10px; border-radius:7px; margin:0 0 9px; line-height:1.3; min-height:34px; display:flex; align-items:center; justify-content:center; gap:5px;"></div>
-        <label class="iv-label">Coke's output, <span style="color:#d81f26;">q<sub>C</sub></span> <span class="iv-readout" id="cn-cRead" style="color:#d81f26;">20</span></label>
-        <input type="range" class="iv-slider" id="cn-c" min="0" max="40" step="1" value="20">
-        <label class="iv-label" style="margin-top:9px;">Pepsi's output, <span style="color:#004b93;">q<sub>P</sub></span> <span class="iv-readout" id="cn-pRead" style="color:#004b93;">20</span></label>
-        <input type="range" class="iv-slider" id="cn-p" min="0" max="40" step="1" value="20">
-        <div id="cn-read" style="font-size:10pt; line-height:1.55; margin:10px 0 8px;"></div>
-        <div style="display:flex; gap:7px; justify-content:center;">
-          <button class="cn-preset" data-c="20" data-p="20"><i class="fa-solid fa-circle-nodes"></i> Nash 20,20</button>
-          <button class="cn-preset" data-c="15" data-p="15"><i class="fa-solid fa-handshake"></i> Cartel 15,15</button>
-        </div>
-      </div>
-      <div style="text-align:center;">
-        <svg id="cn-svg" viewBox="0 0 470 400" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:300px; display:block;"></svg>
-      </div>
-    </div>
-    <p class="iv-cap" style="margin:6px 0 0;">Drag a slider to deviate from the Nash. <strong style="color:#d81f26;">Red</strong>/<strong style="color:#004b93;">blue</strong> arrows show where each firm would move its output to raise its own profit &mdash; they vanish <em>only</em> at the Nash \((20,20)\).</p>
-  </div>
-</section>
+
+
 
 
 
@@ -970,6 +1209,310 @@
   <p class="subtitle">If firms set <em>prices</em> instead of quantities, how few firms does it take to reach \(P = MC\)?</p>
 </section>
 
+<section id="bertrand-intro-orig">
+  <h2><i class="fa-solid fa-tags" style="color: var(--secondary-color);"></i> Bertrand Competition &mdash; Compete on Price</h2>
+  <div style="display:grid; grid-template-columns:1.5fr 0.5fr; gap:24px; align-items:center;">
+    <div>
+      <ul style="margin:0;">
+        <li style="font-size:15pt; line-height:1.5; margin-bottom:15px;"><strong style="color:var(--danger-color);">Bertrand competition:</strong> two (or more) firms compete on <strong>price</strong> to sell the <strong>same good</strong>.</li>
+        <li style="font-size:15pt; line-height:1.5; margin-bottom:15px;">Firms set their prices <strong>simultaneously</strong>.</li>
+        <li style="font-size:15pt; line-height:1.5;">Consumers are indifferent between the brands and <strong style="color:var(--accent-color);">always buy from the seller with the lowest price</strong>.</li>
+      </ul>
+      <div class="key-result" style="margin-top:16px;">
+        <p style="margin:0; font-size:13pt;">That last assumption drives the result: undercut your rival by a single penny and you capture the <strong>entire</strong> market, so each firm always has a reason to cut price.</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <img alt="Portrait of Joseph Bertrand, French mathematician" src="figures/bertrand.webp" style="max-width:100%; max-height:330px; border-radius:8px; box-shadow:0 3px 14px rgba(0,0,0,0.22);">
+      <p style="font-size:11.5pt; font-weight:700; color:var(--text-color); margin:7px 0 0; letter-spacing:.03em;">JOSEPH BERTRAND</p>
+      <p style="font-size:10.5pt; color:var(--muted-color); margin:1px 0 0;">1822&ndash;1890</p>
+    </div>
+  </div>
+</section>
+
+<section id="bertrand-walmart-target">
+  <h2><i class="fa-solid fa-scale-balanced" style="color: var(--secondary-color);"></i> Equal Prices Split the Market &mdash; \(P_W = P_T\)</h2>
+  <div class="bz-wrap" style="min-height:0; margin-top:10px;"><div class="bz-grid">
+    <div class="bz-card">
+      <div class="bz-hotslot"></div>
+      <div class="bz-priceban w">P<sub>W</sub> = \$499</div>
+      <div class="bz-shot"><img alt="Walmart storefront" src="figures/walmart.webp"><div class="bz-cost">COST<br><span class="c">\$200</span></div></div>
+      <div class="bz-chip tie fragment" data-fragment-index="2">50% of Q</div>
+    </div>
+    <div class="bz-mid">
+      <p class="bz-sub">Setting up the model</p>
+      <p class="bz-lead"><strong style="color:#1d4ed8;">Walmart</strong> and <strong style="color:#dc2626;">Target</strong> sell the <strong>identical</strong> Switch, same cost \(MC = \$200\). Total demand \(Q\); prices \(P_W\), \(P_T\).</p>
+      <p class="bz-eq fragment fade-up" data-fragment-index="1">\(Q = \color{#1d4ed8}{q_W} + \color{#dc2626}{q_T} = \tfrac{Q}{2} + \tfrac{Q}{2}\)</p>
+      <p class="bz-note fragment fade-up" data-fragment-index="2">Equal prices &rarr; indifferent shoppers split the market <strong>50/50</strong>.</p>
+      <div class="fragment fade-up" data-fragment-index="2"><div class="bz-which">WHICH?</div><br><img class="bz-shopper" alt="Shopper deciding" src="figures/shopper.webp"></div>
+    </div>
+    <div class="bz-card">
+      <div class="bz-hotslot"></div>
+      <div class="bz-priceban t">P<sub>T</sub> = \$499</div>
+      <div class="bz-shot"><img alt="Target storefront" src="figures/target.webp"><div class="bz-cost">COST<br><span class="c">\$200</span></div></div>
+      <div class="bz-chip tie fragment" data-fragment-index="2">50% of Q</div>
+    </div>
+  </div></div>
+</section>
+
+<section id="bertrand-walmart-cut">
+  <h2><i class="fa-solid fa-fire" style="color: var(--danger-color);"></i> Walmart Undercuts &mdash; \(MC \lt P_W \lt P_T\)</h2>
+  <div class="bz-wrap" style="min-height:0; margin-top:10px;"><div class="bz-grid">
+    <div class="bz-card">
+      <div class="bz-hotslot"><span class="bz-hot"><i class="fa-solid fa-fire"></i> HOT SALE</span></div>
+      <div class="bz-priceban w">P<sub>W</sub> = <s>\$499</s> &nbsp;\$450</div>
+      <div class="bz-shot fragment bz-fwin" data-fragment-index="2"><img alt="Walmart storefront" src="figures/walmart.webp"><div class="bz-cost">COST<br><span class="c">\$200</span></div></div>
+      <div class="bz-chip win fragment" data-fragment-index="2"><i class="fa-solid fa-check"></i> sells all Q</div>
+    </div>
+    <div class="bz-mid">
+      <p class="bz-lead">Walmart shaves its price to <strong style="color:#1d4ed8;">\$450</strong>: still above the \(\$200\) cost, just below Target.</p>
+      <p class="bz-eq fragment fade-up" data-fragment-index="1">\(Q = \color{#1d4ed8}{q_W} + \color{#dc2626}{q_T} = Q + 0\)</p>
+      <p class="bz-note fragment fade-up" data-fragment-index="2">The lowest price wins <strong>everyone</strong> &rarr; Walmart takes the whole market.</p>
+      <div class="fragment fade-up" data-fragment-index="2"><img class="bz-shopper" alt="Shopper heading to Walmart" src="figures/shopper.webp" style="transform:scaleX(-1);"></div>
+    </div>
+    <div class="bz-card">
+      <div class="bz-hotslot"></div>
+      <div class="bz-priceban t">P<sub>T</sub> = \$499</div>
+      <div class="bz-shot fragment bz-flose" data-fragment-index="2"><img alt="Target storefront" src="figures/target.webp"><div class="bz-cost">COST<br><span class="c">\$200</span></div></div>
+      <div class="bz-chip lose fragment" data-fragment-index="2"><i class="fa-solid fa-xmark"></i> sells 0</div>
+    </div>
+  </div></div>
+</section>
+
+<section id="bertrand-target-cut">
+  <h2><i class="fa-solid fa-fire" style="color: var(--danger-color);"></i> Target Strikes Back &mdash; \(MC \lt P_T \lt P_W\)</h2>
+  <div class="bz-wrap" style="min-height:0; margin-top:10px;"><div class="bz-grid">
+    <div class="bz-card">
+      <div class="bz-hotslot"></div>
+      <div class="bz-priceban w">P<sub>W</sub> = \$450</div>
+      <div class="bz-shot fragment bz-flose" data-fragment-index="2"><img alt="Walmart storefront" src="figures/walmart.webp"><div class="bz-cost">COST<br><span class="c">\$200</span></div></div>
+      <div class="bz-chip lose fragment" data-fragment-index="2"><i class="fa-solid fa-xmark"></i> sells 0</div>
+    </div>
+    <div class="bz-mid">
+      <p class="bz-lead">So Target counters at <strong style="color:#dc2626;">\$449.99</strong>, a penny under Walmart, and steals the whole market right back.</p>
+      <p class="bz-eq fragment fade-up" data-fragment-index="1">\(Q = \color{#1d4ed8}{q_W} + \color{#dc2626}{q_T} = 0 + Q\)</p>
+      <p class="bz-note fragment fade-up" data-fragment-index="2">The leapfrogging has <strong>no floor</strong> until \(P = MC = \$200\): <strong style="color:#dc2626;">the Bertrand paradox.</strong></p>
+      <div class="fragment fade-up" data-fragment-index="2"><img class="bz-shopper" alt="Shopper heading to Target" src="figures/shopper.webp"></div>
+    </div>
+    <div class="bz-card">
+      <div class="bz-hotslot"><span class="bz-hot"><i class="fa-solid fa-fire"></i> HOT SALE</span></div>
+      <div class="bz-priceban t">P<sub>T</sub> = <s>\$499</s> &nbsp;\$449.99</div>
+      <div class="bz-shot fragment bz-fwin" data-fragment-index="2"><img alt="Target storefront" src="figures/target.webp"><div class="bz-cost">COST<br><span class="c">\$200</span></div></div>
+      <div class="bz-chip win fragment" data-fragment-index="2"><i class="fa-solid fa-check"></i> sells all Q</div>
+    </div>
+  </div></div>
+</section>
+
+<section id="bertrand-nash-pmc">
+  <h2><i class="fa-solid fa-circle-nodes" style="color: var(--secondary-color);"></i> Nash Equilibrium with Reaction Curves</h2>
+  <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:22px; align-items:center;">
+    <div>
+      <p style="font-size:12pt; line-height:1.5; margin:0 0 9px;">Each firm&rsquo;s <strong>best response</strong> is to just undercut the rival, until it hits \(MC\). Plot both reaction curves on one graph:</p>
+      <ul style="margin:0;">
+        <li style="font-size:12.5pt; line-height:1.45; margin-bottom:9px;"><strong>Nash equilibrium:</strong> \((\color{#2563eb}{p_W} = MC,\ \color{#b91c1c}{p_T} = MC) = (\$200,\ \$200)\), where the two reaction curves <strong>intersect</strong>.</li>
+        <li style="font-size:12.5pt; line-height:1.45;">There, <strong>neither firm</strong> has an incentive to undercut or change price.</li>
+      </ul>
+      <div class="key-result fragment fade-up" data-fragment-index="1" style="margin-top:12px;">
+        <p style="margin:0; font-size:12pt; line-height:1.45;">On Walkthrough 13.3&rsquo;s demand (\(P = 100 - Q\), \(MC = \$20\)) the Lerner index is \(0.667\) for a monopoly and \(0.444\) for four Cournot firms. Bertrand gives \(L = 0\): <strong>two firms reach the perfectly competitive outcome.</strong></p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 420" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:420px; display:block;" role="img" aria-label="Walmart's and Target's reaction curves in price space, crossing only at 200 dollars each"><g class="bnp-plot"></g></svg></div>
+      <p style="font-size:11pt; color:var(--muted-color); margin:2px 0 0;"><strong style="color:#2563eb;">Walmart&rsquo;s</strong> and <strong style="color:#b91c1c;">Target&rsquo;s</strong> reaction curves cross only at \((MC, MC)\).</p>
+    </div>
+  </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="13" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.52+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var g=root.querySelector('.bnp-plot');
+  var C={W:'#2563eb',T:'#b91c1c',N:'#15803d',AX:'#374151',MU:'#8C8580'};
+  var b=Kit({X0:76,X1:500,Y0:372,Y1:36,XM:1000,YM:1000}), X=b.X, Y=b.Y;
+  function draw(){
+    var h=b.L(76,26,76,372,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(76,372,508,372,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.T(82,20,'Walmart&#8217;s price, '+b.sub('p','W'),C.AX,'start',15)+b.T(508,412,'Target&#8217;s price, '+b.sub('p','T'),C.AX,'end',15);
+    [0,200,400,600,800,1000].forEach(function(t){ h+=b.T(X(t),390,'$'+t,C.MU,'middle',13); if(t>0) h+=b.T(70,Y(t)+5,'$'+t,C.MU,'end',13); });
+    h+=b.seg(0,0,1000,1000,'stroke="'+C.AX+'" stroke-width="1.2" stroke-dasharray="6 5"');
+    h+='<polyline points="'+X(0)+','+Y(200)+' '+X(240)+','+Y(200)+' '+X(1000)+','+Y(960)+'" fill="none" stroke="'+C.W+'" stroke-width="3.4" stroke-linejoin="round"/>';
+    h+='<polyline points="'+X(200)+','+Y(0)+' '+X(200)+','+Y(240)+' '+X(960)+','+Y(1000)+'" fill="none" stroke="'+C.T+'" stroke-width="3.4" stroke-linejoin="round"/>';
+    h+='<circle cx="'+b.f1(X(200))+'" cy="'+b.f1(Y(200))+'" r="7" fill="'+C.N+'" stroke="#fff" stroke-width="2"/>';
+    h+=b.tag(X(250),Y(120),'Nash: ($200, $200)',C.N,'start',14);
+    h+=b.tag(X(640),Y(470),'Walmart&#8217;s reaction curve',C.W,'start',14);
+    h+=b.tag(X(470),Y(800),'Target&#8217;s reaction curve',C.T,'end',14);
+    g.innerHTML=h; }
+  draw();
+})();
+ </script>
+</section>
+
+<section id="bertrand-identical-goods">
+  <h2><i class="fa-solid fa-gas-pump" style="color: var(--secondary-color);"></i> Are the Goods <em>Really</em> Identical?</h2>
+  <div style="display:grid; grid-template-columns:1fr 1.25fr; gap:22px; align-items:center;">
+    <div>
+      <p style="font-size:13pt; line-height:1.55; margin:0 0 10px;">Gasoline is about as <strong>homogeneous</strong> as a product gets, yet two stations a mile apart post <em>different</em> prices and both stay in business:</p>
+      <div style="display:flex; gap:10px; margin:0 0 10px;">
+        <div style="flex:1; background:#fef9f3; border-radius:8px; padding:10px 13px; text-align:center; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:12pt; font-weight:700;">Mobil</p><p style="margin:2px 0 0; font-size:16pt; font-weight:800; color:var(--danger-color);">\$3.20</p></div>
+        <div style="flex:1; background:#ecfdf5; border-radius:8px; padding:10px 13px; text-align:center; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:12pt; font-weight:700;">Speedway</p><p style="margin:2px 0 0; font-size:16pt; font-weight:800; color:#15803d;">\$2.90</p></div>
+      </div>
+      <p class="fragment fade-up" data-fragment-index="1" style="font-size:12.5pt; line-height:1.5; margin:0;">Drivers don&rsquo;t all rush to the cheaper pump: <strong>location and convenience</strong> differentiate even &ldquo;identical&rdquo; gas. Relax homogeneity and price rises above \(MC\). That is <strong>differentiated Bertrand</strong>. <span style="color:var(--accent-color); font-weight:700;">&rarr; &sect;13.5</span></p>
+    </div>
+    <div style="text-align:center;">
+      <img class="figure" alt="Map showing two gas stations on the same road, Mobil at 3.20 dollars and Speedway at 2.90 dollars, circled" src="figures/gas_stations.webp" style="max-width:100%; max-height:368px; border-radius:10px; box-shadow:0 3px 14px rgba(0,0,0,0.16);">
+    </div>
+  </div>
+</section>
+
+<section id="rd-walmart">
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> Demand for Switches at Walmart</h2>
+  <div style="display:grid; grid-template-columns:0.94fr 1.06fr; gap:24px; align-items:center;">
+    <div>
+      <p style="font-size:12.5pt; line-height:1.5; margin:0 0 12px;">Walmart&rsquo;s sales depend <em>entirely</em> on how its price \(P_W\) compares to Target&rsquo;s \(P_T\):</p>
+      <div class="rd-case win fragment fade-up" data-fragment-index="1"><span class="q">\(q_W = Q\)</span><span class="g">if \(P_W \lt P_T\): <strong style="color:#15803d;">undercut</strong>, win the whole market</span></div>
+      <div class="rd-case split fragment fade-up" data-fragment-index="2"><span class="q">\(q_W = \tfrac{Q}{2}\)</span><span class="g">if \(P_W = P_T\): <strong style="color:#9a5a3c;">match</strong>, split the market evenly</span></div>
+      <div class="rd-case zero fragment fade-up" data-fragment-index="3"><span class="q">\(q_W = 0\)</span><span class="g">if \(P_W \gt P_T\): <strong style="color:#A85C5C;">priced above</strong>, sell nothing</span></div>
+    </div>
+    <div style="text-align:center;">
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 372" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;" role="img" aria-label="Walmart's demand: zero above Target's price, half the market at Target's price, the whole market below it"><g class="rdw-plot"></g></svg></div>
+      <p style="font-size:11pt; color:var(--muted-color); margin:3px 0 0; line-height:1.35;">Walmart&rsquo;s demand <strong style="color:#A85C5C;">hugs the axis</strong> when it is pricier, then <strong style="color:#15803d;">jumps to the entire market</strong> the instant it undercuts \(P_T\).</p>
+    </div>
+  </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="13" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.52+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var g=root.querySelector('.rdw-plot');
+  var C={D:'#b9b2ac',MC:'#4b5563',Z:'#A85C5C',M:'#C47B5A',W:'#15803d',AX:'#374151',MU:'#8C8580',GR:'#9ca3af'};
+  var b=Kit({X0:70,X1:490,Y0:322,Y1:34,XM:600,YM:600}), X=b.X, Y=b.Y, pt=350, MC=200, Q=250, Qh=125;
+  function draw(){
+    var h=b.L(70,26,70,322,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(70,322,500,322,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.seg(0,600,600,0,'stroke="'+C.D+'" stroke-width="7" stroke-linecap="round"')+b.T(X(395),Y(250),'market demand',C.MU,'start',13,1);
+    h+=b.seg(0,MC,600,MC,'stroke="'+C.MC+'" stroke-width="2.2"')+b.T(X(600),Y(MC)-7,'MC = $200',C.MC,'end',13,1);
+    h+=b.seg(0,pt,Q,pt,'stroke="'+C.GR+'" stroke-width="1.2" stroke-dasharray="4 3"')+b.seg(Qh,pt,Qh,0,'stroke="'+C.GR+'" stroke-width="1" stroke-dasharray="3 3"')+b.seg(Q,pt,Q,0,'stroke="'+C.GR+'" stroke-width="1" stroke-dasharray="3 3"');
+    h+=b.seg(0,600,0,pt,'stroke="'+C.Z+'" stroke-width="5"');
+    h+=b.seg(Qh,pt,Q,pt,'stroke="'+C.W+'" stroke-width="2.4" stroke-dasharray="5 3" opacity="0.6"');
+    h+=b.seg(Q,pt,600,0,'stroke="'+C.W+'" stroke-width="4.5"');
+    h+='<circle cx="'+b.f1(X(Qh))+'" cy="'+b.f1(Y(pt))+'" r="6.5" fill="'+C.M+'" stroke="#fff" stroke-width="1.5"/>';
+    h+=b.T(X(150),Y(565),'priced above rival',C.Z,'start',13,1)+b.T(X(150),Y(565)+17,'&#8594; sell 0',C.Z,'start',13)+b.arrow(X(150)-6,Y(565)-2,X(0)+7,Y(500),C.Z,1.6);
+    h+=b.T(X(Qh)-10,Y(pt)+20,'match &#8594; Q/2',C.M,'end',13,1);
+    h+=b.T(X(262),Y(95),'undercut &#8594; win Q',C.W,'start',13,1);
+    h+=b.T(64,Y(pt)+5,'p'+'<tspan font-size="13" dy="3">T</tspan>',C.AX,'end',14)+b.T(64,Y(MC)+5,'$200',C.MC,'end',13)+b.T(64,Y(0)+5,'0',C.MU,'end',13);
+    h+=b.T(X(Qh),340,'Q/2',C.MU,'middle',13)+b.T(X(Q),340,'Q',C.MU,'middle',13);
+    h+=b.T(76,20,'Walmart’s price, '+b.sub('p','W'),C.AX,'start',15)+b.T(500,362,'Walmart’s quantity, '+b.sub('q','W'),C.AX,'end',15);
+    g.innerHTML=h; }
+  draw();
+})();
+ </script>
+</section>
+
+<section id="rd-target">
+  <h2><i class="fa-solid fa-chart-line" style="color: var(--secondary-color);"></i> Demand for Switches at Target</h2>
+  <div style="display:grid; grid-template-columns:0.94fr 1.06fr; gap:24px; align-items:center;">
+    <div>
+      <p style="font-size:12.5pt; line-height:1.5; margin:0 0 12px;">By symmetry, Target faces the mirror image: its sales depend on \(P_T\) versus \(P_W\).</p>
+      <div class="rd-case win"><span class="q">\(q_T = Q\)</span><span class="g">if \(P_W \gt P_T\): <strong style="color:#15803d;">undercut</strong> Walmart, win the whole market</span></div>
+      <div class="rd-case split"><span class="q">\(q_T = \tfrac{Q}{2}\)</span><span class="g">if \(P_W = P_T\): <strong style="color:#9a5a3c;">match</strong>, split the market evenly</span></div>
+      <div class="rd-case zero"><span class="q">\(q_T = 0\)</span><span class="g">if \(P_W \lt P_T\): <strong style="color:#A85C5C;">Walmart is cheaper</strong>, sell nothing</span></div>
+      <div class="key-result fragment fade-up" data-fragment-index="1" style="margin-top:12px;">
+        <p style="margin:0; font-size:13pt;">The only way to sell Switches is to <strong>match or beat</strong> your competitor, so <em>both</em> firms feel the pull to cut.</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 520 372" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:340px; display:block;" role="img" aria-label="Target's demand, the mirror image: zero above Walmart's price, the whole market below it"><g class="rdt-plot"></g></svg></div>
+      <p style="font-size:11pt; color:var(--muted-color); margin:3px 0 0;">Same jump, roles reversed: Target wins the market by undercutting \(P_W\).</p>
+    </div>
+  </div>
+ <script>
+(function(){
+  var root=document.currentScript.closest('section');
+
+  function step(root){ var seen={}, n=0; root.querySelectorAll('.fragment.visible').forEach(function(f){ var k=f.getAttribute('data-fragment-index'); if(!seen[k]){ seen[k]=1; n++; } }); return n; }
+  function Kit(c){
+    var k={};
+    k.X=function(v){ return c.X0+(c.X1-c.X0)*v/c.XM; };
+    k.Y=function(v){ return c.Y0-(c.Y0-c.Y1)*v/c.YM; };
+    function f1(v){ return (+v).toFixed(1); } k.f1=f1;
+    k.L=function(x1,y1,x2,y2,st){ return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(x2)+'" y2="'+f1(y2)+'" '+st+'/>'; };
+    k.T=function(x,y,s,col,anc,sz,bold){ return '<text x="'+f1(x)+'" y="'+f1(y)+'" fill="'+col+'" font-size="'+(sz||14)+'" text-anchor="'+(anc||'start')+'"'+(bold?' font-weight="700"':'')+'>'+s+'</text>'; };
+    k.sub=function(b,s,rest){ return b+'<tspan font-size="13" dy="3">'+s+'</tspan>'+(rest?'<tspan dy="-3">'+rest+'</tspan>':''); };
+    k.seg=function(a,b,p,q,st){ return k.L(k.X(a),k.Y(b),k.X(p),k.Y(q),st); };
+    k.dot=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||5)+'" fill="'+col+'"/>'; };
+    k.ring=function(a,b,col,r){ return '<circle cx="'+f1(k.X(a))+'" cy="'+f1(k.Y(b))+'" r="'+(r||6.5)+'" fill="#fff" stroke="'+col+'" stroke-width="2.2"/>'; };
+    k.guide=function(a,b,col){ var st='stroke="'+(col||'#9ca3af')+'" stroke-width="1.2" stroke-dasharray="4 3"'; return k.L(k.X(a),k.Y(b),k.X(a),c.Y0,st)+k.L(c.X0,k.Y(b),k.X(a),k.Y(b),st); };
+    k.arrow=function(x1,y1,x2,y2,col,w,dash){ var d=Math.hypot(x2-x1,y2-y1); if(d<2) return ''; var ux=(x2-x1)/d, uy=(y2-y1)/d, h=9; var bx=x2-ux*h, by=y2-uy*h;
+      return '<line x1="'+f1(x1)+'" y1="'+f1(y1)+'" x2="'+f1(bx)+'" y2="'+f1(by)+'" stroke="'+col+'" stroke-width="'+(w||2.2)+'"'+(dash?' stroke-dasharray="5 3"':'')+'/>'+
+        '<path d="M'+f1(x2)+','+f1(y2)+' L'+f1(bx-uy*5)+','+f1(by+ux*5)+' L'+f1(bx+uy*5)+','+f1(by-ux*5)+' Z" fill="'+col+'"/>'; };
+    k.tag=function(x,y,txt,col,anc,sz){ sz=sz||13; var w=txt.replace(/&#?\w+;/g,'x').replace(/<[^>]+>/g,'').length*sz*0.52+12, x0=(anc==='end'?x-w:anc==='middle'?x-w/2:x);
+      return '<rect x="'+f1(x0)+'" y="'+f1(y-sz)+'" width="'+f1(w)+'" height="'+(sz+7)+'" rx="4" fill="#fff" stroke="'+col+'" stroke-width="1.2"/>'+k.T(x0+6,y+1,txt,col,'start',sz,1); };
+    return k;
+  }
+
+  var g=root.querySelector('.rdt-plot');
+  var C={D:'#b9b2ac',MC:'#4b5563',Z:'#A85C5C',M:'#C47B5A',W:'#15803d',AX:'#374151',MU:'#8C8580',GR:'#9ca3af'};
+  var b=Kit({X0:70,X1:490,Y0:322,Y1:34,XM:600,YM:600}), X=b.X, Y=b.Y, pt=350, MC=200, Q=250, Qh=125;
+  function draw(){
+    var h=b.L(70,26,70,322,'stroke="'+C.AX+'" stroke-width="1.4"')+b.L(70,322,500,322,'stroke="'+C.AX+'" stroke-width="1.4"');
+    h+=b.seg(0,600,600,0,'stroke="'+C.D+'" stroke-width="7" stroke-linecap="round"')+b.T(X(395),Y(250),'market demand',C.MU,'start',13,1);
+    h+=b.seg(0,MC,600,MC,'stroke="'+C.MC+'" stroke-width="2.2"')+b.T(X(600),Y(MC)-7,'MC = $200',C.MC,'end',13,1);
+    h+=b.seg(0,pt,Q,pt,'stroke="'+C.GR+'" stroke-width="1.2" stroke-dasharray="4 3"')+b.seg(Qh,pt,Qh,0,'stroke="'+C.GR+'" stroke-width="1" stroke-dasharray="3 3"')+b.seg(Q,pt,Q,0,'stroke="'+C.GR+'" stroke-width="1" stroke-dasharray="3 3"');
+    h+=b.seg(0,600,0,pt,'stroke="'+C.Z+'" stroke-width="5"');
+    h+=b.seg(Qh,pt,Q,pt,'stroke="'+C.W+'" stroke-width="2.4" stroke-dasharray="5 3" opacity="0.6"');
+    h+=b.seg(Q,pt,600,0,'stroke="'+C.W+'" stroke-width="4.5"');
+    h+='<circle cx="'+b.f1(X(Qh))+'" cy="'+b.f1(Y(pt))+'" r="6.5" fill="'+C.M+'" stroke="#fff" stroke-width="1.5"/>';
+    h+=b.T(X(150),Y(565),'priced above rival',C.Z,'start',13,1)+b.T(X(150),Y(565)+17,'&#8594; sell 0',C.Z,'start',13)+b.arrow(X(150)-6,Y(565)-2,X(0)+7,Y(500),C.Z,1.6);
+    h+=b.T(X(Qh)-10,Y(pt)+20,'match &#8594; Q/2',C.M,'end',13,1);
+    h+=b.T(X(262),Y(95),'undercut &#8594; win Q',C.W,'start',13,1);
+    h+=b.T(64,Y(pt)+5,'p'+'<tspan font-size="13" dy="3">W</tspan>',C.AX,'end',14)+b.T(64,Y(MC)+5,'$200',C.MC,'end',13)+b.T(64,Y(0)+5,'0',C.MU,'end',13);
+    h+=b.T(X(Qh),340,'Q/2',C.MU,'middle',13)+b.T(X(Q),340,'Q',C.MU,'middle',13);
+    h+=b.T(76,20,'Target’s price, '+b.sub('p','T'),C.AX,'start',15)+b.T(500,362,'Target’s quantity, '+b.sub('q','T'),C.AX,'end',15);
+    g.innerHTML=h; }
+  draw();
+})();
+ </script>
+</section>
+
+
 <style>
   .bz-wrap{display:flex; flex-direction:column; justify-content:center; min-height:558px;}
   .bz-grid{display:grid; grid-template-columns:1fr 1.06fr 1fr; gap:18px; align-items:stretch;}
@@ -977,7 +1520,7 @@
   .bz-card{gap:9px; padding:13px 14px;}
   .bz-mid{gap:9px; padding:14px 18px; text-align:center;}
   .bz-hotslot{min-height:21px; display:flex; align-items:center; justify-content:center;}
-  .bz-hot{display:inline-block; background:#dc2626; color:#fff; font-weight:800; font-size:9pt; letter-spacing:.04em; border-radius:6px; padding:2px 9px; transform:rotate(-6deg); box-shadow:0 1px 4px rgba(0,0,0,.3);}
+  .bz-hot{display:inline-block; background:#dc2626; color:#fff; font-weight:800; font-size:10.5pt; letter-spacing:.04em; border-radius:6px; padding:2px 9px; transform:rotate(-6deg); box-shadow:0 1px 4px rgba(0,0,0,.3);}
   .bz-priceban{font-size:19pt; font-weight:800; font-style:italic; line-height:1; text-align:center;}
   .bz-priceban.w{color:#1d4ed8;} .bz-priceban.t{color:#dc2626;}
   .bz-priceban s{opacity:.5; font-weight:700; text-decoration-thickness:2.5px;}
@@ -990,8 +1533,8 @@
   .reveal .slides section .fragment.bz-fwin.visible{box-shadow:0 0 0 4px #10b981, 0 3px 12px rgba(0,0,0,.2);}
   .reveal .slides section .fragment.bz-flose{opacity:1; visibility:inherit;}
   .reveal .slides section .fragment.bz-flose.visible{filter:grayscale(.85); opacity:.48;}
-  .bz-cost{position:absolute; top:8px; right:8px; background:#fff; border:2px solid #374151; border-radius:8px; padding:2px 9px; font-size:8.5pt; font-weight:800; line-height:1.05; text-align:center; color:#374151;}
-  .bz-cost .c{color:#dc2626; font-size:10.5pt;}
+  .bz-cost{position:absolute; top:8px; right:8px; background:#fff; border:2px solid #374151; border-radius:8px; padding:2px 9px; font-size:10.5pt; font-weight:800; line-height:1.05; text-align:center; color:#374151;}
+  .bz-cost .c{color:#dc2626; font-size:11.5pt;}
   .bz-chip{font-size:10.5pt; font-weight:800; padding:4px 14px; border-radius:15px; letter-spacing:.02em;}
   .bz-chip.win{background:rgba(16,185,129,.16); color:#0f766e;}
   .bz-chip.lose{background:#f1f1f1; color:#9ca3af;}
@@ -1144,57 +1687,17 @@
 </section>
 
 
-<section id="bertrand-walmart-cut" data-visibility="hidden">
-  <h2><i class="fa-solid fa-fire" style="color:#dc2626;"></i> Walmart Undercuts: \(MC \lt P_W \lt P_T\)</h2>
-  <div class="bz-wrap"><div class="bz-grid">
-    <div class="bz-card">
-      <div class="bz-hotslot"><span class="bz-hot"><i class="fa-solid fa-fire"></i> HOT SALE</span></div>
-      <div class="bz-priceban w">P<sub>W</sub> = <s>$499</s> &nbsp;$450</div>
-      <div class="bz-shot fragment bz-fwin" data-fragment-index="2"><img alt="Walmart storefront" src="figures/walmart.webp"><div class="bz-cost">COST<br><span class="c">$200</span></div></div>
-      <div class="bz-chip win fragment" data-fragment-index="2"><i class="fa-solid fa-check"></i> sells all Q</div>
-    </div>
-    <div class="bz-mid">
-      <p class="bz-lead">Walmart shaves its price to <strong style="color:#1d4ed8;">$450</strong> &mdash; still above the \(\$200\) cost, just below Target.</p>
-      <p class="bz-eq fragment fade-up" data-fragment-index="1">\(Q = \color{#1d4ed8}{q_W} + \color{#dc2626}{q_T} = Q + 0\)</p>
-      <p class="bz-note fragment fade-up" data-fragment-index="2">The lowest price wins <strong>everyone</strong> &rarr; Walmart takes the whole market.</p>
-      <div class="fragment fade-up" data-fragment-index="2"><img class="bz-shopper" alt="Shopper heading to Walmart" src="figures/shopper.webp" style="transform:scaleX(-1);"></div>
-    </div>
-    <div class="bz-card">
-      <div class="bz-hotslot"></div>
-      <div class="bz-priceban t">P<sub>T</sub> = $499</div>
-      <div class="bz-shot fragment bz-flose" data-fragment-index="2"><img alt="Target storefront" src="figures/target.webp"><div class="bz-cost">COST<br><span class="c">$200</span></div></div>
-      <div class="bz-chip lose fragment" data-fragment-index="2"><i class="fa-solid fa-xmark"></i> sells 0</div>
-    </div>
-  </div></div>
-</section>
+
 
 <style>
   .rd-case{display:flex; align-items:baseline; gap:10px; padding:8px 15px; border-radius:0 9px 9px 0; margin-bottom:10px;}
   .rd-case .q{font-size:14pt;}
   .rd-case .g{color:var(--muted-color); font-size:11pt; line-height:1.35;}
-  .rd-case.win{border-left:5px solid #10b981; background:rgba(16,185,129,.09);}
-  .rd-case.split{border-left:5px solid #f59e0b; background:rgba(245,158,11,.10);}
-  .rd-case.zero{border-left:5px solid #dc2626; background:rgba(220,38,38,.07);}
+  .rd-case.win{border-left:4px solid #6A8E6B; background:#ecfdf5;}
+  .rd-case.split{border-left:4px solid #C47B5A; background:#fef9f3;}
+  .rd-case.zero{border-left:4px solid #A85C5C; background:#f8f6f3;}
 </style>
-<section id="bertrand-nash-pmc" data-visibility="hidden">
-  <h2><i class="fa-solid fa-circle-nodes" style="color: var(--accent-color);"></i> Nash Equilibrium with Reaction Curves</h2>
-  <div style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:22px; align-items:center;">
-    <div>
-      <p style="font-size:12pt; line-height:1.5; margin:0 0 9px;">Each firm's <strong>best response</strong> is to just undercut the rival &mdash; until it hits \(MC\). Plot both reaction curves on one graph:</p>
-      <ul style="margin:0;">
-        <li style="font-size:12.5pt; line-height:1.45; margin-bottom:9px;"><strong>Nash equilibrium:</strong> \((\color{#2563eb}{p_w} = MC,\ \color{#b91c1c}{p_t} = MC) = (\$200,\ \$200)\) &mdash; where the two reaction curves <strong>intersect</strong>.</li>
-        <li style="font-size:12.5pt; line-height:1.45;">There, <strong>neither firm</strong> has an incentive to undercut or change price.</li>
-      </ul>
-      <div class="key-result fragment fade-up" data-fragment-index="1" style="margin-top:12px;">
-        <p style="margin:0; font-size:12pt;">The <em>same</em> demand gives Lerner \(L = 0.667\) (monopoly) and \(0.444\) (Cournot \(N{=}4\)), but \(L = 0\) here &mdash; <strong>two firms reach the perfectly competitive limit.</strong></p>
-      </div>
-    </div>
-    <div style="text-align:center;">
-      <svg id="rc-bertrand-svg" viewBox="0 0 500 470" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:392px; display:block;"></svg>
-      <p style="font-size:10.5pt; color:var(--muted-color); margin:2px 0 0;"><strong style="color:#2563eb;">Walmart's</strong> and <strong style="color:#b91c1c;">Target's</strong> reaction curves cross only at \((MC, MC)\).</p>
-    </div>
-  </div>
-</section>
+
 
 <section id="bertrand-too-good">
   <h2><i class="fa-solid fa-circle-question" style="color: var(--secondary-color);"></i> The Bertrand Paradox &mdash; Three Assumptions</h2>
@@ -1975,7 +2478,7 @@
 <section id="boba-ladder">
   <h2><i class="fa-solid fa-ranking-star" style="color: var(--secondary-color);"></i> The Boba Ladder &mdash; Who Gets the \$6,010?</h2>
   <p style="font-size:12.5pt; line-height:1.45; margin:0 0 6px;">At \(P = MC = \$1\), boba creates \$6,010 a day of total surplus. Each set of rules splits the <strong>same pie</strong> among buyers, shops, and loss.</p>
-  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 900 312" width="100%" style="max-height:330px; display:block;"><defs><pattern id="bl-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#f3e3e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#A85C5C" stroke-width="2.4"/></pattern></defs><g transform="translate(250,6)"><rect x="0" y="0" width="16" height="13" style="fill:#6A8E6B;"/><text x="22" y="11" style="font-size:12.5px; fill:#374151;">consumer surplus</text><rect x="160" y="0" width="16" height="13" style="fill:#C47B5A;"/><text x="182" y="11" style="font-size:12.5px; fill:#374151;">shops&rsquo; profit</text><rect x="300" y="0" width="16" height="13" style="fill:url(#bl-hatch); stroke:#A85C5C;"/><text x="322" y="11" style="font-size:12.5px; fill:#374151;">deadweight loss</text><text x="640" y="11" text-anchor="end" style="font-size:12.5px; fill:var(--muted-color);">every bar = $6,010</text></g><g class="fragment fade-up" data-fragment-index="1"><text x="238" y="53" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Monopoly / cartel</text><text x="238" y="70" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$10.50 &middot; 316.5 cups</text><g transform="translate(250,36)"><rect x="0.0" y="0" width="160.0" height="38" style="fill:#6A8E6B;"/><text x="80.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$1,503</text><rect x="160.0" y="0" width="320.0" height="38" style="fill:#C47B5A;"/><text x="320.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$3,005</text><rect x="480.0" y="0" width="160.0" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="560.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$1,503</text></g></g><g class="fragment fade-up" data-fragment-index="2"><text x="238" y="121" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Cournot, 2 shops</text><text x="238" y="138" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$7.33 &middot; 422 cups</text><g transform="translate(250,104)"><rect x="0.0" y="0" width="284.4" height="38" style="fill:#6A8E6B;"/><text x="142.2" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,671</text><rect x="284.4" y="0" width="284.4" height="38" style="fill:#C47B5A;"/><text x="426.7" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,671</text><rect x="568.9" y="0" width="71.1" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="604.4" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$668</text></g></g><g class="fragment fade-up" data-fragment-index="3"><text x="238" y="189" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Stackelberg</text><text x="238" y="206" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$5.75 &middot; 474.75 cups</text><g transform="translate(250,172)"><rect x="0.0" y="0" width="360.0" height="38" style="fill:#6A8E6B;"/><text x="180.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$3,381</text><rect x="360.0" y="0" width="240.0" height="38" style="fill:#C47B5A;"/><text x="480.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,254</text><rect x="600.0" y="0" width="40.0" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="620.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$376</text></g></g><g class="fragment fade-up" data-fragment-index="4"><text x="238" y="257" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Bertrand</text><text x="238" y="274" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$1 &middot; 633 cups</text><g transform="translate(250,240)"><rect x="0.0" y="0" width="640.0" height="38" style="fill:#6A8E6B;"/><text x="320.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$6,010</text></g></g></svg></div>
+  <div class="mathjax_ignore tex2jax_ignore"><svg viewBox="0 0 900 312" width="100%" style="max-height:330px; display:block;"><defs><pattern id="bl-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#f3e3e3"/><line x1="0" y1="0" x2="0" y2="7" stroke="#A85C5C" stroke-width="2.4"/></pattern></defs><g transform="translate(250,6)"><rect x="0" y="0" width="16" height="13" style="fill:#6A8E6B;"/><text x="22" y="11" style="font-size:12.5px; fill:#374151;">consumer surplus</text><rect x="160" y="0" width="16" height="13" style="fill:#C47B5A;"/><text x="182" y="11" style="font-size:12.5px; fill:#374151;">shops&rsquo; profit</text><rect x="300" y="0" width="16" height="13" style="fill:url(#bl-hatch); stroke:#A85C5C;"/><text x="322" y="11" style="font-size:12.5px; fill:#374151;">deadweight loss</text><text x="640" y="11" text-anchor="end" style="font-size:12.5px; fill:var(--muted-color);">every bar = $6,010</text></g><g class="fragment fade-up" data-fragment-index="1"><text x="238" y="53" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Monopoly / cartel</text><text x="238" y="70" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$10.50 &middot; 316.5 cups</text><g transform="translate(250,36)"><rect x="0.0" y="0" width="160.0" height="38" style="fill:#6A8E6B;"/><text x="80.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$1,503</text><rect x="160.0" y="0" width="320.0" height="38" style="fill:#C47B5A;"/><text x="320.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$3,005</text><rect x="480.0" y="0" width="160.0" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="560.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$1,503</text></g></g><g class="fragment fade-up" data-fragment-index="2"><text x="238" y="121" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Cournot, 2 shops</text><text x="238" y="138" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$7.33 &middot; 422 cups</text><g transform="translate(250,104)"><rect x="0.0" y="0" width="284.4" height="38" style="fill:#6A8E6B;"/><text x="142.2" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,671</text><rect x="284.4" y="0" width="284.4" height="38" style="fill:#C47B5A;"/><text x="426.7" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,671</text><rect x="568.9" y="0" width="71.1" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="604.4" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$668</text></g></g><g class="fragment fade-up" data-fragment-index="3"><text x="238" y="189" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Stackelberg (Ch 14)</text><text x="238" y="206" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$5.75 &middot; 474.75 cups</text><g transform="translate(250,172)"><rect x="0.0" y="0" width="360.0" height="38" style="fill:#6A8E6B;"/><text x="180.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$3,381</text><rect x="360.0" y="0" width="240.0" height="38" style="fill:#C47B5A;"/><text x="480.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$2,254</text><rect x="600.0" y="0" width="40.0" height="38" style="fill:url(#bl-hatch); stroke:#A85C5C; stroke-width:1.5;"/><text x="620.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#7a3434; paint-order:stroke; stroke:#fff; stroke-width:4px;">$376</text></g></g><g class="fragment fade-up" data-fragment-index="4"><text x="238" y="257" text-anchor="end" style="font-size:15px; font-weight:700; fill:#374151;">Bertrand</text><text x="238" y="274" text-anchor="end" style="font-size:13px; fill:var(--muted-color);">$1 &middot; 633 cups</text><g transform="translate(250,240)"><rect x="0.0" y="0" width="640.0" height="38" style="fill:#6A8E6B;"/><text x="320.0" y="24" text-anchor="middle" style="font-size:13.5px; font-weight:700; fill:#fff;">$6,010</text></g></g></svg></div>
   <div class="fragment fade-up" data-fragment-index="5" style="display:grid; grid-template-columns:1.5fr 1fr; gap:12px; margin-top:6px;">
     <div class="key-result" style="margin:0; padding:8px 14px;"><p style="margin:0; font-size:12pt; line-height:1.4;">Down the ladder the price falls, buyers keep more, and the deadweight loss shrinks to zero. Profit is biggest at the top &mdash; which is why shops <strong>try</strong> to collude.</p></div>
     <div style="background:#f8f6f3; border-left:4px solid var(--line-color); border-radius:8px; padding:7px 12px;"><p style="margin:0; font-size:11pt; line-height:1.4;"><strong>Not on this ladder:</strong> differentiated Bertrand (\$5 and \$4; profit \$1,600 and \$900) uses its own demand, so it does not share this \$6,010.</p></div>
@@ -2091,7 +2594,7 @@
   </div>
   <div class="fragment fade-up" data-fragment-index="2" style="margin-top:16px;">
     <p style="margin:0 0 6px; font-size:13pt; font-weight:700; color:var(--accent-color);">Part 2 &middot; Oligopoly: the boba ladder (\(P = 19.99 - 0.03\,Q\), \(MC = \$1\))</p>
-    <div style="display:flex; align-items:stretch; gap:6px;"><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #A85C5C; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#A85C5C;">\$10.50</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Monopoly / cartel</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">cartel won&rsquo;t hold: each wants 237.4 cups</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #C47B5A; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#C47B5A;">\$7.33</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Cournot</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">add shops: \$4.80 at 4, \$2.73 at 10</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #6B8BA4; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#6B8BA4;">\$5.75</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Stackelberg</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">leader 316.5, follower 158.25</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #6A8E6B; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#6A8E6B;">\$1</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Bertrand</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">two shops reach P = MC</p></div></div>
+    <div style="display:flex; align-items:stretch; gap:6px;"><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #A85C5C; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#A85C5C;">\$10.50</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Monopoly / cartel</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">cartel won&rsquo;t hold: each wants 237.4 cups</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #C47B5A; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#C47B5A;">\$7.33</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Cournot</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">add shops: \$4.80 at 4, \$2.73 at 10</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #6B8BA4; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#6B8BA4;">\$5.75</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Stackelberg (Ch 14)</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">one shop first: leader 316.5, follower 158.25</p></div><div style="display:flex; align-items:center; font-size:18pt; color:var(--line-color);">&rarr;</div><div style="flex:1; background:#fff; border:1px solid var(--line-color); border-top:5px solid #6A8E6B; border-radius:8px; padding:9px 10px; text-align:center;"><p style="margin:0; font-size:20pt; font-weight:800; color:#6A8E6B;">\$1</p><p style="margin:0; font-size:12.5pt; font-weight:700;">Bertrand</p><p style="margin:3px 0 0; font-size:11.5pt; color:var(--muted-color); line-height:1.3;">two shops reach P = MC</p></div></div>
     <p style="margin:8px 0 0; font-size:12pt; color:var(--muted-color);">Differentiated drinks (Kung Fu Tea advertises): \$5 and \$4, a markup that lasts even with price competition.</p>
   </div>
   <div class="key-result fragment fade-up" data-fragment-index="3" style="margin:16px 0 0; padding:10px 16px;"><p style="margin:0; font-size:13pt; line-height:1.4;">The number of firms is not the whole story. <strong>What</strong> they choose (cups or price), <strong>when</strong> they choose, and <strong>how different</strong> the drinks are set the price.</p></div>

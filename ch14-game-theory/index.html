@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=8b24e285310b67b8d802d7d74b5a6307">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=6f5ebd87aa09dad65d37ad08f66edbc4">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -110,7 +110,7 @@
         Game Theory
       </h1>
       <p style="font-size: 14pt; color: var(--muted-color); font-style: italic; max-width: 520px; margin-top: 4px;">
-        Chapter 13 <em>solved</em> oligopoly without ever saying what an <strong style="color: var(--text-color);">equilibrium</strong> is. Meanwhile, two pricing algorithms that never meet raise rents in lockstep &mdash; no memo, no cartel. This chapter builds the machinery behind both: players, strategies, payoffs, and the one profile nobody wants to walk away from.
+        Whenever your best move depends on what someone else does, you are in a <strong style="color: var(--text-color);">game</strong>. Two pricing algorithms that never meet can raise rents in lockstep &mdash; no memo, no cartel. This chapter builds the machinery: players, strategies, payoffs, and the one profile nobody wants to walk away from.
       </p>
 
       <div style="margin-top: auto; padding-bottom: 15px;">
@@ -159,29 +159,29 @@
 </section>
 
 <section id="bridge">
-  <h2><i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--secondary-color);"></i> Ch 13 Solved the Games. Ch 14 Asks Why.</h2>
+  <h2><i class="fa-solid fa-arrow-right-arrow-left" style="color: var(--secondary-color);"></i> One Toolkit, Many Uses</h2>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
     <div style="background: #f8f6f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--secondary-color);">
-      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Ch 13 &mdash; the answers</p>
+      <p style="font-size: 13pt; color: var(--secondary-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">The toolkit &mdash; this chapter</p>
       <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
-        <li>Cournot: symmetric output \(q^{\ast} = \frac{a-c}{(N+1)b}\)</li>
-        <li>Bertrand: \(P = MC\) with two firms</li>
-        <li>Stackelberg: leader rides the reaction curve</li>
-        <li>We wrote FOCs and solved &mdash; but never asked <em>why</em> these are the right solutions</li>
+        <li>A <strong>game</strong>: players, strategies, payoffs</li>
+        <li><strong>Best response</strong> and <strong>dominant strategy</strong></li>
+        <li><strong>Nash equilibrium</strong>: nobody wants to change alone</li>
+        <li>Games played <strong>again and again</strong>, and games played <strong>in turn</strong></li>
       </ul>
     </div>
     <div style="background: #fef9f3; border-radius: 10px; padding: 18px 22px; border-left: 4px solid var(--accent-color);">
-      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Ch 14 &mdash; the machinery</p>
+      <p style="font-size: 13pt; color: var(--accent-color); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin: 0;">Where it is used &mdash; oligopoly</p>
       <ul style="font-size: 13pt; line-height: 1.6; margin-top: 8px;">
-        <li>What <em>is</em> an equilibrium? &rarr; <strong>Nash equilibrium</strong></li>
-        <li>Cournot = Nash of the quantity game</li>
-        <li>Stackelberg = <strong>subgame-perfect</strong> equilibrium of the sequential game</li>
-        <li>And: when can rivals sustain the cartel they all want?</li>
+        <li><strong>Cournot</strong>: firms choose quantities, a game</li>
+        <li><strong>Bertrand</strong>: firms choose prices, a game</li>
+        <li>A <strong>cartel</strong>: a prisoner&rsquo;s dilemma</li>
+        <li>A threat to fight a new entrant: is it believed?</li>
       </ul>
     </div>
   </div>
   <div class="key-result" style="margin-top: 14px;">
-    <p style="margin: 0;"><strong>One backbone, made explicit.</strong> A <strong>game</strong> is players, strategies, and payoffs that depend on the entire profile of choices. An <strong>equilibrium</strong> is a profile from which no player wants to deviate unilaterally &mdash; the <strong>Nash equilibrium</strong> (Nash 1950; Nobel 1994). Ch 13's solutions were all Nash equilibria; we just hadn't named the concept.</p>
+    <p style="margin: 0;"><strong>One idea runs through it.</strong> A <strong>game</strong> is players, strategies, and payoffs that depend on everyone&rsquo;s choices. A <strong>Nash equilibrium</strong> is a set of choices nobody wants to change alone (Nash 1950; Nobel 1994). Every oligopoly model is a game solved this way.</p>
   </div>
 </section>
 
@@ -618,7 +618,7 @@
 
  <section id="kungfu-husky-solve">
   <h2><i class="fa-solid fa-mug-hot" style="color: var(--success-color);"></i> Same Structure, Real Money</h2>
-  <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Ch 13&rsquo;s boba duopoly, discretised: \(P = 19.99 - 0.03Q\), \(MC = \$1\). <strong>Restrict</strong> \(= \) cartel half \((q=158)\); <strong>Flood</strong> \(= \) Cournot \((q=211)\). Cell \(=\) (<span style="color:var(--accent-color); font-weight:700;">Kung Fu Tea</span>, <span style="color:var(--secondary-color); font-weight:700;">Husky Boba</span>) profit.</p>
+  <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Two boba shops, same demand \(P = 19.99 - 0.03Q\), \(MC = \$1\). Each makes either <strong>Restrict</strong> (158 cups) or <strong>Flood</strong> (211 cups). Cell \(=\) (<span style="color:var(--accent-color); font-weight:700;">Kung Fu Tea</span>, <span style="color:var(--secondary-color); font-weight:700;">Husky Boba</span>) profit.</p>
   <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:24px; align-items:center;">
    <div style="text-align:center;">
     <table style="border-collapse:separate; border-spacing:0; margin:0 auto; font-size:12pt;">
@@ -638,7 +638,7 @@
      <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>Flood wins in both columns:</strong> \(\$1{,}671 &gt; \$1{,}503\) and \(\$1{,}336 &gt; \$1{,}251\). Dominant &mdash; and by symmetry for Husky too.</p>
     </div>
     <div class="fragment key-result" data-fragment-index="2" style="margin:0;">
-     <p style="margin:0;">Nash: <strong>(Flood, Flood) = \(\$1{,}336\) each</strong> &mdash; below the \(\$1{,}503\) they&rsquo;d earn colluding at Restrict, because neither can trust the other. <strong>Cournot competition is a prisoner&rsquo;s dilemma</strong> &mdash; the same \((5,3,1,0)\) you just solved, with dollar signs.</p>
+     <p style="margin:0;">Nash: <strong>(Flood, Flood) = \(\$1{,}336\) each</strong> &mdash; below the \(\$1{,}503\) they&rsquo;d earn colluding at Restrict, because neither can trust the other. <strong>Two shops choosing output face a prisoner&rsquo;s dilemma</strong> &mdash; the same \((5,3,1,0)\) you just solved, with dollar signs.</p>
     </div>
    </div>
   </div>
@@ -2479,23 +2479,23 @@
       <p style="margin: 0; font-size: 12pt;"><strong>Nash equilibrium (&sect;14.1&ndash;14.2).</strong> A profile where no one deviates unilaterally. The PD shows it need not be efficient; BoS shows it need not be unique. IESDS is a sound search.</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Mixed-strategy NE (&sect;14.3).</strong> When no pure NE exists, randomize so the rival is indifferent. Nash (1950): every finite game has one.</p>
+      <p style="margin: 0; font-size: 12pt;"><strong>Coordination games.</strong> Several equilibria (where to meet, which side of the road). Talk helps here, because interests mostly line up.</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>SPNE (&sect;14.4).</strong> Backward induction on the tree rules out non-credible threats. Stackelberg <em>is</em> the SPNE of the sequential quantity game.</p>
+      <p style="margin: 0; font-size: 12pt;"><strong>SPNE (&sect;14.4).</strong> Backward induction on the tree rules out non-credible threats. A threat to fight an entrant is believed only if fighting pays when the time comes.</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Repeated games (&sect;14.5).</strong> Finite horizons unravel; infinite ones sustain cooperation iff \(\delta \geq \frac{T-R}{T-P}\). Cournot cartel: \(\delta^{\ast} = 9/17\).</p>
+      <p style="margin: 0; font-size: 12pt;"><strong>Repeated games (&sect;14.5).</strong> Finite horizons unravel; infinite ones sustain cooperation iff \(\delta \geq \frac{T-R}{T-P}\). Target vs. Best Buy: \(\delta^{\ast} = 1/2\).</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--secondary-color);">
       <p style="margin: 0; font-size: 12pt;"><strong>Folk theorem.</strong> For \(\delta\) near \(1\), almost any individually rational payoff is sustainable &mdash; selection (focal points, Q-learning) decides which.</p>
     </div>
     <div style="background: #f8f6f3; border-radius: 8px; padding: 10px 16px; border-left: 4px solid var(--accent-color);">
-      <p style="margin: 0; font-size: 12pt;"><strong>Reach (&sect;14.6).</strong> Entry deterrence, OPEC+, algorithmic collusion, spectrum auctions, R&amp;D races &mdash; with level-\(k\)/QRE for real deviations.</p>
+      <p style="margin: 0; font-size: 12pt;"><strong>Reach (&sect;14.6).</strong> Entry deterrence, OPEC+, algorithmic collusion, Google&rsquo;s default deals.</p>
     </div>
   </div>
   <div class="key-result" style="margin-top: 12px;">
-    <p style="margin: 0; font-size: 12.5pt;"><strong>One idea, escalating.</strong> Every concept is &ldquo;no player wants to deviate&rdquo; applied to a richer setting &mdash; pure, then mixed, then sequential, then repeated. The streaming four-firm constellation sat <em>at</em> static Nash, not above it: differentiation, not active collusion, explains the cluster. The thread retires here.</p>
+    <p style="margin: 0; font-size: 12.5pt;"><strong>One idea, escalating.</strong> Every concept is &ldquo;no player wants to deviate&rdquo; applied to a richer setting &mdash; one shot, then repeated, then in turn. The same test solves every oligopoly model: Cournot, Bertrand and the cartel are all games.</p>
   </div>
 </section>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=f815940950c6f41eb757ce433633dfca">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=89e3a99553d48fa247295edbeee80da6">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -746,23 +746,27 @@
 </section>
 
  <section id="kungfu-husky-solve">
-  <h2><i class="fa-solid fa-mug-hot" style="color: var(--success-color);"></i> Same Structure, Real Money</h2>
-  <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Two boba shops, same demand \(P = 19.99 - 0.03Q\), \(MC = \$1\). Each makes either <strong>Restrict</strong> (158 cups) or <strong>Flood</strong> (211 cups). Cell \(=\) (<span style="color:var(--accent-color); font-weight:700;">Kung Fu Tea</span>, <span style="color:var(--secondary-color); font-weight:700;">Husky Boba</span>) profit.</p>
+  <h2><i class="fa-solid fa-bottle-water" style="color: var(--success-color);"></i> Same Structure, Real Money</h2>
+  <p style="font-size:12pt; color:var(--muted-color); margin:0 0 10px; line-height:1.45;">Coke and Pepsi sell in Boston: demand \(P = 18 - 0.2Q\), \(Q\) in thousands of cases a week, \(MC = \$6\) a case. Each ships <strong>Restrict</strong> (15 thousand cases) or <strong>Flood</strong> (20). Cell \(=\) (<span style="color:#0d8a74; font-weight:700;">Coke</span>, <span style="color:#b00d59; font-weight:700;">Pepsi</span>) profit, <strong>$ thousands a week</strong>.</p>
   <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:24px; align-items:center;">
    <div style="text-align:center;">
-    <table class="gmtx pm" style="font-size:15pt;">
-<tr><td></td><td></td><td colspan="2" class="gm-top">Husky Boba</td></tr>
-<tr><td></td><td></td><td class="gm-colh">Restrict</td><td class="gm-colh">Flood</td></tr>
-<tr><td rowspan="2" class="gm-side" style="writing-mode:vertical-rl; transform:rotate(180deg);">Kung Fu Tea</td><td class="gm-rowh">Restrict</td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,503</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,503</span></td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,251</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,671</span></td></tr>
-<tr><td class="gm-rowh">Flood</td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,671</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,251</span><span class="fragment" data-fragment-index="1" style="position:absolute; inset:3px; border:3px solid #D9534F; border-radius:6px;"></span></td><td class="gm-cell" style="line-height:1.35; font-size:15pt;"><span style="color:var(--accent-color); font-weight:700;">$1,336</span><br><span style="color:var(--secondary-color); font-weight:700;">$1,336</span><span class="fragment" data-fragment-index="1" style="position:absolute; inset:3px; border:3px solid #D9534F; border-radius:6px;"></span><span class="fragment" data-fragment-index="2" style="position:absolute; inset:0; background:rgba(106,142,107,0.32);"></span></td></tr>
+    <table class="gmtx pm" style="font-size:18pt;">
+<tr><td></td><td></td><td colspan="2" class="gm-top">Pepsi</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Restrict 15</td><td class="gm-colh">Flood 20</td></tr>
+<tr><td rowspan="2" class="gm-side">Coke</td><td class="gm-rowh">Restrict 15</td><td class="gm-cell"><span style="position:relative; display:inline-block;"><span class="gm-me">90</span><span class="gm-sep">,</span><span class="gm-pair">90</span></span></td><td class="gm-cell"><span style="position:relative; display:inline-block;"><span class="gm-me">75</span><span class="gm-sep">,</span><span class="gm-pair fragment br-u" data-fragment-index="2">100</span></span></td></tr>
+<tr><td class="gm-rowh">Flood 20</td><td class="gm-cell"><span style="position:relative; display:inline-block;"><span class="gm-me fragment br-u" data-fragment-index="1">100</span><span class="gm-sep">,</span><span class="gm-pair">75</span></span></td><td class="gm-cell"><span style="position:relative; display:inline-block;"><span class="gm-me fragment br-u" data-fragment-index="1">80</span><span class="gm-sep">,</span><span class="gm-pair fragment br-u" data-fragment-index="2">80</span><span class="gm-ring fragment" data-fragment-index="3" style="border-color:#2E8B57;"></span></span></td></tr>
 </table>
+    <p style="font-size:10.5pt; color:var(--muted-color); margin:8px 0 0;">Restrict: \(Q = 30\), \(P = \$12\) &middot; one floods: \(Q = 35\), \(P = \$11\) &middot; both flood: \(Q = 40\), \(P = \$10\)</p>
    </div>
    <div style="display:flex; flex-direction:column; gap:10px;">
-    <div class="fragment" data-fragment-index="1" style="background:#fef9f3; border-radius:9px; padding:10px 16px; border-left:4px solid var(--accent-color);">
-     <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>Flood wins in both columns:</strong> \(\$1{,}671 &gt; \$1{,}503\) and \(\$1{,}336 &gt; \$1{,}251\). Dominant &mdash; and by symmetry for Husky too.</p>
+    <div class="fragment" data-fragment-index="1" style="background:#eef7f5; border-radius:9px; padding:10px 16px; border-left:4px solid #0d8a74;">
+     <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>Coke:</strong> Flood wins in both columns: \(100 &gt; 90\) and \(80 &gt; 75\). Dominant.</p>
     </div>
-    <div class="fragment key-result" data-fragment-index="2" style="margin:0;">
-     <p style="margin:0;">Nash: <strong>(Flood, Flood) = \(\$1{,}336\) each</strong>, below the \(\$1{,}503\) from both Restricting. <strong>A prisoner&rsquo;s dilemma in output</strong>: the same \((5,3,1,0)\) ranking, in dollars.</p>
+    <div class="fragment" data-fragment-index="2" style="background:#fbeef4; border-radius:9px; padding:10px 16px; border-left:4px solid #b00d59;">
+     <p style="font-size:12pt; margin:0; line-height:1.45;"><strong>Pepsi:</strong> the same in both rows, by symmetry. Dominant.</p>
+    </div>
+    <div class="fragment key-result" data-fragment-index="3" style="margin:0;">
+     <p style="margin:0;">Nash: <strong>(Flood, Flood) = $80k each</strong>, below the $90k from both restricting. <strong>A prisoner&rsquo;s dilemma in output</strong>: the same \((5,3,1,0)\) ranking, in dollars.</p>
     </div>
    </div>
   </div>

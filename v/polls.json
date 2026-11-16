@@ -50,10 +50,12 @@
   "ch13p1-econ2316-poll-1": "13p1-4",
   "ch13p2-econ2316-poll-2": "13p2-2",
   "ch13p2-econ2316-poll-cartel": "13p2-1",
-  "ch14-econ2316-cashbox": "14-5",
-  "ch14-econ2316-guess-1": "14-3",
-  "ch14-econ2316-guess-2": "14-4",
+  "ch14-econ2316-cashbox": "14-7",
+  "ch14-econ2316-guess-1": "14-5",
+  "ch14-econ2316-guess-2": "14-6",
   "ch14-econ2316-poll-3": "14-2",
+  "ch14-econ2316-poll-4": "14-4",
+  "ch14-econ2316-splitsteal": "14-3",
   "ch14-econ2316-squid": "14-1",
   "ch15-econ2316-poll-1": "15-1",
   "ch15-econ2316-poll-2": "15-2",
@@ -149,13 +151,21 @@
   ],
   "14-3": [
    "ch14-game-theory",
-   "ch14-econ2316-guess-1"
+   "ch14-econ2316-splitsteal"
   ],
   "14-4": [
    "ch14-game-theory",
-   "ch14-econ2316-guess-2"
+   "ch14-econ2316-poll-4"
   ],
   "14-5": [
+   "ch14-game-theory",
+   "ch14-econ2316-guess-1"
+  ],
+  "14-6": [
+   "ch14-game-theory",
+   "ch14-econ2316-guess-2"
+  ],
+  "14-7": [
    "ch14-game-theory",
    "ch14-econ2316-cashbox"
   ],

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=dcbdc4a4aa94fb4da702dfae565bf415">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=8b8c04b388a425a839cecae1733387c9">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -835,8 +835,8 @@
  <h2><i class="fa-solid fa-list-ul" style="color: var(--accent-color);"></i> The Prisoner&rsquo;s Dilemma Is Everywhere</h2>
  <p style="font-size:13pt; color:var(--muted-color); margin:0 0 12px;">Each side does best alone by the selfish move; together they end up worse off.</p>
  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:14px;">
-  <div style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; border-top:4px solid var(--danger-color);"><img src="figures/biz_gas_price_sign.jpg" alt="A Wawa gas station price sign" style="display:block; width:100%; height:150px; object-fit:cover;"><div style="padding:9px 12px;"><p style="margin:0 0 3px; font-size:13pt; font-weight:800; color:var(--danger-color);">Price wars</p><p style="margin:0; font-size:12pt; line-height:1.4;">Stations across the road undercut each other; margins vanish.</p></div></div>
-  <div style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; border-top:4px solid var(--secondary-color);"><img src="figures/biz_airline.webp" alt="A British Airways plane taking off" style="display:block; width:100%; height:150px; object-fit:cover;"><div style="padding:9px 12px;"><p style="margin:0 0 3px; font-size:13pt; font-weight:800; color:var(--secondary-color);">Fare wars</p><p style="margin:0; font-size:12pt; line-height:1.4;">Airlines match every sale on a route; fares fall for both.</p></div></div>
+  <div style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; border-top:4px solid var(--danger-color);"><img src="figures/biz_gas_two_stations.jpg" alt="Citgo and Mobil price signs side by side" style="display:block; width:100%; height:150px; object-fit:cover;"><div style="padding:9px 12px;"><p style="margin:0 0 3px; font-size:13pt; font-weight:800; color:var(--danger-color);">Price wars</p><p style="margin:0; font-size:12pt; line-height:1.4;">Stations across the road undercut each other; margins vanish.</p></div></div>
+  <div style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; border-top:4px solid var(--secondary-color);"><img src="figures/biz_jetblue.jpg" alt="JetBlue planes at the gate" style="display:block; width:100%; height:150px; object-fit:cover;"><div style="padding:9px 12px;"><p style="margin:0 0 3px; font-size:13pt; font-weight:800; color:var(--secondary-color);">Fare wars</p><p style="margin:0; font-size:12pt; line-height:1.4;">Airlines match every sale on a route; fares fall for both.</p></div></div>
   <div style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; border-top:4px solid var(--accent-color);"><img src="figures/Coke-vs-Pepsi.jpeg" alt="Coke and Pepsi cans fencing" style="display:block; width:100%; height:150px; object-fit:cover;"><div style="padding:9px 12px;"><p style="margin:0 0 3px; font-size:13pt; font-weight:800; color:var(--accent-color);">Ad wars</p><p style="margin:0; font-size:12pt; line-height:1.4;">Both spend to hold share; the ads cancel out.</p></div></div>
   <div style="background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; border-top:4px solid var(--success-color);"><img src="figures/biz_trawlers.jpg" alt="Two fishing trawlers in port at S&egrave;te, France" style="display:block; width:100%; height:150px; object-fit:cover;"><div style="padding:9px 12px;"><p style="margin:0 0 3px; font-size:13pt; font-weight:800; color:var(--success-color);">Overfishing</p><p style="margin:0; font-size:12pt; line-height:1.4;">Each boat catches more; the stock collapses (Ch 17).</p></div></div>
  </div>
@@ -894,90 +894,93 @@
 
 
 <section id="gb-nash">
- <h2><i class="fa-solid fa-scale-balanced" style="color:var(--secondary-color);"></i> Nash Equilibria and Commitment</h2>
+ <h2><i class="fa-solid fa-scale-balanced" style="color:var(--secondary-color);"></i> Commitment: Removing Your Own Option</h2>
+ <p style="font-size:13pt; color:var(--muted-color); margin:0 0 10px;">The real show, on our numbers. Nick moves first by <strong>talking</strong>. Cell = (Nick, Ibrahim).</p>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:center;">
   <div style="text-align:center;"><table class="gmtx pm" style="font-size:18pt;">
-<tr><td></td><td></td><td colspan="2" class="gm-top">Partner</td></tr>
+<tr><td></td><td></td><td colspan="2" class="gm-top">Ibrahim</td></tr>
 <tr><td></td><td></td><td class="gm-colh">Steal</td><td class="gm-colh">Split</td></tr>
-<tr><td rowspan="2" class="gm-side">You</td><td class="gm-rowh">Steal</td><td class="gm-cell" style="background:#fbf1d9 !important; position:relative;"><span style="position:relative; display:block;"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">0</span></span><span style="position:absolute; top:2px; right:5px; font-size:8pt; color:#B8860B; font-weight:800;">NE</span></td><td class="gm-cell" style="background:#fbf1d9 !important; position:relative;"><span style="position:relative; display:block;"><span class="gm-me">10</span><span class="gm-sep">,</span><span class="gm-pair">0</span></span><span style="position:absolute; top:2px; right:5px; font-size:8pt; color:#B8860B; font-weight:800;">NE</span></td></tr>
-<tr><td class="gm-rowh">Split</td><td class="gm-cell" style="background:#fbf1d9 !important; position:relative;"><span style="position:relative; display:block;"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">10</span></span><span style="position:absolute; top:2px; right:5px; font-size:8pt; color:#B8860B; font-weight:800;">NE</span></td><td class="gm-cell"><span class="gm-me">5</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td></tr>
+<tr><td rowspan="2" class="gm-side">Nick</td><td class="gm-rowh">Steal</td><td class="gm-cell" style="position:relative;"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">0</span><span class="fragment" data-fragment-index="2" style="position:absolute; inset:0; border:3px solid #E0A329; pointer-events:none;"></span></td><td class="gm-cell" style="position:relative;"><span class="gm-me">10</span><span class="gm-sep">,</span><span class="gm-pair">0</span><span class="fragment" data-fragment-index="2" style="position:absolute; inset:0; border:3px solid #E0A329; pointer-events:none;"></span></td></tr>
+<tr><td class="gm-rowh fragment strike" data-fragment-index="1">Split</td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">10</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">5</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td></tr>
 </table>
-   <p style="font-size:12pt; color:var(--muted-color); margin-top:8px;">Counting ties, all <strong>three gold cells are Nash equilibria</strong>: in each, the player with 0 can&rsquo;t do better by switching.</p>
+   <p style="font-size:11.5pt; color:var(--muted-color); margin-top:8px;">Without talk: three Nash cells counting ties; (Steal, Steal) = 0 each is where people land.</p>
   </div>
-  <div style="display:flex; flex-direction:column; gap:10px;">
-   <div class="fragment fade-up" data-fragment-index="1" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--secondary-color); background:#eef3f6;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--secondary-color);">Does talking help?</p><p style="margin:0; font-size:13pt; line-height:1.5;">Not on its own: a promise to split costs nothing to break. Steal is never worse, so (Steal, Steal) = 0 each is where people land.</p></div>
-   <div class="fragment fade-up" data-fragment-index="2" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--accent-color); background:#fdf6ec;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-color);">Commitment on the real show</p><p style="margin:0; font-size:13pt; line-height:1.5;">On <em>Golden Balls</em>, Nick told Ibrahim: &ldquo;I will <strong>steal</strong>, and share the money with you after the show.&rdquo; That removed Ibrahim&rsquo;s reason to steal. Ibrahim split &hellip; and Nick split too: <strong>&pound;6,800 each</strong> of &pound;13,600.</p></div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="border-radius:10px; padding:9px 14px; border-left:4px solid #C9302C; background:#fdf2f0;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#C9302C;">Step 1 &mdash; Nick removes an option</p><p style="margin:0; font-size:13pt; line-height:1.45;">&ldquo;I&rsquo;m going to <strong>steal</strong>, no matter what.&rdquo; His Split row is gone (if Ibrahim believes him).</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="border-radius:10px; padding:9px 14px; border-left:4px solid #E0A329; background:#fdf8ec;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#B7791F;">Step 2 &mdash; Ibrahim&rsquo;s choice changes</p><p style="margin:0; font-size:13pt; line-height:1.45;">Against Steal, Ibrahim gets <strong>0 either way</strong>. Add &ldquo;I&rsquo;ll share after,&rdquo; and only Split can pay. <strong>Ibrahim splits.</strong></p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="border-radius:10px; padding:9px 14px; border-left:4px solid var(--success-color); background:#eef6ef;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--success-color);">Step 3 &mdash; what happened</p><p style="margin:0; font-size:13pt; line-height:1.45;">Nick split too: <strong>&pound;6,800 each</strong> of &pound;13,600. Giving up an option made both better off.</p></div>
   </div>
  </div>
 </section>
 
 <section id="dominance-recall">
-  <h2><i class="fa-solid fa-scale-unbalanced" style="color: var(--secondary-color);"></i> Strict vs Weak Dominance &mdash; Side by Side</h2>
-  <p style="font-size:12pt; margin:0 0 10px; line-height:1.45;"><strong>Strict:</strong> \(u_i(s_i, s_{-i}) &gt; u_i(s_i', s_{-i})\) for <em>every</em> \(s_{-i}\). &nbsp;&nbsp;<strong>Weak:</strong> \(\geq\) for every \(s_{-i}\), with \(&gt;\) somewhere. <span style="color:var(--muted-color);">The difference: is a tie allowed?</span></p>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:start;">
-
-    <div>
-      <p style="font-size:11.5pt; font-weight:800; color:var(--danger-color); text-transform:uppercase; letter-spacing:1.5px; margin:0 0 6px; text-align:center;">Strict &mdash; the Prisoner&rsquo;s Dilemma</p>
-      <table class="pm" style="font-size:12.5pt; margin:0 auto;">
-       <tr><th></th><th>Cooperate</th><th>Defect</th></tr>
-       <tr><th style="color:var(--muted-color);">Cooperate</th><td style="padding:9px 15px; text-align:center;">3, 3</td><td style="padding:9px 15px; text-align:center;">0, 5</td></tr>
-       <tr><th>Defect</th><td style="padding:9px 15px; text-align:center; background:#fdeaea; font-weight:700;">5, 0</td><td style="padding:9px 15px; text-align:center; background:#fdeaea; font-weight:700;">1, 1</td></tr>
-      </table>
-      <p style="font-size:11.5pt; line-height:1.45; margin:9px 0 0;">vs <em>Cooperate</em>: \(5 &gt; 3\). vs <em>Defect</em>: \(1 &gt; 0\). Better in <strong>both</strong> columns: <strong>Cooperate is strictly dominated</strong>.</p>
-    </div>
-
-    <div>
-      <p style="font-size:11.5pt; font-weight:800; color:var(--accent-color); text-transform:uppercase; letter-spacing:1.5px; margin:0 0 6px; text-align:center;">Weak &mdash; Split or Steal</p>
-      <table class="pm" style="font-size:12.5pt; margin:0 auto;">
-       <tr><th></th><th>Split</th><th>Steal</th></tr>
-       <tr><th style="color:var(--muted-color);">Split</th><td style="padding:9px 15px; text-align:center;">5, 5</td><td style="padding:9px 15px; text-align:center;">0, 10</td></tr>
-       <tr><th>Steal</th><td style="padding:9px 15px; text-align:center; background:#fdeaea; font-weight:700;">10, 0</td><td style="padding:9px 15px; text-align:center; background:#f2efe9; font-weight:700;">0, 0</td></tr>
-      </table>
-      <p style="font-size:11.5pt; line-height:1.45; margin:9px 0 0;">vs <em>Split</em>: \(10 &gt; 5\). vs <em>Steal</em>: \(0 = 0\), a <strong style="color:var(--accent-color);">tie</strong>. <strong>Steal only <em>weakly</em> dominates Split.</strong></p>
-    </div>
-
-  </div>
-  <div class="key-result" style="margin-top:11px; padding:9px 16px;">
-    <p style="margin:0; font-size:12pt;">Deleting <strong>strictly</strong> dominated strategies is <em>safe</em>: no Nash equilibrium is lost, and order doesn&rsquo;t matter. <strong>Weak deletion has neither guarantee.</strong> Split or Steal: focal \((\text{Steal}, \text{Steal}) = 0\) each, but the tie leaves room for Nick&rsquo;s gambit.</p>
-  </div>
+ <h2><i class="fa-solid fa-scale-unbalanced" style="color: var(--secondary-color);"></i> Strict vs Weak Dominance &mdash; Is a Tie Allowed?</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start;">
+  <div style="background:#fbfaf7; border-radius:14px; padding:12px 14px; border:1px solid #ece9e2;">
+    <p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#2E8B57; text-align:center; font-size:12pt;">Strict &mdash; Uber vs Lyft</p>
+    <div style="text-align:center;"><table class="gmtx pm" style="font-size:16pt;">
+<tr><td></td><td></td><td colspan="2" class="gm-top">Rival</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Hold</td><td class="gm-colh">Cut</td></tr>
+<tr><td rowspan="2" class="gm-side">You</td><td class="gm-rowh">Cut</td><td class="gm-cell"><span class="gm-me">5</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td><td class="gm-cell"><span class="gm-me">1</span><span class="gm-sep">,</span><span class="gm-pair">1</span></td></tr>
+<tr><td class="gm-rowh">Hold</td><td class="gm-cell"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">3</span></td><td class="gm-cell"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td></tr>
+</table></div>
+    <div style="display:grid; grid-template-columns:auto 1fr 1fr; gap:6px; align-items:center; margin-top:8px;"><span style="font-size:11.5pt; color:var(--muted-color);">column by column:</span><div class="fragment fade-up" data-fragment-index="1" style="background:#eef6ef; border:2px solid #2E8B57; border-radius:8px; padding:6px 8px; text-align:center; font-size:13pt; font-weight:700; color:#2E8B57;">5 &gt; 3 &#10003;</div><div class="fragment fade-up" data-fragment-index="2" style="background:#eef6ef; border:2px solid #2E8B57; border-radius:8px; padding:6px 8px; text-align:center; font-size:13pt; font-weight:700; color:#2E8B57;">1 &gt; 0 &#10003;</div></div>
+    <div class="fragment fade-up" data-fragment-index="3" style="margin-top:8px; background:#eef6ef; border-radius:8px; padding:7px 12px; text-align:center;"><p style="margin:0; font-size:13.5pt; font-weight:800; color:#2E8B57;">Cut wins in EVERY column: strictly dominant</p></div>
+   </div>
+  <div style="background:#fbfaf7; border-radius:14px; padding:12px 14px; border:1px solid #ece9e2;">
+    <p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#B7791F; text-align:center; font-size:12pt;">Weak &mdash; Split or Steal</p>
+    <div style="text-align:center;"><table class="gmtx pm" style="font-size:16pt;">
+<tr><td></td><td></td><td colspan="2" class="gm-top">Rival</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Split</td><td class="gm-colh">Steal</td></tr>
+<tr><td rowspan="2" class="gm-side">You</td><td class="gm-rowh">Steal</td><td class="gm-cell"><span class="gm-me">10</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td><td class="gm-cell"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td></tr>
+<tr><td class="gm-rowh">Split</td><td class="gm-cell"><span class="gm-me">5</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell"><span class="gm-me">0</span><span class="gm-sep">,</span><span class="gm-pair">10</span></td></tr>
+</table></div>
+    <div style="display:grid; grid-template-columns:auto 1fr 1fr; gap:6px; align-items:center; margin-top:8px;"><span style="font-size:11.5pt; color:var(--muted-color);">column by column:</span><div class="fragment fade-up" data-fragment-index="4" style="background:#eef6ef; border:2px solid #2E8B57; border-radius:8px; padding:6px 8px; text-align:center; font-size:13pt; font-weight:700; color:#2E8B57;">10 &gt; 5 &#10003;</div><div class="fragment fade-up" data-fragment-index="5" style="background:#fdf8ec; border:2px solid #B7791F; border-radius:8px; padding:6px 8px; text-align:center; font-size:13pt; font-weight:700; color:#B7791F;">0 = 0 &nbsp;tie</div></div>
+    <div class="fragment fade-up" data-fragment-index="6" style="margin-top:8px; background:#fdf8ec; border-radius:8px; padding:7px 12px; text-align:center;"><p style="margin:0; font-size:13.5pt; font-weight:800; color:#B7791F;">Steal wins once and TIES once: only weakly dominant</p></div>
+   </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="7" style="margin-top:10px; padding:8px 16px;"><p style="margin:0; font-size:12.5pt;"><strong>Strict:</strong> better in every column. <strong>Weak:</strong> never worse, better somewhere. Deleting <strong>strictly</strong> dominated strategies never loses a Nash equilibrium; weak deletion can. That tie is the room Nick used.</p></div>
 </section>
 
 <section>
 <section id="iesds-intro">
- <h2><i class="fa-solid fa-filter-circle-xmark" style="color:#7c3aed;"></i> Iterated Elimination &mdash; Putting the Pieces Together</h2>
- <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:22px; align-items:start;">
-  <div>
-   <div style="background:#f3effc; border-radius:10px; padding:11px 17px; border-left:4px solid #7c3aed; margin-bottom:10px;">
-    <p style="font-size:12.5pt; margin:0; line-height:1.45;"><strong style="color:#7c3aed;">Strictly dominated</strong> (mirror of <em>dominant</em>): some other strategy beats \(s_i\) against <em>every</em> rival choice, \(u_i(s_i', s_{-i}) &gt; u_i(s_i, s_{-i})\) for all \(s_{-i}\). Never a best response, so never played.</p>
-   </div>
-   <div style="display:flex; flex-direction:column; gap:7px;">
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--secondary-color);"><p style="font-size:11.5pt; margin:0; line-height:1.4;"><strong>1.</strong> Delete every strictly dominated strategy.</p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--secondary-color);"><p style="font-size:11.5pt; margin:0; line-height:1.4;"><strong>2.</strong> A <em>smaller</em> game remains, and everyone knows it.</p></div>
-    <div style="background:#f8f6f3; border-radius:8px; padding:8px 15px; border-left:4px solid var(--secondary-color);"><p style="font-size:11.5pt; margin:0; line-height:1.4;"><strong>3.</strong> A survivor may be dominated <em>now</em>. Repeat until nothing goes.</p></div>
-   </div>
-   <div class="key-result" style="margin-top:10px; padding:9px 16px;">
-    <p style="margin:0; font-size:12pt;">That loop is <strong>iterated elimination of strictly dominated strategies (IESDS)</strong>. It never deletes a Nash equilibrium; if one profile survives, it is <strong>the unique NE</strong>. Order doesn&rsquo;t matter.</p>
-   </div>
-  </div>
-  <div>
-   <p style="font-size:10.5pt; text-transform:uppercase; letter-spacing:2px; color:var(--muted-color); font-weight:700; margin:0 0 8px; text-align:center;">Where we are</p>
-   <div style="display:flex; flex-direction:column; gap:5px;">
-     <div style="background:#f8f6f3; color:var(--muted-color); border-radius:8px; padding:6px 12px; text-align:center; font-size:11.5pt; font-weight:700;">A game: players, strategies, payoffs</div>
-     <div style="text-align:center; color:#c9c3bb; font-size:11pt; line-height:1;">&#9660;</div>
-     <div style="background:#f8f6f3; color:var(--muted-color); border-radius:8px; padding:6px 12px; text-align:center; font-size:11.5pt; font-weight:700;">Prisoner&rsquo;s dilemma: the trap</div>
-     <div style="text-align:center; color:#c9c3bb; font-size:11pt; line-height:1;">&#9660;</div>
-     <div style="background:#f8f6f3; color:var(--muted-color); border-radius:8px; padding:6px 12px; text-align:center; font-size:11.5pt; font-weight:700;">Dominance: never play a dominated strategy</div>
-     <div style="text-align:center; color:#c9c3bb; font-size:11pt; line-height:1;">&#9660;</div>
-     <div style="background:#f8f6f3; color:var(--muted-color); border-radius:8px; padding:6px 12px; text-align:center; font-size:11.5pt; font-weight:700;">Best response: \(BR_i(s_{-i})\)</div>
-     <div style="text-align:center; color:#c9c3bb; font-size:11pt; line-height:1;">&#9660;</div>
-     <div style="background:#7c3aed; color:#fff; border-radius:8px; padding:7px 12px; text-align:center; font-size:12pt; font-weight:800;">IESDS: delete, shrink, repeat</div>
-   </div>
-   <div style="background:#fef9f3; border-radius:9px; padding:10px 15px; border-left:4px solid var(--accent-color); margin-top:12px;">
-    <p style="font-size:11.5pt; margin:0; line-height:1.45;">Each round needs one more layer of <em>&ldquo;everyone knows that everyone knows&hellip;&rdquo;</em></p>
-   </div>
+ <h2><i class="fa-solid fa-scissors" style="color: var(--accent-color);"></i> Iterated Elimination &mdash; Delete, Shrink, Repeat</h2>
+ <div style="background:#eef3f6; border-radius:10px; padding:11px 18px; border-left:4px solid var(--secondary-color); margin-bottom:14px;"><p style="margin:0; font-size:14pt;">A strategy is <strong>strictly dominated</strong> if another strategy beats it <strong>in every column</strong>. Nobody rational plays it.</p></div>
+ <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+  <div class="fragment fade-up" data-fragment-index="1" style="background:#fdf2f0; border-radius:12px; padding:14px 16px; border-top:4px solid var(--danger-color); text-align:center;"><p style="margin:0; font-size:30pt; font-weight:800; color:var(--danger-color);">1</p><p style="margin:0 0 6px; font-size:15pt; font-weight:800; color:var(--danger-color);">Delete</p><p style="margin:0; font-size:13pt; line-height:1.45;">Cross out every strategy that loses <strong>everywhere</strong>.</p></div>
+  <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:12px; padding:14px 16px; border-top:4px solid var(--accent-color); text-align:center;"><p style="margin:0; font-size:30pt; font-weight:800; color:var(--accent-color);">2</p><p style="margin:0 0 6px; font-size:15pt; font-weight:800; color:var(--accent-color);">Shrink</p><p style="margin:0; font-size:13pt; line-height:1.45;">The game is smaller now, and <strong>everyone knows it</strong>.</p></div>
+  <div class="fragment fade-up" data-fragment-index="3" style="background:#eef3f6; border-radius:12px; padding:14px 16px; border-top:4px solid var(--secondary-color); text-align:center;"><p style="margin:0; font-size:30pt; font-weight:800; color:var(--secondary-color);">3</p><p style="margin:0 0 6px; font-size:15pt; font-weight:800; color:var(--secondary-color);">Repeat</p><p style="margin:0; font-size:13pt; line-height:1.45;">In the smaller game, something new may lose everywhere. Go again.</p></div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="4" style="margin-top:14px;"><p style="margin:0; font-size:14pt;">If <strong>one cell</strong> survives, it is the <strong>only Nash equilibrium</strong>. Try it next.</p></div>
+</section>
+<section data-visibility="hidden" id="iesds-poll-reveal">
+ <h2><i class="fa-solid fa-chart-column" style="color: var(--accent-color);"></i> Poll Results</h2>
+ <div class="poll-results-chart" data-poll-id="ch14-econ2316-poll-4" style="display: flex; align-items: flex-end; justify-content: space-around; height: 190px; margin: 20px 0 40px 0; border-bottom: 2px solid #ddd; padding: 0 40px;"></div>
+ <div style="background: #ecfdf5; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--success-color);">
+  <p style="font-size: 14pt; margin:0;"><strong>Answer: C, Starbucks Large.</strong> Against every Dunkin&rsquo; size, Starbucks earns more with Medium: <strong>6 &gt; 2, 2 &gt; 1, 5 &gt; 0</strong>. Nothing else is beaten everywhere yet.</p>
+ </div>
+</section>
+<section data-visibility="hidden" id="iesds-solve">
+ <h2><i class="fa-solid fa-scissors" style="color: var(--accent-color);"></i> Delete, Shrink, Repeat</h2>
+ <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:16px; align-items:center;">
+  <div style="text-align:center;"><table class="gmtx pm" style="font-size:14pt;">
+<tr><td></td><td></td><td colspan="3" class="gm-top">Starbucks</td></tr>
+<tr><td></td><td></td><td class="gm-colh">Small</td><td class="gm-colh">Medium</td><td class="gm-colh">Large</td></tr>
+<tr><td rowspan="3" class="gm-side">Dunkin&rsquo;</td><td class="gm-rowh">Small</td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">2</span><span class="gm-sep">,</span><span class="gm-pair">6</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">2</span></td></tr>
+<tr><td class="gm-rowh">Medium</td><td class="gm-cell" style="position:relative;"><span class="gm-me">4</span><span class="gm-sep">,</span><span class="gm-pair">4</span><span class="fragment" data-fragment-index="4" style="position:absolute; inset:0; background:rgba(106,142,107,0.30); border:2.5px solid #6A8E6B;"></span></td><td class="gm-cell fragment strike" data-fragment-index="3"><span class="gm-me">4</span><span class="gm-sep">,</span><span class="gm-pair">2</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">2</span><span class="gm-sep">,</span><span class="gm-pair">1</span></td></tr>
+<tr><td class="gm-rowh">Large</td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">2</span><span class="gm-sep">,</span><span class="gm-pair">3</span></td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">1</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">4</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td></tr>
+</table><p style="font-size:11pt; color:var(--muted-color); margin-top:8px;">Crossed out = strictly dominated in that round.</p></div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--secondary-color); background:#eef3f6;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--secondary-color);">Round 1 &mdash; Starbucks</p><p style="margin:0; font-size:13pt;">Large loses to Medium in every row &rarr; <strong>delete Large</strong>.</p></div>
+   <div class="fragment fade-up" data-fragment-index="2" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--accent-color); background:#fef9f3;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-color);">Round 2 &mdash; Dunkin&rsquo;</p><p style="margin:0; font-size:13pt;">Now Medium beats Small (4 &gt; 3, 4 &gt; 2) and Large (4 &gt; 2, 4 &gt; 1) &rarr; <strong>delete both</strong>.</p></div>
+   <div class="fragment fade-up" data-fragment-index="3" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--secondary-color); background:#eef3f6;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--secondary-color);">Round 3 &mdash; Starbucks</p><p style="margin:0; font-size:13pt;">Facing Dunkin&rsquo; Medium: Small 4 &gt; Medium 2 &rarr; <strong>delete Medium</strong>.</p></div>
+   <div class="fragment fade-up" data-fragment-index="4" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--success-color); background:#eef6ef;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--success-color);">Survivor</p><p style="margin:0; font-size:13.5pt;"><strong>(Medium, Small) = (4, 4)</strong>: the unique Nash equilibrium.</p></div>
   </div>
  </div>
 </section>
+</section>
+
+<section>
 <section id="iesds-poll">
  <h2><i class="fa-solid fa-square-poll-vertical" style="color: var(--accent-color);"></i> Poll &mdash; What Can You Delete First?</h2>
  <div style="display:grid; grid-template-columns:1.05fr 0.95fr; gap:20px; align-items:center;">
@@ -1002,28 +1005,26 @@
   </div>
  </div>
 </section>
-<section id="iesds-poll-reveal">
- <h2><i class="fa-solid fa-chart-column" style="color: var(--accent-color);"></i> Poll Results</h2>
- <div class="poll-results-chart" data-poll-id="ch14-econ2316-poll-4" style="display: flex; align-items: flex-end; justify-content: space-around; height: 190px; margin: 20px 0 40px 0; border-bottom: 2px solid #ddd; padding: 0 40px;"></div>
- <div style="background: #ecfdf5; border-radius: 10px; padding: 14px 22px; border-left: 4px solid var(--success-color);">
-  <p style="font-size: 14pt; margin:0;"><strong>Answer: C, Starbucks Large.</strong> Against every Dunkin&rsquo; size, Starbucks earns more with Medium: <strong>6 &gt; 2, 2 &gt; 1, 5 &gt; 0</strong>. Nothing else is beaten everywhere yet.</p>
- </div>
-</section>
-<section id="iesds-solve">
- <h2><i class="fa-solid fa-scissors" style="color: var(--accent-color);"></i> Delete, Shrink, Repeat</h2>
- <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:16px; align-items:center;">
-  <div style="text-align:center;"><table class="gmtx pm" style="font-size:14pt;">
+<section id="iesds-answer">
+ <h2><i class="fa-solid fa-chart-column" style="color: var(--accent-color);"></i> The Answer &mdash; and the Rest of the Game</h2>
+ <div style="display:grid; grid-template-columns:0.8fr 1.2fr; gap:20px; align-items:start;">
+  <div>
+   <div class="poll-results-chart" data-poll-id="ch14-econ2316-poll-4" style="display:flex; align-items:flex-end; justify-content:space-around; height:170px; margin:10px 0 34px 0; border-bottom:2px solid #ddd; padding:0 18px;"></div>
+   <div style="background:#ecfdf5; border-radius:10px; padding:11px 16px; border-left:4px solid var(--success-color);"><p style="margin:0; font-size:13.5pt;"><strong>Answer: C, Starbucks Large.</strong> Medium beats it in every row: 6 &gt; 2, 2 &gt; 1, 5 &gt; 0.</p></div>
+  </div>
+  <div style="text-align:center;"><table class="gmtx pm" style="font-size:13.5pt;">
 <tr><td></td><td></td><td colspan="3" class="gm-top">Starbucks</td></tr>
 <tr><td></td><td></td><td class="gm-colh">Small</td><td class="gm-colh">Medium</td><td class="gm-colh">Large</td></tr>
 <tr><td rowspan="3" class="gm-side">Dunkin&rsquo;</td><td class="gm-rowh">Small</td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">2</span><span class="gm-sep">,</span><span class="gm-pair">6</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">3</span><span class="gm-sep">,</span><span class="gm-pair">2</span></td></tr>
 <tr><td class="gm-rowh">Medium</td><td class="gm-cell" style="position:relative;"><span class="gm-me">4</span><span class="gm-sep">,</span><span class="gm-pair">4</span><span class="fragment" data-fragment-index="4" style="position:absolute; inset:0; background:rgba(106,142,107,0.30); border:2.5px solid #6A8E6B;"></span></td><td class="gm-cell fragment strike" data-fragment-index="3"><span class="gm-me">4</span><span class="gm-sep">,</span><span class="gm-pair">2</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">2</span><span class="gm-sep">,</span><span class="gm-pair">1</span></td></tr>
 <tr><td class="gm-rowh">Large</td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">2</span><span class="gm-sep">,</span><span class="gm-pair">3</span></td><td class="gm-cell fragment strike" data-fragment-index="2"><span class="gm-me">1</span><span class="gm-sep">,</span><span class="gm-pair">5</span></td><td class="gm-cell fragment strike" data-fragment-index="1"><span class="gm-me">4</span><span class="gm-sep">,</span><span class="gm-pair">0</span></td></tr>
-</table><p style="font-size:11pt; color:var(--muted-color); margin-top:8px;">Crossed out = strictly dominated in that round.</p></div>
-  <div style="display:flex; flex-direction:column; gap:8px;">
-   <div class="fragment fade-up" data-fragment-index="1" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--secondary-color); background:#eef3f6;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--secondary-color);">Round 1 &mdash; Starbucks</p><p style="margin:0; font-size:13pt;">Large loses to Medium in every row &rarr; <strong>delete Large</strong>.</p></div>
-   <div class="fragment fade-up" data-fragment-index="2" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--accent-color); background:#fef9f3;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-color);">Round 2 &mdash; Dunkin&rsquo;</p><p style="margin:0; font-size:13pt;">Now Medium beats Small (4 &gt; 3, 4 &gt; 2) and Large (4 &gt; 2, 4 &gt; 1) &rarr; <strong>delete both</strong>.</p></div>
-   <div class="fragment fade-up" data-fragment-index="3" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--secondary-color); background:#eef3f6;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--secondary-color);">Round 3 &mdash; Starbucks</p><p style="margin:0; font-size:13pt;">Facing Dunkin&rsquo; Medium: Small 4 &gt; Medium 2 &rarr; <strong>delete Medium</strong>.</p></div>
-   <div class="fragment fade-up" data-fragment-index="4" style="border-radius:10px; padding:10px 15px; border-left:4px solid var(--success-color); background:#eef6ef;"><p style="margin:0 0 4px; font-size:10.5pt; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--success-color);">Survivor</p><p style="margin:0; font-size:13.5pt;"><strong>(Medium, Small) = (4, 4)</strong>: the unique Nash equilibrium.</p></div>
+</table>
+   <div style="display:flex; flex-direction:column; gap:5px; margin-top:8px; text-align:left;">
+     <p class="fragment fade-up" data-fragment-index="1" style="margin:0; font-size:12.5pt;"><b style="color:var(--secondary-color);">1 &middot; Starbucks:</b> Large loses to Medium in every row &rarr; out.</p>
+     <p class="fragment fade-up" data-fragment-index="2" style="margin:0; font-size:12.5pt;"><b style="color:var(--accent-color);">2 &middot; Dunkin&rsquo;:</b> Medium now beats Small and Large &rarr; both out.</p>
+     <p class="fragment fade-up" data-fragment-index="3" style="margin:0; font-size:12.5pt;"><b style="color:var(--secondary-color);">3 &middot; Starbucks:</b> facing Medium, Small 4 &gt; Medium 2 &rarr; Medium out.</p>
+     <p class="fragment fade-up" data-fragment-index="4" style="margin:0; font-size:13pt;"><b style="color:var(--success-color);">Survivor (Medium, Small) = (4, 4):</b> the only Nash equilibrium.</p>
+    </div>
   </div>
  </div>
 </section>
@@ -1084,6 +1085,48 @@
    <p style="margin:0; font-size:12pt;"><strong>Why didn&rsquo;t you all guess 1?</strong> Rung \(k\) needs <em>&ldquo;everyone knows that everyone knows&hellip;&rdquo;</em> \(k\) times: <strong>common knowledge of rationality</strong>, behind every equilibrium here. Doubting that others climb all the way is rational.</p>
   </div>
  </section>
+
+
+ <section id="beauty-r2">
+ <span data-poll-voting data-poll-id="ch14-econ2316-guess-2" style="display:none"></span>
+  <h2><i class="fa-solid fa-rotate-right" style="color:#7c3aed;"></i> Round 2 &mdash; Play It Again, Now With Education</h2>
+  <div style="display:grid; grid-template-columns:1.12fr 0.88fr; gap:22px; align-items:stretch; margin-top:4px;">
+   <div style="background:#f8f6f3; border-radius:16px; padding:16px 20px; border:1px solid #ece9e2;">
+    <p style="font-size:10.5pt; font-weight:800; letter-spacing:2px; color:var(--muted-color); margin:0 0 8px;">SAME RULES, ONE CHANGE</p>
+    <p style="font-size:15pt; line-height:1.5; margin:0 0 12px;">Whole number <strong>1&ndash;100</strong>; closest to <strong style="color:#7c3aed;">&#8532;</strong> of the class average wins <strong>$5</strong>.</p>
+    <div style="background:#fef9f3; border-radius:10px; padding:10px 14px; border-left:4px solid var(--accent-color);"><p style="margin:0; font-size:13.5pt; line-height:1.5;">Now everyone has seen <strong>Round 1</strong> and <strong>the ladder</strong>. Payoffs did not move; <strong>beliefs</strong> did.</p></div>
+   </div>
+   <div style="background:#f3effc; border-radius:16px; padding:14px 18px; border:1px solid #ddd2f5; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+    <p style="font-size:10.5pt; font-weight:800; letter-spacing:2px; color:#7c3aed; margin:0 0 10px;">YOUR ROUND 2 GUESS</p>
+    <input id="bg2-initials" type="text" maxlength="4" placeholder="initials" autocomplete="off" class="bg-ini">
+    <input id="bg2-guess" type="number" min="1" max="100" step="1" inputmode="numeric" placeholder="1&ndash;100" class="bg-num">
+    <button class="bg-submit" onclick="bgBid(2)">Lock it in</button>
+    <p id="bg2-status" style="font-size:11pt; color:var(--muted-color); min-height:16px; margin:10px 0 0;"></p>
+    <div id="bg2-counter" class="bg-counter"><i class="fa-solid fa-users" style="color:var(--secondary-color);"></i> 0 guesses in</div>
+   </div>
+  </div>
+ </section>
+
+ <section id="beauty-compare">
+  <h2><i class="fa-solid fa-arrow-trend-down" style="color:#7c3aed;"></i> Round 1 vs. Round 2 &mdash; Beliefs Move, Not Payoffs</h2>
+  <div class="bg-controls">
+   <button onclick="bgCompare()">&#8635; Load both rounds</button>
+   <span id="bg-cmp-msg">&mdash; click to compare &mdash;</span>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
+   <div>
+    <p class="bg-panel-h">Round 1 &mdash; before the ladder</p>
+    <svg id="bg-hist-1" viewBox="0 0 500 268" style="width:100%;"></svg>
+   </div>
+   <div>
+    <p class="bg-panel-h">Round 2 &mdash; after the ladder</p>
+    <svg id="bg-hist-2" viewBox="0 0 500 268" style="width:100%;"></svg>
+   </div>
+  </div>
+  <div id="bg-cmp-note" class="key-result" style="margin-top:10px; padding:9px 16px; display:none;"><p style="margin:0; font-size:12pt;"></p></div>
+ </section>
+
+
 
 </section>
 
@@ -1184,52 +1227,6 @@
 </div>
  </section>
 
-<section>
-
- <section id="beauty-r2">
- <span data-poll-voting data-poll-id="ch14-econ2316-guess-2" style="display:none"></span>
-  <h2><i class="fa-solid fa-rotate-right" style="color:#7c3aed;"></i> Round 2 &mdash; Play It Again, Now With Education</h2>
-  <div style="display:grid; grid-template-columns:1.28fr 0.72fr; gap:22px; align-items:center;">
-   <div>
-    <div style="background:#f3effc; border-radius:12px; padding:14px 20px; border-left:5px solid #7c3aed; margin-bottom:11px;">
-     <p style="font-size:14pt; margin:0; line-height:1.5;">Same rules &mdash; whole number <strong>1&ndash;100</strong>, closest to <strong style="color:#7c3aed;">&#8532;</strong> of the class average takes the <strong>$5</strong>. Only change: everyone has seen the ladder and Round 1&rsquo;s histogram.</p>
-    </div>
-    <div style="background:#fef9f3; border-radius:10px; padding:11px 18px; border-left:4px solid var(--accent-color);">
-     <p style="font-size:12pt; margin:0; line-height:1.45;">Payoffs and strategies did not move. <strong>Beliefs</strong> did &mdash; and beliefs are an input to equilibrium.<br><span style="color:var(--accent-color); font-weight:700;">What changed:</span> <strong>repetition</strong> (escape route 3), <strong>education</strong> (the ladder), and next, a leader&rsquo;s <em>advice</em>.</p>
-    </div>
-   </div>
-   <div style="text-align:center; background:#fbfaf7; border-radius:14px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,0.08); border:1px solid #ece9e2;">
-    <p style="font-size:12.5pt; font-weight:700; margin:0 0 9px; color:var(--primary-color);">Your guess &darr;</p>
-    <input id="bg2-initials" type="text" maxlength="4" placeholder="initials" autocomplete="off" class="bg-ini">
-    <input id="bg2-guess" type="number" min="1" max="100" step="1" inputmode="numeric" placeholder="1&ndash;100" class="bg-num">
-    <button class="bg-submit" onclick="bgBid(2)">Lock it in</button>
-    <p id="bg2-status" style="font-size:11pt; color:var(--muted-color); min-height:16px; margin:10px 0 0;"></p>
-    <div id="bg2-counter" class="bg-counter"><i class="fa-solid fa-users" style="color:var(--secondary-color);"></i> 0 guesses in</div>
-   </div>
-  </div>
-  
- </section>
-
- <section id="beauty-compare">
-  <h2><i class="fa-solid fa-arrow-trend-down" style="color:#7c3aed;"></i> Round 1 vs. Round 2 &mdash; Beliefs Move, Not Payoffs</h2>
-  <div class="bg-controls">
-   <button onclick="bgCompare()">&#8635; Load both rounds</button>
-   <span id="bg-cmp-msg">&mdash; click to compare &mdash;</span>
-  </div>
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-   <div>
-    <p class="bg-panel-h">Round 1 &mdash; before the ladder</p>
-    <svg id="bg-hist-1" viewBox="0 0 500 268" style="width:100%;"></svg>
-   </div>
-   <div>
-    <p class="bg-panel-h">Round 2 &mdash; after the ladder</p>
-    <svg id="bg-hist-2" viewBox="0 0 500 268" style="width:100%;"></svg>
-   </div>
-  </div>
-  <div id="bg-cmp-note" class="key-result" style="margin-top:10px; padding:9px 16px; display:none;"><p style="margin:0; font-size:12pt;"></p></div>
- </section>
-
-</section>
 
 
 <section id="walkthrough-14-2">

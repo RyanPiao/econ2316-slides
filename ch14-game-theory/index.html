@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=89e3a99553d48fa247295edbeee80da6">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=d1b525e8700300108a02759ff5791a37">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -295,6 +295,7 @@
 </section>
 
 
+<section>
 <section id="gt-definition">
  <h2><i class="fa-solid fa-chess-knight" style="color: var(--secondary-color);"></i> Game Theory: A Definition</h2>
  <div style="background:#eef3f6; border-radius:12px; padding:14px 22px; border-left:5px solid var(--secondary-color);">
@@ -321,6 +322,22 @@
  <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top:11px;"><p style="margin:0;">Same logic in all four: your payoff depends on the <strong>other player&rsquo;s</strong> choice, so your best move must anticipate it.</p></div>
 </section>
 
+<section id="rps-strategic">
+ <h2><i class="fa-solid fa-hand-scissors" style="color: var(--accent-color);"></i> Rock, Paper, Scissors: Your Best Move Depends on Theirs</h2>
+ <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center;">
+  <div><div style="position:relative; width:420px; height:330px; margin:0 auto;"><svg viewBox="0 0 420 330" style="position:absolute; inset:0; width:100%; height:100%;" aria-hidden="true"><defs><marker id="rps-ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8C8580"/></marker></defs><line x1="250" y1="122" x2="305" y2="202" stroke="#8C8580" stroke-width="3" marker-end="url(#rps-ah)"/><text x="296" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#8C8580">beats</text><line x1="273" y1="262" x2="147" y2="262" stroke="#8C8580" stroke-width="3" marker-end="url(#rps-ah)"/><text x="210" y="289" text-anchor="middle" font-size="15" font-weight="700" fill="#8C8580">beats</text><line x1="115" y1="202" x2="170" y2="122" stroke="#8C8580" stroke-width="3" marker-end="url(#rps-ah)"/><text x="124" y="155" text-anchor="middle" font-size="15" font-weight="700" fill="#8C8580">beats</text></svg><div style="position:absolute; left:50.0%; top:18.8%; transform:translate(-50%,-50%); text-align:center;"><i class="fa-solid fa-hand-back-fist" style="font-size:44pt; color:#6B8BA4;"></i><p style="font-size:13pt; font-weight:800; margin:2px 0 0; color:var(--text-color);">Rock</p></div><div style="position:absolute; left:82.1%; top:79.4%; transform:translate(-50%,-50%); text-align:center;"><i class="fa-solid fa-hand-scissors" style="font-size:44pt; color:#C47B5A;"></i><p style="font-size:13pt; font-weight:800; margin:2px 0 0; color:var(--text-color);">Scissors</p></div><div style="position:absolute; left:17.9%; top:79.4%; transform:translate(-50%,-50%); text-align:center;"><i class="fa-solid fa-hand" style="font-size:44pt; color:#6A8E6B;"></i><p style="font-size:13pt; font-weight:800; margin:2px 0 0; color:var(--text-color);">Paper</p></div></div><p style="font-size:11.5pt; color:var(--muted-color); text-align:center; margin:4px 0 0;">Every throw beats one throw and loses to another.</p></div>
+  <div><div style="display:flex; flex-direction:column; gap:10px;">
+  <div class="fragment" data-fragment-index="1" style="background:#f8f6f3; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13pt; margin:0;">They throw <strong>Rock</strong> &rarr; you throw <strong style="color:#6A8E6B;">Paper</strong></p></div>
+  <div class="fragment" data-fragment-index="2" style="background:#f8f6f3; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13pt; margin:0;">They throw <strong>Paper</strong> &rarr; you throw <strong style="color:#C47B5A;">Scissors</strong></p></div>
+  <div class="fragment" data-fragment-index="3" style="background:#f8f6f3; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color);"><p style="font-size:13pt; margin:0;">They throw <strong>Scissors</strong> &rarr; you throw <strong style="color:#6B8BA4;">Rock</strong></p></div>
+ </div>
+ <div class="key-result fragment" data-fragment-index="4" style="margin-top:12px;"><p style="margin:0; font-size:12.5pt;">No throw is best on its own. Your best move depends on what you expect them to do: <strong>a strategic decision.</strong></p></div>
+  </div>
+ </div>
+</section>
+</section>
+
+<section>
 <section id="gt-not-strategic">
  <h2><i class="fa-solid fa-ban" style="color: var(--danger-color);"></i> What Is <em>Not</em> a Strategic Situation?</h2>
  <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:center; margin-bottom:5px;">
@@ -335,6 +352,30 @@
   <p style="font-size:12.5pt; font-weight:700; color:var(--danger-color); margin:0;">Price <em>Maker</em> &mdash; no rivals to watch</p>
  </div>
  <div class="key-result" style="margin-top:10px;"><p style="margin:0;">Neither extreme is strategic: the perfect competitor can&rsquo;t move the price, and the monopolist has no one to react to. <strong>Only oligopoly (Ch 13) &mdash; a few firms watching each other &mdash; is a game.</strong></p></div>
+</section>
+
+<section id="simpsons-rps">
+ <h2><i class="fa-brands fa-youtube" style="color: var(--danger-color);"></i> Not a Strategic Interaction: Bart Always Throws Rock</h2>
+ <div style="display:grid; grid-template-columns:1.25fr 0.75fr; gap:20px; align-items:start;">
+  <div>
+   <div style="position:relative; width:100%; aspect-ratio:16/9; border-radius:12px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,0.24);">
+    <div class="yt-facade" data-yt="b0SoKWLkmLU" style="position:absolute; inset:0; background:#000 center/cover no-repeat url('https://img.youtube.com/vi/b0SoKWLkmLU/hqdefault.jpg'); cursor:pointer;">
+     <div style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:74px; height:52px; border-radius:12px; background:rgba(200,30,30,0.88); color:#fff; font-size:24px; line-height:52px; text-align:center;">&#9654;</div>
+    </div>
+   </div>
+   <p style="font-size:11pt; color:var(--muted-color); text-align:center; margin:6px 0 0;"><em>The Simpsons</em>, Season 4, Episode 19 (clip). Click to play.</p>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:10px;">
+   <div style="background:#f7f1ea; border-radius:10px; padding:10px 16px; border-left:4px solid var(--accent-color);">
+    <p style="font-size:12.5pt; margin:0;"><strong>Bart:</strong> &ldquo;Good old Rock. Nothing beats that.&rdquo; He never looks at what Lisa does.</p>
+   </div>
+   <div style="background:#eef3f6; border-radius:10px; padding:10px 16px; border-left:4px solid var(--secondary-color);">
+    <p style="font-size:12.5pt; margin:0;"><strong>Lisa:</strong> Bart&rsquo;s throw is fixed, so there is nothing to guess. Paper, every time.</p>
+   </div>
+   <div class="key-result" style="margin:0;"><p style="margin:0; font-size:12.5pt;"><strong>Not a strategic interaction.</strong> Bart never reacts to Lisa, so she has nothing to anticipate: a one-player problem, like a price taker facing a fixed price.</p></div>
+  </div>
+ </div>
+</section>
 </section>
 
 <section>

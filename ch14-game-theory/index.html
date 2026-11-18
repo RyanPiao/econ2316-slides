@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=0144cde30fbc25956d20e47011bc8678">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=9b00d68b91367bbd083ae28187adbc77">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -929,7 +929,8 @@
 </section>
 <section id="gb-draw">
  <h2><i class="fa-solid fa-dice" style="color:var(--secondary-color);"></i> The Draw &mdash; Who Split, Who Stole?</h2>
-  <p style="font-size:12.5pt; text-align:center; color:var(--muted-color); margin:0 0 4px;">Each click pairs two anonymous picks and shows their tickets. &#129309; = split, &#128298; = steal.</p>
+  <p style="font-size:13.5pt; text-align:center; margin:0 0 4px;"><strong style="color:#B7791F;">&#128226; Announcers were bluffing, like Nick:</strong> they said Steal but were told to pick Split. What you see is the listener&rsquo;s choice.</p>
+  <p style="font-size:12.5pt; text-align:center; color:var(--muted-color); margin:0 0 4px;">Each click pairs an announcer with a listener and shows their tickets. &#129309; = split, &#128298; = steal.</p>
   <div class="gg-controls">
    <button onclick="ssLoad()">&#8635; Load picks</button>
    <span id="ss-count">&mdash; click &ldquo;Load picks&rdquo; &mdash;</span>
@@ -4226,7 +4227,7 @@
   var SSID="ch14-splitsteal-"+half();   /* one id per section, like the other Ch 14 games; attendance row via poll.js below */
   var subs=[],idx=0,voted=false,tix=[];
   var ROLE;try{ROLE=localStorage.getItem('ssRole');if(ROLE!=='N'&&ROLE!=='I'){ROLE=Math.random()<0.5?'N':'I';localStorage.setItem('ssRole',ROLE);}}catch(e){ROLE=Math.random()<0.5?'N':'I';}   /* N = announcer (Nick), I = listener (Ibrahim) */
-    function showRole(){var b=document.getElementById('ss-role');if(!b||b.getAttribute('data-shown'))return;b.setAttribute('data-shown','1');b.style.display='block';b.innerHTML=ROLE==='N'?'<p style="margin:0; font-size:12.5pt;"><b style="color:#B7791F;">You are an ANNOUNCER.</b> Your partner heard the message above from you. Now pick for real.</p>':'<p style="margin:0; font-size:12.5pt;"><b style="color:var(--secondary-color);">You are a LISTENER.</b> Your partner sent you the message above. What do you pick?</p>';}
+    function showRole(){var b=document.getElementById('ss-role');if(!b||b.getAttribute('data-shown'))return;b.setAttribute('data-shown','1');b.style.display='block';b.innerHTML=ROLE==='N'?'<p style="margin:0; font-size:12.5pt;"><b style="color:#B7791F;">You are an ANNOUNCER.</b> Like Nick, you were bluffing: you said STEAL, but pick SPLIT.</p>':'<p style="margin:0; font-size:12.5pt;"><b style="color:var(--secondary-color);">You are a LISTENER.</b> Your partner sent you the message above. What do you pick?</p>';}
   (function(){var i=document.getElementById('ss-initials');if(i)i.addEventListener('input',function(){if(i.value.trim())showRole();});})();
   function pay(a,b){if(a==='split'&&b==='split')return[5,5];if(a==='steal'&&b==='split')return[10,0];if(a==='split'&&b==='steal')return[0,10];return[0,0];}
   function sh(l){return l==='split'?'&#129309;':'&#128298;';}

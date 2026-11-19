@@ -48,9 +48,10 @@
   "ch13-econ2316-poll-host-profit": "13p1-3",
   "ch13-econ2316-poll-superbowl": "13p1-2",
   "ch13p1-econ2316-poll-1": "13p1-4",
-  "ch13p2-econ2316-poll-2": "13p2-3",
-  "ch13p2-econ2316-poll-bertrand": "13p2-2",
-  "ch13p2-econ2316-poll-cartel": "13p2-1",
+  "ch13p2-econ2316-poll-2": "13p2-4",
+  "ch13p2-econ2316-poll-bertrand": "13p2-3",
+  "ch13p2-econ2316-poll-cartel": "13p2-2",
+  "ch13p2-econ2316-poll-music": "13p2-1",
   "ch14-econ2316-cashbox": "14-7",
   "ch14-econ2316-guess-1": "14-5",
   "ch14-econ2316-guess-2": "14-6",
@@ -136,13 +137,17 @@
   ],
   "13p2-1": [
    "ch13-part2-oligopoly",
-   "ch13p2-econ2316-poll-cartel"
+   "ch13p2-econ2316-poll-music"
   ],
   "13p2-2": [
    "ch13-part2-oligopoly",
-   "ch13p2-econ2316-poll-bertrand"
+   "ch13p2-econ2316-poll-cartel"
   ],
   "13p2-3": [
+   "ch13-part2-oligopoly",
+   "ch13p2-econ2316-poll-bertrand"
+  ],
+  "13p2-4": [
    "ch13-part2-oligopoly",
    "ch13p2-econ2316-poll-2"
   ],

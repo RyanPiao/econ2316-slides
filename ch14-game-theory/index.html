@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=46b5218edb10d6efa233779eb6538e80">
+<meta name="deck-build" content="public; speaker notes removed by strip_notes.py; out=706d00d4b64b84f453636ec48642b902">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Game Theory &mdash; ECON 2316 Ch 14</title>
@@ -1083,6 +1083,50 @@
 </section>
 </section>
 
+<section id="walkthrough-14-2">
+ <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 14.2 &mdash; Iterated Elimination: Airline Schedules</h2>
+ <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 10px;">
+  <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>Problem.</strong> On the Boston&ndash;Chicago route, United picks <strong>2, 4 or 6</strong> daily flights and JetBlue picks <strong>1, 2 or 3</strong>. Daily profit, $ thousands (United, JetBlue). Run <strong>IESDS</strong>.</p>
+ </div>
+ <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 22px; align-items: center;">
+  <div style="text-align:center;">
+   <table class="pm" style="font-size: 15pt; margin: 0 auto;">
+    <tr><th style="font-size:10pt; line-height:1.2;">United &darr;<br>JetBlue &rarr;</th><th>1 flight</th><th class="fragment strike" data-fragment-index="3">2 flights</th><th class="fragment strike" data-fragment-index="1">3 flights</th></tr>
+    <tr><th class="fragment strike" data-fragment-index="2">2 flights</th>
+        <td class="fragment strike" data-fragment-index="2">4, 3</td>
+        <td class="fragment strike" data-fragment-index="2">2, 7</td>
+        <td class="fragment strike" data-fragment-index="1">0, 4</td></tr>
+    <tr><th>4 flights</th>
+        <td style="position:relative;"><span style="position:relative; z-index:1; font-weight:700;">5, 5</span><span class="fragment" data-fragment-index="4" style="position:absolute; inset:0; background:rgba(106,142,107,0.30); border:2.5px solid #6A8E6B; border-radius:3px; z-index:0;"></span></td>
+        <td class="fragment strike" data-fragment-index="3">5, 1</td>
+        <td class="fragment strike" data-fragment-index="1">2, 0</td></tr>
+    <tr><th class="fragment strike" data-fragment-index="2">6 flights</th>
+        <td class="fragment strike" data-fragment-index="2">3, 4</td>
+        <td class="fragment strike" data-fragment-index="2">1, 6</td>
+        <td class="fragment strike" data-fragment-index="1">1, 2</td></tr>
+   </table>
+   <p style="font-size:10.5pt; color:var(--muted-color); margin-top:9px;">Cell = (United, JetBlue) <strong>daily profit, $ thousands</strong>. Crossed out = strictly dominated that round.</p>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:9px;">
+   <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);">
+    <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Round 1 &mdash; JetBlue:</strong> 2 flights beats 3 in every row (\(7&gt;4,\; 1&gt;0,\; 6&gt;2\)) &rarr; <strong>delete 3 flights.</strong></p>
+   </div>
+   <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:9px 15px; border-left:4px solid var(--accent-color);">
+    <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Round 2 &mdash; United:</strong> with JetBlue&rsquo;s 3 flights gone, United&rsquo;s 4 flights beats 2 (\(5&gt;4,\,5&gt;2\)) and 6 (\(5&gt;3,\,5&gt;1\)) &rarr; <strong>delete 2 and 6.</strong></p>
+   </div>
+   <div class="fragment fade-up" data-fragment-index="3" style="background:#eef3f6; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);">
+    <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Round 3 &mdash; JetBlue:</strong> facing United&rsquo;s 4 flights, 1 flight beats 2 (\(5&gt;1\)) &rarr; <strong>delete 2 flights.</strong></p>
+   </div>
+   <div class="fragment fade-up" data-fragment-index="4" style="background:#eef6ef; border-radius:8px; padding:10px 15px; border-left:4px solid var(--success-color);">
+    <p style="margin:0; font-size:12.5pt; line-height:1.4;"><strong>Survivor:</strong> United 4, JetBlue 1 = (5, 5): the unique <strong>Nash equilibrium.</strong></p>
+   </div>
+  </div>
+ </div>
+ <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 11px; padding: 9px 16px;">
+  <p style="margin: 0; font-size: 12pt;">IESDS never deletes a Nash equilibrium, so a <em>single</em> survivor is the unique NE. With <em>strict</em> dominance, the order of elimination never matters.</p>
+ </div>
+</section>
+
 <section>
 
  <section id="beauty-game">
@@ -1193,7 +1237,7 @@
 
  <div style="background:#fdf2f0; border-radius:10px; padding:11px 17px; border-left:4px solid var(--danger-color);">
   <p style="font-size:13pt; margin:0 0 5px;"><strong>1. Commitment, not conversation</strong></p>
-  <p style="font-size:12.5pt; line-height:1.45; margin:0;">A commitment <em>costly to reverse</em>. <strong>Price-match guarantees</strong> make undercutting pointless, so nobody starts.</p>
+  <p style="font-size:12.5pt; line-height:1.45; margin:0;">A commitment <em>costly to reverse</em>. <strong>Phone pouches</strong> at concerts and schools: each fan wants to film, but if all film, nobody sees. A lock you can&rsquo;t open mid-show beats a promise.</p>
   <p style="font-size:11.5pt; color:var(--muted-color); margin:6px 0 0;"><i class="fa-solid fa-arrow-left-long"></i> Nick&rsquo;s &ldquo;I <em>will</em> Steal&rdquo; was the same move.</p>
  </div>
 
@@ -1285,49 +1329,6 @@
 
 
 
-<section id="walkthrough-14-2">
- <h2><i class="fa-solid fa-pen-to-square" style="color: var(--accent-color);"></i> Walkthrough 14.2 &mdash; Iterated Elimination: Airline Schedules</h2>
- <div style="background: rgba(196, 123, 90, 0.10); border-left: 4px solid var(--accent-color); border-radius: 6px; padding: 8px 16px; margin: 0 0 10px;">
-  <p style="margin: 0; font-size: 12pt; line-height: 1.45;"><strong>Problem.</strong> On the Boston&ndash;Chicago route, United picks <strong>2, 4 or 6</strong> daily flights and JetBlue picks <strong>1, 2 or 3</strong>. Daily profit, $ thousands (United, JetBlue). Run <strong>IESDS</strong>.</p>
- </div>
- <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 22px; align-items: center;">
-  <div style="text-align:center;">
-   <table class="pm" style="font-size: 15pt; margin: 0 auto;">
-    <tr><th style="font-size:10pt; line-height:1.2;">United &darr;<br>JetBlue &rarr;</th><th>1 flight</th><th class="fragment strike" data-fragment-index="3">2 flights</th><th class="fragment strike" data-fragment-index="1">3 flights</th></tr>
-    <tr><th class="fragment strike" data-fragment-index="2">2 flights</th>
-        <td class="fragment strike" data-fragment-index="2">4, 3</td>
-        <td class="fragment strike" data-fragment-index="2">2, 7</td>
-        <td class="fragment strike" data-fragment-index="1">0, 4</td></tr>
-    <tr><th>4 flights</th>
-        <td style="position:relative;"><span style="position:relative; z-index:1; font-weight:700;">5, 5</span><span class="fragment" data-fragment-index="4" style="position:absolute; inset:0; background:rgba(106,142,107,0.30); border:2.5px solid #6A8E6B; border-radius:3px; z-index:0;"></span></td>
-        <td class="fragment strike" data-fragment-index="3">5, 1</td>
-        <td class="fragment strike" data-fragment-index="1">2, 0</td></tr>
-    <tr><th class="fragment strike" data-fragment-index="2">6 flights</th>
-        <td class="fragment strike" data-fragment-index="2">3, 4</td>
-        <td class="fragment strike" data-fragment-index="2">1, 6</td>
-        <td class="fragment strike" data-fragment-index="1">1, 2</td></tr>
-   </table>
-   <p style="font-size:10.5pt; color:var(--muted-color); margin-top:9px;">Cell = (United, JetBlue) <strong>daily profit, $ thousands</strong>. Crossed out = strictly dominated that round.</p>
-  </div>
-  <div style="display:flex; flex-direction:column; gap:9px;">
-   <div class="fragment fade-up" data-fragment-index="1" style="background:#eef3f6; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);">
-    <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Round 1 &mdash; JetBlue:</strong> 2 flights beats 3 in every row (\(7&gt;4,\; 1&gt;0,\; 6&gt;2\)) &rarr; <strong>delete 3 flights.</strong></p>
-   </div>
-   <div class="fragment fade-up" data-fragment-index="2" style="background:#fef9f3; border-radius:8px; padding:9px 15px; border-left:4px solid var(--accent-color);">
-    <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Round 2 &mdash; United:</strong> with JetBlue&rsquo;s 3 flights gone, United&rsquo;s 4 flights beats 2 (\(5&gt;4,\,5&gt;2\)) and 6 (\(5&gt;3,\,5&gt;1\)) &rarr; <strong>delete 2 and 6.</strong></p>
-   </div>
-   <div class="fragment fade-up" data-fragment-index="3" style="background:#eef3f6; border-radius:8px; padding:9px 15px; border-left:4px solid var(--secondary-color);">
-    <p style="margin:0; font-size:11.5pt; line-height:1.4;"><strong>Round 3 &mdash; JetBlue:</strong> facing United&rsquo;s 4 flights, 1 flight beats 2 (\(5&gt;1\)) &rarr; <strong>delete 2 flights.</strong></p>
-   </div>
-   <div class="fragment fade-up" data-fragment-index="4" style="background:#eef6ef; border-radius:8px; padding:10px 15px; border-left:4px solid var(--success-color);">
-    <p style="margin:0; font-size:12.5pt; line-height:1.4;"><strong>Survivor:</strong> United 4, JetBlue 1 = (5, 5): the unique <strong>Nash equilibrium.</strong></p>
-   </div>
-  </div>
- </div>
- <div class="key-result fragment fade-up" data-fragment-index="5" style="margin-top: 11px; padding: 9px 16px;">
-  <p style="margin: 0; font-size: 12pt;">IESDS never deletes a Nash equilibrium, so a <em>single</em> survivor is the unique NE. With <em>strict</em> dominance, the order of elimination never matters.</p>
- </div>
-</section>
 <section class="section-divider" data-state="is-section-divider" id="coordination-divider">
  <p style="font-size: 13pt; color: var(--accent-color); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px;">Beyond the Prisoner&rsquo;s Dilemma</p>
  <h1 style="font-size: 40pt; color: var(--primary-color); margin-bottom: 16px;">Coordination Games</h1>
@@ -1362,6 +1363,7 @@
   </div>
  </div>
  <div class="key-result" style="margin-top:11px; padding:9px 16px;"><p style="margin:0; font-size:13pt;"><strong>Cheap talk is the test</strong> &mdash; useless in a <em>cooperation</em> problem, decisive in a <em>coordination</em> problem.</p></div>
+ <p style="margin:8px 0 0; font-size:11.5pt; color:#4A4F57; line-height:1.4;"><strong>Neither is zero-sum:</strong> in both, some outcomes are better for everyone. Pure conflict, where one side&rsquo;s gain is the other&rsquo;s loss (penalty kicks), is a third kind; it comes with mixed strategies.</p>
 </section>
 
 

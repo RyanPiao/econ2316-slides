@@ -1984,6 +1984,12 @@
         toggleHere();
       });
     }
+    // T pressed over the speaker NOTES reaches this preview as reveal's triggerKey, not as a key event,
+    // so the listener above never saw it (5200 T17, 23 Nov: "T won't work"; L and S are reveal keys and did)
+    if (SPEAKER) window.addEventListener("message", function (ev) {
+      var d; try { d = JSON.parse(ev.data); } catch (e) { return; }
+      if (d && d.method === "triggerKey" && d.args && d.args[0] === 84 && pollIdsOnCurrentSlide().length) toggleHere();
+    });
     // Everyone sees the mirrored page number, not just the instructor: the
     // projector is what the room reads, and a student on their own phone is
     // on their own slide and needs their own number.
